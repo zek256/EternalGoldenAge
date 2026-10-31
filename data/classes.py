@@ -32,8 +32,8 @@ CLASSES = {
         "gear": ["training_mace", "wooden_shield", "padded_tunic"],
         "desc": "Holy knights sworn to the Dawnfather, wielding sacred light and steel alike.",
     },
-    "shadow knight": {
-        "name": "Shadow Knight", "hp": 10, "mana": 3, "mana_stat": "INT", "attack_stat": "STR",
+    "dread knight": {
+        "name": "Dread Knight", "hp": 10, "mana": 3, "mana_stat": "INT", "attack_stat": "STR",
         "start": {"STR": 2, "INT": 2, "CON": 1},
         "gains": {"STR": 2, "CON": 2, "INT": 1},
         "armor": "plate", "shield": True, "weapons": ["sword", "axe", "two-handed"],
@@ -107,4 +107,4 @@ CLASSES = {
 }
 
 CLASS_ORDER = ["warrior", "cleric", "wizard", "bard", "necromancer", "shaman",
-               "druid", "rogue", "ranger", "paladin", "shadow knight"]
+               "druid", "rogue", "ranger", "paladin", "dread knight"]

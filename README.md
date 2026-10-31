@@ -1,4 +1,4 @@
-# Empire of Zek
+# Eternal Golden Age
 
 An offline, single-player, text-based fantasy MUD/RPG in pure Python 3 (standard library only).
 
@@ -106,7 +106,7 @@ The world runs on a real-time clock: every **4 seconds** is one game tick.
 ogre (+12% HP), troll (regeneration), undead (immune to poison/disease), orc (+6% damage).
 
 **Classes:** warrior, cleric, wizard, bard, necromancer, shaman, druid, rogue, ranger, paladin,
-shadow knight. Each has its own HP and mana growth, casting stat, attack stat, per-level stat
+dread knight. Each has its own HP and mana growth, casting stat, attack stat, per-level stat
 gains, and 6-7 spells/abilities unlocked between levels 1 and 48:
 
 - Warrior: Slam, Battle Cry, Second Wind, Cleave, Shield Wall, Rampage, Avatar of War
@@ -118,7 +118,7 @@ gains, and 6-7 spells/abilities unlocked between levels 1 and 48:
 - Rogue: Backstab, Poisoned Blade, Evasion, Kidney Shot, Eviscerate, Shadow Dance, Assassinate
 - Ranger: Aimed Shot, Hunter's Mend, Multishot, Bonded Wolf (pet), Serpent Sting, Rain of Arrows, Deadeye
 - Paladin: Holy Strike, Lay on Hands, Blessing of Might, Divine Shield, Hammer of Justice, Consecration, Avenging Wrath
-- Shadow Knight: Shadow Strike, Disease Cloud, Dread Aura, Harm Touch, Vampiric Embrace, Death Coil, Unholy Frenzy
+- Dread Knight: Shadow Strike, Disease Cloud, Dread Aura, Dread Touch, Vampiric Embrace, Death Coil, Unholy Frenzy
 - Bard: Discordant Note, Ballad of Mending, Lullaby, War March, Dirge of Despair, Crescendo, Legend's Anthem
 
 Spells cost mana, and the cost scales with level. Abilities are free but have cooldowns. Both are
@@ -133,7 +133,7 @@ perhaps in shields:
 |---|---|---|---|
 | Warrior | plate | yes | dagger, sword, axe, blunt, two-handed, bow |
 | Paladin | plate | yes | sword, blunt, two-handed |
-| Shadow Knight | plate | yes | sword, axe, two-handed |
+| Dread Knight | plate | yes | sword, axe, two-handed |
 | Cleric | mail | yes | blunt, staff |
 | Shaman | mail | yes | blunt, staff, axe |
 | Ranger | mail | yes | sword, dagger, axe, bow |

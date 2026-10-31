@@ -63,7 +63,7 @@ def draw(pos, insets):
     out = ['<svg xmlns="http://www.w3.org/2000/svg" width="{0}" height="{1}" viewBox="0 0 {0} {1}" '
            'font-family="Georgia, serif">'.format(W, H),
            '<rect width="100%" height="100%" fill="#16161c"/>',
-           '<text x="{}" y="34" fill="#e8d9a8" font-size="24">Empire of Zek</text>'.format(PAD)]
+           '<text x="{}" y="34" fill="#e8d9a8" font-size="24">Eternal Golden Age</text>'.format(PAD)]
 
     # exits, each drawn once
     done = set()

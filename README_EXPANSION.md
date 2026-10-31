@@ -1,6 +1,6 @@
 # The world expansion: design and testing
 
-The world of Empire of Zek grew from 55 rooms to 257 in five phases, plus a later addition, the Plane of Justice. This file
+The world of Eternal Golden Age grew from 55 rooms to 257 in five phases, plus a later addition, the Plane of Justice. This file
 records what each
 phase added, the code that changed, how the new content was balanced, and how it was tested. The
 original plan and the decisions behind it are in `EXPANSION_PLAN.md`.

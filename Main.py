@@ -1,4 +1,4 @@
-"""Empire of Zek - an offline, single-player fantasy MUD.
+"""Eternal Golden Age - an offline, single-player fantasy MUD.
 
 Run:  python main.py            (add --no-color to disable colour, --dev for test commands)
 """
@@ -13,7 +13,7 @@ from game import ask, create_character, list_saves, load_game_interactive
 TITLE = r"""
   +==================================================+
   |                                                  |
-  |      E  M  P  I  R  E     o f     Z  E  K        |
+  |       E T E R N A L   G O L D E N   A G E        |
   |                                                  |
   |      ~ swords, sorcery, and lives beyond ~       |
   |                                                  |
@@ -22,7 +22,7 @@ TITLE = r"""
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Empire of Zek, a text fantasy RPG.")
+    ap = argparse.ArgumentParser(description="Eternal Golden Age, a text fantasy RPG.")
     ap.add_argument("--no-color", action="store_true", help="disable ANSI colours")
     ap.add_argument("--dev", action="store_true", help="enable developer/test commands")
     ap.add_argument("--seed", type=int, help="random seed (for reproducible testing)")

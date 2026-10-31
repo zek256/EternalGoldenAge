@@ -247,20 +247,20 @@ spell("consecration", "Consecration", "paladin", 36, 38, [DMG(25, 2.6, 0.7, "WIS
 ability("avenging_wrath", "Avenging Wrath", "paladin", 46, 12, [BUFF("Avenging Wrath", 5, damage_pct=0.6), HEALPCT(0.3)], target="self",
         desc="Golden wings of wrath: heal 30% and +60% damage.", msg="Golden wings of light unfurl from your back!")
 
-# ---------------------------------------------------------------- Shadow Knight
-ability("shadow_strike", "Shadow Strike", "shadow knight", 1, 2, [WEAPON(1.2), DRAIN(3, 1.0, 0.3, "INT", 0.6)],
+# ---------------------------------------------------------------- Dread Knight
+ability("shadow_strike", "Shadow Strike", "dread knight", 1, 2, [WEAPON(1.2), DRAIN(3, 1.0, 0.3, "INT", 0.6)],
         desc="A strike that drinks a sip of your foe's life.", msg="Your blade, wreathed in shadow, drinks from {t}!")
-spell("disease_cloud", "Disease Cloud", "shadow knight", 4, 6, [DOT(4, 1.0, 0.25, "INT", 5, "Disease Cloud", "disease")],
+spell("disease_cloud", "Disease Cloud", "dread knight", 4, 6, [DOT(4, 1.0, 0.25, "INT", 5, "Disease Cloud", "disease")],
       desc="A cloud of festering disease.", msg="A cloud of festering spores billows around {t}.")
-spell("dread_aura", "Dread Aura", "shadow knight", 10, 12, [WEAKEN(0.25, 5, "Dread")], target="all", cooldown=6,
+spell("dread_aura", "Dread Aura", "dread knight", 10, 12, [WEAKEN(0.25, 5, "Dread")], target="all", cooldown=6,
       desc="Your aura of terror weakens all foes (-25% damage).", msg="An aura of soul-chilling dread pours from you.")
-ability("harm_touch", "Harm Touch", "shadow knight", 18, 20, [DMG(40, 5.0, 1.5, "INT", "shadow")],
+ability("dread_touch", "Dread Touch", "dread knight", 18, 20, [DMG(40, 5.0, 1.5, "INT", "shadow")],
         desc="Channel death itself through your touch.", msg="You lay a hand upon {t} and death itself flows through it!")
-spell("vampiric_embrace", "Vampiric Embrace", "shadow knight", 26, 24, [BUFF("Vampiric Embrace", 6, lifesteal=0.25)], cooldown=8, target="self",
+spell("vampiric_embrace", "Vampiric Embrace", "dread knight", 26, 24, [BUFF("Vampiric Embrace", 6, lifesteal=0.25)], cooldown=8, target="self",
       desc="Your attacks heal you for 25% of damage dealt.", msg="Your veins run black with a vampiric hunger.")
-spell("death_coil", "Death Coil", "shadow knight", 34, 32, [DRAIN(30, 3.2, 0.9, "INT", 0.8)], cooldown=3,
+spell("death_coil", "Death Coil", "dread knight", 34, 32, [DRAIN(30, 3.2, 0.9, "INT", 0.8)], cooldown=3,
       desc="A coil of death that drains a foe.", msg="A shrieking coil of black fire lashes {t}!")
-ability("unholy_frenzy", "Unholy Frenzy", "shadow knight", 44, 12, [BUFF("Unholy Frenzy", 5, damage_pct=0.5, lifesteal=0.3)], target="self",
+ability("unholy_frenzy", "Unholy Frenzy", "dread knight", 44, 12, [BUFF("Unholy Frenzy", 5, damage_pct=0.5, lifesteal=0.3)], target="self",
         desc="An unholy frenzy: +50% damage and 30% lifesteal.", msg="An unholy frenzy seizes you, and you laugh with a voice not your own!")
 
 # ---------------------------------------------------------------- Bard

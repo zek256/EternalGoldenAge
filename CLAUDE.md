@@ -1,4 +1,4 @@
-# Empire of Zek
+# Eternal Golden Age
 
 Offline single-player text MUD in pure Python 3, standard library only (no dependencies, no network).
 `README.md` is the player-facing manual; keep it in sync when gameplay or commands change.
