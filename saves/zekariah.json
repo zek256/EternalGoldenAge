@@ -103,7 +103,7 @@
  },
  "room": "ss_west_gate",
  "world": {
-  "tick": 13741,
+  "tick": 13743,
   "rooms": {
    "town_square": {
     "items": [],
