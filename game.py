@@ -39,7 +39,8 @@ HELP = [
                 ("(on cooldown)", "in a fight, a cooling spell or ability is held and used the moment it's ready"),
                 ("consider / con <target>", "judge how dangerous a monster is"),
                 ("flee [direction]", "try to escape from combat"),
-                ("spells / abilities", "list your spells and abilities")]),
+                ("spells / abilities", "list your spells and abilities"),
+                ("cooldowns / cd", "show which spells and abilities are cooling down and for how long")]),
     ("Character", [("stats / score", "full character sheet"),
                    ("level", "level, experience and upcoming abilities"),
                    ("rebirth", "at level 50, be reborn as a new class"),
@@ -234,7 +235,7 @@ class Game:
         else:
             self.world_tick()
 
-    SLEEP_OK = {"wake", "sleep", "stats", "level", "inventory", "equipment", "spells", "quests",
+    SLEEP_OK = {"wake", "sleep", "stats", "level", "inventory", "equipment", "spells", "cooldowns", "quests",
                 "help", "save", "load", "quit", "pet", "examine", "find", "alias", "unalias", "map", "automap"}
 
     def handle(self, line):
@@ -279,6 +280,7 @@ class Game:
         "track": "find", "where": "find", "route": "find", "path": "find",
         "rest": "sleep", "stand": "wake", "con": "consider", "h": "help", "?": "help", "q": "quit", "exit": "quit",
         "abilities": "spells", "skills": "spells", "spellbook": "spells",
+        "cd": "cooldowns", "cds": "cooldowns", "cooldown": "cooldowns", "timers": "cooldowns",
     }
     NO_COMBAT = {"sleep", "save", "load", "talk", "buy", "sell", "list", "get", "drop",
                  "wear", "remove", "rebirth"}
@@ -835,6 +837,20 @@ class Game:
             line = "  L{:>2} {:<27} {:<20} {}".format(a["level"], a["name"] + origin, cost, a["desc"])
             ui.out(ui.c(line, "bwhite") if usable else ui.c(line + " (locked)", "grey"))
         ui.out(ui.c("Use spells with 'cast <name> [target]' and abilities with 'ability <name> [target]'.", "grey"))
+
+    def cmd_cooldowns(self, args):
+        p = self.player
+        cooling = sorted(((ABILITIES[aid], n) for aid, n in p.cooldowns.items() if aid in ABILITIES),
+                         key=lambda x: x[1])
+        if not cooling:
+            ui.say("All your spells and abilities are ready.", "green")
+            return
+        held = self.combat.held[0]["id"] if self.combat and self.combat.held else None
+        ui.rule("Cooldowns")
+        for ab, n in cooling:
+            line = "  {:<24} {:>3} round{} (~{}s)".format(ab["name"], n, " " if n == 1 else "s",
+                                                         int(round(n * TICK_SECONDS)))
+            ui.out(ui.c(line, "bwhite") + (ui.c("  held, fires when ready", "cyan") if ab["id"] == held else ""))
 
     def cmd_pet(self, args):
         p = self.player

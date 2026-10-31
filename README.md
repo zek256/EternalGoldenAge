@@ -42,6 +42,7 @@ Saves are written as JSON to `saves/<name>.json`.
 | `cast` / `c` <spell> [target] | cast a spell (`cast magic missile rat`, `c fireball`); in a fight it is used on the next round |
 | `ability` / `ab` <name> [target] | use a class ability (`ab slam`, `ab cleave`); in a fight it is used on the next round |
 | `spells` / `abilities` | list all known spells and abilities, with locked ones greyed out |
+| `cooldowns` / `cd` | spells and abilities still cooling down, with rounds (and roughly seconds) left |
 | `consider` / `con` <target> | judge a monster's danger (colour-coded by level) |
 | `flee` [dir] | try to escape combat (moving during combat also attempts to flee) |
 | `inventory` / `i` | what you carry |
