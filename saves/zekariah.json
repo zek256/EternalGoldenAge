@@ -5,8 +5,8 @@
   "race": "high elf",
   "cls": "wizard",
   "level": 44,
-  "xp": 21196,
-  "gold": 5358,
+  "xp": 24437,
+  "gold": 5426,
   "past_lives": [],
   "inventory": [
    "healing_potion",
@@ -81,10 +81,10 @@
   },
   "effects": [],
   "cooldowns": {},
-  "kills": 447,
+  "kills": 448,
   "deaths": 27,
   "hp": 467,
-  "mana": 531,
+  "mana": 1293,
   "aliases": {
    "1": "cast frost bolt",
    "2": "cast meteor",
@@ -103,7 +103,7 @@
  },
  "room": "ss_west_gate",
  "world": {
-  "tick": 13702,
+  "tick": 13741,
   "rooms": {
    "town_square": {
     "items": [],
@@ -2820,12 +2820,15 @@
      [
       "salt_wraith",
       719
+     ],
+     [
+      "salt_wraith",
+      719
      ]
     ],
     "respawn_at": {
      "salt_wraith": [
-      13722,
-      13725
+      13744
      ]
     }
    },
@@ -2835,15 +2838,19 @@
      [
       "salt_wraith",
       719
+     ],
+     [
+      "salt_wraith",
+      719
+     ],
+     [
+      "mirage_stalker",
+      911
      ]
     ],
     "respawn_at": {
-     "salt_wraith": [
-      13730
-     ],
-     "mirage_stalker": [
-      13730
-     ]
+     "salt_wraith": [],
+     "mirage_stalker": []
     }
    },
    "northern_dunes": {
