@@ -3,7 +3,7 @@
 The Threshold of the Gods is the hub. Tier one opens on its four sides, and each leads straight on to
 one elemental plane: Sky (north) to Air, Growth (west) to Earth, Fear (east) to Fire, and Justice
 (south) to Water. The Plane of Time lies above the Threshold, through the Door of Time, which opens
-once all four elemental lords are slain. Lord Zek's throne opens only for a character who has lived
+once all four elemental lords are slain. Lord Trepth's throne opens only for a character who has lived
 every class to level 50.
 """
 from data.rooms.common import R
@@ -71,7 +71,7 @@ ROOMS = {
         "A courtroom vast enough to try a god, with a judge's bench of white marble beneath a pair of "
         "golden scales that hang from nothing. Before the bench stands a paladin in shining plate, his "
         "sword engraved with every law ever written. 'I am Stalworth Lightbearer, warden of this "
-        "place,' he says. 'Lord Zek judged me worthy. Now I judge you.'",
+        "place,' he says. 'Lord Trepth judged me worthy. Now I judge you.'",
         {"w": "justice_chain_yard"},
         spawns=[("stalworth", 1)], level=(55, 55)),
 
@@ -400,16 +400,16 @@ ROOMS = {
         "A stair climbs through every age of the world at once: you pass the first dawn, the fall of "
         "Elandor, and a Brightwater that has not been built yet. At its top stands a door of white "
         "gold, carved with a crown.",
-        {"n": "time_hourglass", "s": "zek_throne"},
+        {"n": "time_hourglass", "s": "trepth_throne"},
         spawns=[("chronal_sentinel", 1), ("hourglass_golem", 1), ("paradox", 1)], level=(58, 59)),
-    "zek_throne": R(
-        "The Throne of Zek", "Plane of Time",
+    "trepth_throne": R(
+        "The Throne of Trepth", "Plane of Time",
         "A hall at the end of time, its walls the night sky as it will be on the last day. On a throne "
         "carved from the first moment sits the king of the gods. His face is every face, and his "
-        "eyes hold every dawn. Lord Zek rises, and lifts the sword called Eternity. 'You have walked "
+        "eyes hold every dawn. Lord Trepth rises, and lifts the sword called Eternity. 'You have walked "
         "every path,' he says. 'Now walk the last.'",
         {"n": "time_eternity"},
-        spawns=[("lord_zek", 1)], level=(60, 60),
+        spawns=[("lord_trepth", 1)], level=(60, 60),
         gate={"all_classes": True,
               "msg": "The white-gold door does not move. A voice older than the stars speaks from beyond "
                      "it: 'Only one who has walked every path to its end may stand before the throne.'"}),

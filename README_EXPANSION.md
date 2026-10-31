@@ -146,7 +146,7 @@ first-tier plane.
 | - | Threshold of the Gods (2 safe rooms, with the Herald, who explains the way) | safe | - |
 | 1 | Sky, Growth, Fear, Justice | 51-55 | Caelestra the Sky-Warden, Verdis the Wildmother, Vhaal the Dreadmaker, Stalworth Lightbearer (55) |
 | 2 | Fire, Water, Earth, Air | 54-58 | Rekkn, Nerevos, Ulmathra, Zephyrion (58) |
-| 3 | Time | 57-60 | **Lord Zek (60)** |
+| 3 | Time | 57-60 | **Lord Trepth (60)** |
 
 - **Getting there:** a stair behind the altar of the Temple of the Dawn in Brightwater climbs up
   to the Threshold.
@@ -165,19 +165,18 @@ first-tier plane.
   white stone, black bars and chains of light: the Gaol Gate, the
   Endless Cellblock, the Oubliette, the Warden's Walk and the Chain Yard, where chained penitents
   and iron wardens keep the gods' prisoners. At its heart is the Hall of Judgement, where
-  **Stalworth Lightbearer** waits: a paladin in white plate, the first mortal Lord Zek ever judged
+  **Stalworth Lightbearer** waits: a paladin in white plate, the first mortal Lord Trepth ever judged
   worthy to serve him. He drops the Lightbearer's Oath (a longsword) and the Shield of Judgement.
   From the Chain Yard, the prison's sluice gate opens south onto the Plane of Water.
 - **The Door of Time:** a bronze door at the top of a stair of light above the Threshold. It opens
   only once the character has killed all four elemental lords. If it is still shut, it tells you
   which lords remain.
-- **Lord Zek's throne:** it opens only for a character who has leveled every class to level 50. The
+- **Lord Trepth's throne:** it opens only for a character who has leveled every class to level 50. The
   current class counts once it reaches 50. The door lists the classes still missing.
 - **The rest of the planes:** open to anyone who can survive them.
 - **Rewards:**
-  - The plane bosses and Lord Zek drop 19 mythic level-50 items, including Zek's sword Eternity,
-    the Crown of Zek and the Hourglass Amulet.
-  - Killing Lord Zek adds the title **"Champion of Zek"** to the score sheet.
+  - The plane bosses and Lord Trepth drop 19 mythic level-50 items, including Trepth's sword Eternity,
+    the Crown of Trepth and the Hourglass Amulet.
   - Characters below level 50 in later lives get large amounts of XP from plane monsters, if they
     are strong enough to survive them.
 
@@ -198,7 +197,6 @@ Phases 1-4 were data only. Phase 5 was the first to need game code.
   across rebirths. Old saves load with an empty list.
 - **Mastered classes:** `Character.mastered_classes()` returns the past lives plus the current
   class once it is at level 50.
-- **Title:** the score sheet shows "Champion of Zek" once `lord_zek` has been killed.
 - **Balance simulator:** a new endgame mode, `python tools/balance_sim.py endgame`, tests level-50
   characters with 1, 6 and 11 lives lived, using best-in-slot gear.
 - **Data check:** `tools/validate.py` now checks that gates only require bosses and that every
@@ -238,9 +236,9 @@ fights use 5 potions.
 | First-tier monsters | about 50% (they kill you half the time) | trivial | trivial |
 | Plane champions (including Stalworth) | 0% | 89-100% | 100% |
 | Elemental lords | 0% | 27-65% | 100% |
-| Lord Zek | 0% | **0%** | **68-75%** (every class 50-90%) |
+| Lord Trepth | 0% | **0%** | **68-75%** (every class 50-90%) |
 
-- **Without mythic gear:** an 11-life character with no mythic gear at all still beats Zek about
+- **Without mythic gear:** an 11-life character with no mythic gear at all still beats Trepth about
   60% of the time. Good equipment matters but is not strictly required.
 - **Why the multipliers are so large:** past-life stat bonuses make multi-life characters
   enormously strong. A 6-life character already beat a standard level 60 boss every time, so plane
@@ -250,14 +248,14 @@ fights use 5 potions.
   |---|---|---|
   | Regulars | 3.3-5.5 | 2.6-3.6 |
   | Plane bosses | 7.5-11 | 3.3-3.9 |
-  | Lord Zek | 15 | 5.3 |
+  | Lord Trepth | 15 | 5.3 |
 
   This is also recorded in `CLAUDE.md`.
 - **The Plane of Justice** was tested the same way when it was added. Its chained penitents and
   iron wardens beat a 1-life character 25-41% of the time, like the other first-tier monsters, and
   Stalworth is about as hard as Caelestra and Vhaal.
 - **Tuning changes during testing:**
-  - Lord Zek was too hard at first (41% with 11 lives). His HP went from 18 to 15 and his damage
+  - Lord Trepth was too hard at first (41% with 11 lives). His HP went from 18 to 15 and his damage
     from 5.6 to 5.3.
   - The first-tier regular monsters were too easy for a 1-life character (50-84% wins), so they
     were toughened.
@@ -278,16 +276,15 @@ was never touched.
 | New monsters | Compared with existing monsters of the same level for every class |
 | Walks | Every new room and loop walked in the real game, including all four cities and the boss rooms |
 | NPCs | Every new NPC's quest or shop list checked |
-| Your saves | Copies of both characters (Zek and Zekariah) loaded after every phase, finally with all 257 rooms |
+| Existing saves | Copies of existing saves loaded after every phase, finally with all 257 rooms |
 
 ### The Planes (phase 5)
 
 | Check | Result |
 |---|---|
 | Door of Time | Refuses entry and lists the missing lords; opens once all four are killed |
-| Lord Zek's throne | Refuses entry and lists the missing classes, including the current class below level 50; opens when every class is mastered |
+| Lord Trepth's throne | Refuses entry and lists the missing classes, including the current class below level 50; opens when every class is mastered |
 | Kill record | Bosses are recorded on kill; ordinary monsters are not |
-| Title | "Champion of Zek" appears on the score sheet after killing Lord Zek |
 | Saves | The kill record survives a save round trip; old saves without it load with an empty list |
 | Rooms | All 56 plane rooms are reachable by walking from the temple with the game's own movement, checked again after the planes were reorganized around the Threshold |
 | Stalworth | His kill is recorded like the other plane bosses |

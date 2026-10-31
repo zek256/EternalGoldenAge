@@ -261,7 +261,7 @@ armor("burial_mask", "the Burial Mask of Ussreth", "head", 48, 26, 4800,
       "A golden death-mask with eyes of lapis. Wearing it, you hear the desert wind.", CON=6, STR=4, INT=4, WIS=4, kind="mail")
 
 # ------------------------------------------------------------------ Mythic gear from the Planes of the Gods (level 50)
-# Dropped only by the plane bosses and Lord Zek. Stronger than anything else in the world.
+# Dropped only by the plane bosses and Lord Trepth. Stronger than anything else in the world.
 weapon("stormcaller_bow", "Stormcaller", 50, (46, 74), 12000,
        "A bow strung with a thread of lightning, taken from the Sky-Warden's own hand.", DEX=16, WIS=6, CON=6, kind="bow")
 armor("cloudsilk_robes", "cloudsilk robes", "chest", 50, 30, 11000, "Robes woven from the clouds of the high heavens, weightless and cool.", INT=14, WIS=14, CHA=6, kind="cloth")
@@ -287,9 +287,9 @@ armor("stonestride_boots", "stonestride boots", "feet", 50, 22, 11000, "Boots of
 armor("windwalker_boots", "windwalker boots", "feet", 50, 16, 11000, "Boots of silver feathers. Your feet barely touch the ground.", DEX=12, INT=4, WIS=4, kind="leather")
 armor("band_of_four_winds", "the Band of the Four Winds", "ring", 50, 0, 11000, "A ring of four twisted strands of silver, each humming a different wind.", DEX=10, STR=6, CON=6, kind="jewelry")
 weapon("eternity", "Eternity", 50, (55, 88), 20000,
-       "The sword of Lord Zek. Its blade shows every moment it has ever cut.",
+       "The sword of Lord Trepth. Its blade shows every moment it has ever cut.",
        STR=12, DEX=12, CON=12, INT=12, WIS=12, CHA=12, kind="any")
-armor("crown_of_zek", "the Crown of Zek", "head", 50, 32, 18000, "A crown of white gold that weighs nothing and holds the light of every dawn.",
+armor("crown_of_trepth", "the Crown of Trepth", "head", 50, 32, 18000, "A crown of white gold that weighs nothing and holds the light of every dawn.",
       STR=10, DEX=10, CON=10, INT=10, WIS=10, CHA=10, kind="any")
 armor("hourglass_amulet", "the Hourglass Amulet", "neck", 50, 12, 18000, "A tiny hourglass of crystal whose sand runs upward.",
       STR=12, DEX=12, CON=12, INT=12, WIS=12, CHA=12, kind="jewelry")

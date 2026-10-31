@@ -146,7 +146,7 @@ perhaps in shields:
 Armor tiers run cloth < leather < mail < plate. Item lines show each piece's tier or weapon family,
 in red when you aren't trained for it, and `examine` says why. Orbs and tomes held in the off hand
 are not shields and anyone may carry them; so may rings, necklaces and the mythic artifacts
-(Fang of Pyraxis, Eternity, the Ashen Crown, the Crown of Zek). **Training is kept through
+(Fang of Pyraxis, Eternity, the Ashen Crown, the Crown of Trepth). **Training is kept through
 rebirth**: a character may use anything any of its lives was trained for, so a wizard who was once
 a warrior may fight in plate with an axe, trading INT for toughness.
 
@@ -199,12 +199,11 @@ the south Justice, the gods' prison, kept by the paladin Stalworth Lightbearer. 
 an elemental plane ruled by an elemental lord: Sky to Air, Growth to Earth, Fear to Fire and
 Justice to Water. Above the Threshold, the Door of Time opens only once you have
 slain all four elemental lords (your character remembers every boss it has killed, across all its
-lives). At the end of the Plane of Time sits Lord Zek, whose throne opens only to a
+lives). At the end of the Plane of Time sits Lord Trepth, whose throne opens only to a
 character who has leveled **every class to level 50** (your current class counts once it reaches 50).
 The planes are built for reborn characters: with one life their monsters will kill you, with six
-the plane champions and lords are hard but fair, and Lord Zek needs every class you have ever
-learned. They drop mythic level-50 gear, and defeating Lord Zek names you Champion of Zek on your
-score sheet. Below level 50, their monsters give a great deal of experience to anyone strong
+the plane champions and lords are hard but fair, and Lord Trepth needs every class you have ever
+learned. They drop mythic level-50 gear. Below level 50, their monsters give a great deal of experience to anyone strong
 enough to survive them.
 
 That is 257 rooms, 140 monster types including 19 bosses, and 199 items. Run

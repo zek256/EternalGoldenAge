@@ -779,9 +779,8 @@ class Game:
             pet = field("Pet", "none", "grey", width=7)
         state = [field("Status", status, "bred" if self.combat else "bwhite", width=7), pet, "", ""]
 
-        title = p.name + (", Champion of Zek" if "lord_zek" in p.boss_kills else "")
         ui.out(bar_line)
-        wide(ui.c(title.center(inner), "bmagenta"))
+        wide(ui.c(p.name.center(inner), "bmagenta"))
         ui.out(split)
         for cells in zip(stats, ident, record):
             row(*cells)

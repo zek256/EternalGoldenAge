@@ -3,7 +3,7 @@
 Goal: grow the world from 55 rooms to roughly 240. Brightwater becomes the centre of the map,
 with three new cities spread out around it, and every level range gets several areas in different
 directions (up to 4) so players have variety. Above it all sit the Planes of the Gods, a 50-room
-level 51-60 endgame ending with Lord Zek. Respawn stays at Brightwater.
+level 51-60 endgame ending with Lord Trepth. Respawn stays at Brightwater.
 
 City names are settled: Hearthdeep, Silverbough and Sunspire. Region names are still placeholders.
 
@@ -99,7 +99,7 @@ With more options, it matters even more that parallel areas feel different, not 
 | Scorchsands | 36-50 | - | 18 | dunes, oasis, salt flats: sandworms, mummies, djinn, sand giants |
 | Sunspire (city) | safe | - | 12 | walled trade city around a great obelisk |
 | Tomb of the Sand Kings | 45-49 | - | 6 | underground, below the Scorchsands; **boss ~48** |
-| Planes of the Gods | 51-60 | - | 50 | eight planes in three tiers; **Lord Zek, level 60** (see phase 5) |
+| Planes of the Gods | 51-60 | - | 50 | eight planes in three tiers; **Lord Trepth, level 60** (see phase 5) |
 | **Total** | | **55** | **~240** | |
 
 Rooms per level band after the expansion (levels 1-50): about 12-20 rooms per 5 levels. That
@@ -155,9 +155,9 @@ I'd send you one region's rooms to read before writing the rest of each phase.
 
 ## Phase 5: the Planes of the Gods (levels 51-60)
 
-The realms of the gods, ruled by Lord Zek, the rightful king of all the gods. The planes are his
+The realms of the gods, ruled by Lord Trepth, the rightful king of all the gods. The planes are his
 trials: each plane's god or guardian tests mortals who climb toward his throne, and beating Lord
-Zek means earning his recognition, not overthrowing him. His servants speak of him with reverence.
+Trepth means earning his recognition, not overthrowing him. His servants speak of him with reverence.
 Anyone can enter the planes. They're built to kill anyone who isn't a many-lives character.
 
 **Getting there.** A stair behind the altar of Brightwater's Temple of the Dawn climbs to a small
@@ -176,7 +176,7 @@ gods at the centre of the world, and Brightwater stays the place every player re
 | 2 | Plane of Water | 54-57 | 6 | | ~58 |
 | 2 | Plane of Earth | 54-57 | 6 | | ~58 |
 | 2 | Plane of Air | 54-57 | 6 | | ~58 |
-| 3 | Plane of Time | 57-59 | 6 | Lord Zek's throne | **Lord Zek, 60** |
+| 3 | Plane of Time | 57-59 | 6 | Lord Trepth's throne | **Lord Trepth, 60** |
 
 Each plane has its own element and monsters, so the tiers play differently.
 
@@ -184,13 +184,13 @@ Each plane has its own element and monsters, so the tiers play differently.
 - **The door to the Plane of Time**, in the Threshold of the Gods, opens only after the character
   has killed all four elemental lords (Fire, Water, Earth and Air). Every plane gets used on the
   way to the top. The game remembers these kills per character, in the save.
-- **The door to Lord Zek's throne** opens only for a character who has lived every class to level
+- **The door to Lord Trepth's throne** opens only for a character who has lived every class to level
   50. This is a hard check on lived classes, since rebirth allows repeating classes and boss
   tuning alone can't enforce "every class".
 
 Both doors tell the player what they want when they're refused, so the goals are clear.
 
-**Lord Zek.** Tuned with a new endgame mode in the balance simulator, which builds characters with
+**Lord Trepth.** Tuned with a new endgame mode in the balance simulator, which builds characters with
 1, 6 and 11 past lives:
 - An 11-class character with the best gear and potions should win most fights, but not every one.
 - A 6-life character should almost never win, even with good gear.
@@ -200,7 +200,7 @@ Both doors tell the player what they want when they're refused, so the goals are
 **Why players would cross 50 rooms.** XP stops at level 50, so the planes have to pay in other ways:
 - Mythic gear: level 50 items stronger than anything else in the game, each plane's boss dropping
   gear in its own style. Items above level 50 could never be equipped.
-- Gold, and a trophy or title on the score sheet for killing Lord Zek.
+- Gold, and a trophy or title on the score sheet for killing Lord Trepth.
 - XP for reborn characters. A player in a later life (say level 42 with 8 past lives) is strong
   enough to fight in the first-tier planes and gets the top XP multiplier there. Those planes
   become a dangerous but fast place to re-level, which shortens the 11-life grind a little.
@@ -209,9 +209,9 @@ Both doors tell the player what they want when they're refused, so the goals are
 - A level 50 player against a level 60 monster deals 0.4x damage and takes 1.4x under the current
   level-gap rule. Past-life stat bonuses are what overcome this, and the simulator will tell us
   whether the curve needs a tweak for this zone.
-- Players who keep rebirthing past 11 lives will eventually overpower Lord Zek. That's an intended
+- Players who keep rebirthing past 11 lives will eventually overpower Lord Trepth. That's an intended
   reward for the grind.
-- About 20 new monster types, 8 plane bosses plus Lord Zek, and 15-20 mythic items.
+- About 20 new monster types, 8 plane bosses plus Lord Trepth, and 15-20 mythic items.
 
 ## Progress
 
@@ -262,17 +262,17 @@ Both doors tell the player what they want when they're refused, so the goals are
     the Bladewright, Amsa Silkwind and Nadim the Caravan-Master (shops).
   - Tomb of the Sand Kings +6 (45-48), drawn as an inset.
   - Sister Aveline's new quest The Thirsting Dead (min level 36) points players to Sunspire.
-- **Phase 5 done** (201 to 251 rooms, 25 new monsters incl. 7 plane bosses and Lord Zek L60,
+- **Phase 5 done** (201 to 251 rooms, 25 new monsters incl. 7 plane bosses and Lord Trepth L60,
   18 new items incl. 17 mythic level-50 pieces). **The expansion is complete.**
   - The Temple of the Dawn has a stair up to the Threshold of the Gods (2 safe rooms, the Herald).
   - Planes of Sky, Growth and Fear (6 rooms each, 51-55), each with a champion boss at 55:
     Caelestra, Verdis, Vhaal.
   - Planes of Fire, Water, Earth and Air (6 each, 54-58), each with a lord at 58: Rekkn,
     Nerevos, Ulmathra, Zephyrion. Reached from Fear, Growth (Earth and Water) and Sky.
-  - Plane of Time (6, 57-60): the Door of Time (needs all four lords killed) and Lord Zek's
+  - Plane of Time (6, 57-60): the Door of Time (needs all four lords killed) and Lord Trepth's
     throne (needs every class lived to 50).
   - Code: room gates, `Character.boss_kills` (saved, defaulted for old saves),
-    `mastered_classes()`, the Champion of Zek title, `balance_sim.py endgame`, gate checks in
+    `mastered_classes()`, `balance_sim.py endgame`, gate checks in
     `validate.py`, one map inset for all the planes.
 - **Addition: the Plane of Justice** (251 to 257 rooms). A fourth first-tier plane, the gods'
   prison, reached by an iron stair down from the Threshold of the Gods (levels 51-55). Chained
@@ -287,9 +287,9 @@ Both doors tell the player what they want when they're refused, so the goals are
 ## Decisions
 
 - **City names:** Hearthdeep, Silverbough and Sunspire.
-- **Lord Zek:** the rightful ruler of the gods. The planes are his trials.
+- **Lord Trepth:** the rightful ruler of the gods. The planes are his trials.
 - **Plane of Time:** needs all four elemental lords killed first.
-- **Throne door:** the every-class check gates Lord Zek only. All other planes are open to anyone
+- **Throne door:** the every-class check gates Lord Trepth only. All other planes are open to anyone
   who can survive them.
 - **Brightwater's shops:** keep gear up to about level 20; higher gear moves to the new cities.
 - **Areas per level range:** up to 4, for variety.

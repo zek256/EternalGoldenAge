@@ -462,7 +462,7 @@ M("pyraxis", "Pyraxis the Eternal Flame", 52,
   loot=[("pyraxis_fang", 0.7), ("dragonscale_mail", 0.7), ("heart_of_flame", 0.5), ("dragon_scale", 1.0)])
 
 # ------------------------------------------------------------- The Planes of the Gods (51-60)
-# Tuned for reborn characters: with one life these kill you; with six they are a hard fight; Lord Zek
+# Tuned for reborn characters: with one life these kill you; with six they are a hard fight; Lord Trepth
 # needs every class lived. Check with `python tools/balance_sim.py endgame`.
 
 # First tier (51-55): the Planes of Sky, Growth and Fear
@@ -515,7 +515,7 @@ M("iron_warden", "an iron warden", 53, "A gaoler of the gods in a full suit of b
   loot=[("planar_shard", 0.15)], gold=2.5)
 M("stalworth", "Stalworth Lightbearer", 55,
   "The warden of the Plane of Justice, a paladin in white plate who was the first mortal ever judged worthy to serve "
-  "Lord Zek. His sword is engraved with every law of the gods, and his eyes see every crime you have ever committed.",
+  "Lord Trepth. His sword is engraved with every law of the gods, and his eyes see every crime you have ever committed.",
   hp=8.0, dmg=3.4, armor=2.4, aggro=True, boss=True, xp=2.0, gold=12.0,
   specials=[big("Smite the Guilty", 0.22, 2.0, "raises his blazing sword and smites you with the full weight of the law!"),
             stun("Sentence Passed", 0.12, 1, "pronounces your sentence, and chains of light bind you where you stand!"),
@@ -589,7 +589,7 @@ M("paradox", "a paradox", 59, "A figure that is you, from a moment that has not 
   hp=4.8, dmg=3.6, armor=2.0, aggro=True, specials=[drain("Unmaking", 0.22, 1.3, "unmakes a moment of your past, and you feel yourself fade!"),
                                                     dot("Entropy", 0.15, 0.6, 3, "arcane", "touches you, and you begin to come undone!")],
   loot=[("planar_shard", 0.4)], gold=3.5)
-M("lord_zek", "Lord Zek", 60,
+M("lord_trepth", "Lord Trepth", 60,
   "The king of the gods, older than the stars, seated on a throne carved from the first moment of time. His face is every "
   "face, his eyes hold every dawn, and his sword is named Eternity.",
   hp=15.0, dmg=5.3, armor=3.0, aggro=True, boss=True, xp=2.0, gold=40.0,
@@ -598,4 +598,4 @@ M("lord_zek", "Lord Zek", 60,
             stun("Stop Time", 0.12, 1, "raises a hand, and time stops for everyone but him!"),
             drain("Tithe of Ages", 0.12, 1.3, "takes the years from you as tribute!"),
             heal("The First Dawn", 0.06, 0.08, "calls the first dawn of the world, and it heals him!")],
-  loot=[("eternity", 0.5), ("crown_of_zek", 0.5), ("hourglass_amulet", 0.5), ("planar_shard", 1.0)])
+  loot=[("eternity", 0.5), ("crown_of_trepth", 0.5), ("hourglass_amulet", 0.5), ("planar_shard", 1.0)])

@@ -5,8 +5,8 @@
   "race": "high elf",
   "cls": "wizard",
   "level": 44,
-  "xp": 7512,
-  "gold": 5099,
+  "xp": 21196,
+  "gold": 5358,
   "past_lives": [],
   "inventory": [
    "healing_potion",
@@ -47,6 +47,7 @@
    "supreme_healing_potion",
    "desert_glass",
    "orcish_helm",
+   "desert_glass",
    "desert_glass"
   ],
   "equipment": {
@@ -80,10 +81,10 @@
   },
   "effects": [],
   "cooldowns": {},
-  "kills": 443,
+  "kills": 447,
   "deaths": 27,
   "hp": 467,
-  "mana": 1293,
+  "mana": 531,
   "aliases": {
    "1": "cast frost bolt",
    "2": "cast meteor",
@@ -102,7 +103,7 @@
  },
  "room": "ss_west_gate",
  "world": {
-  "tick": 13641,
+  "tick": 13702,
   "rooms": {
    "town_square": {
     "items": [],
@@ -2819,18 +2820,13 @@
      [
       "salt_wraith",
       719
-     ],
-     [
-      "salt_wraith",
-      719
-     ],
-     [
-      "salt_wraith",
-      719
      ]
     ],
     "respawn_at": {
-     "salt_wraith": []
+     "salt_wraith": [
+      13722,
+      13725
+     ]
     }
    },
    "salt_pans": {
@@ -2839,19 +2835,15 @@
      [
       "salt_wraith",
       719
-     ],
-     [
-      "mirage_stalker",
-      911
-     ],
-     [
-      "salt_wraith",
-      719
      ]
     ],
     "respawn_at": {
-     "salt_wraith": [],
-     "mirage_stalker": []
+     "salt_wraith": [
+      13730
+     ],
+     "mirage_stalker": [
+      13730
+     ]
     }
    },
    "northern_dunes": {

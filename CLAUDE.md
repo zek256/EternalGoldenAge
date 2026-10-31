@@ -125,7 +125,7 @@ Templates only set multipliers. Real HP, damage and armor come from level in `Mo
 (`(20 + 15L)` HP etc.). To make a monster tougher, change its multipliers, not raw numbers.
 Specials: big / dot / stun / drain / heal. Bosses respawn after 120 ticks, others after 30.
 Monsters above level 50 (the Planes of the Gods) use far larger multipliers (hp 3.3-5.5, dmg
-2.6-3.6 for regulars; 7.5-11 / 3.3-3.9 for plane bosses; Lord Zek 15 / 5.3) because past-life
+2.6-3.6 for regulars; 7.5-11 / 3.3-3.9 for plane bosses; Lord Trepth 15 / 5.3) because past-life
 stat bonuses make multi-life characters enormously strong.
 
 ### Gates and boss kills
@@ -134,8 +134,8 @@ stat bonuses make multi-life characters enormously strong.
   fleeing; `goto` ignores it. `validate.py` checks gate kills are bosses.
 - `Character.boss_kills` records every boss id ever slain (set in `Game.on_kill`, kept across
   rebirths). `Character.mastered_classes()` = past lives + the current class once at level 50.
-- The Door of Time needs the four elemental lords; Lord Zek's throne needs every class mastered.
-  Killing `lord_zek` shows the "Champion of Zek" title on the score sheet.
+- The Door of Time needs the four elemental lords; Lord Trepth's throne needs every class mastered.
+  Killing him grants no title (by the user's choice).
 
 ### Inventory and items
 - Inventory is a flat list of item ids (duplicates = quantity). Equipment is `{slot: id}` over
@@ -191,5 +191,5 @@ hardest) and essentially all at +3.
 Endgame (`balance_sim.py endgame`, level-50 characters with 1/6/11 lives, best-in-slot gear):
 first-tier plane monsters beat a 1-life character about half the time and are trivial with 6
 lives; plane champions are ~90-100% with 6 lives; elemental lords ~30-65% with 6 lives and 100%
-with 11; Lord Zek ~0% with 6 lives and ~65-75% with 11 (every class 50-90%), about 60% without
-any mythic gear. The user asked for Zek to need a full every-class character with good gear.
+with 11; Lord Trepth ~0% with 6 lives and ~65-75% with 11 (every class 50-90%), about 60% without
+any mythic gear. The user asked for Trepth to need a full every-class character with good gear.

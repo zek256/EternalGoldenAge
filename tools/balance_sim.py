@@ -14,7 +14,7 @@ so results are optimistic) among the items its class is trained for, and a simpl
 ability with the best expected value. Bosses are fought with 5 healing potions.
 Targets the game was tuned to: same-level fights cost ~25-55% HP; endurance 2-6 for most
 classes; bosses mostly beatable at level +3. Endgame (monsters above level 50): plane monsters and
-plane bosses beatable with 6+ lives; Lord Zek won most of the time (not always) with 11 lives, and
+plane bosses beatable with 6+ lives; Lord Trepth won most of the time (not always) with 11 lives, and
 almost never with 6.
 """
 import argparse
