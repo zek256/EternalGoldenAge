@@ -4,9 +4,9 @@
   "name": "Zekariah",
   "race": "high elf",
   "cls": "wizard",
-  "level": 41,
-  "xp": 27733,
-  "gold": 2811,
+  "level": 44,
+  "xp": 7512,
+  "gold": 5099,
   "past_lives": [],
   "inventory": [
    "healing_potion",
@@ -42,7 +42,12 @@
    "greater_healing_potion",
    "greater_mana_potion",
    "mana_potion",
-   "sunfire_staff"
+   "sunfire_staff",
+   "desert_glass",
+   "supreme_healing_potion",
+   "desert_glass",
+   "orcish_helm",
+   "desert_glass"
   ],
   "equipment": {
    "weapon": "sunfire_staff",
@@ -75,10 +80,10 @@
   },
   "effects": [],
   "cooldowns": {},
-  "kills": 419,
+  "kills": 443,
   "deaths": 27,
-  "hp": 436,
-  "mana": 1164,
+  "hp": 467,
+  "mana": 1293,
   "aliases": {
    "1": "cast frost bolt",
    "2": "cast meteor",
@@ -95,9 +100,9 @@
   "automap": true,
   "pet": null
  },
- "room": "south_road",
+ "room": "ss_west_gate",
  "world": {
-  "tick": 12868,
+  "tick": 13591,
   "rooms": {
    "town_square": {
     "items": [],
@@ -960,11 +965,14 @@
    },
    "warlord_tent": {
     "items": [],
-    "monsters": [],
-    "respawn_at": {
-     "warlord_gorrak": [
-      12936
+    "monsters": [
+     [
+      "warlord_gorrak",
+      1471
      ]
+    ],
+    "respawn_at": {
+     "warlord_gorrak": []
     }
    },
    "rimeglass_gorge": {
@@ -1133,12 +1141,12 @@
     "items": [],
     "monsters": [
      [
-      "moonblade_revenant",
-      815
-     ],
-     [
       "living_statue",
       1320
+     ],
+     [
+      "moonblade_revenant",
+      815
      ],
      [
       "moonblade_revenant",
@@ -2811,44 +2819,55 @@
      [
       "salt_wraith",
       719
-     ],
-     [
-      "salt_wraith",
-      719
-     ],
-     [
-      "salt_wraith",
-      719
      ]
     ],
     "respawn_at": {
-     "salt_wraith": []
+     "salt_wraith": [
+      13593,
+      13599
+     ]
     }
    },
    "salt_pans": {
     "items": [],
-    "monsters": [
-     [
-      "salt_wraith",
-      719
+    "monsters": [],
+    "respawn_at": {
+     "salt_wraith": [
+      13606,
+      13615
      ],
-     [
-      "salt_wraith",
-      719
-     ],
-     [
-      "mirage_stalker",
-      911
+     "mirage_stalker": [
+      13614
      ]
-    ],
-    "respawn_at": {}
+    }
    },
    "northern_dunes": {
     "items": [],
     "monsters": [
      [
+      "wild_djinn",
+      959
+     ],
+     [
       "mirage_stalker",
       911
+     ],
+     [
+      "mirage_stalker",
+      911
+     ]
+    ],
+    "respawn_at": {
+     "wild_djinn": [],
+     "mirage_stalker": []
+    }
+   },
+   "whirling_sands": {
+    "items": [],
+    "monsters": [
+     [
+      "wild_djinn",
+      959
      ],
      [
       "mirage_stalker",
@@ -2862,24 +2881,6 @@
     "respawn_at": {
      "wild_djinn": []
     }
-   },
-   "whirling_sands": {
-    "items": [],
-    "monsters": [
-     [
-      "wild_djinn",
-      959
-     ],
-     [
-      "wild_djinn",
-      959
-     ],
-     [
-      "mirage_stalker",
-      911
-     ]
-    ],
-    "respawn_at": {}
    },
    "giants_causeway": {
     "items": [],

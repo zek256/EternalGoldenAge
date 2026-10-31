@@ -58,7 +58,7 @@ Saves are written as JSON to `saves/<name>.json`.
 | `sleep` / `rest` | fall asleep and recover 10% of max HP and mana every tick (not with hostile monsters nearby) |
 | `wake` / `stand` | get up (you also wake automatically when fully rested, or when attacked) |
 | `pet` / `pet dismiss` | inspect or release your summoned companion |
-| `stats` / `score` | full character sheet |
+| `stats` / `score` | character sheet: stats as [base/total], identity and record, condition, combat numbers, every class lived (current one highlighted), racial perk, pet and active effects |
 | `level` | XP progress and upcoming abilities |
 | `rebirth` | at level 50, be reborn as a new class |
 | `alias <word> <command>` | create a shortcut: after `alias mm cast magic missile`, typing `mm` casts it (`mm rat` targets the rat). Built-in commands and directions can't be overridden. `alias` lists yours, `unalias <word>` removes one. Aliases are saved with your character. |

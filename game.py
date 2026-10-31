@@ -3,6 +3,7 @@ import json
 import os
 import random
 import re
+import textwrap
 import time
 
 import mapview
@@ -17,6 +18,10 @@ from data.quests import QUESTS
 from data.races import RACE_ORDER, RACES
 from data.rooms import NPCS, RESPAWN_ROOM, START_ROOM
 from world import DIR_ALIASES, DIRECTIONS, World
+
+ANSI = re.compile(r"\x1b\[[0-9;]*m")  # colour codes, ignored when measuring text
+STAT_NAMES = {"STR": "Strength", "DEX": "Dexterity", "CON": "Constitution", "INT": "Intelligence",
+              "WIS": "Wisdom", "CHA": "Charisma"}
 
 SAVE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "saves")
 SAVE_VERSION = 1
@@ -706,40 +711,100 @@ class Game:
         self.look()
 
     # ================================================================ character info
+    SHEET_COLS = (27, 24, 25)  # score sheet column widths, inside the borders (80 wide in all)
+
     def cmd_stats(self, args):
         p = self.player
-        ui.rule(p.name)
-        lives = ""
-        if p.past_lives:
-            lives = "  Past lives: " + ", ".join(CLASSES[l["cls"]]["name"] for l in p.past_lives)
-        ui.out("{} {}, level {}{}".format(ui.c(p.race_name, "bcyan"), ui.c(p.class_name, "bcyan"),
-                                          ui.c(p.level, "byellow"), lives))
-        if "lord_zek" in p.boss_kills:
-            ui.out(ui.c("Champion of Zek", "bmagenta"))
-        ui.out("HP   {} {}/{}".format(ui.bar(p.hp, p.max_hp, 24, "green"), p.hp, p.max_hp))
-        ui.out("Mana {} {}/{}".format(ui.bar(p.mana, p.max_mana, 24, "blue"), p.mana, p.max_mana))
-        if p.level < MAX_LEVEL:
-            ui.out("XP   {} {}/{}".format(ui.bar(p.xp, p.xp_needed, 24, "cyan"), p.xp, p.xp_needed))
-        else:
-            ui.out("XP   " + ui.c("MAXIMUM LEVEL - you may REBIRTH", "bmagenta"))
-        ui.out("")
+        w1, w2, w3 = self.SHEET_COLS
+        inner = w1 + w2 + w3 + 2
+        border = lambda s: ui.c(s, "grey")
+        bar_line = border("+" + "-" * inner + "+")
+        split = border("+" + "+".join("-" * w for w in self.SHEET_COLS) + "+")
+
+        def cell(text, width):
+            """Pad (or cut) a cell to its width, measuring the text without colour codes."""
+            plain = ANSI.sub("", text)
+            if len(plain) > width:
+                return plain[:width]
+            return text + " " * (width - len(plain))
+
+        def row(*cells):
+            ui.out(border("|") + border("|").join(cell(t, w) for t, w in zip(cells, self.SHEET_COLS)) + border("|"))
+
+        def wide(text):
+            ui.out(border("|") + cell(text, inner) + border("|"))
+
+        def field(label, value, color="bwhite", width=0):
+            return " {}: {}".format(ui.c(label.ljust(width), "cyan"), ui.c(value, color))
+
+        def boxed(label, value, color="bwhite", width=7, size=12):
+            return " {}: [{} ]".format(ui.c(label.ljust(width), "cyan"), ui.c("{:>{}}".format(value, size), color))
+
+        # identity and record (top section)
+        stats = []
         for s in STATS:
-            base, gear, reb = p.base_stat(s), p.gear_stat(s), p.rebirth_bonus(s)
-            extra = []
-            if gear:
-                extra.append("+{} gear".format(gear))
-            if reb:
-                extra.append("incl. +{} from past lives".format(reb))
-            ui.out("  {} {:>4}   {}".format(ui.c(s, "byellow"), base + gear, ui.c(", ".join(extra), "grey")))
+            base, total = p.base_stat(s), p.stat(s)
+            stats.append(" {}: [{}/{}]".format(ui.c(STAT_NAMES[s].ljust(12), "cyan"), ui.c("{:>4}".format(base), "bwhite"),
+                                               ui.c("{:<4}".format(total), "bgreen" if total > base else "bwhite")))
+        lives = len(p.past_lives)
+        ident = [field("Race", p.race_name, width=8), field("Class", p.class_name, width=8),
+                 field("Level", p.level, width=8), field("Tot Lvl", MAX_LEVEL * lives + p.level, width=8),
+                 field("Mastered", "{} of {}".format(len(p.mastered_classes()), len(CLASSES)), width=8), ""]
+        done = sum(1 for q in p.quests.values() if q["status"] == "done")
+        record = [(" Quests done ", done, "bwhite"), (" Bosses slain", len(p.boss_kills), "bwhite"),
+                  (" Kills       ", p.kills, "bwhite"), (" Deaths      ", p.deaths, "bwhite"),
+                  (" Gold        ", p.gold, "yellow"), (" Items       ", len(p.inventory), "bwhite")]
+        record = ["{}: [{}]".format(ui.c(label, "cyan"), ui.c("{:>7}".format(v), color)) for label, v, color in record]
+
+        # condition and combat (bottom section)
+        hp_color = "red" if p.hp < p.max_hp * 0.3 else "green"
+        if p.level < MAX_LEVEL:
+            to_lvl = boxed("To lvl", "{:,}".format(p.xp_needed - p.xp))
+            share = p.xp / max(1, p.xp_needed)
+            xp = " {}: {} {}".format(ui.c("XP".ljust(7), "cyan"), ui.bar(p.xp, p.xp_needed, 10, "cyan"),
+                                     ui.c("{:.0f}%".format(share * 100), "bwhite"))
+        else:
+            to_lvl = boxed("To lvl", "rebirth", "bmagenta")
+            xp = " {}: {}".format(ui.c("XP".ljust(7), "cyan"), ui.c("maximum level", "bmagenta"))
+        cond = [boxed("HP", "{}/{}".format(p.hp, p.max_hp), hp_color),
+                boxed("Mana", "{}/{}".format(p.mana, p.max_mana), "bblue"), to_lvl, xp]
         lo, hi = p.weapon_range()
-        ui.out("")
-        ui.out("  Weapon damage {}-{}   Armor {}   Crit {:.0f}%   Dodge {:.0f}%".format(
-            int(lo * p.damage_mult), int(hi * p.damage_mult), p.armor, p.crit_chance * 100, p.dodge * 100))
-        ui.out("  Gold {}   Kills {}   Deaths {}".format(ui.c(p.gold, "yellow"), p.kills, p.deaths))
-        ui.out(ui.c("  Racial perk: " + p.rdata["perk_text"], "grey"))
-        active = [e for e in p.effects]
-        if active:
-            ui.out("  Active effects: " + ", ".join("{} ({})".format(e["name"], e["turns"]) for e in active))
+        fight = [boxed("Damage", "{}-{}".format(int(lo * p.damage_mult), int(hi * p.damage_mult)), size=9),
+                 boxed("Armor", p.armor, size=9), boxed("Crit", "{:.0f}%".format(p.crit_chance * 100), size=9),
+                 boxed("Dodge", "{:.0f}%".format(p.dodge * 100), size=9)]
+        status = "Fighting" if self.combat else "Sleeping" if self.sleeping else "Standing"
+        if p.pet:
+            pet = boxed("Pet", "{}/{}".format(p.pet.hp, p.pet.max_hp), "green", size=9)
+        else:
+            pet = field("Pet", "none", "grey", width=7)
+        state = [field("Status", status, "bred" if self.combat else "bwhite", width=7), pet, "", ""]
+
+        title = p.name + (", Champion of Zek" if "lord_zek" in p.boss_kills else "")
+        ui.out(bar_line)
+        wide(ui.c(title.center(inner), "bmagenta"))
+        ui.out(split)
+        for cells in zip(stats, ident, record):
+            row(*cells)
+        ui.out(split)
+        for cells in zip(cond, fight, state):
+            row(*cells)
+        ui.out(bar_line)
+        names = [ui.c(CLASSES[l["cls"]]["name"], "white") for l in p.past_lives]
+        names.append(ui.c(p.class_name, "byellow"))
+        footer = [("Classes", ", ".join(names)), ("Perk", ui.c(p.rdata["perk_text"], "white"))]
+        if p.pet:
+            footer.append(("Pet", ui.c(p.pet.name, "white")))
+        if p.effects:
+            footer.append(("Effects", ui.c(", ".join("{} ({})".format(e["name"], e["turns"]) for e in p.effects), "white")))
+        for label, text in footer:
+            head = " {}: ".format(ui.c(label.ljust(8), "cyan"))
+            room = inner - 12
+            if len(ANSI.sub("", text)) <= room:
+                wide(head + text)
+            else:  # long effect lists wrap inside the box
+                for i, line in enumerate(textwrap.wrap(ANSI.sub("", text), room)):
+                    wide((head if i == 0 else " " * 12) + ui.c(line, "white"))
+        ui.out(bar_line)
 
     def cmd_level(self, args):
         p = self.player
