@@ -102,7 +102,7 @@
  },
  "room": "ss_west_gate",
  "world": {
-  "tick": 13591,
+  "tick": 13641,
   "rooms": {
    "town_square": {
     "items": [],
@@ -2819,26 +2819,39 @@
      [
       "salt_wraith",
       719
+     ],
+     [
+      "salt_wraith",
+      719
+     ],
+     [
+      "salt_wraith",
+      719
      ]
     ],
     "respawn_at": {
-     "salt_wraith": [
-      13593,
-      13599
-     ]
+     "salt_wraith": []
     }
    },
    "salt_pans": {
     "items": [],
-    "monsters": [],
-    "respawn_at": {
-     "salt_wraith": [
-      13606,
-      13615
+    "monsters": [
+     [
+      "salt_wraith",
+      719
      ],
-     "mirage_stalker": [
-      13614
+     [
+      "mirage_stalker",
+      911
+     ],
+     [
+      "salt_wraith",
+      719
      ]
+    ],
+    "respawn_at": {
+     "salt_wraith": [],
+     "mirage_stalker": []
     }
    },
    "northern_dunes": {
