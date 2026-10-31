@@ -155,7 +155,9 @@ a warrior may fight in plate with an axe, trading INT for toughness.
 - **HP** = 10 + (class HP + 3) x level + CON x level x 0.2 (x racial modifier)
 - **Mana** = 15 + class mana x level + casting stat x level x 0.1 (x racial modifier)
 - **Stats** = race base + class starting bonus + class gains x (level - 1) + rebirth bonus + gear
-- **XP to next level** = 100 x level^1.5, the same in every life no matter how many rebirths
+- **XP to next level** = 65 x level^1.7, the same in every life no matter how many rebirths.
+  A monster of your level is worth 15 + 14.5 x level^1.5, so a level takes about 6 such kills
+  early on and about 10 near level 50.
 - Monsters far below your level give little XP and hit you less. Fighting above your level gives
   bonus XP and is dangerous.
 

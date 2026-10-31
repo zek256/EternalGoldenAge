@@ -109,7 +109,10 @@ data/rooms/   one module per region, each with a ROOMS dict, merged in __init__ 
 - Stats are **derived, not stored**: race base + class start + class gains x (level-1) + rebirth
   bonus + gear + buffs. Only level, XP, gear, effects etc. are persisted.
 - HP and mana formulas live in `Character.max_hp/max_mana`. XP per level is
-  `100 * level^1.5`, identical in every life (no rebirth penalty, by the user's choice).
+  `65 * level^1.7`, identical in every life (no rebirth penalty, by the user's choice).
+  Kill XP (`combat.monster_xp`) is `15 + 14.5 * level^1.5`, so same-level kills per level climb
+  from ~6 at 5-10 to ~10 at 50 (~390 per life). The user wants late levels never faster than
+  early ones, and only a bit slower. Quest XP is fixed per quest in `data/quests.py`.
 - Rebirth (level 50): the old class's full stat gains (gains x 49) are appended to `past_lives`
   and phase in as `total * level / 50`. Abilities of every lived class stay known and unlock
   at their original level. Gear above level 1 is unequipped.

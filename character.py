@@ -10,8 +10,12 @@ MAX_LEVEL = 50
 
 
 def xp_for_level(level):
-    """Experience needed to advance from `level` to `level + 1` (the same in every life)."""
-    return int(100 * level ** 1.5)
+    """Experience needed to advance from `level` to `level + 1` (the same in every life).
+
+    It grows faster than kill XP (level^1.5 in combat.monster_xp), so a level takes about
+    6 same-level kills at 5-10 and about 10 near 50.
+    """
+    return int(65 * level ** 1.7)
 
 
 class Pet:

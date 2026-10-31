@@ -4,43 +4,12 @@
   "name": "Zekariah",
   "race": "high elf",
   "cls": "wizard",
-  "level": 38,
-  "xp": 7835,
-  "gold": 3109,
+  "level": 41,
+  "xp": 27733,
+  "gold": 2811,
   "past_lives": [],
   "inventory": [
-   "minor_healing_potion",
-   "minor_healing_potion",
-   "minor_healing_potion",
-   "minor_mana_potion",
-   "minor_mana_potion",
-   "minor_healing_potion",
-   "minor_healing_potion",
-   "minor_mana_potion",
-   "minor_mana_potion",
-   "minor_healing_potion",
-   "minor_mana_potion",
-   "minor_healing_potion",
-   "minor_healing_potion",
-   "minor_healing_potion",
    "healing_potion",
-   "minor_mana_potion",
-   "minor_healing_potion",
-   "minor_healing_potion",
-   "minor_mana_potion",
-   "minor_healing_potion",
-   "minor_healing_potion",
-   "minor_mana_potion",
-   "minor_mana_potion",
-   "minor_mana_potion",
-   "minor_mana_potion",
-   "minor_mana_potion",
-   "minor_mana_potion",
-   "minor_mana_potion",
-   "minor_healing_potion",
-   "minor_healing_potion",
-   "minor_mana_potion",
-   "minor_healing_potion",
    "healing_potion",
    "mana_potion",
    "healing_potion",
@@ -68,21 +37,22 @@
    "greater_healing_potion",
    "greater_healing_potion",
    "greater_mana_potion",
-   "scorpion_stinger",
-   "scorpion_stinger",
    "healing_potion",
-   "crown_of_thorns",
-   "silverbark_shield"
+   "greater_healing_potion",
+   "greater_healing_potion",
+   "greater_mana_potion",
+   "mana_potion",
+   "sunfire_staff"
   ],
   "equipment": {
-   "weapon": "gristles_hexrod",
+   "weapon": "sunfire_staff",
    "shield": null,
-   "head": "starsilk_hood",
-   "chest": "archivist_robe",
+   "head": "silkwind_turban",
+   "chest": "desert_silk_robe",
    "hands": "moonweave_gloves",
-   "legs": "mystic_leggings",
+   "legs": "silkwind_trousers",
    "feet": "moonweave_slippers",
-   "neck": "moonstone_pendant",
+   "neck": "obelisk_amulet",
    "ring": "moonstone_ring"
   },
   "quests": {
@@ -105,27 +75,29 @@
   },
   "effects": [],
   "cooldowns": {},
-  "kills": 390,
-  "deaths": 26,
-  "hp": 374,
-  "mana": 987,
+  "kills": 419,
+  "deaths": 27,
+  "hp": 436,
+  "mana": 1164,
   "aliases": {
-   "1": "cast magic",
-   "2": "cast frost bolt",
+   "1": "cast frost bolt",
+   "2": "cast meteor",
    "3": "cast lightning lance",
-   "mana": "cast mana shield"
+   "4": "cast mana shield"
   },
   "boss_kills": [
    "bandit_chieftain",
    "bog_hag",
-   "rotheart"
+   "rotheart",
+   "yellowtooth",
+   "warlord_gorrak"
   ],
   "automap": true,
   "pet": null
  },
  "room": "south_road",
  "world": {
-  "tick": 12088,
+  "tick": 12868,
   "rooms": {
    "town_square": {
     "items": [],
@@ -988,13 +960,12 @@
    },
    "warlord_tent": {
     "items": [],
-    "monsters": [
-     [
-      "warlord_gorrak",
-      1471
+    "monsters": [],
+    "respawn_at": {
+     "warlord_gorrak": [
+      12936
      ]
-    ],
-    "respawn_at": {}
+    }
    },
    "rimeglass_gorge": {
     "items": [],
@@ -1166,15 +1137,17 @@
       815
      ],
      [
-      "moonblade_revenant",
-      815
-     ],
-     [
       "living_statue",
       1320
+     ],
+     [
+      "moonblade_revenant",
+      815
      ]
     ],
-    "respawn_at": {}
+    "respawn_at": {
+     "moonblade_revenant": []
+    }
    },
    "ruins_library": {
     "items": [],
@@ -2282,11 +2255,14 @@
    },
    "heart_of_blight": {
     "items": [],
-    "monsters": [],
-    "respawn_at": {
-     "rotheart": [
-      12124
+    "monsters": [
+     [
+      "rotheart",
+      1574
      ]
+    ],
+    "respawn_at": {
+     "rotheart": []
     }
    },
    "sb_rootgate": {
@@ -2604,7 +2580,9 @@
       1176
      ]
     ],
-    "respawn_at": {}
+    "respawn_at": {
+     "yellowtooth": []
+    }
    },
    "last_mesa": {
     "items": [],
@@ -2701,19 +2679,21 @@
     "items": [],
     "monsters": [
      [
-      "desert_raider",
-      704
-     ],
-     [
-      "desert_raider",
-      704
-     ],
-     [
       "dune_scorpion",
       951
+     ],
+     [
+      "desert_raider",
+      704
+     ],
+     [
+      "desert_raider",
+      704
      ]
     ],
-    "respawn_at": {}
+    "respawn_at": {
+     "desert_raider": []
+    }
    },
    "glass_waste": {
     "items": [],
@@ -2841,7 +2821,9 @@
       719
      ]
     ],
-    "respawn_at": {}
+    "respawn_at": {
+     "salt_wraith": []
+    }
    },
    "salt_pans": {
     "items": [],
@@ -2877,7 +2859,9 @@
       959
      ]
     ],
-    "respawn_at": {}
+    "respawn_at": {
+     "wild_djinn": []
+    }
    },
    "whirling_sands": {
     "items": [],

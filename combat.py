@@ -21,7 +21,7 @@ def level_gap_mult(attacker_level, defender_level):
 
 def monster_xp(mon, player_level):
     d = MONSTERS[mon.id]
-    base = (20 + 10 * mon.level ** 1.65) * d["xp"]
+    base = (15 + 14.5 * mon.level ** 1.5) * d["xp"]
     diff = mon.level - player_level
     if diff > 0:
         mult = min(1.5, 1 + 0.1 * diff)
