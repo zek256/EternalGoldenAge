@@ -2,6 +2,8 @@
 
 Offline single-player text MUD in pure Python 3, standard library only (no dependencies, no network).
 `README.md` is the player-facing manual; keep it in sync when gameplay or commands change.
+`class_guides/` has one guide per class (numbers from the game's formulas and `balance_sim.py`);
+update them when classes, abilities, stat formulas or class gear change.
 
 ## Running and testing
 
@@ -134,7 +136,8 @@ stat bonuses make multi-life characters enormously strong.
   fleeing; `goto` ignores it. `validate.py` checks gate kills are bosses.
 - `Character.boss_kills` records every boss id ever slain (set in `Game.on_kill`, kept across
   rebirths). `Character.mastered_classes()` = past lives + the current class once at level 50.
-- The Door of Time needs the four elemental lords; Lord Trepth's throne needs every class mastered.
+- Each elemental plane's first room needs the champion of the first-tier plane before it (Stars ->
+  Air, Dreams -> Earth, Death -> Fire, Law -> Water). The Door of Eternity needs the four elemental lords; Lord Trepth's throne needs every class mastered.
   Killing him grants no title (by the user's choice).
 
 ### Inventory and items

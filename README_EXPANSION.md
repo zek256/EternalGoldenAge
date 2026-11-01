@@ -1,6 +1,6 @@
 # The world expansion: design and testing
 
-The world of Eternal Golden Age grew from 55 rooms to 257 in five phases, plus a later addition, the Plane of Justice. This file
+The world of Eternal Golden Age grew from 55 rooms to 257 in five phases, plus a later addition, the Plane of Law. This file
 records what each
 phase added, the code that changed, how the new content was balanced, and how it was tested. The
 original plan and the decisions behind it are in `EXPANSION_PLAN.md`.
@@ -138,15 +138,15 @@ fill the old jump from level 34 straight to 41.
 
 ### What was added: 56 rooms, levels 51-60
 
-Phase 5 added 50 rooms. The Plane of Justice (6 more rooms) was added afterwards as a fourth
+Phase 5 added 50 rooms. The Plane of Law (6 more rooms) was added afterwards as a fourth
 first-tier plane.
 
 | Tier | Plane | Levels | Boss |
 |---|---|---|---|
 | - | Threshold of the Gods (2 safe rooms, with the Herald, who explains the way) | safe | - |
-| 1 | Sky, Growth, Fear, Justice | 51-55 | Caelestra the Sky-Warden, Verdis the Wildmother, Vhaal the Dreadmaker, Stalworth Lightbearer (55) |
+| 1 | Stars, Dreams, Death, Law | 51-55 | Caelestra the Star-Warden, Somnara the Dreamweaver, Morthis Keeper of the Dead, Stalworth Lightbearer (55) |
 | 2 | Fire, Water, Earth, Air | 54-58 | Rekkn, Nerevos, Ulmathra, Zephyrion (58) |
-| 3 | Time | 57-60 | **Lord Trepth (60)** |
+| 3 | Eternity | 57-60 | **Lord Trepth (60)** |
 
 - **Getting there:** a stair behind the altar of the Temple of the Dawn in Brightwater climbs up
   to the Threshold.
@@ -155,20 +155,23 @@ first-tier plane.
 
   | Direction from the Threshold | First tier | Leads on to |
   |---|---|---|
-  | North | Sky | Air |
-  | West | Growth | Earth |
-  | East | Fear | Fire |
-  | South | Justice | Water |
-  | Up | the Door of Time | the Plane of Time |
+  | North | Stars | Air |
+  | West | Dreams | Earth |
+  | East | Death | Fire |
+  | South | Law | Water |
+  | Up | the Door of Eternity | the Plane of Eternity |
 
-- **The Plane of Justice:** the gods' own prison, through the Threshold's southern gate. It is all
+- **The Plane of Law:** the gods' own prison, through the Threshold's southern gate. It is all
   white stone, black bars and chains of light: the Gaol Gate, the
   Endless Cellblock, the Oubliette, the Warden's Walk and the Chain Yard, where chained penitents
   and iron wardens keep the gods' prisoners. At its heart is the Hall of Judgement, where
   **Stalworth Lightbearer** waits: a paladin in white plate, the first mortal Lord Trepth ever judged
   worthy to serve him. He drops the Lightbearer's Oath (a longsword) and the Shield of Judgement.
   From the Chain Yard, the prison's sluice gate opens south onto the Plane of Water.
-- **The Door of Time:** a bronze door at the top of a stair of light above the Threshold. It opens
+- **The elemental planes:** each is sealed until the character has killed the champion of the
+  first-tier plane that leads to it: Caelestra for Air, Somnara for Earth, Morthis for Fire and
+  Stalworth for Water. A sealed way says which champion is still undefeated.
+- **The Door of Eternity:** a bronze door at the top of a stair of light above the Threshold. It opens
   only once the character has killed all four elemental lords. If it is still shut, it tells you
   which lords remain.
 - **Lord Trepth's throne:** it opens only for a character who has leveled every class to level 50. The
@@ -180,7 +183,7 @@ first-tier plane.
   - Characters below level 50 in later lives get large amounts of XP from plane monsters, if they
     are strong enough to survive them.
 
-Files: `data/rooms/planes.py` (rooms, including Justice), the end of `data/monsters.py` (monsters
+Files: `data/rooms/planes.py` (rooms, including Law), the end of `data/monsters.py` (monsters
 and bosses), the "Mythic gear" section of `data/items.py`, and the Herald in `data/rooms/npcs.py`.
 
 ### Code changes
@@ -202,7 +205,7 @@ Phases 1-4 were data only. Phase 5 was the first to need game code.
 - **Data check:** `tools/validate.py` now checks that gates only require bosses and that every
   gate has a refusal message.
 - **Map:** `tools/draw_map.py` draws the Threshold and the eight first- and second-tier planes
-  together in one box on the right of the map, and the Plane of Time in a box of its own, since it
+  together in one box on the right of the map, and the Plane of Eternity in a box of its own, since it
   lies above the Threshold.
 
 ## Balance
@@ -251,9 +254,9 @@ fights use 5 potions.
   | Lord Trepth | 15 | 5.3 |
 
   This is also recorded in `CLAUDE.md`.
-- **The Plane of Justice** was tested the same way when it was added. Its chained penitents and
+- **The Plane of Law** was tested the same way when it was added. Its chained penitents and
   iron wardens beat a 1-life character 25-41% of the time, like the other first-tier monsters, and
-  Stalworth is about as hard as Caelestra and Vhaal.
+  Stalworth is about as hard as Caelestra and Morthis.
 - **Tuning changes during testing:**
   - Lord Trepth was too hard at first (41% with 11 lives). His HP went from 18 to 15 and his damage
     from 5.6 to 5.3.
@@ -282,13 +285,13 @@ was never touched.
 
 | Check | Result |
 |---|---|
-| Door of Time | Refuses entry and lists the missing lords; opens once all four are killed |
+| Door of Eternity | Refuses entry and lists the missing lords; opens once all four are killed |
 | Lord Trepth's throne | Refuses entry and lists the missing classes, including the current class below level 50; opens when every class is mastered |
 | Kill record | Bosses are recorded on kill; ordinary monsters are not |
 | Saves | The kill record survives a save round trip; old saves without it load with an empty list |
 | Rooms | All 56 plane rooms are reachable by walking from the temple with the game's own movement, checked again after the planes were reorganized around the Threshold |
 | Stalworth | His kill is recorded like the other plane bosses |
-| Live game | A scripted run through the real game loop (temple, stair, Threshold, the Herald, the Door of Time) worked |
+| Live game | A scripted run through the real game loop (temple, stair, Threshold, the Herald, the Door of Eternity) worked |
 
 ### Re-running the checks
 

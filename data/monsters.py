@@ -465,47 +465,49 @@ M("pyraxis", "Pyraxis the Eternal Flame", 52,
 # Tuned for reborn characters: with one life these kill you; with six they are a hard fight; Lord Trepth
 # needs every class lived. Check with `python tools/balance_sim.py endgame`.
 
-# First tier (51-55): the Planes of Sky, Growth and Fear
-M("storm_eagle", "a storm eagle", 51, "An eagle with a wingspan wider than a ship, lightning crackling along its pinions.",
-  hp=3.8, dmg=2.9, armor=2.0, specials=[big("Lightning Dive", 0.2, 1.8, "folds its wings and strikes like a thunderbolt!")],
+# First tier (51-55): the Planes of Stars, Dreams, Death and Law
+M("star_eagle", "a star eagle", 51, "An eagle with a wingspan wider than a ship, its feathers dark as the night sky and pricked with stars.",
+  hp=3.8, dmg=2.9, armor=2.0, specials=[big("Falling Star", 0.2, 1.8, "folds its wings and strikes like a falling star!")],
   loot=[("planar_shard", 0.1)], gold=2.0)
-M("cloud_sentinel", "a cloud sentinel", 53, "A towering knight of white marble and silver, set to guard the halls of the sky for all time.",
-  hp=3.8, dmg=2.6, armor=2.5, aggro=True, specials=[stun("Thunderclap", 0.12, 1, "claps its gauntlets, and thunder knocks you senseless!")],
+M("celestial_sentinel", "a celestial sentinel", 53, "A towering knight of silver and white starlight, set to guard the roads between the stars for all time.",
+  hp=3.8, dmg=2.6, armor=2.5, aggro=True, specials=[stun("Starburst", 0.12, 1, "raises its gauntlets, and a burst of starlight leaves you senseless!")],
   loot=[("planar_shard", 0.15)], gold=2.5)
-M("wild_hunt_hound", "a hound of the wild hunt", 52, "A white hound with red ears, as big as a horse, that has hunted since the first forest grew.",
-  hp=3.6, dmg=2.9, armor=2.0, specials=[dot("Savage Bite", 0.2, 0.5, 3, "bleed", "runs you down and tears at you!")],
+M("dreamstalker", "a dreamstalker", 52, "A long, pale hunter that slips from one dream to the next, wearing the shape of something you were afraid of as a child.",
+  hp=3.6, dmg=2.9, armor=2.0, specials=[dot("Waking Nightmare", 0.2, 0.5, 3, "bleed", "steps out of nowhere and its claws find you!")],
   loot=[("planar_shard", 0.1)], gold=2.0)
-M("ancient_treant", "an ancient treant", 54, "A walking oak older than the mountains, its bark carved with the names of forgotten gods.",
-  hp=4.2, dmg=2.6, armor=2.5, specials=[heal("Deep Roots", 0.12, 0.12, "sinks its roots into the living ground and heals!"),
-                                        big("Crushing Limbs", 0.2, 1.9, "brings its limbs down on you like falling trees!")],
+M("sleepwalker", "a sleepwalking giant", 54, "A giant as tall as a tower who walks with its eyes shut, lost in a dream older than the mountains.",
+  hp=4.2, dmg=2.6, armor=2.5, specials=[heal("Deeper Sleep", 0.12, 0.12, "sinks into a deeper sleep, and its wounds fade like a dream!"),
+                                        big("Dreaming Blow", 0.2, 1.9, "swings at something only it can see, and hits you!")],
   loot=[("planar_shard", 0.15)], gold=2.0, xp=1.3)
-M("nightmare_steed", "a nightmare", 52, "A black horse with a mane of cold fire, whose hoofbeats sound like screams.",
-  hp=3.6, dmg=2.9, armor=2.0, aggro=True, specials=[stun("Terror", 0.14, 1, "rears and screams, and terror roots you to the spot!")],
+M("pale_horse", "a pale horse", 52, "A horse the colour of bone, with no rider and no shadow, that carries the dead to where they are going.",
+  hp=3.6, dmg=2.9, armor=2.0, aggro=True, specials=[stun("Chill of the Grave", 0.14, 1, "breathes on you, and the cold of the grave holds you still!")],
   loot=[("planar_shard", 0.1)], gold=2.0)
-M("dread_wraith", "a dread wraith", 54, "A tall figure of shadow wearing the face of whatever you fear most.",
-  hp=3.6, dmg=2.8, armor=1.5, aggro=True, specials=[drain("Feed on Fear", 0.22, 1.2, "drinks your fear, and your strength with it!")],
+M("reaper", "a reaper", 54, "A hooded figure of bone and grey smoke with a scythe of black iron, who gathers the souls of the dead.",
+  hp=3.6, dmg=2.8, armor=1.5, aggro=True, specials=[drain("Harvest", 0.22, 1.2, "draws its scythe through you, and reaps a little of your life!")],
   loot=[("planar_shard", 0.15)], gold=2.5)
-M("caelestra", "Caelestra, the Sky-Warden", 55,
-  "The guardian of the Plane of Sky, a woman of storm and silver with wings of cloud, and a bow of lightning in her hand.",
+M("caelestra", "Caelestra, the Star-Warden", 55,
+  "The guardian of the Plane of Stars, a woman of silver and night with wings of starlight, and a bow strung with a thread of light in her hand.",
   hp=8.0, dmg=3.5, armor=2.0, aggro=True, boss=True, xp=2.0, gold=12.0,
-  specials=[big("Thunderbolt", 0.22, 2.0, "draws her bow, and a bolt of lightning strikes you!"),
-            stun("Gale", 0.12, 1, "beats her wings, and a gale hurls you to the floor!"),
-            heal("Rain of Heaven", 0.08, 0.1, "lifts her face to the rain, and her wounds wash away!")],
-  loot=[("stormcaller_bow", 0.4), ("cloudsilk_robes", 0.4), ("planar_shard", 1.0)])
-M("verdis", "Verdis, the Wildmother", 55,
-  "The guardian of the Plane of Growth, a vast green woman crowned with antlers, her hair a forest and her voice the wind in the leaves.",
+  specials=[big("Shooting Star", 0.22, 2.0, "draws her bow, and a shooting star strikes you!"),
+            stun("Eclipse", 0.12, 1, "folds her wings over the stars, and you stagger blind in the dark!"),
+            heal("Starlight", 0.08, 0.1, "bathes in starlight, and her wounds close!")],
+  loot=[("stormcaller_bow", 0.4), ("starweave_robes", 0.4), ("planar_shard", 1.0)])
+M("somnara", "Somnara, the Dreamweaver", 55,
+  "The guardian of the Plane of Dreams, a tall woman of moonlight and grey silk crowned with sleeping moths, who weaves "
+  "the dreams of every living thing on a loom of silver.",
   hp=8.5, dmg=3.3, armor=2.0, aggro=True, boss=True, xp=2.0, gold=12.0,
-  specials=[dot("Strangling Vines", 0.2, 0.6, 4, "nature", "calls up thorned vines that coil around you!"),
-            stun("Roots of the World", 0.12, 1, "roots burst from the ground and pin you!"),
-            heal("Bloom", 0.1, 0.12, "blossoms, and her wounds close over with green!")],
-  loot=[("wildmother_staff", 0.4), ("living_bark_greaves", 0.4), ("planar_shard", 1.0)])
-M("vhaal", "Vhaal the Dreadmaker", 55,
-  "The guardian of the Plane of Fear, a shape of shadow with a hundred faces, every one of them someone you have lost.",
+  specials=[dot("Smothering Dream", 0.2, 0.6, 4, "arcane", "wraps you in a dream that will not let you breathe!"),
+            stun("Endless Sleep", 0.12, 1, "sings a single note, and you fall asleep where you stand!"),
+            heal("Lucid Mending", 0.1, 0.12, "dreams herself whole again!")],
+  loot=[("dreamweaver_staff", 0.4), ("dreamsilver_greaves", 0.4), ("planar_shard", 1.0)])
+M("morthis", "Morthis, Keeper of the Dead", 55,
+  "The guardian of the Plane of Death, a gaunt giant in a robe of grey ash with a lantern of cold blue fire, who has "
+  "counted every soul that ever died and has a place ready for yours.",
   hp=7.5, dmg=3.6, armor=1.8, aggro=True, boss=True, xp=2.0, gold=12.0,
-  specials=[drain("Despair", 0.2, 1.4, "whispers your worst memory, and despair drains your life!"),
-            stun("Paralysing Terror", 0.14, 1, "shows you your death, and you cannot move!"),
-            big("Nightmare Claw", 0.18, 2.0, "rakes you with claws of solid dark!")],
-  loot=[("dreadblade", 0.4), ("mask_of_dread", 0.4), ("planar_shard", 1.0)])
+  specials=[drain("Toll of the Dead", 0.2, 1.4, "names the hour of your death, and your life drains toward it!"),
+            stun("Grave Cold", 0.14, 1, "lifts his lantern, and the cold of the grave stops your heart for a moment!"),
+            big("Last Rites", 0.18, 2.0, "brings down his staff of bone like a closing coffin lid!")],
+  loot=[("gravesong", 0.4), ("death_mask", 0.4), ("planar_shard", 1.0)])
 
 M("chained_penitent", "a chained penitent", 52, "A giant prisoner bound in chains of light, serving a sentence a thousand years long, who swings those chains at anyone who comes near.",
   hp=3.6, dmg=2.9, armor=2.0, specials=[big("Flail of Chains", 0.2, 1.8, "whirls its chains and brings them crashing down on you!")],
@@ -514,7 +516,7 @@ M("iron_warden", "an iron warden", 53, "A gaoler of the gods in a full suit of b
   hp=3.8, dmg=2.7, armor=2.6, aggro=True, specials=[stun("Shackle", 0.14, 1, "snaps a shackle of light around your wrists!")],
   loot=[("planar_shard", 0.15)], gold=2.5)
 M("stalworth", "Stalworth Lightbearer", 55,
-  "The warden of the Plane of Justice, a paladin in white plate who was the first mortal ever judged worthy to serve "
+  "The warden of the Plane of Law, a paladin in white plate who was the first mortal ever judged worthy to serve "
   "Lord Trepth. His sword is engraved with every law of the gods, and his eyes see every crime you have ever committed.",
   hp=8.0, dmg=3.4, armor=2.4, aggro=True, boss=True, xp=2.0, gold=12.0,
   specials=[big("Smite the Guilty", 0.22, 2.0, "raises his blazing sword and smites you with the full weight of the law!"),
@@ -578,7 +580,7 @@ M("lord_air", "Zephyrion, Lord of the Winds", 58,
             stun("Breathless", 0.12, 1, "steals the air from your lungs!")],
   loot=[("windwalker_boots", 0.4), ("band_of_four_winds", 0.4), ("planar_shard", 1.0)])
 
-# Third tier (57-60): the Plane of Time
+# Third tier (57-60): the Plane of Eternity
 M("chronal_sentinel", "a chronal sentinel", 57, "A knight of brass and crystal whose every movement leaves a trail of afterimages.",
   hp=5.0, dmg=3.4, armor=2.5, aggro=True, specials=[stun("Time Lock", 0.15, 1, "touches you, and time stops for you alone!")],
   loot=[("planar_shard", 0.3)], gold=3.5)

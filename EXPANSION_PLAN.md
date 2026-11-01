@@ -168,20 +168,20 @@ gods at the centre of the world, and Brightwater stays the place every player re
 
 | Tier | Plane | Levels | Rooms | Leads on to | Boss |
 |---|---|---|---|---|---|
-| | Threshold of the Gods (hub) | safe | 2 | the three first-tier planes, and the sealed door to Time | |
-| 1 | Plane of Sky | 51-54 | 6 | Plane of Air | ~55 |
-| 1 | Plane of Growth | 51-54 | 6 | Planes of Earth and Water | ~55 |
-| 1 | Plane of Fear | 51-54 | 6 | Plane of Fire | ~55 |
+| | Threshold of the Gods (hub) | safe | 2 | the three first-tier planes, and the sealed door to Eternity | |
+| 1 | Plane of Stars | 51-54 | 6 | Plane of Air | ~55 |
+| 1 | Plane of Dreams | 51-54 | 6 | Planes of Earth and Water | ~55 |
+| 1 | Plane of Death | 51-54 | 6 | Plane of Fire | ~55 |
 | 2 | Plane of Fire | 54-57 | 6 | | ~58 |
 | 2 | Plane of Water | 54-57 | 6 | | ~58 |
 | 2 | Plane of Earth | 54-57 | 6 | | ~58 |
 | 2 | Plane of Air | 54-57 | 6 | | ~58 |
-| 3 | Plane of Time | 57-59 | 6 | Lord Trepth's throne | **Lord Trepth, 60** |
+| 3 | Plane of Eternity | 57-59 | 6 | Lord Trepth's throne | **Lord Trepth, 60** |
 
 Each plane has its own element and monsters, so the tiers play differently.
 
 **Two gates:**
-- **The door to the Plane of Time**, in the Threshold of the Gods, opens only after the character
+- **The door to the Plane of Eternity**, in the Threshold of the Gods, opens only after the character
   has killed all four elemental lords (Fire, Water, Earth and Air). Every plane gets used on the
   way to the top. The game remembers these kills per character, in the save.
 - **The door to Lord Trepth's throne** opens only for a character who has lived every class to level
@@ -265,30 +265,36 @@ Both doors tell the player what they want when they're refused, so the goals are
 - **Phase 5 done** (201 to 251 rooms, 25 new monsters incl. 7 plane bosses and Lord Trepth L60,
   18 new items incl. 17 mythic level-50 pieces). **The expansion is complete.**
   - The Temple of the Dawn has a stair up to the Threshold of the Gods (2 safe rooms, the Herald).
-  - Planes of Sky, Growth and Fear (6 rooms each, 51-55), each with a champion boss at 55:
-    Caelestra, Verdis, Vhaal.
+  - Planes of Stars, Dreams and Death (6 rooms each, 51-55), each with a champion boss at 55:
+    Caelestra, Somnara, Morthis.
   - Planes of Fire, Water, Earth and Air (6 each, 54-58), each with a lord at 58: Rekkn,
-    Nerevos, Ulmathra, Zephyrion. Reached from Fear, Growth (Earth and Water) and Sky.
-  - Plane of Time (6, 57-60): the Door of Time (needs all four lords killed) and Lord Trepth's
+    Nerevos, Ulmathra, Zephyrion. Reached from Death, Dreams (Earth and Water) and Stars.
+  - Plane of Eternity (6, 57-60): the Door of Eternity (needs all four lords killed) and Lord Trepth's
     throne (needs every class lived to 50).
   - Code: room gates, `Character.boss_kills` (saved, defaulted for old saves),
     `mastered_classes()`, `balance_sim.py endgame`, gate checks in
     `validate.py`, one map inset for all the planes.
-- **Addition: the Plane of Justice** (251 to 257 rooms). A fourth first-tier plane, the gods'
+- **Addition: the Plane of Law** (251 to 257 rooms). A fourth first-tier plane, the gods'
   prison, reached by an iron stair down from the Threshold of the Gods (levels 51-55). Chained
   penitents and iron wardens; boss Stalworth Lightbearer (paladin, L55), who drops the
   Lightbearer's Oath and the Shield of Judgement.
 - **Reorganized the planes around the Threshold** for symmetry, now that there are four first-tier
-  and four second-tier planes: Sky (north) to Air, Growth (west) to Earth, Fear (east) to Fire,
-  Justice (south) to Water, and the Plane of Time up through the Door of Time. The Stair of Dawn now
-  sits below the Threshold, between it and the temple. Growth no longer leads to Water. On the map,
-  the Plane of Time is its own inset and Justice joins the main planes box.
+  and four second-tier planes: Stars (north) to Air, Dreams (west) to Earth, Death (east) to Fire,
+  Law (south) to Water, and the Plane of Eternity up through the Door of Eternity. The Stair of Dawn now
+  sits below the Threshold, between it and the temple. Dreams no longer leads to Water. On the map,
+  the Plane of Eternity is its own inset and Law joins the main planes box.
 
 ## Decisions
 
 - **City names:** Hearthdeep, Silverbough and Sunspire.
 - **Lord Trepth:** the rightful ruler of the gods. The planes are his trials.
-- **Plane of Time:** needs all four elemental lords killed first.
+- **Plane names (renamed 2026-10-31):** Sky, Growth, Fear, Justice and Time became Stars, Dreams,
+  Death, Law and Eternity, so the set no longer mirrors EverQuest's Planes of Power. Dreams and
+  Death were re-themed with new monsters and champions (Somnara the Dreamweaver, Morthis, Keeper
+  of the Dead); the four-lord gate on the Door of Eternity was kept.
+- **Plane of Eternity:** needs all four elemental lords killed first.
+- **Elemental planes (added 2026-10-31):** each needs the champion of the first-tier plane before it
+  killed first (Caelestra for Air, Somnara for Earth, Morthis for Fire, Stalworth for Water).
 - **Throne door:** the every-class check gates Lord Trepth only. All other planes are open to anyone
   who can survive them.
 - **Brightwater's shops:** keep gear up to about level 20; higher gear moves to the new cities.

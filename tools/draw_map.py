@@ -30,11 +30,11 @@ COLORS = {  # area: (fill, border)
     "Dustway": ("#3f3a33", "#c8b89a"), "Redrock Badlands": ("#4a2a22", "#e07a5a"),
     "Scorchsands": ("#463c22", "#f2c45a"), "Sunspire": ("#40372a", "#ffe08a"),
     "Tomb of the Sand Kings": ("#2a2630", "#c9a0e0"),
-    "Threshold of the Gods": ("#3a3a40", "#fff4c8"), "Plane of Sky": ("#2a3a4a", "#a8d8ff"),
-    "Plane of Growth": ("#1e3a1e", "#8cf08c"), "Plane of Fear": ("#2a1e2e", "#c080d0"),
+    "Threshold of the Gods": ("#3a3a40", "#fff4c8"), "Plane of Stars": ("#22284a", "#b8c8ff"),
+    "Plane of Dreams": ("#2e2a44", "#d8c0ff"), "Plane of Death": ("#2a2a2a", "#b0c0c8"),
     "Plane of Fire": ("#4a1e14", "#ff8050"), "Plane of Water": ("#14304a", "#60b0ff"),
     "Plane of Earth": ("#3a3020", "#c8a060"), "Plane of Air": ("#30384a", "#e0f0ff"),
-    "Plane of Time": ("#3a3424", "#ffd870"), "Plane of Justice": ("#2e2e34", "#f4f4ff"),
+    "Plane of Eternity": ("#3a3424", "#ffd870"), "Plane of Law": ("#2e2e34", "#f4f4ff"),
 }
 BOSS_RED = "#ff5a4a"
 CW, CH = 170, 92           # grid cell size

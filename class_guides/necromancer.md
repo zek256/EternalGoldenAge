@@ -1,0 +1,101 @@
+# Necromancer
+
+> *Forbidden scholars of death who raise the fallen to fight at their side.*
+
+The Necromancer is an INT caster in cloth who never fights alone. From level 4 a skeleton fights
+beside it and takes hits for it, its main attack heals it, its disease ignores armor, and at 38 it can
+raise a bone colossus with more HP than many players. It is the strongest solo class in the game, by
+design: a good class to learn on despite its cloth armor.
+
+## At a glance
+
+| | |
+|---|---|
+| HP per level | 5 |
+| Mana per level | 6 |
+| Attack stat | STR |
+| Spell stat | INT |
+| Starting bonus | INT +4, CON +1 |
+| Gains per level | INT +3, CON +1, WIS +1 |
+| Armor | Cloth only |
+| Shield | No |
+| Weapons | Staff, wand, dagger |
+| Starting gear | Oak staff (1-4), linen robe, apprentice's hood, 3 minor healing potions |
+
+## Growth
+
+Average race, starting gear only (see the [README](README.md#about-the-numbers)).
+
+| Level | HP | Mana | INT | CON | WIS | Weapon damage |
+|---|---|---|---|---|---|---|
+| 1 | 20 | 22 | 17 | 11 | 13 | 5-8 |
+| 10 | 130 | 119 | 44 | 20 | 22 | 9-12 |
+| 25 | 385 | 387 | 89 | 35 | 37 | 17-20 |
+| 50 | 1010 | 1135 | 164 | 60 | 62 | 29-32 |
+
+## Spells
+
+All Necromancer magic is spells, cast with `cast <name>`. Cost is shown at the level you learn it and
+at level 50.
+
+| Level | Spell | Cost | Cooldown | Target | Effect |
+|---|---|---|---|---|---|
+| 1 | **Lifetap** | 5 / 30 | - | one foe | Drain 6 + 1.4/level + 0.4 INT (~14 at L1, ~76 at L25, ~141 at L50); heals you for 35% of what it deals |
+| 4 | **Raise Skeleton** | 23 / 106 | 10 | self | Summon a skeleton (~57 HP, 7-12 damage at L4; ~214 HP, 28-44 at L25; ~402 HP, 54-83 at L50) |
+| 10 | **Plague** | 23 / 71 | - | one foe | Disease damage 5 + 1.1/level + 0.25 INT per round for 5 rounds (~27 at L10, ~101 at L50) |
+| 18 | **Bone Spear** | 59 / 130 | - | one foe | Shadow damage 18 + 2.8/level + 0.8 INT (~122 at L18, ~289 at L50) |
+| 28 | **Siphon Soul** | 126 / 201 | 3 | one foe | Drain 25 + 3/level + 0.9 INT (~197 at L28, ~322 at L50); heals you for 60% of what it deals |
+| 38 | **Raise Bone Colossus** | 258 / 324 | 15 | self | Summon a bone colossus (~656 HP, 75-114 damage at L38; ~842 HP, 97-147 at L50). It replaces your skeleton |
+| 46 | **Wail of the Damned** | 330 / 354 | 5 | all foes | Shadow damage 40 + 3.2/level + 1.0 INT to every foe (~339 at L46, ~364 at L50); every foe deals 30% less damage for 4 rounds |
+
+## How to play
+
+**Levels 1-9.** Lifetap is your attack and your heal at once. From 4, raise a skeleton before every
+outing: it attacks every round and takes about a quarter of the enemies' normal attacks. Its stats are
+fixed when it is raised, so raise a new one every few levels, and right away when it dies.
+
+**Levels 10-27.** Put Plague on anything that will live more than a couple of rounds (it ignores
+armor), then Lifetap. Bone Spear at 18 is your hardest single hit: use it to finish things quickly. A
+normal fight: skeleton up, Plague, Bone Spear, Lifetap as needed for health.
+
+**Levels 28-50.** Siphon Soul is a big drain every three rounds that heals for 60% of what it deals;
+it is both your damage and your healing. At 38, raise the Bone Colossus instead of the skeleton: it
+has three times the HP and hits much harder. Wail of the Damned at 46 is your area attack and also
+weakens every foe. Against a boss: Colossus, Plague, Siphon Soul on cooldown, Bone Spear in between.
+
+**Tips**
+- With a pet out, fewer attacks reach you. Keep it alive and you can fight things a cloth wearer
+  shouldn't.
+- Drains, Plague and Bone Spear all ignore armor; your pet's attacks don't.
+- You have no direct heal. Lifetap and Siphon Soul are it, so keep hitting things when you are hurt.
+
+## Gear
+
+Wear **cloth** and a staff or wand. INT first, then CON. An off-hand item (the sunlit codex) fills
+your empty shield slot.
+
+Notable late gear: the same as the Wizard: **the Dreamweaver's Staff**, the dragonbone staff, the
+Scepter of the Sand Kings, Seluvar's Hollow Wand, **starweave robes**, the silkwind cloth set, the
+Ring of the Archmage, the Pearl of the Deep, the sunlit codex, and the mythic Fang of Pyraxis and
+Eternity.
+
+## Best races
+
+- **Undead**: immune to poison and disease damage over time, and the obvious fit.
+- **Gnome**: the best INT, +6% mana and +3% dodge.
+- **High elf**: +12% mana.
+- **Dark elf**: +5% crit on your spells.
+
+## How it performs
+
+The Necromancer is the strongest solo class. It wins every same-level fight in the simulator in about
+3 rounds with 75-93% HP left, and it has the best staying power at low levels (about 6 fights in a row
+at level 10, 6 at level 30). It beat every world boss at the boss's own level except Rotheart and
+Gorrak (95% each), and all of them at boss level +3.
+
+## Rebirth
+
+A Necromancer life leaves you **+147 INT, +49 CON and +49 WIS**, and only **cloth** training with
+staff, wand and dagger weapons. Raise Skeleton and Raise Bone Colossus give any later class a pet,
+though they scale with INT, so they are best in an INT class. Siphon Soul is an excellent self-heal for
+a later Dread Knight or Wizard.

@@ -263,19 +263,19 @@ armor("burial_mask", "the Burial Mask of Ussreth", "head", 48, 26, 4800,
 # ------------------------------------------------------------------ Mythic gear from the Planes of the Gods (level 50)
 # Dropped only by the plane bosses and Lord Trepth. Stronger than anything else in the world.
 weapon("stormcaller_bow", "Stormcaller", 50, (46, 74), 12000,
-       "A bow strung with a thread of lightning, taken from the Sky-Warden's own hand.", DEX=16, WIS=6, CON=6, kind="bow")
-armor("cloudsilk_robes", "cloudsilk robes", "chest", 50, 30, 11000, "Robes woven from the clouds of the high heavens, weightless and cool.", INT=14, WIS=14, CHA=6, kind="cloth")
-weapon("wildmother_staff", "the Wildmother's Staff", 50, (30, 50), 12000,
-       "A staff of living wood that still puts out leaves in spring.", INT=20, WIS=20, CHA=8, kind="staff")
-armor("living_bark_greaves", "living bark greaves", "legs", 50, 36, 11000, "Greaves of bark that grows back over every scratch.", CON=10, STR=6, kind="plate")
-weapon("dreadblade", "the Dreadblade", 50, (48, 78), 12500,
-       "A black sword that whispers your worst fears to whoever it is pointed at.", STR=14, DEX=10, kind="sword")
-armor("mask_of_dread", "the Mask of Dread", "head", 50, 28, 11000, "A faceless mask of black iron. Your enemies see in it whatever they fear most.", STR=6, DEX=6, CON=6, kind="leather")
+       "A bow strung with a thread of starlight, taken from the Star-Warden's own hand.", DEX=16, WIS=6, CON=6, kind="bow")
+armor("starweave_robes", "starweave robes", "chest", 50, 30, 11000, "Robes woven from the night between the stars, weightless and cool, glittering faintly as you move.", INT=14, WIS=14, CHA=6, kind="cloth")
+weapon("dreamweaver_staff", "the Dreamweaver's Staff", 50, (30, 50), 12000,
+       "A staff of pale moonwood wound with silver thread. Whoever holds it never quite stops dreaming.", INT=20, WIS=20, CHA=8, kind="staff")
+armor("dreamsilver_greaves", "dreamsilver greaves", "legs", 50, 36, 11000, "Greaves of silver that seem to drift; blows slide off them like a dream on waking.", CON=10, STR=6, kind="plate")
+weapon("gravesong", "Gravesong", 50, (48, 78), 12500,
+       "A black sword that hums a dirge for whoever it is pointed at.", STR=14, DEX=10, kind="sword")
+armor("death_mask", "the Death Mask", "head", 50, 28, 11000, "A mask of pale gold cast from the face of a dead god. Your enemies see in it the hour of their death.", STR=6, DEX=6, CON=6, kind="leather")
 weapon("lightbearers_oath", "the Lightbearer's Oath", 50, (48, 76), 12500,
        "Stalworth's longsword, its blade engraved with every law of the gods. It shines brightest on the guilty.",
        STR=12, WIS=10, CON=6, kind="sword")
 armor("shield_of_judgement", "the Shield of Judgement", "shield", 50, 38, 12000,
-      "A tower shield of white steel bearing the scales of justice. Blows that strike it feel judged.", CON=10, WIS=6, kind="shield")
+      "A tower shield of white steel bearing the scales of the law. Blows that strike it feel judged.", CON=10, WIS=6, kind="shield")
 weapon("flameheart_hammer", "Flameheart", 50, (50, 80), 13000,
        "A hammer forged in the heart of the Plane of Fire, its head a captive star.", STR=16, CON=8, kind="blunt")
 armor("gauntlets_of_the_pyre", "gauntlets of the pyre", "hands", 50, 22, 11000, "Gauntlets of red-gold that burn without heat.", STR=8, DEX=6, CON=4, kind="plate")

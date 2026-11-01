@@ -122,6 +122,9 @@ gains, and 6-7 spells/abilities unlocked between levels 1 and 48:
 - Dread Knight: Shadow Strike, Disease Cloud, Dread Aura, Dread Touch, Vampiric Embrace, Death Coil, Unholy Frenzy
 - Bard: Discordant Note, Ballad of Mending, Lullaby, War March, Dirge of Despair, Crescendo, Legend's Anthem
 
+Each class has a full guide in [`class_guides/`](class_guides/README.md): stats by level, every spell
+and ability with its numbers, gear, races, how to play it and what it leaves behind on rebirth.
+
 Spells cost mana, and the cost scales with level. Abilities are free but have cooldowns. Both are
 learned automatically on level up.
 
@@ -195,12 +198,13 @@ gear for levels 38-44.
 
 **The Planes of the Gods (51-60).** A stair behind the altar of the Temple of the Dawn climbs to
 the Threshold of the Gods, where a herald explains the way. Four first-tier planes open around it,
-each guarded by a god's champion: Sky to the north, Growth to the west, Fear to the east, and to
-the south Justice, the gods' prison, kept by the paladin Stalworth Lightbearer. Each leads on to
-an elemental plane ruled by an elemental lord: Sky to Air, Growth to Earth, Fear to Fire and
-Justice to Water. Above the Threshold, the Door of Time opens only once you have
+each guarded by a god's champion: Stars to the north, Dreams to the west, Death to the east, and to
+the south Law, the gods' prison, kept by the paladin Stalworth Lightbearer. Each leads on to
+an elemental plane ruled by an elemental lord: Stars to Air, Dreams to Earth, Death to Fire and
+Law to Water, and each elemental plane stays sealed until you have slain the champion of the plane
+before it. Above the Threshold, the Door of Eternity opens only once you have
 slain all four elemental lords (your character remembers every boss it has killed, across all its
-lives). At the end of the Plane of Time sits Lord Trepth, whose throne opens only to a
+lives). At the end of the Plane of Eternity sits Lord Trepth, whose throne opens only to a
 character who has leveled **every class to level 50** (your current class counts once it reaches 50).
 The planes are built for reborn characters: with one life their monsters will kill you, with six
 the plane champions and lords are hard but fair, and Lord Trepth needs every class you have ever

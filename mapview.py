@@ -16,10 +16,10 @@ INSETS = [  # (label, areas drawn together, the room that leads in from the surf
     ("Crypt of Varnoth", {"Crypt of Varnoth"}, "crypt_entry"),
     ("Deepdelve Mine", {"Deepdelve Mine"}, "deepdelve_foot"),
     ("Tomb of the Sand Kings", {"Tomb of the Sand Kings"}, "tomb_antechamber"),
-    ("Planes of the Gods", {"Threshold of the Gods", "Plane of Sky", "Plane of Growth", "Plane of Fear",
-                            "Plane of Justice", "Plane of Fire", "Plane of Water", "Plane of Earth",
+    ("Planes of the Gods", {"Threshold of the Gods", "Plane of Stars", "Plane of Dreams", "Plane of Death",
+                            "Plane of Law", "Plane of Fire", "Plane of Water", "Plane of Earth",
                             "Plane of Air"}, "threshold_stair"),
-    ("Plane of Time", {"Plane of Time"}, "time_gate"),  # above the Threshold, so drawn on its own
+    ("Plane of Eternity", {"Plane of Eternity"}, "eternity_door"),  # above the Threshold, so drawn on its own
 ]
 
 LEGEND = [("#", "you", "bmagenta"), ("$", "shop", "yellow"), ("!", "quest", "byellow"),

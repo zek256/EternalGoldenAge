@@ -288,7 +288,7 @@
 <rect x="5311.0" y="710.0" width="1528.0" height="1300.0" rx="12" fill="none" stroke="#fff4c8" stroke-dasharray="4 4"/>
 <text x="5321.0" y="728.0" fill="#fff4c8" font-size="13">Planes of the Gods (above Temple of the Dawn)</text>
 <rect x="7011.0" y="1262.0" width="508.0" height="380.0" rx="12" fill="none" stroke="#ffd870" stroke-dasharray="4 4"/>
-<text x="7021.0" y="1280.0" fill="#ffd870" font-size="13">Plane of Time (above Threshold of the Gods)</text>
+<text x="7021.0" y="1280.0" fill="#ffd870" font-size="13">Plane of Eternity (above Threshold of the Gods)</text>
 <rect x="1415.0" y="1384.0" width="140" height="60" rx="6" fill="#3a3a46" stroke="#c9b67a" stroke-width="1.2"/>
 <text x="1485.0" y="1404.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Brightwater Town</text>
 <text x="1485.0" y="1418.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Square</text>
@@ -971,102 +971,102 @@
 <text x="6075.0" y="1305.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">The Threshold of the</text>
 <text x="6075.0" y="1319.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Gods</text>
 <text x="6075.0" y="1334.0" fill="#fff4c8" font-size="11" text-anchor="middle">safe</text>
-<text x="6075.0" y="1348.0" fill="#ffd870" font-size="11" text-anchor="middle">↑ Plane of Time</text>
+<text x="6075.0" y="1348.0" fill="#ffd870" font-size="11" text-anchor="middle">↑ Plane of Eternity</text>
 <rect x="6005.0" y="1384.0" width="140" height="60" rx="6" fill="#2e2e34" stroke="#f4f4ff" stroke-width="1.2"/>
-<text x="6075.0" y="1404.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Justice:</text>
-<text x="6075.0" y="1418.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">The Gaol Gate</text>
+<text x="6075.0" y="1404.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Law: The</text>
+<text x="6075.0" y="1418.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Gaol Gate</text>
 <text x="6075.0" y="1433.0" fill="#f4f4ff" font-size="11" text-anchor="middle">Lv 51-52</text>
 <rect x="6005.0" y="1476.0" width="140" height="60" rx="6" fill="#2e2e34" stroke="#f4f4ff" stroke-width="1.2"/>
-<text x="6075.0" y="1496.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Justice:</text>
-<text x="6075.0" y="1510.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">The Endless</text>
+<text x="6075.0" y="1496.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Law: The</text>
+<text x="6075.0" y="1510.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Endless Cellblock</text>
 <text x="6075.0" y="1525.0" fill="#f4f4ff" font-size="11" text-anchor="middle">Lv 52-53</text>
 <rect x="5835.0" y="1476.0" width="140" height="60" rx="6" fill="#2e2e34" stroke="#f4f4ff" stroke-width="1.2"/>
-<text x="5905.0" y="1496.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Justice:</text>
-<text x="5905.0" y="1510.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">The Oubliette</text>
+<text x="5905.0" y="1496.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Law: The</text>
+<text x="5905.0" y="1510.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Oubliette</text>
 <text x="5905.0" y="1525.0" fill="#f4f4ff" font-size="11" text-anchor="middle">Lv 51-52</text>
 <rect x="6175.0" y="1476.0" width="140" height="60" rx="6" fill="#2e2e34" stroke="#f4f4ff" stroke-width="1.2"/>
-<text x="6245.0" y="1496.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Justice:</text>
-<text x="6245.0" y="1510.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">The Warden&#x27;s Walk</text>
+<text x="6245.0" y="1496.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Law: The</text>
+<text x="6245.0" y="1510.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Warden&#x27;s Walk</text>
 <text x="6245.0" y="1525.0" fill="#f4f4ff" font-size="11" text-anchor="middle">Lv 53-54</text>
 <rect x="6005.0" y="1568.0" width="140" height="60" rx="6" fill="#2e2e34" stroke="#f4f4ff" stroke-width="1.2"/>
-<text x="6075.0" y="1588.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Justice:</text>
-<text x="6075.0" y="1602.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">The Chain Yard</text>
+<text x="6075.0" y="1588.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Law: The</text>
+<text x="6075.0" y="1602.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Chain Yard</text>
 <text x="6075.0" y="1617.0" fill="#f4f4ff" font-size="11" text-anchor="middle">Lv 53-54</text>
 <rect x="6175.0" y="1568.0" width="140" height="60" rx="6" fill="#2e2e34" stroke="#ff5a4a" stroke-width="3"/>
-<text x="6245.0" y="1588.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Justice:</text>
-<text x="6245.0" y="1602.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">The Hall of</text>
+<text x="6245.0" y="1588.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Law: The</text>
+<text x="6245.0" y="1602.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Hall of Judgement</text>
 <text x="6245.0" y="1617.0" fill="#ff8a7a" font-size="11" text-anchor="middle">Boss Lv 55</text>
-<rect x="6005.0" y="1200.0" width="140" height="60" rx="6" fill="#2a3a4a" stroke="#a8d8ff" stroke-width="1.2"/>
-<text x="6075.0" y="1220.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Sky: The</text>
-<text x="6075.0" y="1234.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Cloudgate</text>
-<text x="6075.0" y="1249.0" fill="#a8d8ff" font-size="11" text-anchor="middle">Lv 51-52</text>
-<rect x="6005.0" y="1108.0" width="140" height="60" rx="6" fill="#2a3a4a" stroke="#a8d8ff" stroke-width="1.2"/>
-<text x="6075.0" y="1128.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Sky: The</text>
-<text x="6075.0" y="1142.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Floating Isles</text>
-<text x="6075.0" y="1157.0" fill="#a8d8ff" font-size="11" text-anchor="middle">Lv 52-53</text>
-<rect x="5835.0" y="1108.0" width="140" height="60" rx="6" fill="#2a3a4a" stroke="#a8d8ff" stroke-width="1.2"/>
-<text x="5905.0" y="1128.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Sky: The</text>
+<rect x="6005.0" y="1200.0" width="140" height="60" rx="6" fill="#22284a" stroke="#b8c8ff" stroke-width="1.2"/>
+<text x="6075.0" y="1220.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Stars: The</text>
+<text x="6075.0" y="1234.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Stargate</text>
+<text x="6075.0" y="1249.0" fill="#b8c8ff" font-size="11" text-anchor="middle">Lv 51-52</text>
+<rect x="6005.0" y="1108.0" width="140" height="60" rx="6" fill="#22284a" stroke="#b8c8ff" stroke-width="1.2"/>
+<text x="6075.0" y="1128.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Stars: The</text>
+<text x="6075.0" y="1142.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Drifting Isles</text>
+<text x="6075.0" y="1157.0" fill="#b8c8ff" font-size="11" text-anchor="middle">Lv 52-53</text>
+<rect x="5835.0" y="1108.0" width="140" height="60" rx="6" fill="#22284a" stroke="#b8c8ff" stroke-width="1.2"/>
+<text x="5905.0" y="1128.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Stars: The</text>
 <text x="5905.0" y="1142.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Great Aerie</text>
-<text x="5905.0" y="1157.0" fill="#a8d8ff" font-size="11" text-anchor="middle">Lv 51-52</text>
-<rect x="6175.0" y="1108.0" width="140" height="60" rx="6" fill="#2a3a4a" stroke="#a8d8ff" stroke-width="1.2"/>
-<text x="6245.0" y="1128.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Sky: The</text>
-<text x="6245.0" y="1142.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Stormfront</text>
-<text x="6245.0" y="1157.0" fill="#a8d8ff" font-size="11" text-anchor="middle">Lv 53-54</text>
-<rect x="6175.0" y="1016.0" width="140" height="60" rx="6" fill="#2a3a4a" stroke="#a8d8ff" stroke-width="1.2"/>
-<text x="6245.0" y="1036.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Sky:</text>
-<text x="6245.0" y="1050.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Thunderpeak</text>
-<text x="6245.0" y="1065.0" fill="#a8d8ff" font-size="11" text-anchor="middle">Lv 53-54</text>
-<rect x="6005.0" y="1016.0" width="140" height="60" rx="6" fill="#2a3a4a" stroke="#ff5a4a" stroke-width="3"/>
-<text x="6075.0" y="1036.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Sky: The</text>
-<text x="6075.0" y="1050.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Hall of the Sky-</text>
+<text x="5905.0" y="1157.0" fill="#b8c8ff" font-size="11" text-anchor="middle">Lv 51-52</text>
+<rect x="6175.0" y="1108.0" width="140" height="60" rx="6" fill="#22284a" stroke="#b8c8ff" stroke-width="1.2"/>
+<text x="6245.0" y="1128.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Stars: The</text>
+<text x="6245.0" y="1142.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Comet Road</text>
+<text x="6245.0" y="1157.0" fill="#b8c8ff" font-size="11" text-anchor="middle">Lv 53-54</text>
+<rect x="6175.0" y="1016.0" width="140" height="60" rx="6" fill="#22284a" stroke="#b8c8ff" stroke-width="1.2"/>
+<text x="6245.0" y="1036.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Stars: The</text>
+<text x="6245.0" y="1050.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Starstorm</text>
+<text x="6245.0" y="1065.0" fill="#b8c8ff" font-size="11" text-anchor="middle">Lv 53-54</text>
+<rect x="6005.0" y="1016.0" width="140" height="60" rx="6" fill="#22284a" stroke="#ff5a4a" stroke-width="3"/>
+<text x="6075.0" y="1036.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Stars: The</text>
+<text x="6075.0" y="1050.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Hall of the Star-</text>
 <text x="6075.0" y="1065.0" fill="#ff8a7a" font-size="11" text-anchor="middle">Boss Lv 55</text>
-<rect x="5835.0" y="1292.0" width="140" height="60" rx="6" fill="#1e3a1e" stroke="#8cf08c" stroke-width="1.2"/>
-<text x="5905.0" y="1312.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Growth: The</text>
-<text x="5905.0" y="1326.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Greengate</text>
-<text x="5905.0" y="1341.0" fill="#8cf08c" font-size="11" text-anchor="middle">Lv 51-52</text>
-<rect x="5665.0" y="1292.0" width="140" height="60" rx="6" fill="#1e3a1e" stroke="#8cf08c" stroke-width="1.2"/>
-<text x="5735.0" y="1312.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Growth: The</text>
-<text x="5735.0" y="1326.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">First Garden</text>
-<text x="5735.0" y="1341.0" fill="#8cf08c" font-size="11" text-anchor="middle">Lv 52-53</text>
-<rect x="5665.0" y="1200.0" width="140" height="60" rx="6" fill="#1e3a1e" stroke="#8cf08c" stroke-width="1.2"/>
-<text x="5735.0" y="1220.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Growth: The</text>
-<text x="5735.0" y="1234.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Elder Thicket</text>
-<text x="5735.0" y="1249.0" fill="#8cf08c" font-size="11" text-anchor="middle">Lv 53-54</text>
-<rect x="5495.0" y="1200.0" width="140" height="60" rx="6" fill="#1e3a1e" stroke="#8cf08c" stroke-width="1.2"/>
-<text x="5565.0" y="1220.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Growth: The</text>
-<text x="5565.0" y="1234.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Endless Orchard</text>
-<text x="5565.0" y="1249.0" fill="#8cf08c" font-size="11" text-anchor="middle">Lv 53-54</text>
-<rect x="5495.0" y="1292.0" width="140" height="60" rx="6" fill="#1e3a1e" stroke="#8cf08c" stroke-width="1.2"/>
-<text x="5565.0" y="1312.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Growth: The</text>
-<text x="5565.0" y="1326.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Root Canopy</text>
-<text x="5565.0" y="1341.0" fill="#8cf08c" font-size="11" text-anchor="middle">Lv 53-54</text>
-<rect x="5325.0" y="1292.0" width="140" height="60" rx="6" fill="#1e3a1e" stroke="#ff5a4a" stroke-width="3"/>
-<text x="5395.0" y="1312.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Growth: The</text>
-<text x="5395.0" y="1326.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Heart of the Wild</text>
+<rect x="5835.0" y="1292.0" width="140" height="60" rx="6" fill="#2e2a44" stroke="#d8c0ff" stroke-width="1.2"/>
+<text x="5905.0" y="1312.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Dreams: The</text>
+<text x="5905.0" y="1326.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Ivory Gate</text>
+<text x="5905.0" y="1341.0" fill="#d8c0ff" font-size="11" text-anchor="middle">Lv 51-52</text>
+<rect x="5665.0" y="1292.0" width="140" height="60" rx="6" fill="#2e2a44" stroke="#d8c0ff" stroke-width="1.2"/>
+<text x="5735.0" y="1312.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Dreams: The</text>
+<text x="5735.0" y="1326.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Moonlit Meadow</text>
+<text x="5735.0" y="1341.0" fill="#d8c0ff" font-size="11" text-anchor="middle">Lv 52-53</text>
+<rect x="5665.0" y="1200.0" width="140" height="60" rx="6" fill="#2e2a44" stroke="#d8c0ff" stroke-width="1.2"/>
+<text x="5735.0" y="1220.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Dreams: The</text>
+<text x="5735.0" y="1234.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Forest of Sleep</text>
+<text x="5735.0" y="1249.0" fill="#d8c0ff" font-size="11" text-anchor="middle">Lv 53-54</text>
+<rect x="5495.0" y="1200.0" width="140" height="60" rx="6" fill="#2e2a44" stroke="#d8c0ff" stroke-width="1.2"/>
+<text x="5565.0" y="1220.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Dreams: The</text>
+<text x="5565.0" y="1234.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Remembered House</text>
+<text x="5565.0" y="1249.0" fill="#d8c0ff" font-size="11" text-anchor="middle">Lv 53-54</text>
+<rect x="5495.0" y="1292.0" width="140" height="60" rx="6" fill="#2e2a44" stroke="#d8c0ff" stroke-width="1.2"/>
+<text x="5565.0" y="1312.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Dreams: The</text>
+<text x="5565.0" y="1326.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Roots of the Dream</text>
+<text x="5565.0" y="1341.0" fill="#d8c0ff" font-size="11" text-anchor="middle">Lv 53-54</text>
+<rect x="5325.0" y="1292.0" width="140" height="60" rx="6" fill="#2e2a44" stroke="#ff5a4a" stroke-width="3"/>
+<text x="5395.0" y="1312.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Dreams: The</text>
+<text x="5395.0" y="1326.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Loom of Sleep</text>
 <text x="5395.0" y="1341.0" fill="#ff8a7a" font-size="11" text-anchor="middle">Boss Lv 55</text>
-<rect x="6175.0" y="1292.0" width="140" height="60" rx="6" fill="#2a1e2e" stroke="#c080d0" stroke-width="1.2"/>
-<text x="6245.0" y="1312.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Fear: The</text>
-<text x="6245.0" y="1326.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Dreadgate</text>
-<text x="6245.0" y="1341.0" fill="#c080d0" font-size="11" text-anchor="middle">Lv 51-52</text>
-<rect x="6345.0" y="1292.0" width="140" height="60" rx="6" fill="#2a1e2e" stroke="#c080d0" stroke-width="1.2"/>
-<text x="6415.0" y="1312.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Fear: The</text>
-<text x="6415.0" y="1326.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Road of Nightmares</text>
-<text x="6415.0" y="1341.0" fill="#c080d0" font-size="11" text-anchor="middle">Lv 52-53</text>
-<rect x="6345.0" y="1200.0" width="140" height="60" rx="6" fill="#2a1e2e" stroke="#c080d0" stroke-width="1.2"/>
-<text x="6415.0" y="1220.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Fear: The</text>
-<text x="6415.0" y="1234.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Screaming Halls</text>
-<text x="6415.0" y="1249.0" fill="#c080d0" font-size="11" text-anchor="middle">Lv 53-54</text>
-<rect x="6515.0" y="1200.0" width="140" height="60" rx="6" fill="#2a1e2e" stroke="#c080d0" stroke-width="1.2"/>
-<text x="6585.0" y="1220.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Fear: The</text>
-<text x="6585.0" y="1234.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Hall of Mirrors</text>
-<text x="6585.0" y="1249.0" fill="#c080d0" font-size="11" text-anchor="middle">Lv 53-54</text>
-<rect x="6515.0" y="1292.0" width="140" height="60" rx="6" fill="#2a1e2e" stroke="#c080d0" stroke-width="1.2"/>
-<text x="6585.0" y="1312.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Fear: The</text>
-<text x="6585.0" y="1326.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Crossroads of Dread</text>
-<text x="6585.0" y="1341.0" fill="#c080d0" font-size="11" text-anchor="middle">Lv 53-54</text>
-<rect x="6685.0" y="1292.0" width="140" height="60" rx="6" fill="#2a1e2e" stroke="#ff5a4a" stroke-width="3"/>
-<text x="6755.0" y="1312.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Fear: The</text>
-<text x="6755.0" y="1326.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Throne of Dread</text>
+<rect x="6175.0" y="1292.0" width="140" height="60" rx="6" fill="#2a2a2a" stroke="#b0c0c8" stroke-width="1.2"/>
+<text x="6245.0" y="1312.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Death: The</text>
+<text x="6245.0" y="1326.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Gate of Bones</text>
+<text x="6245.0" y="1341.0" fill="#b0c0c8" font-size="11" text-anchor="middle">Lv 51-52</text>
+<rect x="6345.0" y="1292.0" width="140" height="60" rx="6" fill="#2a2a2a" stroke="#b0c0c8" stroke-width="1.2"/>
+<text x="6415.0" y="1312.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Death: The</text>
+<text x="6415.0" y="1326.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Road of the Dead</text>
+<text x="6415.0" y="1341.0" fill="#b0c0c8" font-size="11" text-anchor="middle">Lv 52-53</text>
+<rect x="6345.0" y="1200.0" width="140" height="60" rx="6" fill="#2a2a2a" stroke="#b0c0c8" stroke-width="1.2"/>
+<text x="6415.0" y="1220.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Death: The</text>
+<text x="6415.0" y="1234.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Ossuary of the Gods</text>
+<text x="6415.0" y="1249.0" fill="#b0c0c8" font-size="11" text-anchor="middle">Lv 53-54</text>
+<rect x="6515.0" y="1200.0" width="140" height="60" rx="6" fill="#2a2a2a" stroke="#b0c0c8" stroke-width="1.2"/>
+<text x="6585.0" y="1220.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Death: The</text>
+<text x="6585.0" y="1234.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">River of Forgetting</text>
+<text x="6585.0" y="1249.0" fill="#b0c0c8" font-size="11" text-anchor="middle">Lv 53-54</text>
+<rect x="6515.0" y="1292.0" width="140" height="60" rx="6" fill="#2a2a2a" stroke="#b0c0c8" stroke-width="1.2"/>
+<text x="6585.0" y="1312.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Death: The</text>
+<text x="6585.0" y="1326.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Pyre Fields</text>
+<text x="6585.0" y="1341.0" fill="#b0c0c8" font-size="11" text-anchor="middle">Lv 53-54</text>
+<rect x="6685.0" y="1292.0" width="140" height="60" rx="6" fill="#2a2a2a" stroke="#ff5a4a" stroke-width="3"/>
+<text x="6755.0" y="1312.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Death: The</text>
+<text x="6755.0" y="1326.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Hall of the Last</text>
 <text x="6755.0" y="1341.0" fill="#ff8a7a" font-size="11" text-anchor="middle">Boss Lv 55</text>
 <rect x="6515.0" y="1384.0" width="140" height="60" rx="6" fill="#4a1e14" stroke="#ff8050" stroke-width="1.2"/>
 <text x="6585.0" y="1404.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Fire: The</text>
@@ -1165,23 +1165,23 @@
 <text x="6245.0" y="774.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Court of the Winds</text>
 <text x="6245.0" y="789.0" fill="#ff8a7a" font-size="11" text-anchor="middle">Boss Lv 58</text>
 <rect x="7195.0" y="1292.0" width="140" height="60" rx="6" fill="#3a3424" stroke="#ffd870" stroke-width="1.2"/>
-<text x="7265.0" y="1319.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">The Door of Time</text>
+<text x="7265.0" y="1319.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">The Door of Eternity</text>
 <text x="7265.0" y="1334.0" fill="#ffd870" font-size="11" text-anchor="middle">safe</text>
 <rect x="7195.0" y="1384.0" width="140" height="60" rx="6" fill="#3a3424" stroke="#ffd870" stroke-width="1.2"/>
-<text x="7265.0" y="1404.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Time: The</text>
-<text x="7265.0" y="1418.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Great Hourglass</text>
+<text x="7265.0" y="1404.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Eternity:</text>
+<text x="7265.0" y="1418.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">The Great Hourglass</text>
 <text x="7265.0" y="1433.0" fill="#ffd870" font-size="11" text-anchor="middle">Lv 57-58</text>
 <rect x="7025.0" y="1384.0" width="140" height="60" rx="6" fill="#3a3424" stroke="#ffd870" stroke-width="1.2"/>
-<text x="7095.0" y="1404.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Time: The</text>
-<text x="7095.0" y="1418.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Halls of the Past</text>
+<text x="7095.0" y="1404.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Eternity:</text>
+<text x="7095.0" y="1418.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">The Halls of the</text>
 <text x="7095.0" y="1433.0" fill="#ffd870" font-size="11" text-anchor="middle">Lv 58</text>
 <rect x="7365.0" y="1384.0" width="140" height="60" rx="6" fill="#3a3424" stroke="#ffd870" stroke-width="1.2"/>
-<text x="7435.0" y="1404.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Time: The</text>
-<text x="7435.0" y="1418.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Shores of Tomorrow</text>
+<text x="7435.0" y="1404.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Eternity:</text>
+<text x="7435.0" y="1418.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">The Shores of</text>
 <text x="7435.0" y="1433.0" fill="#ffd870" font-size="11" text-anchor="middle">Lv 59</text>
 <rect x="7195.0" y="1476.0" width="140" height="60" rx="6" fill="#3a3424" stroke="#ffd870" stroke-width="1.2"/>
-<text x="7265.0" y="1496.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Time: The</text>
-<text x="7265.0" y="1510.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Stair of Eternity</text>
+<text x="7265.0" y="1496.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Plane of Eternity:</text>
+<text x="7265.0" y="1510.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">The Stair of Ages</text>
 <text x="7265.0" y="1525.0" fill="#ffd870" font-size="11" text-anchor="middle">Lv 58-59</text>
 <rect x="7195.0" y="1568.0" width="140" height="60" rx="6" fill="#3a3424" stroke="#ff5a4a" stroke-width="3"/>
 <text x="7265.0" y="1595.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">The Throne of Trepth</text>
@@ -1231,12 +1231,12 @@
 <text x="7630" y="598" fill="#ddd6c4" font-size="12">Tomb of the Sand Kings</text>
 <rect x="7600" y="610" width="22" height="16" rx="3" fill="#3a3a40" stroke="#fff4c8"/>
 <text x="7630" y="622" fill="#ddd6c4" font-size="12">Threshold of the Gods</text>
-<rect x="7600" y="634" width="22" height="16" rx="3" fill="#2a3a4a" stroke="#a8d8ff"/>
-<text x="7630" y="646" fill="#ddd6c4" font-size="12">Plane of Sky</text>
-<rect x="7600" y="658" width="22" height="16" rx="3" fill="#1e3a1e" stroke="#8cf08c"/>
-<text x="7630" y="670" fill="#ddd6c4" font-size="12">Plane of Growth</text>
-<rect x="7600" y="682" width="22" height="16" rx="3" fill="#2a1e2e" stroke="#c080d0"/>
-<text x="7630" y="694" fill="#ddd6c4" font-size="12">Plane of Fear</text>
+<rect x="7600" y="634" width="22" height="16" rx="3" fill="#22284a" stroke="#b8c8ff"/>
+<text x="7630" y="646" fill="#ddd6c4" font-size="12">Plane of Stars</text>
+<rect x="7600" y="658" width="22" height="16" rx="3" fill="#2e2a44" stroke="#d8c0ff"/>
+<text x="7630" y="670" fill="#ddd6c4" font-size="12">Plane of Dreams</text>
+<rect x="7600" y="682" width="22" height="16" rx="3" fill="#2a2a2a" stroke="#b0c0c8"/>
+<text x="7630" y="694" fill="#ddd6c4" font-size="12">Plane of Death</text>
 <rect x="7600" y="706" width="22" height="16" rx="3" fill="#4a1e14" stroke="#ff8050"/>
 <text x="7630" y="718" fill="#ddd6c4" font-size="12">Plane of Fire</text>
 <rect x="7600" y="730" width="22" height="16" rx="3" fill="#14304a" stroke="#60b0ff"/>
@@ -1246,9 +1246,9 @@
 <rect x="7600" y="778" width="22" height="16" rx="3" fill="#30384a" stroke="#e0f0ff"/>
 <text x="7630" y="790" fill="#ddd6c4" font-size="12">Plane of Air</text>
 <rect x="7600" y="802" width="22" height="16" rx="3" fill="#3a3424" stroke="#ffd870"/>
-<text x="7630" y="814" fill="#ddd6c4" font-size="12">Plane of Time</text>
+<text x="7630" y="814" fill="#ddd6c4" font-size="12">Plane of Eternity</text>
 <rect x="7600" y="826" width="22" height="16" rx="3" fill="#2e2e34" stroke="#f4f4ff"/>
-<text x="7630" y="838" fill="#ddd6c4" font-size="12">Plane of Justice</text>
+<text x="7630" y="838" fill="#ddd6c4" font-size="12">Plane of Law</text>
 <rect x="7600" y="860" width="22" height="16" rx="3" fill="none" stroke="#ff5a4a" stroke-width="3"/>
 <text x="7630" y="872" fill="#ddd6c4" font-size="12">Boss room</text>
 <line x1="7600" y1="894" x2="7622" y2="894" stroke="#77736a" stroke-width="2" stroke-dasharray="6 5"/>
