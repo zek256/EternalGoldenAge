@@ -17,9 +17,11 @@ Item levels and drop chances below come straight from the game data. Bosses resp
   upgrade anywhere else. Check `equipment` for gaps first.
 - **Stack your class's stats.** Casters want their spell stat (INT or WIS) first. Fighters want
   STR (weapon damage for every class) and DEX (precision). Everyone wants CON for HP after that.
-- **Rebirth doesn't throw gear away.** When you're reborn, gear above level 1 goes back into your
+- **Rebirth doesn't throw gear away.** When you're reborn, all your gear goes back into your
   pack, not into the void. Your next life can wear it again once it reaches the item's level, as long
-  as it's trained for it (training from every life is kept). A good level-50 set is never wasted.
+  as it's trained for it (training from every life is kept). A good level-50 set is never wasted,
+  as long as you don't sell it: keep it in your pack or the Sunvault. You start each new life in
+  your new class's starting gear.
 - **The Planes are hard on a first life.** Even the first-tier plane monsters beat a one-life
   character about half the time, and the champions are built for characters with several lives.
   Finish steps 1 and 2 before you go up the Stair of Dawn.

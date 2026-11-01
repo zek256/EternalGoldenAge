@@ -4,7 +4,7 @@ Writes map.svg in the game folder by default; open it in any web browser.
 Rooms are placed on a grid by following exits from the town square (north is up,
 up/down are drawn diagonally). Areas listed in mapview.INSETS (dungeons below the surface, realms
 above it) would sit on top of surface rooms, so each is laid out on its own grid and drawn
-in a framed box to the right of the surface map.
+in a framed box to the right of the surface map. Each area's name is written inside the area.
 """
 import os
 import sys
@@ -42,7 +42,7 @@ COLORS = {  # area: (fill, border)
 BOSS_RED = "#ff5a4a"
 CW, CH = 170, 92           # grid cell size
 BW, BH = 140, 60           # room box size
-PAD, LEGEND_W = 40, 260
+PAD = 40
 
 
 def layout():
@@ -56,8 +56,9 @@ def draw(pos, insets):
     xs = [p[0] for p in pos.values()]
     ys = [p[1] for p in pos.values()]
     minx, miny = min(xs), min(ys)
-    W = (max(xs) - minx + 1) * CW + 2 * PAD + LEGEND_W
+    W = (max(xs) - minx + 1) * CW + 2 * PAD
     H = (max(ys) - miny + 1) * CH + 2 * PAD + 40
+    taken = {p: r for r, p in pos.items()}
 
     def ctr(r):
         x, y = pos[r]
@@ -139,28 +140,70 @@ def draw(pos, insets):
             out.append('<text x="{}" y="{}" fill="{}" font-size="11" text-anchor="middle">{}</text>'
                        .format(cx, top + (len(lines) + i) * 14 + 1, color, escape(text)))
 
-    # legend
-    lx, ly = W - LEGEND_W + 40, PAD + 50
-    out.append('<text x="{}" y="{}" fill="#e8d9a8" font-size="15">Areas</text>'.format(lx, ly))
-    y = ly + 16
-    for area, (fill, border) in COLORS.items():
-        out.append('<rect x="{}" y="{}" width="22" height="16" rx="3" fill="{}" stroke="{}"/>'.format(lx, y, fill, border))
-        out.append('<text x="{}" y="{}" fill="#ddd6c4" font-size="12">{}</text>'.format(lx + 30, y + 12, area))
-        y += 24
-    y += 10
+    # area names, each in the empty grid square nearest the middle of its area
+    used = set()
+    for area in dict.fromkeys(v["area"] for v in ROOMS.values()):
+        cells = [pos[r] for r in ROOMS if ROOMS[r]["area"] == area]
+        mx = sum(x for x, _ in cells) / len(cells)
+        my = sum(y for _, y in cells) / len(cells)
+        best = None
+        for (cx0, cy0) in cells:
+            for dx in (-1, 0, 1):
+                for dy in (-1, 0, 1):
+                    c = (cx0 + dx, cy0 + dy)
+                    if c in taken or c in used:
+                        continue
+                    near = [taken[(c[0] + i, c[1] + j)] for i in (-1, 0, 1) for j in (-1, 0, 1)
+                            if (c[0] + i, c[1] + j) in taken]
+                    own = sum(ROOMS[r]["area"] == area for r in near)
+                    score = (len(near) - own) * 3 - own * 1.5 + ((c[0] - mx) ** 2 + (c[1] - my) ** 2) ** 0.5
+                    if best is None or score < best[0]:
+                        best = (score, c, own, len(near) - own)
+        border = COLORS.get(area, ("", "#999999"))[1]
+        if best and best[2] <= best[3]:
+            # no square mostly of this area: a banner in the gap just above one of its own rooms instead
+            def cost(r):
+                x0, y0 = pos[r]
+                above = taken.get((x0, y0 - 1))
+                return (("n" in ROOMS[r]["exits"]) + 2 * (above is not None and ROOMS[above]["area"] != area)
+                        + ((x0 - mx) ** 2 + (y0 - my) ** 2) ** 0.5)
+            r = min((r for r in ROOMS if ROOMS[r]["area"] == area), key=cost)
+            x, y = ctr(r)
+            y -= BH / 2 + (CH - BH) / 2
+            w = len(area) * 7.6 + 12
+            out.append('<rect x="{}" y="{}" width="{}" height="20" rx="4" fill="#16161c" fill-opacity="0.9"/>'
+                       .format(x - w / 2, y - 10, w))
+            out.append('<text x="{}" y="{}" fill="{}" font-size="14" font-weight="bold" font-style="italic" '
+                       'text-anchor="middle">{}</text>'.format(x, y + 5, border, escape(area)))
+            continue
+        if best:
+            used.add(best[1])
+            x = PAD + (best[1][0] - minx) * CW + CW / 2
+            y = PAD + 40 + (best[1][1] - miny) * CH + CH / 2
+            lines = textwrap.wrap(area, 16)
+            top = y - (len(lines) - 1) * 18 / 2 + 6
+            for i, ln in enumerate(lines):
+                out.append('<text x="{}" y="{}" fill="{}" font-size="16" font-weight="bold" font-style="italic" '
+                           'text-anchor="middle" opacity="0.9">{}</text>'.format(x, top + i * 18, border, escape(ln)))
+        else:
+            print("no free square for " + area, file=sys.stderr)
+
+    # a one-line key under the title
+    kx, ky = PAD + 300, 28
     out.append('<rect x="{}" y="{}" width="22" height="16" rx="3" fill="none" stroke="{}" stroke-width="3"/>'
-               .format(lx, y, BOSS_RED))
-    out.append('<text x="{}" y="{}" fill="#ddd6c4" font-size="12">Boss room</text>'.format(lx + 30, y + 12))
-    y += 26
+               .format(kx, ky - 12, BOSS_RED))
+    out.append('<text x="{}" y="{}" fill="#ddd6c4" font-size="12">Boss room</text>'.format(kx + 30, ky))
+    kx += 120
     out.append('<line x1="{}" y1="{}" x2="{}" y2="{}" stroke="#77736a" stroke-width="2" stroke-dasharray="6 5"/>'
-               .format(lx, y + 8, lx + 22, y + 8))
-    out.append('<text x="{}" y="{}" fill="#ddd6c4" font-size="12">Up / down</text>'.format(lx + 30, y + 12))
-    y += 24
+               .format(kx, ky - 4, kx + 22, ky - 4))
+    out.append('<text x="{}" y="{}" fill="#ddd6c4" font-size="12">Up / down</text>'.format(kx + 30, ky))
+    kx += 120
     out.append('<line x1="{}" y1="{}" x2="{}" y2="{}" stroke="#c9b67a" stroke-width="2" stroke-opacity="0.6" '
-               'stroke-dasharray="2 7" stroke-linecap="round"/>'.format(lx, y + 8, lx + 22, y + 8))
-    out.append('<text x="{}" y="{}" fill="#ddd6c4" font-size="12">Way to a boxed area</text>'.format(lx + 30, y + 12))
+               'stroke-dasharray="2 7" stroke-linecap="round"/>'.format(kx, ky - 4, kx + 22, ky - 4))
+    out.append('<text x="{}" y="{}" fill="#ddd6c4" font-size="12">Way to a boxed area</text>'.format(kx + 30, ky))
+    kx += 190
     out.append('<text x="{}" y="{}" fill="#9a958a" font-size="11">North is up. Lv = monster levels.</text>'
-               .format(lx, y + 36))
+               .format(kx, ky))
     out.append("</svg>")
     return "\n".join(out)
 

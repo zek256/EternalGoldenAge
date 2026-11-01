@@ -131,8 +131,8 @@ data/rooms/   one module per region, each with a ROOMS dict, merged in __init__ 
   from ~6 at 5-10 to ~10 at 50 (~390 per life). The user wants late levels never faster than
   early ones, and only a bit slower. Quest XP is fixed per quest in `data/quests.py`.
 - Rebirth (level 50): the old class is appended to `past_lives` as `{"cls": id}` (no stat totals
-  are stored). Abilities of every lived class stay known and unlock at their original level. Gear
-  above level 1 is unequipped.
+  are stored). Abilities of every lived class stay known and unlock at their original level. All gear
+  is unequipped into the pack, then the new class's starting `gear` is equipped.
 - Race perks are keys in `RACES[...]["perks"]` read via `Character.perk()`: hp_mult,
   mana_mult, dmg_mult, crit, dodge, regen_mult, immune, xp_mult (supported, currently unused).
 - Ability power = `base + lvl*level + scale*stat`. Spell cost scales `cost * (1 + 0.1*(level-1))`.

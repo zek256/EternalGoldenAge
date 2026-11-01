@@ -334,14 +334,15 @@ class Character:
         self.effects = []
         self.cooldowns = {}
         self.pet = None
-        removed = []
-        for slot, iid in self.equipment.items():
-            if iid and ITEMS[iid]["level"] > 1:
-                self.equipment[slot] = None
-                self.inventory.append(iid)
-                removed.append(iid)
+        # every piece of gear goes into the pack, and the new class starts in its own kit
+        removed = [iid for iid in self.equipment.values() if iid]
+        self.inventory += removed
+        self.equipment = {s: None for s in SLOTS}
+        given = list(CLASSES[new_cls]["gear"])
+        for iid in given:
+            self.equipment[ITEMS[iid]["slot"]] = iid
         self.hp, self.mana = self.max_hp, self.max_mana
-        return removed
+        return removed, given
 
     # ------------------------------------------------------------------ persistence
     def to_dict(self):

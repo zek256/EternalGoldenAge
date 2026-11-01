@@ -1410,8 +1410,8 @@ class Game:
                "becomes usable again when you reach the level you first learned it) and all your armor and "
                "weapon training. At every level, each of your stats, your HP and your mana will be the best "
                "that any of your paths would have at that level, the {} included, and every class you "
-               "master adds {}% to your max HP and damage. Gear above level 1 will be unequipped until "
-               "you can wield it again.".format(p.class_name, int(MASTERY_BONUS * 100)), "white")
+               "master adds {}% to your max HP and damage. All your gear goes into "
+               "your pack, and you start in your new class's starting gear.".format(p.class_name, int(MASTERY_BONUS * 100)), "white")
         choices = [c for c in CLASS_ORDER if c != p.cls]
         for i, cid in enumerate(choices, 1):
             past = " (lived before)" if cid in p.lived_classes() else ""
@@ -1432,7 +1432,7 @@ class Game:
             ui.say("You open your eyes. Perhaps another day.", "grey")
             return
         old = p.class_name
-        removed = p.rebirth(cid)
+        removed, given = p.rebirth(cid)
         ui.out("")
         ui.say("Light pours through you. Your old life burns away like morning mist, and you are born "
                "anew as a {} - yet the {} you were remains within you.".format(p.class_name, old), "byellow")
@@ -1442,7 +1442,10 @@ class Game:
                "(now +{}%).".format(", ".join(lived), int(MASTERY_BONUS * 100),
                                     int(round((p.mastery_bonus - 1) * 100))), "bcyan")
         if removed:
-            ui.say("Too heavy for your new body for now, you unequip: " + ", ".join(ITEMS[i]["name"] for i in removed), "grey")
+            ui.say("Your old gear is packed away: " + ", ".join(ITEMS[i]["name"] for i in removed) + ".", "grey")
+        if given:
+            ui.say("The light leaves you the simple gear of a new {}: {}.".format(
+                p.class_name.lower(), ", ".join(ITEMS[i]["name"] for i in given)), "bgreen")
         ready = [a["name"] for a in p.usable_abilities()]
         ui.say("Abilities usable now: " + ", ".join(ready), "bmagenta")
 

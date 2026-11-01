@@ -181,8 +181,8 @@ At level 50, `rebirth` lets you choose any other class:
 - Each **class mastered** (lived to level 50) adds **+2% max HP and damage**, up to +22% with all
   eleven.
 - You keep the **armor and weapon training** of every class you have lived (see above).
-- Gear above level 1 is unequipped until you can wield it again, so you climb back up with your
-  new class's starting gear. Experience needed per level is exactly the same as in your first life.
+- All your gear goes into your pack, and you start in your new class's starting gear. Your old
+  gear can be worn again once you reach its level. Experience needed per level is exactly the same as in your first life.
 
 ## World
 
