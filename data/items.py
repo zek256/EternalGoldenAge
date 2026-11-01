@@ -441,6 +441,16 @@ weapon("eternity", "Eternity", 50, (55, 88), 20000,
        STR=12, DEX=12, CON=12, INT=12, WIS=12, CHA=12, kind="any")
 armor("crown_of_trepth", "the Crown of Trepth", "head", 50, 32, 18000, "A crown of white gold that weighs nothing and holds the light of every dawn.",
       STR=10, DEX=10, CON=10, INT=10, WIS=10, CHA=10, kind="any")
+# Pieces for the slots where a shop item used to be the best there was (leather gloves, mail
+# legs, cloth legs and feet), so that the best item in every slot is always a drop.
+armor("starstep_slippers", "starstep slippers", "feet", 50, 12, 11000, "Slippers of midnight silk sewn with tiny stars. Each step leaves a faint glimmer behind.",
+      INT=10, WIS=10, DEX=4, kind="cloth")
+armor("dreamsilk_trousers", "dreamsilk trousers", "legs", 50, 16, 11000, "Trousers of grey dream-silk that rustle like someone whispering in their sleep.",
+      INT=12, WIS=12, CON=5, kind="cloth")
+armor("ferrymans_gloves", "the Ferryman's gloves", "hands", 50, 15, 11000, "Black leather gloves worn smooth on the oar of the last crossing. They never let go of what they hold.",
+      DEX=10, STR=7, CHA=5, kind="leather")
+armor("tidescale_legguards", "tidescale legguards", "legs", 50, 30, 11000, "Legguards of overlapping green sea-scales that shift like water and close like a wave.",
+      WIS=10, CON=8, STR=5, kind="mail")
 armor("hourglass_amulet", "the Hourglass Amulet", "neck", 50, 12, 18000, "A tiny hourglass of crystal whose sand runs upward.",
       STR=12, DEX=12, CON=12, INT=12, WIS=12, CHA=12, kind="jewelry")
 

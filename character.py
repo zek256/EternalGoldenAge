@@ -49,6 +49,7 @@ class Character:
         self.gold = 20
         self.past_lives = []  # [{"cls": id}], one per class mastered before this life
         self.inventory = []   # item ids, duplicates allowed
+        self.bank = []        # item ids stored in the Sunvault in Brightwater
         self.equipment = {s: None for s in SLOTS}
         self.quests = {}      # quest id -> {"status": "active"|"done", "count": n}
         self.effects = []     # buffs, shields, hots, dots, stuns
@@ -358,6 +359,7 @@ class Character:
         ch.__dict__.setdefault("aliases", {})  # saves from before aliases existed
         ch.__dict__.setdefault("boss_kills", [])
         ch.__dict__.setdefault("automap", False)
+        ch.__dict__.setdefault("bank", [])
         return ch
 
     def mastered_classes(self):

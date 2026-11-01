@@ -75,7 +75,8 @@ Wear **mail** and a shield. WIS first (all your spells and your mana), then CON.
 
 Notable late gear: the Sunforged Mace (43, blunt, STR/WIS), the dragonbone staff (47), **the
 Dreamweaver's Staff** (50, staff, INT/WIS/CHA, from Somnara), the sunfire staff (40), Dragonscale Mail
-(48, mail), the Burial Mask of Ussreth (48, mail), the sunsteel mail set, the Shield of Judgement (50,
+(48, mail), the Burial Mask of Ussreth (48, mail), **tidescale legguards** (50, mail legs, WIS/CON, from
+Nerevos), the sunsteel mail set, the Shield of Judgement (50,
 CON/WIS), the Pearl of the Deep (50, ring, INT/WIS), the Ring of the Archmage, the amulet of the
 obelisk, the sunlit codex (off-hand) and the mythic Fang of Pyraxis and Eternity. A staff means giving
 up your shield.

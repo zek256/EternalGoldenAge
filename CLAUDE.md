@@ -10,10 +10,12 @@ lists the best level 40-50 and plane gear per class and where it drops; update i
 
 ```
 python main.py                 # play
-python main.py --dev           # adds setlevel <n>, goto <room_id>, addgold <n>, give <item_id>
-python main.py --tick 0.5      # faster game clock (default 4s) for testing
-python main.py --no-color --seed 3
 ```
+
+`main.py` takes no command-line flags (removed at the user's request). The dev commands
+(`setlevel`, `goto`, `addgold`, `give`) still exist in `game.py` but only work on a `Game` built
+with `dev=True` (direct calls). For a faster clock or fixed seed in tests, set
+`game.TICK_SECONDS` / `random.seed()` from a small launcher script in the temp copy.
 
 There is no build step and no unit test suite. Verify changes by:
 - **Data check**: `python tools/validate.py` after any edit to `data/`. It checks two-way exits,
@@ -34,7 +36,7 @@ There is no build step and no unit test suite. Verify changes by:
 - **Scripted play**: pipe commands into `main.py`. Piped input arrives instantly, so no game ticks
   pass between lines. Combat rounds and sleep need real time, so for those drive the game with
   delays between lines (a small `subprocess` script that writes a line, sleeps, writes the next)
-  together with `--tick 0.3`.
+  together with a short tick (`game.TICK_SECONDS = 0.3` set by a launcher before `main.main()`).
 - **Direct calls**: import `game.Game` with a `Character`, stub `ui.say/out/rule` to no-ops, and
   call methods (`cmd_attack`, `attempt_flee`, `world_tick`) to check logic without the clock.
 

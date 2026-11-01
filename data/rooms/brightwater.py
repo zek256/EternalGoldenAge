@@ -26,8 +26,16 @@ ROOMS = {
         "Sunlight pours through tall windows of stained glass, painting the white marble floor in gold "
         "and rose. Incense curls before a great altar where an eternal flame burns. Robed acolytes move "
         "softly between the pews. Those who fall in battle awaken here, under the Dawnfather's grace. "
-        "Behind the altar, a stair of white light climbs up into nothing.",
-        {"w": "town_square", "u": "threshold_stair"}, npcs=["aveline"], safe=True),
+        "Behind the altar, a stair of white light climbs up into nothing, and a bronze door in the "
+        "east wall opens onto the temple's vaults.",
+        {"w": "town_square", "u": "threshold_stair", "e": "sunvault"}, npcs=["aveline"], safe=True),
+    "sunvault": R(
+        "The Sunvault", "Brightwater",
+        "A low, cool chamber cut deep into the temple's foundations, its walls lined floor to ceiling "
+        "with bronze-bound strongboxes, each stamped with a sun-disc seal. For three hundred years the "
+        "priests of the Dawn have kept adventurers' treasures safe here, and no thief has ever left "
+        "with so much as a copper.",
+        {"w": "temple"}, npcs=["oswin"], safe=True),
     "market_street": R(
         "Market Street", "Brightwater",
         "A bustling lane of timber-framed shops leans over the street. The ring of a hammer on an anvil "

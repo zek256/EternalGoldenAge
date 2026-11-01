@@ -57,7 +57,8 @@ HELP = [
     ("Town", [("talk <person>", "speak with someone (accepts and completes quests)"),
               ("quests / journal", "show your quest log"),
               ("find <quest|#|monster>", "directions to your quest target, e.g. 'find vermin' -> 'wd'"),
-              ("list / buy [n] <item> / sell [n|all] <item>", "trade with a merchant ('sell all rat tail', 'sell junk')")]),
+              ("list / buy [n] <item> / sell [n|all] <item>", "trade with a merchant ('sell all rat tail', 'sell junk')"),
+              ("bank / deposit / withdraw [n|all] <item>", "store items in the Sunvault, east of the Temple of the Dawn")]),
     ("System", [("save / load", "save or load your game"),
                 ("alias <word> <command>", "make a shortcut, e.g. 'alias mm cast magic missile'"),
                 ("alias / unalias <word>", "list your aliases / remove one"),                ("help", "show this help"),
@@ -277,13 +278,14 @@ class Game:
         "x": "examine", "inspect": "examine", "take": "get", "pick": "get",
         "speak": "talk", "greet": "talk", "ask": "talk",
         "journal": "quests", "j": "quests", "quest": "quests", "shop": "list",
+        "vault": "bank", "store": "deposit", "stash": "deposit", "retrieve": "withdraw",
         "track": "find", "where": "find", "route": "find", "path": "find",
         "rest": "sleep", "stand": "wake", "con": "consider", "h": "help", "?": "help", "q": "quit", "exit": "quit",
         "abilities": "spells", "skills": "spells", "spellbook": "spells",
         "cd": "cooldowns", "cds": "cooldowns", "cooldown": "cooldowns", "timers": "cooldowns",
     }
     NO_COMBAT = {"sleep", "save", "load", "talk", "buy", "sell", "list", "get", "drop",
-                 "wear", "remove", "rebirth"}
+                 "wear", "remove", "rebirth", "bank", "deposit", "withdraw"}
     DEV_CMDS = {"setlevel", "goto", "addgold", "give"}
 
     # ================================================================ exploration
@@ -1085,6 +1087,53 @@ class Game:
         ui.say("You sell {}{} for {} gold.".format("{} x ".format(qty) if qty > 1 else "", ITEMS[iid]["name"],
                                                     each * qty), "yellow")
 
+    # ================================================================ bank (the Sunvault)
+    def banker(self):
+        return any(NPCS[nid].get("bank") for nid in self.room.npcs)
+
+    def cmd_bank(self, args):
+        if not self.banker():
+            ui.say("There is no vault-keeper here. The Sunvault lies beneath the Temple of the Dawn in Brightwater.", "grey")
+            return
+        ui.out(ui.c("Your strongbox holds:", "byellow"))
+        if not self.player.bank:
+            ui.out("  nothing at all.")
+        counts = {}
+        for iid in self.player.bank:
+            counts[iid] = counts.get(iid, 0) + 1
+        for iid, n in sorted(counts.items(), key=lambda kv: (ITEMS[kv[0]]["type"], ITEMS[kv[0]]["name"])):
+            ui.out("  {}{}".format("({}x) ".format(n) if n > 1 else "", self.item_line(iid)))
+        ui.out(ui.c("Type 'deposit <item>' or 'withdraw <item>' (or 'deposit all <item>').", "grey"))
+
+    def bank_move(self, args, src, dst, missing, verb):
+        """Move items between the inventory and the bank: '<item>', '<n> <item>' or 'all <item>'."""
+        if not self.banker():
+            ui.say("There is no vault-keeper here. The Sunvault lies beneath the Temple of the Dawn in Brightwater.", "grey")
+            return
+        qty = 1
+        m = re.match(r"^(all|\d+)\s+(.+)$", args, re.I)
+        if m:
+            qty, args = m.group(1).lower(), m.group(2)
+        iid = self.find_item(src, args)
+        if not iid:
+            ui.say(missing, "grey")
+            return
+        have = src.count(iid)
+        qty = have if qty == "all" else min(int(qty), have)
+        if qty < 1:
+            ui.say(cap(verb) + " how many?", "grey")
+            return
+        for _ in range(qty):
+            src.remove(iid)
+        dst += [iid] * qty
+        ui.say("You {} {}{}.".format(verb, "{} x ".format(qty) if qty > 1 else "", ITEMS[iid]["name"]), "bgreen")
+
+    def cmd_deposit(self, args):
+        self.bank_move(args, self.player.inventory, self.player.bank, "You aren't carrying that.", "deposit")
+
+    def cmd_withdraw(self, args):
+        self.bank_move(args, self.player.bank, self.player.inventory, "Your strongbox holds nothing like that.", "withdraw")
+
     # ================================================================ quests & NPCs
     def quest_state(self, qid):
         q, p = QUESTS[qid], self.player
@@ -1442,7 +1491,7 @@ class Game:
         if self.dev:
             ui.out(ui.c("Dev: setlevel <n>, goto <room_id>, addgold <n>, give <item_id>", "grey"))
 
-    # ================================================================ dev tools (python main.py --dev)
+    # ================================================================ dev tools (Game(dev=True), test scripts only)
     def cmd_setlevel(self, args):
         p = self.player
         target = max(1, min(MAX_LEVEL, int(args or 1)))

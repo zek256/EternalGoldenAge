@@ -15,6 +15,13 @@ NPCS = {
                     "shall awaken.'",
         "quests": ["bone_king", "bog_hag", "salt_wraiths"],
     },
+    "oswin": {
+        "name": "Brother Oswin the vault-keeper", "keywords": ["oswin", "brother", "keeper", "banker", "vault"],
+        "desc": "A thin, careful monk with a ring of bronze keys at his belt and a ledger tucked under one arm.",
+        "greeting": "'Leave with us what you cannot carry, and the Dawnfather will watch over it. Type "
+                    "DEPOSIT <item> to store it, WITHDRAW <item> to take it back, and BANK to see your strongbox.'",
+        "bank": True,
+    },
     "durgan": {
         "name": "Durgan Ironhand", "keywords": ["durgan", "smith", "blacksmith"],
         "desc": "A broad, soot-streaked smith with forearms like oak branches and a braided grey beard.",

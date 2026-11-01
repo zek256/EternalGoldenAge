@@ -74,7 +74,8 @@ Aimed Shot, and Serpent Sting again when it wears off.
 Wear **mail** (or leather) and a bow. STR and DEX first, then CON; WIS feeds Hunter's Mend and the wolf.
 
 Signature late gear: **Stormcaller** (50, bow, DEX/WIS/CON), dropped by Caelestra in the Plane of
-Stars. Also good: the dune recurve bow (40), Dragonscale Mail (48, mail), the sunsteel mail set (40),
+Stars. Also good: the dune recurve bow (40), Dragonscale Mail (48, mail), **tidescale legguards** (50,
+mail legs, from Nerevos), **the Ferryman's gloves** (50, leather, from Morthis), the sunsteel mail set (40),
 windwalker boots (50, leather, DEX), the Band of the Four Winds (50, ring, DEX), and the mythic Fang
 of Pyraxis and Eternity.
 

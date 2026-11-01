@@ -7,6 +7,7 @@
 <line x1="2675.0" y1="1414.0" x2="2675.0" y2="1506.0" stroke="#77736a" stroke-width="2"/>
 <line x1="2505.0" y1="1414.0" x2="2335.0" y2="1506.0" stroke="#77736a" stroke-width="2" stroke-dasharray="6 5"/>
 <text x="2442.0" y="1456.0" fill="#b8b3a6" font-size="11" text-anchor="middle">stairs</text>
+<line x1="2845.0" y1="1414.0" x2="3015.0" y2="1414.0" stroke="#77736a" stroke-width="2"/>
 <line x1="2675.0" y1="1322.0" x2="2505.0" y2="1322.0" stroke="#77736a" stroke-width="2"/>
 <line x1="2675.0" y1="1322.0" x2="2845.0" y2="1322.0" stroke="#77736a" stroke-width="2"/>
 <line x1="2675.0" y1="1322.0" x2="2675.0" y2="1230.0" stroke="#77736a" stroke-width="2"/>
@@ -416,6 +417,9 @@
 <text x="2845.0" y="1411.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Dawn</text>
 <text x="2845.0" y="1426.0" fill="#c9b67a" font-size="11" text-anchor="middle">safe</text>
 <text x="2845.0" y="1440.0" fill="#fff4c8" font-size="11" text-anchor="middle">↑ Planes of the Gods</text>
+<rect x="2945.0" y="1384.0" width="140" height="60" rx="6" fill="#3a3a46" stroke="#c9b67a" stroke-width="1.2"/>
+<text x="3015.0" y="1411.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">The Sunvault</text>
+<text x="3015.0" y="1426.0" fill="#c9b67a" font-size="11" text-anchor="middle">safe</text>
 <rect x="2605.0" y="1292.0" width="140" height="60" rx="6" fill="#3a3a46" stroke="#c9b67a" stroke-width="1.2"/>
 <text x="2675.0" y="1319.0" fill="#f1ead6" font-size="12.5" text-anchor="middle">Market Street</text>
 <text x="2675.0" y="1334.0" fill="#c9b67a" font-size="11" text-anchor="middle">safe</text>

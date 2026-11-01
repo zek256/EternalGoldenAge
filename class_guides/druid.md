@@ -75,7 +75,8 @@ Wear **leather**; no shields. WIS first, then CON.
 
 Notable late gear: **the Dreamweaver's Staff** (50, staff, INT/WIS/CHA, from Somnara in the Plane of
 Dreams), the dragonbone staff (47), the sunfire staff (40), the Sunforged Mace (43, blunt), drakehide
-and windwalker boots (leather), the Death Mask (50, leather), the Pearl of the Deep (50, ring), the
+and windwalker boots (leather), the Death Mask (50, leather), **dreamsilk trousers** (50, cloth legs,
+INT/WIS, from Somnara), the Pearl of the Deep (50, ring), the
 Ring of the Archmage, and the mythic Fang of Pyraxis and Eternity.
 
 From **the Mycelial Wards** (14-20, west of Westmarch's Old Watchtower): the Heartspore staff (20,

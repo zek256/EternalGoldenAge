@@ -80,7 +80,8 @@ codex) fills your empty shield slot.
 
 Notable late gear: **the Dreamweaver's Staff** (50, staff, INT/WIS/CHA, from Somnara), the dragonbone
 staff (47), the Scepter of the Sand Kings (48, wand), Seluvar's Hollow Wand (40), **starweave robes**
-(50, cloth, INT/WIS/CHA, from Caelestra), the silkwind gloves, trousers and slippers (cloth, 40-42), the
+(50, cloth, INT/WIS/CHA, from Caelestra), **starstep slippers** (50, cloth, INT/WIS, from Caelestra),
+**dreamsilk trousers** (50, cloth, INT/WIS, from Somnara), the silkwind gloves, trousers and slippers (cloth, 40-42), the
 Ring of the Archmage (40), the Pearl of the Deep (50, ring), the sunlit codex (40, off-hand), the Ashen
 Crown, and the mythic Fang of Pyraxis and Eternity.
 

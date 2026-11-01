@@ -79,7 +79,8 @@ Wear **leather**; no shields. CHA first (your spells and mana), then STR (weapon
 
 There are no CHA-focused weapons in the late game, so look for gear with broad stats: the Scepter of
 the Sand Kings (48, wand, INT/WIS/CHA), Seluvar's Hollow Wand (40), the Ashen Crown (46, any class),
-the Heart of Flame (50, neck), **the Death Mask** (50, leather), windwalker boots (50, leather), the
+the Heart of Flame (50, neck), **the Death Mask** (50, leather), **the Ferryman's gloves** (50, leather,
+DEX/STR/CHA, from Morthis), windwalker boots (50, leather), the
 Crown of Trepth and the Hourglass Amulet, and the mythic weapons the Fang of Pyraxis and Eternity, which
 give CHA along with everything else.
 

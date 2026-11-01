@@ -834,7 +834,7 @@ M("caelestra", "Caelestra, the Star-Warden", 55,
   specials=[big("Shooting Star", 0.22, 2.0, "draws her bow, and a shooting star strikes you!"),
             stun("Eclipse", 0.12, 1, "folds her wings over the stars, and you stagger blind in the dark!"),
             heal("Starlight", 0.08, 0.1, "bathes in starlight, and her wounds close!")],
-  loot=[("stormcaller_bow", 0.4), ("starweave_robes", 0.4), ("planar_shard", 1.0)])
+  loot=[("stormcaller_bow", 0.4), ("starweave_robes", 0.4), ("starstep_slippers", 0.4), ("planar_shard", 1.0)])
 M("somnara", "Somnara, the Dreamweaver", 55,
   "The guardian of the Plane of Dreams, a tall woman of moonlight and grey silk crowned with sleeping moths, who weaves "
   "the dreams of every living thing on a loom of silver.",
@@ -842,7 +842,7 @@ M("somnara", "Somnara, the Dreamweaver", 55,
   specials=[dot("Smothering Dream", 0.2, 0.6, 4, "arcane", "wraps you in a dream that will not let you breathe!"),
             stun("Endless Sleep", 0.12, 1, "sings a single note, and you fall asleep where you stand!"),
             heal("Lucid Mending", 0.1, 0.12, "dreams herself whole again!")],
-  loot=[("dreamweaver_staff", 0.4), ("dreamsilver_greaves", 0.4), ("planar_shard", 1.0)])
+  loot=[("dreamweaver_staff", 0.4), ("dreamsilver_greaves", 0.4), ("dreamsilk_trousers", 0.4), ("planar_shard", 1.0)])
 M("morthis", "Morthis, Keeper of the Dead", 55,
   "The guardian of the Plane of Death, a gaunt giant in a robe of grey ash with a lantern of cold blue fire, who has "
   "counted every soul that ever died and has a place ready for yours.",
@@ -850,7 +850,7 @@ M("morthis", "Morthis, Keeper of the Dead", 55,
   specials=[drain("Toll of the Dead", 0.2, 1.4, "names the hour of your death, and your life drains toward it!"),
             stun("Grave Cold", 0.14, 1, "lifts his lantern, and the cold of the grave stops your heart for a moment!"),
             big("Last Rites", 0.18, 2.0, "brings down his staff of bone like a closing coffin lid!")],
-  loot=[("gravesong", 0.4), ("death_mask", 0.4), ("planar_shard", 1.0)])
+  loot=[("gravesong", 0.4), ("death_mask", 0.4), ("ferrymans_gloves", 0.4), ("planar_shard", 1.0)])
 
 M("chained_penitent", "a chained penitent", 52, "A giant prisoner bound in chains of light, serving a sentence a thousand years long, who swings those chains at anyone who comes near.",
   hp=3.6, dmg=2.9, armor=2.0, specials=[big("Flail of Chains", 0.2, 1.8, "whirls its chains and brings them crashing down on you!")],
@@ -907,7 +907,7 @@ M("lord_water", "Nerevos, Lord of the Tides", 58,
   specials=[stun("Drowning Wave", 0.14, 1, "raises a wave that crashes down and drowns you!"),
             big("Trident Thrust", 0.2, 2.0, "drives his coral trident into you!"),
             heal("Tidal Renewal", 0.1, 0.1, "draws in the tide, and his wounds wash away!")],
-  loot=[("tidecaller", 0.4), ("pearl_of_the_deep", 0.4), ("planar_shard", 1.0)])
+  loot=[("tidecaller", 0.4), ("pearl_of_the_deep", 0.4), ("tidescale_legguards", 0.4), ("planar_shard", 1.0)])
 M("lord_earth", "Ulmathra, Lord of Stone", 58,
   "The lord of the Plane of Earth, a mountain that stands and walks, with crystal eyes and a voice like the grinding of continents.",
   hp=8.9, dmg=3.0, armor=3.0, aggro=True, boss=True, xp=2.0, gold=15.0,

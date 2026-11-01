@@ -75,7 +75,8 @@ Wear **mail** and a shield. WIS first, then CON.
 
 Notable late gear: the Sunforged Mace (43, blunt, STR/WIS), Flameheart (50, blunt), the dragonbone
 staff and **the Dreamweaver's Staff** (staffs, giving up the shield), Dragonscale Mail (48, mail), the
-Burial Mask of Ussreth (48, mail), the sunsteel mail set, the Shield of Judgement (50, CON/WIS), the
+Burial Mask of Ussreth (48, mail), **tidescale legguards** (50, mail legs, WIS/CON, from Nerevos), the
+sunsteel mail set, the Shield of Judgement (50, CON/WIS), the
 Pearl of the Deep (50, ring), and the mythic Fang of Pyraxis and Eternity.
 
 From **the Mycelial Wards** (14-20, west of Westmarch's Old Watchtower): the Heartspore staff (20,

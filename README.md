@@ -15,16 +15,8 @@ Open a terminal in this folder (in File Explorer, click the address bar, type `c
 python main.py
 ```
 
-Requires Python 3.8+. No installation, no network.
-
-Options:
-
-| flag | effect |
-|---|---|
-| `--no-color` | disable ANSI colours (also honours the `NO_COLOR` environment variable) |
-| `--seed N` | fixed random seed, for reproducible runs |
-| `--tick S` | seconds per game tick (default 4) |
-| `--dev` | enables test commands: `setlevel <n>`, `goto <room_id>`, `addgold <n>`, `give <item_id>` |
+Requires Python 3.8+. No installation, no network. Colours are turned off if the `NO_COLOR`
+environment variable is set.
 
 Saves are written as JSON to `saves/<name>.json`.
 
@@ -56,6 +48,7 @@ Saves are written as JSON to `saves/<name>.json`.
 | `quests` / `journal` | quest log |
 | `find` <quest name, number, or monster> | shortest route to your quest target (or the quest giver once it's done), e.g. `find vermin` prints `wd`. With one active quest, plain `find` works. Also `track` / `where` |
 | `list`, `buy [qty] <item>`, `sell [qty or all] <item>`, `sell junk` | trade with merchants: Durgan Ironhand (weapons and armor, smithy), Elowen Silverthread (cloth, wands, orbs and rings for casters, west off the South Road), Mirela (potions) |
+| `bank`, `deposit [qty or all] <item>`, `withdraw [qty or all] <item>` | store items you don't want to carry with Brother Oswin in the Sunvault, east of the Temple of the Dawn. Gold stays in your purse. Banked items are kept through rebirth, but don't count toward collect quests or open item gates until you withdraw them |
 | `sleep` / `rest` | fall asleep and recover 10% of max HP and mana every tick (not with hostile monsters nearby) |
 | `wake` / `stand` | get up (you also wake automatically when fully rested, or when attacked) |
 | `pet` / `pet dismiss` | inspect or release your summoned companion |
@@ -193,7 +186,7 @@ At level 50, `rebirth` lets you choose any other class:
 
 ## World
 
-Town of Brightwater (inn, temple, smithy, alchemist, Silverthread Arcana caster shop, barracks,
+Town of Brightwater (inn, temple and the Sunvault bank beneath it, smithy, alchemist, Silverthread Arcana caster shop, barracks,
 and the North, West and East Gates), Greenmeadow (1-5), Whispering Woods and the bandit camp (4-10),
 the Westmarch farms and goblin quarry (3-10), **the Mycelial Wards** (12-20) west of its Old Watchtower, a city grown from one vast fungal network whose capfolk share a partial hive mind (most ignore you; the spore wardens and the things of the Rot Ward and the deep network do not), with a quiet garden path south from the Gilled Houses into the Hedge Maze of Thornwick Hall, Barrowfield and the Crypt of Varnoth dungeon (9-17),
 the snowy Rimefells (10-20) around the dwarven city of **Hearthdeep** (smith, rune-carver, alehouse

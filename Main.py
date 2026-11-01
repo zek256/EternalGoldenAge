@@ -1,12 +1,9 @@
 """Eternal Golden Age - an offline, single-player fantasy MUD.
 
-Run:  python main.py            (add --no-color to disable colour, --dev for test commands)
+Run:  python main.py
 """
-import argparse
-import random
 import sys
 
-import game as engine
 import ui
 from game import ask, create_character, list_saves, load_game_interactive
 
@@ -22,16 +19,7 @@ TITLE = r"""
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Eternal Golden Age, a text fantasy RPG.")
-    ap.add_argument("--no-color", action="store_true", help="disable ANSI colours")
-    ap.add_argument("--dev", action="store_true", help="enable developer/test commands")
-    ap.add_argument("--seed", type=int, help="random seed (for reproducible testing)")
-    ap.add_argument("--tick", type=float, default=engine.TICK_SECONDS, help="seconds per game tick (default 4)")
-    opts = ap.parse_args()
-    engine.TICK_SECONDS = max(0.05, opts.tick)
-    if opts.seed is not None:
-        random.seed(opts.seed)
-    ui.init(color=not opts.no_color)
+    ui.init()
     ui.start_input()
 
     ui.out(ui.c(TITLE, "byellow"))
@@ -44,9 +32,9 @@ def main():
         ui.out("  3. Quit")
         sel = ask("> ").strip().lower()
         if sel in ("1", "n", "new"):
-            game = create_character(dev=opts.dev)
+            game = create_character()
         elif sel in ("2", "l", "load"):
-            game = load_game_interactive(dev=opts.dev)
+            game = load_game_interactive()
             if game:
                 ui.say("Welcome back, {}.".format(game.player.name), "bgreen")
         elif sel in ("3", "q", "quit"):

@@ -74,7 +74,8 @@ Wear **cloth** and a staff or wand. INT first, then CON. An off-hand item (the s
 your empty shield slot.
 
 Notable late gear: the same as the Wizard: **the Dreamweaver's Staff**, the dragonbone staff, the
-Scepter of the Sand Kings, Seluvar's Hollow Wand, **starweave robes**, the silkwind cloth set, the
+Scepter of the Sand Kings, Seluvar's Hollow Wand, **starweave robes**, **starstep slippers**, **dreamsilk
+trousers**, the silkwind cloth set, the
 Ring of the Archmage, the Pearl of the Deep, the sunlit codex, and the mythic Fang of Pyraxis and
 Eternity.
 

@@ -77,7 +77,8 @@ Wear **leather**; you can't use shields. STR and DEX together (STR for damage; D
 dodge and armor), then CON.
 
 Notable late gear: the Khopesh of Ussreth (48, sword), **Gravesong** (50, sword) and **the Death Mask**
-(50, leather head, STR/DEX/CON), both from Morthis in the Plane of Death, drakehide boots (45) and
+(50, leather head, STR/DEX/CON) and **the Ferryman's gloves** (50, leather, DEX/STR), all from Morthis
+in the Plane of Death, drakehide boots (45) and
 windwalker boots (50) in leather, the sandrunner's jerkin and gloves (40), the Band of the Four Winds
 (50, ring), Stormcaller (50, bow), and the mythic Fang of Pyraxis and Eternity.
 
