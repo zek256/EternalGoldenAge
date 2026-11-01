@@ -76,24 +76,26 @@ needs all four elemental lords.
 
 ## Class by class
 
-Each table reads left to right: what to buy, then what to farm before the planes, then the mythic
-piece to chase later. Levels are in brackets.
+Each table reads left to right: what to buy, then what to farm before the planes, then the best item
+in the whole game for that slot. Every entry gives its level and where it comes from: the shop, or the
+monster, its drop chance and its area. Where the best item can be bought or farmed early, that's
+because nothing better exists for your class.
 
 ### Warrior
 
 STR first, then CON. You can wear everything up to plate and use every weapon except staves and wands.
 
-| Slot | Buy | Farm before the planes | Planes |
+| Slot | Buy | Farm before the planes | Best in slot |
 |---|---|---|---|
-| Weapon | crescent greatsword (44) | **Fang of Pyraxis** (50); or the Vane longsword (49), Khopesh of Ussreth (48), obsidian greatblade (45) | Flameheart, Gravesong, Eternity |
-| Shield | sunburst shield (42) | Mr. Graves's silver salver (45, Thornwick butler, 20%) | the Mountainheart Shield |
-| Head | sunsteel warhelm (40) | a Vane warhelm (46, Thornwick knights) or the Burial Mask of Ussreth (48, mail) | the Crown of Trepth |
-| Chest | sunsteel breastplate (42) | **Dragonscale Mail** (48, mail, Pyraxis), slightly ahead of the Vane heirloom plate (49) | - |
-| Hands | sunsteel gauntlets (42) | Vane gauntlets (45, Thornwick guards and knights) | gauntlets of the pyre |
-| Legs | sunsteel greaves (40) | obsidian greaves (44, obsidian golems 8%) | dreamsilver greaves |
-| Feet | sunsteel sabatons (41) | - | stonestride boots |
-| Neck | - | Great-aunt Mathilde's cameo (46), then **the Heart of Flame** (Pyraxis) | the Hourglass Amulet |
-| Ring | sunstone ring (42) | ember ring (44), then the Vane signet (49, Lord Vane) | the Band of the Four Winds |
+| Weapon | crescent greatsword (44; Zahir, Sunspire) | Fang of Pyraxis (50; Pyraxis the Eternal Flame 70%, Ashen Peaks)<br>or the Vane longsword (49; Lord Aldric Vane 50%, Thornwick Hall)<br>or the Khopesh of Ussreth (48; Ussreth 50%, Tomb of the Sand Kings) | Eternity (50; Lord Trepth 50%, Plane of Eternity) |
+| Shield | sunburst shield (42; Zahir, Sunspire) | Mr. Graves's silver salver (45; Mr. Graves 20%, Thornwick Hall) | the Mountainheart Shield (50; Ulmathra 40%, Plane of Earth) |
+| Head | sunsteel warhelm (40; Zahir, Sunspire) | Vane warhelm (46; Vane sworn sword 4% or knight of the household 3%, Thornwick Hall)<br>or the Burial Mask of Ussreth (48; Ussreth 60%, Tomb of the Sand Kings) | the Crown of Trepth (50; Lord Trepth 50%, Plane of Eternity) |
+| Chest | sunsteel breastplate (42; Zahir, Sunspire) | Dragonscale Mail (48; Pyraxis the Eternal Flame 70%, Ashen Peaks)<br>or the Vane heirloom plate (49; Lord Aldric Vane 50% or Vane sworn sword 2%, Thornwick Hall) | Dragonscale Mail (48; Pyraxis the Eternal Flame 70%, Ashen Peaks) |
+| Hands | sunsteel gauntlets (42; Zahir, Sunspire) | Vane gauntlets (45; Vane sworn sword 4% or gate warden 3%, Thornwick Hall) | gauntlets of the pyre (50; Rekkn 40%, Plane of Fire) |
+| Legs | sunsteel greaves (40; Zahir, Sunspire) | obsidian greaves (44; obsidian golem 8% or dragonkin guard 5%, Ashen Peaks) | dreamsilver greaves (50; Somnara 40%, Plane of Dreams) |
+| Feet | sunsteel sabatons (41; Zahir, Sunspire) | - | stonestride boots (50; Ulmathra 40%, Plane of Earth) |
+| Neck | - | Great-aunt Mathilde's cameo (46; Great-aunt Mathilde 30%, Thornwick Hall)<br>or the Heart of Flame (50; Pyraxis the Eternal Flame 50%, Ashen Peaks) | the Hourglass Amulet (50; Lord Trepth 50%, Plane of Eternity) |
+| Ring | sunstone ring (42; Amsa, Sunspire) | ember ring (44; magma titan 8% or ash drake 3%, Ashen Peaks)<br>or the Vane signet (49; Lord Aldric Vane 60%, Thornwick Hall) | the Band of the Four Winds (50; Zephyrion 40%, Plane of Air) |
 
 **Priority:** a weapon upgrade first (Lord Vane or Ussreth), then Dragonscale Mail and the Heart of
 Flame from Pyraxis.
@@ -103,35 +105,36 @@ Flame from Pyraxis.
 STR first, then CON; WIS feeds your shield and Consecration. Plate, shields, swords, blunt and
 two-handed weapons.
 
-| Slot | Buy | Farm before the planes | Planes |
+| Slot | Buy | Farm before the planes | Best in slot |
 |---|---|---|---|
-| Weapon | crescent greatsword (44) | the Vane longsword (49), the Sunforged Mace (43, STR/WIS, dragonkin guards), **Fang of Pyraxis** (50) | **the Lightbearer's Oath** (made for you), Flameheart |
-| Shield | sunburst shield (42) | Mr. Graves's silver salver (45) | **the Shield of Judgement** (CON/WIS) |
-| Head | sunsteel warhelm (40) | the Burial Mask of Ussreth (48, has WIS) or a Vane warhelm (46) | the Crown of Trepth |
-| Chest | sunsteel breastplate (42) | Dragonscale Mail (48) or the Vane heirloom plate (49) | - |
-| Hands | sunsteel gauntlets (42) | Vane gauntlets (45) | gauntlets of the pyre |
-| Legs | sunsteel greaves (40) | obsidian greaves (44) | dreamsilver greaves |
-| Feet | sunsteel sabatons (41) | - | stonestride boots |
-| Neck | amulet of the obelisk (40) | the Dowager's pearls (48, WIS/CON), then the Heart of Flame | the Hourglass Amulet |
-| Ring | sunstone ring (42) | the Vane signet (49) | the Band of the Four Winds |
+| Weapon | crescent greatsword (44; Zahir, Sunspire) | the Vane longsword (49; Lord Aldric Vane 50%, Thornwick Hall)<br>or the Sunforged Mace (43; dragonkin guard 3%, Ashen Peaks)<br>or Fang of Pyraxis (50; Pyraxis the Eternal Flame 70%, Ashen Peaks) | Eternity (50; Lord Trepth 50%, Plane of Eternity)<br>or the Lightbearer's Oath (50; Stalworth Lightbearer 40%, Plane of Law) if you would rather have WIS than damage |
+| Shield | sunburst shield (42; Zahir, Sunspire) | Mr. Graves's silver salver (45; Mr. Graves 20%, Thornwick Hall) | the Shield of Judgement (50; Stalworth Lightbearer 40%, Plane of Law) |
+| Head | sunsteel warhelm (40; Zahir, Sunspire) | the Burial Mask of Ussreth (48; Ussreth 60%, Tomb of the Sand Kings)<br>or Vane warhelm (46; Vane sworn sword 4% or knight of the household 3%, Thornwick Hall) | the Crown of Trepth (50; Lord Trepth 50%, Plane of Eternity) |
+| Chest | sunsteel breastplate (42; Zahir, Sunspire) | Dragonscale Mail (48; Pyraxis the Eternal Flame 70%, Ashen Peaks)<br>or the Vane heirloom plate (49; Lord Aldric Vane 50% or Vane sworn sword 2%, Thornwick Hall) | Dragonscale Mail (48; Pyraxis the Eternal Flame 70%, Ashen Peaks) |
+| Hands | sunsteel gauntlets (42; Zahir, Sunspire) | Vane gauntlets (45; Vane sworn sword 4% or gate warden 3%, Thornwick Hall) | gauntlets of the pyre (50; Rekkn 40%, Plane of Fire) |
+| Legs | sunsteel greaves (40; Zahir, Sunspire) | obsidian greaves (44; obsidian golem 8% or dragonkin guard 5%, Ashen Peaks) | dreamsilver greaves (50; Somnara 40%, Plane of Dreams) |
+| Feet | sunsteel sabatons (41; Zahir, Sunspire) | - | stonestride boots (50; Ulmathra 40%, Plane of Earth) |
+| Neck | amulet of the obelisk (40; Amsa, Sunspire) | the Dowager's pearls (48; Lady Isolde 25%, Thornwick Hall)<br>or the Heart of Flame (50; Pyraxis the Eternal Flame 50%, Ashen Peaks) | the Hourglass Amulet (50; Lord Trepth 50%, Plane of Eternity) |
+| Ring | sunstone ring (42; Amsa, Sunspire) | the Vane signet (49; Lord Aldric Vane 60%, Thornwick Hall) | the Band of the Four Winds (50; Zephyrion 40%, Plane of Air) |
 
-**Priority:** the Vane longsword, then Pyraxis. Stalworth's two drops are the best paladin items in the game.
+**Priority:** the Vane longsword, then Pyraxis. In the planes, Stalworth's Shield of Judgement is your
+best shield, and his Lightbearer's Oath is the best weapon after Eternity.
 
 ### Dread Knight
 
 STR first, then CON; INT feeds your spells. Plate, shields, swords, axes and two-handed weapons.
 
-| Slot | Buy | Farm before the planes | Planes |
+| Slot | Buy | Farm before the planes | Best in slot |
 |---|---|---|---|
-| Weapon | crescent greatsword (44) | **Fang of Pyraxis** (50, has INT), the Vane longsword (49), Khopesh of Ussreth (48), Mistress Hollin's cleaver (45, axe) | **Gravesong**, Eternity |
-| Shield | sunburst shield (42) | Mr. Graves's silver salver (45), or Tobias's black grimoire (47, INT, off-hand) if your spells matter more | the Mountainheart Shield |
-| Head | sunsteel warhelm (40) | **the Burial Mask of Ussreth** (48, has INT) | the Crown of Trepth |
-| Chest | sunsteel breastplate (42) | Dragonscale Mail (48) or the Vane heirloom plate (49) | - |
-| Hands | sunsteel gauntlets (42) | Vane gauntlets (45) | gauntlets of the pyre |
-| Legs | sunsteel greaves (40) | obsidian greaves (44) | dreamsilver greaves |
-| Feet | sunsteel sabatons (41) | - | stonestride boots |
-| Neck | amulet of the obelisk (40) | the Heart of Flame | the Hourglass Amulet |
-| Ring | sunstone ring (42) | ember ring (44), the Vane signet (49) | the Band of the Four Winds |
+| Weapon | crescent greatsword (44; Zahir, Sunspire) | Fang of Pyraxis (50; Pyraxis the Eternal Flame 70%, Ashen Peaks)<br>or the Vane longsword (49; Lord Aldric Vane 50%, Thornwick Hall)<br>or the Khopesh of Ussreth (48; Ussreth 50%, Tomb of the Sand Kings)<br>or Mistress Hollin's cleaver (45; Mistress Hollin 20%, Thornwick Hall) | Eternity (50; Lord Trepth 50%, Plane of Eternity) |
+| Shield | sunburst shield (42; Zahir, Sunspire) | Mr. Graves's silver salver (45; Mr. Graves 20%, Thornwick Hall)<br>or Tobias's black grimoire (47; Master Tobias Vane 20%, Thornwick Hall) | the Mountainheart Shield (50; Ulmathra 40%, Plane of Earth) |
+| Head | sunsteel warhelm (40; Zahir, Sunspire) | the Burial Mask of Ussreth (48; Ussreth 60%, Tomb of the Sand Kings) | the Crown of Trepth (50; Lord Trepth 50%, Plane of Eternity) |
+| Chest | sunsteel breastplate (42; Zahir, Sunspire) | Dragonscale Mail (48; Pyraxis the Eternal Flame 70%, Ashen Peaks)<br>or the Vane heirloom plate (49; Lord Aldric Vane 50% or Vane sworn sword 2%, Thornwick Hall) | Dragonscale Mail (48; Pyraxis the Eternal Flame 70%, Ashen Peaks) |
+| Hands | sunsteel gauntlets (42; Zahir, Sunspire) | Vane gauntlets (45; Vane sworn sword 4% or gate warden 3%, Thornwick Hall) | gauntlets of the pyre (50; Rekkn 40%, Plane of Fire) |
+| Legs | sunsteel greaves (40; Zahir, Sunspire) | obsidian greaves (44; obsidian golem 8% or dragonkin guard 5%, Ashen Peaks) | dreamsilver greaves (50; Somnara 40%, Plane of Dreams) |
+| Feet | sunsteel sabatons (41; Zahir, Sunspire) | - | stonestride boots (50; Ulmathra 40%, Plane of Earth) |
+| Neck | amulet of the obelisk (40; Amsa, Sunspire) | the Heart of Flame (50; Pyraxis the Eternal Flame 50%, Ashen Peaks) | the Hourglass Amulet (50; Lord Trepth 50%, Plane of Eternity) |
+| Ring | sunstone ring (42; Amsa, Sunspire) | ember ring (44; magma titan 8% or ash drake 3%, Ashen Peaks)<br>or the Vane signet (49; Lord Aldric Vane 60%, Thornwick Hall) | the Band of the Four Winds (50; Zephyrion 40%, Plane of Air) |
 
 **Priority:** Ussreth (khopesh and mask in one fight), then Pyraxis.
 
@@ -140,17 +143,17 @@ STR first, then CON; INT feeds your spells. Plate, shields, swords, axes and two
 DEX first, then CON; WIS feeds Hunter's Mend and your wolf. Mail and lighter, shields, swords,
 daggers, axes and bows.
 
-| Slot | Buy | Farm before the planes | Planes |
+| Slot | Buy | Farm before the planes | Best in slot |
 |---|---|---|---|
-| Weapon | dune recurve bow (40) | the Vane hunting bow (45, Hobb the gamekeeper 15%), then **Fang of Pyraxis** (50) | **Stormcaller** |
-| Shield | sunburst shield (42) | Mr. Graves's silver salver (45, has DEX) | the Shield of Judgement |
-| Head | sunsteel helm (40) | the Burial Mask of Ussreth (48) | the Death Mask, the Crown of Trepth |
-| Chest | sunsteel mail (40) | **Dragonscale Mail** (48, Pyraxis) | - |
-| Hands | sunsteel gauntlets (42) | - | - |
-| Legs | sunsteel greaves (40) | Vane huntsman's breeches (43, leather, more DEX, less armor) | - |
-| Feet | sand-strider boots (40) | drakehide boots (45, ash drakes 6%) | **windwalker boots** |
-| Neck | - | Great-aunt Mathilde's cameo (46), then the Heart of Flame | the Hourglass Amulet |
-| Ring | sunstone ring (42) | ember ring (44) | **the Band of the Four Winds** |
+| Weapon | dune recurve bow (40; Zahir, Sunspire) | the Vane hunting bow (45; Hobb the gamekeeper 15%, Thornwick Hall)<br>or Fang of Pyraxis (50; Pyraxis the Eternal Flame 70%, Ashen Peaks) | Eternity (50; Lord Trepth 50%, Plane of Eternity)<br>or Stormcaller (50; Caelestra 40%, Plane of Stars) if you want a bow |
+| Shield | sunburst shield (42; Zahir, Sunspire) | Mr. Graves's silver salver (45; Mr. Graves 20%, Thornwick Hall) | the Shield of Judgement (50; Stalworth Lightbearer 40%, Plane of Law) |
+| Head | sunsteel helm (40; Zahir, Sunspire) | the Burial Mask of Ussreth (48; Ussreth 60%, Tomb of the Sand Kings) | the Crown of Trepth (50; Lord Trepth 50%, Plane of Eternity) |
+| Chest | sunsteel mail (40; Zahir, Sunspire) | Dragonscale Mail (48; Pyraxis the Eternal Flame 70%, Ashen Peaks) | Dragonscale Mail (48; Pyraxis the Eternal Flame 70%, Ashen Peaks) |
+| Hands | sunsteel gauntlets (42; Zahir, Sunspire) | - | sunsteel gauntlets (42; Zahir, Sunspire) |
+| Legs | sunsteel greaves (40; Zahir, Sunspire) | Vane huntsman's breeches (43; Hobb the gamekeeper 10% or stablemaster 6%, Thornwick Hall) | Vane huntsman's breeches (43; Hobb the gamekeeper 10% or stablemaster 6%, Thornwick Hall) |
+| Feet | sand-strider boots (40; Zahir, Sunspire) | drakehide boots (45; ash drake 6% or magma salamander 3%, Ashen Peaks) | windwalker boots (50; Zephyrion 40%, Plane of Air) |
+| Neck | - | Great-aunt Mathilde's cameo (46; Great-aunt Mathilde 30%, Thornwick Hall)<br>or the Heart of Flame (50; Pyraxis the Eternal Flame 50%, Ashen Peaks) | the Hourglass Amulet (50; Lord Trepth 50%, Plane of Eternity) |
+| Ring | sunstone ring (42; Amsa, Sunspire) | ember ring (44; magma titan 8% or ash drake 3%, Ashen Peaks) | the Band of the Four Winds (50; Zephyrion 40%, Plane of Air) |
 
 **Priority:** the Vane hunting bow is an easy early win; Pyraxis gives you a weapon, a chest and a neck.
 
@@ -159,17 +162,17 @@ daggers, axes and bows.
 DEX first, then CON. Rogues use no mana, so INT and WIS do nothing for you. Leather, no shield,
 daggers, swords and bows.
 
-| Slot | Buy | Farm before the planes | Planes |
+| Slot | Buy | Farm before the planes | Best in slot |
 |---|---|---|---|
-| Weapon | sunsteel scimitar (38) | **Lady Seraphine's hairpin** (47, dagger, 20%) or Sir Corwin's rapier (47, sword, 20%), then the Fang of Pyraxis (50) | Gravesong, Eternity |
-| Off-hand | sunlit codex (40), for its armor and CON only | a minstrel's lute (45, DEX+5), the only off-hand with DEX | - |
-| Head | sandrunner's hood (38) | the Ashen Crown (46, any class) | **the Death Mask** |
-| Chest | sandrunner's jerkin (40) | a Vane huntsman's jerkin (44, Hobb 10%) | - |
-| Hands | sandrunner gloves (40) | - | - |
-| Legs | sandrunner leggings (38) | Vane huntsman's breeches (43) | - |
-| Feet | sand-strider boots (40) | drakehide boots (45) | **windwalker boots** |
-| Neck | - | Great-aunt Mathilde's cameo (46), then the Heart of Flame | the Hourglass Amulet |
-| Ring | sunstone ring (42) | ember ring (44) | the Band of the Four Winds |
+| Weapon | sunsteel scimitar (38; Zahir, Sunspire) | Lady Seraphine's hairpin (47; Lady Seraphine Vane 20%, Thornwick Hall)<br>or Sir Corwin's rapier (47; Sir Corwin Vane 20%, Thornwick Hall)<br>or Fang of Pyraxis (50; Pyraxis the Eternal Flame 70%, Ashen Peaks) | Eternity (50; Lord Trepth 50%, Plane of Eternity) |
+| Off-hand | sunlit codex (40; Amsa, Sunspire) | minstrel's lute (45; household minstrel 5%, Thornwick Hall) | minstrel's lute (45; household minstrel 5%, Thornwick Hall) |
+| Head | sandrunner's hood (38; Zahir, Sunspire) | the Ashen Crown (46; magma titan 5% or flame demon 4%, Ashen Peaks) | the Crown of Trepth (50; Lord Trepth 50%, Plane of Eternity) |
+| Chest | sandrunner's jerkin (40; Zahir, Sunspire) | Vane huntsman's jerkin (44; Hobb the gamekeeper 10% or Vane huntsman 3%, Thornwick Hall) | Vane huntsman's jerkin (44; Hobb the gamekeeper 10% or Vane huntsman 3%, Thornwick Hall) |
+| Hands | sandrunner gloves (40; Zahir, Sunspire) | - | sandrunner gloves (40; Zahir, Sunspire) |
+| Legs | sandrunner leggings (38; Zahir, Sunspire) | Vane huntsman's breeches (43; Hobb the gamekeeper 10% or stablemaster 6%, Thornwick Hall) | Vane huntsman's breeches (43; Hobb the gamekeeper 10% or stablemaster 6%, Thornwick Hall) |
+| Feet | sand-strider boots (40; Zahir, Sunspire) | drakehide boots (45; ash drake 6% or magma salamander 3%, Ashen Peaks) | windwalker boots (50; Zephyrion 40%, Plane of Air) |
+| Neck | - | Great-aunt Mathilde's cameo (46; Great-aunt Mathilde 30%, Thornwick Hall)<br>or the Heart of Flame (50; Pyraxis the Eternal Flame 50%, Ashen Peaks) | the Hourglass Amulet (50; Lord Trepth 50%, Plane of Eternity) |
+| Ring | sunstone ring (42; Amsa, Sunspire) | ember ring (44; magma titan 8% or ash drake 3%, Ashen Peaks) | the Band of the Four Winds (50; Zephyrion 40%, Plane of Air) |
 
 **Priority:** Thornwick's upper floor. Seraphine, Corwin and Mathilde all drop rogue gear within a
 few rooms of each other.
@@ -179,17 +182,17 @@ few rooms of each other.
 CHA first (your spells and mana), then DEX, then CON. Leather, no shield, daggers, swords, blunt
 weapons and wands. CHA gear is rare, so look for items that give it alongside other stats.
 
-| Slot | Buy | Farm before the planes | Planes |
+| Slot | Buy | Farm before the planes | Best in slot |
 |---|---|---|---|
-| Weapon | sunsteel scimitar (38) | Sir Corwin's rapier (47, DEX/CHA), the Scepter of the Sand Kings (48, CHA), then **Fang of Pyraxis** (50, CHA and DEX) | Eternity |
-| Off-hand | - | **a minstrel's lute** (45, CHA+10, household minstrels 5%): the best bard off-hand | - |
-| Head | sandrunner's hood (38) | the Ashen Crown (46, any class, has CHA) | the Death Mask, the Crown of Trepth |
-| Chest | sandrunner's jerkin (40) | a Vane huntsman's jerkin (44) | - |
-| Hands | sandrunner gloves (40) | - | - |
-| Legs | sandrunner leggings (38) | Vane huntsman's breeches (43) | - |
-| Feet | sand-strider boots (40) | drakehide boots (45) | windwalker boots |
-| Neck | - | **the Dowager's pearls** (48, CHA/WIS/CON), then the Heart of Flame | the Hourglass Amulet |
-| Ring | sunstone ring (42) | **the Vane signet** (49, CHA) | the Band of the Four Winds |
+| Weapon | sunsteel scimitar (38; Zahir, Sunspire) | Sir Corwin's rapier (47; Sir Corwin Vane 20%, Thornwick Hall)<br>or the Scepter of the Sand Kings (48; Ussreth 50% or mummy priest 1%, Tomb of the Sand Kings)<br>or Fang of Pyraxis (50; Pyraxis the Eternal Flame 70%, Ashen Peaks) | Eternity (50; Lord Trepth 50%, Plane of Eternity) |
+| Off-hand | - | minstrel's lute (45; household minstrel 5%, Thornwick Hall) | minstrel's lute (45; household minstrel 5%, Thornwick Hall) |
+| Head | sandrunner's hood (38; Zahir, Sunspire) | the Ashen Crown (46; magma titan 5% or flame demon 4%, Ashen Peaks) | the Crown of Trepth (50; Lord Trepth 50%, Plane of Eternity) |
+| Chest | sandrunner's jerkin (40; Zahir, Sunspire) | Vane huntsman's jerkin (44; Hobb the gamekeeper 10% or Vane huntsman 3%, Thornwick Hall) | Vane huntsman's jerkin (44; Hobb the gamekeeper 10% or Vane huntsman 3%, Thornwick Hall) |
+| Hands | sandrunner gloves (40; Zahir, Sunspire) | - | sandrunner gloves (40; Zahir, Sunspire) |
+| Legs | sandrunner leggings (38; Zahir, Sunspire) | Vane huntsman's breeches (43; Hobb the gamekeeper 10% or stablemaster 6%, Thornwick Hall) | Vane huntsman's breeches (43; Hobb the gamekeeper 10% or stablemaster 6%, Thornwick Hall) |
+| Feet | sand-strider boots (40; Zahir, Sunspire) | drakehide boots (45; ash drake 6% or magma salamander 3%, Ashen Peaks) | windwalker boots (50; Zephyrion 40%, Plane of Air) |
+| Neck | - | the Dowager's pearls (48; Lady Isolde 25%, Thornwick Hall)<br>or the Heart of Flame (50; Pyraxis the Eternal Flame 50%, Ashen Peaks) | the Hourglass Amulet (50; Lord Trepth 50%, Plane of Eternity) |
+| Ring | sunstone ring (42; Amsa, Sunspire) | the Vane signet (49; Lord Aldric Vane 60%, Thornwick Hall) | the Vane signet (49; Lord Aldric Vane 60%, Thornwick Hall) |
 
 **Priority:** Thornwick Hall is the bard's treasure house: the lute, the pearls, the rapier and the signet.
 
@@ -197,17 +200,17 @@ weapons and wands. CHA gear is rare, so look for items that give it alongside ot
 
 WIS first (your heals and spells), then CON. Mail and lighter, shields, blunt weapons and staves.
 
-| Slot | Buy | Farm before the planes | Planes |
+| Slot | Buy | Farm before the planes | Best in slot |
 |---|---|---|---|
-| Weapon | sunfire staff (40) | **a dragonbone staff** (47, WIS+18, flamecallers and flame demons 4%) or the Sunforged Mace (43, STR/WIS) | the Dreamweaver's Staff |
-| Shield | sunburst shield (42) for armor, or sunlit codex (40) for WIS | Tobias's black grimoire (47) or Mr. Graves's silver salver (45) | **the Shield of Judgement** (CON/WIS) |
-| Head | sunsteel helm (40) | **the Burial Mask of Ussreth** (48, WIS/CON) | the Crown of Trepth |
-| Chest | sunsteel mail (40) | Dragonscale Mail (48) for armor, or a gown of green brocade (47, cloth, WIS+10) for healing power | starweave robes |
-| Hands | silkwind gloves (40) | silk evening gloves (46, WIS+7) | - |
-| Legs | sunsteel greaves (40) | - | - |
-| Feet | sunsteel boots (40) | - | - |
-| Neck | amulet of the obelisk (40) | the Dowager's pearls (48), then the Heart of Flame | the Hourglass Amulet |
-| Ring | oasis pearl ring (38) | the Ring of the Archmage (40, Seluvar) | **the Pearl of the Deep** |
+| Weapon | sunfire staff (40; Amsa, Sunspire) | dragonbone staff (47; dragon cult flamecaller or flame demon, 4% each, Ashen Peaks)<br>or the Sunforged Mace (43; dragonkin guard 3%, Ashen Peaks) | the Dreamweaver's Staff (50; Somnara 40%, Plane of Dreams) |
+| Shield | sunburst shield (42; Zahir, Sunspire)<br>or sunlit codex (40; Amsa, Sunspire) | Tobias's black grimoire (47; Master Tobias Vane 20%, Thornwick Hall)<br>or Mr. Graves's silver salver (45; Mr. Graves 20%, Thornwick Hall) | the Shield of Judgement (50; Stalworth Lightbearer 40%, Plane of Law) |
+| Head | sunsteel helm (40; Zahir, Sunspire) | the Burial Mask of Ussreth (48; Ussreth 60%, Tomb of the Sand Kings) | the Crown of Trepth (50; Lord Trepth 50%, Plane of Eternity) |
+| Chest | sunsteel mail (40; Zahir, Sunspire) | Dragonscale Mail (48; Pyraxis the Eternal Flame 70%, Ashen Peaks)<br>or gown of green brocade (47; Lady Seraphine Vane 10%, Thornwick Hall) | starweave robes (50; Caelestra 40%, Plane of Stars)<br>or Dragonscale Mail (48; Pyraxis the Eternal Flame 70%, Ashen Peaks) if you would rather have armor |
+| Hands | silkwind gloves (40; Amsa, Sunspire) | silk evening gloves (46; lady-in-waiting 3% or noble guest 2%, Thornwick Hall) | silk evening gloves (46; lady-in-waiting 3% or noble guest 2%, Thornwick Hall) |
+| Legs | sunsteel greaves (40; Zahir, Sunspire) | - | sunsteel greaves (40; Zahir, Sunspire) |
+| Feet | sunsteel boots (40; Zahir, Sunspire) | drakehide boots (45; ash drake 6% or magma salamander 3%, Ashen Peaks) | windwalker boots (50; Zephyrion 40%, Plane of Air) |
+| Neck | amulet of the obelisk (40; Amsa, Sunspire) | the Dowager's pearls (48; Lady Isolde 25%, Thornwick Hall)<br>or the Heart of Flame (50; Pyraxis the Eternal Flame 50%, Ashen Peaks) | the Hourglass Amulet (50; Lord Trepth 50%, Plane of Eternity) |
+| Ring | oasis pearl ring (38; Amsa, Sunspire) | the Ring of the Archmage (40; Seluvar the Hollow Archmage 60%, Ruins of Elandor) | the Pearl of the Deep (50; Nerevos 40%, Plane of Water) |
 
 **Priority:** the weapon. A dragonbone staff nearly doubles the WIS from your weapon.
 
@@ -216,17 +219,17 @@ WIS first (your heals and spells), then CON. Mail and lighter, shields, blunt we
 WIS first, then CON. Leather and lighter, no shield, staves, blunt weapons and daggers. Cloth
 pieces often beat leather for you, since they carry WIS.
 
-| Slot | Buy | Farm before the planes | Planes |
+| Slot | Buy | Farm before the planes | Best in slot |
 |---|---|---|---|
-| Weapon | sunfire staff (40) | **a dragonbone staff** (47) or the Sunforged Mace (43) | **the Dreamweaver's Staff** |
-| Off-hand | sunlit codex (40) | Tobias's black grimoire (47) | - |
-| Head | silkwind turban (38) | the Ashen Crown (46) | the Death Mask, the Crown of Trepth |
-| Chest | desert silk robe (38) | a gown of green brocade (47, Lady Seraphine 10%) | starweave robes |
-| Hands | silkwind gloves (40) | silk evening gloves (46) | - |
-| Legs | silkwind trousers (40) | - | - |
-| Feet | silkwind slippers (42) | drakehide boots (45) if you want armor | windwalker boots |
-| Neck | amulet of the obelisk (40) | the Dowager's pearls (48), then the Heart of Flame | the Hourglass Amulet |
-| Ring | oasis pearl ring (38) | the Ring of the Archmage (40) | the Pearl of the Deep |
+| Weapon | sunfire staff (40; Amsa, Sunspire) | dragonbone staff (47; dragon cult flamecaller or flame demon, 4% each, Ashen Peaks)<br>or the Sunforged Mace (43; dragonkin guard 3%, Ashen Peaks) | the Dreamweaver's Staff (50; Somnara 40%, Plane of Dreams) |
+| Off-hand | sunlit codex (40; Amsa, Sunspire) | Tobias's black grimoire (47; Master Tobias Vane 20%, Thornwick Hall) | Tobias's black grimoire (47; Master Tobias Vane 20%, Thornwick Hall) |
+| Head | silkwind turban (38; Amsa, Sunspire) | the Ashen Crown (46; magma titan 5% or flame demon 4%, Ashen Peaks) | the Crown of Trepth (50; Lord Trepth 50%, Plane of Eternity) |
+| Chest | desert silk robe (38; Amsa, Sunspire) | gown of green brocade (47; Lady Seraphine Vane 10%, Thornwick Hall) | starweave robes (50; Caelestra 40%, Plane of Stars) |
+| Hands | silkwind gloves (40; Amsa, Sunspire) | silk evening gloves (46; lady-in-waiting 3% or noble guest 2%, Thornwick Hall) | silk evening gloves (46; lady-in-waiting 3% or noble guest 2%, Thornwick Hall) |
+| Legs | silkwind trousers (40; Amsa, Sunspire) | - | silkwind trousers (40; Amsa, Sunspire) |
+| Feet | silkwind slippers (42; Amsa, Sunspire) | drakehide boots (45; ash drake 6% or magma salamander 3%, Ashen Peaks) | windwalker boots (50; Zephyrion 40%, Plane of Air) |
+| Neck | amulet of the obelisk (40; Amsa, Sunspire) | the Dowager's pearls (48; Lady Isolde 25%, Thornwick Hall)<br>or the Heart of Flame (50; Pyraxis the Eternal Flame 50%, Ashen Peaks) | the Hourglass Amulet (50; Lord Trepth 50%, Plane of Eternity) |
+| Ring | oasis pearl ring (38; Amsa, Sunspire) | the Ring of the Archmage (40; Seluvar the Hollow Archmage 60%, Ruins of Elandor) | the Pearl of the Deep (50; Nerevos 40%, Plane of Water) |
 
 **Priority:** the weapon and off-hand, then Thornwick for the gown and gloves.
 
@@ -234,17 +237,17 @@ pieces often beat leather for you, since they carry WIS.
 
 WIS first, then CON. Mail and lighter, shields, blunt weapons, staves and axes.
 
-| Slot | Buy | Farm before the planes | Planes |
+| Slot | Buy | Farm before the planes | Best in slot |
 |---|---|---|---|
-| Weapon | sunfire staff (40) | a dragonbone staff (47) or the Sunforged Mace (43) | the Dreamweaver's Staff, Flameheart |
-| Shield | sunburst shield (42) | Mr. Graves's silver salver (45) or Tobias's black grimoire (47) | the Shield of Judgement |
-| Head | sunsteel helm (40) | **the Burial Mask of Ussreth** (48) | the Crown of Trepth |
-| Chest | sunsteel mail (40) | **Dragonscale Mail** (48) | starweave robes, if you trade armor for WIS |
-| Hands | silkwind gloves (40) | silk evening gloves (46) | - |
-| Legs | sunsteel greaves (40) | - | - |
-| Feet | sunsteel boots (40) | - | - |
-| Neck | amulet of the obelisk (40) | the Dowager's pearls (48), then the Heart of Flame | the Hourglass Amulet |
-| Ring | oasis pearl ring (38) | the Ring of the Archmage (40) | the Pearl of the Deep |
+| Weapon | sunfire staff (40; Amsa, Sunspire) | dragonbone staff (47; dragon cult flamecaller or flame demon, 4% each, Ashen Peaks)<br>or the Sunforged Mace (43; dragonkin guard 3%, Ashen Peaks)<br>or Mistress Hollin's cleaver (45; Mistress Hollin 20%, Thornwick Hall) | the Dreamweaver's Staff (50; Somnara 40%, Plane of Dreams) |
+| Shield | sunburst shield (42; Zahir, Sunspire) | Mr. Graves's silver salver (45; Mr. Graves 20%, Thornwick Hall)<br>or Tobias's black grimoire (47; Master Tobias Vane 20%, Thornwick Hall) | the Shield of Judgement (50; Stalworth Lightbearer 40%, Plane of Law) |
+| Head | sunsteel helm (40; Zahir, Sunspire) | the Burial Mask of Ussreth (48; Ussreth 60%, Tomb of the Sand Kings) | the Crown of Trepth (50; Lord Trepth 50%, Plane of Eternity) |
+| Chest | sunsteel mail (40; Zahir, Sunspire) | Dragonscale Mail (48; Pyraxis the Eternal Flame 70%, Ashen Peaks)<br>or gown of green brocade (47; Lady Seraphine Vane 10%, Thornwick Hall) | starweave robes (50; Caelestra 40%, Plane of Stars)<br>or Dragonscale Mail (48; Pyraxis the Eternal Flame 70%, Ashen Peaks) if you would rather have armor |
+| Hands | silkwind gloves (40; Amsa, Sunspire) | silk evening gloves (46; lady-in-waiting 3% or noble guest 2%, Thornwick Hall) | silk evening gloves (46; lady-in-waiting 3% or noble guest 2%, Thornwick Hall) |
+| Legs | sunsteel greaves (40; Zahir, Sunspire) | - | sunsteel greaves (40; Zahir, Sunspire) |
+| Feet | sunsteel boots (40; Zahir, Sunspire) | drakehide boots (45; ash drake 6% or magma salamander 3%, Ashen Peaks) | windwalker boots (50; Zephyrion 40%, Plane of Air) |
+| Neck | amulet of the obelisk (40; Amsa, Sunspire) | the Dowager's pearls (48; Lady Isolde 25%, Thornwick Hall)<br>or the Heart of Flame (50; Pyraxis the Eternal Flame 50%, Ashen Peaks) | the Hourglass Amulet (50; Lord Trepth 50%, Plane of Eternity) |
+| Ring | oasis pearl ring (38; Amsa, Sunspire) | the Ring of the Archmage (40; Seluvar the Hollow Archmage 60%, Ruins of Elandor) | the Pearl of the Deep (50; Nerevos 40%, Plane of Water) |
 
 **Priority:** Ussreth for the mask, then the weapon.
 
@@ -252,26 +255,38 @@ WIS first, then CON. Mail and lighter, shields, blunt weapons, staves and axes.
 
 INT first, then CON for survival. Cloth only, no shield, staves, wands and daggers.
 
-| Slot | Buy | Farm before the planes | Planes |
+| Slot | Buy | Farm before the planes | Best in slot |
 |---|---|---|---|
-| Weapon | sunfire staff (40) | **the Scepter of the Sand Kings** (48, Ussreth 50%) or a dragonbone staff (47, 4%) | **the Dreamweaver's Staff** |
-| Off-hand | **sunlit codex** (40) | Tobias's black grimoire (47, Thornwick library, 20%) | - |
-| Head | silkwind turban (38) | the starlight circlet (36, Seluvar) is as good; nothing better before the planes | the Crown of Trepth |
-| Chest | desert silk robe (38) | a gown of green brocade (47, Lady Seraphine 10%) | **starweave robes** |
-| Hands | silkwind gloves (40) | silk evening gloves (46) | - |
-| Legs | silkwind trousers (40) | - | - |
-| Feet | silkwind slippers (42) | - | - |
-| Neck | amulet of the obelisk (40) | **the Heart of Flame** (Pyraxis) | the Hourglass Amulet |
-| Ring | oasis pearl ring (38) | **the Ring of the Archmage** (40, Seluvar 60%) | **the Pearl of the Deep** |
+| Weapon | sunfire staff (40; Amsa, Sunspire) | the Scepter of the Sand Kings (48; Ussreth 50% or mummy priest 1%, Tomb of the Sand Kings)<br>or dragonbone staff (47; dragon cult flamecaller or flame demon, 4% each, Ashen Peaks) | the Dreamweaver's Staff (50; Somnara 40%, Plane of Dreams) |
+| Off-hand | sunlit codex (40; Amsa, Sunspire) | Tobias's black grimoire (47; Master Tobias Vane 20%, Thornwick Hall) | Tobias's black grimoire (47; Master Tobias Vane 20%, Thornwick Hall) |
+| Head | silkwind turban (38; Amsa, Sunspire) | starlight circlet (36; Seluvar the Hollow Archmage 40% or spectral mage 3%, Ruins of Elandor) | the Crown of Trepth (50; Lord Trepth 50%, Plane of Eternity) |
+| Chest | desert silk robe (38; Amsa, Sunspire) | gown of green brocade (47; Lady Seraphine Vane 10%, Thornwick Hall) | starweave robes (50; Caelestra 40%, Plane of Stars) |
+| Hands | silkwind gloves (40; Amsa, Sunspire) | silk evening gloves (46; lady-in-waiting 3% or noble guest 2%, Thornwick Hall) | silk evening gloves (46; lady-in-waiting 3% or noble guest 2%, Thornwick Hall) |
+| Legs | silkwind trousers (40; Amsa, Sunspire) | - | silkwind trousers (40; Amsa, Sunspire) |
+| Feet | silkwind slippers (42; Amsa, Sunspire) | - | silkwind slippers (42; Amsa, Sunspire) |
+| Neck | amulet of the obelisk (40; Amsa, Sunspire) | the Heart of Flame (50; Pyraxis the Eternal Flame 50%, Ashen Peaks) | the Hourglass Amulet (50; Lord Trepth 50%, Plane of Eternity) |
+| Ring | oasis pearl ring (38; Amsa, Sunspire) | the Ring of the Archmage (40; Seluvar the Hollow Archmage 60%, Ruins of Elandor) | the Pearl of the Deep (50; Nerevos 40%, Plane of Water) |
 
 **Priority:** never leave the off-hand empty (the codex is a quick buy), then Ussreth for the scepter.
 Keep Mana Shield up against Pyraxis.
 
 ### Necromancer
 
-INT first, then CON. The same cloth, staves, wands and daggers as the wizard, so the wizard's table
-applies to you in full. Your pet's strength is fixed when you raise it, so raise a fresh skeleton
+INT first, then CON. The same cloth, staves, wands and daggers as the wizard, so your table is the same
+as the wizard's. Your pet's strength is fixed when you raise it, so raise a fresh skeleton
 or colossus after every upgrade.
+
+| Slot | Buy | Farm before the planes | Best in slot |
+|---|---|---|---|
+| Weapon | sunfire staff (40; Amsa, Sunspire) | the Scepter of the Sand Kings (48; Ussreth 50% or mummy priest 1%, Tomb of the Sand Kings)<br>or dragonbone staff (47; dragon cult flamecaller or flame demon, 4% each, Ashen Peaks) | the Dreamweaver's Staff (50; Somnara 40%, Plane of Dreams) |
+| Off-hand | sunlit codex (40; Amsa, Sunspire) | Tobias's black grimoire (47; Master Tobias Vane 20%, Thornwick Hall) | Tobias's black grimoire (47; Master Tobias Vane 20%, Thornwick Hall) |
+| Head | silkwind turban (38; Amsa, Sunspire) | starlight circlet (36; Seluvar the Hollow Archmage 40% or spectral mage 3%, Ruins of Elandor) | the Crown of Trepth (50; Lord Trepth 50%, Plane of Eternity) |
+| Chest | desert silk robe (38; Amsa, Sunspire) | gown of green brocade (47; Lady Seraphine Vane 10%, Thornwick Hall) | starweave robes (50; Caelestra 40%, Plane of Stars) |
+| Hands | silkwind gloves (40; Amsa, Sunspire) | silk evening gloves (46; lady-in-waiting 3% or noble guest 2%, Thornwick Hall) | silk evening gloves (46; lady-in-waiting 3% or noble guest 2%, Thornwick Hall) |
+| Legs | silkwind trousers (40; Amsa, Sunspire) | - | silkwind trousers (40; Amsa, Sunspire) |
+| Feet | silkwind slippers (42; Amsa, Sunspire) | - | silkwind slippers (42; Amsa, Sunspire) |
+| Neck | amulet of the obelisk (40; Amsa, Sunspire) | the Heart of Flame (50; Pyraxis the Eternal Flame 50%, Ashen Peaks) | the Hourglass Amulet (50; Lord Trepth 50%, Plane of Eternity) |
+| Ring | oasis pearl ring (38; Amsa, Sunspire) | the Ring of the Archmage (40; Seluvar the Hollow Archmage 60%, Ruins of Elandor) | the Pearl of the Deep (50; Nerevos 40%, Plane of Water) |
 
 **Priority:** the same as the wizard, with one difference: your pet and drains make the bosses
 easier, so you can take on Pyraxis earlier.
