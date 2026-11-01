@@ -112,7 +112,7 @@ class Combat:
         self.enemies = []
         self.over = False
         self.target = None
-        self.queued = None  # the player's action for the next round; auto-attack if none
+        self.queued = None  # the player's action for the next round, on top of the auto-attack
         self.held = None    # (ability, target word): one cooling ability, fired the round it is ready
         for e in enemies:
             self.add(e)
@@ -214,12 +214,19 @@ class Combat:
 
     # ------------------------------------------------------------------ player actions
     def player_attack(self, mon):
+        self.swing(mon)
+        self.end_round()
+
+    def swing(self, mon=None):
+        """The auto-attack. It lands every round you aren't stunned, alongside any action you take."""
+        mon = mon if mon and mon.alive else self.current_target()
+        if not mon:
+            return
         if random.random() < self.p.miss_chance:
             ui.say("You swing at {} but miss!".format(mon.name), "grey")
         else:
             dmg, crit = self.damage_monster(mon, self.p.roll_weapon(), physical=True)
             self.report_hit("You strike", mon, dmg, crit)
-        self.end_round()
 
     def player_ability(self, ab, target):
         p = self.p
@@ -244,6 +251,7 @@ class Combat:
                 for mon in targets:
                     if mon.alive:
                         self.apply_offensive(eff, mon, ab)
+        self.swing(target)
         self.end_round()
 
     def apply_offensive(self, eff, mon, ab):
@@ -276,8 +284,11 @@ class Combat:
             mon.add_effect({"type": "weaken", "name": eff["name"], "pct": eff["pct"], "turns": eff["turns"]})
             ui.say("{} is {} (-{}% damage).".format(mon.short(), eff["name"].lower(), int(eff["pct"] * 100)), "magenta")
 
-    def pass_turn(self):
-        """The player spends the round doing something else (potion, being stunned)."""
+    def pass_turn(self, swing=False):
+        """The player spends the round on something else: a potion or a failed escape (still swinging),
+        or being stunned (no swing)."""
+        if swing:
+            self.swing()
         self.end_round()
 
     # ------------------------------------------------------------------ round resolution

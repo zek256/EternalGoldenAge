@@ -103,9 +103,9 @@ gloves (46, cloth, INT/WIS/CHA).
 
 ## How it performs
 
-The Shaman wins every same-level fight in the simulator in about 4 rounds with 66-83% HP left. It
-lasts about 5 fights in a row at levels 10 and 30. It beat every world boss at the boss's own level
-except Pyraxis (about 90%), and nearly all at boss level +3.
+The Shaman wins every same-level fight in the simulator in about 3-5 rounds with 73-88% HP left. It
+lasts about 4 fights in a row at level 10 and 6 at level 30. It beat every world boss in the
+simulator, at the boss's own level and at boss level +3.
 
 ## Rebirth
 

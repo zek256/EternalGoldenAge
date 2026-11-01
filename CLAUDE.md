@@ -82,8 +82,12 @@ data/rooms/   one module per region, each with a ROOMS dict, merged in __init__ 
 - `kill X` or an offensive spell out of combat calls `start_combat`. The first action resolves
   immediately and `reset_clock()` gives a full tick before round 2.
 - In combat, typed actions don't act right away. `Combat.queue()` stores one action
-  (spell/ability/potion/flee), and the next `round()` runs it in place of the auto-attack.
-  Queued abilities are re-validated when they fire (`ability_round`).
+  (spell/ability/potion/flee), and the next `round()` runs it. Queued abilities are re-validated
+  when they fire (`ability_round`).
+- **The auto-attack lands every round alongside the action** (the user's choice): `player_ability`
+  ends with `Combat.swing()`, and potions and failed flees call `pass_turn(swing=True)`. Only a
+  stun (`pass_turn()`) skips the swing. Monster HP was raised by `world.MONSTER_HP_MULT` (1.3)
+  to keep fight lengths and the endgame where they were.
 - A second slot, `Combat.held`, keeps one ability that was used while still cooling down
   (`use_ability` calls `Combat.hold` instead of refusing). Each `round()` first tries
   `fire_held()`: once off cooldown it fires and takes the round, leaving `queued` for the next
@@ -139,7 +143,7 @@ data/rooms/   one module per region, each with a ROOMS dict, merged in __init__ 
 
 ### Monsters
 Templates only set multipliers. Real HP, damage and armor come from level in `MonsterInstance`
-(`(20 + 15L)` HP etc.). To make a monster tougher, change its multipliers, not raw numbers.
+(`(20 + 15L)` HP times `MONSTER_HP_MULT`, etc.). To make a monster tougher, change its multipliers, not raw numbers.
 Specials: big / dot / stun / drain / heal. Bosses respawn after 120 ticks, others after 30.
 Monsters above level 50 (the Planes of the Gods) use larger multipliers (hp 3.5-5.0, dmg 2.6-3.4
 for regulars; champions 4.85-6.6 / 2.3-2.9; elemental lords 5.75-9.4 / 2.5-3.25; Lord Trepth
@@ -205,8 +209,11 @@ Tuned with `tools/balance_sim.py`: same-level fights cost roughly 25-55% HP, and
 beatable at level+3 with potions. Necromancer, with its pet and drain, is the strongest solo
 class. That is intended. Wizards are fragile and get no area spell until Fireball at 16.
 With armor training, wizards rely on Mana Shield (strengthened to 15 + 4.5/level + 1.3 INT when
-cloth-only gear went in); they now clear ordinary fights with lots of HP to spare but are 70-90%
-against bosses at the boss's own level. Bards used to be too slow to kill bosses (30+ rounds);
+cloth-only gear went in, and to 17 + 5.2/level + 1.5 INT when the auto-attack began landing
+alongside every action, a change that helped melee classes far more than casters); they clear
+ordinary fights with lots of HP to spare but are 65-100% (about 87% on average) against bosses at
+the boss's own level. Note: the sims of 2026-11-01 show same-level fights costing only ~0-50% HP
+(median ~20%), easier than the 25-55% target, both before and after the swing change. Bards used to be too slow to kill bosses (30+ rounds);
 Discordant Note was raised to 10 + 2.4/level + 0.8 CHA and their unused INT gain became DEX.
 They now win 55-100% of boss fights at the boss's own level (the Bog Hag, about 40%, is the
 hardest) and essentially all at +3.
@@ -215,6 +222,7 @@ Endgame (`balance_sim.py endgame`, level-50 characters with 1/6/11 lives, best-i
 retuned 2026-11-01 for the best-of rebirth rule: first-tier plane monsters are 25-55% for a 1-life
 character (the level-54 ones near 0%) and trivial with 6; plane champions ~65-90% with 6 lives and
 100% with 11; elemental lords ~0-50% with 6 lives and ~90-97% with 11; Lord Trepth ~70% with 11
-(every class about 50-85%). The user asked for Trepth to need a full every-class character with
+(every class about 50-85%). After the swing change and `MONSTER_HP_MULT` 1.3: champions ~88-97%
+with 6 lives, lords 4-43% with 6 and 86-92% with 11, Lord Trepth ~65% with 11. The user asked for Trepth to need a full every-class character with
 good gear. Six lives already hold most of the best stats, so the 6-to-11 gap comes mainly from the
 mastery bonus (+12% vs +22%) and the remaining classes' growth (the rogue's and ranger's DEX).

@@ -110,10 +110,10 @@ Lady Seraphine's hairpin (47, dagger), the Dowager's pearls (48, neck, WIS/CHA/C
 
 ## How it performs
 
-The Bard wins every same-level fight in the simulator, fast (3-5 rounds), with 74-95% HP left, and it
-has good staying power (about 4 fights in a row at levels 10 and 30). Bosses at their own level are its
-weakness: about 45-55% against Old Mother Gristle and the First Spore, 70-85% against several others, but it wins essentially
-every boss fight at boss level +3.
+The Bard wins every same-level fight in the simulator, fast (2-6 rounds), with 65-99% HP left, and it
+has good staying power (about 4 fights in a row at level 10 and 7 at level 30). Bosses at their own
+level are its weakness: about 70-75% against the High Justice and the First Spore, 77-90% against
+several others, but it wins every boss fight at boss level +3.
 
 ## Rebirth
 

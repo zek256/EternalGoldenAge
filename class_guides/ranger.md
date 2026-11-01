@@ -105,11 +105,11 @@ and Great-aunt Mathilde's cameo (46, neck).
 
 ## How it performs
 
-The Ranger wins every same-level fight in the simulator, a little slowly at low levels (5-8 rounds)
-and quickly later (about 3 rounds at 30-45), finishing with 48-84% HP. It has the best staying power
-of any class at level 30 (nearly 8 fights in a row). Its weak point is the hardest bosses: about
-85-90% against Ussreth, Seluvar and the High Justice at the boss's own level, and about 70% against
-Pyraxis, who can't be out-levelled. It beats every other boss at boss level +3.
+The Ranger wins every same-level fight in the simulator, a little slowly at low levels (4-6 rounds)
+and quickly later (about 3-4 rounds from level 25), finishing with 51-83% HP. It lasts about 4 fights
+in a row at level 10 and the simulator's cap of 8 at level 30. Its weak point is the hardest bosses:
+about 83% against the High Justice, Ussreth and Pyraxis at the boss's own level, and 93% against
+Pyraxis at boss level +3. It beats every other boss at boss level +3.
 
 ## Rebirth
 

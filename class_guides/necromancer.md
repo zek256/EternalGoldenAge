@@ -104,9 +104,9 @@ and Tobias's black grimoire (47, off-hand, INT/WIS/CON) from Master Tobias.
 ## How it performs
 
 The Necromancer is the strongest solo class. It wins every same-level fight in the simulator in about
-3 rounds with 75-93% HP left, and it has the best staying power at low levels (about 6 fights in a row
-at level 10, 6 at level 30). It beat every world boss at the boss's own level except Rotheart and
-Gorrak (95% each), and all of them at boss level +3.
+3-4 rounds with 67-97% HP left, and it has the best staying power at low levels (about 7 fights in a
+row at level 10, 7 at level 30). It beat every world boss at the boss's own level except Rask and
+Yellowtooth (90% each) and a few at 97%, and all of them at boss level +3.
 
 ## Rebirth
 

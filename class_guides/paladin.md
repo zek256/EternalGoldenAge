@@ -108,10 +108,11 @@ WIS/CHA/CON).
 
 ## How it performs
 
-The Paladin wins every same-level fight in the simulator, a little slowly (4-7 rounds) but with
-plenty of health left (63-84%). It has strong staying power: about 3 fights in a row at level 10 and
-nearly 8 at level 30, among the best of any class. It beat every world boss at the boss's own level
-in the simulator.
+The Paladin wins every same-level fight in the simulator, a little slowly (3-7 rounds) but with
+plenty of health left (59-96%, above 85% from level 25). It has strong staying power: about 3-4 fights
+in a row at level 10 and the simulator's cap of 8 at level 30, among the best of any class. It beat
+every world boss at the boss's own level except Rask and Rotheart (97% each), and all of them at boss
+level +3.
 
 ## Rebirth
 

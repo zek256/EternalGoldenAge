@@ -106,10 +106,10 @@ neck).
 
 ## How it performs
 
-The Rogue wins every same-level fight in the simulator in about 3-5 rounds with 66-80% HP left. It
-lasts about 4 fights in a row at level 10 and 6 at level 30. It beat almost every world boss at the
-boss's own level (95% against Ghaldrek, Yellowtooth and the First Spore) and all of them at boss level
-+3.
+The Rogue wins every same-level fight in the simulator in about 3-6 rounds with 57-84% HP left (it
+takes the most damage at levels 1-16). It lasts about 3 fights in a row at level 10 and 6-7 at level
+30. It beat almost every world boss at the boss's own level (97% against Rask, Old Mother Gristle,
+Seluvar and Pyraxis) and all of them at boss level +3.
 
 ## Rebirth
 

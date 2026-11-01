@@ -85,8 +85,9 @@ damage, crit or dodge) last the whole game and matter more than race stats.
   example values.
 - Damage buffs (+% damage) raise weapon hits, spell damage, drains and damage over time, but not
   pets.
-- In a fight, a spell or ability you type is **queued** and replaces your next auto-attack. If it
-  is still cooling down, it is **held** and fires the moment it is ready.
+- In a fight, a spell or ability you type is **queued** and used next round, and your auto-attack
+  still lands that round too. If it is still cooling down, it is **held** and fires the moment it
+  is ready.
 - A buff, heal over time or shield with the same name **refreshes** rather than stacking.
 - **Stuns** you cast have half their listed chance against bosses.
 - **Damage shields** absorb damage after armor and last up to 10 rounds or until used up.

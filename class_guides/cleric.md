@@ -105,10 +105,10 @@ black grimoire (47, off-hand) if you would rather have INT and WIS than a shield
 
 ## How it performs
 
-The Cleric wins every same-level fight in the simulator in 3-6 rounds and finishes with 71-96% HP. It
-lasts about 3 fights in a row at level 10 and about 5 at level 30. It beat nearly every world boss at
-the boss's own level (95% against Seluvar, Ussreth and Pyraxis) and all of them at boss level +3 except
-Rotheart, where it won 95%.
+The Cleric wins every same-level fight in the simulator in 3-8 rounds and finishes with 72-99% HP. It
+lasts about 3-4 fights in a row at level 10 and nearly 8 at level 30. It beat nearly every world boss
+at the boss's own level (about 83% against the High Justice, 97% against Seluvar and Ussreth) and all
+of them at boss level +3 except Pyraxis, where it won 97%.
 
 ## Rebirth
 

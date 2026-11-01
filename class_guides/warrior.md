@@ -108,10 +108,9 @@ shield), the Vane signet (49, ring) and Great-aunt Mathilde's cameo (46, neck).
 
 ## How it performs
 
-The Warrior wins every same-level fight in the simulator but takes the longest (5-7 rounds) and
-finishes with 60-73% HP. It survives about 2 fights in a row at level 10 and about 6 at level 30.
-It beats every world boss at the boss's own level except the Bone King Varnoth (about 85%), and all
-of them at boss level +3.
+The Warrior wins every same-level fight in the simulator but takes the longest (4-7 rounds) and
+finishes with 63-86% HP. It survives about 5 fights in a row at level 10 and the simulator's cap of 8
+at level 30. It beat every world boss in the simulator, at the boss's own level and at boss level +3.
 
 ## Rebirth
 

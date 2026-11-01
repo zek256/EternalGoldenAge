@@ -34,7 +34,7 @@ HELP = [
                   ("map", "a map of the area around you ($ shop, ! quest, * boss, ^ v stairs)"),
                   ("automap on|off", "show a small map under every room description")]),
     ("Combat", [("attack / k <target>", "start a fight (or switch targets); you then auto-attack every round"),
-                ("cast <spell> [target]", "cast a spell; in a fight it replaces your next round's attack"),
+                ("cast <spell> [target]", "cast a spell; in a fight it goes off next round, alongside your attack"),
                 ("ability / ab <name> [target]", "use a class ability (e.g. 'ab slam'), also queued for next round"),
                 ("(on cooldown)", "in a fight, a cooling spell or ability is held and used the moment it's ready"),
                 ("consider / con <target>", "judge how dangerous a monster is"),
@@ -673,7 +673,7 @@ class Game:
             self.go(exits[d], automap=False)  # keep the escape short; 'map' is still there
         else:
             ui.say("You try to flee, but your foes cut off your escape!", "bred")
-            self.combat.pass_turn()
+            self.combat.pass_turn(swing=True)
 
     def cmd_consider(self, args):
         mon = self.find_monster(args) if args else None
@@ -948,7 +948,7 @@ class Game:
     def drink_round(self, iid):
         if iid in self.player.inventory:
             self.drink(iid)
-        self.combat.pass_turn()
+        self.combat.pass_turn(swing=True)
 
     def drink(self, iid):
         p = self.player

@@ -128,7 +128,7 @@ spell("magic_missile", "Magic Missile", "wizard", 1, 5, [DMG(6, 1.5, 0.45, "INT"
       desc="Darts of pure force that never miss.", msg="Three darts of violet force streak toward {t}!")
 spell("frost_bolt", "Frost Bolt", "wizard", 5, 9, [DMG(10, 2.0, 0.5, "INT", "frost"), STUN(1, 0.3)],
       desc="A shard of ice that may freeze its target solid.", msg="A jagged shard of ice hurtles at {t}!")
-spell("mana_shield", "Mana Shield", "wizard", 10, 14, [SHIELD(15, 4.5, 1.3, "INT")], cooldown=6, target="self",
+spell("mana_shield", "Mana Shield", "wizard", 10, 14, [SHIELD(17, 5.2, 1.5, "INT")], cooldown=6, target="self",
       desc="Weave raw mana into a barrier that absorbs damage.", msg="Shimmering blue runes orbit you protectively.")
 spell("fireball", "Fireball", "wizard", 16, 24, [DMG(15, 2.2, 0.6, "INT", "fire")], cooldown=2, target="all",
       desc="An exploding sphere of flame that engulfs every foe.", msg="A roaring ball of fire blossoms among your enemies!")

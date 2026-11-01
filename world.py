@@ -10,6 +10,7 @@ DIR_ALIASES = {"north": "n", "south": "s", "east": "e", "west": "w", "up": "u", 
 RESPAWN_TICKS = 30
 BOSS_RESPAWN_TICKS = 120
 DEFAULT_MAX_AGGRO = 1  # monsters that attack on sight in a room without a boss
+MONSTER_HP_MULT = 1.3  # every monster; raised from 1.0 when auto-attacks began landing alongside every action
 
 
 class MonsterInstance:
@@ -23,7 +24,7 @@ class MonsterInstance:
         self.boss = d["boss"]
         self.aggro = d["aggro"]
         self.specials = d["specials"]
-        self.max_hp = int((20 + 15 * L) * (1 + 0.004 * L) * d["hp"])
+        self.max_hp = int((20 + 15 * L) * (1 + 0.004 * L) * d["hp"] * MONSTER_HP_MULT)
         self.hp = self.max_hp
         scale = d["dmg"] * (1 + 0.006 * L)
         self.dmg_min = max(1, int((2 + 1.9 * L) * scale))

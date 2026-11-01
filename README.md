@@ -41,7 +41,7 @@ Saves are written as JSON to `saves/<name>.json`.
 | `equipment` / `eq` | what you wear |
 | `wear` / `wield` / `equip` <item> | equip an item (level and armor/weapon training apply, see below) |
 | `remove` <item or slot> | take something off |
-| `use` / `drink` <potion> | drink a potion (in a fight it replaces your next round's attack) |
+| `use` / `drink` <potion> | drink a potion (in a fight you drink it next round, and still attack) |
 | `examine` / `x` <item> | item details, compared with what you have equipped |
 | `get` <item> / `get all` / `drop` <item> | pick up / drop |
 | `talk` <person> | talk to NPCs; this turns in every finished quest and offers every quest you qualify for |
@@ -71,7 +71,8 @@ The world runs on a real-time clock: every **4 seconds** is one game tick.
 
 - **Combat:** `kill <target>` starts a fight, and your first attack lands at once. After that, one
   combat round happens every tick, and you automatically attack your current target each round.
-  A spell, ability, potion or flee you type is queued and replaces the auto-attack on the next round.
+  A spell, ability, potion or flee you type is queued and used on the next round, and your
+  auto-attack still lands that round too (only being stunned stops it).
   Moving during a fight also tries to flee.
 - **Holding a cooling ability:** in a fight, a spell or ability that is still on cooldown is not
   refused; it is held and used the moment it is ready. You can hold one at a time (a new one

@@ -104,9 +104,10 @@ black grimoire (47, off-hand), and the Vane signet (49, ring).
 
 ## How it performs
 
-The Dread Knight wins every same-level fight in the simulator in 3-5 rounds and finishes with 70-93%
-HP, one of the best results of any melee class. It lasts about 4 fights in a row at both level 10
-and level 30, and it beat every world boss at the boss's own level.
+The Dread Knight wins every same-level fight in the simulator in 3-6 rounds and finishes with 68-99%
+HP, one of the best results of any melee class. It lasts about 4 fights in a row at level 10 and 7
+at level 30, and it beat every world boss in the simulator, at the boss's own level and at boss
+level +3.
 
 ## Rebirth
 

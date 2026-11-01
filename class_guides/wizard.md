@@ -44,7 +44,7 @@ level 50.
 |---|---|---|---|---|---|
 | 1 | **Magic Missile** | 5 / 30 | - | one foe | Arcane damage 6 + 1.5/level + 0.45 INT (~15 at L1, ~83 at L25, ~154 at L50) |
 | 5 | **Frost Bolt** | 13 / 53 | - | one foe | Frost damage 10 + 2/level + 0.5 INT (~34 at L5, ~104 at L25, ~192 at L50), 30% chance to freeze it for 1 round (15% vs bosses) |
-| 10 | **Mana Shield** | 27 / 83 | 6 | self | A ward that absorbs 15 + 4.5/level + 1.3 INT damage (~117 at L10, ~243 at L25, ~453 at L50) |
+| 10 | **Mana Shield** | 27 / 83 | 6 | self | A ward that absorbs 17 + 5.2/level + 1.5 INT damage (~135 at L10, ~280 at L25, ~523 at L50) |
 | 16 | **Fireball** | 60 / 142 | 2 | all foes | Fire damage 15 + 2.2/level + 0.6 INT to every foe (~87 at L16, ~223 at L50) |
 | 26 | **Lightning Lance** | 112 / 189 | 2 | one foe | Lightning damage 30 + 3.6/level + 1.05 INT (~220 at L26, ~382 at L50) |
 | 40 | **Meteor** | 368 / 442 | 5 | all foes | Fire damage 60 + 4/level + 1.3 INT to every foe (~394 at L40, ~473 at L50) |
@@ -109,10 +109,10 @@ and Tobias's black grimoire (47, off-hand, INT/WIS/CON) from Master Tobias.
 
 ## How it performs
 
-The Wizard wins every same-level fight in the simulator in about 3-4 rounds, finishing with 80-100%
-HP thanks to Mana Shield. It lasts about 3 fights in a row at level 10 and 5-6 at level 30. Bosses at
-their own level are harder: 70-95% for most, 75% against Ussreth and 80% against Pyraxis. At boss level
-+3 it wins all of them except Pyraxis (65%).
+The Wizard wins every same-level fight in the simulator in about 3-5 rounds, finishing with 85-100%
+HP thanks to Mana Shield. It lasts about 3 fights in a row at level 10 and nearly 8 at level 30.
+Bosses at their own level are harder: 75-100% for most, about 65% against the High Justice and
+Ussreth. At boss level +3 it wins nearly all of them except Pyraxis (about 70%).
 
 ## Rebirth
 

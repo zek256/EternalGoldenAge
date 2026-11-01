@@ -122,14 +122,14 @@ def fight(g, p, mid, potions=0, max_rounds=60):
         if p.hp < p.max_hp * 0.3 and not heals and potions:
             potions -= 1
             p.heal(ITEMS[pot]["heal"])
-            g.combat.pass_turn()
+            g.combat.pass_turn(swing=True)
         elif p.hp < p.max_hp * 0.4 and heals:
             g.combat.player_ability(max(heals, key=lambda a: a["level"]), None)
         elif buffs and rounds <= 2:
             g.combat.player_ability(max(buffs, key=lambda a: a["level"]), None)
         else:
             best = max(offense, key=value) if offense else None
-            if best and value(best) > weapon_avg():
+            if best and value(best) > 0:  # every action comes with a swing
                 g.combat.player_ability(best, mon)
             else:
                 g.combat.player_attack(mon)

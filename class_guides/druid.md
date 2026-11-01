@@ -104,10 +104,11 @@ armor over WIS.
 
 ## How it performs
 
-The Druid wins every same-level fight in the simulator, and fast: about 2 rounds at level 15 and
-under 4 later, with 68-94% HP left. It lasts about 4-5 fights in a row at levels 10 and 30. It beats
-nearly every world boss at the boss's own level (about 90-95% against Gorrak and Ussreth, 85% against
-Pyraxis), and all except Pyraxis (75%) at boss level +3.
+The Druid wins every same-level fight in the simulator, and fast: about 3 rounds at levels 15-20 and
+under 5 later, with 57-90% HP left. It lasts about 4 fights in a row at level 10 and 6 at level 30.
+It beats nearly every world boss at the boss's own level (about 90% against Ussreth and Pyraxis, 97%
+against Rotheart, the Ringmaster and the High Justice), and all except Pyraxis (about 87%) at boss
+level +3.
 
 ## Rebirth
 
