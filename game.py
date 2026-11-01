@@ -698,17 +698,14 @@ class Game:
                "Dawnfather's altar, weak, but alive.", "bwhite")
         lost_xp = min(p.xp, int(p.xp_needed * 0.1)) if p.level < MAX_LEVEL else 0
         #lost_xp = 0
-        lost_gold = p.gold // 10
-        #lost_gold = 0
         p.xp -= lost_xp
-        p.gold -= lost_gold
         p.deaths += 1
         p.effects = []
         p.cooldowns = {}
         p.hp = max(1, p.max_hp // 2)
         p.mana = p.max_mana // 2
-        if lost_xp or lost_gold:
-            ui.say("You lost {} experience and {} gold.".format(lost_xp, lost_gold), "red")
+        if lost_xp:
+            ui.say("You lost {} experience.".format(lost_xp), "red")
         self.leave_room()
         self.room_id = RESPAWN_ROOM
         self.look()

@@ -412,4 +412,58 @@ QUESTS = {
         "reward": {"xp": 45000, "gold": 1500, "items": ["greater_healing_potion", "greater_healing_potion",
                                                         "greater_mana_potion"]},
     },
+
+    # ------------------------------------------------------------------ The Mycelial Wards
+    "network_samples": {
+        "name": "Samples for the Network", "giver": "many_voiced_speaker", "type": "collect", "target": "spore_sac",
+        "count": 5, "min_level": 12, "prereq": None,
+        "offer": "'We would know what the city is thinking, and the city does not always tell us. Every "
+                 "capfolk carries a spore-sac, and every sac holds a little of what it thinks. Bring us five. "
+                 "The drudges, the citizens, the gardeners and the market-folk all carry them. They will not "
+                 "give them up. That is all right. We do not mind. They will grow back.'",
+        "progress": "'Five sacs, single one. You carry {n}.'",
+        "complete": "'Ah.' The threads above the Speaker brighten. 'The Gilled Quarter is content. The market "
+                    "is restless. Glowcap Lane is dreaming of you. Thank you. Take these; we grew them for "
+                    "your kind.'",
+        "reward": {"xp": 6000, "gold": 200, "items": ["healing_potion", "healing_potion", "mana_potion"]},
+    },
+    "sages_dream": {
+        "name": "The Sage's Dream", "giver": "many_voiced_speaker", "type": "kill", "target": "dreaming_sage", "count": 1,
+        "min_level": 15, "prereq": None,
+        "offer": "'One of us dreams too deeply. The Sage under the blue dome has dreamed for three hundred "
+                 "years, and now the dream is taking others in, and they do not come back out. We cannot "
+                 "wake it; it is too much a part of us. You are not a part of us. North of the square, up "
+                 "Glowcap Lane, beneath the dome.'",
+        "progress": "'The Sage still dreams. We feel the Lantern Halls going quiet.'",
+        "complete": "'The dream has ended. Some of those it took have woken.' Many voices pause. 'Some have "
+                    "not. That is how it is with dreams.'",
+        "reward": {"xp": 9000, "gold": 350, "items": ["healing_potion", "healing_potion", "mana_potion"]},
+    },
+    "pruning_the_rot": {
+        "name": "Pruning the Rot", "giver": "many_voiced_speaker", "type": "kill", "target": "bone_bloom", "count": 6,
+        "min_level": 17, "prereq": None,
+        "offer": "'The Rot Ward breaks down what we no longer need. It is a good strain, a necessary strain. "
+                 "But it has begun to grow things from the bones instead of breaking them, and the "
+                 "bone-blooms walk. Once before, a strain of rot went east into the elves' forest and was "
+                 "lost to us, and it became a blight. We would not lose another. Prune six of them.'",
+        "progress": "'The bone-blooms still walk. ({n}/{count} pruned)'",
+        "complete": "'Good. The Rot Ward remembers its work.' The threads dim a little. 'We wish we could say "
+                    "the same of the one that went east.'",
+        "reward": {"xp": 11000, "gold": 450, "items": ["healing_potion", "healing_potion", "mana_potion"]},
+    },
+    "the_first_spore": {
+        "name": "The First Spore", "giver": "many_voiced_speaker", "type": "kill", "target": "the_first_spore", "count": 1,
+        "min_level": 18, "prereq": None,
+        "offer": "'We must tell you something, single one, and we must tell it carefully. We are not the "
+                 "whole network. We are a part that has learned to speak, and to want, and what we want is "
+                 "to be many, and not one. The First Spore beneath the city holds every thread together. "
+                 "While it lives, every one of us is it. West through the Rot Ward, down into the roots, "
+                 "into the Thinking Dark. We will not ask you again. We will not need to.'",
+        "progress": "'It still holds us. We feel it thinking.'",
+        "complete": "For a long moment, the Speaker says nothing at all. Then, in a single, small voice: 'I. "
+                    "I am... I.' It touches its own cap as if it has never felt it before. 'Thank you. Take "
+                    "whatever we have. Whatever I have.'",
+        "reward": {"xp": 25000, "gold": 900, "items": ["healing_potion", "healing_potion", "mana_potion",
+                                                       "mana_potion"]},
+    },
 }

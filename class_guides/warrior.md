@@ -82,6 +82,10 @@ Notable late gear a Warrior can use: the obsidian greatblade (45, two-handed), t
 plate), dreamsilver greaves (50, plate), stonestride boots (50, plate), and the mythic weapons that
 anyone may wield: the Fang of Pyraxis and Eternity.
 
+From **the Mycelial Wards** (14-20, west of Westmarch's Old Watchtower): the shelfcap breastplate (15,
+plate chest), a rootmaul (16, two-handed), a sporethorn knife (18, dagger), a shelf-fungus shield (14),
+the Mycelial Crown (20, any class) and the rootbound ring (20).
+
 From **the Carnival That Never Closes** (26-30, south of the Badlands' Howling Pit): the Strongman's
 breastplate (27, plate chest), a roustabout's tent mallet (28, blunt), a knife-thrower's blade (29,
 dagger), a roustabout's chain chausses (27, mail legs) and the brass ring (27, ring).

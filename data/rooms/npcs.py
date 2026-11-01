@@ -243,4 +243,14 @@ NPCS = {
                  "elven_saber", "tome_of_warding", "moonweave_robe", "runeforged_sabatons"],
         "quests": ["lost_and_found", "free_riders", "last_fortune", "show_never_ends"],
     },
+    "many_voiced_speaker": {
+        "name": "the Many-Voiced Speaker", "keywords": ["speaker", "voice", "many", "capfolk"],
+        "desc": "A tall capfolk whose cap is threaded with every colour of the Wards. Threads from the ceiling "
+                "run into its head, and when it speaks, many voices speak with it, not quite together.",
+        "greeting": "'We greet you, single one. We are the part of the network that speaks to those who are "
+                    "alone in their heads. You may rest here; we sell what your kind need to keep living. "
+                    "Type LIST. And we would ask things of you, if you will be asked.'",
+        "shop": ["healing_potion", "mana_potion"],
+        "quests": ["network_samples", "sages_dream", "pruning_the_rot", "the_first_spore"],
+    },
 }

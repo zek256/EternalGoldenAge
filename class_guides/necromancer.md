@@ -79,6 +79,10 @@ Scepter of the Sand Kings, Seluvar's Hollow Wand, **starweave robes**, the silkw
 Ring of the Archmage, the Pearl of the Deep, the sunlit codex, and the mythic Fang of Pyraxis and
 Eternity.
 
+From **the Mycelial Wards** (14-20, west of Westmarch's Old Watchtower): the Heartspore staff (20,
+staff, INT/WIS/CHA) from the First Spore, a glowcap pendant (16, neck, INT/WIS), the Mycelial Crown
+(20, any class) and a sporethorn knife (18, dagger).
+
 From **the Carnival That Never Closes** (26-30, south of the Badlands' Howling Pit): the Ringmaster's
 baton (30, wand, INT/WIS/CHA), a fortune teller's crystal ball (28, off-hand, INT/WIS), a pair of
 dancing slippers (27, cloth, INT/WIS) and a knife-thrower's blade (29, dagger).

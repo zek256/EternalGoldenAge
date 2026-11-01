@@ -312,6 +312,16 @@ Both doors tell the player what they want when they're refused, so the goals are
   ring, cloth boots, leather gloves, an off-hand). The Chancery's inner chambers were turned north
   to leave room for it.
 
+- **Addition: the Mycelial Wards** (333 to 357 rooms, 2026-10-31). A fungal city for the thin 10-19
+  bands, entered west from Westmarch's Old Watchtower. 24 rooms: the approach (12-13), the Gilled
+  Quarter (13-15), the Puffball Market (14-16), the Glowcap Ward (15-17), the Rot Ward (17-19) and
+  the deep network (19-20), ending at the First Spore (L20). Mini-bosses: the Dreaming Sage and the
+  Rotmother. The Many-Voiced Speaker (safe Hall of Many Voices) sells potions and gives four quests;
+  the last asks you to kill the First Spore so the Speaker's strain can be its own. The Rot Gate hints
+  that the Eldergrove blight is a lost strain of the network. Three monster-free rooms (the Thinning
+  Caps, the Old Garden Wall, the Overgrown Arbour) blend south from the Gilled Houses into Thornwick's
+  Hedge Maze, warning of the danger ahead. 11 items fill the 14-20 gaps.
+
 ## Decisions
 
 - **City names:** Hearthdeep, Silverbough and Sunspire.
@@ -331,6 +341,9 @@ Both doors tell the player what they want when they're refused, so the goals are
 - **The Chancery of the Dead (2026-10-31):** placed south of the Gnoll Scrub because the space by
   Barrowfield was too small. Its ghosts are passive by design (only bailiffs, wardens and the boss
   attack). The writ is a real gate, re-buyable from Clerk Quillon.
+- **The Mycelial Wards (2026-10-31):** the negotiate-with-the-network and bloom mechanics were left
+  out by the user's choice; the hive mind is tone only. The garden path to the Hedge Maze is a second
+  way into Thornwick, without monsters, and blends from fungus to garden.
 - **Thornwick Hall (2026-10-31):** the Vanes are an ordinary noble family, and the player's motive
   is left unstated. No gate at the entrance, only danger. No children among the monsters. The house
   stays on the surface map (not an inset), with one upstairs and no cellar below.

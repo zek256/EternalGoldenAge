@@ -3,7 +3,8 @@
 Offline single-player text MUD in pure Python 3, standard library only (no dependencies, no network).
 `README.md` is the player-facing manual; keep it in sync when gameplay or commands change.
 `class_guides/` has one guide per class (numbers from the game's formulas and `balance_sim.py`);
-update them when classes, abilities, stat formulas or class gear change.
+update them when classes, abilities, stat formulas or class gear change. `class_guides/level_50_gear.md`
+lists the best level 40-50 and plane gear per class and where it drops; update it when such gear is added.
 
 ## Running and testing
 
@@ -100,6 +101,7 @@ data/rooms/   one module per region, each with a ROOMS dict, merged in __init__ 
   cultists and bosses. Animals and roaming humanoids are passive. Exception: the Chancery of the
   Dead's ghosts are passive (they are busy with their cases); only its bailiffs and wardens attack.
   The carnival's trapped spirits are passive too; its roustabouts, night barkers and clowns attack.
+  In the Mycelial Wards only the spore wardens, bone-blooms and thought-spores attack.
 - `Room.spawn` enforces the per-room rule: a room containing a boss makes **every** monster
   aggressive. Any other room allows at most `max_aggro` (default 1) aggressive instances, and
   extras spawn passive. Aggression is per instance and is not saved; it is recomputed on load.

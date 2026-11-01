@@ -55,7 +55,8 @@ ROOMS = {
         "The Old Watchtower", "Westmarch",
         "A broken watchtower of Brightwater's old border guard stands on the last of the western "
         "hills, its upper floors long fallen in. Snow lies in the lee of its walls. To the north the "
-        "land climbs into the white hills of the Rimefells, where the dwarves of Hearthdeep dwell.",
-        {"e": "hill_road", "n": "frostfoot_trail"},
+        "land climbs into the white hills of the Rimefells, where the dwarves of Hearthdeep dwell. "
+        "West, a path drops into a damp hollow where mushrooms grow as tall as houses.",
+        {"e": "hill_road", "n": "frostfoot_trail", "w": "mouldering_path"},
         spawns=[("goblin_brute", 1), ("snow_wolf", 2)], level=(9, 10)),
 }

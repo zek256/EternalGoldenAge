@@ -82,6 +82,9 @@ Notable late gear: the Khopesh of Ussreth (48, sword), **Gravesong** (50, sword)
 windwalker boots (50) in leather, the sandrunner's jerkin and gloves (40), the Band of the Four Winds
 (50, ring), Stormcaller (50, bow), and the mythic Fang of Pyraxis and Eternity.
 
+From **the Mycelial Wards** (14-20, west of Westmarch's Old Watchtower): a sporethorn knife (18,
+dagger, DEX), mossfelt boots (15, leather, DEX) and the Mycelial Crown (20, any class).
+
 From **the Carnival That Never Closes** (26-30, south of the Badlands' Howling Pit): a knife-thrower's
 blade (29, dagger, DEX) from Mirela, the Ringmaster's scarlet coat (30, leather chest, DEX/CHA), an
 acrobat's grips (26, leather) and the brass ring (27, ring).

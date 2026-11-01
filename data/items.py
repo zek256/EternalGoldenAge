@@ -260,6 +260,40 @@ weapon("scepter_of_the_sand_kings", "the Scepter of the Sand Kings", 48, (27, 44
 armor("burial_mask", "the Burial Mask of Ussreth", "head", 48, 26, 4800,
       "A golden death-mask with eyes of lapis. Wearing it, you hear the desert wind.", CON=6, STR=4, INT=4, WIS=4, kind="mail")
 
+# ------------------------------------------------------------------ The Mycelial Wards (levels 14-20)
+# Fills the 12-20 gaps: early plate and mail chests, mail legs, leather boots, a dagger, a two-handed
+# weapon, a shield, a necklace and a ring.
+weapon("heartspore_staff", "the Heartspore staff", 20, (11, 19), 650,
+       "A staff of pale, living fungus that still sends out fine threads when it rests on soft ground.",
+       INT=6, WIS=6, CHA=2, kind="staff")
+weapon("sporethorn_knife", "a sporethorn knife", 18, (12, 20), 420,
+       "A knife grown, not forged, from a thorn of black fungus as hard as iron. Its edge never dulls.",
+       DEX=5, INT=1, kind="dagger")
+weapon("rootmaul", "a rootmaul", 16, (12, 21), 380,
+       "A two-handed maul whose head is a knot of petrified root, grown around a stone.", STR=4, CON=2,
+       kind="two-handed")
+armor("mycelial_crown", "the Mycelial Crown", "head", 20, 9, 900,
+      "A circlet of pale threads grown into a crown. Wearing it, you sometimes hear a faint, patient chorus.",
+      kind="any", STR=2, DEX=2, CON=2, INT=2, WIS=2, CHA=2)
+armor("capshell_hauberk", "a capshell hauberk", "chest", 17, 16, 430,
+      "A coat of overlapping scales cut from hardened mushroom cap, light and springy, and tougher than it looks.",
+      kind="mail", CON=3, DEX=2)
+armor("shelfcap_breastplate", "a shelfcap breastplate", "chest", 15, 15, 380,
+      "A breastplate of shelf-fungus grown in a mould and dried until it rings like iron.", kind="plate",
+      CON=3, STR=2)
+armor("rootweave_chausses", "rootweave chausses", "legs", 16, 11, 330,
+      "Leggings of tightly woven root, flexible as mail and nearly as strong.", kind="mail", CON=2, DEX=2)
+armor("mossfelt_boots", "mossfelt boots", "feet", 15, 6, 300,
+      "Soft boots of felted moss over a sole of hard cap, silent on any floor.", kind="leather", DEX=3)
+armor("shelf_shield", "a shelf-fungus shield", "shield", 14, 10, 300,
+      "A round shield of hard, layered shelf-fungus, as light as wood and harder than oak.", kind="shield", CON=3)
+armor("glowcap_pendant", "a glowcap pendant", "neck", 16, 2, 380,
+      "A tiny glowing cap sealed in a bead of resin, whose soft blue light helps you think.", kind="jewelry",
+      INT=3, WIS=3, CHA=1)
+armor("rootbound_ring", "the rootbound ring", "ring", 20, 0, 600,
+      "A ring of living root that has wound itself around your finger and will not quite come off.",
+      kind="jewelry", CON=3, WIS=3, STR=2)
+
 # ------------------------------------------------------------------ The Carnival That Never Closes (levels 26-30)
 # Fills the 24-30 gaps: plate and leather chests, mail legs, a dagger, a wand, a ring, cloth boots.
 weapon("ringmasters_baton", "the Ringmaster's baton", 30, (19, 32), 1500,
@@ -521,6 +555,8 @@ misc("winter_wolf_pelt", "a winter wolf pelt", 110, "A thick white pelt that sta
 misc("frost_shard", "a frost shard", 90, "A shard of ice that never melts.")
 misc("elven_relic", "an elven relic", 160, "A small silver figurine of exquisite elven make.")
 misc("dragon_scale", "a dragon scale", 300, "A scale the size of a dinner plate, red as embers.")
+misc("spore_sac", "a glowing spore-sac", 20, "A soft, faintly glowing sac of spores, warm and humming with the network.",
+     kind="quest")
 misc("lost_trinket", "a lost trinket", 50, "A locket, a pipe or a toy soldier with a paper tag tied to it, giving a name and "
      "a date long past.", kind="quest")
 misc("stamped_form", "a stamped form", 40, "A form in triplicate, stamped with the seal of the Registry of Deaths.",

@@ -123,7 +123,7 @@ gains, and 6-7 spells/abilities unlocked between levels 1 and 48:
 - Bard: Discordant Note, Ballad of Mending, Lullaby, War March, Dirge of Despair, Crescendo, Legend's Anthem
 
 Each class has a full guide in [`class_guides/`](class_guides/README.md): stats by level, every spell
-and ability with its numbers, gear, races, how to play it and what it leaves behind on rebirth.
+and ability with its numbers, gear, races, how to play it and what it leaves behind on rebirth. At level 50, [Gearing Up at Level 50](class_guides/level_50_gear.md) shows what to buy, farm and chase next for each class.
 
 Spells cost mana, and the cost scales with level. Abilities are free but have cooldowns. Both are
 learned automatically on level up.
@@ -183,7 +183,7 @@ At level 50, `rebirth` lets you choose any other class:
 
 Town of Brightwater (inn, temple, smithy, alchemist, Silverthread Arcana caster shop, barracks,
 and the North, West and East Gates), Greenmeadow (1-5), Whispering Woods and the bandit camp (4-10),
-the Westmarch farms and goblin quarry (3-10), Barrowfield and the Crypt of Varnoth dungeon (9-17),
+the Westmarch farms and goblin quarry (3-10), **the Mycelial Wards** (12-20) west of its Old Watchtower, a city grown from one vast fungal network whose capfolk share a partial hive mind (most ignore you; the spore wardens and the things of the Rot Ward and the deep network do not), with a quiet garden path south from the Gilled Houses into the Hedge Maze of Thornwick Hall, Barrowfield and the Crypt of Varnoth dungeon (9-17),
 the snowy Rimefells (10-20) around the dwarven city of **Hearthdeep** (smith, rune-carver, alehouse
 with potions) and the Deepdelve Mine below it (18-21), the Mirefen (15-22), the ancient Eldergrove
 (20-34) around the elven city of **Silverbough** (bladesmith, moonweaver, inn with potions), reached
@@ -228,8 +228,8 @@ Henhouse (Farmer Haverick, Thornbury), Fur for the Gatewatch (Captain Orla, Hear
 Stonewake (Thane Hargrim, Hearthdeep), The Sacred Herd and The Rotwood Circle (Warden-Captain
 Faelan, Silverbough) and The Heart of the Blight (Speaker Saelwyn, Silverbough).
 
-Dying returns you to the temple with half HP, losing 10% of the XP needed for your level and 10% of
-your gold.
+Dying returns you to the temple with half HP, losing 10% of the XP needed for your level. You keep
+all your gold.
 
 ## Code layout
 

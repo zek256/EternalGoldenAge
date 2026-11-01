@@ -81,6 +81,10 @@ CON/WIS), the Pearl of the Deep (50, ring, INT/WIS), the Ring of the Archmage, t
 obelisk, the sunlit codex (off-hand) and the mythic Fang of Pyraxis and Eternity. A staff means giving
 up your shield.
 
+From **the Mycelial Wards** (14-20, west of Westmarch's Old Watchtower): the Heartspore staff (20,
+staff, INT/WIS), a capshell hauberk (17, mail chest), rootweave chausses (16, mail legs), a
+shelf-fungus shield (14), a glowcap pendant (16, neck) and the rootbound ring (20, CON/WIS).
+
 From **the Carnival That Never Closes** (26-30, south of the Badlands' Howling Pit): a roustabout's
 tent mallet (28, blunt), a roustabout's chain chausses (27, mail legs), a fortune teller's crystal ball
 (28, off-hand, INT/WIS) and the brass ring (27, ring).

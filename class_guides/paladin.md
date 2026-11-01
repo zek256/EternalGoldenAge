@@ -83,6 +83,10 @@ paladin. Also good: the Sunforged Mace (43, blunt, STR/WIS), Flameheart (50, blu
 the obsidian greatblade (two-handed), the Mountainheart Shield, and the mythic Fang of Pyraxis and
 Eternity.
 
+From **the Mycelial Wards** (14-20, west of Westmarch's Old Watchtower): the shelfcap breastplate (15,
+plate chest), a rootmaul (16, two-handed), a shelf-fungus shield (14), the Mycelial Crown (20, any
+class) and the rootbound ring (20, CON/WIS/STR).
+
 From **the Carnival That Never Closes** (26-30, south of the Badlands' Howling Pit): the Strongman's
 breastplate (27, plate chest), a roustabout's tent mallet (28, blunt) and the brass ring (27, ring).
 

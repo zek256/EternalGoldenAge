@@ -197,6 +197,79 @@ M("snow_troll", "a snow troll", 19, "A towering troll with a mane of frozen hair
   hp=1.5, dmg=1.15, specials=[heal("Regenerate", 0.15, 0.15, "regenerates, frost knitting its wounds shut!")],
   loot=[("dwarven_greaves", 0.04), ("yeti_fur", 0.2)], gold=1.2, xp=1.3)
 
+# ------------------------------------------------------------- The Mycelial Wards (12-20)
+# The capfolk share a partial hive mind and mostly ignore the living. Only the spore wardens, the
+# bone-blooms of the Rot Ward and the thought-spores of the deep network attack on sight.
+M("myconid_drudge", "a myconid drudge", 12, "A squat, shuffling capfolk labourer with a cap like a dinner plate, hauling baskets of moss.",
+  hp=1.1, dmg=1.05, specials=[dot("Spore Puff", 0.2, 0.3, 3, "poison", "puffs a cloud of choking spores into your face!")],
+  loot=[("spore_sac", 0.3)], gold=0.6)
+M("spore_warden", "a spore warden", 13, "A tall capfolk in armour of hardened shelf-fungus, with a club of the same, swaying in time with the other wardens.",
+  hp=1.2, dmg=1.1, armor=1.6, aggro=True, specials=[big("Shelf Club", 0.2, 1.7, "swings a club of stone-hard fungus into you!")],
+  loot=[("shelf_shield", 0.04), ("shelfcap_breastplate", 0.03)], gold=1.0)
+M("capfolk_citizen", "a capfolk citizen", 13, "A pale, soft-footed citizen of the Wards with a gilled cap for a head, murmuring to its neighbours without moving its lips.",
+  hp=1.0, dmg=1.05, specials=[stun("Murmuring Chorus", 0.12, 1, "and every capfolk nearby murmur at once, and your thoughts scatter!")],
+  loot=[("spore_sac", 0.3)], gold=0.8)
+M("gill_tender", "a gill-tender", 14, "A stooped capfolk gardener who tends the moss in the doorways, with a hooked knife for trimming gills.",
+  hp=1.1, dmg=1.1, specials=[big("Hooked Knife", 0.2, 1.7, "hooks you with its trimming knife!")],
+  loot=[("spore_sac", 0.25), ("mossfelt_boots", 0.03)], gold=0.8)
+M("puffball_hawker", "a puffball hawker", 14, "A round capfolk market-keeper, swollen like a puffball, who breathes out a glittering cloud when it is startled.",
+  hp=1.0, dmg=1.1, specials=[stun("Spore Cloud", 0.14, 1, "bursts in a glittering cloud, and you choke and stagger!")],
+  loot=[("spore_sac", 0.35)], gold=1.0)
+M("capfolk_porter", "a capfolk porter", 15, "A broad capfolk with a cap like a shield and shoulders made for hauling, carrying a load of woven root.",
+  hp=1.4, dmg=1.1, xp=1.2, specials=[big("Shoulder Barge", 0.2, 1.7, "lowers its broad cap and barges you over!")],
+  loot=[("mossfelt_boots", 0.04)], gold=0.8)
+M("spore_drift", "a drift of spores", 15, "A slow, glittering cloud of spores that moves against the wind and gathers around anyone who stands still.",
+  hp=0.7, dmg=1.15, armor=0.3, specials=[dot("Settling Spores", 0.22, 0.35, 3, "poison", "settles over you, and the spores take root in your lungs!")],
+  gold=0.3)
+M("glowcap_scholar", "a glowcap scholar", 16, "A slow, thoughtful capfolk whose cap glows soft blue. It speaks only as 'we', and has been considering you.",
+  hp=0.9, dmg=1.15, specials=[stun("Slow Thought", 0.14, 1, "shares a thought so slow and vast that you stop to follow it!"),
+                              drain("Borrowed Memory", 0.15, 0.9, "touches your brow and reads a memory, and some of your life goes with it!")],
+  loot=[("glowcap_pendant", 0.04), ("mana_potion", 0.1)], gold=1.0)
+M("lantern_cap", "a lantern-cap", 16, "A capfolk lamplighter whose own cap burns with cold blue light, carrying a crook hung with glowing caps.",
+  hp=1.0, dmg=1.15, specials=[dot("Cold Light", 0.2, 0.35, 3, "fire", "flares, and its cold light burns like frost!")],
+  loot=[("glowcap_pendant", 0.03)], gold=0.8)
+M("dreaming_sage", "the Dreaming Sage", 17, "An ancient capfolk grown into the floor of its dome, dreaming so deeply that the dream spills out and takes others in.",
+  hp=1.7, dmg=1.15, xp=1.6, gold=2.0,
+  specials=[stun("Pulled Into the Dream", 0.14, 1, "dreams you into its dream, and for a while you cannot find your way out!"),
+            drain("The Dream Feeds", 0.15, 1.0, "dreams of you, and grows stronger as you grow faint!")],
+  loot=[("glowcap_pendant", 0.2), ("healing_potion", 0.3)])
+M("rot_tender", "a rot-tender", 17, "A dark, glistening capfolk of the Rot Ward, polite, patient and hungry, with hands that leave black marks.",
+  hp=1.3, dmg=1.15, specials=[dot("Rotting Touch", 0.2, 0.4, 3, "poison", "lays a black hand on you, and your skin begins to rot!")],
+  loot=[("capshell_hauberk", 0.03)], gold=0.8)
+M("compost_crawler", "a compost crawler", 18, "A long, pale crawling thing of the compost halls, many-legged and fungus-backed, that turns the heaps.",
+  hp=1.5, dmg=1.15, xp=1.3, specials=[big("Rolling Crush", 0.2, 1.7, "rolls over you like a cartwheel of rot!")],
+  loot=[("rootweave_chausses", 0.04)], gold=0.4)
+M("bone_bloom", "a bone-bloom", 18, "A skeleton held upright by the fungus growing through it, white fans sprouting from its ribs and skull.",
+  hp=1.2, dmg=1.15, armor=1.4, aggro=True, specials=[drain("Rooting", 0.2, 1.0, "drives threads of fungus into you and drinks!")],
+  loot=[("sporethorn_knife", 0.03)], gold=0.8)
+M("whispering_host", "a whispering host", 18, "A capfolk so deep in the network that it has forgotten it was ever separate. It speaks in a thousand voices.",
+  hp=1.1, dmg=1.15, specials=[stun("A Thousand Voices", 0.14, 1, "speaks with a thousand voices at once, and yours is drowned out!")],
+  loot=[("glowcap_pendant", 0.03)], gold=0.8)
+M("rot_renderer", "a rot-ward renderer", 19, "A huge, silent capfolk of the rendering pits with a hook for dragging things into the rot.",
+  hp=1.4, dmg=1.2, xp=1.2, specials=[big("Rendering Hook", 0.22, 1.8, "drags you toward the pit with its great hook!")],
+  loot=[("rootmaul", 0.04), ("sporethorn_knife", 0.03)], gold=1.0)
+M("the_rotmother", "the Rotmother", 19, "A vast, motherly mound of rot that tends the ossuary beds, humming to the bones as they bloom.",
+  hp=1.7, dmg=1.15, xp=1.6, gold=1.5,
+  specials=[dot("Mother's Embrace", 0.2, 0.4, 4, "poison", "folds you into her soft, rotting bulk!"),
+            heal("Fresh Mulch", 0.12, 0.12, "draws the rot of her beds into herself and swells!")],
+  loot=[("capshell_hauberk", 0.2), ("healing_potion", 0.3)])
+M("root_crawler", "a root-crawler", 19, "A pale, eyeless thing that crawls along the network's great threads like blood along a vein.",
+  hp=1.5, dmg=1.2, xp=1.3, specials=[big("Lashing Thread", 0.2, 1.7, "lashes you with a thread as thick as a rope!"),
+                                     stun("Entangle", 0.1, 1, "wraps you in sticky threads!")],
+  loot=[("rootmaul", 0.03)], gold=0.4)
+M("thought_spore", "a thought-spore", 20, "A drifting, glowing spore the size of a head, carrying one of the network's thoughts. This one is about you.",
+  hp=0.9, dmg=1.2, armor=0.5, aggro=True, specials=[drain("We Remember You", 0.22, 1.0, "settles on you and remembers you, and you feel yourself being forgotten!")],
+  gold=0.6)
+M("the_first_spore", "the First Spore", 20,
+  "The oldest growth in the Wards, from which every thread and cap has grown: a vast mushroom whose cap is lost in the dark and whose gills "
+  "glow with every colour of every ward. It does not hate you. It simply has a use for you.",
+  hp=2.3, dmg=1.2, armor=1.6, aggro=True, boss=True, xp=2.0, gold=4.0,
+  specials=[dot("Spore Storm", 0.18, 0.45, 4, "poison", "breathes out a storm of spores that take root in your flesh!"),
+            drain("Absorption", 0.15, 1.1, "draws you into its threads and begins to digest you!"),
+            stun("The Chorus", 0.12, 1, "speaks with the voice of every capfolk in the Wards, and you cannot move!"),
+            heal("Regrowth", 0.08, 0.1, "draws strength up from every thread in the city!")],
+  loot=[("heartspore_staff", 0.5), ("mycelial_crown", 0.4), ("rootbound_ring", 0.5)])
+
 # ------------------------------------------------------------- Deepdelve Mine (18-21)
 M("rockgnasher", "a rockgnasher", 19, "A blind, armour-plated burrower the size of a pony, with a mouth full of grinding stone teeth.",
   hp=1.4, dmg=1.1, armor=1.8, specials=[big("Grinding Bite", 0.2, 1.7, "clamps you in a mouth full of grinding stone!")],

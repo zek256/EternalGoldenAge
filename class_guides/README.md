@@ -18,6 +18,8 @@ from level 1 to 50, how it fares against bosses, and what it leaves behind when 
 | [Wizard](wizard.md) | Glass-cannon blaster | STR | INT | cloth | Hard |
 | [Necromancer](necromancer.md) | Pets, drains and disease | STR | INT | cloth | Easy (strongest solo class) |
 
+At level 50, [Gearing Up at Level 50](level_50_gear.md) shows what to buy, farm and chase next, class by class.
+
 ## How every class works
 
 These rules are shared by all classes. The guides refer back to them.

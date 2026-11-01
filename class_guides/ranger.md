@@ -78,6 +78,10 @@ Stars. Also good: the dune recurve bow (40), Dragonscale Mail (48, mail), the su
 windwalker boots (50, leather, DEX), the Band of the Four Winds (50, ring, DEX), and the mythic Fang
 of Pyraxis and Eternity.
 
+From **the Mycelial Wards** (14-20, west of Westmarch's Old Watchtower): a capshell hauberk (17, mail
+chest), rootweave chausses (16, mail legs), mossfelt boots (15, leather), a sporethorn knife (18,
+dagger, DEX), a shelf-fungus shield (14) and the Mycelial Crown (20, any class).
+
 From **the Carnival That Never Closes** (26-30, south of the Badlands' Howling Pit): a knife-thrower's
 blade (29, dagger, DEX), a roustabout's chain chausses (27, mail legs), an acrobat's grips (26,
 leather) and the brass ring (27, ring).

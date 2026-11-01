@@ -61,8 +61,9 @@ ROOMS = {
         "The Hedge Maze", HALL,
         "Walls of yew twice the height of a man close in on every side, and every turn looks like the "
         "last. Somewhere ahead, a hound is baying, and someone is laughing. At the centre, a fountain "
-        "of a stag and hunter plays into a pool full of fat golden fish.",
-        {"s": "topiary_garden"},
+        "of a stag and hunter plays into a pool full of fat golden fish. In the north wall of yew, a gap "
+        "opens onto a wild old arbour where pale toadstools grow among the roses.",
+        {"s": "topiary_garden", "n": "overgrown_arbour"},
         spawns=[("vane_groundskeeper", 1), ("vane_boarhound", 2)], level=(42, 43)),
     "vane_stables": R(
         "The Stable Yard", HALL,

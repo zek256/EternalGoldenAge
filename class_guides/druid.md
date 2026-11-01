@@ -79,6 +79,10 @@ Dreams), the dragonbone staff (47), the sunfire staff (40), the Sunforged Mace (
 and windwalker boots (leather), the Death Mask (50, leather), the Pearl of the Deep (50, ring), the
 Ring of the Archmage, and the mythic Fang of Pyraxis and Eternity.
 
+From **the Mycelial Wards** (14-20, west of Westmarch's Old Watchtower): the Heartspore staff (20,
+staff, INT/WIS) from the First Spore, mossfelt boots (15, leather), a glowcap pendant (16, neck), the
+Mycelial Crown (20) and the rootbound ring (20, CON/WIS).
+
 From **the Carnival That Never Closes** (26-30, south of the Badlands' Howling Pit): the Ringmaster's
 scarlet coat (30, leather chest), a fortune teller's crystal ball (28, off-hand, INT/WIS), a
 roustabout's tent mallet (28, blunt), a pair of dancing slippers (27, cloth) and the brass ring (27,

@@ -80,6 +80,10 @@ Ussreth (48, sword), Tidecaller (50, two-handed), the obsidian greatblade and cr
 (two-handed), the Mountainheart Shield, plate from the elemental lords, and the mythic Fang of Pyraxis
 and Eternity.
 
+From **the Mycelial Wards** (14-20, west of Westmarch's Old Watchtower): the shelfcap breastplate (15,
+plate chest), a rootmaul (16, two-handed), a shelf-fungus shield (14), the Mycelial Crown (20, any
+class) and the rootbound ring (20).
+
 From **the Carnival That Never Closes** (26-30, south of the Badlands' Howling Pit): the Strongman's
 breastplate (27, plate chest) and the brass ring (27, ring).
 

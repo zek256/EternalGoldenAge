@@ -84,6 +84,10 @@ the Heart of Flame (50, neck), **the Death Mask** (50, leather), windwalker boot
 Crown of Trepth and the Hourglass Amulet, and the mythic weapons the Fang of Pyraxis and Eternity, which
 give CHA along with everything else.
 
+From **the Mycelial Wards** (14-20, west of Westmarch's Old Watchtower): a sporethorn knife (18,
+dagger), mossfelt boots (15, leather), a glowcap pendant (16, neck, INT/WIS/CHA) and the Mycelial Crown
+(20, any class).
+
 From **the Carnival That Never Closes** (26-30, south of the Badlands' Howling Pit): the Ringmaster's
 scarlet coat (30, leather chest, DEX/CHA/CON) and baton (30, wand, INT/WIS/CHA), a knife-thrower's
 blade (29, dagger), a roustabout's tent mallet (28, blunt), an acrobat's grips (26) and the brass ring
