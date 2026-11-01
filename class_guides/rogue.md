@@ -4,7 +4,8 @@
 
 The Rogue is a pure weapon class with no mana and no spells. Everything it does is a free ability on a
 cooldown: big single-target hits, poison, a long stun, and buffs that make it very hard to hit. It
-gains more DEX than any other class, so it ends the game with the highest crit chance and dodge. It
+grows STR for damage and DEX for precision equally, so it hits hard, rarely misses, and crits and
+dodges well. It
 has no heal at all, so it relies on killing fast, dodging and potions.
 
 ## At a glance
@@ -13,10 +14,9 @@ has no heal at all, so it relies on killing fast, dodging and potions.
 |---|---|
 | HP per level | 8 |
 | Mana per level | 0 (Rogues use no mana) |
-| Attack stat | DEX |
 | Spell stat | none |
-| Starting bonus | DEX +4, CHA +1 |
-| Gains per level | DEX +3, STR +1, CON +1 |
+| Starting bonus | STR +2, DEX +2, CHA +1 |
+| Gains per level | STR +2, DEX +2, CON +1 |
 | Armor | Leather (and cloth) |
 | Shield | No |
 | Weapons | Dagger, sword, bow |
@@ -26,14 +26,14 @@ has no heal at all, so it relies on killing fast, dodging and potions.
 
 Average race, starting gear only (see the [README](README.md#about-the-numbers)).
 
-| Level | HP | DEX | STR | CON | Weapon damage | Crit | Dodge | Armor |
-|---|---|---|---|---|---|---|---|---|
-| 1 | 23 | 15 | 10 | 10 | 7-9 | 6.5% | 4.0% | 5 |
-| 10 | 158 | 42 | 19 | 19 | 21-23 | 9.2% | 5.8% | 8 |
-| 25 | 455 | 87 | 34 | 34 | 44-46 | 13.7% | 8.8% | 12 |
-| 50 | 1150 | 162 | 59 | 59 | 83-85 | 21.2% | 13.8% | 20 |
+| Level | HP | STR | DEX | CON | Weapon damage | Miss | Crit | Dodge | Armor |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 23 | 12 | 13 | 10 | 6-8 | 9.1% | 6.3% | 3.9% | 5 |
+| 10 | 158 | 30 | 31 | 19 | 17-19 | 7.8% | 8.1% | 5.1% | 7 |
+| 25 | 455 | 60 | 61 | 34 | 35-37 | 5.7% | 11.1% | 7.1% | 10 |
+| 50 | 1150 | 110 | 111 | 59 | 65-67 | 2.2% | 16.1% | 10.4% | 15 |
 
-At level 50 the Rogue's weapon bonus from DEX is the highest in the game, before gear.
+STR is your damage and DEX your precision: by level 50 your auto-attacks almost never miss.
 
 ## Abilities
 
@@ -43,7 +43,7 @@ average with the starting dagger.
 | Level | Ability | Cooldown | Target | Effect |
 |---|---|---|---|---|
 | 1 | **Backstab** | 2 | one foe | 1.7x weapon damage (~13 at L1, ~142 at L50) |
-| 5 | **Poisoned Blade** | 4 | one foe | 1.0x weapon damage plus poison: 4 + 0.9/level + 0.2 DEX per round for 4 rounds (~13 at L5, ~81 at L50) |
+| 5 | **Poisoned Blade** | 4 | one foe | 1.0x weapon damage plus poison: 4 + 0.9/level + 0.2 STR per round for 4 rounds (~13 at L5, ~71 at L50) |
 | 10 | **Evasion** | 8 | self | +40% dodge for 3 rounds |
 | 18 | **Kidney Shot** | 6 | one foe | 1.0x weapon damage, 85% chance to stun for 2 rounds (about 43% vs bosses) |
 | 28 | **Eviscerate** | 4 | one foe | 2.8x weapon damage (~140 at L28, ~235 at L50) |
@@ -69,13 +69,12 @@ and nearly 11x on a crit.
   stuns to avoid damage rather than recovering from it.
 - No group attack: the Rogue fights one target at a time, so packs of monsters are dangerous. Stun one
   and kill the other first.
-- Daggers have smaller damage ranges than swords; with DEX scaling it matters less, but upgrade your
-  weapon whenever you can.
+- Daggers have smaller damage ranges than swords, so upgrade your weapon whenever you can.
 
 ## Gear
 
-Wear **leather**; you can't use shields. DEX first (damage, crit, dodge and armor all at once), then
-CON.
+Wear **leather**; you can't use shields. STR and DEX together (STR for damage; DEX for hits, crit,
+dodge and armor), then CON.
 
 Notable late gear: the Khopesh of Ussreth (48, sword), **Gravesong** (50, sword) and **the Death Mask**
 (50, leather head, STR/DEX/CON), both from Morthis in the Plane of Death, drakehide boots (45) and
@@ -99,20 +98,25 @@ neck).
 
 ## Best races
 
+- **Orc**: STR 13 and +6% damage.
 - **Dark elf**: +5% crit, which with your DEX pushes you toward the 35% cap.
-- **Elf**: the best DEX, +4% dodge and +2% crit.
-- **Orc**: +6% damage.
+- **Elf**: +4% dodge and +2% crit.
 - **Troll**: regenerates in combat, a heal for a class that has none.
 
 ## How it performs
 
 The Rogue wins every same-level fight in the simulator in about 3-5 rounds with 66-80% HP left. It
 lasts about 4 fights in a row at level 10 and 6 at level 30. It beat almost every world boss at the
-boss's own level (95% against Gorrak and Pyraxis) and all of them at boss level +3.
+boss's own level (95% against Ghaldrek, Yellowtooth and the First Spore) and all of them at boss level
++3.
 
 ## Rebirth
 
-A Rogue life leaves you **+147 DEX, +49 STR and +49 CON**: the biggest single-stat bonus in the game.
-Any later class gains a large boost to crit, dodge and armor. It gives only **leather** training and
-dagger, sword and bow weapons. Kidney Shot, Evasion and Shadow Dance are free, so they make good tools
-for later lives, especially casters who lack a stun or a defensive button.
+In every later life, each of your stats, your HP per level and your mana pool are the best that any
+class you have lived would have at your current level (see the [README](README.md#rebirth)), and each
+class mastered adds +2% max HP and damage.
+
+A Rogue life brings strong STR and DEX growth (matching the Ranger): later lives hit harder, miss less,
+crit and dodge more. It gives only **leather** training and dagger, sword and bow weapons. Kidney Shot,
+Evasion and Shadow Dance are free, so they make good tools for later lives, especially casters who lack
+a stun or a defensive button.

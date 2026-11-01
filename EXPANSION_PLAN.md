@@ -322,6 +322,13 @@ Both doors tell the player what they want when they're refused, so the goals are
   Caps, the Old Garden Wall, the Overgrown Arbour) blend south from the Gilled Houses into Thornwick's
   Hedge Maze, warning of the danger ahead. 11 items fill the 14-20 gaps.
 
+- **Rebirth and stats rework (2026-11-01).** Past lives no longer add their stat gains together. Each
+  stat, HP per level and the mana pool take the best of every class the character has lived, at its
+  current level, so the order of lives never matters; each mastered class adds +2% max HP and damage.
+  STR became weapon damage and DEX precision (crit, dodge, armor, fewer misses) for every class; the
+  rogue, ranger and bard now grow STR. Every monster above level 50 was retuned for the new rule
+  (champions, elemental lords, Lord Trepth and the Eternity regulars lowered; see CLAUDE.md).
+
 ## Decisions
 
 - **City names:** Hearthdeep, Silverbough and Sunspire.
@@ -338,6 +345,9 @@ Both doors tell the player what they want when they're refused, so the goals are
 - **Brightwater's shops:** keep gear up to about level 20; higher gear moves to the new cities.
 - **Areas per level range:** up to 4, for variety.
 - **Respawn:** always Brightwater.
+- **Rebirth (2026-11-01):** the order of rebirths must not matter; a character is defined by the set
+  of classes it has lived. Stats, HP and mana are the best of those classes, plus +2% HP and damage per
+  class mastered. STR is damage and DEX precision for everyone.
 - **The Chancery of the Dead (2026-10-31):** placed south of the Gnoll Scrub because the space by
   Barrowfield was too small. Its ghosts are passive by design (only bailiffs, wardens and the boss
   attack). The writ is a real gate, re-buyable from Clerk Quillon.

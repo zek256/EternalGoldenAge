@@ -200,7 +200,7 @@ spell("wrath_of_the_wild", "Wrath of the Wild", "druid", 44, 60, [DMG(55, 4.2, 1
 # ---------------------------------------------------------------- Rogue
 ability("backstab", "Backstab", "rogue", 1, 2, [WEAPON(1.7)],
         desc="Slip behind your foe and drive your blade home.", msg="You slip into {t}'s blind spot and strike!")
-ability("poisoned_blade", "Poisoned Blade", "rogue", 5, 4, [WEAPON(1.0), DOT(4, 0.9, 0.2, "DEX", 4, "Deadly Poison", "poison")],
+ability("poisoned_blade", "Poisoned Blade", "rogue", 5, 4, [WEAPON(1.0), DOT(4, 0.9, 0.2, "STR", 4, "Deadly Poison", "poison")],
         desc="A strike with a venom-coated blade.", msg="Your venom-slick blade bites into {t}.")
 ability("evasion", "Evasion", "rogue", 10, 8, [BUFF("Evasion", 3, dodge=0.4)], target="self",
         desc="Become nearly impossible to hit for 3 rounds (+40% dodge).", msg="You become a blur of motion.")
@@ -224,7 +224,7 @@ spell("bonded_wolf", "Call Bonded Wolf", "ranger", 16, 20,
       [SUMMON("a grey timber wolf", 25, 7, 3, 1.5, "WIS", "A loyal grey wolf, scarred and keen-eyed.")],
       cooldown=10, target="self",
       desc="Call your loyal animal companion to your side.", msg="You whistle sharply, and a grey wolf lopes out of the brush to your side.")
-ability("serpent_sting", "Serpent Sting", "ranger", 24, 4, [WEAPON(0.9), DOT(8, 1.4, 0.3, "DEX", 5, "Serpent Sting", "poison")],
+ability("serpent_sting", "Serpent Sting", "ranger", 24, 4, [WEAPON(0.9), DOT(8, 1.4, 0.3, "STR", 5, "Serpent Sting", "poison")],
         desc="A venomed arrow that poisons for 5 rounds.", msg="A green-fletched arrow strikes {t}, its venom spreading.")
 ability("rain_of_arrows", "Rain of Arrows", "ranger", 34, 4, [WEAPON(1.6)], target="all",
         desc="Darken the sky with arrows.", msg="The sky darkens as your arrows rain down!")

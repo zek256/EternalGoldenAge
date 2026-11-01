@@ -2,7 +2,7 @@
 
 > *Wardens of the wild places, deadly with bow and blade and kin to beasts.*
 
-The Ranger is a DEX fighter that mostly uses free abilities, with a small WIS mana pool for a heal
+The Ranger is a STR and DEX fighter that mostly uses free abilities, with a small WIS mana pool for a heal
 and an animal companion. It hits hard and often, gets an area attack early, crits more than most
 classes, and from level 16 brings a wolf that soaks up hits for it. It has the best staying power of
 any class in the mid levels.
@@ -13,10 +13,9 @@ any class in the mid levels.
 |---|---|
 | HP per level | 9 |
 | Mana per level | 2 |
-| Attack stat | DEX |
 | Spell stat | WIS |
-| Starting bonus | DEX +3, WIS +1, CON +1 |
-| Gains per level | DEX +2, STR +1, CON +1, WIS +1 |
+| Starting bonus | STR +2, DEX +2, WIS +1 |
+| Gains per level | STR +2, DEX +2, CON +1 |
 | Armor | Mail (and everything lighter) |
 | Shield | Yes |
 | Weapons | Sword, dagger, axe, bow |
@@ -26,14 +25,15 @@ any class in the mid levels.
 
 Average race, starting gear only (see the [README](README.md#about-the-numbers)).
 
-| Level | HP | Mana | DEX | WIS | CON | Weapon damage | Crit | Dodge |
-|---|---|---|---|---|---|---|---|---|
-| 1 | 24 | 18 | 13 | 11 | 11 | 7-10 | 6.3% | 3.9% |
-| 10 | 170 | 55 | 31 | 20 | 20 | 17-20 | 8.1% | 5.1% |
-| 25 | 485 | 152 | 61 | 35 | 35 | 35-38 | 11.1% | 7.1% |
-| 50 | 1210 | 415 | 111 | 60 | 60 | 65-68 | 16.1% | 10.4% |
+| Level | HP | Mana | STR | DEX | CON | Weapon damage | Miss | Crit | Dodge |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 24 | 18 | 12 | 12 | 10 | 6-9 | 9.2% | 6.2% | 3.8% |
+| 10 | 168 | 46 | 30 | 30 | 19 | 17-20 | 7.9% | 8.0% | 5.0% |
+| 25 | 480 | 92 | 60 | 60 | 34 | 35-38 | 5.8% | 11.0% | 7.0% |
+| 50 | 1200 | 170 | 110 | 110 | 59 | 65-68 | 2.3% | 16.0% | 10.3% |
 
-DEX powers your weapon, your crit chance, your dodge and a little armor, so it does a lot for you.
+STR powers your weapon; DEX makes it land (fewer misses, more crits) and helps you dodge. Your WIS
+stays low, so your mana pool is small: Hunter's Mend and the wolf are for when you need them most.
 
 ## Spells and abilities
 
@@ -46,7 +46,7 @@ learn it and at level 50. Weapon damage is the average with the starting bow.
 | 4 | **Hunter's Mend** | spell | 8 / 35 | - | self | Heal 9 + 2/level + 0.45 WIS (~23 at L4, ~136 at L50) |
 | 10 | **Multishot** | ability | free | 3 | all foes | 0.95x weapon damage to every foe |
 | 16 | **Call Bonded Wolf** | spell | 50 / 118 | 10 | self | Summon a grey timber wolf (~150 HP, 19-30 damage at L16; ~405 HP, 52-80 at L50) |
-| 24 | **Serpent Sting** | ability | free | 4 | one foe | 0.9x weapon damage plus poison: 8 + 1.4/level + 0.3 DEX per round for 5 rounds (~59 at L24, ~111 at L50) |
+| 24 | **Serpent Sting** | ability | free | 4 | one foe | 0.9x weapon damage plus poison: 8 + 1.4/level + 0.3 STR per round for 5 rounds (~59 at L24, ~111 at L50) |
 | 34 | **Rain of Arrows** | ability | free | 4 | all foes | 1.6x weapon damage to every foe |
 | 45 | **Deadeye** | ability | free | 5 | one foe | 3.6x weapon damage (~217 at L45, ~239 at L50) |
 
@@ -71,7 +71,7 @@ Aimed Shot, and Serpent Sting again when it wears off.
 
 ## Gear
 
-Wear **mail** (or leather) and a bow. DEX first, then CON; WIS feeds Hunter's Mend and the wolf.
+Wear **mail** (or leather) and a bow. STR and DEX first, then CON; WIS feeds Hunter's Mend and the wolf.
 
 Signature late gear: **Stormcaller** (50, bow, DEX/WIS/CON), dropped by Caelestra in the Plane of
 Stars. Also good: the dune recurve bow (40), Dragonscale Mail (48, mail), the sunsteel mail set (40),
@@ -97,22 +97,26 @@ and Great-aunt Mathilde's cameo (46, neck).
 
 ## Best races
 
-- **Elf**: high DEX, +4% dodge and +2% crit.
-- **Dark elf**: +5% crit.
+- **Orc**: STR 13 and +6% damage.
 - **Human**: +5% HP, mana and damage.
-- **Orc**: +6% damage.
+- **Dark elf**: +5% crit.
+- **Elf**: +4% dodge and +2% crit.
 
 ## How it performs
 
 The Ranger wins every same-level fight in the simulator, a little slowly at low levels (5-8 rounds)
 and quickly later (about 3 rounds at 30-45), finishing with 48-84% HP. It has the best staying power
 of any class at level 30 (nearly 8 fights in a row). Its weak point is the hardest bosses: about
-75% against Ussreth and 90% against Ghaldrek at the boss's own level, and about 65% against Pyraxis
-(80% at +3). It beats every other boss at boss level +3.
+85-90% against Ussreth, Seluvar and the High Justice at the boss's own level, and about 70% against
+Pyraxis, who can't be out-levelled. It beats every other boss at boss level +3.
 
 ## Rebirth
 
-A Ranger life leaves you **+98 DEX, +49 STR, +49 CON and +49 WIS**, plus **mail armor and shield
-training** and sword, dagger, axe and bow weapons. The DEX bonus raises crit, dodge and armor for any
-later class. Aimed Shot, Multishot, Rain of Arrows and Deadeye are free abilities, though they scale
-with your weapon, so they are best in a DEX or STR class.
+In every later life, each of your stats, your HP per level and your mana pool are the best that any
+class you have lived would have at your current level (see the [README](README.md#rebirth)), and each
+class mastered adds +2% max HP and damage.
+
+A Ranger life brings strong STR and DEX growth (matching the Rogue), plus **mail armor and shield
+training** and sword, dagger, axe and bow weapons. Aimed Shot, Multishot, Rain of Arrows and Deadeye
+are free abilities that scale with your weapon, and every class swings with STR, so they work in any
+later life that keeps a good weapon.

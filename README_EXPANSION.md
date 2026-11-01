@@ -229,7 +229,11 @@ their neighbours.
 | Rotheart, the Blighted Oak | 33 | about as hard as Gorrak and Seluvar |
 | Ussreth, the Last Sand King | 48 | between Seluvar and Pyraxis |
 
-### The Planes (phase 5)
+### The Planes (phase 5, original rebirth system)
+
+> **Superseded (2026-11-01).** These figures describe the original system, where past lives added
+> their stat gains together. Past lives now give the best of each class's stats instead, and the
+> plane monsters were retuned to match. See [Rebirth rework and retune](#rebirth-rework-and-retune-2026-11-01) below.
 
 Win rates from `balance_sim.py endgame`, for level-50 characters averaged over all classes. Boss
 fights use 5 potions.
@@ -243,7 +247,7 @@ fights use 5 potions.
 
 - **Without mythic gear:** an 11-life character with no mythic gear at all still beats Trepth about
   60% of the time. Good equipment matters but is not strictly required.
-- **Why the multipliers are so large:** past-life stat bonuses make multi-life characters
+- **Why the multipliers were so large:** past-life stat bonuses make multi-life characters
   enormously strong. A 6-life character already beat a standard level 60 boss every time, so plane
   monsters use much bigger multipliers than anything else in the game:
 
@@ -263,6 +267,188 @@ fights use 5 potions.
   - The first-tier regular monsters were too easy for a 1-life character (50-84% wins), so they
     were toughened.
   - The Lords of Water and Earth were softer than Fire and Air, so they were toughened.
+
+### Rebirth rework and retune (2026-11-01)
+
+**What changed.**
+- **The order of rebirths no longer matters.** Past lives used to add their full stat gains
+  together; now each stat, HP per level and the mana pool take the best that any lived class would
+  have at the character's current level.
+- **Each class mastered adds +2% max HP and +2% damage**, up to +22% with all eleven.
+- **STR is weapon damage and DEX is precision, for every class.** The per-class attack stat is gone.
+  DEX gives crit, dodge, armor and a lower miss chance: auto-attacks miss 10% minus 0.07% per DEX,
+  never below 2% (it was a flat 7%).
+- **New growth:**
+  - Rogue: STR +2, DEX +2, CON +1 (was DEX +3, STR +1, CON +1).
+  - Ranger: STR +2, DEX +2, CON +1 (was DEX +2, STR +1, CON +1, WIS +1).
+  - Bard: CHA +2, STR +1, DEX +1, CON +1 (was CHA +2, DEX +2, CON +1).
+- **Poisons:** Poisoned Blade and Serpent Sting now scale with STR instead of DEX.
+
+All runs used `tools/balance_sim.py` in a temp copy of the game, with best-in-slot gear (so the
+numbers are optimistic) and 5 potions in boss fights.
+
+#### Levels 1-50 (first-life characters)
+
+Baseline and new runs used the same settings (`fights --n 20`, `bosses --n 20`, `endurance --n 15`,
+seed 3).
+
+- **Same-level fights:** every class still wins 100% at every level tested (5, 15, 25, 35, 45, 50),
+  with HP left within a few points of the baseline. The three rebalanced classes:
+
+  | Class | HP left at 15 | HP left at 35 | HP left at 50 |
+  |---|---|---|---|
+  | Rogue | 54% → 59% | 77% → 80% | 85% → 83% |
+  | Bard | 69% → 67% | 76% → 75% | 96% → 97% |
+  | Ranger (first try, see below) | 54% → 48% | 75% → 74% | 81% → 73% |
+
+- **Endurance** (fights in a row) moved by about one fight or less for every class at levels 10,
+  30 and 50 (the largest change: the druid at 50, 7.2 to 6.0).
+- **Bosses** (win % at the boss's level / at level +3): almost every result stayed the same or
+  improved, mostly from the rebalanced classes:
+
+  | Boss | Rogue before → after | Bard before → after |
+  |---|---|---|
+  | Rask the Bandit Chieftain | 100/100 → 100/100 | 70/100 → 95/100 |
+  | Varnoth the Bone King | 100/100 → 100/100 | 60/100 → 85/100 |
+  | Old Mother Gristle | 100/100 → 100/100 | 50/100 → 55/100 |
+  | the First Spore | 100/100 → 95/100 | 50/100 → 45/100 |
+  | the High Justice | 100/100 → 100/100 | 65/100 → 80/100 |
+  | Pyraxis the Eternal Flame | 100/95 → 100/100 | 100/95 → 95/90 |
+
+- **The ranger fell behind on the hardest bosses** with its first new growth (STR +2, DEX +1,
+  CON +1, WIS +1): Seluvar 75%, the High Justice 60%, Ussreth 65%, Pyraxis 50%. It had lost the crit
+  and dodge that DEX used to give. Five options were tested (30 fights each, at the boss's level and
+  at +3; Pyraxis is level 52, so both of his columns are fought at level 50):
+
+  | Ranger growth | Seluvar | High Justice | Ussreth | Pyraxis | Ringmaster |
+  |---|---|---|---|---|---|
+  | STR 2, DEX 1, CON 1, WIS 1 (first try) | 90/100 | 76/100 | 83/100 | 43/53 | 86/100 |
+  | **STR 2, DEX 2, CON 1 (chosen)** | **93/100** | **83/100** | **90/100** | **70/66** | **83/100** |
+  | STR 2, DEX 2, WIS 1 | 73/96 | 56/96 | 56/100 | 30/56 | 83/100 |
+  | first try, 10 HP per level | 93/100 | 73/100 | 80/100 | 66/56 | 90/100 |
+  | STR 2, DEX 2, CON 1, 10 HP per level | 100/100 | 83/100 | 83/100 | 70/60 | 93/100 |
+
+  The chosen growth puts the ranger back where it was before the change (Pyraxis 75/60 then, 70/66
+  now) without raising its HP per level.
+
+#### The Planes under the new rule, before the retune
+
+With the old multipliers, multi-life characters were now far too weak (`endgame --n 6`):
+
+| Fight | 1 life | 6 lives | 11 lives |
+|---|---|---|---|
+| First-tier monsters (51-54) | 2-45% | 98-100% | 100% |
+| Elemental-plane monsters (55-57) | 0% | 79-100% | 98-100% |
+| Hourglass golem / paradox (58-59, Eternity) | 0% | 36% / 2% | 94% / 44% |
+| Plane champions | 0% | 3-29% | 77-100% |
+| Elemental lords | 0% | 0% | 8-55% |
+| Lord Trepth | 0% | 0% | **0%** |
+
+#### The retune
+
+A script searched, for each monster, for one factor applied to both its HP and damage multipliers
+that hit a target win rate (a binary search, 3 fights per class per step, all 11 classes). Targets:
+
+- **Champions:** about 80% with 6 lives.
+- **Elemental lords:** about 92% with 11 lives.
+- **Eternity regulars:** about 95% with 11 lives.
+- **Lord Trepth:** about 70% with 11 lives.
+
+| Monster | Factor | HP mult | Damage mult | 6 lives | 11 lives |
+|---|---|---|---|---|---|
+| Caelestra, the Star-Warden | 0.82 | 8.0 → 6.6 | 3.5 → 2.9 | 85% | 100% |
+| Somnara, the Dreamweaver | 0.74 | 8.5 → 6.3 | 3.3 → 2.45 | 82% | 100% |
+| Morthis, Keeper of the Dead | 0.65 | 7.5 → 4.85 | 3.6 → 2.3 | 94% | 100% |
+| Stalworth Lightbearer | 0.82 | 8.0 → 6.55 | 3.4 → 2.8 | 82% | 100% |
+| Rekkn, Lord of Flame | 0.68 | 9.5 → 6.45 | 3.8 → 2.55 | 9% | 100% |
+| Nerevos, Lord of the Tides | 0.85 | 11.0 → 9.4 | 3.8 → 3.25 | 3% | 94% |
+| Ulmathra, Lord of Stone | 0.81 | 11.0 → 8.9 | 3.7 → 3.0 | 6% | 97% |
+| Zephyrion, Lord of the Winds | 0.64 | 9.0 → 5.75 | 3.9 → 2.5 | 33% | 97% |
+| a chronal sentinel | 1.00 | 5.0 (unchanged) | 3.4 (unchanged) | 94% | 100% |
+| an hourglass golem | 0.91 | 5.5 → 5.0 | 3.4 → 3.1 | 52% | 97% |
+| a paradox | 0.73 | 4.8 → 3.5 | 3.6 → 2.65 | 73% | 97% |
+| Lord Trepth | 0.44 | 15.0 → 6.6 | 5.3 → 2.35 | 3% | 79% |
+
+The first-tier and elemental-plane regulars were left alone: they already matched their targets.
+
+**Lord Trepth fine-tuning.** His search landed slightly generous, so three factors were compared
+with 12 fights per class at 11 lives:
+
+| Factor | HP mult | Damage mult | Average | Weakest class | Strongest class |
+|---|---|---|---|---|---|
+| **0.44 (chosen)** | **6.6** | **2.33** | **69%** | **ranger 50%** | **bard 83%** |
+| 0.455 | 6.83 | 2.41 | 48% | druid 17% | rogue 67% |
+| 0.47 | 7.05 | 2.49 | 42% | wizard 17% | shaman 67% |
+
+His damage was rounded to 2.35 in the data.
+
+#### Final results
+
+The full endgame report after the retune (`endgame --n 6`, seed 5). The last column is the weakest
+class with all 11 classes lived:
+
+| Monster | Level | 1 life | 6 lives | 11 lives | Weakest class |
+|---|---|---|---|---|---|
+| a star eagle | 51 | 42% | 100% | 100% | 100% |
+| a dreamstalker | 52 | 30% | 100% | 100% | 100% |
+| a pale horse | 52 | 55% | 100% | 100% | 100% |
+| a chained penitent | 52 | 44% | 100% | 100% | 100% |
+| a celestial sentinel | 53 | 35% | 100% | 100% | 100% |
+| an iron warden | 53 | 27% | 100% | 100% | 100% |
+| a sleepwalking giant | 54 | 0% | 100% | 100% | 100% |
+| a reaper | 54 | 5% | 100% | 100% | 100% |
+| an efreet, tide, granite and storm elemental | 55 | 0% | 100% | 100% | 100% |
+| a pyre phoenix | 57 | 0% | 85% | 100% | 100% |
+| an abyssal kraken | 57 | 0% | 86% | 100% | 100% |
+| a crystal basilisk | 57 | 0% | 83% | 97% | 83% |
+| a thunderbird | 57 | 0% | 95% | 100% | 100% |
+| a chronal sentinel | 57 | 0% | 76% | 100% | 100% |
+| an hourglass golem | 58 | 0% | 61% | 98% | 83% |
+| a paradox | 59 | 0% | 56% | 97% | 83% |
+| Pyraxis the Eternal Flame | 52 | 95% | 100% | 100% | 100% |
+| Caelestra, the Star-Warden | 55 | 0% | 79% | 100% | 100% |
+| Somnara, the Dreamweaver | 55 | 0% | 64% | 100% | 100% |
+| Morthis, Keeper of the Dead | 55 | 5% | 89% | 100% | 100% |
+| Stalworth Lightbearer | 55 | 2% | 76% | 100% | 100% |
+| Rekkn, Lord of Flame | 58 | 0% | 23% | 88% | 50% |
+| Nerevos, Lord of the Tides | 58 | 0% | 2% | 88% | 67% |
+| Ulmathra, Lord of Stone | 58 | 0% | 6% | 92% | 83% |
+| Zephyrion, Lord of the Winds | 58 | 0% | 48% | 97% | 83% |
+| **Lord Trepth** | 60 | 0% | 3% | **73%** | 33% |
+
+In summary:
+
+| Fight | 1 life | 6 lives | 11 lives |
+|---|---|---|---|
+| First-tier monsters | 27-55% (the level-54 ones about 0-5%) | 100% | 100% |
+| Elemental-plane and Eternity monsters | 0% | 56-100% | 97-100% |
+| Plane champions | 0-5% | 64-89% | 100% |
+| Elemental lords | 0% | 2-48% | 88-97% |
+| Lord Trepth | 0% | 3% | **73%** (every class about 50-85%) |
+
+**Notes on the results.**
+- **Small samples.** With 6 fights per class, single-class figures are noisy. Lord Trepth's weakest
+  class shows 33% here but was 50% in the 12-fight run above, which is the better estimate.
+- **The 6-to-11-life gap is smaller than before** for stats, because six well-chosen lives already
+  hold most of the best stats. What remains comes from the mastery bonus (+12% against +22%) and
+  the classes the sim's 6-life characters lack (mostly the rogue's and ranger's DEX).
+- **The elemental lords are steep:** under 50% with 6 lives, about 90% with 11. Since the Door of
+  Eternity needs all four lords and Lord Trepth's throne needs every class, this matches the
+  intended path: the lords are a late-game wall, and Trepth is the last fight of a full run.
+- **How the sim builds a 6-life character:** the class plus the first five other classes in
+  `CLASS_ORDER` (warrior, cleric, wizard, bard, necromancer). A different set of six would score a
+  little differently.
+
+#### Checks
+
+| Check | Result |
+|---|---|
+| The level-10 example | A warrior with a wizard past life has the wizard's level-10 INT (41) and the warrior's STR and CON (31 each) |
+| Order independence | A wizard who was once a warrior and a warrior who was once a wizard have identical stats, HP per level and mana pool |
+| Level 50 | After wizard 50 → warrior 50, INT is exactly the wizard's 161, and the mastery bonus is +4% |
+| Real rebirth | A wizard reborn as a warrior through the game's own `rebirth` command shows the new rules text, stores the past life as just its class, and the score sheet reads correctly |
+| Data check | `validate.py` passes |
+| Saves | Untouched; no existing character has rebirthed, so no save conversion was needed |
 
 ## Testing
 

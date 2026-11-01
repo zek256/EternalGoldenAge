@@ -13,7 +13,6 @@ it burns. It is one of the safest classes to level.
 |---|---|
 | HP per level | 10 |
 | Mana per level | 3 |
-| Attack stat | STR |
 | Spell stat | WIS |
 | Starting bonus | STR +2, WIS +2, CON +1 |
 | Gains per level | STR +2, CON +1, WIS +1, CHA +1 |
@@ -116,7 +115,11 @@ in the simulator.
 
 ## Rebirth
 
-A Paladin life leaves you **+98 STR, +49 CON, +49 WIS and +49 CHA**, plus **plate armor and shield
-training** and sword, blunt and two-handed weapons. Lay on Hands and Avenging Wrath are free
-abilities, so any later class keeps two big heals that cost no mana, which is very valuable for
+In every later life, each of your stats, your HP per level and your mana pool are the best that any
+class you have lived would have at your current level (see the [README](README.md#rebirth)), and each
+class mastered adds +2% max HP and damage.
+
+A Paladin life brings strong STR growth and 10 HP per level, plus **plate armor and shield training**
+and sword, blunt and two-handed weapons. Its best gift is its abilities: Lay on Hands and Avenging
+Wrath are free, so any later class keeps two big heals that cost no mana, which is very valuable for
 fragile casters.

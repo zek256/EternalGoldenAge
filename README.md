@@ -107,8 +107,9 @@ The world runs on a real-time clock: every **4 seconds** is one game tick.
 ogre (+12% HP), troll (regeneration), undead (immune to poison/disease), orc (+6% damage).
 
 **Classes:** warrior, cleric, wizard, bard, necromancer, shaman, druid, rogue, ranger, paladin,
-dread knight. Each has its own HP and mana growth, casting stat, attack stat, per-level stat
-gains, and 6-7 spells/abilities unlocked between levels 1 and 48:
+dread knight. Each has its own HP and mana growth, casting stat, per-level stat gains, and 6-7
+spells/abilities unlocked between levels 1 and 48. Every class swings its weapon with **STR** and
+aims with **DEX**:
 
 - Warrior: Slam, Battle Cry, Second Wind, Cleave, Shield Wall, Rampage, Avatar of War
 - Cleric: Minor Healing, Smite, Divine Aegis, Greater Healing, Holy Wrath, Resurgence, Sunburst
@@ -152,13 +153,18 @@ in red when you aren't trained for it, and `examine` says why. Orbs and tomes he
 are not shields and anyone may carry them; so may rings, necklaces and the mythic artifacts
 (Fang of Pyraxis, Eternity, the Ashen Crown, the Crown of Trepth). **Training is kept through
 rebirth**: a character may use anything any of its lives was trained for, so a wizard who was once
-a warrior may fight in plate with an axe, trading INT for toughness.
+a warrior may fight in plate with an axe.
 
 ## Character maths
 
-- **HP** = 10 + (class HP + 3) x level + CON x level x 0.2 (x racial modifier)
+- **HP** = 10 + (class HP + 3) x level + CON x level x 0.2 (x racial modifier, x mastery bonus)
 - **Mana** = 15 + class mana x level + casting stat x level x 0.1 (x racial modifier)
-- **Stats** = race base + class starting bonus + class gains x (level - 1) + rebirth bonus + gear
+- **Stats** = race base + class starting bonus + class gains x (level - 1) + gear
+- **Weapon damage** = weapon range + 0.35 x STR + 0.5 x level, for every class.
+- **DEX** is precision for every class: +0.1% crit per point (max 35%), more dodge (max 25%), +1
+  armor per 10, and fewer misses (auto-attacks miss 10% minus 0.07% per point of DEX, never below 2%).
+- After a rebirth, the class figures above (stats, HP per level, mana) use the **best** of every
+  class you have lived. See Rebirth.
 - **XP to next level** = 65 x level^1.7, the same in every life no matter how many rebirths.
   A monster of your level is worth 15 + 14.5 x level^1.5, so a level takes about 6 such kills
   early on and about 10 near level 50.
@@ -173,8 +179,14 @@ At level 50, `rebirth` lets you choose any other class:
 - You keep **every ability of every class you have lived**. Each becomes usable again when your
   current level reaches the level at which it was originally learned (a warrior-turned-wizard gets
   Slam back at level 1, Cleave at 12, Avatar of War at 42).
-- The **full stat gains of each previous class at level 50** become a permanent bonus. It phases
-  in as you level (bonus x level / 50), so it stacks across rebirths and reaches full strength at 50.
+- **Every stat, your HP and your mana take the best of all the classes you have lived**, at your
+  current level. A level-10 warrior who was once a wizard has the wizard's level-10 INT (it's
+  higher than a warrior's), the warrior's STR and CON, the warrior's HP growth and the wizard's
+  mana pool. At level 25 it has the wizard's level-25 INT, and so on: each life starts on an equal
+  footing and grows into its past strengths. The order of your lives never matters, only which
+  classes you have lived.
+- Each **class mastered** (lived to level 50) adds **+2% max HP and damage**, up to +22% with all
+  eleven.
 - You keep the **armor and weapon training** of every class you have lived (see above).
 - Gear above level 1 is unequipped until you can wield it again, so you climb back up with your
   new class's starting gear. Experience needed per level is exactly the same as in your first life.
@@ -210,9 +222,9 @@ before it. Above the Threshold, the Door of Eternity opens only once you have
 slain all four elemental lords (your character remembers every boss it has killed, across all its
 lives). At the end of the Plane of Eternity sits Lord Trepth, whose throne opens only to a
 character who has leveled **every class to level 50** (your current class counts once it reaches 50).
-The planes are built for reborn characters: with one life their monsters will kill you, with six
-the plane champions and lords are hard but fair, and Lord Trepth needs every class you have ever
-learned. They drop mythic level-50 gear. Below level 50, their monsters give a great deal of experience to anyone strong
+The planes are built for reborn characters: with one life even their first-tier monsters are a
+coin flip, with six lives the champions are hard but fair, the elemental lords need nearly every
+class, and Lord Trepth needs every class you have ever learned. They drop mythic level-50 gear. Below level 50, their monsters give a great deal of experience to anyone strong
 enough to survive them.
 
 That is 257 rooms, 140 monster types including 19 bosses, and 199 items. Run

@@ -13,7 +13,6 @@ class to have in a past life, because it gives plate training and a huge STR and
 |---|---|
 | HP per level | 13 (the most of any class) |
 | Mana per level | 0 (Warriors use no mana) |
-| Attack stat | STR |
 | Spell stat | none |
 | Starting bonus | STR +3, CON +3 |
 | Gains per level | STR +2, CON +2, DEX +1 |
@@ -116,7 +115,11 @@ of them at boss level +3.
 
 ## Rebirth
 
-A Warrior life leaves you **+98 STR, +98 CON and +49 DEX** (phased in as you level), plus
-**plate armor and shield training** and the use of every weapon except staffs and wands. That makes
-it the best past life for any class: casters reborn after a Warrior life gain a large HP pool and can
-wear plate. The Warrior abilities you keep are all free, so they work in any later class.
+In every later life, each of your stats, your HP per level and your mana pool are the best that any
+class you have lived would have at your current level (see the [README](README.md#rebirth)), and each
+class mastered adds +2% max HP and damage.
+
+A Warrior life brings the **best STR and CON growth in the game** (shared with the Dread Knight) and
+the **highest HP per level** (13), so every later life is as tough as a Warrior: a wizard reborn after
+it has a Warrior's HP pool. It also gives **plate armor and shield training** and every weapon except
+staffs and wands. The Warrior abilities you keep are all free, so they work in any later class.

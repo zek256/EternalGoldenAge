@@ -8,7 +8,7 @@ import time
 
 import mapview
 import ui
-from character import MAX_LEVEL, Character
+from character import MASTERY_BONUS, MAX_LEVEL, Character
 from combat import AGGRO_GAP, Combat, con_color, resolve_self_effect
 from data.abilities import ABILITIES
 from data.classes import CLASS_ORDER, CLASSES, STATS
@@ -1358,9 +1358,11 @@ class Game:
                "its end. Choose a new path, and begin again - carrying all that you were.'".format(p.class_name), "bmagenta")
         ui.out("")
         ui.say("You will return to level 1 with XP reset. You keep every ability you have learned (each "
-               "becomes usable again when you reach the level you first learned it), and the full stat "
-               "gains of your {} life become a permanent bonus that grows as you level. Gear above "
-               "level 1 will be unequipped until you can wield it again.".format(p.class_name), "white")
+               "becomes usable again when you reach the level you first learned it) and all your armor and "
+               "weapon training. At every level, each of your stats, your HP and your mana will be the best "
+               "that any of your paths would have at that level, the {} included, and every class you "
+               "master adds {}% to your max HP and damage. Gear above level 1 will be unequipped until "
+               "you can wield it again.".format(p.class_name, int(MASTERY_BONUS * 100)), "white")
         choices = [c for c in CLASS_ORDER if c != p.cls]
         for i, cid in enumerate(choices, 1):
             past = " (lived before)" if cid in p.lived_classes() else ""
@@ -1385,11 +1387,11 @@ class Game:
         ui.out("")
         ui.say("Light pours through you. Your old life burns away like morning mist, and you are born "
                "anew as a {} - yet the {} you were remains within you.".format(p.class_name, old), "byellow")
-        totals = {}
-        for life in p.past_lives:
-            for s, v in life["gains"].items():
-                totals[s] = totals.get(s, 0) + v
-        ui.say("Permanent bonus at level 50: " + ", ".join("{} +{}".format(s, v) for s, v in totals.items()), "bcyan")
+        lived = sorted(CLASSES[c]["name"] for c in p.lived_classes())
+        ui.say("As you grow, each of your stats, your HP and your mana will match the best of every path "
+               "you have walked ({}). Each class mastered also adds {}% to your max HP and damage "
+               "(now +{}%).".format(", ".join(lived), int(MASTERY_BONUS * 100),
+                                    int(round((p.mastery_bonus - 1) * 100))), "bcyan")
         if removed:
             ui.say("Too heavy for your new body for now, you unequip: " + ", ".join(ITEMS[i]["name"] for i in removed), "grey")
         ready = [a["name"] for a in p.usable_abilities()]

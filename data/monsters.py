@@ -803,8 +803,10 @@ M("lord_aldric_vane", "Lord Aldric Vane", 50,
   loot=[("vane_longsword", 0.5), ("vane_heirloom_plate", 0.5), ("vane_signet", 0.6), ("vane_silver", 1.0)])
 
 # ------------------------------------------------------------- The Planes of the Gods (51-60)
-# Tuned for reborn characters: with one life these kill you; with six they are a hard fight; Lord Trepth
-# needs every class lived. Check with `python tools/balance_sim.py endgame`.
+# Tuned for reborn characters, whose stats are the best of every class they have lived (not a sum):
+# first-tier monsters are a coin flip for one life and easy with six; champions ~80-95% with six lives;
+# the elemental lords need nearly every class (~95% with all 11); Lord Trepth ~70% with all 11.
+# Check with `python tools/balance_sim.py endgame`.
 
 # First tier (51-55): the Planes of Stars, Dreams, Death and Law
 M("star_eagle", "a star eagle", 51, "An eagle with a wingspan wider than a ship, its feathers dark as the night sky and pricked with stars.",
@@ -828,7 +830,7 @@ M("reaper", "a reaper", 54, "A hooded figure of bone and grey smoke with a scyth
   loot=[("planar_shard", 0.15)], gold=2.5)
 M("caelestra", "Caelestra, the Star-Warden", 55,
   "The guardian of the Plane of Stars, a woman of silver and night with wings of starlight, and a bow strung with a thread of light in her hand.",
-  hp=8.0, dmg=3.5, armor=2.0, aggro=True, boss=True, xp=2.0, gold=12.0,
+  hp=6.6, dmg=2.9, armor=2.0, aggro=True, boss=True, xp=2.0, gold=12.0,
   specials=[big("Shooting Star", 0.22, 2.0, "draws her bow, and a shooting star strikes you!"),
             stun("Eclipse", 0.12, 1, "folds her wings over the stars, and you stagger blind in the dark!"),
             heal("Starlight", 0.08, 0.1, "bathes in starlight, and her wounds close!")],
@@ -836,7 +838,7 @@ M("caelestra", "Caelestra, the Star-Warden", 55,
 M("somnara", "Somnara, the Dreamweaver", 55,
   "The guardian of the Plane of Dreams, a tall woman of moonlight and grey silk crowned with sleeping moths, who weaves "
   "the dreams of every living thing on a loom of silver.",
-  hp=8.5, dmg=3.3, armor=2.0, aggro=True, boss=True, xp=2.0, gold=12.0,
+  hp=6.3, dmg=2.45, armor=2.0, aggro=True, boss=True, xp=2.0, gold=12.0,
   specials=[dot("Smothering Dream", 0.2, 0.6, 4, "arcane", "wraps you in a dream that will not let you breathe!"),
             stun("Endless Sleep", 0.12, 1, "sings a single note, and you fall asleep where you stand!"),
             heal("Lucid Mending", 0.1, 0.12, "dreams herself whole again!")],
@@ -844,7 +846,7 @@ M("somnara", "Somnara, the Dreamweaver", 55,
 M("morthis", "Morthis, Keeper of the Dead", 55,
   "The guardian of the Plane of Death, a gaunt giant in a robe of grey ash with a lantern of cold blue fire, who has "
   "counted every soul that ever died and has a place ready for yours.",
-  hp=7.5, dmg=3.6, armor=1.8, aggro=True, boss=True, xp=2.0, gold=12.0,
+  hp=4.85, dmg=2.3, armor=1.8, aggro=True, boss=True, xp=2.0, gold=12.0,
   specials=[drain("Toll of the Dead", 0.2, 1.4, "names the hour of your death, and your life drains toward it!"),
             stun("Grave Cold", 0.14, 1, "lifts his lantern, and the cold of the grave stops your heart for a moment!"),
             big("Last Rites", 0.18, 2.0, "brings down his staff of bone like a closing coffin lid!")],
@@ -859,7 +861,7 @@ M("iron_warden", "an iron warden", 53, "A gaoler of the gods in a full suit of b
 M("stalworth", "Stalworth Lightbearer", 55,
   "The warden of the Plane of Law, a paladin in white plate who was the first mortal ever judged worthy to serve "
   "Lord Trepth. His sword is engraved with every law of the gods, and his eyes see every crime you have ever committed.",
-  hp=8.0, dmg=3.4, armor=2.4, aggro=True, boss=True, xp=2.0, gold=12.0,
+  hp=6.55, dmg=2.8, armor=2.4, aggro=True, boss=True, xp=2.0, gold=12.0,
   specials=[big("Smite the Guilty", 0.22, 2.0, "raises his blazing sword and smites you with the full weight of the law!"),
             stun("Sentence Passed", 0.12, 1, "pronounces your sentence, and chains of light bind you where you stand!"),
             heal("Lay on Hands", 0.1, 0.12, "lays a hand on his own wounds, and holy light closes them!")],
@@ -894,28 +896,28 @@ M("thunderbird", "a thunderbird", 57, "A bird the size of a cloud, whose wingbea
   loot=[("planar_shard", 0.25)], gold=3.0, xp=1.3)
 M("lord_fire", "Rekkn, Lord of Flame", 58,
   "The lord of the Plane of Fire, a giant of white-hot stone with a crown of flame and a hammer that is a captive star.",
-  hp=9.5, dmg=3.8, armor=2.2, aggro=True, boss=True, xp=2.0, gold=15.0,
+  hp=6.45, dmg=2.55, armor=2.2, aggro=True, boss=True, xp=2.0, gold=15.0,
   specials=[big("Starfall Hammer", 0.22, 2.1, "brings down a hammer that burns like a falling star!"),
             dot("Inferno", 0.18, 0.7, 4, "fire", "breathes, and the world becomes fire!"),
             stun("Heatstroke", 0.1, 1, "flares so brightly that you reel, blinded!")],
   loot=[("flameheart_hammer", 0.4), ("gauntlets_of_the_pyre", 0.4), ("planar_shard", 1.0)])
 M("lord_water", "Nerevos, Lord of the Tides", 58,
   "The lord of the Plane of Water, a crowned giant of green sea-glass with a trident of coral, whose voice is the roar of surf.",
-  hp=11.0, dmg=3.8, armor=2.2, aggro=True, boss=True, xp=2.0, gold=15.0,
+  hp=9.4, dmg=3.25, armor=2.2, aggro=True, boss=True, xp=2.0, gold=15.0,
   specials=[stun("Drowning Wave", 0.14, 1, "raises a wave that crashes down and drowns you!"),
             big("Trident Thrust", 0.2, 2.0, "drives his coral trident into you!"),
             heal("Tidal Renewal", 0.1, 0.1, "draws in the tide, and his wounds wash away!")],
   loot=[("tidecaller", 0.4), ("pearl_of_the_deep", 0.4), ("planar_shard", 1.0)])
 M("lord_earth", "Ulmathra, Lord of Stone", 58,
   "The lord of the Plane of Earth, a mountain that stands and walks, with crystal eyes and a voice like the grinding of continents.",
-  hp=11.0, dmg=3.7, armor=3.0, aggro=True, boss=True, xp=2.0, gold=15.0,
+  hp=8.9, dmg=3.0, armor=3.0, aggro=True, boss=True, xp=2.0, gold=15.0,
   specials=[big("Mountainfall", 0.22, 2.1, "falls on you like a mountain!"),
             stun("Earthquake", 0.14, 1, "stamps, and the plane itself shakes you off your feet!"),
             heal("Stone Skin", 0.08, 0.1, "draws the plane's stone over his wounds!")],
   loot=[("mountainheart_shield", 0.4), ("stonestride_boots", 0.4), ("planar_shard", 1.0)])
 M("lord_air", "Zephyrion, Lord of the Winds", 58,
   "The lord of the Plane of Air, a shape of silver wind and storm with a crown of lightning, never still and never solid.",
-  hp=9.0, dmg=3.9, armor=1.8, aggro=True, boss=True, xp=2.0, gold=15.0,
+  hp=5.75, dmg=2.5, armor=1.8, aggro=True, boss=True, xp=2.0, gold=15.0,
   specials=[big("Hurricane", 0.22, 2.0, "becomes a hurricane that tears at you!"),
             dot("Lightning Storm", 0.18, 0.6, 4, "lightning", "calls down a storm of lightning on you!"),
             stun("Breathless", 0.12, 1, "steals the air from your lungs!")],
@@ -926,16 +928,16 @@ M("chronal_sentinel", "a chronal sentinel", 57, "A knight of brass and crystal w
   hp=5.0, dmg=3.4, armor=2.5, aggro=True, specials=[stun("Time Lock", 0.15, 1, "touches you, and time stops for you alone!")],
   loot=[("planar_shard", 0.3)], gold=3.5)
 M("hourglass_golem", "an hourglass golem", 58, "A colossus of glass and bronze with a storm of golden sand turning in its chest.",
-  hp=5.5, dmg=3.4, armor=3.0, specials=[big("Sands of Ages", 0.22, 2.0, "pours a torrent of ageing sand over you!")],
+  hp=5.0, dmg=3.1, armor=3.0, specials=[big("Sands of Ages", 0.22, 2.0, "pours a torrent of ageing sand over you!")],
   loot=[("planar_shard", 0.3)], gold=3.5, xp=1.3)
 M("paradox", "a paradox", 59, "A figure that is you, from a moment that has not happened yet, wearing a smile you have never worn.",
-  hp=4.8, dmg=3.6, armor=2.0, aggro=True, specials=[drain("Unmaking", 0.22, 1.3, "unmakes a moment of your past, and you feel yourself fade!"),
+  hp=3.5, dmg=2.65, armor=2.0, aggro=True, specials=[drain("Unmaking", 0.22, 1.3, "unmakes a moment of your past, and you feel yourself fade!"),
                                                     dot("Entropy", 0.15, 0.6, 3, "arcane", "touches you, and you begin to come undone!")],
   loot=[("planar_shard", 0.4)], gold=3.5)
 M("lord_trepth", "Lord Trepth", 60,
   "The king of the gods, older than the stars, seated on a throne carved from the first moment of time. His face is every "
   "face, his eyes hold every dawn, and his sword is named Eternity.",
-  hp=15.0, dmg=5.3, armor=3.0, aggro=True, boss=True, xp=2.0, gold=40.0,
+  hp=6.6, dmg=2.35, armor=3.0, aggro=True, boss=True, xp=2.0, gold=40.0,
   specials=[big("Eternity", 0.22, 2.2, "swings Eternity, and you feel every moment of your life at once!"),
             dot("The Long Night", 0.15, 0.8, 4, "shadow", "unmakes the dawn, and cold darkness eats at you!"),
             stun("Stop Time", 0.12, 1, "raises a hand, and time stops for everyone but him!"),

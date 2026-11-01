@@ -7,6 +7,8 @@ from data.items import ARMOR_TIERS, FREE_KINDS, ITEMS, SLOTS
 from data.races import RACES
 
 MAX_LEVEL = 50
+MASTERY_BONUS = 0.02  # max HP and damage per class mastered
+MISS_BASE, MISS_PER_DEX, MISS_FLOOR = 0.10, 0.0007, 0.02  # weapon swings: 9% at 10 DEX, 2% from about 115
 
 
 def xp_for_level(level):
@@ -45,7 +47,7 @@ class Character:
         self.level = 1
         self.xp = 0
         self.gold = 20
-        self.past_lives = []  # [{"cls": id, "gains": {stat: amount}}]
+        self.past_lives = []  # [{"cls": id}], one per class mastered before this life
         self.inventory = []   # item ids, duplicates allowed
         self.equipment = {s: None for s in SLOTS}
         self.quests = {}      # quest id -> {"status": "active"|"done", "count": n}
@@ -84,17 +86,21 @@ class Character:
         return self.rdata["name"]
 
     # ------------------------------------------------------------------ stats
-    def rebirth_bonus(self, stat, level=None):
-        """Permanent bonus from past lives, phased in as the current life levels up."""
+    # Every lived class counts the same, whatever the order: each stat, max HP and max mana take the
+    # best that any of them would have at the current level. Mastered classes add a flat bonus.
+    def class_stat(self, cls, stat, level=None):
+        """What `cls` alone contributes to `stat` at `level` (race not included)."""
         level = self.level if level is None else level
-        total = sum(life["gains"].get(stat, 0) for life in self.past_lives)
-        return int(total * level / MAX_LEVEL)
+        c = CLASSES[cls]
+        return c["start"].get(stat, 0) + c["gains"].get(stat, 0) * (level - 1)
 
     def base_stat(self, stat, level=None):
-        level = self.level if level is None else level
-        c = self.cdata
-        return (self.rdata["stats"][stat] + c["start"].get(stat, 0)
-                + c["gains"].get(stat, 0) * (level - 1) + self.rebirth_bonus(stat, level))
+        return self.rdata["stats"][stat] + max(self.class_stat(c, stat, level) for c in self.lived_classes())
+
+    @property
+    def mastery_bonus(self):
+        """+2% max HP and damage for every class mastered (lived to the level cap)."""
+        return 1 + MASTERY_BONUS * len(self.mastered_classes())
 
     def gear_stat(self, stat):
         return sum(ITEMS[i]["stats"].get(stat, 0) for i in self.equipment.values() if i)
@@ -107,14 +113,14 @@ class Character:
 
     @property
     def max_hp(self):
-        c = self.cdata
-        hp = 10 + (c["hp"] + 3) * self.level + self.stat("CON") * self.level * 0.2
-        return int(hp * self.perk("hp_mult", 1.0))
+        per_level = max(CLASSES[c]["hp"] for c in self.lived_classes())
+        hp = 10 + (per_level + 3) * self.level + self.stat("CON") * self.level * 0.2
+        return int(hp * self.perk("hp_mult", 1.0) * self.mastery_bonus)
 
     @property
     def max_mana(self):
-        c = self.cdata
-        mana = 15 + c["mana"] * self.level + self.stat(c["mana_stat"]) * self.level * 0.1
+        mana = max(15 + CLASSES[c]["mana"] * self.level + self.stat(CLASSES[c]["mana_stat"]) * self.level * 0.1
+                   for c in self.lived_classes())
         return int(mana * self.perk("mana_mult", 1.0))
 
     @property
@@ -132,13 +138,19 @@ class Character:
         return min(0.6, base + self.buff_mod("dodge"))
 
     @property
+    def miss_chance(self):
+        """Chance that a weapon swing misses: DEX is precision for every class."""
+        return max(MISS_FLOOR, MISS_BASE - self.stat("DEX") * MISS_PER_DEX)
+
+    @property
     def damage_mult(self):
-        return self.perk("dmg_mult", 1.0) * (1 + self.buff_mod("damage_pct"))
+        return self.perk("dmg_mult", 1.0) * (1 + self.buff_mod("damage_pct")) * self.mastery_bonus
 
     def weapon_range(self):
+        """STR powers weapon damage for every class."""
         w = self.equipment.get("weapon")
         lo, hi = ITEMS[w]["dmg"] if w else (1, 3)
-        bonus = self.stat(self.cdata["attack_stat"]) * 0.35 + self.level * 0.5
+        bonus = self.stat("STR") * 0.35 + self.level * 0.5
         return int(lo + bonus), int(hi + bonus)
 
     def roll_weapon(self, mult=1.0):
@@ -314,9 +326,7 @@ class Character:
 
     # ------------------------------------------------------------------ rebirth
     def rebirth(self, new_cls):
-        old = self.cls
-        gains = {s: v * (MAX_LEVEL - 1) for s, v in CLASSES[old]["gains"].items()}
-        self.past_lives.append({"cls": old, "gains": gains})
+        self.past_lives.append({"cls": self.cls})
         self.cls = new_cls
         self.level = 1
         self.xp = 0

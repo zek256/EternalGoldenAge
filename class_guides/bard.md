@@ -13,10 +13,9 @@ bosses at its own level, but it scales very well and ends the game as one of the
 |---|---|
 | HP per level | 8 |
 | Mana per level | 4 |
-| Attack stat | DEX |
 | Spell stat | CHA |
-| Starting bonus | CHA +3, DEX +2 |
-| Gains per level | CHA +2, DEX +2, CON +1 |
+| Starting bonus | CHA +3, STR +1, DEX +1 |
+| Gains per level | CHA +2, STR +1, DEX +1, CON +1 |
 | Armor | Leather (and cloth) |
 | Shield | No |
 | Weapons | Dagger, sword, blunt, wand |
@@ -26,15 +25,15 @@ bosses at its own level, but it scales very well and ends the game as one of the
 
 Average race, starting gear only (see the [README](README.md#about-the-numbers)).
 
-| Level | HP | Mana | CHA | DEX | CON | Weapon damage | Crit | Dodge |
-|---|---|---|---|---|---|---|---|---|
-| 1 | 23 | 20 | 13 | 13 | 10 | 7-9 | 6.3% | 3.9% |
-| 10 | 158 | 86 | 31 | 31 | 19 | 17-19 | 8.1% | 5.1% |
-| 25 | 455 | 267 | 61 | 61 | 34 | 35-37 | 11.1% | 7.1% |
-| 50 | 1150 | 770 | 111 | 111 | 59 | 65-67 | 16.1% | 10.4% |
+| Level | HP | Mana | CHA | STR | DEX | Weapon damage | Miss | Crit | Dodge |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 23 | 20 | 13 | 11 | 12 | 6-8 | 9.2% | 6.2% | 3.8% |
+| 10 | 158 | 86 | 31 | 20 | 21 | 14-16 | 8.5% | 7.1% | 4.4% |
+| 25 | 455 | 267 | 61 | 35 | 36 | 26-28 | 7.5% | 8.6% | 5.4% |
+| 50 | 1150 | 770 | 111 | 60 | 61 | 48-50 | 5.7% | 11.1% | 7.1% |
 
-The Bard is the only caster whose auto-attack keeps pace with a fighter's, because it attacks with
-DEX, which it gains every level.
+The Bard grows a little STR and DEX every level, so its blade stays useful between songs, but its
+real damage is its CHA-powered music.
 
 ## Spells
 
@@ -76,7 +75,7 @@ the weaken), then Discordant Note, with Lullaby when it lands and Ballad of Mend
 
 ## Gear
 
-Wear **leather**; no shields. CHA first (your spells and mana), then DEX (weapon, crit, dodge), then CON.
+Wear **leather**; no shields. CHA first (your spells and mana), then STR (weapon damage) and DEX (hits, crit, dodge), then CON.
 
 There are no CHA-focused weapons in the late game, so look for gear with broad stats: the Scepter of
 the Sand Kings (48, wand, INT/WIS/CHA), Seluvar's Hollow Wand (40), the Ashen Crown (46, any class),
@@ -106,18 +105,22 @@ Lady Seraphine's hairpin (47, dagger), the Dowager's pearls (48, neck, WIS/CHA/C
 
 - **Human**: CHA 12 to start, plus +5% HP, mana and damage. The best all-round Bard.
 - **High elf**: CHA 12 and +12% mana, for a spell-heavy Bard.
-- **Elf**: better DEX, +4% dodge and +2% crit.
+- **Elf**: +4% dodge and +2% crit.
 
 ## How it performs
 
 The Bard wins every same-level fight in the simulator, fast (3-5 rounds), with 74-95% HP left, and it
 has good staying power (about 4 fights in a row at levels 10 and 30). Bosses at their own level are its
-weakness: about 45% against Old Mother Gristle, 60-85% against several others, but it wins essentially
+weakness: about 45-55% against Old Mother Gristle and the First Spore, 70-85% against several others, but it wins essentially
 every boss fight at boss level +3.
 
 ## Rebirth
 
-A Bard life leaves you **+98 CHA, +98 DEX and +49 CON**, plus **leather** training and dagger, sword,
-blunt and wand weapons. CHA does nothing for other classes, so a Bard life is mainly worth its DEX
-bonus and its spells: Lullaby, Dirge of Despair and Legend's Anthem stay strong in any later class,
-though they scale with CHA.
+In every later life, each of your stats, your HP per level and your mana pool are the best that any
+class you have lived would have at your current level (see the [README](README.md#rebirth)), and each
+class mastered adds +2% max HP and damage.
+
+A Bard life brings the **best CHA growth in the game**, plus **leather** training and dagger, sword,
+blunt and wand weapons. CHA only matters for Bard (and a little Paladin) magic, so a Bard life is
+mainly worth its spells: Lullaby, Dirge of Despair and Legend's Anthem stay strong in any later class,
+since they scale with the Bard's CHA, which you now keep.

@@ -13,7 +13,6 @@ free hit in the game for its level. It has the second-highest HP of any class.
 |---|---|
 | HP per level | 10 |
 | Mana per level | 3 |
-| Attack stat | STR |
 | Spell stat | INT |
 | Starting bonus | STR +2, INT +2, CON +1 |
 | Gains per level | STR +2, CON +2, INT +1 |
@@ -111,7 +110,11 @@ and level 30, and it beat every world boss at the boss's own level.
 
 ## Rebirth
 
-A Dread Knight life leaves you **+98 STR, +98 CON and +49 INT**, plus **plate armor and shield
-training** and sword, axe and two-handed weapons. Shadow Strike, Dread Touch and Unholy Frenzy are
-free abilities, so any later class keeps a strong free nuke and a lifesteal buff. It is almost as good
-a past life as the Warrior, with more INT and less DEX.
+In every later life, each of your stats, your HP per level and your mana pool are the best that any
+class you have lived would have at your current level (see the [README](README.md#rebirth)), and each
+class mastered adds +2% max HP and damage.
+
+A Dread Knight life brings the **best STR and CON growth in the game** (shared with the Warrior) and 10
+HP per level, plus **plate armor and shield training** and sword, axe and two-handed weapons. Shadow
+Strike, Dread Touch and Unholy Frenzy are free abilities, so any later class keeps a strong free nuke
+and a lifesteal buff.

@@ -13,7 +13,6 @@ fight. It gets no group attack until Fireball at 16.
 |---|---|
 | HP per level | 5 (the least of any class) |
 | Mana per level | 6 (the most of any class) |
-| Attack stat | STR |
 | Spell stat | INT |
 | Starting bonus | INT +4, WIS +1 |
 | Gains per level | INT +3, WIS +1, DEX +1 |
@@ -116,7 +115,11 @@ their own level are harder: 70-95% for most, 75% against Ussreth and 80% against
 
 ## Rebirth
 
-A Wizard life leaves you **+147 INT, +49 WIS and +49 DEX**, and only **cloth** training with staff,
-wand and dagger weapons. The INT bonus is huge for a later Necromancer or Dread Knight. Mana Shield
-stays one of the best defensive spells in any later class that has INT, and Lightning Lance and Meteor
-are powerful in an INT caster.
+In every later life, each of your stats, your HP per level and your mana pool are the best that any
+class you have lived would have at your current level (see the [README](README.md#rebirth)), and each
+class mastered adds +2% max HP and damage.
+
+A Wizard life brings the **best INT growth in the game** (shared with the Necromancer) and the
+**biggest mana pool**, but only **cloth** training with staff, wand and dagger weapons. Any later class
+casts with a Wizard's INT and mana: Mana Shield, Lightning Lance and Meteor stay at full strength
+whatever you become.

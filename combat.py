@@ -214,7 +214,7 @@ class Combat:
 
     # ------------------------------------------------------------------ player actions
     def player_attack(self, mon):
-        if random.random() < 0.07:
+        if random.random() < self.p.miss_chance:
             ui.say("You swing at {} but miss!".format(mon.name), "grey")
         else:
             dmg, crit = self.damage_monster(mon, self.p.roll_weapon(), physical=True)

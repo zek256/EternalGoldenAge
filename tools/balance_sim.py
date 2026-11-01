@@ -13,9 +13,10 @@ The simulated player is a human with best-in-slot gear for their level (includin
 so results are optimistic) among the items its class is trained for, and a simple AI: heal when low, buff early, otherwise use the
 ability with the best expected value. Bosses are fought with 5 healing potions.
 Targets the game was tuned to: same-level fights cost ~25-55% HP; endurance 2-6 for most
-classes; bosses mostly beatable at level +3. Endgame (monsters above level 50): plane monsters and
-plane bosses beatable with 6+ lives; Lord Trepth won most of the time (not always) with 11 lives, and
-almost never with 6.
+classes; bosses mostly beatable at level +3. Endgame (monsters above level 50; a multi-life
+character takes the best stats of every class it has lived): first-tier plane monsters a coin
+flip with 1 life and easy with 6; plane champions ~80-95% with 6 lives; elemental lords ~95% with
+11; Lord Trepth ~70% with 11 lives (every class 50-85%).
 """
 import argparse
 import os
@@ -41,7 +42,7 @@ DEFAULT_LEVELS = [1, 3, 5, 8, 12, 16, 20, 25, 30, 35, 40, 45, 50]
 
 
 def best_gear(p):
-    main = {p.cdata["attack_stat"], p.cdata["mana_stat"]}
+    main = {"STR"} | ({p.cdata["mana_stat"]} if p.cdata["mana"] else set())
 
     def score(it):
         sc = it.get("armor", 0) * 1.5 + sum(v * (2 if s in main else 0.7) for s, v in it["stats"].items())
@@ -202,8 +203,7 @@ def setup_lives(cls, lives):
     """A level-50 character in `cls` who has lived `lives` classes in all (this one included)."""
     g, p = setup(cls, MAX_LEVEL)
     for other in [c for c in CLASS_ORDER if c != cls][:lives - 1]:
-        p.past_lives.append({"cls": other, "gains": {s: v * (MAX_LEVEL - 1)
-                                                     for s, v in CLASSES[other]["gains"].items()}})
+        p.past_lives.append({"cls": other})
     best_gear(p)
     p.hp, p.mana = p.max_hp, p.max_mana
     return g, p
@@ -231,12 +231,17 @@ def report_endgame(n):
 
 
 def training_only_life(p, cls):
-    """Give `p` a past life in `cls` that grants its armor and weapon training but no stats or abilities,
-    so the report measures the gear unlock alone."""
-    p.past_lives.append({"cls": cls, "gains": {}})
+    """Give `p` the armor and weapon training of `cls` but none of its stats, HP, mana, abilities or
+    mastery bonus, so the report measures the gear unlock alone."""
     mine = p.cls
-    p.known_abilities = lambda: sorted((a for a in ABILITIES.values() if a["cls"] == mine),
-                                       key=lambda a: a["level"])
+
+    def trained_for(iid):
+        p.lived_classes = lambda: {mine, cls}  # only while checking training
+        try:
+            return Character.trained_for(p, iid)
+        finally:
+            del p.lived_classes
+    p.trained_for = trained_for
     best_gear(p)
     p.hp, p.mana = p.max_hp, p.max_mana
 

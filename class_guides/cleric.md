@@ -13,7 +13,6 @@ kill early but almost never dies.
 |---|---|
 | HP per level | 7 |
 | Mana per level | 5 |
-| Attack stat | STR |
 | Spell stat | WIS |
 | Starting bonus | WIS +4, CON +1 |
 | Gains per level | WIS +3, CON +1, STR +1 |
@@ -112,7 +111,10 @@ Rotheart, where it won 95%.
 
 ## Rebirth
 
-A Cleric life leaves you **+147 WIS, +49 CON and +49 STR**, plus **mail armor and shield training** and
-blunt and staff weapons. The WIS bonus is huge for any later WIS class (Druid, Shaman, Paladin,
-Ranger), and Divine Aegis, Greater Healing and Resurgence remain excellent heals in any later life,
-since they scale with WIS.
+In every later life, each of your stats, your HP per level and your mana pool are the best that any
+class you have lived would have at your current level (see the [README](README.md#rebirth)), and each
+class mastered adds +2% max HP and damage.
+
+A Cleric life brings the **best WIS growth in the game**, plus **mail armor and shield training** and
+blunt and staff weapons. Every later life heals like a Cleric: Divine Aegis, Greater Healing and
+Resurgence scale with WIS, and you keep the Cleric's WIS, so they stay excellent heals in any class.

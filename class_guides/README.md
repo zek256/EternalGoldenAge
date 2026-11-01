@@ -4,19 +4,19 @@ There is one guide for each of the eleven classes of Eternal Golden Age. Each gu
 class grows, every spell and ability with its real numbers, what gear it can use, how to play it
 from level 1 to 50, how it fares against bosses, and what it leaves behind when you are reborn.
 
-| Class | Role | Attack stat | Spell stat | Armor | Difficulty |
+| Class | Role | Grows most | Spell stat | Armor | Difficulty |
 |---|---|---|---|---|---|
-| [Warrior](warrior.md) | Weapon tank, no magic at all | STR | none | plate + shield | Easy |
+| [Warrior](warrior.md) | Weapon tank, no magic at all | STR, CON | none | plate + shield | Easy |
 | [Paladin](paladin.md) | Holy knight, heals and shields itself | STR | WIS | plate + shield | Easy |
-| [Dread Knight](dread_knight.md) | Dark knight, drains life | STR | INT | plate + shield | Easy |
-| [Ranger](ranger.md) | Archer with a wolf companion | DEX | WIS | mail + shield | Easy |
-| [Rogue](rogue.md) | Burst melee, dodges and stuns | DEX | none | leather | Medium |
-| [Bard](bard.md) | Songs that hurt, heal and buff | DEX | CHA | leather | Hard early, strong late |
-| [Cleric](cleric.md) | Healer who smites | STR | WIS | mail + shield | Easy |
-| [Druid](druid.md) | Nature caster with roots and heals | STR | WIS | leather | Medium |
-| [Shaman](shaman.md) | Spirit caster with a wolf | STR | WIS | mail + shield | Easy |
-| [Wizard](wizard.md) | Glass-cannon blaster | STR | INT | cloth | Hard |
-| [Necromancer](necromancer.md) | Pets, drains and disease | STR | INT | cloth | Easy (strongest solo class) |
+| [Dread Knight](dread_knight.md) | Dark knight, drains life | STR, CON | INT | plate + shield | Easy |
+| [Ranger](ranger.md) | Archer with a wolf companion | STR, DEX | WIS | mail + shield | Easy |
+| [Rogue](rogue.md) | Burst melee, dodges and stuns | STR, DEX | none | leather | Medium |
+| [Bard](bard.md) | Songs that hurt, heal and buff | CHA | CHA | leather | Hard early, strong late |
+| [Cleric](cleric.md) | Healer who smites | WIS | WIS | mail + shield | Easy |
+| [Druid](druid.md) | Nature caster with roots and heals | WIS | WIS | leather | Medium |
+| [Shaman](shaman.md) | Spirit caster with a wolf | WIS, CON | WIS | mail + shield | Easy |
+| [Wizard](wizard.md) | Glass-cannon blaster | INT | INT | cloth | Hard |
+| [Necromancer](necromancer.md) | Pets, drains and disease | INT | INT | cloth | Easy (strongest solo class) |
 
 At level 50, [Gearing Up at Level 50](level_50_gear.md) shows what to buy, farm and chase next, class by class.
 
@@ -28,7 +28,10 @@ These rules are shared by all classes. The guides refer back to them.
 
 You never store stats. They are worked out every time from:
 
-**race base + class starting bonus + class gains x (level - 1) + rebirth bonus + gear + buffs**
+**race base + class starting bonus + class gains x (level - 1) + gear + buffs**
+
+After a rebirth, the class part is the **best** of every class you have lived at your current level
+(see Rebirth below).
 
 Race base stats are around 10, so by level 50 your class gains (about 150 points spread over three
 to five stats) matter far more than your race's starting numbers. Race **perks** (bonus HP, mana,
@@ -36,8 +39,8 @@ damage, crit or dodge) last the whole game and matter more than race stats.
 
 | Stat | What it does |
 |---|---|
-| STR | Weapon damage for STR classes (Warrior, Paladin, Dread Knight and, for melee, every caster) |
-| DEX | Weapon damage for DEX classes (Rogue, Ranger, Bard); +1% crit per 10 DEX; +1% dodge per 15 DEX; +1 armor per 10 DEX |
+| STR | Weapon damage, for every class |
+| DEX | Precision, for every class: fewer misses; +1% crit per 10 DEX; +1% dodge per 15 DEX; +1 armor per 10 DEX |
 | CON | Max HP: each point gives +0.2 HP per level (so +10 HP at level 50) |
 | INT | Wizard, Necromancer and Dread Knight spells, and their mana pool |
 | WIS | Cleric, Druid, Shaman, Paladin and Ranger spells, and their mana pool |
@@ -45,7 +48,8 @@ damage, crit or dodge) last the whole game and matter more than race stats.
 
 ### HP, mana and recovery
 
-- **Max HP** = 10 + (class HP + 3) x level + CON x level x 0.2, times any race HP perk.
+- **Max HP** = 10 + (class HP + 3) x level + CON x level x 0.2, times any race HP perk and the
+  mastery bonus (+2% per class mastered).
 - **Max mana** = 15 + class mana x level + spell stat x level x 0.1, times any race mana perk.
 - In a fight you regain **2% of max mana per round**. Out of a fight, each 4-second tick restores
   **2% HP and 3% mana**, and **sleeping restores 10% of both per tick**.
@@ -53,11 +57,11 @@ damage, crit or dodge) last the whole game and matter more than race stats.
 
 ### Weapon attacks
 
-- Weapon damage = the weapon's damage range + **0.35 x attack stat + 0.5 x level**.
-- Every caster except the Bard uses **STR** as its attack stat but gains little or no STR, so a
-  caster's auto-attack stays weak. Casters win with spells.
-- Auto-attacks miss 7% of the time. Weapon abilities (Slam, Backstab and the rest) roll weapon
-  damage times a multiplier.
+- Weapon damage = the weapon's damage range + **0.35 x STR + 0.5 x level**, for every class.
+  Casters gain little or no STR, so their auto-attacks stay weak; they win with spells.
+- Auto-attacks miss **10% minus 0.07% per point of DEX**, never less than 2% (about 9% at 10 DEX,
+  6% at 60, 2% from about 115). Weapon abilities (Slam, Backstab and the rest) always land and roll
+  weapon damage times a multiplier.
 - **Physical damage** (auto-attacks, weapon abilities, pets) is reduced by the monster's armor.
   **Spell damage, drains and damage over time ignore armor.**
 
@@ -111,16 +115,21 @@ more often.
 
 ### Rebirth
 
-At level 50 you may be reborn as any other class. The class you leave adds its **full stat gains x
-49** to a permanent bonus that phases in as you level again (bonus x level / 50). You keep every
-spell and ability you have ever learned (each unlocks again at its original level), your armor and
-weapon training, and your boss kills. Each guide ends with what that class leaves behind.
+At level 50 you may be reborn as any other class. From then on, at every level, **each of your
+stats, your HP per level and your mana pool are the best that any class you have lived would have at
+that level**. A level-10 warrior who was once a wizard has the wizard's level-10 INT, and the
+warrior's own STR, CON and HP growth. The order of your lives never matters, only which classes you
+have lived. Each **class mastered** (lived to level 50) also adds **+2% max HP and damage**, up to
++22% with all eleven. You keep every spell and ability you have ever learned (each unlocks again at
+its original level), your armor and weapon training, and your boss kills. Each guide ends with what
+that class brings to later lives.
 
 ## About the numbers
 
 The tables in each guide were computed from the game's own formulas for a character with **10 in
 every stat from race, no race perk and only the class's starting gear**. Your numbers will be higher
-with real gear, a good race or past lives, but the shape is the same. Mana costs depend only on
+with real gear, a good race or past lives, but the shape is the same. Level-50 HP leaves out the
++2% mastery bonus you get for mastering your class on reaching 50. Mana costs depend only on
 level, so they are exact.
 
 The "How it performs" sections come from `tools/balance_sim.py` (October 2026), which fights

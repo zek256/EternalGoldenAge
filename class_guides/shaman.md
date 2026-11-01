@@ -12,7 +12,6 @@ groups, and a late-game heal-and-damage avatar. It is a forgiving, well-rounded 
 |---|---|
 | HP per level | 8 |
 | Mana per level | 5 |
-| Attack stat | STR |
 | Spell stat | WIS |
 | Starting bonus | WIS +3, CON +2 |
 | Gains per level | WIS +2, CON +2, STR +1 |
@@ -109,6 +108,10 @@ except Pyraxis (about 90%), and nearly all at boss level +3.
 
 ## Rebirth
 
-A Shaman life leaves you **+98 WIS, +98 CON and +49 STR**, plus **mail armor and shield training** and
-blunt, staff and axe weapons. The CON bonus is a big HP boost for any later class, and Spirit Wolf
-gives any later caster a pet, though it scales with WIS.
+In every later life, each of your stats, your HP per level and your mana pool are the best that any
+class you have lived would have at your current level (see the [README](README.md#rebirth)), and each
+class mastered adds +2% max HP and damage.
+
+A Shaman life brings strong WIS and the **best CON growth in the game** (shared with the Warrior and
+Dread Knight), plus **mail armor and shield training** and blunt, staff and axe weapons. Spirit Wolf
+gives any later class a pet, and Ancestral Avatar a 45% heal.

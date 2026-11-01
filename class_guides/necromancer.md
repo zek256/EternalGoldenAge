@@ -13,7 +13,6 @@ design: a good class to learn on despite its cloth armor.
 |---|---|
 | HP per level | 5 |
 | Mana per level | 6 |
-| Attack stat | STR |
 | Spell stat | INT |
 | Starting bonus | INT +4, CON +1 |
 | Gains per level | INT +3, CON +1, WIS +1 |
@@ -110,7 +109,11 @@ Gorrak (95% each), and all of them at boss level +3.
 
 ## Rebirth
 
-A Necromancer life leaves you **+147 INT, +49 CON and +49 WIS**, and only **cloth** training with
-staff, wand and dagger weapons. Raise Skeleton and Raise Bone Colossus give any later class a pet,
-though they scale with INT, so they are best in an INT class. Siphon Soul is an excellent self-heal for
-a later Dread Knight or Wizard.
+In every later life, each of your stats, your HP per level and your mana pool are the best that any
+class you have lived would have at your current level (see the [README](README.md#rebirth)), and each
+class mastered adds +2% max HP and damage.
+
+A Necromancer life brings the **best INT growth in the game** (shared with the Wizard) and the
+**biggest mana pool**, but only **cloth** training with staff, wand and dagger weapons. Raise Skeleton
+and Raise Bone Colossus give any later class a pet at full Necromancer strength, since you keep the INT
+they scale with, and Siphon Soul is an excellent self-heal.

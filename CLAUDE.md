@@ -112,16 +112,25 @@ data/rooms/   one module per region, each with a ROOMS dict, merged in __init__ 
   being left to full HP and clears its effects. Monsters have no other regeneration.
 
 ### Player and progression
-- Stats are **derived, not stored**: race base + class start + class gains x (level-1) + rebirth
-  bonus + gear + buffs. Only level, XP, gear, effects etc. are persisted.
+- Stats are **derived, not stored**: race base + the **best** `class start + class gains x (level-1)`
+  over every lived class (`Character.base_stat`/`class_stat`) + gear + buffs. Only level, XP, gear,
+  effects etc. are persisted.
+- **Rebirth order must never matter** (the user's rule): stats, HP per level and the mana pool all
+  take the best of `lived_classes()` at the current level, so a character depends only on which
+  classes it has lived. Each mastered class adds `MASTERY_BONUS` (2%) to max HP and to
+  `damage_mult` (weapons and spells).
+- **STR is weapon damage and DEX is precision for every class** (the user's rule; there is no
+  per-class attack stat). Weapon damage = range + 0.35 STR + 0.5 level. DEX gives crit, dodge, armor
+  and a lower miss chance on auto-attacks (`Character.miss_chance`: 10% - 0.07% per DEX, floor 2%).
+  The rogue, ranger and bard grow STR +2/+2/+1 for this reason.
 - HP and mana formulas live in `Character.max_hp/max_mana`. XP per level is
   `65 * level^1.7`, identical in every life (no rebirth penalty, by the user's choice).
   Kill XP (`combat.monster_xp`) is `15 + 14.5 * level^1.5`, so same-level kills per level climb
   from ~6 at 5-10 to ~10 at 50 (~390 per life). The user wants late levels never faster than
   early ones, and only a bit slower. Quest XP is fixed per quest in `data/quests.py`.
-- Rebirth (level 50): the old class's full stat gains (gains x 49) are appended to `past_lives`
-  and phase in as `total * level / 50`. Abilities of every lived class stay known and unlock
-  at their original level. Gear above level 1 is unequipped.
+- Rebirth (level 50): the old class is appended to `past_lives` as `{"cls": id}` (no stat totals
+  are stored). Abilities of every lived class stay known and unlock at their original level. Gear
+  above level 1 is unequipped.
 - Race perks are keys in `RACES[...]["perks"]` read via `Character.perk()`: hp_mult,
   mana_mult, dmg_mult, crit, dodge, regen_mult, immune, xp_mult (supported, currently unused).
 - Ability power = `base + lvl*level + scale*stat`. Spell cost scales `cost * (1 + 0.1*(level-1))`.
@@ -130,9 +139,9 @@ data/rooms/   one module per region, each with a ROOMS dict, merged in __init__ 
 Templates only set multipliers. Real HP, damage and armor come from level in `MonsterInstance`
 (`(20 + 15L)` HP etc.). To make a monster tougher, change its multipliers, not raw numbers.
 Specials: big / dot / stun / drain / heal. Bosses respawn after 120 ticks, others after 30.
-Monsters above level 50 (the Planes of the Gods) use far larger multipliers (hp 3.3-5.5, dmg
-2.6-3.6 for regulars; 7.5-11 / 3.3-3.9 for plane bosses; Lord Trepth 15 / 5.3) because past-life
-stat bonuses make multi-life characters enormously strong.
+Monsters above level 50 (the Planes of the Gods) use larger multipliers (hp 3.5-5.0, dmg 2.6-3.4
+for regulars; champions 4.85-6.6 / 2.3-2.9; elemental lords 5.75-9.4 / 2.5-3.25; Lord Trepth
+6.6 / 2.35), because multi-life characters take the best stats of every class they have lived.
 
 ### Gates and boss kills
 - A room may carry `gate` (see `data/rooms/common.R`): `{"kills": [boss ids], "msg"}`,
@@ -200,8 +209,10 @@ Discordant Note was raised to 10 + 2.4/level + 0.8 CHA and their unused INT gain
 They now win 55-100% of boss fights at the boss's own level (the Bog Hag, about 40%, is the
 hardest) and essentially all at +3.
 
-Endgame (`balance_sim.py endgame`, level-50 characters with 1/6/11 lives, best-in-slot gear):
-first-tier plane monsters beat a 1-life character about half the time and are trivial with 6
-lives; plane champions are ~90-100% with 6 lives; elemental lords ~30-65% with 6 lives and 100%
-with 11; Lord Trepth ~0% with 6 lives and ~65-75% with 11 (every class 50-90%), about 60% without
-any mythic gear. The user asked for Trepth to need a full every-class character with good gear.
+Endgame (`balance_sim.py endgame`, level-50 characters with 1/6/11 lives, best-in-slot gear),
+retuned 2026-11-01 for the best-of rebirth rule: first-tier plane monsters are 25-55% for a 1-life
+character (the level-54 ones near 0%) and trivial with 6; plane champions ~65-90% with 6 lives and
+100% with 11; elemental lords ~0-50% with 6 lives and ~90-97% with 11; Lord Trepth ~70% with 11
+(every class about 50-85%). The user asked for Trepth to need a full every-class character with
+good gear. Six lives already hold most of the best stats, so the 6-to-11 gap comes mainly from the
+mastery bonus (+12% vs +22%) and the remaining classes' growth (the rogue's and ranger's DEX).

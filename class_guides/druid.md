@@ -13,7 +13,6 @@ mid-levels and very steady overall.
 |---|---|
 | HP per level | 7 |
 | Mana per level | 5 |
-| Attack stat | STR |
 | Spell stat | WIS |
 | Starting bonus | WIS +3, INT +1, CON +1 |
 | Gains per level | WIS +2, INT +1, CON +1, DEX +1 |
@@ -111,6 +110,10 @@ Pyraxis), and all except Pyraxis (75%) at boss level +3.
 
 ## Rebirth
 
-A Druid life leaves you **+98 WIS, +49 INT, +49 CON and +49 DEX**: a spread that helps both WIS and
-INT casters. It gives only **leather** training and staff, blunt and dagger weapons. Entangling Roots
-and Wrath of the Wild are strong in any later class.
+In every later life, each of your stats, your HP per level and your mana pool are the best that any
+class you have lived would have at your current level (see the [README](README.md#rebirth)), and each
+class mastered adds +2% max HP and damage.
+
+A Druid life brings good WIS growth (behind the Cleric's), plus **leather** training and staff, blunt
+and dagger weapons. It adds little in stats once you have a Cleric life, but Entangling Roots and Wrath
+of the Wild are strong in any later class.

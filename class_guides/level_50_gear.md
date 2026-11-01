@@ -16,7 +16,7 @@ Item levels and drop chances below come straight from the game data. Bosses resp
 - **Fill every slot.** An empty off-hand or a level-28 pair of gloves costs you more than a small
   upgrade anywhere else. Check `equipment` for gaps first.
 - **Stack your class's stats.** Casters want their spell stat (INT or WIS) first. Fighters want
-  their attack stat (STR or DEX) and weapon damage. Everyone wants CON for HP after that.
+  STR (weapon damage for every class) and DEX (precision). Everyone wants CON for HP after that.
 - **Rebirth doesn't throw gear away.** When you're reborn, gear above level 1 goes back into your
   pack, not into the void. Your next life can wear it again once it reaches the item's level, as long
   as it's trained for it (training from every life is kept). A good level-50 set is never wasted.
@@ -140,7 +140,7 @@ STR first, then CON; INT feeds your spells. Plate, shields, swords, axes and two
 
 ### Ranger
 
-DEX first, then CON; WIS feeds Hunter's Mend and your wolf. Mail and lighter, shields, swords,
+STR and DEX first, then CON; WIS feeds Hunter's Mend and your wolf. Mail and lighter, shields, swords,
 daggers, axes and bows.
 
 | Slot | Buy | Farm before the planes | Best in slot |
@@ -159,7 +159,7 @@ daggers, axes and bows.
 
 ### Rogue
 
-DEX first, then CON. Rogues use no mana, so INT and WIS do nothing for you. Leather, no shield,
+STR and DEX first, then CON. Rogues use no mana, so INT and WIS do nothing for you. Leather, no shield,
 daggers, swords and bows.
 
 | Slot | Buy | Farm before the planes | Best in slot |
@@ -179,7 +179,7 @@ few rooms of each other.
 
 ### Bard
 
-CHA first (your spells and mana), then DEX, then CON. Leather, no shield, daggers, swords, blunt
+CHA first (your spells and mana), then STR and DEX, then CON. Leather, no shield, daggers, swords, blunt
 weapons and wands. CHA gear is rare, so look for items that give it alongside other stats.
 
 | Slot | Buy | Farm before the planes | Best in slot |
