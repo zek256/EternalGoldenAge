@@ -83,6 +83,19 @@ paladin. Also good: the Sunforged Mace (43, blunt, STR/WIS), Flameheart (50, blu
 the obsidian greatblade (two-handed), the Mountainheart Shield, and the mythic Fang of Pyraxis and
 Eternity.
 
+From **the Carnival That Never Closes** (26-30, south of the Badlands' Howling Pit): the Strongman's
+breastplate (27, plate chest), a roustabout's tent mallet (28, blunt) and the brass ring (27, ring).
+
+From **the Chancery of the Dead** (32-38, south of the Dustway's Gnoll Scrub): the Gavel of the High
+Justice (38, blunt, STR/WIS), a bailiff's halberd (36, two-handed), a warden's greathelm (35) and
+sabatons (34) (plate), the shield of the scales (35, CON/WIS), and the chain (38, neck) and seal of
+office (37, ring).
+
+From **Thornwick Hall** (43-49, west of the Stag Walk): the Vane longsword (49, sword) and the Vane
+heirloom plate (49, plate chest) from Lord Aldric Vane, the Vane warhelm (46) and gauntlets (45), Mr.
+Graves's silver salver (45, shield), the Vane signet (49, ring) and the Dowager's pearls (48, neck,
+WIS/CHA/CON).
+
 ## Best races
 
 - **Ogre**: the strongest STR and CON, plus +12% HP.

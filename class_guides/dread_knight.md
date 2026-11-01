@@ -80,6 +80,18 @@ Ussreth (48, sword), Tidecaller (50, two-handed), the obsidian greatblade and cr
 (two-handed), the Mountainheart Shield, plate from the elemental lords, and the mythic Fang of Pyraxis
 and Eternity.
 
+From **the Carnival That Never Closes** (26-30, south of the Badlands' Howling Pit): the Strongman's
+breastplate (27, plate chest) and the brass ring (27, ring).
+
+From **the Chancery of the Dead** (32-38, south of the Dustway's Gnoll Scrub): the Headsman's axe (32),
+a bailiff's halberd (36, two-handed), a warden's greathelm (35) and sabatons (34) (plate), the shield
+of the scales (35) and the High Justice's chain of office (38, neck).
+
+From **Thornwick Hall** (43-49, west of the Stag Walk): the Vane longsword (49, sword) and the Vane
+heirloom plate (49, plate chest) from Lord Aldric Vane, the Vane warhelm (46) and gauntlets (45),
+Mistress Hollin's cleaver (45, axe), Mr. Graves's silver salver (45, shield) or, for more INT, Tobias's
+black grimoire (47, off-hand), and the Vane signet (49, ring).
+
 ## Best races
 
 - **Ogre**: high STR and CON, +12% HP.

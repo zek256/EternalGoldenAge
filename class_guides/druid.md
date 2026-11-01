@@ -79,6 +79,19 @@ Dreams), the dragonbone staff (47), the sunfire staff (40), the Sunforged Mace (
 and windwalker boots (leather), the Death Mask (50, leather), the Pearl of the Deep (50, ring), the
 Ring of the Archmage, and the mythic Fang of Pyraxis and Eternity.
 
+From **the Carnival That Never Closes** (26-30, south of the Badlands' Howling Pit): the Ringmaster's
+scarlet coat (30, leather chest), a fortune teller's crystal ball (28, off-hand, INT/WIS), a
+roustabout's tent mallet (28, blunt), a pair of dancing slippers (27, cloth) and the brass ring (27,
+ring).
+
+From **the Chancery of the Dead** (32-38, south of the Dustway's Gnoll Scrub): the Gavel of the High
+Justice (38, blunt, STR/WIS), the seal of office (37, ring) and the chain of office (38, neck).
+
+From **Thornwick Hall** (43-49, west of the Stag Walk): a gown of green brocade (47, cloth chest,
+INT/WIS/CHA) from Lady Seraphine, silk evening gloves (46, cloth), Tobias's black grimoire (47,
+off-hand), the Dowager's pearls (48, neck) and the Vane huntsman's jerkin (44, leather) if you want
+armor over WIS.
+
 ## Best races
 
 - **High elf**: WIS 13 and +12% mana.

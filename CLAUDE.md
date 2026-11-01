@@ -97,7 +97,9 @@ data/rooms/   one module per region, each with a ROOMS dict, merged in __init__ 
 
 ### Aggression rules (deliberately rare, Aardwolf-style)
 - Template flag `aggro` in `data/monsters.py`: only undead, demons, elementals, guards,
-  cultists and bosses. Animals and roaming humanoids are passive.
+  cultists and bosses. Animals and roaming humanoids are passive. Exception: the Chancery of the
+  Dead's ghosts are passive (they are busy with their cases); only its bailiffs and wardens attack.
+  The carnival's trapped spirits are passive too; its roustabouts, night barkers and clowns attack.
 - `Room.spawn` enforces the per-room rule: a room containing a boss makes **every** monster
   aggressive. Any other room allows at most `max_aggro` (default 1) aggressive instances, and
   extras spawn passive. Aggression is per instance and is not saved; it is recomputed on load.
@@ -131,14 +133,17 @@ Monsters above level 50 (the Planes of the Gods) use far larger multipliers (hp 
 stat bonuses make multi-life characters enormously strong.
 
 ### Gates and boss kills
-- A room may carry `gate` (see `data/rooms/common.R`): `{"kills": [boss ids], "msg"}` or
-  `{"all_classes": True, "msg"}`. `Game.gate_block(rid)` checks it in `cmd_move` and when
-  fleeing; `goto` ignores it. `validate.py` checks gate kills are bosses.
+- A room may carry `gate` (see `data/rooms/common.R`): `{"kills": [boss ids], "msg"}`,
+  `{"item": item id, "msg"}` (carried, not used up) or `{"all_classes": True, "msg"}`.
+  `Game.gate_block(rid)` checks it in `cmd_move` and when fleeing; `goto` ignores it. `validate.py`
+  checks gate kills are bosses and gate items exist.
 - `Character.boss_kills` records every boss id ever slain (set in `Game.on_kill`, kept across
   rebirths). `Character.mastered_classes()` = past lives + the current class once at level 50.
 - Each elemental plane's first room needs the champion of the first-tier plane before it (Stars ->
   Air, Dreams -> Earth, Death -> Fire, Law -> Water). The Door of Eternity needs the four elemental lords; Lord Trepth's throne needs every class mastered.
   Killing him grants no title (by the user's choice).
+- The Chancery of the Dead's Door of Audience needs a `writ_of_audience`, the reward for Clerk
+  Quillon's first quest; he also sells duplicates.
 
 ### Inventory and items
 - Inventory is a flat list of item ids (duplicates = quantity). Equipment is `{slot: id}` over
@@ -155,7 +160,9 @@ stat bonuses make multi-life characters enormously strong.
 
 ### Quests, NPCs, find
 - Quests are `kill` (counted in `on_kill`) or `collect` (counted from inventory, removed on
-  turn-in). They are offered and turned in through `talk`. `prereq` and `min_level` gate them.
+  turn-in). They are offered and turned in through `talk`, which turns in every ready quest and
+  accepts every available one at once (progress lines only when there is nothing else to say).
+  `prereq` and `min_level` gate them.
 - `find` runs a BFS over room exits to the nearest room that *spawns* the target (or the quest
   giver once ready). It doesn't check whether the monster is currently alive.
 

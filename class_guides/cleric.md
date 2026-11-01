@@ -81,6 +81,18 @@ CON/WIS), the Pearl of the Deep (50, ring, INT/WIS), the Ring of the Archmage, t
 obelisk, the sunlit codex (off-hand) and the mythic Fang of Pyraxis and Eternity. A staff means giving
 up your shield.
 
+From **the Carnival That Never Closes** (26-30, south of the Badlands' Howling Pit): a roustabout's
+tent mallet (28, blunt), a roustabout's chain chausses (27, mail legs), a fortune teller's crystal ball
+(28, off-hand, INT/WIS) and the brass ring (27, ring).
+
+From **the Chancery of the Dead** (32-38, south of the Dustway's Gnoll Scrub): the Gavel of the High
+Justice (38, blunt, STR/WIS), a bailiff's hauberk (34, mail chest), the shield of the scales (35,
+CON/WIS), the seal of office (37, ring) and the chain of office (38, neck).
+
+From **Thornwick Hall** (43-49, west of the Stag Walk): Mr. Graves's silver salver (45, shield), the
+Dowager's pearls (48, neck, WIS/CHA/CON), silk evening gloves (46, cloth, INT/WIS/CHA) and Tobias's
+black grimoire (47, off-hand) if you would rather have INT and WIS than a shield.
+
 ## Best races
 
 - **High elf**: WIS 13 and +12% mana.

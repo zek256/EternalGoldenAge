@@ -8,6 +8,7 @@ def R(name, area, desc, exits, spawns=None, npcs=None, safe=False, items=None, l
 
     gate: a condition for entering the room, checked by Game.gate_block, with a "msg" shown on refusal:
       {"kills": [boss ids], "msg": ...}       - the character must have killed every listed boss
+      {"item": item id, "msg": ...}           - the character must be carrying the item (it is not used up)
       {"all_classes": True, "msg": ...}       - every class lived to level 50 (past lives + current)
     """
     return {"name": name, "area": area, "desc": desc, "exits": exits, "spawns": spawns or [],

@@ -284,6 +284,34 @@ Both doors tell the player what they want when they're refused, so the goals are
   sits below the Threshold, between it and the temple. Dreams no longer leads to Water. On the map,
   the Plane of Eternity is its own inset and Law joins the main planes box.
 
+- **Addition: Thornwick Hall** (257 to 289 rooms, 2026-10-31). The seat of the Vane family, west
+  of the Stag Walk, for the thin 40-50 band. 32 rooms on the surface map: the deer park, grounds
+  and stables (40-43), the servants' wing (42-44), the ground floor and the feast (44-46), and an
+  upper floor of its own area, reached by one stair (46-50). Every soul in the house is a monster;
+  the cook, butler, gamekeeper, Sir Corwin, Lady Seraphine, Master Tobias and the Dowager are tough
+  named fights, and Lord Aldric Vane (L50) is the boss. Nell Rook, a poacher-fence in a safe camp,
+  gives four quests and sells potions. 19 items fill the 43-49 gear gaps (plate chest, helm and
+  gloves, daggers, axes, leather and cloth chests, off-hands, necklaces, a ring).
+
+- **Addition: the Chancery of the Dead** (289 to 312 rooms, 2026-10-31). A court of the dead for
+  the thin 30-38 band, entered south from the Dustway's Gnoll Scrub, laid out as a compact block
+  (the inner chambers climb north from the Court of Appeals, leaving the land south of the Badlands
+  free for the carnival). 23 rooms: the Gallows Road and the Headsman (30-32), the outer offices (31-34), the
+  courts and archives (34-36), and the inner chambers (36-38) behind the Door of Audience, which needs
+  a writ of audience (a new `item` gate). Boss: the High Justice (L38). Clerk Quillon in the safe
+  Office of Forms and Writs gives five cases and sells duplicate writs. 11 items fill the 32-38 gaps
+  (blunt, axe, dagger, wand, mail chest, plate helm and boots, a shield, a ring, a necklace).
+
+- **Addition: the Carnival That Never Closes** (312 to 333 rooms, 2026-10-31). A haunted
+  fairground for the thin 25-29 band, entered south from the Badlands' Howling Pit. 21 rooms: the
+  midway (24-26), the attractions (26-28) and behind the tents (28-30), ending at the Ringmaster in the
+  big top (L30). Whimsical at the front, horror at the back; no special mechanics (the user's choice):
+  changing attractions and night are tone only. Mini-bosses: the Strongman, Madame Vesna, Mirela the
+  knife-thrower. Pip the prize-keeper (safe booth) sells potions and lost mid-level gear and gives
+  four quests. 10 items fill the 26-30 gaps (plate and leather chests, mail legs, dagger, wand, blunt,
+  ring, cloth boots, leather gloves, an off-hand). The Chancery's inner chambers were turned north
+  to leave room for it.
+
 ## Decisions
 
 - **City names:** Hearthdeep, Silverbough and Sunspire.
@@ -300,6 +328,12 @@ Both doors tell the player what they want when they're refused, so the goals are
 - **Brightwater's shops:** keep gear up to about level 20; higher gear moves to the new cities.
 - **Areas per level range:** up to 4, for variety.
 - **Respawn:** always Brightwater.
+- **The Chancery of the Dead (2026-10-31):** placed south of the Gnoll Scrub because the space by
+  Barrowfield was too small. Its ghosts are passive by design (only bailiffs, wardens and the boss
+  attack). The writ is a real gate, re-buyable from Clerk Quillon.
+- **Thornwick Hall (2026-10-31):** the Vanes are an ordinary noble family, and the player's motive
+  is left unstated. No gate at the entrance, only danger. No children among the monsters. The house
+  stays on the surface map (not an inset), with one upstairs and no cellar below.
 
 ## Open questions
 

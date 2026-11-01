@@ -260,6 +260,122 @@ weapon("scepter_of_the_sand_kings", "the Scepter of the Sand Kings", 48, (27, 44
 armor("burial_mask", "the Burial Mask of Ussreth", "head", 48, 26, 4800,
       "A golden death-mask with eyes of lapis. Wearing it, you hear the desert wind.", CON=6, STR=4, INT=4, WIS=4, kind="mail")
 
+# ------------------------------------------------------------------ The Carnival That Never Closes (levels 26-30)
+# Fills the 24-30 gaps: plate and leather chests, mail legs, a dagger, a wand, a ring, cloth boots.
+weapon("ringmasters_baton", "the Ringmaster's baton", 30, (19, 32), 1500,
+       "A short baton of black lacquer tipped with brass, with a frayed thread still tied to one end.",
+       INT=9, WIS=6, CHA=6, kind="wand")
+weapon("knife_throwers_blade", "a knife-thrower's blade", 29, (17, 29), 1300,
+       "A perfectly balanced throwing knife that always seems to end up back in its sheath.", DEX=6, STR=2,
+       kind="dagger")
+weapon("tent_mallet", "a roustabout's tent mallet", 28, (19, 33), 1100,
+       "A great wooden mallet bound with iron, for driving stakes, and other things, into the ground.",
+       STR=6, CON=2, kind="blunt")
+armor("ringmasters_coat", "the Ringmaster's scarlet coat", "chest", 30, 26, 1500,
+      "A scarlet tailcoat with gold frogging, its lining stitched with the names of every act that ever played the big top.",
+      kind="leather", DEX=5, CHA=5, CON=3)
+armor("strongmans_breastplate", "the Strongman's breastplate", "chest", 27, 28, 1200,
+      "A breastplate of polished iron shaped like a muscled torso, with a painted leopard skin over one shoulder.",
+      kind="plate", STR=4, CON=5)
+armor("roustabouts_chausses", "a roustabout's chain chausses", "legs", 27, 19, 1000,
+      "Chain leggings patched with leather and sawdust, made for kneeling on stakes all night.", kind="mail",
+      CON=3, STR=2)
+armor("acrobats_grips", "an acrobat's grips", "hands", 26, 9, 900,
+      "Supple gloves of chalked leather that never lose their hold.", kind="leather", DEX=4, CON=1)
+armor("dancing_slippers", "a pair of dancing slippers", "feet", 27, 6, 1000,
+      "Red silk slippers that tap in time to music no one else can hear.", kind="cloth", INT=4, WIS=4, DEX=2)
+armor("fortune_tellers_orb", "a fortune teller's crystal ball", "shield", 28, 9, 1200,
+      "A crystal ball on a stand of twisted brass. It shows the future, but only the parts that have already happened.",
+      kind="offhand", INT=6, WIS=6, CHA=3)
+armor("brass_ring", "the brass ring", "ring", 27, 0, 1200,
+      "The brass ring of the carousel, the prize every rider reaches for and almost nobody catches.",
+      kind="jewelry", STR=3, DEX=3, CON=3, CHA=3)
+
+# ------------------------------------------------------------------ The Chancery of the Dead (levels 32-38)
+# Fills the 30-38 gaps: blunt, axe, dagger and wand weapons, mail chest, plate helm and boots, shields.
+weapon("gavel_of_the_high_justice", "the Gavel of the High Justice", 38, (27, 45), 2600,
+       "A great gavel of black oak bound in grey iron. Every blow lands like a verdict.", STR=7, WIS=7, CON=3,
+       kind="blunt")
+weapon("headsmans_axe", "the Headsman's axe", 32, (22, 37), 1500,
+       "A broad, bearded axe with a haft worn smooth by three hundred years of waiting. Its edge has never dulled.",
+       STR=6, CON=3, kind="axe")
+weapon("bailiffs_halberd", "a bailiff's halberd", 36, (27, 46), 2000,
+       "A halberd with a blade shaped like a scale-pan, carried by the bailiffs of the Chancery.", STR=7, CON=4,
+       kind="two-handed")
+weapon("scriveners_penknife", "a scrivener's penknife", 33, (18, 31), 1500,
+       "A slim knife for trimming quills, kept so sharp by its dead owner that it parts a hair dropped on it.",
+       DEX=7, INT=3, kind="dagger")
+weapon("notarys_rod", "a notary's rod", 35, (18, 30), 1900,
+       "A short black rod of office capped with a silver seal, still warm with the authority of the court.",
+       INT=10, WIS=8, CHA=4, kind="wand")
+armor("bailiffs_hauberk", "a bailiff's hauberk", "chest", 34, 30, 1900,
+      "A long coat of grey mail under a tabard embroidered with the scales of the Chancery.", kind="mail",
+      CON=5, STR=3)
+armor("wardens_greathelm", "a warden's greathelm", "head", 35, 19, 1900,
+      "A grey greathelm with a visor shaped like a closed book.", kind="plate", CON=5, STR=2)
+armor("wardens_sabatons", "a warden's sabatons", "feet", 34, 14, 1700,
+      "Heavy grey sabatons that ring on stone like a judge's footsteps.", kind="plate", CON=4, STR=2)
+armor("chancery_shield", "the shield of the scales", "shield", 35, 22, 1900,
+      "A tall grey shield painted with a pair of balanced scales, carried by the wardens of the Chancery.",
+      kind="shield", CON=5, WIS=2)
+armor("seal_of_office", "a seal of office", "ring", 37, 0, 2000,
+      "A heavy signet ring cut with the scales of the Chancery, used to seal judgements.", kind="jewelry",
+      WIS=5, CHA=5, INT=4, CON=2)
+armor("chain_of_office", "the High Justice's chain of office", "neck", 38, 6, 2400,
+      "A heavy chain of grey gold with a pendant of balanced scales, which tip slightly whenever someone lies.",
+      kind="jewelry", STR=4, WIS=6, CHA=5, CON=3)
+
+# ------------------------------------------------------------------ Thornwick Hall (the Vane household, levels 43-49)
+# Fills the 44-49 gaps: plate past 42, daggers and axes past 15, leather and cloth chests past 40.
+weapon("vane_longsword", "the Vane longsword", 49, (41, 67), 6000,
+       "The ancestral blade of the Lords of Thornwick, its pommel a silver stag's head and its edge older than the house.",
+       STR=11, CON=7, CHA=4, kind="sword")
+weapon("corwins_rapier", "Sir Corwin's rapier", 47, (36, 59), 4400,
+       "A slender duelling blade with a basket hilt of gilded wire. It has ended a dozen quarrels over cards.",
+       DEX=11, STR=5, CHA=4, kind="sword")
+weapon("seraphines_hairpin", "Lady Seraphine's hairpin", 47, (30, 50), 4200,
+       "A long golden pin with a hollow, needle-sharp point. Something dark has dried inside it.",
+       DEX=12, STR=4, kind="dagger")
+weapon("cooks_cleaver", "Mistress Hollin's cleaver", 45, (34, 56), 3400,
+       "A kitchen cleaver the size of a headsman's axe, honed every morning for thirty years.",
+       STR=10, CON=5, kind="axe")
+weapon("vane_hunting_bow", "the Vane hunting bow", 45, (34, 56), 3400,
+       "A longbow of yew and horn bound in green leather, made for bringing down stags at a hundred paces.",
+       DEX=11, WIS=4, kind="bow")
+armor("vane_heirloom_plate", "the Vane heirloom plate", "chest", 49, 50, 6500,
+      "A breastplate enamelled green and silver, worn by every Lord of Thornwick into every war for two hundred years.",
+      kind="plate", CON=10, STR=6)
+armor("vane_warhelm", "a Vane warhelm", "head", 46, 25, 3200,
+      "A close helm enamelled green, crested with a silver stag.", kind="plate", CON=6, STR=4)
+armor("vane_gauntlets", "Vane gauntlets", "hands", 45, 19, 3000,
+      "Articulated gauntlets of green-enamelled steel, the knuckles studded with silver.", kind="plate", STR=5, CON=4)
+armor("huntsmans_jerkin", "a Vane huntsman's jerkin", "chest", 44, 33, 3000,
+      "A jerkin of oiled green leather, quilted and studded, that turns a boar's tusk.", kind="leather", DEX=7, CON=4)
+armor("huntsmans_breeches", "Vane huntsman's breeches", "legs", 43, 21, 2600,
+      "Riding breeches of supple leather, reinforced at the knee and thigh.", kind="leather", DEX=5, CON=4)
+armor("brocade_gown", "a gown of green brocade", "chest", 47, 26, 4200,
+      "A court gown of green and silver brocade, its bodice stiffened with fine wire and old wards.",
+      kind="cloth", INT=10, WIS=10, CHA=5)
+armor("silk_evening_gloves", "silk evening gloves", "hands", 46, 8, 3000,
+      "Long gloves of ivory silk, embroidered at the cuff with tiny silver stags.", kind="cloth", INT=7, WIS=7, CHA=3)
+armor("silver_salver", "Mr. Graves's silver salver", "shield", 45, 28, 3400,
+      "A heavy silver serving tray, polished to a mirror and dented in a way that suggests it has stopped more than drinks.",
+      kind="shield", CON=6, DEX=3)
+armor("tobias_grimoire", "Tobias's black grimoire", "shield", 47, 13, 4000,
+      "A heavy book bound in black leather and locked with a clasp. The pages are warm, and some are blank until you look away.",
+      kind="offhand", INT=10, WIS=7, CON=3)
+armor("minstrels_lute", "a minstrel's lute", "shield", 45, 10, 3000,
+      "A rosewood lute inlaid with mother-of-pearl, worn on a strap across the back and played between blows.",
+      kind="offhand", CHA=10, DEX=5)
+armor("dowagers_pearls", "the Dowager's pearls", "neck", 48, 8, 4200,
+      "Three ropes of great grey pearls, cold as the woman who wore them.", kind="jewelry", WIS=8, CHA=8, CON=6)
+armor("mathildes_cameo", "Great-aunt Mathilde's cameo", "neck", 46, 7, 3400,
+      "A cameo of a young woman on a ribbon of black velvet. It may once have been Mathilde.",
+      kind="jewelry", CON=6, STR=4, DEX=4)
+armor("vane_signet", "the Vane signet", "ring", 49, 0, 5000,
+      "A heavy gold ring set with a green stone, cut with the silver stag of the Vanes.", kind="jewelry",
+      STR=7, CON=7, CHA=6)
+
 # ------------------------------------------------------------------ Mythic gear from the Planes of the Gods (level 50)
 # Dropped only by the plane bosses and Lord Trepth. Stronger than anything else in the world.
 weapon("stormcaller_bow", "Stormcaller", 50, (46, 74), 12000,
@@ -405,3 +521,18 @@ misc("winter_wolf_pelt", "a winter wolf pelt", 110, "A thick white pelt that sta
 misc("frost_shard", "a frost shard", 90, "A shard of ice that never melts.")
 misc("elven_relic", "an elven relic", 160, "A small silver figurine of exquisite elven make.")
 misc("dragon_scale", "a dragon scale", 300, "A scale the size of a dinner plate, red as embers.")
+misc("lost_trinket", "a lost trinket", 50, "A locket, a pipe or a toy soldier with a paper tag tied to it, giving a name and "
+     "a date long past.", kind="quest")
+misc("stamped_form", "a stamped form", 40, "A form in triplicate, stamped with the seal of the Registry of Deaths.",
+     kind="quest")
+misc("will_page", "a page of a restless will", 60, "A page of a will that keeps rewriting itself. The heir it names changes as you read.",
+     kind="quest")
+misc("sealed_record", "a sealed record", 120, "A court record tied with grey ribbon and sealed in black wax.", kind="quest")
+misc("writ_of_audience", "a writ of audience", 900,
+     "A writ on heavy grey parchment, sealed by the Office of Forms and Writs, permitting the bearer to be heard "
+     "by the high court of the Chancery of the Dead.", kind="quest")
+misc("vane_silver", "a piece of Vane silver", 300, "A silver ewer, salver or candlestick, engraved with a leaping stag.")
+misc("vane_ledger", "a Vane rent ledger", 150, "A leather-bound ledger of the rents of the valley, in a cramped and careful hand.",
+     kind="quest")
+misc("vane_brooch", "a jewelled brooch", 250, "A brooch of gold and emeralds in the shape of a stag, pinned to a scrap of silk.",
+     kind="quest")

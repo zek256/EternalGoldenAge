@@ -78,6 +78,19 @@ Stars. Also good: the dune recurve bow (40), Dragonscale Mail (48, mail), the su
 windwalker boots (50, leather, DEX), the Band of the Four Winds (50, ring, DEX), and the mythic Fang
 of Pyraxis and Eternity.
 
+From **the Carnival That Never Closes** (26-30, south of the Badlands' Howling Pit): a knife-thrower's
+blade (29, dagger, DEX), a roustabout's chain chausses (27, mail legs), an acrobat's grips (26,
+leather) and the brass ring (27, ring).
+
+From **the Chancery of the Dead** (32-38, south of the Dustway's Gnoll Scrub): a bailiff's hauberk (34,
+mail chest), the Headsman's axe (32), a scrivener's penknife (33, dagger, DEX) and the shield of the
+scales (35).
+
+From **Thornwick Hall** (43-49, west of the Stag Walk): the Vane hunting bow (45, bow, DEX/WIS) from
+Hobb the gamekeeper, Sir Corwin's rapier (47, sword, DEX), Lady Seraphine's hairpin (47, dagger, DEX),
+the Vane huntsman's jerkin (44) and breeches (43) (leather), Mr. Graves's silver salver (45, shield)
+and Great-aunt Mathilde's cameo (46, neck).
+
 ## Best races
 
 - **Elf**: high DEX, +4% dodge and +2% crit.

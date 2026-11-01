@@ -54,8 +54,9 @@ ROOMS = {
         "The Howling Pit", "Redrock Badlands",
         "A great round pit where the gnolls make captives fight for their amusement, ringed with "
         "bone seats. Orc sellswords hired by the warlord lounge on the seats, betting on the next "
-        "bout. A cave mouth to the east is hung with a curtain of teeth.",
-        {"w": "gnoll_warcamp", "n": "wyvern_ledges", "e": "yellowtooth_den"},
+        "bout. A cave mouth to the east is hung with a curtain of teeth, and from somewhere south "
+        "comes the faint, impossible sound of a fairground organ.",
+        {"w": "gnoll_warcamp", "n": "wyvern_ledges", "e": "yellowtooth_den", "s": "carnival_gates"},
         spawns=[("orc_berserker", 2), ("gnoll_bonecaller", 1)], level=(25, 26)),
     "yellowtooth_den": R(
         "Yellowtooth's Den", "Redrock Badlands",

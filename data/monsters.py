@@ -285,6 +285,83 @@ M("yellowtooth", "Yellowtooth, Gnoll Warlord", 26,
             heal("Feast", 0.08, 0.12, "tears a chunk from a carcass and gulps it down, laughing!")],
   loot=[("yellowtooth_flail", 0.6), ("gnoll_bone_necklace", 0.6), ("dwarven_plate", 0.3), ("scorpion_stinger", 0.5)])
 
+# ------------------------------------------------------------- The Carnival That Never Closes (24-30)
+# Cheerful and passive on the midway; the roustabouts (the carnival's guards), the night barkers and
+# the clowns behind the tents attack on sight. The trapped spirits are happy, and passive.
+M("carnival_barker", "a carnival barker", 24, "A barker in a striped jacket and a straw boater, who has been calling the same patter for two hundred years.",
+  hp=1.0, dmg=1.15, specials=[stun("Patter", 0.12, 1, "talks so fast and so loud that your head spins!")],
+  loot=[("lost_trinket", 0.25)], gold=1.5)
+M("roustabout", "a carnival roustabout", 25, "A huge, silent tent-hand in a leather apron, carrying a mallet for driving stakes.",
+  hp=1.3, dmg=1.25, armor=1.5, aggro=True, specials=[big("Tent Mallet", 0.2, 1.7, "drives you into the ground like a tent stake!")],
+  loot=[("tent_mallet", 0.03), ("roustabouts_chausses", 0.03)], gold=1.2)
+M("sweet_seller", "a sweet-seller", 24, "A smiling woman with a copper pan of bubbling sugar and arms scarred by a century of spills.",
+  hp=0.9, dmg=1.1, specials=[dot("Molten Sugar", 0.2, 0.35, 3, "fire", "flings a ladle of molten sugar over you!")],
+  loot=[("lost_trinket", 0.2)], gold=1.0, xp=0.9)
+M("carnival_pickpocket", "a carnival pickpocket", 25, "A quick, grinning cutpurse of the fair with nimble fingers and a pocketful of other people's things.",
+  hp=0.9, dmg=1.2, specials=[big("Knife in the Crowd", 0.2, 1.7, "slips a knife between your ribs in the crush!")],
+  loot=[("lost_trinket", 0.4)], gold=2.5)
+M("the_strongman", "the Strongman", 26, "A giant of a man in a leopard skin with a waxed moustache, who has lifted the same anvil every night for two centuries.",
+  hp=1.9, dmg=1.3, xp=1.6, gold=2.0,
+  specials=[big("Anvil Press", 0.22, 1.9, "heaves his anvil over his head and brings it down on you!"),
+            stun("Bear Hug", 0.12, 1, "crushes you in a bear hug until your ribs creak!")],
+  loot=[("strongmans_breastplate", 0.2), ("greater_healing_potion", 0.15)])
+M("carousel_spirit", "a carousel spirit", 26, "A grey, laughing ghost who has ridden the carousel for three hundred years and would love you to join.",
+  hp=0.9, dmg=1.2, specials=[drain("Round and Round", 0.2, 0.9, "takes your hands and spins you, and your strength spins out of you!")],
+  loot=[("brass_ring", 0.03)], gold=0.4)
+M("painted_horse", "a painted carousel horse", 26, "A wooden carousel horse with flaring nostrils and gilded mane, which has slipped its pole.",
+  hp=1.3, dmg=1.2, armor=1.4, specials=[big("Trample", 0.2, 1.7, "rears up and tramples you with painted hooves!")],
+  loot=[("brass_ring", 0.03)], gold=0.3)
+M("mirror_double", "a mirror double", 27, "Your own reflection, stepped out of the glass, a moment late and smiling a smile you are not smiling.",
+  hp=1.0, dmg=1.3, specials=[big("Mirror Strike", 0.22, 1.8, "strikes exactly as you would, and exactly where you are weakest!")],
+  loot=[("lost_trinket", 0.2)], gold=0.8)
+M("menagerie_tiger", "a menagerie tiger", 27, "A striped cat the size of a horse, its cage long since open, its ribbon collar still around its neck.",
+  hp=1.2, dmg=1.25, specials=[big("Pounce", 0.22, 1.8, "pounces and bears you to the ground!")], gold=0.3)
+M("dancing_bear", "a dancing bear", 27, "A great brown bear in a ruff and a little hat, which dances when the music plays and does other things when it stops.",
+  hp=1.6, dmg=1.2, xp=1.3, specials=[stun("Waltz", 0.12, 1, "seizes you and whirls you round in a dreadful waltz!")],
+  loot=[("acrobats_grips", 0.03)], gold=0.3)
+M("wheel_spirit", "a wheel spirit", 27, "A cheerful ghost in the great wheel's treadmill, singing a marching song and very pleased to see you.",
+  hp=0.9, dmg=1.2, specials=[drain("All Together Now", 0.2, 0.9, "links arms with you, and your breath goes into the song!")],
+  loot=[("brass_ring", 0.03)], gold=0.4)
+M("ghost_passenger", "a ghost-train passenger", 27, "A see-through passenger who has ridden the ghost train ten thousand times and screams with delight at every corner.",
+  hp=1.0, dmg=1.2, specials=[stun("Boo!", 0.12, 1, "leaps out at you with a shriek, and you freeze!")],
+  loot=[("lost_trinket", 0.25)], gold=0.6)
+M("waxwork", "a waxwork", 28, "A warm, waxen figure with wet glass eyes, wearing the clothes and boots of someone who came to the carnival and stayed.",
+  hp=1.4, dmg=1.25, armor=1.2, specials=[stun("Waxen Grip", 0.12, 1, "grips you with soft, warm fingers that will not let go!"),
+                                       big("Heavy Fist", 0.18, 1.7, "swings a fist as heavy as a candle-mould!")],
+  loot=[("lost_trinket", 0.35), ("dancing_slippers", 0.03)], gold=1.0)
+M("madame_vesna", "Madame Vesna, the fortune teller", 28, "A woman in shawls and jangling coins, whose crystal ball shows the future clearly, and only ever one ending.",
+  hp=1.9, dmg=1.3, xp=1.6, gold=2.5,
+  specials=[dot("Ill Fortune", 0.2, 0.45, 4, "shadow", "turns over a card, and misfortune settles on you like a shroud!"),
+            stun("Glimpse of Your Death", 0.12, 1, "holds up the crystal ball, and you see your own death in it!")],
+  loot=[("fortune_tellers_orb", 0.2), ("greater_mana_potion", 0.2)])
+M("night_barker", "a night barker", 28, "A barker of the back lots in a moth-eaten tailcoat, who tells the truth: 'Come in, come in, and never leave.'",
+  hp=1.2, dmg=1.3, aggro=True, specials=[dot("The Honest Pitch", 0.2, 0.4, 3, "shadow", "tells you exactly what the carnival will do to you, and the words cut!")],
+  loot=[("lost_trinket", 0.3), ("greater_healing_potion", 0.08)], gold=1.5)
+M("carnival_acrobat", "a carnival acrobat", 28, "A lean, tired acrobat in faded spangles, who moves faster than anyone that tired should.",
+  hp=1.0, dmg=1.3, specials=[big("Flying Kick", 0.22, 1.8, "somersaults over you and kicks you in the back of the head!")],
+  loot=[("acrobats_grips", 0.04), ("dancing_slippers", 0.03)], gold=1.0)
+M("mirela", "Mirela, the knife-thrower", 29, "A knife-thrower with a bandolier of blades and eyes like a hawk's. She never misses any more, and she wishes she would.",
+  hp=1.9, dmg=1.35, xp=1.6, gold=2.5,
+  specials=[big("Seven Knives", 0.22, 1.9, "throws seven knives in a single breath, and every one finds you!"),
+            dot("Bleeding Edge", 0.15, 0.45, 3, "bleed", "nicks an artery with a thrown blade!")],
+  loot=[("knife_throwers_blade", 0.2), ("greater_healing_potion", 0.2)])
+M("caged_horror", "a caged horror", 29, "Something the carnival made from what it kept: too many arms, a face in the wrong place, and a voice that whispers your name.",
+  hp=1.4, dmg=1.3, specials=[drain("Hungry Hands", 0.22, 1.0, "reaches through the bars with too many hands and feeds!")],
+  loot=[("lost_trinket", 0.3)], gold=0.6, xp=1.2)
+M("carnival_clown", "a carnival clown", 29, "A clown in a ruff and greasepaint, whose painted smile is wider than its face and does not move when it speaks.",
+  hp=1.1, dmg=1.3, aggro=True, specials=[stun("The Grin", 0.12, 1, "leans close and grins, and you cannot look away!"),
+                                       dot("Seltzer", 0.18, 0.4, 3, "poison", "sprays you with seltzer that burns like acid!")],
+  loot=[("lost_trinket", 0.25)], gold=1.2)
+M("the_ringmaster", "the Ringmaster", 30,
+  "The master of the carnival in a scarlet coat and tall hat, with a whip in his hand and every tooth in his smile. "
+  "Threads like puppet strings run from his wrists into the canvas above. He was the carnival's first prisoner, and he no longer remembers being anything else.",
+  hp=2.8, dmg=1.3, armor=1.4, aggro=True, boss=True, xp=2.0, gold=5.0,
+  specials=[big("Whipcrack", 0.22, 1.9, "cracks his whip, and it opens you like a knife!"),
+            stun("Showstopper", 0.12, 1, "throws up his arms, the spotlight swings onto you, and you cannot move!"),
+            dot("Under the Spotlight", 0.15, 0.45, 4, "fire", "turns the burning spotlight full on you!"),
+            heal("The Show Must Go On", 0.08, 0.1, "is jerked upright by his strings, smiling, his wounds closing!")],
+  loot=[("ringmasters_baton", 0.4), ("ringmasters_coat", 0.5), ("brass_ring", 0.3)])
+
 # ------------------------------------------------------------- Ironspine Mountains (20-31)
 M("mountain_lion", "a mountain lion", 21, "A tawny great cat crouched on a ledge, tail twitching.",
   hp=1.0, dmg=1.15, specials=[dot("Rending Claws", 0.2, 0.35, 3, "bleed", "rakes you with rending claws!")], gold=0.4)
@@ -370,6 +447,83 @@ M("seluvar", "Seluvar the Hollow Archmage", 41,
             stun("Temporal Prison", 0.12, 1, "traps you in a prison of frozen time!"),
             drain("Hollowing", 0.15, 1.2, "hollows you out, drinking your essence!")],
   loot=[("seluvars_wand", 0.6), ("archmage_ring", 0.6), ("elandor_robes", 0.4), ("starlight_circlet", 0.4), ("elven_longbow", 0.3)])
+
+# ------------------------------------------------------------- The Chancery of the Dead (30-38)
+# The dead here are busy with their cases and ignore the living, so only the court's bailiffs,
+# wardens and the High Justice attack on sight (a deliberate exception to the undead rule).
+M("hanged_petitioner", "a hanged petitioner", 30, "A grey ghost with a noose still knotted around its neck, clutching a petition to its chest.",
+  hp=1.0, dmg=1.2, specials=[stun("Strangling Grip", 0.12, 1, "seizes your throat with cold, choking fingers!")],
+  gold=0.6)
+M("queue_warden", "a queue warden", 31, "A spectral warden in a grey tabard who keeps the line of the hanged in order with a heavy staff.",
+  hp=1.2, dmg=1.25, armor=1.6, aggro=True, specials=[big("Keep the Line", 0.2, 1.7, "cracks his staff across you to keep the line!")],
+  loot=[("greater_healing_potion", 0.1)], gold=1.0)
+M("the_headsman", "the Headsman", 32, "A hooded executioner, dead for three hundred years, with an axe whose edge has never dulled.",
+  hp=2.0, dmg=1.35, xp=1.7, gold=2.0,
+  specials=[big("Headsman's Stroke", 0.22, 2.0, "raises his axe high and brings it down on your neck!"),
+            stun("The Block", 0.1, 1, "forces your head down onto the block!")],
+  loot=[("headsmans_axe", 0.2), ("greater_healing_potion", 0.2)])
+M("court_bailiff", "a court bailiff", 32, "A dead bailiff in grey tabard and mail, a halberd in his hands and a ring of keys at his belt.",
+  hp=1.3, dmg=1.25, armor=1.6, aggro=True,
+  specials=[big("Halberd", 0.18, 1.7, "swings his halberd at you!"),
+            stun("Seize", 0.1, 1, "grabs you by the collar and holds you fast!")],
+  loot=[("bailiffs_halberd", 0.03), ("bailiffs_hauberk", 0.03)], gold=1.2)
+M("waiting_shade", "a waiting shade", 31, "A ghost faded nearly to nothing from waiting, still holding a numbered ticket.",
+  hp=0.9, dmg=1.2, specials=[drain("Weary Touch", 0.2, 0.9, "lays a weary hand on you and drinks your strength!")],
+  gold=0.5, xp=0.9)
+M("registry_clerk", "a registry clerk", 32, "An ink-stained spectral clerk with a seal in one hand and a stack of forms in the other.",
+  hp=1.0, dmg=1.2, specials=[stun("Seal of Record", 0.12, 1, "stamps a seal of record on your forehead, and you freeze!")],
+  loot=[("stamped_form", 0.4)], gold=1.0)
+M("nameless_shade", "a nameless shade", 33, "A ghost whose name has been lost, searching the shelves and muttering half-names.",
+  hp=1.1, dmg=1.3, specials=[drain("Who Am I?", 0.22, 1.0, "clutches at you, trying to take your name, and your life comes with it!")],
+  gold=0.6)
+M("restless_petitioner", "a restless petitioner", 33, "A ghost pacing with a petition, reading it aloud to anyone who will listen, and to anyone who won't.",
+  hp=1.0, dmg=1.25, specials=[dot("Endless Grievance", 0.2, 0.4, 3, "shadow", "reads you its grievance, and the words burn like cold fire!")],
+  gold=0.8)
+M("spectral_scrivener", "a spectral scrivener", 33, "A hunched ghost with an ink-blackened quill and a penknife for trimming it.",
+  hp=0.9, dmg=1.25, specials=[dot("Ink Blot", 0.2, 0.4, 3, "shadow", "flicks a blot of black ink that eats into your skin!")],
+  loot=[("will_page", 0.4), ("scriveners_penknife", 0.03)], gold=0.8)
+M("minor_magistrate", "a minor magistrate", 34, "A bored ghost in a grey wig who has heard ten thousand cases about spoons.",
+  hp=1.4, dmg=1.25, xp=1.3, gold=1.5, specials=[stun("Order!", 0.14, 1, "bangs his gavel and roars 'ORDER!', and you freeze!")],
+  loot=[("notarys_rod", 0.05)])
+M("wrathful_heir", "a wrathful heir", 34, "The ghost of a disinherited son, still furious about it a hundred years later.",
+  hp=1.2, dmg=1.3, specials=[big("Disinherited Fury", 0.2, 1.8, "flies at you in a fury of wounded pride!")],
+  loot=[("will_page", 0.3)], gold=1.2)
+M("living_will", "a living will", 34, "A will of yellow parchment that has come loose from its ribbon and keeps rewriting itself, edges sharp as razors.",
+  hp=0.8, dmg=1.25, specials=[dot("Paper Cuts", 0.22, 0.4, 3, "bleed", "whips around you in a storm of razor-edged pages!")],
+  loot=[("will_page", 0.5)], gold=0.3, xp=0.9)
+M("ghostly_squatter", "a ghostly squatter", 35, "The ghost of a farmer who refuses to leave a house sold out from under his grave, and says so.",
+  hp=1.1, dmg=1.25, specials=[drain("Get Off My Land", 0.2, 1.0, "grips you with cold hands and roars 'GET OFF MY LAND!'")],
+  gold=0.8)
+M("hired_sword", "a hired sword", 35, "A living mercenary in a leather coat, hired to evict the dead and long out of patience.",
+  hp=1.2, dmg=1.3, specials=[big("Dirty Cut", 0.2, 1.8, "feints high and cuts you low!")],
+  loot=[("bailiffs_hauberk", 0.03), ("greater_healing_potion", 0.1)], gold=2.0)
+M("dead_advocate", "a dead advocate", 35, "A gaunt ghost in an advocate's black gown, still arguing a case whose client faded long ago.",
+  hp=1.0, dmg=1.3, specials=[stun("Objection!", 0.12, 1, "shouts 'OBJECTION!' so loudly that you stagger!"),
+                            dot("Long-Winded Argument", 0.15, 0.4, 3, "shadow", "begins a speech that drains the will to live!")],
+  loot=[("sealed_record", 0.15), ("notarys_rod", 0.03)], gold=1.5)
+M("archive_keeper", "a keeper of the archive", 35, "A tall, silent ghost with a lantern of grey flame, who has kept the archive for six hundred years.",
+  hp=1.3, dmg=1.25, specials=[stun("Silence", 0.14, 1, "raises a finger to its lips, and you cannot move or speak!")],
+  loot=[("sealed_record", 0.35), ("greater_mana_potion", 0.1)], gold=1.0)
+M("chancery_warden", "a warden of the Chancery", 35, "A towering dead knight in grey plate, sworn to guard the courts until the last case is heard.",
+  hp=1.4, dmg=1.3, armor=2.0, aggro=True, specials=[big("Sentence Carried Out", 0.2, 1.8, "carries out the sentence with a great two-handed sword!")],
+  loot=[("wardens_greathelm", 0.04), ("wardens_sabatons", 0.04), ("chancery_shield", 0.03)], gold=1.5)
+M("robed_judge", "a judge of the high court", 37, "A dead judge in black robes and a grey wig, who long ago stopped telling cases apart.",
+  hp=1.5, dmg=1.3, xp=1.4, gold=2.0,
+  specials=[stun("Sentence", 0.12, 1, "pronounces sentence, and the words hold you fast!"),
+            dot("Contempt of Court", 0.18, 0.45, 3, "shadow", "holds you in contempt, and the contempt burns!")],
+  loot=[("seal_of_office", 0.04), ("greater_mana_potion", 0.12)])
+M("condemned_shade", "a condemned shade", 37, "The ghost of someone the court condemned, reading its own verdict over and over.",
+  hp=1.2, dmg=1.3, specials=[drain("Last Appeal", 0.22, 1.0, "clutches you, begging, and your life drains into its cold hands!")],
+  gold=1.0)
+M("high_justice", "the High Justice", 38,
+  "The highest judge of the Chancery, dead so long that he no longer remembers what justice is supposed to mean. "
+  "His robes are grey with dust, his wig has rotted to cobweb, and his gavel never stops.",
+  hp=2.8, dmg=1.3, armor=1.4, aggro=True, boss=True, xp=2.0, gold=6.0,
+  specials=[big("The Gavel Falls", 0.22, 1.9, "brings his great gavel down on you like a verdict!"),
+            dot("Contempt of Court", 0.15, 0.45, 4, "shadow", "holds you in contempt, and the cold of the grave seeps into you!"),
+            stun("Order in the Court", 0.12, 1, "roars 'ORDER!', and the whole court falls still around you!"),
+            drain("Sentence of Death", 0.12, 1.1, "pronounces a sentence of death, and your life flows up to the bench!")],
+  loot=[("gavel_of_the_high_justice", 0.5), ("chain_of_office", 0.5), ("seal_of_office", 0.4)])
 
 # ------------------------------------------------------------- Scorchsands (35-49)
 M("desert_raider", "a desert raider", 36, "A veiled rider of the deep desert, all in black, with a scimitar and eyes that never blink.",
@@ -460,6 +614,120 @@ M("pyraxis", "Pyraxis the Eternal Flame", 52,
             dot("Searing Wounds", 0.15, 0.5, 4, "fire", "rakes you with claws that leave searing wounds!"),
             stun("Wing Buffet", 0.12, 1, "buffets you to the ground with a mighty wing!")],
   loot=[("pyraxis_fang", 0.7), ("dragonscale_mail", 0.7), ("heart_of_flame", 0.5), ("dragon_scale", 1.0)])
+
+# ------------------------------------------------------------- Thornwick Hall (40-50)
+# The Vane household. Only the wardens, knights and sworn swords attack on sight; everyone else
+# fights when attacked. The named servants and family are tougher, but only the lord is a boss.
+M("vane_huntsman", "a Vane huntsman", 40, "A lean huntsman in green and silver livery, a boar spear in his hands and a horn at his hip.",
+  hp=1.1, dmg=1.25, specials=[big("Boar Spear", 0.2, 1.7, "drives his boar spear into you!")],
+  loot=[("huntsmans_jerkin", 0.03), ("huntsmans_breeches", 0.03)], gold=1.0)
+M("vane_boarhound", "a Vane boarhound", 40, "A huge brindled hound in a spiked collar, bred to pull down boar and stag.",
+  hp=1.0, dmg=1.25, specials=[big("Pull Down", 0.2, 1.6, "leaps, seizes you by the arm and drags you down!")],
+  gold=0.2)
+M("hobb_gamekeeper", "Hobb the gamekeeper", 42, "The Vanes' gamekeeper, broad as a door, with a skinning knife, a longbow and a sack of snares.",
+  hp=1.9, dmg=1.3, xp=1.6, gold=1.5,
+  specials=[big("Broadhead", 0.2, 1.8, "looses a broadhead arrow into you at point-blank range!"),
+            stun("Snare", 0.12, 1, "flicks a snare around your ankle and yanks you off your feet!")],
+  loot=[("vane_hunting_bow", 0.15), ("huntsmans_jerkin", 0.1), ("huntsmans_breeches", 0.1)])
+M("gate_warden", "a gate warden", 41, "A grim warden of the Vane gate in a mail coat and a green surcoat, a halberd in his fists.",
+  hp=1.3, dmg=1.3, armor=1.8, aggro=True, specials=[big("Halberd", 0.18, 1.7, "swings his halberd down on you!")],
+  loot=[("vane_gauntlets", 0.03), ("supreme_healing_potion", 0.06)], gold=1.5)
+M("under_gardener", "an under-gardener", 40, "A sunburnt gardener in a straw hat, a pruning hook in his hand.",
+  hp=0.9, dmg=1.2, loot=[("huntsmans_breeches", 0.02)], gold=0.8, xp=0.9)
+M("vane_groundskeeper", "the groundskeeper", 42, "A gnarled old man with shears as long as a sword, who has kept the Vanes' hedges for fifty years.",
+  hp=1.3, dmg=1.3, specials=[big("Hedge Shears", 0.22, 1.8, "snips at you with his great shears!")],
+  loot=[("supreme_healing_potion", 0.08)], gold=1.2, xp=1.1)
+M("vane_groom", "a Vane groom", 41, "A wiry groom in green livery, smelling of horse and saddle soap.",
+  hp=0.9, dmg=1.2, gold=0.8, xp=0.9)
+M("vane_stablemaster", "the stablemaster", 43, "A big, red-faced man with a coachman's whip and a voice that carries across three fields.",
+  hp=1.6, dmg=1.3, xp=1.3, gold=1.5,
+  specials=[stun("Whip Crack", 0.15, 1, "cracks his whip around your neck and jerks you off balance!"),
+            big("Hobnailed Kick", 0.18, 1.7, "kicks you like a carthorse!")],
+  loot=[("huntsmans_breeches", 0.06)])
+M("house_chaplain", "the house chaplain", 43, "A plump priest of the Dawnfather in white and gold, who preaches obedience to the Vanes every morning.",
+  hp=1.3, dmg=1.25, gold=2.0,
+  specials=[heal("Blessing of the House", 0.15, 0.15, "prays, and light knits his wounds!"),
+            stun("Rebuke", 0.12, 1, "raises his sun-disc and speaks a word of rebuke that roots you in place!")],
+  loot=[("supreme_healing_potion", 0.15), ("supreme_mana_potion", 0.1)])
+M("vane_footman", "a Vane footman", 42, "A tall footman in a powdered wig and green-and-silver livery, chosen for his height and his calves.",
+  hp=1.0, dmg=1.25, loot=[("vane_silver", 0.3)], gold=1.2)
+M("vane_housemaid", "a housemaid", 41, "A housemaid in a black dress and white apron, carrying a coal scuttle she is ready to swing.",
+  hp=0.8, dmg=1.15, loot=[("vane_silver", 0.15)], gold=0.8, xp=0.8)
+M("kitchen_hand", "a kitchen hand", 42, "A sweating kitchen hand, scarred from spits and ovens, with a carving knife in his fist.",
+  hp=0.9, dmg=1.2, specials=[dot("Scalding Water", 0.18, 0.35, 3, "fire", "dashes a pan of boiling water over you!")],
+  gold=0.6, xp=0.9)
+M("vane_laundress", "a laundress", 42, "A broad laundress with forearms like hams and a paddle for beating linen.",
+  hp=0.9, dmg=1.2, specials=[stun("Wet Sheet", 0.12, 1, "throws a sodden sheet over your head!")],
+  gold=0.6, xp=0.9)
+M("vane_cellarer", "the cellarer", 43, "A red-nosed, barrel-chested man with a mallet for driving taps, and a strong smell of wine.",
+  hp=1.5, dmg=1.3, xp=1.2, gold=1.5, specials=[big("Cask Mallet", 0.2, 1.8, "swings his heavy mallet at your head!")],
+  loot=[("supreme_mana_potion", 0.12)])
+M("mistress_hollin", "Mistress Hollin, the cook", 44, "A vast, floury woman who rules the kitchens of Thornwick like a warlord, a cleaver in one hand and a ladle in the other.",
+  hp=2.0, dmg=1.35, xp=1.7, gold=2.0,
+  specials=[big("Cleaver", 0.22, 1.9, "brings her cleaver down like an executioner!"),
+            dot("Boiling Pot", 0.15, 0.45, 3, "fire", "flings a pot of boiling stock over you!")],
+  loot=[("cooks_cleaver", 0.2), ("supreme_healing_potion", 0.2)])
+M("mr_graves", "Mr. Graves, the butler", 44, "The butler of Thornwick Hall, tall and grave in perfect black, who has never once raised his voice.",
+  hp=2.0, dmg=1.3, armor=1.5, xp=1.7, gold=3.0,
+  specials=[stun("Silver Salver", 0.15, 1, "strikes you across the temple with a silver salver!"),
+            big("Corkscrew", 0.18, 1.8, "drives a corkscrew into you with a flick of his wrist!")],
+  loot=[("silver_salver", 0.2), ("vane_silver", 1.0)])
+M("household_knight", "a knight of the household", 45, "A knight of the Vane household in plate enamelled green, a silver stag on his shield.",
+  hp=1.4, dmg=1.3, armor=2.0, aggro=True, specials=[big("Shield Bash", 0.18, 1.7, "slams his shield into you!")],
+  loot=[("vane_warhelm", 0.03), ("vane_gauntlets", 0.03), ("vane_heirloom_plate", 0.01)], gold=2.0)
+M("noble_guest", "a noble guest", 44, "A guest of the house in silk and velvet, flushed with wine, wearing a jewelled court sword.",
+  hp=1.0, dmg=1.25, loot=[("vane_silver", 0.2), ("silk_evening_gloves", 0.02)], gold=2.5)
+M("visiting_knight", "a visiting knight", 46, "A knight from a neighbouring house, here for the feast and the tourney, in polished steel.",
+  hp=1.4, dmg=1.3, armor=1.6, specials=[big("Overhand Blow", 0.2, 1.8, "brings his longsword down in a great overhand blow!")],
+  loot=[("vane_warhelm", 0.03), ("supreme_healing_potion", 0.08)], gold=2.0)
+M("household_minstrel", "a household minstrel", 45, "A minstrel in particoloured hose with a lute on his back and a knife in his boot.",
+  hp=1.0, dmg=1.25, specials=[stun("Dizzying Air", 0.12, 1, "plays a whirling air that sets your head spinning!")],
+  loot=[("minstrels_lute", 0.05)], gold=1.5)
+M("vane_steward", "Master Aldous, the steward", 46, "The steward of Thornwick, thin and grey, with a ring of keys at his belt and the rents of the valley in his head.",
+  hp=1.5, dmg=1.3, xp=1.3, gold=4.0, specials=[stun("Ring of Keys", 0.12, 1, "lashes you across the face with his heavy ring of keys!")],
+  loot=[("vane_ledger", 0.6), ("supreme_mana_potion", 0.1)])
+M("estate_clerk", "an estate clerk", 45, "An ink-stained clerk in a black gown, with a quill behind his ear and a penknife in his hand.",
+  hp=0.9, dmg=1.2, loot=[("vane_ledger", 0.4)], gold=1.5, xp=0.9)
+M("lady_in_waiting", "a lady-in-waiting", 46, "A noblewoman in attendance on Lady Seraphine, in a gown of green brocade, with a long jewelled pin in her hair.",
+  hp=1.0, dmg=1.3, specials=[dot("Hatpin", 0.2, 0.4, 3, "poison", "stabs you with a long jewelled pin dipped in something!")],
+  loot=[("vane_brooch", 0.45), ("silk_evening_gloves", 0.03)], gold=2.0)
+M("lady_seraphine", "Lady Seraphine Vane", 47, "The lord's young wife, golden-haired and lovely, with a long golden pin in her hair and a smile that never reaches her eyes.",
+  hp=2.0, dmg=1.35, xp=1.7, gold=4.0,
+  specials=[dot("Poisoned Hairpin", 0.22, 0.5, 4, "poison", "draws the golden pin from her hair and stabs it into your neck!"),
+            stun("Faint", 0.1, 1, "swoons into your arms, and the knife in her sleeve finds your ribs!")],
+  loot=[("seraphines_hairpin", 0.2), ("brocade_gown", 0.1), ("vane_brooch", 1.0)])
+M("sir_corwin", "Sir Corwin Vane", 47, "The lord's cousin and heir, handsome, drunk and dangerous, the finest duellist in the valley.",
+  hp=2.1, dmg=1.4, xp=1.7, gold=4.0,
+  specials=[big("Riposte", 0.22, 1.9, "turns your attack aside and ripostes straight through your guard!"),
+            dot("Flickering Cuts", 0.15, 0.45, 3, "bleed", "flicks his rapier across you in a dozen tiny cuts!")],
+  loot=[("corwins_rapier", 0.2), ("supreme_healing_potion", 0.2)])
+M("master_tobias", "Master Tobias Vane", 47, "The lord's younger brother, a pale scholar of twenty with ink on his fingers and a forbidden book under his arm.",
+  hp=1.8, dmg=1.35, xp=1.7, gold=3.0,
+  specials=[dot("Half-Learned Curse", 0.2, 0.5, 3, "shadow", "reads a curse from his black book, and your skin blisters!"),
+            stun("Word of Binding", 0.12, 1, "speaks a word of binding, and your limbs lock!")],
+  loot=[("tobias_grimoire", 0.2), ("supreme_mana_potion", 0.2)])
+M("dowager_attendant", "a dowager's attendant", 47, "A silent woman in grey who has served the Dowager for thirty years, a stiletto at her girdle.",
+  hp=1.2, dmg=1.3, loot=[("vane_brooch", 0.25)], gold=2.0)
+M("dowager_isolde", "Lady Isolde, the Dowager", 48, "The lord's mother, iron-grey and straight as a blade, who has ruled Thornwick for forty years. Her ebony cane hides a sword.",
+  hp=2.2, dmg=1.35, armor=1.3, xp=1.8, gold=5.0,
+  specials=[big("Cane Sword", 0.22, 1.9, "draws the blade from her ebony cane and runs you through!"),
+            stun("Withering Glare", 0.12, 1, "fixes you with a glare that has cowed lords, and you falter!")],
+  loot=[("dowagers_pearls", 0.25), ("supreme_healing_potion", 0.2)])
+M("great_aunt_mathilde", "Great-aunt Mathilde", 46, "A tiny, ancient lady in an enormous lace cap, wearing a fortune in jewels and brandishing a knitting needle.",
+  hp=0.7, dmg=1.0, xp=0.8, gold=8.0, specials=[dot("Knitting Needle", 0.2, 0.3, 3, "bleed", "jabs you smartly with a knitting needle!")],
+  loot=[("mathildes_cameo", 0.3), ("vane_brooch", 1.0)])
+M("vane_sworn_sword", "a Vane sworn sword", 49, "One of the lord's own sworn swords, in full plate of green and silver with a stag-crested helm.",
+  hp=1.5, dmg=1.35, armor=2.2, aggro=True, specials=[big("Greatsword", 0.2, 1.8, "cleaves into you with a two-handed greatsword!")],
+  loot=[("vane_warhelm", 0.04), ("vane_gauntlets", 0.04), ("vane_heirloom_plate", 0.02)], gold=2.5)
+M("lord_aldric_vane", "Lord Aldric Vane", 50,
+  "The Lord of Thornwick, in the ancient green-and-silver plate of his house, with the Vane longsword in his hand. "
+  "A veteran of three wars and a hundred hunts, proud, cold and very, very good with a blade.",
+  hp=3.4, dmg=1.4, armor=2.0, aggro=True, boss=True, xp=2.0, gold=9.0,
+  specials=[big("The Vane Longsword", 0.22, 2.0, "brings the ancestral longsword of his house down on you!"),
+            dot("Rending Cut", 0.15, 0.5, 4, "bleed", "opens a long, deep wound with a drawing cut!"),
+            stun("Shield Bash", 0.12, 1, "smashes his shield into your face!"),
+            heal("Second Wind", 0.1, 0.12, "steps back, breathes, and comes on again as fresh as ever!")],
+  loot=[("vane_longsword", 0.5), ("vane_heirloom_plate", 0.5), ("vane_signet", 0.6), ("vane_silver", 1.0)])
 
 # ------------------------------------------------------------- The Planes of the Gods (51-60)
 # Tuned for reborn characters: with one life these kill you; with six they are a hard fight; Lord Trepth

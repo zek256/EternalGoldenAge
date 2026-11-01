@@ -84,6 +84,20 @@ the Heart of Flame (50, neck), **the Death Mask** (50, leather), windwalker boot
 Crown of Trepth and the Hourglass Amulet, and the mythic weapons the Fang of Pyraxis and Eternity, which
 give CHA along with everything else.
 
+From **the Carnival That Never Closes** (26-30, south of the Badlands' Howling Pit): the Ringmaster's
+scarlet coat (30, leather chest, DEX/CHA/CON) and baton (30, wand, INT/WIS/CHA), a knife-thrower's
+blade (29, dagger), a roustabout's tent mallet (28, blunt), an acrobat's grips (26) and the brass ring
+(27, ring, CHA).
+
+From **the Chancery of the Dead** (32-38, south of the Dustway's Gnoll Scrub): a notary's rod (35,
+wand, INT/WIS/CHA), the seal of office (37, ring, WIS/CHA/INT), the High Justice's chain of office (38,
+neck, CHA), a scrivener's penknife (33, dagger) and the Gavel of the High Justice (38, blunt).
+
+From **Thornwick Hall** (43-49, west of the Stag Walk): a minstrel's lute (45, off-hand, CHA/DEX) from
+the household minstrels, the first CHA-focused late item; Sir Corwin's rapier (47, sword, DEX/STR/CHA),
+Lady Seraphine's hairpin (47, dagger), the Dowager's pearls (48, neck, WIS/CHA/CON), the Vane signet
+(49, ring, CHA) and the Vane huntsman's jerkin (44) and breeches (43) (leather).
+
 ## Best races
 
 - **Human**: CHA 12 to start, plus +5% HP, mana and damage. The best all-round Bard.

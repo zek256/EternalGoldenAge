@@ -249,4 +249,167 @@ QUESTS = {
         "reward": {"xp": 150000, "gold": 5000, "items": ["supreme_healing_potion", "supreme_healing_potion",
                                                          "supreme_mana_potion"]},
     },
+
+    # ------------------------------------------------------------------ Thornwick Hall
+    "vane_hounds": {
+        "name": "The Gamekeeper's Dogs", "giver": "nell_rook", "type": "kill", "target": "vane_boarhound", "count": 6,
+        "min_level": 40, "prereq": None,
+        "offer": "'Those boarhounds of the Vanes have had three of my snares and half my left boot. They "
+                 "run the Chase, the park and the hedge maze, and old Hobb keeps a pack at his lodge. Kill "
+                 "six of them for me. I'll pay for every one, and I won't ask what you're doing out here.'",
+        "progress": "'I can still hear them baying. ({n}/{count} boarhounds slain)'",
+        "complete": "'Quiet at last. Here, you've earned these, and the coin.'",
+        "reward": {"xp": 30000, "gold": 1400, "items": ["supreme_healing_potion", "supreme_healing_potion"]},
+    },
+    "vane_ledgers": {
+        "name": "The Steward's Books", "giver": "nell_rook", "type": "collect", "target": "vane_ledger", "count": 4,
+        "min_level": 43, "prereq": None,
+        "offer": "'The steward keeps the rents of every farm in the valley in his books: who owes what, "
+                 "who's late, who's hiding a pig. There are people who would pay a great deal for those "
+                 "books, and I am one of them. He and his clerks work in a room off the minstrels' gallery. "
+                 "Bring me four ledgers.'",
+        "progress": "'Four ledgers. You have {n}.'",
+        "complete": "'Oh, these are lovely. Half the valley owes him money, and the other half owes it to "
+                    "someone worse. You never saw these.'",
+        "reward": {"xp": 40000, "gold": 1800, "items": ["supreme_mana_potion", "supreme_healing_potion"]},
+    },
+    "vane_brooches": {
+        "name": "Jewels of the Ladies", "giver": "nell_rook", "type": "collect", "target": "vane_brooch", "count": 5,
+        "min_level": 45, "prereq": None,
+        "offer": "'Every lady in that house wears a stag in emeralds, a gift from the lord, and every one "
+                 "of them is worth a farm. The ladies-in-waiting sit upstairs in the solar; the Dowager's "
+                 "women and the old aunt have them too. Bring me five, and I'll give you something better "
+                 "than gold.'",
+        "progress": "'Five brooches. You have {n}.'",
+        "complete": "'Look at the fire in those stones. Here, take this ring. It came out of a dragon's "
+                    "hoard, they say, and I never had the hands for it.'",
+        "reward": {"xp": 45000, "gold": 2000, "items": ["ember_ring", "supreme_healing_potion"]},
+    },
+    "vane_lord": {
+        "name": "The Lord of Thornwick", "giver": "nell_rook", "type": "kill", "target": "lord_aldric_vane", "count": 1,
+        "min_level": 47, "prereq": None,
+        "offer": "'Lord Aldric. He keeps to his chambers at the top of the house, past his sworn swords, "
+                 "and he is the finest blade in the valley, whatever his cousin says. I won't tell you "
+                 "why I want him dead, and you won't tell me why you'll do it. Up the grand staircase, "
+                 "north along the long gallery, and through the doors with the stag on them.'",
+        "progress": "'He's still up there. I can see the lamp in his window from here.'",
+        "complete": "'So. The lamp's out. I never thought I'd see it.' She is quiet for a long while. "
+                    "'Take this, all of it. And go, before the valley wakes up and wonders what comes next.'",
+        "reward": {"xp": 150000, "gold": 6000, "items": ["supreme_healing_potion", "supreme_healing_potion",
+                                                         "supreme_mana_potion"]},
+    },
+
+    # ------------------------------------------------------------------ The Chancery of the Dead
+    "chancery_writ": {
+        "name": "The Proper Forms", "giver": "clerk_quillon", "type": "collect", "target": "stamped_form", "count": 3,
+        "min_level": 30, "prereq": None,
+        "offer": "'A writ of audience requires form one-seventeen, in triplicate, stamped by the Registry of "
+                 "Deaths. The registry is west of the Hall of Waiting. The clerks there will not stamp anything "
+                 "for the living, of course, so you will have to take the forms from them. Bring me three.'",
+        "progress": "'Three stamped forms, if you please. You have {n}.'",
+        "complete": "'One, two, three, all in order, all stamped. Most irregular, and entirely correct.' He "
+                    "seals a writ with a thump. 'Your writ of audience. Keep it on your person. The doors of "
+                    "the high court lie north of the Court of Appeals.'",
+        "reward": {"xp": 18000, "gold": 600, "items": ["writ_of_audience", "greater_healing_potion"]},
+    },
+    "restless_will": {
+        "name": "The Restless Will", "giver": "clerk_quillon", "type": "collect", "target": "will_page", "count": 5,
+        "min_level": 33, "prereq": None,
+        "offer": "'The will of Old Brannoch Hale has been before the Court of Probate for ninety years, and it "
+                 "will not stop rewriting itself. Its pages have scattered: the scriveners have some, the heirs "
+                 "have some, and some have got loose in the archive below the court. Bring me five pages and I "
+                 "shall have it bound and settled at last.'",
+        "progress": "'Five pages of the Hale will. You have {n}.'",
+        "complete": "'There. Bound, sealed, and it has stopped wriggling. The heirs will be furious. They "
+                    "always are. Your fee.'",
+        "reward": {"xp": 25000, "gold": 900, "items": ["greater_healing_potion", "greater_mana_potion"]},
+    },
+    "matter_of_property": {
+        "name": "A Matter of Property", "giver": "clerk_quillon", "type": "kill", "target": "ghostly_squatter", "count": 6,
+        "min_level": 34, "prereq": None,
+        "offer": "'The Court of Property has ruled, after sixty years, that the Marrow farm belongs to its "
+                 "buyer, and the dead family who still lives in it must go. They have declined. The court "
+                 "has no one to enforce its judgements but the living, and you are, regrettably, living. Six "
+                 "of them, please. You will find them in the Court of Property, still arguing.'",
+        "progress": "'The squatters are still squatting. ({n}/{count} ghostly squatters removed)'",
+        "complete": "'Judgement enforced. The file is closed. I do so enjoy closing a file.'",
+        "reward": {"xp": 28000, "gold": 1000, "items": ["greater_healing_potion", "greater_healing_potion"]},
+    },
+    "appeal_evidence": {
+        "name": "Evidence for the Appeal", "giver": "clerk_quillon", "type": "collect", "target": "sealed_record", "count": 4,
+        "min_level": 35, "prereq": None,
+        "offer": "'A woman was hanged on Gallows Hill two hundred years ago for a theft she did not commit, "
+                 "and she has been appealing ever since. The proof is in the sealed archive, but the keepers "
+                 "of the archive do not release sealed records, and the dead advocates hoard them. Bring me "
+                 "four sealed records and her appeal may finally be heard.'",
+        "progress": "'Four sealed records. You have {n}.'",
+        "complete": "'Innocent. Two hundred years late, but innocent. She can stop waiting now.' He is quiet "
+                    "for a moment, then straightens his cuffs. 'Take this seal. You have earned the right to "
+                    "close a case.'",
+        "reward": {"xp": 30000, "gold": 1200, "items": ["seal_of_office", "greater_mana_potion"]},
+    },
+    "last_judgement": {
+        "name": "The Last Judgement", "giver": "clerk_quillon", "type": "kill", "target": "high_justice", "count": 1,
+        "min_level": 36, "prereq": "chancery_writ",
+        "offer": "'The High Justice has sat on the High Bench for six hundred years. He no longer hears cases. "
+                 "He only sentences. Everyone who reaches him is guilty, of what he cannot say. The court "
+                 "cannot remove him; only the living can do that. Take your writ, go through the doors north "
+                 "of the Court of Appeals, and bring this court to order.'",
+        "progress": "'The gavel is still falling. I can hear it from here.'",
+        "complete": "'The gavel has stopped.' He takes off his spectacles and polishes them. 'Six hundred years. "
+                    "Perhaps now we can begin to hear the cases. Thank you. It is not a thing I say often, and "
+                    "there is no form for it.'",
+        "reward": {"xp": 70000, "gold": 2500, "items": ["greater_healing_potion", "greater_healing_potion",
+                                                        "greater_mana_potion"]},
+    },
+
+    # ------------------------------------------------------------------ The Carnival That Never Closes
+    "lost_and_found": {
+        "name": "Lost and Found", "giver": "pip", "type": "collect", "target": "lost_trinket", "count": 6,
+        "min_level": 24, "prereq": None,
+        "offer": "'Everybody who comes here loses something, and some of it never reaches my booth. The "
+                 "barkers keep it, and the cutpurses, and the waxworks, and the things behind the tents. "
+                 "Bring me six lost trinkets? I like to keep them all together, with their tags. Somebody "
+                 "might come back for them one day.'",
+        "progress": "'Six trinkets, dear. You've found {n}.'",
+        "complete": "'Oh, look at them. A locket, a pipe, a little tin soldier. All of them somebody's. "
+                    "Thank you, truly. Here, take something from under the counter.'",
+        "reward": {"xp": 15000, "gold": 500, "items": ["greater_healing_potion", "greater_healing_potion"]},
+    },
+    "free_riders": {
+        "name": "Free Riders", "giver": "pip", "type": "kill", "target": "carousel_spirit", "count": 6,
+        "min_level": 26, "prereq": None,
+        "offer": "'The riders on the carousel have been going round for three hundred years. They're happy, "
+                 "mind you, we're all happy here, we're made to be. But a body ought to be able to get off. "
+                 "Knock six of them off their horses, would you? I'm told it doesn't hurt. I'm told a lot of "
+                 "things.'",
+        "progress": "'The carousel's still turning. ({n}/{count} riders set free)'",
+        "complete": "'I watched them go. They waved.' Pip's smile flickers, just for a moment, and comes back. "
+                    "'Well! Here's your prize.'",
+        "reward": {"xp": 18000, "gold": 600, "items": ["greater_mana_potion", "greater_healing_potion"]},
+    },
+    "last_fortune": {
+        "name": "The Last Fortune", "giver": "pip", "type": "kill", "target": "madame_vesna", "count": 1,
+        "min_level": 27, "prereq": None,
+        "offer": "'Madame Vesna tells everyone the same fortune: nobody ever leaves. And then nobody does. "
+                 "I think she makes it true by saying it. Her tent's north of the great wheel. Go and get "
+                 "your fortune told, and give her one back.'",
+        "progress": "'Vesna's still telling fortunes. I can see her lamp.'",
+        "complete": "'So her ball didn't see you coming. Good. Perhaps somebody will leave after all.'",
+        "reward": {"xp": 20000, "gold": 700, "items": ["greater_mana_potion", "greater_mana_potion"]},
+    },
+    "show_never_ends": {
+        "name": "The Show That Never Ends", "giver": "pip", "type": "kill", "target": "the_ringmaster", "count": 1,
+        "min_level": 28, "prereq": None,
+        "offer": "'The Ringmaster was the first of us. He came with the first carnival, before it was alive, "
+                 "and it took him first and most. He's all strings now. Behind the tents, through the back "
+                 "lot, into the big top. Cut his strings. I don't know what happens to the rest of us when "
+                 "you do, and I find I don't much mind.'",
+        "progress": "'The applause hasn't stopped. He's still in the ring.'",
+        "complete": "'The applause has stopped.' Pip listens to the quiet for a long moment. 'Do you know, "
+                    "I don't think I've ever heard it stop. Thank you. Take whatever you like. I think I might "
+                    "go for a walk.'",
+        "reward": {"xp": 45000, "gold": 1500, "items": ["greater_healing_potion", "greater_healing_potion",
+                                                        "greater_mana_potion"]},
+    },
 }

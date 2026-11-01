@@ -44,6 +44,8 @@ def main():
         for mid in gate.get("kills", []):
             if not MONSTERS.get(mid, {}).get("boss"):
                 errs.append(f"room {rid}: gate needs '{mid}', which is not a boss (only bosses are recorded)")
+        if "item" in gate and gate["item"] not in ITEMS:
+            errs.append(f"room {rid}: gate needs item '{gate['item']}', which does not exist")
         if gate and "msg" not in gate:
             errs.append(f"room {rid}: gate has no refusal message")
         if r["safe"] and any(MONSTERS.get(mid, {}).get("aggro") for mid, _ in r["spawns"]):

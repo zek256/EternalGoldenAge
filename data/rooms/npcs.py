@@ -210,4 +210,37 @@ NPCS = {
                     "only one who has walked every path to its end. Go carefully. These realms were "
                     "not made for those who have lived only once.'",
     },
+    "nell_rook": {
+        "name": "Nell Rook", "keywords": ["nell", "rook", "poacher", "fence"],
+        "desc": "A small, weathered woman in a patched green cloak, with a crossbow across her knees, "
+                "a brace of the Vanes' pheasants at her feet and a great many rings on her fingers.",
+        "greeting": "'Sit, if you like. Don't tell me why you're here, and I won't tell you why I am. "
+                    "I buy what comes out of that house, I sell what keeps people alive in it, and "
+                    "I pay for certain things, no questions asked. Type LIST to see what I have.'",
+        "shop": ["supreme_healing_potion", "supreme_mana_potion", "greater_healing_potion",
+                 "greater_mana_potion"],
+        "quests": ["vane_hounds", "vane_ledgers", "vane_brooches", "vane_lord"],
+    },
+    "clerk_quillon": {
+        "name": "Clerk Quillon", "keywords": ["quillon", "clerk", "ghost"],
+        "desc": "A small, precise ghost in spectacles and ink-stained cuffs, who has been the clerk of the "
+                "Office of Forms and Writs for four hundred years and has never once lost a form.",
+        "greeting": "'Name? Date of death? Ah. Not dead. How irregular. The living may be heard by the high "
+                    "court only with a writ of audience, and writs are issued only on completion of the "
+                    "proper forms. I also have cases that want doing, if you have the time; I am told the "
+                    "living have very little. A duplicate writ costs the usual fee. Type LIST.'",
+        "shop": ["writ_of_audience"],
+        "quests": ["chancery_writ", "restless_will", "matter_of_property", "appeal_evidence", "last_judgement"],
+    },
+    "pip": {
+        "name": "Pip the prize-keeper", "keywords": ["pip", "prize", "keeper", "ghost"],
+        "desc": "A cheerful little ghost in a striped waistcoat and a paper hat, who has minded the prize "
+                "booth for three hundred years and has never once stopped smiling.",
+        "greeting": "'Step right up! Everything here was lost by somebody, and everything's for sale. Don't "
+                    "look at the tags too closely, there's a dear. Type LIST. And if you've a moment, I've a "
+                    "favour or two to ask. Nobody's asked me anything in ever so long.'",
+        "shop": ["greater_healing_potion", "greater_mana_potion", "hunters_recurve", "mithril_hauberk",
+                 "elven_saber", "tome_of_warding", "moonweave_robe", "runeforged_sabatons"],
+        "quests": ["lost_and_found", "free_riders", "last_fortune", "show_never_ends"],
+    },
 }

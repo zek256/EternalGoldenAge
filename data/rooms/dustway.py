@@ -32,8 +32,9 @@ ROOMS = {
     "gnoll_scrub": R(
         "The Gnoll Scrub", "Dustway",
         "Thorny scrub covers the land south of the road, riddled with the dens of gnoll scavengers. "
-        "Picked bones lie in the dust, and the air is thick with flies and the yammering of the pack.",
-        {"w": "dustway_waystation", "n": "gallows_hill"},
+        "Picked bones lie in the dust, and the air is thick with flies and the yammering of the pack. "
+        "To the south, a road of grey dust leads down into a valley where the colour seems to fade.",
+        {"w": "dustway_waystation", "n": "gallows_hill", "s": "gallows_road"},
         spawns=[("gnoll_scavenger", 3)], level=(11, 12)),
     "dustway_toll": R(
         "The Broken Tollhouse", "Dustway",

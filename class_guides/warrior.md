@@ -82,6 +82,20 @@ Notable late gear a Warrior can use: the obsidian greatblade (45, two-handed), t
 plate), dreamsilver greaves (50, plate), stonestride boots (50, plate), and the mythic weapons that
 anyone may wield: the Fang of Pyraxis and Eternity.
 
+From **the Carnival That Never Closes** (26-30, south of the Badlands' Howling Pit): the Strongman's
+breastplate (27, plate chest), a roustabout's tent mallet (28, blunt), a knife-thrower's blade (29,
+dagger), a roustabout's chain chausses (27, mail legs) and the brass ring (27, ring).
+
+From **the Chancery of the Dead** (32-38, south of the Dustway's Gnoll Scrub): the Gavel of the High
+Justice (38, blunt), the Headsman's axe (32), a bailiff's halberd (36, two-handed), a warden's
+greathelm (35) and sabatons (34) (plate), the shield of the scales (35) and the High Justice's chain of
+office (38, neck).
+
+From **Thornwick Hall** (43-49, west of the Stag Walk): the Vane longsword (49, sword) and the Vane
+heirloom plate (49, plate chest) from Lord Aldric Vane, the Vane warhelm (46) and gauntlets (45) from
+his knights and sworn swords, Mistress Hollin's cleaver (45, axe), Mr. Graves's silver salver (45,
+shield), the Vane signet (49, ring) and Great-aunt Mathilde's cameo (46, neck).
+
 ## Best races
 
 - **Ogre**: the highest STR and CON, plus +12% HP. The classic choice.

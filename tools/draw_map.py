@@ -30,6 +30,8 @@ COLORS = {  # area: (fill, border)
     "Dustway": ("#3f3a33", "#c8b89a"), "Redrock Badlands": ("#4a2a22", "#e07a5a"),
     "Scorchsands": ("#463c22", "#f2c45a"), "Sunspire": ("#40372a", "#ffe08a"),
     "Tomb of the Sand Kings": ("#2a2630", "#c9a0e0"),
+    "The Chancery of the Dead": ("#2b2d3f", "#b9bdf2"), "The Carnival That Never Closes": ("#3a1f3a", "#ff8ad8"),
+    "Thornwick Hall": ("#42262e", "#e4a0b4"), "Thornwick Hall, Upper Floor": ("#58343f", "#f6cad6"),
     "Threshold of the Gods": ("#3a3a40", "#fff4c8"), "Plane of Stars": ("#22284a", "#b8c8ff"),
     "Plane of Dreams": ("#2e2a44", "#d8c0ff"), "Plane of Death": ("#2a2a2a", "#b0c0c8"),
     "Plane of Fire": ("#4a1e14", "#ff8050"), "Plane of Water": ("#14304a", "#60b0ff"),
@@ -80,7 +82,15 @@ def draw(pos, insets):
                 if d in "ud":
                     out.append('<text x="{}" y="{}" fill="#b8b3a6" font-size="11" text-anchor="middle">stairs</text>'
                                .format((x1 + x2) / 2 + 22, (y1 + y2) / 2 - 4))
-            # the way into an inset is not drawn as a line; the surface room gets a note instead
+            # the way into an inset is drawn below as a faint leader line, and the surface room gets a note
+    for label, rooms, entry, outside in insets:
+        # down into the gap under the row, across, and up into the entry, so it never looks like an exit
+        (x1, y1), (x2, y2) = ctr(outside), ctr(entry)
+        x1, x2, gap = x1 + BW / 4, x2 - BW / 4, max(y1, y2) + CH / 2
+        color = COLORS.get(ROOMS[entry]["area"], ("", "#999999"))[1]
+        out.append('<polyline points="{},{} {},{} {},{} {},{}" fill="none" stroke="{}" stroke-width="2" '
+                   'stroke-opacity="0.7" stroke-dasharray="2 7" stroke-linecap="round"/>'
+                   .format(x1, y1 + BH / 2, x1, gap, x2, gap, x2, y2 + BH / 2, color))
     portal = {}  # surface room -> (text, colour) naming the inset below or above it
     for label, rooms, entry, outside in insets:
         way = next(d for d, t in ROOMS[outside]["exits"].items() if t == entry)
@@ -144,6 +154,10 @@ def draw(pos, insets):
     out.append('<line x1="{}" y1="{}" x2="{}" y2="{}" stroke="#77736a" stroke-width="2" stroke-dasharray="6 5"/>'
                .format(lx, y + 8, lx + 22, y + 8))
     out.append('<text x="{}" y="{}" fill="#ddd6c4" font-size="12">Up / down</text>'.format(lx + 30, y + 12))
+    y += 24
+    out.append('<line x1="{}" y1="{}" x2="{}" y2="{}" stroke="#c9b67a" stroke-width="2" stroke-opacity="0.6" '
+               'stroke-dasharray="2 7" stroke-linecap="round"/>'.format(lx, y + 8, lx + 22, y + 8))
+    out.append('<text x="{}" y="{}" fill="#ddd6c4" font-size="12">Way to a boxed area</text>'.format(lx + 30, y + 12))
     out.append('<text x="{}" y="{}" fill="#9a958a" font-size="11">North is up. Lv = monster levels.</text>'
                .format(lx, y + 36))
     out.append("</svg>")

@@ -82,6 +82,18 @@ Notable late gear: the Khopesh of Ussreth (48, sword), **Gravesong** (50, sword)
 windwalker boots (50) in leather, the sandrunner's jerkin and gloves (40), the Band of the Four Winds
 (50, ring), Stormcaller (50, bow), and the mythic Fang of Pyraxis and Eternity.
 
+From **the Carnival That Never Closes** (26-30, south of the Badlands' Howling Pit): a knife-thrower's
+blade (29, dagger, DEX) from Mirela, the Ringmaster's scarlet coat (30, leather chest, DEX/CHA), an
+acrobat's grips (26, leather) and the brass ring (27, ring).
+
+From **the Chancery of the Dead** (32-38, south of the Dustway's Gnoll Scrub): a scrivener's penknife
+(33, dagger, DEX/INT), the only dagger between Serpentfang at 15 and the Thornwick hairpin at 47.
+
+From **Thornwick Hall** (43-49, west of the Stag Walk): Lady Seraphine's hairpin (47, dagger, DEX), the
+first new dagger since Serpentfang at 15, Sir Corwin's rapier (47, sword, DEX), the Vane hunting bow
+(45), the Vane huntsman's jerkin (44) and breeches (43) (leather) and Great-aunt Mathilde's cameo (46,
+neck).
+
 ## Best races
 
 - **Dark elf**: +5% crit, which with your DEX pushes you toward the 35% cap.

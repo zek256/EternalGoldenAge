@@ -296,9 +296,8 @@ class Game:
         ui.say(r.desc)
         if p.automap if automap is None else automap:
             self.show_mini_map()
-        ui.out(ui.c("Exits:", "bcyan"))
-        for d, rid in r.exits.items():
-            ui.out(ui.c("{} - {}".format(DIRECTIONS[d], self.world.room(rid).name), "bcyan"))
+        ways = [DIRECTIONS[d] for d in DIRECTIONS if d in r.exits]  # always n, s, e, w, u, d order
+        ui.out(ui.c("Exits: " + (", ".join(ways) if ways else "none"), "bcyan"))
         for npc in r.npc_list():
             marker = ""
             for qid in npc.get("quests", []):
@@ -445,6 +444,8 @@ class Game:
             missing = [MONSTERS[m]["name"] for m in gate["kills"] if m not in p.boss_kills]
             if missing:
                 return "{} (Still undefeated: {}.)".format(gate["msg"], ", ".join(missing))
+        if "item" in gate and gate["item"] not in p.inventory:
+            return "{} (You need {}.)".format(gate["msg"], ITEMS[gate["item"]]["name"])
         if gate.get("all_classes"):
             missing = [CLASSES[c]["name"] for c in CLASS_ORDER if c not in p.mastered_classes()]
             if missing:
@@ -1126,10 +1127,14 @@ class Game:
             return
         p = self.player
         ui.out(ui.c(cap(npc["name"]), "bgreen") + " says:")
+        # every finished quest is turned in and every available one offered in one conversation;
+        # progress on unfinished quests is only reported when there was nothing else to say
+        said, active = False, []
         for qid in npc.get("quests", []):
             q = QUESTS[qid]
             st = self.quest_state(qid)
             if st == "ready":
+                said = True
                 ui.say(q["complete"], "white")
                 if q["type"] == "collect":
                     for _ in range(q["count"]):
@@ -1144,16 +1149,21 @@ class Game:
                     ui.say("You receive {}.".format(ITEMS[iid]["name"]), "bwhite")
                 for line, color in p.gain_xp(rw.get("xp", 0)):
                     ui.say(line, color) if color else ui.out(line)
-                return
+                st = self.quest_state(qid)  # a quest finished just now may unlock the next one below
             if st == "active":
-                ui.say(q["progress"].format(n=self.quest_progress(qid), count=q["count"]), "white")
-                return
-            if st == "available":
+                active.append(qid)
+            elif st == "available":
+                said = True
                 ui.say(q["offer"], "white")
                 p.quests[qid] = {"status": "active", "count": 0}
                 ui.say("New quest accepted: {}".format(q["name"]), "byellow")
-                return
-        ui.say(npc["greeting"], "white")
+        if said:
+            return
+        for qid in active:
+            q = QUESTS[qid]
+            ui.say(q["progress"].format(n=self.quest_progress(qid), count=q["count"]), "white")
+        if not active:
+            ui.say(npc["greeting"], "white")
 
     def cmd_quests(self, args):
         p = self.player

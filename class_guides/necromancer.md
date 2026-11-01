@@ -79,6 +79,17 @@ Scepter of the Sand Kings, Seluvar's Hollow Wand, **starweave robes**, the silkw
 Ring of the Archmage, the Pearl of the Deep, the sunlit codex, and the mythic Fang of Pyraxis and
 Eternity.
 
+From **the Carnival That Never Closes** (26-30, south of the Badlands' Howling Pit): the Ringmaster's
+baton (30, wand, INT/WIS/CHA), a fortune teller's crystal ball (28, off-hand, INT/WIS), a pair of
+dancing slippers (27, cloth, INT/WIS) and a knife-thrower's blade (29, dagger).
+
+From **the Chancery of the Dead** (32-38, south of the Dustway's Gnoll Scrub): a notary's rod (35,
+wand, INT/WIS/CHA) from the magistrates and advocates, and the seal of office (37, ring, WIS/CHA/INT).
+
+From **Thornwick Hall** (43-49, west of the Stag Walk): a gown of green brocade (47, cloth chest,
+INT/WIS/CHA) from Lady Seraphine, silk evening gloves (46, cloth, INT/WIS) from the ladies and guests,
+and Tobias's black grimoire (47, off-hand, INT/WIS/CON) from Master Tobias.
+
 ## Best races
 
 - **Undead**: immune to poison and disease damage over time, and the obvious fit.

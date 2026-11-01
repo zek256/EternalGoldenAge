@@ -52,7 +52,7 @@ Saves are written as JSON to `saves/<name>.json`.
 | `use` / `drink` <potion> | drink a potion (in a fight it replaces your next round's attack) |
 | `examine` / `x` <item> | item details, compared with what you have equipped |
 | `get` <item> / `get all` / `drop` <item> | pick up / drop |
-| `talk` <person> | talk to NPCs; this offers and turns in quests |
+| `talk` <person> | talk to NPCs; this turns in every finished quest and offers every quest you qualify for |
 | `quests` / `journal` | quest log |
 | `find` <quest name, number, or monster> | shortest route to your quest target (or the quest giver once it's done), e.g. `find vermin` prints `wd`. With one active quest, plain `find` works. Also `track` / `where` |
 | `list`, `buy [qty] <item>`, `sell [qty or all] <item>`, `sell junk` | trade with merchants: Durgan Ironhand (weapons and armor, smithy), Elowen Silverthread (cloth, wands, orbs and rings for casters, west off the South Road), Mirela (potions) |
@@ -187,10 +187,14 @@ the Westmarch farms and goblin quarry (3-10), Barrowfield and the Crypt of Varno
 the snowy Rimefells (10-20) around the dwarven city of **Hearthdeep** (smith, rune-carver, alehouse
 with potions) and the Deepdelve Mine below it (18-21), the Mirefen (15-22), the ancient Eldergrove
 (20-34) around the elven city of **Silverbough** (bladesmith, moonweaver, inn with potions), reached
-south through the Whispering Woods or from the Westmarch quarry, the Ironspine Mountains with the
+south through the Whispering Woods or from the Westmarch quarry, **Thornwick Hall** (40-50) west of
+the Eldergrove's Stag Walk, the great house of the Vanes, where every huntsman, servant, guest and
+kinsman can be fought on the way up to Lord Aldric Vane (a poacher in the deer park buys what comes
+out of the house and sells potions; the area has no gate, so the gate wardens are a hard lesson at
+25), the Ironspine Mountains with the
 orc warcamp, the giants and the frost caverns (20-34), the Ruins of Elandor (32-41), the Ashen
-Peaks up to the dragon's lair (37-52), and to the east the Dustway caravan road (8-15), the gnoll
-canyons of the Redrock Badlands (18-27), and the Scorchsands desert (35-49) around the golden city
+Peaks up to the dragon's lair (37-52), and to the east the Dustway caravan road (8-15), with **the Chancery of the Dead** (30-38) south of its Gnoll Scrub, a court where the dead bring their unfinished business (most of its ghosts are too busy with their cases to attack; the bailiffs and wardens are not, and the inner chambers open only to someone carrying a writ of audience from Clerk Quillon in the Office of Forms and Writs), the gnoll
+canyons of the Redrock Badlands (18-27) with **the Carnival That Never Closes** (24-30) south of its Howling Pit, a centuries-old fairground that grows stranger the further in you go, from a cheerful midway to the always-midnight lots behind the tents and the Ringmaster in the big top (Pip at the prize booth sells gear lost by other adventurers), and the Scorchsands desert (35-49) around the golden city
 of **Sunspire** (bladewright, silk bazaar, caravanserai with potions), with the Tomb of the Sand
 Kings beneath a sunken pyramid (45-48). Brightwater's shops sell gear up to level 20; Hearthdeep
 sells dwarven gear for levels 12-24, Silverbough elven gear for levels 24-34, and Sunspire desert

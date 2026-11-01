@@ -56,8 +56,9 @@ ROOMS = {
         "The Stag Walk", "Eldergrove",
         "Huge white stags move in silence between pillars of silver-barked trees, browsing on the "
         "high branches. The elves say they are sacred, and woe to the hunter who takes one without "
-        "leave. To the south, the green begins to turn grey.",
-        {"n": "briar_maze", "s": "weeping_pines"},
+        "leave. To the south, the green begins to turn grey, and to the west, a fence of sharpened oak "
+        "marks the edge of someone's hunting chase.",
+        {"n": "briar_maze", "s": "weeping_pines", "w": "vane_chase"},
         spawns=[("greatstag", 2), ("thorn_sprite", 1)], level=(25, 26)),
     # ------------------------------------------------- the western blight (26-30)
     "weeping_pines": R(
