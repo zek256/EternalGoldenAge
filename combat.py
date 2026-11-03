@@ -1,4 +1,5 @@
 """Turn-based combat: player actions, ability resolution, monster AI, rewards."""
+import math
 import random
 
 import ui
@@ -20,17 +21,17 @@ def level_gap_mult(attacker_level, defender_level):
     return max(0.4, 1 + 0.06 * diff)
 
 
+XP_FALLOFF = 0.032  # below-level kills keep exp(-XP_FALLOFF * gap^2) of their XP
+
+
 def monster_xp(mon, player_level):
-    d = MONSTERS[mon.id]
-    base = (15 + 14.5 * mon.level ** 1.5) * d["xp"]
-    diff = mon.level - player_level
-    if diff > 0:
-        mult = min(1.5, 1 + 0.1 * diff)
-    elif diff < -3:
-        mult = max(0.05, 1 - 0.12 * (-diff - 3))
-    else:
-        mult = 1.0
-    return int(base * mult)
+    """A flat value per monster level (no bonus for fighting up). Monsters below the player
+    fall off steeply: -2 keeps 88%, -5 45%, -10 4% (about 4% and 0.3% of a level at 30+)."""
+    base = (15 + 14.5 * mon.level ** 1.5) * MONSTERS[mon.id]["xp"]
+    gap = player_level - mon.level
+    if gap > 0:
+        base *= math.exp(-XP_FALLOFF * gap * gap)
+    return int(base)
 
 
 def con_color(mon_level, player_level):

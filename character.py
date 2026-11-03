@@ -272,7 +272,7 @@ class Character:
         return [a for a in self.known_abilities() if a["level"] == level]
 
     def mana_cost(self, ab):
-        return int(round(ab["cost"] * (1 + 0.1 * (self.level - 1))))
+        return int(round(ab["cost"] * (1 + ab.get("growth", 0.1) * (self.level - 1))))
 
     # ------------------------------------------------------------------ effects
     def add_effect(self, eff):

@@ -131,7 +131,8 @@ higher of the two. Each class's spells and abilities:
 Each class has a full guide in [`class_guides/`](class_guides/README.md): stats by level, every spell
 and ability with its numbers, gear, races, how to play it and what it leaves behind on rebirth. At level 50, [Gearing Up at Level 50](class_guides/level_50_gear.md) shows what to buy, farm and chase next for each class.
 
-Spells cost mana, and the cost scales with level. Abilities are free. Both are learned automatically
+Spells cost mana, and the cost scales with level (the wizard's attack spells scale three times
+as fast, so a fight costs a wizard a real share of its mana). Abilities are free. Both are learned automatically
 on level up, and neither has a cooldown.
 
 **Passives** are always on once learned, and like abilities they are kept through rebirth:
@@ -189,8 +190,10 @@ a warrior may fight in plate with an axe.
 - **XP to next level** = 65 x level^1.7, the same in every life no matter how many rebirths.
   A monster of your level is worth 15 + 14.5 x level^1.5, so a level takes about 6 such kills
   early on and about 10 near level 50.
-- Monsters far below your level give little XP and hit you less. Fighting above your level gives
-  bonus XP and is dangerous.
+- A monster is worth the same XP whatever your level; there is no bonus for fighting above
+  yourself (higher monsters are worth more only because their level is higher). Monsters below
+  you fall off fast: 2 levels below gives 88% of its value, 5 below 45% (about 4% of a level),
+  10 below 4% (well under 1% of a level). They also hit you less.
 
 ## Rebirth
 

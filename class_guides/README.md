@@ -84,7 +84,8 @@ Bard) split their growth between the two, so their damage and healing pull on di
 - Each class's attacks form a **ladder**: every new attack is 12% stronger than the one before it at
   the same level and costs the same, so the newest is always the one to use.
 - Mana cost grows with your level: **cost x (1 + 0.1 x (level - 1))**, so a spell costs 5.9x its
-  base cost at level 50.
+  base cost at level 50. The wizard's attack spells grow faster, **x 0.3** a level (15.7x at 50),
+  because the wizard's large mana pool and short fights otherwise left it barely spending mana.
 - Spell power = **base + per-level x level + scale x stat**. The guides give the formula and
   example values.
 - Damage buffs (+% damage) raise weapon hits, spell damage, drains and damage over time, but not

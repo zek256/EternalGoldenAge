@@ -7,7 +7,9 @@ current level reaches the level at which they were first learned.
 There are no cooldowns, stuns or area attacks (the user's design). Mana is the only limit.
 
 kind     - "spell" (costs mana, scales with level) or "ability" (free)
-cost     - base mana cost; actual cost = cost * (1 + 0.1 * (level - 1))
+cost     - base mana cost; actual cost = cost * (1 + growth * (level - 1))
+growth   - optional cost growth per level (default COST_GROWTH, 0.1). The wizard's attack spells use
+           WIZARD_GROWTH (0.3): its large mana pool and short fights left it spending ~5% a fight at 25
 target   - "enemy" or "self"
 
 Each class's attacks form a ladder: every new one is STEP (12%) stronger than the one before it at
@@ -20,6 +22,8 @@ INT scales damage, damage over time and drains; WIS scales heals, heals over tim
 Summons scale with "INT/WIS", the higher of the two, and can't be called in combat.
 """
 
+COST_GROWTH = 0.1    # default spell cost growth per level
+WIZARD_GROWTH = 0.3  # the wizard's attack ladder (the user's choice, 2026-11-03)
 STEP = 1.12  # each rung of a class's attack ladder is this much stronger than the last
 
 
@@ -82,9 +86,9 @@ def SUMMON(name, hp_base, hp_lvl, dmg_base, dmg_lvl, scale_stat, desc):
 ABILITIES = {}
 
 
-def _add(aid, name, cls, level, kind, effects, cost=0, target="enemy", desc="", msg=""):
+def _add(aid, name, cls, level, kind, effects, cost=0, target="enemy", desc="", msg="", growth=COST_GROWTH):
     ABILITIES[aid] = {
-        "id": aid, "name": name, "cls": cls, "level": level, "kind": kind, "cost": cost,
+        "id": aid, "name": name, "cls": cls, "level": level, "kind": kind, "cost": cost, "growth": growth,
         "target": target, "effects": effects, "desc": desc, "msg": msg,
     }
 
@@ -120,19 +124,19 @@ spell("sunburst", "Sunburst", "cleric", 45, 6, [DMG(*rung(2, *HOLY), "INT", "hol
 # ---------------------------------------------------------------- Wizard
 ARCANE = (6, 2.0, 0.6)  # Magic Missile, the first rung
 spell("magic_missile", "Magic Missile", "wizard", 1, 5, [DMG(*rung(0, *ARCANE), "INT", "arcane")],
-      desc="Darts of pure force that never miss.", msg="Three darts of violet force streak toward {t}!")
+      growth=WIZARD_GROWTH, desc="Darts of pure force that never miss.", msg="Three darts of violet force streak toward {t}!")
 spell("frost_bolt", "Frost Bolt", "wizard", 5, 5, [DMG(*rung(1, *ARCANE), "INT", "frost")],
-      desc="A shard of ice hurled at a foe.", msg="A jagged shard of ice hurtles at {t}!")
+      growth=WIZARD_GROWTH, desc="A shard of ice hurled at a foe.", msg="A jagged shard of ice hurtles at {t}!")
 spell("fireball", "Fireball", "wizard", 16, 5, [DMG(*rung(2, *ARCANE), "INT", "fire")],
-      desc="A roaring ball of fire hurled at a foe.", msg="A roaring ball of fire bursts against {t}!")
+      growth=WIZARD_GROWTH, desc="A roaring ball of fire hurled at a foe.", msg="A roaring ball of fire bursts against {t}!")
 spell("invisibility", "Invisibility", "wizard", 20, 20, [INVISIBLE(75)], target="self",
       desc="Vanish from sight for 5 minutes: aggressive monsters ignore you (bosses see through it). "
            "Casting any spell or starting a fight ends it.",
       msg="You trace a sigil in the air and fade from sight.")
 spell("lightning_lance", "Lightning Lance", "wizard", 26, 5, [DMG(*rung(3, *ARCANE), "INT", "lightning")],
-      desc="A crackling spear of lightning.", msg="Thunder booms as a lance of lightning impales {t}!")
+      growth=WIZARD_GROWTH, desc="A crackling spear of lightning.", msg="Thunder booms as a lance of lightning impales {t}!")
 spell("meteor", "Meteor", "wizard", 40, 5, [DMG(*rung(4, *ARCANE), "INT", "fire")],
-      desc="Call a blazing star down from the heavens upon a foe.", msg="The heavens burn as a meteor crashes down upon {t}!")
+      growth=WIZARD_GROWTH, desc="Call a blazing star down from the heavens upon a foe.", msg="The heavens burn as a meteor crashes down upon {t}!")
 
 # ---------------------------------------------------------------- Necromancer
 SHADOW = (6, 1.86, 0.53)  # Lifetap, the first rung
