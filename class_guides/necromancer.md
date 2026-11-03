@@ -95,6 +95,17 @@ dancing slippers (27, cloth, INT/WIS) and a knife-thrower's blade (29, dagger).
 From **the Chancery of the Dead** (32-38, south of the Dustway's Gnoll Scrub): a notary's rod (35,
 wand, INT/WIS/CHA) from the magistrates and advocates, and the seal of office (37, ring, WIS/CHA/INT).
 
+From **the Painted Gallery** (37-42, behind Elandor's Hall of the Moon Court; each painting is entered
+with `enter`): Ithilmir's brush (42, wand, INT/WIS/CHA), Ithilmir's maulstick (42, staff, INT/WIS/CHA),
+a smock of living paint (42, cloth chest, INT/WIS/CHA), painted silk slippers (38, cloth feet, INT/WIS)
+and a candle of still flame (38, off-hand, INT/WIS/CON). Ithilmir drops his brush, his maulstick and the
+smock of living paint; the Memento Skull drops the candle of still flame.
+
+From **the Clockwork Orchard** (41-44, south of the Chancery's Archive of Wills): the pendulum staff
+(44, staff, INT/WIS/CHA), a jeweller's circlet (42, cloth head, INT/WIS) and the orrery amulet (44,
+neck, INT/WIS/STR). Orrin Gearwhistle drops the pendulum staff and the orrery amulet; the Great Cuckoo
+drops the jeweller's circlet.
+
 From **Thornwick Hall** (43-49, west of the Stag Walk): a gown of green brocade (47, cloth chest,
 INT/WIS/CHA) from Lady Seraphine, silk evening gloves (46, cloth, INT/WIS) from the ladies and guests,
 and Tobias's black grimoire (47, off-hand, INT/WIS/CON) from Master Tobias.

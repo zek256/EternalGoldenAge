@@ -335,6 +335,51 @@ armor("rootbound_ring", "the rootbound ring", "ring", 20, 0, 600,
       "A ring of living root that has wound itself around your finger and will not quite come off.",
       kind="jewelry", CON=3, WIS=3, STR=2)
 
+# ------------------------------------------------------------------ The Painted Gallery (levels 37-42)
+# Fills the 36-41 gaps: leather, mail and plate gloves, plate legs and boots, cloth boots, a dagger
+# between 33 and 45, a bow, a two-handed weapon, a shield and an off-hand.
+weapon("palette_knife", "a palette knife", 38, (28, 46), 1900,
+       "A painter's palette knife ground to a razor edge, its blade still streaked with a dozen colours.", DEX=9, INT=3,
+       kind="dagger")
+weapon("frost_varnished_bow", "a frost-varnished bow", 37, (26, 44), 1700,
+       "A huntsman's bow out of the Winter Hunt, its wood glazed in a varnish that never thaws.", DEX=9, WIS=3,
+       kind="bow")
+weapon("antler_maul", "an antler maul", 39, (29, 48), 2000,
+       "A two-handed maul made from the antler of the White Stag, branching and white, heavier than it looks.",
+       STR=8, CON=3, kind="two-handed")
+weapon("ithilmirs_maulstick", "Ithilmir's maulstick", 42, (23, 38), 3200,
+       "The court painter's maulstick, a staff of white wood padded at the tip, worn smooth by a thousand years of "
+       "steadying his hand.", INT=13, WIS=13, CHA=6, kind="staff")
+weapon("ithilmirs_brush", "Ithilmir's brush", 42, (24, 40), 3400,
+       "A long brush of silver sable whose bristles are never dry. What it paints, for a moment, is real.",
+       INT=17, WIS=11, CHA=9, kind="wand")
+armor("smock_of_living_paint", "a smock of living paint", "chest", 42, 24, 3000,
+      "The painter's smock, stiff with a thousand years of paint that still shifts and swirls across it.",
+      kind="cloth", INT=9, WIS=9, CHA=4)
+armor("painted_silk_slippers", "painted silk slippers", "feet", 38, 8, 1900,
+      "Dancing slippers stepped out of a portrait, embroidered with flowers that open when you walk.", kind="cloth",
+      INT=5, WIS=5)
+armor("countess_gloves", "the Countess's kid gloves", "hands", 39, 12, 2000,
+      "Long gloves of pale kid leather, buttoned with seed pearls, that never show a stain.", kind="leather",
+      DEX=4, CHA=3)
+armor("moonsteel_gauntlets", "painted moonsteel gauntlets", "hands", 39, 14, 2000,
+      "Gauntlets of silver mail from the painted Moon Court, brighter than anything left in the ruins.", kind="mail",
+      STR=3, DEX=3)
+armor("painted_king_gauntlets", "gauntlets of the painted king", "hands", 41, 16, 2400,
+      "Plate gauntlets of white silver, chased with the crescent moon of Elandor's kings.", kind="plate",
+      STR=4, CON=3)
+armor("sea_varnish_greaves", "sea-varnish greaves", "legs", 37, 24, 1800,
+      "Plate greaves glazed blue-green in the varnish of the Saltmere sea. Water runs off them like oil.",
+      kind="plate", CON=5, STR=3)
+armor("gilt_sabatons", "gilt sabatons", "feet", 38, 15, 1900,
+      "Plate boots gilded like a picture frame, worn by the footmen of the salon.", kind="plate", CON=4, STR=2)
+armor("gilt_frame_shield", "a gilt frame shield", "shield", 39, 22, 2000,
+      "A shield made from a heavy gilt picture frame filled with plaster. The frame is empty, and blows go through "
+      "the hole less often than you'd think.", kind="shield", CON=5)
+armor("candle_of_stillness", "a candle of still flame", "shield", 38, 10, 1900,
+      "The candle from the still life, its flame burning straight and motionless however you move. It steadies the "
+      "mind.", kind="offhand", INT=6, WIS=6, CON=3)
+
 # ------------------------------------------------------------------ The Carnival That Never Closes (levels 26-30)
 # Fills the 24-30 gaps: plate and leather chests, mail legs, a dagger, a wand, a ring, cloth boots.
 weapon("ringmasters_baton", "the Ringmaster's baton", 30, (19, 32), 1500,
@@ -399,6 +444,43 @@ armor("seal_of_office", "a seal of office", "ring", 37, 0, 2000,
 armor("chain_of_office", "the High Justice's chain of office", "neck", 38, 6, 2400,
       "A heavy chain of grey gold with a pendant of balanced scales, which tip slightly whenever someone lies.",
       kind="jewelry", STR=4, WIS=6, CHA=5, CON=3)
+
+# ------------------------------------------------------------------ The Clockwork Orchard (levels 41-44)
+# Fills the 40-45 gaps: cloth, mail and plate helms, a mail chest, leather gloves, plate boots, an axe,
+# a sword, a shield and a necklace.
+weapon("gearwork_blade", "a gearwork blade", 42, (32, 52), 2800,
+       "A sword whose edge is a ring of tiny teeth, turned by a spring in the hilt so that it bites as it cuts.",
+       STR=8, DEX=6, kind="sword")
+weapon("clockwork_pruning_axe", "a clockwork pruning axe", 41, (31, 51), 2600,
+       "A gardener's axe with a wound spring in the haft that adds its own force to every stroke.", STR=9, CON=3,
+       kind="axe")
+weapon("orrins_wrench", "Orrin's great wrench", 44, (33, 55), 3800,
+       "The inventor's own wrench, as long as a man and heavy as an anvil, its jaws worn smooth by three hundred "
+       "years of tightening.", STR=10, WIS=6, CON=4, kind="blunt")
+weapon("pendulum_staff", "the pendulum staff", 44, (24, 40), 3800,
+       "A staff of black wood with a pendulum of crystal swinging in a cage at its head, keeping perfect time.",
+       INT=14, WIS=14, CHA=5, kind="staff")
+armor("jewellers_circlet", "a jeweller's circlet", "head", 42, 13, 2800,
+      "A circlet of fine brass set with a dozen swinging lenses, through which every flaw shows plainly.",
+      kind="cloth", INT=8, WIS=7)
+armor("tinker_gloves", "tinker's gloves", "hands", 43, 14, 2800,
+      "Supple leather gloves with brass thimbles on every finger, made for fine work and finer fighting.",
+      kind="leather", DEX=5, STR=3)
+armor("brass_gear_helm", "a brass gear-helm", "head", 43, 20, 2800,
+      "A mail coif under a cap of interlocking brass gears that turn as you look about.", kind="mail", CON=5, STR=3)
+armor("brass_scale_hauberk", "a brass-scale hauberk", "chest", 43, 40, 3000,
+      "A long coat of brass scales, each one a tiny cog, that flexes like cloth and turns blades like iron.",
+      kind="mail", CON=8, DEX=4)
+armor("clockwork_warhelm", "a clockwork warhelm", "head", 43, 23, 3000,
+      "A plate helm whose visor opens and closes on a spring at a nod of the head.", kind="plate", CON=6, STR=3)
+armor("piston_sabatons", "piston sabatons", "feet", 43, 18, 3000,
+      "Plate boots with little pistons in the heels, which hiss and push off with every stride.", kind="plate",
+      CON=5, STR=3)
+armor("cog_shield", "a cog shield", "shield", 43, 26, 3000,
+      "A great round shield made from a single iron cogwheel, its teeth worn bright.", kind="shield", CON=6)
+armor("orrery_amulet", "the orrery amulet", "neck", 44, 7, 3600,
+      "A tiny orrery in a locket of gold, its brass planets still turning around a sun no bigger than a pea.",
+      kind="jewelry", INT=5, WIS=5, STR=4, CON=4)
 
 # ------------------------------------------------------------------ Thornwick Hall (the Vane household, levels 43-49)
 # Fills the 44-49 gaps: plate past 42, daggers and axes past 15, leather and cloth chests past 40.
@@ -675,3 +757,10 @@ misc("wheat_grain", "a grain of wheat", 4, "A grain of wheat from the Willow Mil
      "now it fits in your palm.", kind="quest")
 misc("honeydew", "a bead of honeydew", 5, "A sticky, sweet bead of honeydew, milked from greenflies by the ants.")
 misc("beetle_chitin", "a piece of beetle chitin", 8, "A curved, glossy piece of beetle shell, light and hard.")
+misc("living_pigment", "a pot of living pigment", 60, "A little pot of paint from inside one of Ithilmir's canvases. It swirls on its own "
+     "and never dries.", kind="quest")
+misc("painters_palette", "the painter's palette", 1500, "Ithilmir's own palette of white wood, still wet with every colour he ever mixed. "
+     "His unfinished self-portrait opens to whoever carries it.", kind="quest")
+misc("wound_mainspring", "a wound mainspring", 80, "A tightly coiled spring of blue steel from one of Orrin Gearwhistle's creations. It "
+     "still trembles with stored force.", kind="quest")
+misc("brass_gear", "a brass gear", 40, "A small, perfect brass cogwheel, still oiled.")

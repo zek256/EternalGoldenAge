@@ -96,6 +96,15 @@ From **the Chancery of the Dead** (32-38, south of the Dustway's Gnoll Scrub): a
 mail chest), the Headsman's axe (32), a scrivener's penknife (33, dagger, DEX) and the shield of the
 scales (35).
 
+From **the Painted Gallery** (37-42, behind Elandor's Hall of the Moon Court; each painting is entered
+with `enter`): a frost-varnished bow (37, bow, DEX/WIS), painted moonsteel gauntlets (39, mail hands,
+STR/DEX) and a gilt frame shield (39, shield, CON).
+
+From **the Clockwork Orchard** (41-44, south of the Chancery's Archive of Wills): a gearwork blade (42,
+sword, STR/DEX), a clockwork pruning axe (41, axe, STR/CON), a brass gear-helm (43, mail head, CON/STR),
+a brass-scale hauberk (43, mail chest, CON/DEX) and a cog shield (43, shield, CON). The Master Automaton
+drops the gearwork blade.
+
 From **Thornwick Hall** (43-49, west of the Stag Walk): the Vane hunting bow (45, bow, DEX/WIS) from
 Hobb the gamekeeper, Sir Corwin's rapier (47, sword, DEX), Lady Seraphine's hairpin (47, dagger, DEX),
 the Vane huntsman's jerkin (44) and breeches (43) (leather), Mr. Graves's silver salver (45, shield)

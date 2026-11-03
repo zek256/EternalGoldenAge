@@ -281,4 +281,26 @@ NPCS = {
         "shop": ["minor_healing_potion", "minor_mana_potion", "healing_potion", "mana_potion"],
         "quests": ["the_ants_larder", "the_mole_kings_tunnels", "paper_and_stings", "the_queen_in_the_apple"],
     },
+    "sylwen_curator": {
+        "name": "Sylwen, the painted curator", "keywords": ["sylwen", "curator", "painted"],
+        "desc": "An elven woman whose skin has the faint sheen and crackle of old varnish, in a gown painted with tiny, "
+                "careful brushstrokes. She stepped out of her portrait a thousand years ago and can never go back in.",
+        "greeting": "'Welcome to the gallery of Ithilmir, court painter of Elandor. Mind the frames. Some of them look "
+                    "back. I keep potions for those who go into the paintings, and a spare palette for those who lose "
+                    "theirs. Type LIST.'",
+        "shop": ["greater_healing_potion", "greater_mana_potion", "supreme_healing_potion", "supreme_mana_potion",
+                 "painters_palette"],
+        "quests": ["living_pigment", "saltmere_serpent", "the_white_stag", "the_memento_skull", "the_countess",
+                   "the_painted_king", "the_court_painter"],
+    },
+    "assessor_morrow": {
+        "name": "Assessor Morrow, a ghost of the Chancery", "keywords": ["morrow", "assessor", "ghost", "clerk"],
+        "desc": "A thin grey ghost in the robes of a court official, with a satchel of papers and a summons he has carried "
+                "for three hundred years. He stands exactly where the Chancery's writ runs out.",
+        "greeting": "'Good day. Or night; it is hard to tell from here. I am bound by the court's writ and may go no "
+                    "further than this passage. I keep a few remedies for the living who go further. Type LIST.'",
+        "shop": ["greater_healing_potion", "greater_mana_potion", "supreme_healing_potion", "supreme_mana_potion"],
+        "quests": ["wound_mainsprings", "the_great_cuckoo", "the_clockwork_hostess", "the_master_automaton",
+                   "serve_the_summons"],
+    },
 }

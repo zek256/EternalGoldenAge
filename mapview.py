@@ -16,7 +16,14 @@ INSETS = [  # (label, areas drawn together, the room that leads in from the surf
     ("Crypt of Varnoth", {"Crypt of Varnoth"}, "crypt_entry"),
     ("Deepdelve Mine", {"Deepdelve Mine"}, "deepdelve_foot"),
     ("Tomb of the Sand Kings", {"Tomb of the Sand Kings"}, "tomb_antechamber"),
-    ("The Underhedge", {"The Underhedge"}, "fairy_ring"),  # mouse-sized, behind the Willow Mill's mousehole
+    ("The Underhedge", {"The Underhedge"}, "fairy_ring"),
+    # the Painted Gallery's paintings, each entered with ENTER from the gallery
+    ("The Wreck at Saltmere", {"The Wreck at Saltmere"}, "wreck_shore"),
+    ("The Winter Hunt", {"The Winter Hunt"}, "winter_edge"),
+    ("Still Life with Rot", {"Still Life with Rot"}, "tabletop_edge"),
+    ("The Salon of Sitters", {"The Salon of Sitters"}, "salon_door"),
+    ("Elandor Before the Fall", {"Elandor Before the Fall"}, "painted_gate"),
+    ("The Unfinished Self-Portrait", {"The Unfinished Self-Portrait"}, "sketch_lines"),  # mouse-sized, behind the Willow Mill's mousehole
     ("Planes of the Gods", {"Threshold of the Gods", "Plane of Stars", "Plane of Dreams", "Plane of Death",
                             "Plane of Law", "Plane of Fire", "Plane of Water", "Plane of Earth",
                             "Plane of Air"}, "threshold_stair"),

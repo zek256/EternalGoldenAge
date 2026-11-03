@@ -99,6 +99,14 @@ acrobat's grips (26, leather) and the brass ring (27, ring).
 From **the Chancery of the Dead** (32-38, south of the Dustway's Gnoll Scrub): a scrivener's penknife
 (33, dagger, DEX/INT), the only dagger between Serpentfang at 15 and the Thornwick hairpin at 47.
 
+From **the Painted Gallery** (37-42, behind Elandor's Hall of the Moon Court; each painting is entered
+with `enter`): a palette knife (38, dagger, DEX/INT), a frost-varnished bow (37, bow, DEX/WIS) and the
+Countess's kid gloves (39, leather hands, DEX/CHA). Countess Isaura drops the Countess's kid gloves.
+
+From **the Clockwork Orchard** (41-44, south of the Chancery's Archive of Wills): a gearwork blade (42,
+sword, STR/DEX) and tinker's gloves (43, leather hands, DEX/STR). The Master Automaton drops the
+gearwork blade; the Clockwork Hostess drops tinker's gloves.
+
 From **Thornwick Hall** (43-49, west of the Stag Walk): Lady Seraphine's hairpin (47, dagger, DEX), the
 first new dagger since Serpentfang at 15, Sir Corwin's rapier (47, sword, DEX), the Vane hunting bow
 (45), the Vane huntsman's jerkin (44) and breeches (43) (leather) and Great-aunt Mathilde's cameo (46,

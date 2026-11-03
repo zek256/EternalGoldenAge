@@ -96,6 +96,16 @@ ring).
 From **the Chancery of the Dead** (32-38, south of the Dustway's Gnoll Scrub): the Gavel of the High
 Justice (38, blunt, STR/WIS), the seal of office (37, ring) and the chain of office (38, neck).
 
+From **the Painted Gallery** (37-42, behind Elandor's Hall of the Moon Court; each painting is entered
+with `enter`): Ithilmir's maulstick (42, staff, INT/WIS/CHA), the Countess's kid gloves (39, leather
+hands, DEX/CHA) and a candle of still flame (38, off-hand, INT/WIS/CON). Ithilmir drops his maulstick;
+Countess Isaura drops the Countess's kid gloves; the Memento Skull drops the candle of still flame.
+
+From **the Clockwork Orchard** (41-44, south of the Chancery's Archive of Wills): Orrin's great wrench
+(44, blunt, STR/WIS/CON), the pendulum staff (44, staff, INT/WIS/CHA), tinker's gloves (43, leather
+hands, DEX/STR) and the orrery amulet (44, neck, INT/WIS/STR). Orrin Gearwhistle drops his great wrench,
+the pendulum staff and the orrery amulet; the Clockwork Hostess drops tinker's gloves.
+
 From **Thornwick Hall** (43-49, west of the Stag Walk): a gown of green brocade (47, cloth chest,
 INT/WIS/CHA) from Lady Seraphine, silk evening gloves (46, cloth), Tobias's black grimoire (47,
 off-hand), the Dowager's pearls (48, neck) and the Vane huntsman's jerkin (44, leather) if you want

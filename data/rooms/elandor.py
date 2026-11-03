@@ -49,8 +49,9 @@ ROOMS = {
         "The Hall of the Moon Court", "Ruins of Elandor",
         "A long hall of white marble lies open to the sky, where the lords of Elandor once sat in "
         "judgement beneath the moon. Their crescent thrones stand empty, guarded by sentinels of "
-        "rune-carved stone that turn to face you with a grinding of ancient joints.",
-        {"w": "ruins_library"},
+        "rune-carved stone that turn to face you with a grinding of ancient joints. Behind the thrones, a "
+        "door of silvered wood stands ajar, and the smell of oil paint drifts through it.",
+        {"w": "ruins_library", "n": "gallery_entrance"},
         spawns=[("arcane_sentinel", 2), ("moonblade_revenant", 1)], level=(38, 40)),
     "ruins_tower": R(
         "The Crystal Observatory", "Ruins of Elandor",

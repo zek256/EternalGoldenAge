@@ -574,6 +574,95 @@ M("seluvar", "Seluvar the Hollow Archmage", 41,
             drain("Hollowing", 0.15, 1.2, "hollows you out, drinking your essence!")],
   loot=[("seluvars_wand", 0.6), ("archmage_ring", 0.6), ("elandor_robes", 0.4), ("starlight_circlet", 0.4), ("elven_longbow", 0.3)])
 
+# ------------------------------------------------------------- The Painted Gallery (36-42)
+# Ithilmir's gallery north of the Moon Court, and the worlds inside his paintings. The painted people go
+# about their painted lives; only the frame-wardens and other guards, the elementals of paint and flame,
+# the skull and the painter's sketches attack on sight. Each painting has a named champion (not a boss);
+# only Ithilmir himself is one.
+M("frame_warden", "a gilded frame-warden", 38, "A tall figure of gilt and plaster with an empty picture frame for a chest, through which you can see the wall behind it.",
+  hp=1.5, dmg=1.25, armor=2.0, aggro=True, specials=[big("Framing Blow", 0.2, 1.8, "brings its gilded fists down on you!")],
+  loot=[("gilt_frame_shield", 0.04), ("living_pigment", 0.2)], gold=1.4, xp=1.3)
+M("painted_sailor", "a painted sailor", 36, "A drowned sailor brushed in greys and greens, dripping paint, his mouth open in a shout that never ends.",
+  hp=1.1, dmg=1.25, specials=[dot("Boathook", 0.2, 0.4, 3, "bleed", "swings a boathook into you!")],
+  loot=[("living_pigment", 0.3), ("greater_healing_potion", 0.08)], gold=1.0)
+M("painted_breaker", "a painted breaker", 36, "A wave of green and white brushstrokes that has risen out of the sea with a face in its foam.",
+  hp=1.0, dmg=1.3, armor=0.6, aggro=True, element="frost",
+  specials=[stun("Undertow", 0.12, 1, "crashes over you, and the undertow drags you off your feet!")],
+  loot=[("living_pigment", 0.3)], gold=0.8)
+M("saltmere_serpent", "the Saltmere Serpent", 37, "A sea serpent of glistening blue-green paint, coiled around the lighthouse, with eyes the painter took a great deal of care over.",
+  hp=1.9, dmg=1.3, armor=1.3, xp=1.7, gold=2.0,
+  specials=[big("Crushing Coils", 0.22, 1.9, "wraps you in its painted coils and squeezes!"),
+            dot("Venom of Varnish", 0.18, 0.45, 3, "poison", "bites you, and varnish burns in your veins!")],
+  loot=[("sea_varnish_greaves", 0.25), ("living_pigment", 1.0)])
+M("painted_hound", "a painted hound", 37, "A lean scarlet-collared hound brushed in a few swift strokes, running in full cry after a quarry it never reaches.",
+  hp=1.0, dmg=1.25, specials=[big("Pull Down", 0.2, 1.6, "leaps and drags you down into the painted snow!")],
+  loot=[("living_pigment", 0.25)], gold=0.2)
+M("painted_huntsman", "a painted huntsman", 37, "A rider in scarlet and fur, his horse's hooves never touching the snow, a spear across his saddle.",
+  hp=1.1, dmg=1.3, specials=[big("Boar Spear", 0.2, 1.7, "wheels his horse and drives his spear into you!")],
+  loot=[("frost_varnished_bow", 0.04), ("living_pigment", 0.3)], gold=1.2)
+M("frost_glaze", "a frost glaze", 38, "A skimming shape of cold white light, the varnish of the winter scene come alive, leaving trails of frost on the ice.",
+  hp=0.9, dmg=1.3, armor=0.5, aggro=True, element="frost",
+  specials=[stun("Hoarfrost", 0.14, 1, "flashes over you, and frost locks your joints!"),
+            dot("Glaze", 0.18, 0.4, 3, "frost", "coats you in a skin of freezing varnish!")],
+  loot=[("living_pigment", 0.3), ("greater_mana_potion", 0.12)], gold=0.8)
+M("white_stag", "the White Stag", 38, "The quarry of the Winter Hunt, a white stag as big as a horse, with antlers like winter trees and breath that smokes.",
+  hp=1.9, dmg=1.3, armor=1.2, xp=1.7, gold=0.5,
+  specials=[big("Antler Charge", 0.22, 1.9, "lowers its antlers and charges!"),
+            stun("Trampling Hooves", 0.1, 1, "rears and strikes you down with its hooves!")],
+  loot=[("antler_maul", 0.3), ("living_pigment", 1.0)])
+M("fly_swarm", "a swarm of painted flies", 38, "A droning cloud of black flies as big as hawks, each one a perfect dot of paint with wings.",
+  hp=0.8, dmg=1.25, armor=0.4, specials=[dot("Biting Swarm", 0.25, 0.4, 3, "bleed", "descends on you, biting everywhere at once!")],
+  loot=[("living_pigment", 0.25)], gold=0.2)
+M("candle_flame", "a living candle-flame", 38, "The flame of the still life's candle, grown as tall as a man and dancing on the wick of its own will.",
+  hp=1.0, dmg=1.3, armor=0.6, aggro=True, element="fire",
+  specials=[dot("Tallow Fire", 0.25, 0.45, 3, "fire", "wraps you in burning tallow!")],
+  loot=[("candle_of_stillness", 0.04), ("living_pigment", 0.3)], gold=0.8)
+M("rotfruit_horror", "a rotfruit horror", 39, "A heaving mass of blackened pears and burst grapes, furred with mould, dragging itself across the tablecloth.",
+  hp=1.6, dmg=1.25, armor=0.8, xp=1.3, specials=[dot("Spores of Rot", 0.2, 0.4, 4, "disease", "bursts, showering you in rot!")],
+  loot=[("living_pigment", 0.35)], gold=0.4)
+M("memento_skull", "the Memento Skull", 39, "The skull of the still life, as big as a cottage, its jaw grinding and its sockets lit. It is very tired of lying still.",
+  hp=1.9, dmg=1.3, armor=1.4, aggro=True, xp=1.7, gold=2.0,
+  specials=[drain("Memento Mori", 0.18, 1.1, "reminds you that you will die, and you feel it happening!"),
+            stun("The Hollow Stare", 0.12, 1, "fixes you with its empty sockets, and you cannot move!")],
+  loot=[("candle_of_stillness", 0.25), ("living_pigment", 1.0)])
+M("portrait_sitter", "a portrait sitter", 39, "A noble stepped out of a portrait, exactly as beautiful as the painter was paid to make them, and very bored.",
+  hp=1.0, dmg=1.25, specials=[stun("Withering Snub", 0.12, 1, "looks you up and down, and you are too mortified to move!")],
+  loot=[("painted_silk_slippers", 0.04), ("living_pigment", 0.3)], gold=2.0)
+M("painted_duellist", "a painted duellist", 40, "A painted gallant in lace and velvet, rapier in hand, fighting the same duel for the hundredth time and glad of a new opponent.",
+  hp=1.2, dmg=1.35, specials=[dot("Flickering Rapier", 0.2, 0.45, 3, "bleed", "flicks his rapier across you in a dozen fine cuts!")],
+  loot=[("palette_knife", 0.05), ("living_pigment", 0.3)], gold=1.8)
+M("gilt_footman", "a gilt footman", 40, "A footman in gilded livery with a perfect painted smile, and a silver tray he swings like a mace.",
+  hp=1.4, dmg=1.3, armor=1.8, aggro=True, specials=[big("Silver Tray", 0.2, 1.7, "swings his silver tray into your head!")],
+  loot=[("gilt_sabatons", 0.04), ("living_pigment", 0.25)], gold=1.6)
+M("countess_isaura", "Countess Isaura, the Host", 40, "The host of the salon, in silver and pearl, fanning herself before her own empty frame. She thinks you would look very fine in it.",
+  hp=1.9, dmg=1.3, armor=1.2, xp=1.7, gold=4.0,
+  specials=[stun("Sit for Me", 0.12, 1, "raises her lorgnette, and you find yourself frozen in a pose!"),
+            drain("Framed", 0.15, 1.1, "traces a frame in the air around you, and your colour drains into it!")],
+  loot=[("countess_gloves", 0.25), ("living_pigment", 1.0)])
+M("painted_citizen", "a painted citizen of Elandor", 40, "An elf of the living city in bright silks, who knows, somewhere behind the eyes, that the city fell a thousand years ago.",
+  hp=1.0, dmg=1.25, loot=[("living_pigment", 0.3), ("elven_relic", 0.15)], gold=1.5)
+M("painted_moonguard", "a painted moonguard", 41, "A knight of the Moon Court in silver mail and a crescent helm, as the revenants in the ruins once were.",
+  hp=1.4, dmg=1.3, armor=1.8, aggro=True, specials=[drain("Moonblade", 0.2, 1.0, "draws a pale blade across you, and your strength flows into it!")],
+  loot=[("moonsteel_gauntlets", 0.04), ("living_pigment", 0.25)], gold=1.6)
+M("painted_king", "the Painted King of Elandor", 41, "The last king of Elandor as the painter saw him, crowned, young and proud. He alone knows his city has fallen.",
+  hp=2.0, dmg=1.3, armor=1.5, xp=1.8, gold=4.0,
+  specials=[big("Blade of the Moon Court", 0.22, 1.9, "strikes with the silver blade of the Moon Court!"),
+            stun("Royal Command", 0.12, 1, "commands you to kneel, and you do!"),
+            heal("The City Remembers", 0.1, 0.12, "draws on the painted city, and his wounds fill in like fresh paint!")],
+  loot=[("painted_king_gauntlets", 0.25), ("living_pigment", 1.0)])
+M("charcoal_sketch", "a charcoal sketch", 41, "A half-drawn figure of smudged charcoal lines with no face, stepping out of the margins of the self-portrait.",
+  hp=1.0, dmg=1.3, armor=0.6, aggro=True, specials=[dot("Smudge", 0.2, 0.45, 3, "shadow", "smears across you, and you start to fade!")],
+  loot=[("living_pigment", 0.3)], gold=0.6)
+M("ithilmir", "Ithilmir, the Court Painter", 42,
+  "The court painter of Elandor, who sealed his city into canvas as it fell and then himself. He wears a smock stiff "
+  "with a thousand years of paint, and where his face should be there is only smooth, blank skin.",
+  hp=2.8, dmg=1.3, armor=1.1, aggro=True, boss=True, xp=2.0, gold=6.0,
+  specials=[stun("Hold Still", 0.12, 1, "raises his brush, and you cannot move a muscle!"),
+            dot("Turpentine", 0.2, 0.45, 4, "arcane", "flicks a brushful of burning spirit across you!"),
+            drain("Taking Your Likeness", 0.15, 1.2, "studies you, and your face begins to come away onto his canvas!"),
+            heal("A Fresh Coat", 0.08, 0.12, "paints over his wounds with a single stroke!")],
+  loot=[("ithilmirs_brush", 0.5), ("ithilmirs_maulstick", 0.5), ("smock_of_living_paint", 0.5)])
+
 # ------------------------------------------------------------- The Chancery of the Dead (30-38)
 # The dead here are busy with their cases and ignore the living, so only the court's bailiffs,
 # wardens and the High Justice attack on sight (a deliberate exception to the undead rule).
@@ -650,6 +739,74 @@ M("high_justice", "the High Justice", 38,
             stun("Order in the Court", 0.12, 1, "roars 'ORDER!', and the whole court falls still around you!"),
             drain("Sentence of Death", 0.12, 1.1, "pronounces a sentence of death, and your life flows up to the bench!")],
   loot=[("gavel_of_the_high_justice", 0.5), ("chain_of_office", 0.5), ("seal_of_office", 0.4)])
+
+# ------------------------------------------------------------- The Clockwork Orchard (38-44)
+# Orrin Gearwhistle's creations tend the orchard and ignore visitors; only his sentries, hounds and
+# escapement guardians (guards) and the foundry's molten springs (elementals) attack on sight. The
+# cuckoo, the hostess and the master automaton are named champions; only Orrin is a boss.
+M("brass_sparrow", "a clockwork sparrow", 38, "A sparrow of brass and enamel with jewelled eyes, ticking as it hops, and quite fearless.",
+  hp=0.9, dmg=1.25, armor=1.0, specials=[dot("Brass Beak", 0.22, 0.4, 3, "bleed", "darts at you and pecks with a beak like a chisel!")],
+  loot=[("brass_gear", 0.4)], gold=0.3)
+M("orchard_tender", "a clockwork gardener", 38, "A gardener of brass and green enamel with an oilcan for one hand and pruning shears for the other.",
+  hp=1.2, dmg=1.25, armor=1.6, specials=[big("Pruning Shears", 0.2, 1.7, "snaps its great shears shut on you!")],
+  loot=[("wound_mainspring", 0.3), ("clockwork_pruning_axe", 0.04)], gold=1.2)
+M("rust_crawler", "a rust crawler", 39, "A flaking, many-legged thing the size of a dog, made of rust and hunger, that eats iron and leaves red dust.",
+  hp=1.3, dmg=1.25, specials=[dot("Corrode", 0.22, 0.4, 3, "poison", "bites you, and rust spreads across your armour and skin!")],
+  loot=[("brass_gear", 0.3)], gold=0.3)
+M("brass_bees", "a swarm of brass bees", 39, "A humming cloud of jewelled mechanical bees on wings of gold leaf, each with a sting like a sewing needle.",
+  hp=0.9, dmg=1.3, armor=0.8, specials=[dot("Needle Stings", 0.25, 0.4, 3, "poison", "swarms over you, stinging!")],
+  loot=[("tinker_gloves", 0.03), ("brass_gear", 0.3)], gold=0.2)
+M("clockwork_sentry", "a clockwork sentry", 40, "A sentry of polished steel with a halberd and a face like a clock, which turns its hands to point at intruders.",
+  hp=1.5, dmg=1.3, armor=2.2, aggro=True, specials=[big("Halberd Sweep", 0.2, 1.8, "sweeps its halberd through you!")],
+  loot=[("brass_gear_helm", 0.04), ("wound_mainspring", 0.3)], gold=1.4)
+M("clockwork_pike", "a clockwork pike", 40, "A pike of steel as long as a rowing boat, with rows of filed teeth, swimming in circles until something better comes along.",
+  hp=1.3, dmg=1.3, armor=1.5, specials=[big("Steel Jaws", 0.2, 1.8, "lunges from the water and clamps its steel jaws on you!")],
+  loot=[("brass_gear", 0.4), ("piston_sabatons", 0.03)], gold=0.4)
+M("winding_automaton", "a winding automaton", 40, "A huge automaton with arms like cranes, built to carry the orchard's keys, slow and patient and very strong.",
+  hp=1.8, dmg=1.25, armor=2.5, xp=1.5, specials=[big("Crane Arm", 0.22, 1.8, "swings a crane-like arm into you!")],
+  loot=[("wound_mainspring", 0.4), ("brass_scale_hauberk", 0.03)], gold=1.0)
+M("great_cuckoo", "the Great Cuckoo", 40, "The cuckoo of the great clock tower, a bird of brass and painted feathers as big as a horse, which shrieks the hour and hates to be interrupted.",
+  hp=1.9, dmg=1.3, armor=1.4, xp=1.7, gold=2.0,
+  specials=[stun("Shriek the Hour", 0.12, 1, "throws back its head and shrieks the hour, and your ears ring!"),
+            big("Spring-Loaded Strike", 0.22, 1.9, "shoots out of its doors on a great spring and strikes you!")],
+  loot=[("jewellers_circlet", 0.25), ("wound_mainspring", 1.0)])
+M("tea_guest", "a clockwork tea guest", 41, "A clockwork lady or gentleman in painted silks, pouring tea and laughing at a joke three hundred years old.",
+  hp=1.1, dmg=1.3, specials=[stun("Another Cup?", 0.12, 1, "insists you have another cup, and you find you cannot refuse!")],
+  loot=[("wound_mainspring", 0.3), ("supreme_healing_potion", 0.06)], gold=1.8)
+M("clockwork_hostess", "the Clockwork Hostess", 41, "The hostess of the unending tea party, in a gown of silver plate and a lace cap, who has never once let a guest leave early.",
+  hp=1.9, dmg=1.3, armor=1.2, xp=1.7, gold=4.0,
+  specials=[stun("Do Sit Down", 0.12, 1, "presses you firmly into a chair!"),
+            dot("Scalding Tea", 0.2, 0.45, 3, "fire", "pours a pot of boiling tea over you!")],
+  loot=[("tinker_gloves", 0.25), ("wound_mainspring", 1.0)])
+M("spring_hound", "a spring-loaded hound", 41, "A hound of steel coils and plates that bounds along the hedge paths, every leap powered by a great spring.",
+  hp=1.2, dmg=1.3, armor=1.4, aggro=True, specials=[big("Coiled Leap", 0.22, 1.8, "compresses its springs and leaps on you!")],
+  loot=[("piston_sabatons", 0.04)], gold=0.6)
+M("unfinished_automaton", "an unfinished automaton", 42, "A half-built automaton missing a hand or a face, shuffling between the benches, trying to finish itself.",
+  hp=1.4, dmg=1.3, armor=1.6, specials=[stun("Grasping Clamp", 0.12, 1, "grips you in a clamp where a hand should be!")],
+  loot=[("wound_mainspring", 0.35), ("clockwork_warhelm", 0.03)], gold=1.2)
+M("molten_spring", "a molten spring", 42, "A coil of white-hot steel that has escaped the crucible and writhes across the foundry floor like a snake.",
+  hp=1.0, dmg=1.35, armor=0.8, aggro=True, element="fire",
+  specials=[dot("White Heat", 0.25, 0.5, 3, "fire", "coils around you, white-hot!")],
+  loot=[("supreme_mana_potion", 0.1)], gold=0.8)
+M("master_automaton", "the Master Automaton", 42, "Orrin's first and finest creation, a towering automaton in a leather apron who has kept the workshop running for three hundred years.",
+  hp=2.0, dmg=1.3, armor=2.0, xp=1.8, gold=3.0,
+  specials=[big("Hammer and Anvil", 0.22, 1.9, "brings a smith's hammer down on you as if you were an anvil!"),
+            heal("Self-Repair", 0.1, 0.12, "tightens a few bolts in its own chest, and its damage is mended!")],
+  loot=[("gearwork_blade", 0.25), ("wound_mainspring", 1.0)])
+M("escapement_guardian", "an escapement guardian", 43, "A guardian of black iron that moves in time with the great escapement, one lurching step at every tick.",
+  hp=1.6, dmg=1.3, armor=2.2, aggro=True,
+  specials=[big("Toothed Wheel", 0.2, 1.8, "swings a toothed iron wheel into you!"),
+            stun("On the Tick", 0.1, 1, "strikes exactly on the tick, and you lose a beat!")],
+  loot=[("cog_shield", 0.04), ("clockwork_warhelm", 0.03), ("brass_scale_hauberk", 0.03)], gold=1.6)
+M("orrin_gearwhistle", "Orrin Gearwhistle, Wound into the Clock", 44,
+  "The gnome inventor of the Clockwork Orchard, three hundred years old, wired into the golden sun of the great orrery "
+  "with a key turning slowly in his back. The planets of brass swing around him at his command.",
+  hp=2.9, dmg=1.3, armor=1.6, aggro=True, boss=True, xp=2.0, gold=7.0,
+  specials=[big("Swing of the Planets", 0.2, 2.0, "sends a planet of brass sweeping through you!"),
+            stun("Stopped Clock", 0.12, 1, "stops the clock, and for a moment you cannot move!"),
+            dot("Steam Vent", 0.18, 0.5, 4, "fire", "opens a valve, and scalding steam pours over you!"),
+            heal("Rewind", 0.1, 0.12, "winds himself back a few seconds, and his wounds unhappen!")],
+  loot=[("orrins_wrench", 0.5), ("pendulum_staff", 0.5), ("orrery_amulet", 0.6)])
 
 # ------------------------------------------------------------- Scorchsands (35-49)
 M("desert_raider", "a desert raider", 36, "A veiled rider of the deep desert, all in black, with a scimitar and eyes that never blink.",

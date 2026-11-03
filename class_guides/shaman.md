@@ -94,6 +94,16 @@ From **the Chancery of the Dead** (32-38, south of the Dustway's Gnoll Scrub): t
 Justice (38, blunt, STR/WIS), the Headsman's axe (32), a bailiff's hauberk (34, mail chest), the shield
 of the scales (35, CON/WIS), the seal of office (37, ring) and the chain of office (38, neck).
 
+From **the Painted Gallery** (37-42, behind Elandor's Hall of the Moon Court; each painting is entered
+with `enter`): Ithilmir's maulstick (42, staff, INT/WIS/CHA), painted moonsteel gauntlets (39, mail
+hands, STR/DEX) and a gilt frame shield (39, shield, CON). Ithilmir drops his maulstick.
+
+From **the Clockwork Orchard** (41-44, south of the Chancery's Archive of Wills): a clockwork pruning
+axe (41, axe, STR/CON), Orrin's great wrench (44, blunt, STR/WIS/CON), the pendulum staff (44, staff,
+INT/WIS/CHA), a brass gear-helm (43, mail head, CON/STR), a brass-scale hauberk (43, mail chest,
+CON/DEX), a cog shield (43, shield, CON) and the orrery amulet (44, neck, INT/WIS/STR). Orrin
+Gearwhistle drops his great wrench, the pendulum staff and the orrery amulet.
+
 From **Thornwick Hall** (43-49, west of the Stag Walk): Mistress Hollin's cleaver (45, axe, STR/CON),
 Mr. Graves's silver salver (45, shield), the Dowager's pearls (48, neck, WIS/CHA/CON) and silk evening
 gloves (46, cloth, INT/WIS/CHA).

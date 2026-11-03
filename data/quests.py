@@ -565,4 +565,143 @@ QUESTS = {
                     "see me when you're passing; I think I'll stay small a while. I like the view.'",
         "reward": {"xp": 4500, "gold": 250, "items": ["healing_potion", "healing_potion", "mana_potion"]},
     },
+    # ------------------------------------------------------------------ The Painted Gallery
+    "living_pigment": {
+        "name": "Living Pigment", "giver": "sylwen_curator", "type": "collect", "target": "living_pigment", "count": 8,
+        "min_level": 36, "prereq": None,
+        "offer": "'A visitor. How long it has been.' The curator's voice has the faint crackle of old varnish. 'I am "
+                 "Sylwen. I was painted, once, and I stepped out of my frame, and I cannot go back. Ithilmir sealed "
+                 "pieces of Elandor into these canvases as it fell, and then sealed himself into his self-portrait, "
+                 "and it will only open for his palette. I can make one, if you bring me eight pots of living "
+                 "pigment. Everything inside the paintings is made of it. Type ENTER and the painting's name to go in.'",
+        "progress": "'Eight pots of living pigment. You have {n}.'",
+        "complete": "Sylwen mixes the pigments on a board of white wood, and the colours swirl together and settle. "
+                    "'There. His palette, or near enough that the canvas won't know the difference. Take it into the "
+                    "studio. And be careful. He has been alone in there a very long time.'",
+        "reward": {"xp": 30000, "gold": 1200, "items": ["painters_palette", "greater_healing_potion"]},
+    },
+    "saltmere_serpent": {
+        "name": "The Serpent of Saltmere", "giver": "sylwen_curator", "type": "kill", "target": "saltmere_serpent",
+        "count": 1, "min_level": 36, "prereq": None,
+        "offer": "'The seascape was meant to be a warning: the ship that ignored the lighthouse. But the serpent "
+                 "Ithilmir painted around the tower has grown too fond of the sailors, and the ship never finishes "
+                 "sinking. Kill it, and let the wreck go down at last. ENTER SEASCAPE, here in the entrance.'",
+        "progress": "'The serpent still coils about the lighthouse.'",
+        "complete": "'The ship has sunk. The sailors are on the shore now, drying out. They seem relieved.'",
+        "reward": {"xp": 24000, "gold": 1000, "items": ["greater_healing_potion", "greater_healing_potion"]},
+    },
+    "the_white_stag": {
+        "name": "The White Stag", "giver": "sylwen_curator", "type": "kill", "target": "white_stag", "count": 1,
+        "min_level": 37, "prereq": None,
+        "offer": "'The hunters in the winter painting have chased the White Stag for a thousand years. It is not "
+                 "cruelty, exactly; Ithilmir simply never finished the painting, so they never catch it. Finish it "
+                 "for him. ENTER WINTER, across the entrance from the seascape.'",
+        "progress": "'I can still hear the horn. The hunt goes on.'",
+        "complete": "'The horn has stopped. The hunters are riding home. That is the first time in a thousand years.'",
+        "reward": {"xp": 26000, "gold": 1100, "items": ["greater_healing_potion", "greater_mana_potion"]},
+    },
+    "the_memento_skull": {
+        "name": "Memento Mori", "giver": "sylwen_curator", "type": "kill", "target": "memento_skull", "count": 1,
+        "min_level": 38, "prereq": None,
+        "offer": "'The skull in the still life was painted to remind the viewer that all things die. It took the "
+                 "lesson too much to heart, and now everything on that table is dying, slowly, and will not stop. "
+                 "Silence it. ENTER STILL LIFE, in the long gallery.'",
+        "progress": "'The fruit on the table is still rotting. The skull is still grinning.'",
+        "complete": "'The table is quiet. The fruit is only fruit again. Thank you.'",
+        "reward": {"xp": 28000, "gold": 1200, "items": ["greater_healing_potion", "greater_mana_potion"]},
+    },
+    "the_countess": {
+        "name": "The Empty Frame", "giver": "sylwen_curator", "type": "kill", "target": "countess_isaura", "count": 1,
+        "min_level": 39, "prereq": None,
+        "offer": "'Countess Isaura stepped out of her portrait before I did, and she has been filling the salon's "
+                 "empty frames with visitors ever since. Some of the sitters you will meet in there were travellers "
+                 "once. End her. ENTER SALON, in the long gallery.'",
+        "progress": "'The countess is still receiving guests.'",
+        "complete": "'Her frame is empty for good. Some of the sitters have begun to remember their names.'",
+        "reward": {"xp": 30000, "gold": 1300, "items": ["greater_healing_potion", "greater_mana_potion"]},
+    },
+    "the_painted_king": {
+        "name": "The Painted King", "giver": "sylwen_curator", "type": "kill", "target": "painted_king", "count": 1,
+        "min_level": 40, "prereq": None,
+        "offer": "'The greatest painting is Elandor itself, as it was. Ithilmir saved it, or meant to. But the "
+                 "painted king knows his city fell, and he would rather keep his people trapped in a golden evening "
+                 "forever than let them know it. He must be stopped. ENTER CITY, high on the end wall of the long "
+                 "gallery.'",
+        "progress": "'The golden evening goes on. The king still rules.'",
+        "complete": "Sylwen is silent for a while. 'The sun is setting in the painting. Properly setting, for the "
+                    "first time. I think they will be all right now.'",
+        "reward": {"xp": 32000, "gold": 1400, "items": ["supreme_healing_potion", "greater_mana_potion"]},
+    },
+    "the_court_painter": {
+        "name": "The Court Painter", "giver": "sylwen_curator", "type": "kill", "target": "ithilmir", "count": 1,
+        "min_level": 40, "prereq": "living_pigment",
+        "offer": "'Ithilmir saved what he could of Elandor, and then he could not bear to finish his own face. "
+                 "He has been in that unfinished portrait for a thousand years, and he has decided he will finish "
+                 "it with someone else's. Take the palette into the studio and ENTER SELF-PORTRAIT. Do not let him "
+                 "paint you.'",
+        "progress": "'He is still in there, waiting for a face.'",
+        "complete": "Sylwen stands before the studio door for a long time. 'The portrait has a face now,' she says "
+                    "at last. 'His own. He finished it. I think that is what he wanted all along.' She presses "
+                    "something into your hands. 'For the gallery's oldest debt.'",
+        "reward": {"xp": 100000, "gold": 4000, "items": ["supreme_healing_potion", "supreme_healing_potion",
+                                                         "supreme_mana_potion"]},
+    },
+    # ------------------------------------------------------------------ The Clockwork Orchard
+    "wound_mainsprings": {
+        "name": "Evidence for the Court", "giver": "assessor_morrow", "type": "collect", "target": "wound_mainspring",
+        "count": 8, "min_level": 38, "prereq": None,
+        "offer": "'Assessor Morrow, of the Chancery of the Dead. I have a summons to serve on one Orrin Gearwhistle, "
+                 "inventor, who has been due before the court for three hundred years and has not had the courtesy "
+                 "to die. The writ will not carry me past this passage; his clocks keep out the dead. I need "
+                 "evidence of what he has built in there. Eight wound mainsprings from his creations, if you would. "
+                 "His gardeners, sentries and automatons all carry them.'",
+        "progress": "'Eight mainsprings for the record. You have {n}.'",
+        "complete": "Morrow labels each spring with a tag and a number in a neat grey hand. 'Exhibits one through "
+                    "eight. Most irregular. Thank you. The court pays its witnesses.'",
+        "reward": {"xp": 34000, "gold": 1400, "items": ["supreme_healing_potion", "supreme_mana_potion"]},
+    },
+    "the_great_cuckoo": {
+        "name": "The Great Cuckoo", "giver": "assessor_morrow", "type": "kill", "target": "great_cuckoo", "count": 1,
+        "min_level": 39, "prereq": None,
+        "offer": "'The cuckoo in the clock tower at the end of the Silver Pear Walk shrieks every hour, and every "
+                 "hour the orchard's clocks reset to its time. While it calls, his creations never wind down. "
+                 "Silence it.'",
+        "progress": "'I can still hear it calling the hour.'",
+        "complete": "'Silence on the hour. The first in three hundred years. The court notes your assistance.'",
+        "reward": {"xp": 30000, "gold": 1300, "items": ["supreme_healing_potion", "greater_mana_potion"]},
+    },
+    "the_clockwork_hostess": {
+        "name": "The Unending Tea", "giver": "assessor_morrow", "type": "kill", "target": "clockwork_hostess",
+        "count": 1, "min_level": 40, "prereq": None,
+        "offer": "'Orrin built his tea party for the guests his late wife used to invite, and its hostess has kept "
+                 "it going ever since. The trouble is that real guests wander in, and she will not let them leave. "
+                 "Two of the Chancery's petitioners are her guests even now. West of the Hedge of Springs.'",
+        "progress": "'The tea party goes on. I hear the cups from here.'",
+        "complete": "'The guests have gone home, and our two petitioners have arrived at the court at last, rather "
+                    "late. Thank you.'",
+        "reward": {"xp": 32000, "gold": 1400, "items": ["supreme_healing_potion", "supreme_mana_potion"]},
+    },
+    "the_master_automaton": {
+        "name": "The Master Automaton", "giver": "assessor_morrow", "type": "kill", "target": "master_automaton",
+        "count": 1, "min_level": 41, "prereq": None,
+        "offer": "'The master automaton in the workshop east of the Hedge of Springs builds everything else. Every "
+                 "sentry, every guardian. While it works, the orchard keeps growing, and so does Orrin's defence. "
+                 "Stop it working.'",
+        "progress": "'The hammers in the workshop still ring.'",
+        "complete": "'The workshop is quiet. The court is obliged.'",
+        "reward": {"xp": 34000, "gold": 1500, "items": ["supreme_healing_potion", "supreme_mana_potion"]},
+    },
+    "serve_the_summons": {
+        "name": "Serving the Summons", "giver": "assessor_morrow", "type": "kill", "target": "orrin_gearwhistle",
+        "count": 1, "min_level": 42, "prereq": None,
+        "offer": "'There is no gentle way to put this. Orrin Gearwhistle has wound himself into the great orrery "
+                 "at the heart of the orchard, south past the Hedge of Springs and down the Orrery Steps, so that "
+                 "he will never run down. The court requires his attendance. Please make sure he attends.'",
+        "progress": "'His case is still open. The orrery still turns.'",
+        "complete": "Morrow opens his satchel, takes out a will that has been ticking for three hundred years, and "
+                    "watches it fall silent. 'The matter of Gearwhistle,' he says softly, 'is closed. He left the "
+                    "orchard to his creations. I think he would have wanted you to have this.'",
+        "reward": {"xp": 120000, "gold": 4500, "items": ["supreme_healing_potion", "supreme_healing_potion",
+                                                         "supreme_mana_potion"]},
+    },
 }

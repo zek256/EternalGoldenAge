@@ -122,8 +122,9 @@ ROOMS = {
         "The Archive of Wills", AREA,
         "Below the court of probate, shelves of wills run off into the dark, each tied with a black "
         "ribbon. Some of the scrolls are twitching. A will slips from its shelf, unrolls itself on the "
-        "floor and begins, in a thin voice, to read itself aloud.",
-        {"n": "probate_court", "e": "archive_stacks"},
+        "floor and begins, in a thin voice, to read itself aloud. Behind the last shelf to the south, "
+        "something is ticking.",
+        {"n": "probate_court", "e": "archive_stacks", "s": "ticking_passage"},
         spawns=[("living_will", 2), ("archive_keeper", 1)], level=(34, 35)),
     "archive_stacks": R(
         "The Archive Stacks", AREA,

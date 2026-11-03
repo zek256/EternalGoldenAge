@@ -93,6 +93,17 @@ From **the Chancery of the Dead** (32-38, south of the Dustway's Gnoll Scrub): t
 a bailiff's halberd (36, two-handed), a warden's greathelm (35) and sabatons (34) (plate), the shield
 of the scales (35) and the High Justice's chain of office (38, neck).
 
+From **the Painted Gallery** (37-42, behind Elandor's Hall of the Moon Court; each painting is entered
+with `enter`): an antler maul (39, two-handed, STR/CON), gauntlets of the painted king (41, plate hands,
+STR/CON), sea-varnish greaves (37, plate legs, CON/STR), gilt sabatons (38, plate feet, CON/STR) and a
+gilt frame shield (39, shield, CON). The White Stag drops the antler maul; the Painted King of Elandor
+drops his gauntlets; the Saltmere Serpent drops sea-varnish greaves.
+
+From **the Clockwork Orchard** (41-44, south of the Chancery's Archive of Wills): a gearwork blade (42,
+sword, STR/DEX), a clockwork pruning axe (41, axe, STR/CON), a clockwork warhelm (43, plate head,
+CON/STR), piston sabatons (43, plate feet, CON/STR) and a cog shield (43, shield, CON). The Master
+Automaton drops the gearwork blade.
+
 From **Thornwick Hall** (43-49, west of the Stag Walk): the Vane longsword (49, sword) and the Vane
 heirloom plate (49, plate chest) from Lord Aldric Vane, the Vane warhelm (46) and gauntlets (45),
 Mistress Hollin's cleaver (45, axe), Mr. Graves's silver salver (45, shield) or, for more INT, Tobias's

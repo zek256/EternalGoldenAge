@@ -104,6 +104,17 @@ From **the Chancery of the Dead** (32-38, south of the Dustway's Gnoll Scrub): a
 wand, INT/WIS/CHA), the seal of office (37, ring, WIS/CHA/INT), the High Justice's chain of office (38,
 neck, CHA), a scrivener's penknife (33, dagger) and the Gavel of the High Justice (38, blunt).
 
+From **the Painted Gallery** (37-42, behind Elandor's Hall of the Moon Court; each painting is entered
+with `enter`): a palette knife (38, dagger, DEX/INT), Ithilmir's brush (42, wand, INT/WIS/CHA), the
+Countess's kid gloves (39, leather hands, DEX/CHA) and a candle of still flame (38, off-hand,
+INT/WIS/CON). Ithilmir drops his brush; Countess Isaura drops the Countess's kid gloves; the Memento
+Skull drops the candle of still flame.
+
+From **the Clockwork Orchard** (41-44, south of the Chancery's Archive of Wills): a gearwork blade (42,
+sword, STR/DEX), Orrin's great wrench (44, blunt, STR/WIS/CON) and tinker's gloves (43, leather hands,
+DEX/STR). The Master Automaton drops the gearwork blade; Orrin Gearwhistle drops his great wrench; the
+Clockwork Hostess drops tinker's gloves.
+
 From **Thornwick Hall** (43-49, west of the Stag Walk): a minstrel's lute (45, off-hand, CHA/DEX) from
 the household minstrels, the first CHA-focused late item; Sir Corwin's rapier (47, sword, DEX/STR/CHA),
 Lady Seraphine's hairpin (47, dagger), the Dowager's pearls (48, neck, WIS/CHA/CON), the Vane signet
