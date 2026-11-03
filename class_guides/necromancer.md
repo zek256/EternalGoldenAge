@@ -27,10 +27,10 @@ Average race, starting gear only (see the [README](README.md#about-the-numbers))
 
 | Level | HP | Mana | INT | CON | WIS | Weapon damage |
 |---|---|---|---|---|---|---|
-| 1 | 20 | 28 | 17 | 11 | 13 | 5-8 |
-| 10 | 130 | 157 | 44 | 20 | 22 | 9-12 |
-| 25 | 385 | 407 | 89 | 35 | 37 | 17-20 |
-| 50 | 1010 | 925 | 164 | 60 | 62 | 29-32 |
+| 1 | 81 | 73 | 17 | 11 | 13 | 5-8 |
+| 10 | 526 | 202 | 44 | 20 | 22 | 9-12 |
+| 25 | 1559 | 452 | 89 | 35 | 37 | 17-20 |
+| 50 | 4090 | 970 | 164 | 60 | 62 | 29-32 |
 
 ## Spells and abilities
 
@@ -38,12 +38,12 @@ All Necromancer magic is spells, cast with `cast <name>`. There are no cooldowns
 
 | Level | Name | Type | Cost | Target | Effect |
 |---|---|---|---|---|---|
-| 1 | **Lifetap** | spell | 5 / 30 | one foe | Shadow drain 6 + 1.86/level + 0.53 INT (~16 at L1, ~99 at L25, ~185 at L50) that heals you for 25% of what it deals |
-| 4 | **Raise Skeleton** | spell | 23 / 106 | self | Summon a rattling skeleton (~214 HP, 28-44 damage at L25); only out of combat, and it stays until it dies |
+| 1 | **Lifetap** | spell | 5 / 30 | one foe | Shadow drain 6 + 1.86/level + 0.53 INT (~16 at L1, ~99 at L25, ~185 at L50) that heals you for 101% of what it deals |
+| 4 | **Raise Skeleton** | spell | 23 / 106 | self | Summon a rattling skeleton (~867 HP, 28-44 damage at L25); only out of combat, and it stays until it dies |
 | 10 | **Plague** | spell | 23 / 71 | one foe | Disease damage over time: 5 + 1.1/level + 0.25 INT per round for 5 rounds (~27 at L10, ~54 at L25, ~101 at L50 per round) |
 | 18 | **Bone Spear** | spell | 14 / 30 | one foe | Shadow damage 6.72 + 2.08/level + 0.59 INT (~84 at L18, ~111 at L25, ~207 at L50) |
-| 28 | **Siphon Soul** | spell | 18 / 30 | one foe | Shadow drain 7.53 + 2.33/level + 0.66 INT (~137 at L28, ~232 at L50) that heals you for 25% of what it deals |
-| 38 | **Raise Bone Colossus** | spell | 258 / 324 | self | Summon a towering bone colossus (~656 HP, 75-114 damage at L38); only out of combat, and it stays until it dies |
+| 28 | **Siphon Soul** | spell | 18 / 30 | one foe | Shadow drain 7.53 + 2.33/level + 0.66 INT (~137 at L28, ~232 at L50) that heals you for 101% of what it deals |
+| 38 | **Raise Bone Colossus** | spell | 258 / 324 | self | Summon a towering bone colossus (~2657 HP, 75-114 damage at L38); only out of combat, and it stays until it dies |
 | 46 | **Wail of the Damned** | spell | 28 / 30 | one foe | Shadow damage 8.43 + 2.61/level + 0.74 INT (~240 at L46, ~260 at L50); the foe deals 20% less damage for the rest of the fight |
 
 ## How to play
@@ -116,7 +116,7 @@ from her realm.
 
 ## How it performs
 
-The Necromancer wins every same-level fight in the simulator in 4.2-8.3 rounds, finishing with 63-99% HP. It survives about 5, 3 and 8 fights in a row at levels 10, 20 and 30 (the cap is 8). Against the world bosses it beats every one, at the boss's own level and at boss level +3. These figures are from November 2026, after monsters of level 50 and below got twice the HP and 60% of the damage.
+The Necromancer wins every same-level fight in the simulator in 6.0-12.4 rounds, finishing with 65-99% HP. It survives about 6, 3 and 8 fights in a row at levels 10, 20 and 30 (the cap is 8). Against the world bosses it beats every one, at the boss's own level and at boss level +3. These figures are from November 2026, after monsters of level 50 and below got three times the HP and 40% of the damage and player HP was raised to match theirs.
 
 ## Rebirth
 

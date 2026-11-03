@@ -50,9 +50,10 @@ Bard) split their growth between the two, so their damage and healing pull on di
 
 ### HP, mana and recovery
 
-- **Max HP** = 10 + (class HP + 3) x level + CON x level x 0.2, times any race HP perk and the
-  mastery bonus (+2% per class mastered).
-- **Max mana** = 15 + class mana x level + WIS x level x 0.1, times any race mana perk.
+- **Max HP** = (10 + (class HP + 3) x level + CON x level x 0.2) x 4.05, times any race HP perk and the
+  mastery bonus (+2% per class mastered). The 4.05 (HP_SCALE) puts players on par with ordinary
+  monsters; every heal, shield, drain, potion, pet and monster hit is scaled by it too.
+- **Max mana** = 60 + class mana x level + WIS x level x 0.1, times any race mana perk.
 - In a fight you regain **2% of max mana per round**. Out of a fight, each 4-second tick restores
   **2% HP and 3% mana**, and **sleeping restores 10% of both per tick**.
 - Levelling up fully restores HP and mana.

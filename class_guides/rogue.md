@@ -28,10 +28,10 @@ Average race, starting gear only (see the [README](README.md#about-the-numbers))
 
 | Level | HP | STR | DEX | CON | Weapon damage | Miss | Crit | Dodge | Armor |
 |---|---|---|---|---|---|---|---|---|---|
-| 1 | 23 | 12 | 13 | 11 | 6-8 | 9.1% | 6.3% | 3.9% | 5 |
-| 10 | 160 | 30 | 31 | 20 | 17-19 | 7.8% | 8.1% | 5.1% | 7 |
-| 25 | 460 | 60 | 61 | 35 | 35-37 | 5.7% | 11.1% | 7.1% | 10 |
-| 50 | 1160 | 110 | 111 | 60 | 65-67 | 2.2% | 16.1% | 10.4% | 15 |
+| 1 | 93 | 12 | 13 | 11 | 6-8 | 9.1% | 6.3% | 3.9% | 5 |
+| 10 | 648 | 30 | 31 | 20 | 17-19 | 7.8% | 8.1% | 5.1% | 7 |
+| 25 | 1863 | 60 | 61 | 35 | 35-37 | 5.7% | 11.1% | 7.1% | 10 |
+| 50 | 4698 | 110 | 111 | 60 | 65-67 | 2.2% | 16.1% | 10.4% | 15 |
 
 STR is your damage and DEX your precision: by level 50 your auto-attacks almost never miss.
 
@@ -119,7 +119,7 @@ ring of spun sugar; the rest come from her realm.
 
 ## How it performs
 
-The Rogue wins every same-level fight in the simulator in 4.8-6.4 rounds, finishing with 66-83% HP. It survives about 3, 4 and 7 fights in a row at levels 10, 20 and 30. Against the world bosses it beats every one, at the boss's own level and at boss level +3. These figures are from November 2026, after monsters of level 50 and below got twice the HP and 60% of the damage.
+The Rogue wins every same-level fight in the simulator in 6.6-8.8 rounds, finishing with 50-83% HP. It survives about 2, 4 and 7 fights in a row at levels 10, 20 and 30. Against the world bosses it beats every one, at the boss's own level and at boss level +3. These figures are from November 2026, after monsters of level 50 and below got three times the HP and 40% of the damage and player HP was raised to match theirs.
 
 ## Rebirth
 

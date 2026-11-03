@@ -2,7 +2,7 @@
 import random
 
 from data.abilities import ABILITIES, PASSIVES
-from data.classes import CLASSES, STATS
+from data.classes import CLASSES, HP_SCALE, STATS
 from data.items import ARMOR_TIERS, DUAL_KINDS, FREE_KINDS, ITEMS, SLOTS
 from data.races import RACES
 
@@ -10,6 +10,7 @@ MAX_LEVEL = 50
 MASTERY_BONUS = 0.02  # max HP and damage per class mastered
 MAX_TIER = 10
 TIER_BONUS = 10  # to every stat per tier above 1 (not counted in balancing)
+MANA_BASE = 60  # was 15; raised when fights reached ~10 rounds, for low-level casters
 MISS_BASE, MISS_PER_DEX, MISS_FLOOR = 0.10, 0.0007, 0.02  # weapon swings: 9% at 10 DEX, 2% from about 115
 
 
@@ -133,11 +134,11 @@ class Character:
     def max_hp(self):
         per_level = max(CLASSES[c]["hp"] for c in self.lived_classes())
         hp = 10 + (per_level + 3) * self.level + self.stat("CON") * self.level * 0.2
-        return int(hp * self.perk("hp_mult", 1.0) * self.mastery_bonus)
+        return int(hp * self.perk("hp_mult", 1.0) * self.mastery_bonus * HP_SCALE)
 
     @property
     def max_mana(self):
-        mana = 15 + max(CLASSES[c]["mana"] for c in self.lived_classes()) * self.level + self.stat("WIS") * self.level * 0.1
+        mana = MANA_BASE + max(CLASSES[c]["mana"] for c in self.lived_classes()) * self.level + self.stat("WIS") * self.level * 0.1
         return int(mana * self.perk("mana_mult", 1.0))
 
     @property

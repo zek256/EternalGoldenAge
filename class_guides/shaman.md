@@ -27,10 +27,10 @@ Average race, starting gear only (see the [README](README.md#about-the-numbers))
 
 | Level | HP | Mana | WIS | CON | INT | STR | Weapon damage |
 |---|---|---|---|---|---|---|---|
-| 1 | 23 | 21 | 12 | 12 | 11 | 10 | 6-9 |
-| 10 | 162 | 95 | 30 | 21 | 20 | 19 | 13-16 |
-| 25 | 465 | 290 | 60 | 36 | 35 | 34 | 26-29 |
-| 50 | 1170 | 815 | 110 | 61 | 60 | 59 | 47-50 |
+| 1 | 94 | 66 | 12 | 12 | 11 | 10 | 6-9 |
+| 10 | 656 | 140 | 30 | 21 | 20 | 19 | 13-16 |
+| 25 | 1883 | 335 | 60 | 36 | 35 | 34 | 26-29 |
+| 50 | 4738 | 860 | 110 | 61 | 60 | 59 | 47-50 |
 
 At level 50 a Shaman has more HP than a Paladin, thanks to its CON.
 
@@ -41,8 +41,8 @@ All Shaman magic is spells, cast with `cast <name>`. There are no cooldowns: eve
 | Level | Name | Type | Cost | Target | Effect |
 |---|---|---|---|---|---|
 | 1 | **Frost Shock** | spell | 5 / 30 | one foe | Frost damage 6 + 1.93/level + 0.56 INT (~14 at L1, ~73 at L25, ~136 at L50) |
-| 3 | **Ancestral Mending** | spell | 7 / 35 | self | Heal 10 + 2.2/level + 0.55 WIS (~25 at L3, ~98 at L25, ~180 at L50) |
-| 8 | **Spirit Wolf** | spell | 34 / 118 | self | Summon a spectral spirit wolf (~200 HP, 27-42 damage at L25); only out of combat, and it stays until it dies |
+| 3 | **Ancestral Mending** | spell | 7 / 35 | self | Heal 40.5 + 8.91/level + 2.23 WIS (~101 at L3, ~397 at L25, ~729 at L50) |
+| 8 | **Spirit Wolf** | spell | 34 / 118 | self | Summon a spectral spirit wolf (~810 HP, 27-42 damage at L25); only out of combat, and it stays until it dies |
 | 15 | **Spirit of the Bear** | spell | 36 / 88 | self | +12% damage, +6 armor + 0.9/level until the end of the fight |
 | 24 | **Venom of the Serpent** | spell | 40 / 71 | one foe | Poison damage over time: 8 + 1.5/level + 0.4 INT per round for 5 rounds (~57 at L24, ~59 at L25, ~107 at L50 per round); the foe deals 15% less damage for the rest of the fight |
 | 34 | **Chain Lightning** | spell | 22 / 30 | one foe | Lightning damage 6.72 + 2.16/level + 0.63 INT (~107 at L34, ~152 at L50) |
@@ -114,7 +114,7 @@ rolling pin; the rest come from her realm.
 
 ## How it performs
 
-The Shaman wins every same-level fight in the simulator in 4.2-9.8 rounds, finishing with 59-79% HP. It survives about 2, 3 and 6 fights in a row at levels 10, 20 and 30. Against the world bosses it wins 95-100% at the boss's own level and every one at boss level +3. These figures are from November 2026, after monsters of level 50 and below got twice the HP and 60% of the damage.
+The Shaman wins every same-level fight in the simulator in 6.5-13.9 rounds, finishing with 59-79% HP. It survives about 5, 7 and 4 fights in a row at levels 10, 20 and 30. Against the world bosses it wins 70-100% at the boss's own level and every one at boss level +3. These figures are from November 2026, after monsters of level 50 and below got three times the HP and 40% of the damage and player HP was raised to match theirs.
 
 ## Rebirth
 

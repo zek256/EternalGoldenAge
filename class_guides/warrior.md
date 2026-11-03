@@ -29,10 +29,10 @@ Average race, starting gear only (see the [README](README.md#about-the-numbers))
 
 | Level | HP | STR | CON | DEX | Weapon damage | Crit | Dodge |
 |---|---|---|---|---|---|---|---|
-| 1 | 28 | 13 | 13 | 10 | 7-10 | 6.0% | 3.7% |
-| 10 | 232 | 31 | 31 | 19 | 17-20 | 6.9% | 4.3% |
-| 25 | 715 | 61 | 61 | 34 | 35-38 | 8.4% | 5.3% |
-| 50 | 1920 | 111 | 111 | 59 | 65-68 | 10.9% | 6.9% |
+| 1 | 115 | 13 | 13 | 10 | 7-10 | 6.0% | 3.7% |
+| 10 | 939 | 31 | 31 | 19 | 17-20 | 6.9% | 4.3% |
+| 25 | 2895 | 61 | 61 | 34 | 35-38 | 8.4% | 5.3% |
+| 50 | 7776 | 111 | 111 | 59 | 65-68 | 10.9% | 6.9% |
 
 ## Passives
 
@@ -119,7 +119,7 @@ shield (47, shield, CON/STR). It drops from her gingerbread soldiers.
 
 ## How it performs
 
-The Warrior wins every same-level fight in the simulator in 7.3-11.9 rounds, finishing with 50-77% HP. It survives about 2, 3 and 5 fights in a row at levels 10, 20 and 30. Against the world bosses it beats every one, at the boss's own level and at boss level +3. These figures are from November 2026, after monsters of level 50 and below got twice the HP and 60% of the damage.
+The Warrior wins every same-level fight in the simulator in 10.4-17.0 rounds, finishing with 43-78% HP. It survives about 2, 2 and 4 fights in a row at levels 10, 20 and 30. Against the world bosses it wins 85-100% at the boss's own level and every one at boss level +3. These figures are from November 2026, after monsters of level 50 and below got three times the HP and 40% of the damage and player HP was raised to match theirs.
 
 ## Rebirth
 

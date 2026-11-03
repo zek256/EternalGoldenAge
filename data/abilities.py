@@ -24,6 +24,8 @@ Summons scale with "INT/WIS", the higher of the two, and can't be called in comb
 
 COST_GROWTH = 0.1    # default spell cost growth per level
 WIZARD_GROWTH = 0.2  # the wizard's attack ladder (the user's choice, 2026-11-03; 0.3 before fights got longer)
+from data.classes import HP_SCALE
+
 STEP = 1.12  # each rung of a class's attack ladder is this much stronger than the last
 
 
@@ -41,11 +43,18 @@ def WEAPON(mult):
     return {"type": "weapon", "mult": mult}
 
 
+def _hp(*vals):
+    """Healing and shield formulas are written in old HP units and stored times HP_SCALE."""
+    return tuple(round(v * HP_SCALE, 2) for v in vals)
+
+
 def HEAL(base, lvl, scale, stat):
+    base, lvl, scale = _hp(base, lvl, scale)
     return {"type": "heal", "base": base, "lvl": lvl, "scale": scale, "stat": stat}
 
 
 def HOT(base, lvl, scale, stat, turns, name):
+    base, lvl, scale = _hp(base, lvl, scale)
     return {"type": "hot", "base": base, "lvl": lvl, "scale": scale, "stat": stat, "turns": turns, "name": name}
 
 
@@ -55,16 +64,21 @@ def DOT(base, lvl, scale, stat, turns, name, element="poison"):
 
 
 def DRAIN(base, lvl, scale, stat, frac, element="shadow"):
+    """Heals frac of the damage dealt, in old HP units (so frac x HP_SCALE of it)."""
     return {"type": "drain", "base": base, "lvl": lvl, "scale": scale, "stat": stat,
-            "frac": frac, "element": element}
+            "frac": round(frac * HP_SCALE, 3), "element": element}
 
 
 def SHIELD(base, lvl, scale, stat):
+    base, lvl, scale = _hp(base, lvl, scale)
     return {"type": "shield", "base": base, "lvl": lvl, "scale": scale, "stat": stat}
 
 
 def BUFF(name, **mods):
-    """Lasts until the end of the fight. mods: damage_pct, armor (flat), armor_lvl (per level), dodge, lifesteal."""
+    """Lasts until the end of the fight. mods: damage_pct, armor (flat), armor_lvl (per level), dodge, lifesteal
+    (written in old HP units: the share of weapon damage healed is lifesteal x HP_SCALE)."""
+    if "lifesteal" in mods:
+        mods["lifesteal"] = round(mods["lifesteal"] * HP_SCALE, 3)
     return {"type": "buff", "name": name, "mods": mods}
 
 
@@ -265,12 +279,12 @@ spell("dread_touch", "Dread Touch", "dread knight", 18, DK_STRIKE,
       [WEAPON(rung(1, REAP_W)), DRAIN(*rung(1, *REAP_D), "INT", 0.5)],
       desc="Channel death itself through your blade.", msg="You lay your blade upon {t} and death itself flows through it!")
 spell("vampiric_embrace", "Vampiric Embrace", "dread knight", 26, 24, [BUFF("Vampiric Embrace", lifesteal=0.15)], target="self",
-      desc="Your weapon hits heal you for 15% of the damage they deal, for the fight.", msg="Your veins run black with a vampiric hunger.")
+      desc="Your weapon hits heal you for {}% of the damage they deal, for the fight.".format(int(15 * HP_SCALE)), msg="Your veins run black with a vampiric hunger.")
 spell("death_coil", "Death Coil", "dread knight", 34, DK_STRIKE,
       [WEAPON(rung(2, REAP_W)), DRAIN(*rung(2, *REAP_D), "INT", 0.5)],
       desc="A blow wrapped in a coil of death.", msg="A shrieking coil of black fire lashes {t} with your blow!")
 spell("unholy_frenzy", "Unholy Frenzy", "dread knight", 44, 30, [BUFF("Unholy Frenzy", damage_pct=0.2, lifesteal=0.1)], target="self",
-      desc="An unholy frenzy for the fight: +20% damage and 10% lifesteal.", msg="An unholy frenzy seizes you, and you laugh with a voice not your own!")
+      desc="An unholy frenzy for the fight: +20% damage and {}% lifesteal.".format(int(10 * HP_SCALE)), msg="An unholy frenzy seizes you, and you laugh with a voice not your own!")
 
 # ---------------------------------------------------------------- Bard
 SONG = (10, 3.22, 0.8)  # Discordant Note, the first rung

@@ -5,6 +5,7 @@ import random
 import ui
 from character import MAX_LEVEL, Pet
 from data.abilities import OFFHAND_MULT, double_attack_chance
+from data.classes import HP_SCALE
 from data.items import ITEMS
 from data.monsters import MONSTERS
 
@@ -103,7 +104,7 @@ def resolve_self_effect(game, ab, eff):
             round(eff["turns"] * 4 / 60)), "bcyan")
     elif t == "summon":
         stat = p.magic_stat(eff["stat"])
-        hp = int(eff["hp_base"] + eff["hp_lvl"] * p.level + stat * 0.5)
+        hp = int((eff["hp_base"] + eff["hp_lvl"] * p.level + stat * 0.5) * HP_SCALE)
         lo = int(eff["dmg_base"] + eff["dmg_lvl"] * p.level * 0.6 + stat * 0.08)
         hi = int(lo * 1.5) + 2
         if p.pet:
@@ -398,8 +399,8 @@ class Combat:
         if special:
             ui.say("{} {} [{}] {} damage{}.".format(mon.short(), special["msg"], special["name"], dmg, shield_txt), "bred")
             st = special["type"]
-            if st == "drain":
-                mon.hp = min(mon.max_hp, mon.hp + dmg)
+            if st == "drain":  # monster damage is in player HP units; its own HP is not
+                mon.hp = min(mon.max_hp, mon.hp + int(dmg / HP_SCALE))
             elif st == "dot":
                 if special["element"] in p.perk("immune", []):
                     ui.say("Your undead flesh shrugs off the {}.".format(special["element"]), "grey")

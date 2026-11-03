@@ -152,7 +152,7 @@ data/rooms/   one module per region, each with a ROOMS dict, merged in __init__ 
   The rogue, ranger and bard grow STR +2/+2/+1 for this reason.
 - **INT and WIS work the same for every class** (the user's rule, 2026-11-03; there is no CHA):
   INT scales damage, dot and drain effects, WIS scales heal, hot and shield effects and the mana pool
-  (`Character.max_mana`: 15 + best class `mana` x level + 0.1 WIS x level). Summons use `"INT/WIS"`,
+  (`Character.max_mana`: `MANA_BASE` 60 + best class `mana` x level + 0.1 WIS x level). Summons use `"INT/WIS"`,
   the higher of the two (`Character.magic_stat`). Every class still gains exactly 5 whole points a
   level (the user's preference). When stats moved, heal/shield (and the bard's damage) per-level terms
   were raised so single-class characters at 50 kept their power; hybrid damage was deliberately not
@@ -184,9 +184,16 @@ data/rooms/   one module per region, each with a ROOMS dict, merged in __init__ 
 ### Monsters
 Templates only set multipliers. Real HP, damage and armor come from level in `MonsterInstance`
 (`(20 + 15L)` HP times `MONSTER_HP_MULT`, etc.). To make a monster tougher, change its multipliers, not raw numbers.
-Monsters of level 50 and below also get `WORLD_HP_MULT` (2.0) and `WORLD_DMG_MULT` (0.6) (the user's choice,
-2026-11-03: same-level fights took 3-5 rounds, now about 5-10, mean ~7, at about the same HP cost). The planes
-(above 50) don't get them, so their tuning is untouched.
+Monsters of level 50 and below also get `WORLD_HP_MULT` (3.0) and `WORLD_DMG_MULT` (0.4) (the user's choice,
+2026-11-03: same-level fights took 3-5 rounds, then ~7 at x2 / x0.6, now ~10 on average at about the same
+share of HP). The planes (above 50) don't get them, so their tuning is untouched.
+**HP units** (`data.classes.HP_SCALE`, 4.05): player max HP, every heal / hot / shield formula (`HEAL`, `HOT`,
+`SHIELD` store their numbers times it), drain `frac` and `lifesteal` (stored times it, so drains heal
+over 100% of the damage dealt), potion heals (`potion()`), pet HP (summon) and all monster damage are
+multiplied by it, so ordinary monsters and players have about the same HP (the user's wish, for realism).
+Percent-based healing (regen, sleep, `heal_pct`, death) is not multiplied again, and monster drain specials
+heal the monster by damage / HP_SCALE. Write new heal / shield / potion numbers in the old units: the
+constructors scale them. Changing HP_SCALE alone changes no balance.
 Specials: big / dot / drain / heal (no stuns). Bosses respawn after 120 ticks, others after 30.
 Monsters above level 50 (the Planes of the Gods) use larger multipliers (hp 3.5-5.6, dmg 2.6-3.4
 for regulars; champions 4.85-6.6 / 2.3-2.9; elemental lords 6.4-10.5 / 2.5-3.25; Lord Trepth
@@ -315,3 +322,11 @@ Dread knight (2026-11-03, the user's choice): every dread knight ability costs m
 Touch and Death Coil became spells at base cost `DK_STRIKE` (3), Unholy Frenzy 30. A single fight never runs
 it dry and bosses stay 100%, but fights in a row fell from the cap (7-8) to about 2 / 7 / 8 / 7 at levels
 10 / 20 / 30 / 40, because its pool is small (3 mana per level). Base 4-5 cut that to 2-5.
+
+Ten-round fights and HP parity (2026-11-03, the user's choice): `HP_SCALE` 4.05 with `WORLD_HP_MULT` 3.0 and
+`WORLD_DMG_MULT` 0.4; the parity step alone (HP_SCALE 2.7 at x2 / x0.6) was checked to change no sim result
+beyond noise. `MANA_BASE` went from 15 to 60, because 40% more casts a fight drained low-level casters
+(shamans and druids 85-94% a fight at 1-10, now ~35-70%). Same-level fights average ~10 rounds (rogue 7-9,
+cleric 9-22), HP left about as before; world bosses at the boss's own level got harder for slow killers
+(cleric 55-85% against Vesperine, Varnoth, Orrin and Marchpane, shaman 85%), all 85-100% at +3; groups of
+three 50-95%; the planes didn't move (lords ~90-97% with 6 or 11 lives, Trepth ~65%).

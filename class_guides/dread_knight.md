@@ -28,10 +28,10 @@ Average race, starting gear only (see the [README](README.md#about-the-numbers))
 
 | Level | HP | Mana | STR | CON | INT | WIS | Weapon damage |
 |---|---|---|---|---|---|---|---|
-| 1 | 25 | 19 | 12 | 11 | 11 | 11 | 6-9 |
-| 10 | 180 | 65 | 30 | 20 | 20 | 20 | 17-20 |
-| 25 | 510 | 177 | 60 | 35 | 35 | 35 | 35-38 |
-| 50 | 1260 | 465 | 110 | 60 | 60 | 60 | 65-68 |
+| 1 | 102 | 64 | 12 | 11 | 11 | 11 | 6-9 |
+| 10 | 729 | 110 | 30 | 20 | 20 | 20 | 17-20 |
+| 25 | 2065 | 222 | 60 | 35 | 35 | 35 | 35-38 |
+| 50 | 5103 | 510 | 110 | 60 | 60 | 60 | 65-68 |
 
 ## Spells and abilities
 
@@ -39,14 +39,14 @@ Everything costs mana and is cast with `cast <name>` (`ability <name>` works too
 
 | Level | Name | Type | Cost | Target | Effect |
 |---|---|---|---|---|---|
-| 1 | **Shadow Strike** | spell | 3 / 18 | one foe | 1.2x weapon damage (~9 at L1, ~43 at L25, ~79 at L50 with the starting weapon); Shadow drain 3 + 1/level + 0.3 INT (~7 at L1, ~38 at L25, ~71 at L50) that heals you for 50% of what it deals |
+| 1 | **Shadow Strike** | spell | 3 / 18 | one foe | 1.2x weapon damage (~9 at L1, ~43 at L25, ~79 at L50 with the starting weapon); Shadow drain 3 + 1/level + 0.3 INT (~7 at L1, ~38 at L25, ~71 at L50) that heals you for 202% of what it deals |
 | 4 | **Disease Cloud** | spell | 8 / 35 | one foe | Disease damage over time: 4 + 1/level + 0.25 INT per round for 5 rounds (~11 at L4, ~37 at L25, ~69 at L50 per round) |
 | 10 | **Dread Aura** | spell | 23 / 71 | one foe | The foe deals 20% less damage for the rest of the fight |
 | 15 | **Double Attack** | passive | - | - | Each hand may strike a second time every round: a 40% chance when learned, rising evenly to certain at level 50. |
-| 18 | **Dread Touch** | spell | 8 / 18 | one foe | 1.34x weapon damage (~38 at L18, ~48 at L25, ~89 at L50 with the starting weapon); Shadow drain 3.36 + 1.12/level + 0.34 INT (~33 at L18, ~43 at L25, ~79 at L50) that heals you for 50% of what it deals |
-| 26 | **Vampiric Embrace** | spell | 84 / 142 | self | 15% lifesteal on weapon hits until the end of the fight |
-| 34 | **Death Coil** | spell | 13 / 18 | one foe | 1.51x weapon damage (~71 at L34, ~100 at L50 with the starting weapon); Shadow drain 3.76 + 1.25/level + 0.38 INT (~62 at L34, ~89 at L50) that heals you for 50% of what it deals |
-| 44 | **Unholy Frenzy** | spell | 159 / 177 | self | +20% damage, 10% lifesteal on weapon hits until the end of the fight |
+| 18 | **Dread Touch** | spell | 8 / 18 | one foe | 1.34x weapon damage (~38 at L18, ~48 at L25, ~89 at L50 with the starting weapon); Shadow drain 3.36 + 1.12/level + 0.34 INT (~33 at L18, ~43 at L25, ~79 at L50) that heals you for 202% of what it deals |
+| 26 | **Vampiric Embrace** | spell | 84 / 142 | self | 60% lifesteal on weapon hits until the end of the fight |
+| 34 | **Death Coil** | spell | 13 / 18 | one foe | 1.51x weapon damage (~71 at L34, ~100 at L50 with the starting weapon); Shadow drain 3.76 + 1.25/level + 0.38 INT (~62 at L34, ~89 at L50) that heals you for 202% of what it deals |
+| 44 | **Unholy Frenzy** | spell | 159 / 177 | self | +20% damage, 40% lifesteal on weapon hits until the end of the fight |
 
 ## How to play
 
@@ -58,7 +58,7 @@ Touch from 18, Death Coil from 34. Every strike heals you for half of its drain.
 - Your healing all comes from dealing damage, so heavily armored foes are your hardest fights.
 - From 15, Double Attack adds extra weapon hits, which Vampiric Embrace turns into more healing.
 - Your strikes cost mana, and your pool is small (3 per level plus WIS). A full pool lasts a fight
-  easily, but early on it runs out after two or three fights in a row; then you are down to auto-attacks
+  easily (about 20-45% of it), but several fights in a row drain it; then you are down to auto-attacks
   and should rest.
 
 ## Gear
@@ -112,7 +112,7 @@ shield (47, shield, CON/STR). It drops from her gingerbread soldiers.
 
 ## How it performs
 
-The Dread Knight wins every same-level fight in the simulator in 4.2-9.2 rounds, finishing with 83-99% HP. It survives about 2, 7 and 8 fights in a row at levels 10, 20 and 30 (the cap is 8), limited early by mana. Against the world bosses it beats every one, at the boss's own level and at boss level +3. These figures are from November 2026, after monsters of level 50 and below got twice the HP and 60% of the damage and its strikes began costing mana.
+The Dread Knight wins every same-level fight in the simulator in 5.8-13.2 rounds, finishing with 93-100% HP. It survives about 4, 8 and 8 fights in a row at levels 10, 20 and 30 (the cap is 8). Against the world bosses it wins 90-100% at the boss's own level and every one at boss level +3. These figures are from November 2026, after monsters of level 50 and below got three times the HP and 40% of the damage and player HP was raised to match theirs.
 
 ## Rebirth
 

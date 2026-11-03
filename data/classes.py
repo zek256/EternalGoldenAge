@@ -17,6 +17,12 @@ Stats, HP and mana per level take the best of every class a character has lived 
 
 STATS = ["STR", "DEX", "CON", "INT", "WIS"]
 
+# Player HP units (the user's choice, 2026-11-03: players and ordinary monsters should have roughly the
+# same HP). Player max HP, every heal, heal over time, shield, drain and lifesteal, potions, pet HP and
+# all monster damage are multiplied by it together, so balance doesn't move. Percent-based healing
+# (regen, sleep, heal_pct) already follows max HP and is not multiplied again.
+HP_SCALE = 4.05  # 2.7 gave parity at ~7-round fights; x1.5 with WORLD_HP_MULT 3.0 keeps it at ~10
+
 CLASSES = {
     "warrior": {
         "name": "Warrior", "hp": 13, "mana": 0,

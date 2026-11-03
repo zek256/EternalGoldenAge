@@ -27,10 +27,10 @@ Average race, starting gear only (see the [README](README.md#about-the-numbers))
 
 | Level | HP | Mana | WIS | CON | INT | STR | Weapon damage |
 |---|---|---|---|---|---|---|---|
-| 1 | 22 | 26 | 13 | 11 | 11 | 10 | 6-9 |
-| 10 | 150 | 146 | 31 | 20 | 20 | 19 | 13-16 |
-| 25 | 435 | 417 | 61 | 35 | 35 | 34 | 26-29 |
-| 50 | 1110 | 1070 | 111 | 60 | 60 | 59 | 47-50 |
+| 1 | 89 | 71 | 13 | 11 | 11 | 10 | 6-9 |
+| 10 | 607 | 191 | 31 | 20 | 20 | 19 | 13-16 |
+| 25 | 1761 | 462 | 61 | 35 | 35 | 34 | 26-29 |
+| 50 | 4495 | 1115 | 111 | 60 | 60 | 59 | 47-50 |
 
 ## Spells and abilities
 
@@ -38,12 +38,12 @@ All Cleric magic is spells, cast with `cast <name>`. There are no cooldowns: eve
 
 | Level | Name | Type | Cost | Target | Effect |
 |---|---|---|---|---|---|
-| 1 | **Minor Healing** | spell | 6 / 35 | self | Heal 12 + 3.11/level + 0.6 WIS (~22 at L1, ~126 at L25, ~234 at L50) |
+| 1 | **Minor Healing** | spell | 6 / 35 | self | Heal 48.6 + 12.6/level + 2.43 WIS (~89 at L1, ~510 at L25, ~948 at L50) |
 | 3 | **Smite** | spell | 7 / 35 | one foe | Holy damage 8 + 2.13/level + 0.6 INT (~22 at L3, ~82 at L25, ~150 at L50) |
-| 8 | **Divine Aegis** | spell | 31 / 106 | self | A ward that absorbs 15 + 4.02/level + 1 WIS damage until it breaks (~74 at L8, ~176 at L25, ~327 at L50); casting it again restores it |
-| 15 | **Greater Healing** | spell | 43 / 106 | self | Heal 35 + 7.12/level + 1.1 WIS (~186 at L15, ~280 at L25, ~513 at L50) |
+| 8 | **Divine Aegis** | spell | 31 / 106 | self | A ward that absorbs 60.75 + 16.28/level + 4.05 WIS damage until it breaks (~300 at L8, ~713 at L25, ~1324 at L50); casting it again restores it |
+| 15 | **Greater Healing** | spell | 43 / 106 | self | Heal 141.75 + 28.84/level + 4.46 WIS (~753 at L15, ~1134 at L25, ~2078 at L50) |
 | 25 | **Holy Wrath** | spell | 20 / 35 | one foe | Holy damage 8.96 + 2.39/level + 0.67 INT (~92 at L25, ~168 at L50) |
-| 35 | **Resurgence** | spell | 123 / 165 | self | Then 8 + 1.3/level + 0.18 WIS per round for 10 rounds (~68 at L35, ~92 at L50 per round); casting it again restarts the timer |
+| 35 | **Resurgence** | spell | 123 / 165 | self | Then 32.4 + 5.26/level + 0.73 WIS per round for 10 rounds (~275 at L35, ~373 at L50 per round); casting it again restarts the timer |
 | 45 | **Sunburst** | spell | 32 / 35 | one foe | Holy damage 10.04 + 2.67/level + 0.75 INT (~171 at L45, ~188 at L50) |
 
 ## How to play
@@ -115,7 +115,7 @@ rolling pin; the rest come from her realm.
 
 ## How it performs
 
-The Cleric wins every same-level fight in the simulator in 6.0-14.6 rounds, finishing with 57-90% HP. It survives about 4, 7 and 8 fights in a row at levels 10, 20 and 30 (the cap is 8). Against the world bosses it wins 70-100% at the boss's own level and every one at boss level +3. These figures are from November 2026, after monsters of level 50 and below got twice the HP and 60% of the damage.
+The Cleric wins every same-level fight in the simulator in 8.7-22.5 rounds, finishing with 57-89% HP. It survives about 7, 8 and 8 fights in a row at levels 10, 20 and 30 (the cap is 8). Against the world bosses it wins 45-100% at the boss's own level and 95-100% at boss level +3. These figures are from November 2026, after monsters of level 50 and below got three times the HP and 40% of the damage and player HP was raised to match theirs.
 
 ## Rebirth
 

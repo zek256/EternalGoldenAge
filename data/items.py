@@ -9,6 +9,8 @@ kind says who may use it (see ARMOR_TIERS / WEAPON_KINDS and the class tables in
   neck and ring: "jewelry" (anyone)
 """
 
+from data.classes import HP_SCALE
+
 SLOTS = ["weapon", "shield", "head", "chest", "hands", "legs", "feet", "neck", "ring"]
 ARMOR_TIERS = ["cloth", "leather", "mail", "plate"]  # each tier may also wear every tier before it
 WEAPON_KINDS = ["dagger", "sword", "axe", "blunt", "two-handed", "staff", "wand", "bow"]
@@ -29,8 +31,9 @@ def armor(iid, name, slot, level, ac, value, desc, kind, **stats):
 
 
 def potion(iid, name, level, value, desc, heal=0, mana=0):
+    """heal is in old HP units and stored times HP_SCALE."""
     ITEMS[iid] = {"id": iid, "name": name, "type": "consumable", "level": level,
-                  "heal": heal, "mana": mana, "value": value, "desc": desc}
+                  "heal": int(heal * HP_SCALE), "mana": mana, "value": value, "desc": desc}
 
 
 def misc(iid, name, value, desc, kind="junk"):

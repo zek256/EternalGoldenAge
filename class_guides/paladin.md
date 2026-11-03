@@ -27,10 +27,10 @@ Average race, starting gear only (see the [README](README.md#about-the-numbers))
 
 | Level | HP | Mana | STR | CON | INT | WIS | Weapon damage |
 |---|---|---|---|---|---|---|---|
-| 1 | 25 | 19 | 12 | 11 | 11 | 11 | 6-9 |
-| 10 | 180 | 65 | 30 | 20 | 20 | 20 | 17-20 |
-| 25 | 510 | 177 | 60 | 35 | 35 | 35 | 35-38 |
-| 50 | 1260 | 465 | 110 | 60 | 60 | 60 | 65-68 |
+| 1 | 102 | 64 | 12 | 11 | 11 | 11 | 6-9 |
+| 10 | 729 | 110 | 30 | 20 | 20 | 20 | 17-20 |
+| 25 | 2065 | 222 | 60 | 35 | 35 | 35 | 35-38 |
+| 50 | 5103 | 510 | 110 | 60 | 60 | 60 | 65-68 |
 
 INT powers the holy damage of Holy Strike and Consecration; WIS powers Divine Shield, Consecration's
 heal and your mana.
@@ -42,10 +42,10 @@ Abilities are free (`ability <name>`); spells cost mana (`cast <name>`). There a
 | Level | Name | Type | Cost | Target | Effect |
 |---|---|---|---|---|---|
 | 1 | **Holy Strike** | ability | free | one foe | 1.2x weapon damage (~9 at L1, ~43 at L25, ~79 at L50 with the starting weapon); Holy damage 3 + 1/level + 0.3 INT (~7 at L1, ~38 at L25, ~71 at L50) |
-| 5 | **Holy Light** | spell | 11 / 47 | self | Heal 12 + 2.8/level + 0.55 WIS (~34 at L5, ~101 at L25, ~185 at L50) |
+| 5 | **Holy Light** | spell | 11 / 47 | self | Heal 48.6 + 11.34/level + 2.23 WIS (~138 at L5, ~409 at L25, ~749 at L50) |
 | 10 | **Blessing of Might** | spell | 19 / 59 | self | +20% damage until the end of the fight |
 | 15 | **Double Attack** | passive | - | - | Each hand may strike a second time every round: a 40% chance when learned, rising evenly to certain at level 50. |
-| 18 | **Divine Shield** | spell | 65 / 142 | self | A ward that absorbs 20 + 4/level + 1 WIS damage until it breaks (~120 at L18, ~155 at L25, ~280 at L50); casting it again restores it |
+| 18 | **Divine Shield** | spell | 65 / 142 | self | A ward that absorbs 81 + 16.2/level + 4.05 WIS damage until it breaks (~486 at L18, ~628 at L25, ~1134 at L50); casting it again restores it |
 | 26 | **Hammer of Justice** | ability | free | one foe | 1.34x weapon damage (~50 at L26, ~89 at L50 with the starting weapon); Holy damage 3.36 + 1.12/level + 0.34 INT (~44 at L26, ~79 at L50) |
 | 36 | **Consecration** | ability | free | one foe | 1.51x weapon damage (~74 at L36, ~100 at L50 with the starting weapon); Holy damage 3.76 + 1.25/level + 0.38 INT (~66 at L36, ~89 at L50) |
 
@@ -117,7 +117,7 @@ realm.
 
 ## How it performs
 
-The Paladin wins every same-level fight in the simulator in 4.3-8.7 rounds, finishing with 62-96% HP. It survives about 6, 8 and 8 fights in a row at levels 10, 20 and 30 (the cap is 8). Against the world bosses it beats every one, at the boss's own level and at boss level +3. These figures are from November 2026, after monsters of level 50 and below got twice the HP and 60% of the damage.
+The Paladin wins every same-level fight in the simulator in 5.8-11.7 rounds, finishing with 60-98% HP. It survives about 8, 8 and 8 fights in a row at levels 10, 20 and 30 (the cap is 8). Against the world bosses it beats every one, at the boss's own level and at boss level +3. These figures are from November 2026, after monsters of level 50 and below got three times the HP and 40% of the damage and player HP was raised to match theirs.
 
 ## Rebirth
 

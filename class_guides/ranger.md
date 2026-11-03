@@ -27,10 +27,10 @@ Average race, starting gear only (see the [README](README.md#about-the-numbers))
 
 | Level | HP | Mana | STR | DEX | CON | WIS | Weapon damage | Miss | Crit | Dodge |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 1 | 24 | 18 | 12 | 12 | 10 | 11 | 6-9 | 9.2% | 6.2% | 3.8% |
-| 10 | 168 | 46 | 30 | 30 | 19 | 11 | 17-20 | 7.9% | 8.0% | 5.0% |
-| 25 | 480 | 92 | 60 | 60 | 34 | 11 | 35-38 | 5.8% | 11.0% | 7.0% |
-| 50 | 1200 | 170 | 110 | 110 | 59 | 11 | 65-68 | 2.3% | 16.0% | 10.3% |
+| 1 | 97 | 63 | 12 | 12 | 10 | 11 | 6-9 | 9.2% | 6.2% | 3.8% |
+| 10 | 680 | 91 | 30 | 30 | 19 | 11 | 17-20 | 7.9% | 8.0% | 5.0% |
+| 25 | 1944 | 137 | 60 | 60 | 34 | 11 | 35-38 | 5.8% | 11.0% | 7.0% |
+| 50 | 4860 | 215 | 110 | 110 | 59 | 11 | 65-68 | 2.3% | 16.0% | 10.3% |
 
 STR powers your weapon; DEX makes it land (fewer misses, more crits) and helps you dodge. Your WIS
 stays low, so your mana pool is small: Hunter's Mend and the wolf are for when you need them most.
@@ -42,10 +42,10 @@ Abilities are free (`ability <name>`); spells cost mana (`cast <name>`). There a
 | Level | Name | Type | Cost | Target | Effect |
 |---|---|---|---|---|---|
 | 1 | **Aimed Shot** | ability | free | one foe | 1.45x weapon damage (~10 at L1, ~52 at L25, ~96 at L50 with the starting weapon) |
-| 4 | **Hunter's Mend** | spell | 8 / 35 | self | Heal 9 + 2/level + 0.45 WIS (~21 at L4, ~63 at L25, ~113 at L50) |
+| 4 | **Hunter's Mend** | spell | 8 / 35 | self | Heal 36.45 + 8.1/level + 1.82 WIS (~85 at L4, ~255 at L25, ~458 at L50) |
 | 10 | **Multishot** | ability | free | one foe | 1.62x weapon damage (~29 at L10, ~59 at L25, ~107 at L50 with the starting weapon) |
 | 15 | **Double Attack** | passive | - | - | Each hand may strike a second time every round: a 40% chance when learned, rising evenly to certain at level 50. |
-| 16 | **Call Bonded Wolf** | spell | 50 / 118 | self | Summon a grey timber wolf (~205 HP, 26-41 damage at L25); only out of combat, and it stays until it dies |
+| 16 | **Call Bonded Wolf** | spell | 50 / 118 | self | Summon a grey timber wolf (~830 HP, 26-41 damage at L25); only out of combat, and it stays until it dies |
 | 24 | **Serpent Sting** | ability | free | one foe | 1x weapon damage (~35 at L24, ~36 at L25, ~66 at L50 with the starting weapon); Poison damage over time: 8 + 1.4/level + 0.3 STR per round for 5 rounds (~58 at L24, ~61 at L25, ~111 at L50 per round) |
 | 34 | **Rain of Arrows** | ability | free | one foe | 1.82x weapon damage (~86 at L34, ~121 at L50 with the starting weapon) |
 | 45 | **Deadeye** | ability | free | one foe | 2.04x weapon damage (~123 at L45, ~135 at L50 with the starting weapon) |
@@ -118,7 +118,7 @@ ring, DEX/CON/INT). Madame Marchpane drops the ring of spun sugar; the rest come
 
 ## How it performs
 
-The Ranger wins every same-level fight in the simulator in 4.8-8.5 rounds, finishing with 52-83% HP. It survives about 4, 7 and 8 fights in a row at levels 10, 20 and 30 (the cap is 8). Against the world bosses it wins 95-100% at the boss's own level and every one at boss level +3. These figures are from November 2026, after monsters of level 50 and below got twice the HP and 60% of the damage.
+The Ranger wins every same-level fight in the simulator in 6.8-12.2 rounds, finishing with 49-82% HP. It survives about 8, 8 and 8 fights in a row at levels 10, 20 and 30 (the cap is 8). Against the world bosses it wins 90-100% at the boss's own level and 95-100% at boss level +3. These figures are from November 2026, after monsters of level 50 and below got three times the HP and 40% of the damage and player HP was raised to match theirs.
 
 ## Rebirth
 

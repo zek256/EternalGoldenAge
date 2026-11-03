@@ -60,7 +60,7 @@ Saves are written as JSON to `saves/<name>.json`.
 | `save`, `load`, `quit`, `help` | system |
 
 The prompt shows your HP, mana and progress toward your next level in gold
-(e.g. `<192/192 hp (100%) 350/350 mana (100%) EXP: 3%>`). In combat it adds your target's
+(e.g. `<780/780 hp (100%) 350/350 mana (100%) EXP: 3%>`). In combat it adds your target's
 remaining health in red `TARGET: 56%`, and `[ASLEEP]` while sleeping.
 In room listings monsters are coloured by danger relative to your level
 (grey/green/blue easy, white even, yellow/red dangerous), and `(!)` / `(?)` mark NPCs with a quest to
@@ -179,8 +179,10 @@ a warrior may fight in plate with an axe.
 
 ## Character maths
 
-- **HP** = 10 + (class HP + 3) x level + CON x level x 0.2 (x racial modifier, x mastery bonus)
-- **Mana** = 15 + class mana x level + WIS x level x 0.1 (x racial modifier)
+- **HP** = (10 + (class HP + 3) x level + CON x level x 0.2) x 4.05 (x racial modifier, x mastery bonus).
+  The 4.05 puts you on par with ordinary monsters of your level; heals, shields, drains, potions, pets
+  and monster damage are all scaled by the same amount.
+- **Mana** = 60 + class mana x level + WIS x level x 0.1 (x racial modifier)
 - **Stats** = race base + class starting bonus + class gains x (level - 1) + gear
 - **Weapon damage** = weapon range + 0.35 x STR + 0.5 x level, for every class.
 - **DEX** is precision for every class: +0.1% crit per point (max 35%), more dodge (max 25%), +1

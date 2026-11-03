@@ -27,10 +27,10 @@ Average race, starting gear only (see the [README](README.md#about-the-numbers))
 
 | Level | HP | Mana | WIS | CON | INT | DEX | Weapon damage |
 |---|---|---|---|---|---|---|---|
-| 1 | 22 | 21 | 14 | 11 | 12 | 10 | 5-8 |
-| 10 | 150 | 97 | 32 | 20 | 21 | 19 | 9-12 |
-| 25 | 435 | 295 | 62 | 35 | 36 | 34 | 17-20 |
-| 50 | 1110 | 825 | 112 | 60 | 61 | 59 | 29-32 |
+| 1 | 89 | 66 | 14 | 11 | 12 | 10 | 5-8 |
+| 10 | 607 | 142 | 32 | 20 | 21 | 19 | 9-12 |
+| 25 | 1761 | 340 | 62 | 35 | 36 | 34 | 17-20 |
+| 50 | 4495 | 870 | 112 | 60 | 61 | 59 | 29-32 |
 
 The Druid's INT powers its damage spells; its WIS powers its heals and its mana.
 
@@ -41,12 +41,12 @@ All Druid magic is spells, cast with `cast <name>`. There are no cooldowns: ever
 | Level | Name | Type | Cost | Target | Effect |
 |---|---|---|---|---|---|
 | 1 | **Thornlash** | spell | 5 / 30 | one foe | Nature damage 7 + 2.13/level + 0.64 INT (~16 at L1, ~83 at L25, ~152 at L50) |
-| 3 | **Regrowth** | spell | 8 / 41 | self | Heal 10 + 2/level + 0.5 WIS (~25 at L3, ~91 at L25, ~166 at L50), then 3 + 0.7/level + 0.15 WIS per round for 10 rounds (~7 at L3, ~29 at L25, ~54 at L50 per round); casting it again restarts the timer |
+| 3 | **Regrowth** | spell | 8 / 41 | self | Heal 40.5 + 8.1/level + 2.02 WIS (~101 at L3, ~369 at L25, ~672 at L50), then 12.15 + 2.83/level + 0.61 WIS per round for 10 rounds (~28 at L3, ~117 at L25, ~219 at L50 per round); casting it again restarts the timer |
 | 8 | **Entangling Roots** | spell | 8 / 30 | one foe | Nature damage 7.84 + 2.39/level + 0.72 INT (~40 at L8, ~93 at L25, ~171 at L50) |
 | 15 | **Moonfire** | spell | 12 / 30 | one foe | Arcane damage 8.78 + 2.67/level + 0.8 INT (~69 at L15, ~104 at L25, ~191 at L50); Arcane damage over time: 5 + 1/level + 0.25 INT per round for 4 rounds (~26 at L15, ~39 at L25, ~70 at L50 per round) |
-| 22 | **Barkskin** | spell | 50 / 94 | self | +9 armor + 1.5/level until the end of the fight; then 3 + 0.5/level + 0.1 WIS per round for 10 rounds (~19 at L22, ~21 at L25, ~39 at L50 per round); casting it again restarts the timer |
+| 22 | **Barkskin** | spell | 50 / 94 | self | +9 armor + 1.5/level until the end of the fight; then 12.15 + 2.02/level + 0.41 WIS per round for 10 rounds (~77 at L22, ~85 at L25, ~158 at L50 per round); casting it again restarts the timer |
 | 32 | **Starfall** | spell | 20 / 30 | one foe | Arcane damage 9.83 + 2.99/level + 0.9 INT (~144 at L32, ~214 at L50) |
-| 44 | **Wrath of the Wild** | spell | 26 / 30 | one foe | Nature drain 11.01 + 3.35/level + 1.01 INT (~213 at L44, ~240 at L50) that heals you for 20% of what it deals |
+| 44 | **Wrath of the Wild** | spell | 26 / 30 | one foe | Nature drain 11.01 + 3.35/level + 1.01 INT (~213 at L44, ~240 at L50) that heals you for 81% of what it deals |
 
 ## How to play
 
@@ -115,7 +115,7 @@ drops the rolling pin; the rest come from her realm.
 
 ## How it performs
 
-The Druid wins every same-level fight in the simulator in 4.0-9.6 rounds, finishing with 58-96% HP. It survives about 2, 8 and 8 fights in a row at levels 10, 20 and 30 (the cap is 8). Against the world bosses it wins 80-100% at the boss's own level and 95-100% at boss level +3. These figures are from November 2026, after monsters of level 50 and below got twice the HP and 60% of the damage.
+The Druid wins every same-level fight in the simulator in 5.8-14.1 rounds, finishing with 56-99% HP. It survives about 3, 8 and 8 fights in a row at levels 10, 20 and 30 (the cap is 8). Against the world bosses it wins 95-100% at the boss's own level and 85-100% at boss level +3. These figures are from November 2026, after monsters of level 50 and below got three times the HP and 40% of the damage and player HP was raised to match theirs.
 
 ## Rebirth
 

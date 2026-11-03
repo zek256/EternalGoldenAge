@@ -28,10 +28,10 @@ Average race, starting gear only (see the [README](README.md#about-the-numbers))
 
 | Level | HP | Mana | INT | WIS | CON | Weapon damage |
 |---|---|---|---|---|---|---|
-| 1 | 20 | 26 | 17 | 14 | 10 | 5-8 |
-| 10 | 128 | 138 | 44 | 23 | 19 | 9-12 |
-| 25 | 380 | 360 | 89 | 38 | 34 | 17-20 |
-| 50 | 1020 | 830 | 164 | 63 | 59 | 29-32 |
+| 1 | 81 | 71 | 17 | 14 | 10 | 5-8 |
+| 10 | 518 | 183 | 44 | 23 | 19 | 9-12 |
+| 25 | 1539 | 405 | 89 | 38 | 34 | 17-20 |
+| 50 | 4050 | 875 | 164 | 63 | 59 | 29-32 |
 
 With only 5 HP per level and +1 CON, a Wizard still has the least HP of any class. CON gear and past
 lives help a lot.
@@ -63,7 +63,7 @@ hostile monster.
 **Tips**
 - All your damage ignores armor.
 - Your attack spells grow in cost twice as fast as other spells (x0.2 a level instead of
-  x0.1), so a same-level fight uses about 45-55% of your mana at low levels and 20-35% from 25 on.
+  x0.1), so a same-level fight uses about 30-45% of your mana.
   Auto-attacks still land every round when you run dry.
 - Wizards have no heal and no shield. Fight one monster at a time, carry healing potions, and
   wear CON gear. A healer past life (cleric, druid,
@@ -127,7 +127,7 @@ from her realm.
 
 ## How it performs
 
-The Wizard wins almost every same-level fight in the simulator in 4.0-8.8 rounds, finishing with 35-74% HP. It survives about 2, 2 and 2 fights in a row at levels 10, 20 and 30 before it must rest, the fewest of any class. Against the world bosses it wins 85-100% at the boss's own level and every one at boss level +3. These figures are from November 2026, after monsters of level 50 and below got twice the HP and 60% of the damage.
+The Wizard wins almost every same-level fight in the simulator in 5.7-12.6 rounds, finishing with 37-60% HP. It survives about 1, 2 and 2 fights in a row at levels 10, 20 and 30 before it must rest, the fewest of any class. Against the world bosses it wins 90-100% at the boss's own level and every one at boss level +3. These figures are from November 2026, after monsters of level 50 and below got three times the HP and 40% of the damage and player HP was raised to match theirs.
 
 ## Rebirth
 

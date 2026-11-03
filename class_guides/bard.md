@@ -28,10 +28,10 @@ Average race, starting gear only (see the [README](README.md#about-the-numbers))
 
 | Level | HP | Mana | INT | STR | DEX | WIS | CON | Weapon damage | Miss | Crit | Dodge |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | 23 | 25 | 12 | 11 | 12 | 11 | 10 | 6-8 | 9.2% | 6.2% | 3.8% |
-| 10 | 158 | 125 | 21 | 20 | 21 | 20 | 19 | 14-16 | 8.5% | 7.1% | 4.4% |
-| 25 | 455 | 327 | 36 | 35 | 36 | 35 | 34 | 26-28 | 7.5% | 8.6% | 5.4% |
-| 50 | 1150 | 765 | 61 | 60 | 61 | 60 | 59 | 48-50 | 5.7% | 11.1% | 7.1% |
+| 1 | 93 | 70 | 12 | 11 | 12 | 11 | 10 | 6-8 | 9.2% | 6.2% | 3.8% |
+| 10 | 639 | 170 | 21 | 20 | 21 | 20 | 19 | 14-16 | 8.5% | 7.1% | 4.4% |
+| 25 | 1842 | 372 | 36 | 35 | 36 | 35 | 34 | 26-28 | 7.5% | 8.6% | 5.4% |
+| 50 | 4657 | 810 | 61 | 60 | 61 | 60 | 59 | 48-50 | 5.7% | 11.1% | 7.1% |
 
 The Bard grows a little STR and DEX every level, so its blade stays useful between songs, but its
 real damage is its INT-powered music, and WIS feeds its healing songs and mana.
@@ -43,12 +43,12 @@ All Bard magic is spells, cast with `cast <name>`. There are no cooldowns: every
 | Level | Name | Type | Cost | Target | Effect |
 |---|---|---|---|---|---|
 | 1 | **Discordant Note** | spell | 5 / 30 | one foe | Sonic damage 10 + 3.22/level + 0.8 INT (~22 at L1, ~119 at L25, ~219 at L50) |
-| 3 | **Ballad of Mending** | spell | 8 / 41 | self | Heal 5 + 1.26/level + 0.25 WIS (~12 at L3, ~45 at L25, ~83 at L50), then 3 + 0.75/level + 0.13 WIS per round for 10 rounds (~6 at L3, ~26 at L25, ~48 at L50 per round); casting it again restarts the timer |
+| 3 | **Ballad of Mending** | spell | 8 / 41 | self | Heal 20.25 + 5.1/level + 1.01 WIS (~49 at L3, ~182 at L25, ~336 at L50), then 12.15 + 3.04/level + 0.53 WIS per round for 10 rounds (~24 at L3, ~105 at L25, ~194 at L50 per round); casting it again restarts the timer |
 | 10 | **Dual Wield** | passive | - | - | Wield a one-handed weapon in your off hand (the shield slot); it strikes beside your main hand every round for 65% damage. |
 | 15 | **War March** | spell | 36 / 88 | self | +20% damage, +6 armor + 0.8/level until the end of the fight |
 | 24 | **Dirge of Despair** | spell | 40 / 71 | one foe | Sonic damage over time: 9 + 2.01/level + 0.4 INT per round for 4 rounds (~71 at L24, ~73 at L25, ~133 at L50 per round); the foe deals 20% less damage for the rest of the fight |
 | 34 | **Crescendo** | spell | 22 / 30 | one foe | Sonic damage 11.2 + 3.61/level + 0.9 INT (~174 at L34, ~246 at L50) |
-| 44 | **Legend's Anthem** | spell | 159 / 177 | self | +15% damage until the end of the fight; then 10 + 1.2/level + 0.2 WIS per round for 10 rounds (~73 at L44, ~82 at L50 per round); casting it again restarts the timer |
+| 44 | **Legend's Anthem** | spell | 159 / 177 | self | +15% damage until the end of the fight; then 40.5 + 4.86/level + 0.81 WIS per round for 10 rounds (~296 at L44, ~332 at L50 per round); casting it again restarts the timer |
 
 ## How to play
 
@@ -126,7 +126,7 @@ the rest come from her realm.
 
 ## How it performs
 
-The Bard wins every same-level fight in the simulator in 3.3-7.8 rounds, finishing with 64-98% HP. It survives about 6, 6 and 8 fights in a row at levels 10, 20 and 30 (the cap is 8). Against the world bosses it beats every one, at the boss's own level and at boss level +3. These figures are from November 2026, after monsters of level 50 and below got twice the HP and 60% of the damage.
+The Bard wins every same-level fight in the simulator in 4.4-10.7 rounds, finishing with 63-99% HP. It survives about 6, 8 and 7 fights in a row at levels 10, 20 and 30 (the cap is 8). Against the world bosses it beats every one, at the boss's own level and at boss level +3. These figures are from November 2026, after monsters of level 50 and below got three times the HP and 40% of the damage and player HP was raised to match theirs.
 
 ## Rebirth
 
