@@ -50,6 +50,10 @@ learn it and at level 50.
 | 36 | **Consecration** | spell | 171 / 224 | 3 | all foes | Holy damage 25 + 2.6/level + 0.7 INT to every foe (~150 at L36, ~197 at L50), and heals you 10 + 1.5/level + 0.3 WIS (~77-103) |
 | 46 | **Avenging Wrath** | ability | free | 12 | self | Heal 30% of max HP and +60% damage for 5 rounds |
 
+**Passive** (always on, kept in later lives):
+
+- **Double Attack** (15): your weapon may strike a second time every round, 40% of the time at 15 rising evenly to every round at 50. (A past warrior life gives it at 10.)
+
 ## How to play
 
 **Levels 1-9.** Holy Strike every other round is your whole rotation. It costs nothing and adds a
@@ -145,4 +149,4 @@ class mastered adds +2% max HP and damage.
 A Paladin life brings strong STR growth and 10 HP per level, plus **plate armor and shield training**
 and sword, blunt and two-handed weapons. Its best gift is its abilities: Lay on Hands and Avenging
 Wrath are free, so any later class keeps two big heals that cost no mana, which is very valuable for
-fragile casters.
+fragile casters. It also passes on Double Attack to every later life, at the same level.

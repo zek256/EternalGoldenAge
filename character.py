@@ -1,9 +1,9 @@
 """The player character: stats, levelling, abilities, equipment and rebirth."""
 import random
 
-from data.abilities import ABILITIES
+from data.abilities import ABILITIES, PASSIVES
 from data.classes import CLASSES, STATS
-from data.items import ARMOR_TIERS, FREE_KINDS, ITEMS, SLOTS
+from data.items import ARMOR_TIERS, DUAL_KINDS, FREE_KINDS, ITEMS, SLOTS
 from data.races import RACES
 
 MAX_LEVEL = 50
@@ -63,8 +63,7 @@ class Character:
         self.kills = 0
         self.deaths = 0
         self.boss_kills = []  # boss ids this character has ever slain (across all lives)
-        for iid in CLASSES[cls]["gear"]:
-            self.equipment[ITEMS[iid]["slot"]] = iid
+        self.wear_kit(cls)
         self.inventory += ["minor_healing_potion"] * 3
         self.hp = self.max_hp
         self.mana = self.max_mana
@@ -164,16 +163,23 @@ class Character:
     def damage_mult(self):
         return self.perk("dmg_mult", 1.0) * (1 + self.buff_mod("damage_pct")) * self.mastery_bonus
 
-    def weapon_range(self):
-        """STR powers weapon damage for every class."""
-        w = self.equipment.get("weapon")
+    def weapon_range(self, slot="weapon"):
+        """STR powers weapon damage for every class. slot="shield" is the off-hand weapon."""
+        w = self.equipment.get(slot)
         lo, hi = ITEMS[w]["dmg"] if w else (1, 3)
         bonus = self.stat("STR") * 0.35 + self.level * 0.5
         return int(lo + bonus), int(hi + bonus)
 
-    def roll_weapon(self, mult=1.0):
-        lo, hi = self.weapon_range()
+    def roll_weapon(self, mult=1.0, slot="weapon"):
+        lo, hi = self.weapon_range(slot)
         return random.randint(lo, hi) * mult * self.damage_mult
+
+    def offhand_weapon(self):
+        """The weapon held in the off hand (the shield slot), if Dual Wield allows it."""
+        iid, main = self.equipment.get("shield"), self.equipment.get("weapon")
+        if iid and main and ITEMS[iid]["type"] == "weapon" and self.has_passive("dual_wield"):
+            return iid
+        return None
 
     def power(self, eff):
         """Raw magnitude for a scaling ability effect."""
@@ -219,6 +225,9 @@ class Character:
         msgs.append(("Your training as a {} pays off: {}.".format(self.class_name, ", ".join(gains)), "yellow"))
         msgs.append(("Max HP +{}, Max Mana +{}.".format(self.max_hp - hp0, self.max_mana - mana0), "yellow"))
         self.hp, self.mana = self.max_hp, self.max_mana
+        for pid, pa, lvl in self.known_passives():
+            if lvl == self.level:
+                msgs.append(("You have learned {}! {}".format(pa["name"], pa["desc"]), "bmagenta"))
         for ab in self.abilities_unlocked_at(self.level):
             tag = "spell" if ab["kind"] == "spell" else "ability"
             origin = "" if ab["cls"] == self.cls else " (remembered from a past life as a {})".format(
@@ -242,6 +251,19 @@ class Character:
         classes = self.lived_classes()
         abs_ = [a for a in ABILITIES.values() if a["cls"] in classes]
         return sorted(abs_, key=lambda a: (a["level"], a["cls"] != self.cls, a["name"]))
+
+    def passive_level(self, pid):
+        """The level this character learns a passive at (the lowest any lived class gives), or None."""
+        levels = [lvl for c, lvl in PASSIVES[pid]["classes"].items() if c in self.lived_classes()]
+        return min(levels) if levels else None
+
+    def known_passives(self):
+        """(id, passive, level learned) for every passive any lived class grants, learned or not yet."""
+        return [(pid, pa, self.passive_level(pid)) for pid, pa in PASSIVES.items() if self.passive_level(pid)]
+
+    def has_passive(self, pid):
+        lvl = self.passive_level(pid)
+        return lvl is not None and self.level >= lvl
 
     def usable_abilities(self):
         return [a for a in self.known_abilities() if a["level"] <= self.level]
@@ -307,7 +329,7 @@ class Character:
             return True, ""
         return False, "You have no training in {} armor.".format(kind)
 
-    def can_equip(self, iid):
+    def can_equip(self, iid, offhand=False):
         it = ITEMS[iid]
         if it["type"] not in ("weapon", "armor"):
             return False, "You can't equip that."
@@ -316,28 +338,59 @@ class Character:
             return False, why
         if it["level"] > self.level:
             return False, "You must be level {} to use {}.".format(it["level"], it["name"])
+        if offhand:
+            if it["type"] != "weapon":
+                return False, "Only a weapon can be wielded in your off hand."
+            if not self.has_passive("dual_wield"):
+                return False, "You have not learned to wield two weapons."
+            if it["kind"] not in DUAL_KINDS:
+                return False, "{} is too unwieldy for your off hand.".format(it["name"][0].upper() + it["name"][1:])
+            main = self.equipment.get("weapon")
+            if not main or ITEMS[main]["kind"] not in DUAL_KINDS:
+                return False, "You need a one-handed weapon in your main hand first."
         return True, ""
+
+    def wants_offhand(self, iid):
+        """Whether `wear` should put this weapon in the off hand: a one-hander, Dual Wield learned,
+        a one-hander already in the main hand and nothing in the shield slot."""
+        it, main = ITEMS[iid], self.equipment.get("weapon")
+        return (it["type"] == "weapon" and it["kind"] in DUAL_KINDS and self.has_passive("dual_wield")
+                and main is not None and ITEMS[main]["kind"] in DUAL_KINDS and not self.equipment.get("shield"))
+
+    def slot_of(self, iid):
+        """The slot an equipped item is in (a weapon may be in the shield slot), or None."""
+        return next((s for s, v in self.equipment.items() if v == iid), None)
 
     def drop_untrained(self):
         """Move equipped items this character isn't trained for into the inventory (older saves).
         Returns the item ids moved."""
-        moved = [iid for iid in self.equipment.values() if iid and not self.trained_for(iid)[0]]
-        for iid in moved:
-            self.unequip(ITEMS[iid]["slot"])
-        return moved
+        moved = [(s, iid) for s, iid in self.equipment.items() if iid and not self.trained_for(iid)[0]]
+        off = self.equipment.get("shield")
+        if off and ITEMS[off]["type"] == "weapon" and not self.has_passive("dual_wield"):
+            moved.append(("shield", off))
+        for s, _ in moved:
+            self.unequip(s)
+        return [iid for _, iid in moved]
 
-    def equip(self, iid):
-        ok, why = self.can_equip(iid)
+    def equip(self, iid, offhand=False):
+        """Equip from the pack. Returns (ok, why) on failure, (True, [items moved to the pack])."""
+        ok, why = self.can_equip(iid, offhand)
         if not ok:
             return False, why
-        slot = ITEMS[iid]["slot"]
+        slot = "shield" if offhand else ITEMS[iid]["slot"]
         self.inventory.remove(iid)
+        removed = []
         old = self.equipment.get(slot)
         if old:
             self.inventory.append(old)
+            removed.append(old)
         self.equipment[slot] = iid
+        # a two-handed, staff or bow main hand can't keep an off-hand weapon
+        off = self.equipment.get("shield")
+        if slot == "weapon" and ITEMS[iid]["kind"] not in DUAL_KINDS and off and ITEMS[off]["type"] == "weapon":
+            removed.append(self.unequip("shield"))
         self.clamp()
-        return True, old
+        return True, removed
 
     def unequip(self, slot):
         iid = self.equipment.get(slot)
@@ -371,11 +424,17 @@ class Character:
         removed = [iid for iid in self.equipment.values() if iid]
         self.inventory += removed
         self.equipment = {s: None for s in SLOTS}
-        given = list(CLASSES[new_cls]["gear"])
-        for iid in given:
-            self.equipment[ITEMS[iid]["slot"]] = iid
+        given = self.wear_kit(new_cls)
         self.hp, self.mana = self.max_hp, self.max_mana
         return removed, given
+
+    def wear_kit(self, cls):
+        """Put on a class's starting gear; a second weapon goes in the off hand. Returns the item ids."""
+        given = list(CLASSES[cls]["gear"])
+        for iid in given:
+            slot = ITEMS[iid]["slot"]
+            self.equipment["shield" if slot == "weapon" and self.equipment.get("weapon") else slot] = iid
+        return given
 
     # ------------------------------------------------------------------ persistence
     def to_dict(self):

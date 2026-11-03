@@ -33,14 +33,15 @@ Saves are written as JSON to `saves/<name>.json`.
 | `automap` [on\|off] | show a small map (two rooms in every direction) under each room description. Saved with your character |
 | `attack` / `k` / `kill` <target> | start a fight (`k rat`, `k 2.wolf` for the second wolf); during a fight, switch targets |
 | `cast` / `c` <spell> [target] | cast a spell (`cast magic missile rat`, `c fireball`); in a fight it is used on the next round |
-| `ability` / `ab` <name> [target] | use a class ability (`ab slam`, `ab cleave`); in a fight it is used on the next round |
+| `ability` / `ab` <name> [target] | use a class ability (`ab backstab`, `ab second wind`); in a fight it is used on the next round |
 | `spells` / `abilities` | list all known spells and abilities, with locked ones greyed out |
 | `cooldowns` / `cd` | spells and abilities still cooling down, with rounds (and roughly seconds) left |
 | `consider` / `con` <target> | judge a monster's danger (colour-coded by level) |
 | `flee` [dir] | try to escape combat (moving during combat also attempts to flee) |
 | `inventory` / `i` | what you carry |
 | `equipment` / `eq` | what you wear |
-| `wear` / `wield` / `equip` <item> | equip an item (level and armor/weapon training apply, see below) |
+| `wear` / `wield` / `equip` <item> | equip an item (level and armor/weapon training apply, see below). With Dual Wield, a second one-handed weapon goes in your off hand if the shield slot is empty |
+| `offhand` / `dual` <weapon> | with Dual Wield, hold a one-handed weapon in your off hand (the shield slot); `remove offhand` takes it off |
 | `remove` <item or slot> | take something off |
 | `use` / `drink` <potion> | drink a potion (in a fight you drink it next round, and still attack) |
 | `examine` / `x` <item> | item details, compared with what you have equipped |
@@ -102,29 +103,45 @@ The world runs on a real-time clock: every **4 seconds** is one game tick.
 ogre (+12% HP), troll (regeneration), undead (immune to poison/disease), orc (+6% damage).
 
 **Classes:** warrior, cleric, wizard, bard, necromancer, shaman, druid, rogue, ranger, paladin,
-dread knight. Each has its own HP and mana growth, per-level stat gains, and 6-7 spells/abilities
+dread knight. Each has its own HP and mana growth, per-level stat gains, and 2-7 spells/abilities
 unlocked between levels 1 and 48. Every class swings its weapon with **STR** and aims with **DEX**.
 Every class's damage spells (damage, damage over time, drains) scale with **INT**, and its heals,
 heals over time and damage shields with **WIS**, which also feeds the mana pool. Pets use the
 higher of the two. Each class's spells and abilities:
 
-- Warrior: Slam, Battle Cry, Second Wind, Cleave, Shield Wall, Rampage, Avatar of War
+- Warrior: Second Wind, Shield Wall, and the passives Dual Wield (1) and Double Attack (10)
 - Cleric: Minor Healing, Smite, Divine Aegis, Greater Healing, Holy Wrath, Resurgence, Sunburst
 - Wizard: Magic Missile, Frost Bolt, Mana Shield, Fireball, Lightning Lance, Meteor
 - Necromancer: Lifetap, Raise Skeleton (pet), Plague, Bone Spear, Siphon Soul, Bone Colossus, Wail of the Damned
 - Shaman: Frost Shock, Ancestral Mending, Spirit Wolf (pet), Spirit of the Bear, Serpent Venom, Chain Lightning, Ancestral Avatar
 - Druid: Thornlash, Regrowth, Entangling Roots, Moonfire, Barkskin, Starfall, Wrath of the Wild
-- Rogue: Backstab, Poisoned Blade, Evasion, Kidney Shot, Eviscerate, Shadow Dance, Assassinate
-- Ranger: Aimed Shot, Hunter's Mend, Multishot, Bonded Wolf (pet), Serpent Sting, Rain of Arrows, Deadeye
-- Paladin: Holy Strike, Lay on Hands, Blessing of Might, Divine Shield, Hammer of Justice, Consecration, Avenging Wrath
-- Dread Knight: Shadow Strike, Disease Cloud, Dread Aura, Dread Touch, Vampiric Embrace, Death Coil, Unholy Frenzy
-- Bard: Discordant Note, Ballad of Mending, Lullaby, War March, Dirge of Despair, Crescendo, Legend's Anthem
+- Rogue: Backstab, Poisoned Blade, Evasion, Kidney Shot, Eviscerate, Shadow Dance, Assassinate; Dual Wield, Double Attack
+- Ranger: Aimed Shot, Hunter's Mend, Multishot, Bonded Wolf (pet), Serpent Sting, Rain of Arrows, Deadeye; Double Attack
+- Paladin: Holy Strike, Lay on Hands, Blessing of Might, Divine Shield, Hammer of Justice, Consecration, Avenging Wrath; Double Attack
+- Dread Knight: Shadow Strike, Disease Cloud, Dread Aura, Dread Touch, Vampiric Embrace, Death Coil, Unholy Frenzy; Double Attack
+- Bard: Discordant Note, Ballad of Mending, Lullaby, War March, Dirge of Despair, Crescendo, Legend's Anthem; Dual Wield
 
 Each class has a full guide in [`class_guides/`](class_guides/README.md): stats by level, every spell
 and ability with its numbers, gear, races, how to play it and what it leaves behind on rebirth. At level 50, [Gearing Up at Level 50](class_guides/level_50_gear.md) shows what to buy, farm and chase next for each class.
 
 Spells cost mana, and the cost scales with level. Abilities are free but have cooldowns. Both are
 learned automatically on level up.
+
+**Passives** are always on once learned, and like abilities they are kept through rebirth:
+
+- **Dual Wield** (warrior at level 1, rogue and bard at 10): hold a one-handed weapon (dagger, sword, axe,
+  blunt, or a mythic sword) in the off hand, in place of a shield or off-hand item. It strikes every
+  round beside your main hand for 65% of a normal hit. A two-handed weapon, staff or bow in the main
+  hand can't be paired with one.
+- **Double Attack** (warrior at level 10; rogue, ranger, paladin and dread knight at 15): each hand may
+  strike a second time every round. The chance is 40% when learned and rises evenly to 100% at 50.
+
+A character with several lives learns each passive at the lowest level any of its classes gives it
+(a rogue who was once a warrior dual wields from level 1). Warriors start with a rusty shortsword
+in each hand.
+
+With both, a level-50 character lands up to four blows a round, each with its own miss, crit and
+damage line. If the target falls, the remaining blows go to the next enemy in the fight.
 
 ### Armor and weapon training
 
@@ -175,7 +192,7 @@ At level 50, `rebirth` lets you choose any other class:
 - Level and XP reset to 1 / 0.
 - You keep **every ability of every class you have lived**. Each becomes usable again when your
   current level reaches the level at which it was originally learned (a warrior-turned-wizard gets
-  Slam back at level 1, Cleave at 12, Avatar of War at 42).
+  Second Wind and Dual Wield back at level 1, Double Attack at 10, Shield Wall at 20).
 - **Every stat, your HP and your mana take the best of all the classes you have lived**, at your
   current level. A level-10 warrior who was once a wizard has the wizard's level-10 INT and WIS
   (higher than a warrior's), the warrior's STR and CON, the warrior's HP growth and the wizard's

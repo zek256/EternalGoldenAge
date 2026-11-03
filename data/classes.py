@@ -7,7 +7,7 @@
   armor       - heaviest armor tier worn (data.items.ARMOR_TIERS); lighter tiers are allowed too
   shield      - may use shields (mail and plate wearers)
   weapons     - weapon families wielded (data.items.WEAPON_KINDS)
-  gear        - starting equipment (item ids)
+  gear        - starting equipment (item ids); a second weapon goes in the off hand
 Armor and weapon training carries over: a character may use anything any of its lives could.
 STR powers weapon damage and DEX weapon accuracy for every class (see character.Character).
 INT powers damage spells (damage, damage over time, drains) and WIS powers healing, shields and the
@@ -23,7 +23,7 @@ CLASSES = {
         "start": {"STR": 3, "CON": 3},
         "gains": {"STR": 2, "CON": 2, "DEX": 1},
         "armor": "plate", "shield": True, "weapons": ["dagger", "sword", "axe", "blunt", "two-handed", "bow"],
-        "gear": ["rusty_shortsword", "wooden_shield", "padded_tunic"],
+        "gear": ["rusty_shortsword", "rusty_shortsword", "padded_tunic"],
         "desc": "Masters of blade and shield who stand in the front rank of every battle.",
     },
     "paladin": {

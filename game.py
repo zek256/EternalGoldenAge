@@ -36,7 +36,7 @@ HELP = [
                   ("automap on|off", "show a small map under every room description")]),
     ("Combat", [("attack / k <target>", "start a fight (or switch targets); you then auto-attack every round"),
                 ("cast <spell> [target]", "cast a spell; in a fight it goes off next round, alongside your attack"),
-                ("ability / ab <name> [target]", "use a class ability (e.g. 'ab slam'), also queued for next round"),
+                ("ability / ab <name> [target]", "use a class ability (e.g. 'ab backstab'), also queued for next round"),
                 ("(on cooldown)", "in a fight, a cooling spell or ability is held and used the moment it's ready"),
                 ("consider / con <target>", "judge how dangerous a monster is"),
                 ("flee [direction]", "try to escape from combat"),
@@ -50,7 +50,8 @@ HELP = [
                    ("pet", "check on your summoned companion ('pet dismiss' to release it)")]),
     ("Items", [("inventory / i", "show what you carry"),
                ("equipment / eq", "show what you wear"),
-               ("equip / wear / wield <item>", "equip an item"),
+               ("equip / wear / wield <item>", "equip an item (a second one-hander goes in your off hand once you can dual wield)"),
+               ("offhand / dual <weapon>", "with Dual Wield, hold a one-handed weapon in your off hand (the shield slot)"),
                ("remove <item|slot>", "take off an item"),
                ("use / drink <item>", "use a potion"),
                ("examine / x <item>", "inspect an item"),
@@ -274,7 +275,7 @@ class Game:
         "l": "look", "k": "attack", "kill": "attack", "hit": "attack", "fight": "attack",
         "c": "cast", "ab": "ability", "abil": "ability", "skill": "ability",
         "i": "inventory", "inv": "inventory", "eq": "equipment", "equip": "wear", "wield": "wear",
-        "unequip": "remove", "drink": "use", "quaff": "use",
+        "unequip": "remove", "dual": "offhand", "drink": "use", "quaff": "use",
         "score": "stats", "sc": "stats", "sheet": "stats", "lvl": "level", "xp": "level",
         "x": "examine", "inspect": "examine", "take": "get", "pick": "get",
         "speak": "talk", "greet": "talk", "ask": "talk",
@@ -286,7 +287,7 @@ class Game:
         "cd": "cooldowns", "cds": "cooldowns", "cooldown": "cooldowns", "timers": "cooldowns",
     }
     NO_COMBAT = {"sleep", "save", "load", "talk", "buy", "sell", "list", "get", "drop",
-                 "wear", "remove", "rebirth", "bank", "deposit", "withdraw", "enter"}
+                 "wear", "offhand", "remove", "rebirth", "bank", "deposit", "withdraw", "enter"}
     DEV_CMDS = {"setlevel", "goto", "addgold", "give"}
 
     # ================================================================ exploration
@@ -841,11 +842,12 @@ class Game:
             ui.say("You stand at the pinnacle of mortal power. Type REBIRTH to begin anew as another class.", "bmagenta")
         else:
             ui.out("Experience: {}/{} ({} to next level)".format(p.xp, p.xp_needed, p.xp_needed - p.xp))
-        upcoming = [a for a in p.known_abilities() if a["level"] > p.level][:5]
+        upcoming = [(a["level"], a["name"], CLASSES[a["cls"]]["name"]) for a in p.known_abilities() if a["level"] > p.level]
+        upcoming += [(lvl, pa["name"], "passive") for _, pa, lvl in p.known_passives() if lvl > p.level]
         if upcoming:
             ui.out("Coming abilities:")
-            for a in upcoming:
-                ui.out("  level {:>2}: {} ({})".format(a["level"], a["name"], CLASSES[a["cls"]]["name"]))
+            for lvl, name, origin in sorted(upcoming)[:5]:
+                ui.out("  level {:>2}: {} ({})".format(lvl, name, origin))
 
     def cmd_spells(self, args):
         p = self.player
@@ -863,6 +865,9 @@ class Game:
                 cost += ui.c(" (ready in {})".format(p.cooldowns[a["id"]]), "red")
             line = "  L{:>2} {:<27} {:<20} {}".format(a["level"], a["name"] + origin, cost, a["desc"])
             ui.out(ui.c(line, "bwhite") if usable else ui.c(line + " (locked)", "grey"))
+        for pid, pa, lvl in p.known_passives():
+            line = "  L{:>2} {:<27} {:<20} {}".format(lvl, pa["name"], "passive", pa["desc"])
+            ui.out(ui.c(line, "bwhite") if p.has_passive(pid) else ui.c(line + " (locked)", "grey"))
         ui.out(ui.c("Use spells with 'cast <name> [target]' and abilities with 'ability <name> [target]'.", "grey"))
 
     def cmd_cooldowns(self, args):
@@ -932,29 +937,41 @@ class Game:
         ui.out(ui.c("You are wearing:", "byellow"))
         for slot in SLOTS:
             iid = self.player.equipment.get(slot)
-            ui.out("  {:<7} {}".format(slot + ":", self.item_line(iid) if iid else ui.c("-", "grey")))
+            label = "offhand" if slot == "shield" and iid and ITEMS[iid]["type"] == "weapon" else slot
+            ui.out("  {:<8} {}".format(label + ":", self.item_line(iid) if iid else ui.c("-", "grey")))
         ui.out("  Armor rating: {}".format(self.player.armor))
 
-    def cmd_wear(self, args):
+    def cmd_wear(self, args, offhand=False):
         p = self.player
         iid = self.find_item(p.inventory, args)
         if not iid:
             ui.say("You aren't carrying that.", "grey")
             return
-        ok, res = p.equip(iid)
+        offhand = offhand or p.wants_offhand(iid)
+        ok, res = p.equip(iid, offhand)
         if not ok:
             ui.say(res, "grey")
             return
-        if res:
-            ui.say("You remove {}.".format(ITEMS[res]["name"]))
-        ui.say("You equip {}.".format(ITEMS[iid]["name"]), "bgreen")
+        for old in res:
+            ui.say("You remove {}.".format(ITEMS[old]["name"]))
+        if offhand:
+            ui.say("You take {} in your off hand.".format(ITEMS[iid]["name"]), "bgreen")
+        else:
+            ui.say("You equip {}.".format(ITEMS[iid]["name"]), "bgreen")
+
+    def cmd_offhand(self, args):
+        if not args:
+            ui.say("Hold which weapon in your off hand?", "grey")
+            return
+        self.cmd_wear(args, offhand=True)
 
     def cmd_remove(self, args):
         p = self.player
-        slot = args.lower() if args.lower() in SLOTS else None
+        word = "shield" if args.lower() in ("offhand", "off-hand", "off hand") else args.lower()
+        slot = word if word in SLOTS else None
         if not slot:
             iid = self.find_item([i for i in p.equipment.values() if i], args)
-            slot = ITEMS[iid]["slot"] if iid else None
+            slot = p.slot_of(iid) if iid else None
         if not slot or not p.equipment.get(slot):
             ui.say("You aren't wearing that.", "grey")
             return
@@ -1007,6 +1024,9 @@ class Game:
             cur = p.equipment.get(it["slot"])
             if cur and cur != iid:
                 ui.out(ui.c("  Currently equipped: ", "grey") + self.item_line(cur))
+            off = p.offhand_weapon()
+            if it["type"] == "weapon" and off and off != iid:
+                ui.out(ui.c("  In your off hand: ", "grey") + self.item_line(off))
         ui.out(ui.c("  Value: {} gold".format(it["value"]), "grey"))
 
     def cmd_get(self, args):

@@ -88,6 +88,16 @@ data/rooms/   one module per region, each with a ROOMS dict, merged in __init__ 
   ends with `Combat.swing()`, and potions and failed flees call `pass_turn(swing=True)`. Only a
   stun (`pass_turn()`) skips the swing. Monster HP was raised by `world.MONSTER_HP_MULT` (1.3)
   to keep fight lengths and the endgame where they were.
+- **Passives** (`data.abilities.PASSIVES`, read with `Character.has_passive`): Dual Wield (warrior 1,
+  rogue and bard 10) lets a `DUAL_KINDS` one-hander sit in the shield slot (`Character.offhand_weapon`,
+  `equip(iid, offhand)`, `cmd_offhand`; `wear` fills the off hand automatically when it is empty) and
+  swing for `OFFHAND_MULT` (65%); Double Attack (warrior 10; rogue, ranger, paladin, dread knight 15)
+  repeats each hand with `double_attack_chance` (40% when learned to 100% at 50). `Combat.swing` does up to
+  four strikes, one line each (the user's choice), moving to the next enemy if the target dies. A
+  character learns each passive at the lowest level any lived class gives (`passive_level`), so
+  rebirth order still never matters. Warriors start with a rusty shortsword in each hand (`wear_kit`). The
+  warrior's only abilities are Second Wind (1) and Shield Wall (20), by the user's design; its old
+  abilities were removed.
 - A second slot, `Combat.held`, keeps one ability that was used while still cooling down
   (`use_ability` calls `Combat.hold` instead of refusing). Each `round()` first tries
   `fire_held()`: once off cooldown it fires and takes the round, leaving `queued` for the next
@@ -250,6 +260,11 @@ character (the level-54 ones near 0%) and trivial with 6; plane champions ~65-90
 (every class about 50-85%). After the swing change and `MONSTER_HP_MULT` 1.3: champions ~88-97%
 with 6 lives, lords 4-43% with 6 and 86-92% with 11, Lord Trepth ~65% with 11. After the INT/WIS
 rework and +12% HP from level 57: champions 95-100% with 6 lives, lords 5-39% with 6 and 90-99%
-with 11, Lord Trepth ~69% with 11 (worst class 45%). The user asked for Trepth to need a full every-class character with
+with 11, Lord Trepth ~69% with 11 (worst class 45%). The warrior rework (2026-11-03: Dual Wield and Double
+Attack replaced Slam, Battle Cry, Cleave, Rampage and Avatar of War, which every multi-life character had
+used) made 11-life characters weaker against the lords and Trepth, so Rekkn, Ulmathra and Trepth lost 8%
+damage and Nerevos 12%: lords now ~85-96% with 11 lives, Trepth ~66% (worst class 50%). With 6 lives
+Zephyrion (~70%) and Rekkn (~35%) got easier, and one-life characters gained 10-20 points on first-tier
+plane monsters. The user asked for Trepth to need a full every-class character with
 good gear. Six lives already hold most of the best stats, so the 6-to-11 gap comes mainly from the
 mastery bonus (+12% vs +22%) and the remaining classes' growth (the rogue's and ranger's DEX).

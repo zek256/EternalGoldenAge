@@ -50,6 +50,10 @@ level 50.
 | 34 | **Crescendo** | 194 / 266 | 3 | all foes | Sonic damage 34 + 4.17/level + 0.95 INT to every foe (~218 at L34, ~300 at L50) |
 | 44 | **Legend's Anthem** | 292 / 324 | 12 | self | +45% damage for 6 rounds and a heal over time of 20 + 2.42/level + 0.4 WIS per round (~148-165) |
 
+**Passive** (always on, kept in later lives):
+
+- **Dual Wield** (10): hold a one-handed weapon (dagger, sword, axe or blunt) in the off hand, in place of a shield or off-hand item; it strikes every round beside your main hand for 65% damage (a past warrior life gives it at 1). `wear` a second one-hander to put it there, or use `offhand <weapon>`.
+
 ## How to play
 
 **Levels 1-14.** Discordant Note is your main attack. It is strong for its cost and ignores armor.
@@ -151,4 +155,4 @@ class mastered adds +2% max HP and damage.
 A Bard life brings even growth in every stat, plus **leather** training and dagger, sword, blunt and
 wand weapons. Other classes grow each stat faster, so a Bard life is mainly worth its spells:
 Lullaby, Dirge of Despair and Legend's Anthem stay strong in any later class, and grow stronger with
-the INT and WIS of your other lives.
+the INT and WIS of your other lives. It also passes on Dual Wield to every later life, at the same level.

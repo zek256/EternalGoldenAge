@@ -86,28 +86,13 @@ def ability(aid, name, cls, level, cooldown, effects, **kw):
 
 
 # ---------------------------------------------------------------- Warrior
-ability("slam", "Slam", "warrior", 1, 3, [WEAPON(1.4), STUN(1, 0.3)],
-        desc="A crushing shield-and-shoulder blow that may stun.",
-        msg="You hurl your full weight into {t}!")
-ability("battle_cry", "Battle Cry", "warrior", 5, 8, [BUFF("Battle Cry", 5, damage_pct=0.25)], target="self",
-        desc="A thunderous roar that raises your damage by 25% for 5 rounds.",
-        msg="You loose a bellowing war cry that shakes the very stones!")
-ability("second_wind", "Second Wind", "warrior", 8, 15, [HEALPCT(0.35)], target="self",
+# Warriors fight with Dual Wield and Double Attack (PASSIVES below), plus these two.
+ability("second_wind", "Second Wind", "warrior", 1, 15, [HEALPCT(0.35)], target="self",
         desc="Grit your teeth and fight on, recovering 35% of your health.",
         msg="You grit your teeth, draw a ragged breath, and find a second wind!")
-ability("cleave", "Cleave", "warrior", 12, 3, [WEAPON(1.1)], target="all",
-        desc="A wide sweeping strike that hits every engaged foe.",
-        msg="You whirl your weapon in a great arc!")
 ability("shield_wall", "Shield Wall", "warrior", 20, 8, [BUFF("Shield Wall", 4, armor=20, armor_lvl=3)], target="self",
         desc="Brace behind your guard, greatly increasing armor for 4 rounds.",
         msg="You set your feet and become an immovable wall of iron.")
-ability("rampage", "Rampage", "warrior", 30, 4, [WEAPON(2.6)],
-        desc="A furious flurry of blows against a single foe.",
-        msg="Red rage fills your vision as you rampage against {t}!")
-ability("avatar_of_war", "Avatar of War", "warrior", 42, 12,
-        [BUFF("Avatar of War", 5, damage_pct=0.6, armor_lvl=2), HEALPCT(0.3)], target="self",
-        desc="Become an avatar of battle: heal 30% and gain +60% damage for 5 rounds.",
-        msg="The spirits of a thousand fallen champions pour into you!")
 
 # ---------------------------------------------------------------- Cleric
 spell("minor_healing", "Minor Healing", "cleric", 1, 6, [HEAL(12, 3.11, 0.6, "WIS")], target="self",
@@ -281,3 +266,29 @@ spell("crescendo", "Crescendo", "bard", 34, 45, [DMG(34, 4.17, 0.95, "INT", "son
 spell("legends_anthem", "Legend's Anthem", "bard", 44, 55, [BUFF("Legend's Anthem", 6, damage_pct=0.45), HOT(20, 2.42, 0.4, "WIS", 6, "Legend's Anthem")],
       cooldown=12, target="self",
       desc="The anthem of legends (+45% damage and strong healing).", msg="You sing the Anthem of Legends, and the air itself trembles!")
+
+
+# ---------------------------------------------------------------- Passives
+# Always on once learned: no command, no cooldown. Like abilities they are kept through rebirth.
+# `classes` maps each class that teaches one to the level it is learned at; a character learns it at
+# the lowest level any of its lived classes gives, so the order of lives never matters.
+# Combat.swing reads them through Character.has_passive.
+OFFHAND_MULT = 0.65  # off-hand swings deal this share of a normal hit
+
+PASSIVES = {
+    "dual_wield": {
+        "name": "Dual Wield", "classes": {"warrior": 1, "rogue": 10, "bard": 10},
+        "desc": "Wield a one-handed weapon in your off hand (the shield slot); it strikes beside your main "
+                "hand every round for {}% damage.".format(int(OFFHAND_MULT * 100)),
+    },
+    "double_attack": {
+        "name": "Double Attack", "classes": {"warrior": 10, "rogue": 15, "ranger": 15, "paladin": 15, "dread knight": 15},
+        "desc": "Each hand may strike a second time every round: a 40% chance when learned, rising evenly "
+                "to certain at level 50.",
+    },
+}
+
+
+def double_attack_chance(level, learned):
+    """Chance for each hand to strike again in a round, Double Attack having been learned at `learned`."""
+    return min(1.0, 0.4 + 0.6 * (level - learned) / max(1, 50 - learned))

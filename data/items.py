@@ -4,13 +4,15 @@ level is the minimum character level required to equip an item.
 kind says who may use it (see ARMOR_TIERS / WEAPON_KINDS and the class tables in data/classes.py):
   weapons: a WEAPON_KINDS family, or "any" (mythic weapons anyone may wield)
   body armor (head, chest, hands, legs, feet): an ARMOR_TIERS tier, or "any"
-  shield slot: "shield" (mail and plate wearers only) or "offhand" (orbs and tomes, anyone)
+  shield slot: "shield" (mail and plate wearers only) or "offhand" (orbs and tomes, anyone);
+    with Dual Wield, a DUAL_KINDS weapon may be held there too
   neck and ring: "jewelry" (anyone)
 """
 
 SLOTS = ["weapon", "shield", "head", "chest", "hands", "legs", "feet", "neck", "ring"]
 ARMOR_TIERS = ["cloth", "leather", "mail", "plate"]  # each tier may also wear every tier before it
 WEAPON_KINDS = ["dagger", "sword", "axe", "blunt", "two-handed", "staff", "wand", "bow"]
+DUAL_KINDS = {"dagger", "sword", "axe", "blunt", "any"}  # one-handers Dual Wield can pair ("any" = the mythic swords)
 FREE_KINDS = {"any", "offhand", "jewelry"}  # usable by every class
 
 ITEMS = {}

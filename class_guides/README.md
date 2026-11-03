@@ -62,7 +62,7 @@ Bard) split their growth between the two, so their damage and healing pull on di
 - Weapon damage = the weapon's damage range + **0.35 x STR + 0.5 x level**, for every class.
   Casters gain little or no STR, so their auto-attacks stay weak; they win with spells.
 - Auto-attacks miss **10% minus 0.07% per point of DEX**, never less than 2% (about 9% at 10 DEX,
-  6% at 60, 2% from about 115). Weapon abilities (Slam, Backstab and the rest) always land and roll
+  6% at 60, 2% from about 115). Weapon abilities (Backstab, Aimed Shot and the rest) always land and roll
   weapon damage times a multiplier.
 - **Physical damage** (auto-attacks, weapon abilities, pets) is reduced by the monster's armor.
   **Spell damage, drains and damage over time ignore armor.**

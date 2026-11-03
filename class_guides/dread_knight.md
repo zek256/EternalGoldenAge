@@ -47,6 +47,10 @@ learn it and at level 50.
 | 34 | **Death Coil** | spell | 138 / 189 | 3 | one foe | Drain of 30 + 3.2/level + 0.9 INT (~178 at L34, ~244 at L50) that heals you for 80% of what it deals |
 | 44 | **Unholy Frenzy** | ability | free | 12 | self | +50% damage and 30% lifesteal for 5 rounds |
 
+**Passive** (always on, kept in later lives):
+
+- **Double Attack** (15): your weapon may strike a second time every round, 40% of the time at 15 rising evenly to every round at 50. (A past warrior life gives it at 10.)
+
 ## How to play
 
 **Levels 1-9.** Shadow Strike every other round. It hits harder than an auto-attack and heals you a
@@ -135,4 +139,4 @@ class mastered adds +2% max HP and damage.
 A Dread Knight life brings the **best STR growth in the game** (shared with several classes) and
 10 HP per level, plus **plate armor and shield training** and sword, axe and two-handed weapons. Shadow
 Strike, Dread Touch and Unholy Frenzy are free abilities, so any later class keeps a strong free nuke
-and a lifesteal buff.
+and a lifesteal buff. It also passes on Double Attack to every later life, at the same level.

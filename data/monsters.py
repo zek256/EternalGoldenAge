@@ -1150,21 +1150,21 @@ M("thunderbird", "a thunderbird", 57, "A bird the size of a cloud, whose wingbea
   loot=[("planar_shard", 0.25)], gold=3.0, xp=1.3)
 M("lord_fire", "Rekkn, Lord of Flame", 58,
   "The lord of the Plane of Fire, a giant of white-hot stone with a crown of flame and a hammer that is a captive star.",
-  hp=7.22, dmg=2.55, armor=2.2, aggro=True, boss=True, xp=2.0, gold=15.0,
+  hp=7.22, dmg=2.35, armor=2.2, aggro=True, boss=True, xp=2.0, gold=15.0,
   specials=[big("Starfall Hammer", 0.22, 2.1, "brings down a hammer that burns like a falling star!"),
             dot("Inferno", 0.18, 0.7, 4, "fire", "breathes, and the world becomes fire!"),
             stun("Heatstroke", 0.1, 1, "flares so brightly that you reel, blinded!")],
   loot=[("flameheart_hammer", 0.4), ("gauntlets_of_the_pyre", 0.4), ("planar_shard", 1.0)])
 M("lord_water", "Nerevos, Lord of the Tides", 58,
   "The lord of the Plane of Water, a crowned giant of green sea-glass with a trident of coral, whose voice is the roar of surf.",
-  hp=10.53, dmg=3.25, armor=2.2, aggro=True, boss=True, xp=2.0, gold=15.0,
+  hp=10.53, dmg=2.86, armor=2.2, aggro=True, boss=True, xp=2.0, gold=15.0,
   specials=[stun("Drowning Wave", 0.14, 1, "raises a wave that crashes down and drowns you!"),
             big("Trident Thrust", 0.2, 2.0, "drives his coral trident into you!"),
             heal("Tidal Renewal", 0.1, 0.1, "draws in the tide, and his wounds wash away!")],
   loot=[("tidecaller", 0.4), ("pearl_of_the_deep", 0.4), ("tidescale_legguards", 0.4), ("planar_shard", 1.0)])
 M("lord_earth", "Ulmathra, Lord of Stone", 58,
   "The lord of the Plane of Earth, a mountain that stands and walks, with crystal eyes and a voice like the grinding of continents.",
-  hp=9.97, dmg=3.0, armor=3.0, aggro=True, boss=True, xp=2.0, gold=15.0,
+  hp=9.97, dmg=2.76, armor=3.0, aggro=True, boss=True, xp=2.0, gold=15.0,
   specials=[big("Mountainfall", 0.22, 2.1, "falls on you like a mountain!"),
             stun("Earthquake", 0.14, 1, "stamps, and the plane itself shakes you off your feet!"),
             heal("Stone Skin", 0.08, 0.1, "draws the plane's stone over his wounds!")],
@@ -1191,7 +1191,7 @@ M("paradox", "a paradox", 59, "A figure that is you, from a moment that has not 
 M("lord_trepth", "Lord Trepth", 60,
   "The king of the gods, older than the stars, seated on a throne carved from the first moment of time. His face is every "
   "face, his eyes hold every dawn, and his sword is named Eternity.",
-  hp=7.39, dmg=2.35, armor=3.0, aggro=True, boss=True, xp=2.0, gold=40.0,
+  hp=7.39, dmg=2.16, armor=3.0, aggro=True, boss=True, xp=2.0, gold=40.0,
   specials=[big("Eternity", 0.22, 2.2, "swings Eternity, and you feel every moment of your life at once!"),
             dot("The Long Night", 0.15, 0.8, 4, "shadow", "unmakes the dawn, and cold darkness eats at you!"),
             stun("Stop Time", 0.12, 1, "raises a hand, and time stops for everyone but him!"),

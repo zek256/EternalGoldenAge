@@ -50,6 +50,11 @@ average with the starting dagger.
 | 40 | **Shadow Dance** | 10 | self | +50% damage and +25% dodge for 4 rounds |
 | 48 | **Assassinate** | 6 | one foe | 4.2x weapon damage (~340 at L48, ~352 at L50), the biggest weapon multiplier in the game |
 
+**Passives** (always on, kept in later lives):
+
+- **Dual Wield** (10): hold a one-handed weapon (dagger, sword, axe or blunt) in the off hand, in place of a shield or off-hand item; it strikes every round beside your main hand for 65% damage (a past warrior life gives it at 1). `wear` a second one-hander to put it there, or use `offhand <weapon>`.
+- **Double Attack** (15): each hand may strike a second time every round, 40% of the time at 15 rising evenly to every round at 50. (A past warrior life gives it at 10.)
+
 ## How to play
 
 **Levels 1-17.** Backstab every other round. From 5, apply Poisoned Blade at the start of each fight
@@ -140,4 +145,4 @@ class mastered adds +2% max HP and damage.
 A Rogue life brings strong STR and DEX growth (matching the Ranger): later lives hit harder, miss less,
 crit and dodge more. It gives only **leather** training and dagger, sword and bow weapons. Kidney Shot,
 Evasion and Shadow Dance are free, so they make good tools for later lives, especially casters who lack
-a stun or a defensive button.
+a stun or a defensive button. It also passes on Dual Wield and Double Attack to every later life, at the same level (the Warrior has both too).

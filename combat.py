@@ -3,6 +3,7 @@ import random
 
 import ui
 from character import MAX_LEVEL, Pet
+from data.abilities import OFFHAND_MULT, double_attack_chance
 from data.items import ITEMS
 from data.monsters import MONSTERS
 
@@ -218,15 +219,25 @@ class Combat:
         self.end_round()
 
     def swing(self, mon=None):
-        """The auto-attack. It lands every round you aren't stunned, alongside any action you take."""
-        mon = mon if mon and mon.alive else self.current_target()
-        if not mon:
-            return
-        if random.random() < self.p.miss_chance:
-            ui.say("You swing at {} but miss!".format(mon.name), "grey")
-        else:
-            dmg, crit = self.damage_monster(mon, self.p.roll_weapon(), physical=True)
-            self.report_hit("You strike", mon, dmg, crit)
+        """The auto-attack. It lands every round you aren't stunned, alongside any action you take.
+        Dual Wield adds an off-hand strike and Double Attack may repeat each hand, so up to four."""
+        p = self.p
+        hands = [("weapon", 1.0, "You strike", "You swing at {} but miss!")]
+        if p.offhand_weapon():
+            hands.append(("shield", OFFHAND_MULT, "Your off hand strikes", "Your off-hand blow misses {}!"))
+        again = double_attack_chance(p.level, p.passive_level("double_attack")) if p.has_passive("double_attack") else 0
+        for slot, mult, verb, miss in hands:
+            for n in range(2):
+                if n and random.random() >= again:
+                    break
+                mon = mon if mon and mon.alive else self.current_target()
+                if not mon:
+                    return
+                if random.random() < p.miss_chance:
+                    ui.say(miss.format(mon.name), "grey")
+                else:
+                    dmg, crit = self.damage_monster(mon, p.roll_weapon(mult, slot), physical=True)
+                    self.report_hit(verb + (" again, hitting" if n else ""), mon, dmg, crit)
 
     def player_ability(self, ab, target):
         p = self.p

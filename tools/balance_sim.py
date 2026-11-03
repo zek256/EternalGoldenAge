@@ -34,7 +34,7 @@ from character import MAX_LEVEL, Character  # noqa: E402
 from combat import Combat, potion_drop, resolve_self_effect  # noqa: E402
 from data.abilities import ABILITIES  # noqa: E402
 from data.classes import CLASS_ORDER, CLASSES  # noqa: E402
-from data.items import ARMOR_TIERS, ITEMS, SLOTS  # noqa: E402
+from data.items import ARMOR_TIERS, DUAL_KINDS, ITEMS, SLOTS  # noqa: E402
 from data.monsters import MONSTERS  # noqa: E402
 from game import Game  # noqa: E402
 from world import MonsterInstance  # noqa: E402
@@ -61,6 +61,11 @@ def best_gear(p):
                  and p.trained_for(i["id"])[0]]
         if cands:
             p.equipment[slot] = max(cands, key=score)["id"]
+    if p.has_passive("dual_wield"):  # dual wielders hold the best one-hander in each hand
+        ones = [i for i in ITEMS.values() if i["type"] == "weapon" and i["kind"] in DUAL_KINDS
+                and i["level"] <= p.level and p.trained_for(i["id"])[0]]
+        if ones:
+            p.equipment["weapon"] = p.equipment["shield"] = max(ones, key=score)["id"]
 
 
 def nearby_monsters(level):

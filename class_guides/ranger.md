@@ -50,6 +50,10 @@ learn it and at level 50. Weapon damage is the average with the starting bow.
 | 34 | **Rain of Arrows** | ability | free | 4 | all foes | 1.6x weapon damage to every foe |
 | 45 | **Deadeye** | ability | free | 5 | one foe | 3.6x weapon damage (~217 at L45, ~239 at L50) |
 
+**Passive** (always on, kept in later lives):
+
+- **Double Attack** (15): your weapon may strike a second time every round, 40% of the time at 15 rising evenly to every round at 50. (A past warrior life gives it at 10.)
+
 ## How to play
 
 **Levels 1-15.** Aimed Shot every other round is most of your damage. Hunter's Mend is a cheap heal;
@@ -139,4 +143,4 @@ class mastered adds +2% max HP and damage.
 A Ranger life brings strong STR and DEX growth (matching the Rogue), plus **mail armor and shield
 training** and sword, dagger, axe and bow weapons. Aimed Shot, Multishot, Rain of Arrows and Deadeye
 are free abilities that scale with your weapon, and every class swings with STR, so they work in any
-later life that keeps a good weapon.
+later life that keeps a good weapon. It also passes on Double Attack to every later life, at the same level.

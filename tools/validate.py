@@ -8,7 +8,7 @@ from collections import Counter, deque
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 
-from data.abilities import ABILITIES  # noqa: E402
+from data.abilities import ABILITIES, PASSIVES  # noqa: E402
 from data.classes import CLASSES  # noqa: E402
 from data.items import ARMOR_TIERS, FREE_KINDS, ITEMS, SLOTS, WEAPON_KINDS  # noqa: E402
 from data.monsters import MONSTERS  # noqa: E402
@@ -136,6 +136,10 @@ def main():
     for aid, a in ABILITIES.items():
         if a["cls"] not in CLASSES:
             errs.append(f"ability {aid}: unknown class '{a['cls']}'")
+    for pid, pa in PASSIVES.items():
+        for c in pa["classes"]:
+            if c not in CLASSES:
+                errs.append(f"passive {pid}: unknown class '{c}'")
 
     spawned = {mid for r in ROOMS.values() for mid, _ in r["spawns"]}
     for mid in sorted(set(MONSTERS) - spawned):
