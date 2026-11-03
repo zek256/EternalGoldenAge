@@ -69,6 +69,11 @@ def WEAKEN(pct, name="Weakened"):
     return {"type": "weaken", "pct": pct, "name": name}
 
 
+def INVISIBLE(turns):
+    """Aggressive monsters don't see you (bosses do) for `turns` ticks; casting or fighting ends it."""
+    return {"type": "invisible", "name": "Invisibility", "turns": turns}
+
+
 def SUMMON(name, hp_base, hp_lvl, dmg_base, dmg_lvl, scale_stat, desc):
     return {"type": "summon", "name": name, "hp_base": hp_base, "hp_lvl": hp_lvl,
             "dmg_base": dmg_base, "dmg_lvl": dmg_lvl, "stat": scale_stat, "desc": desc}
@@ -118,10 +123,12 @@ spell("magic_missile", "Magic Missile", "wizard", 1, 5, [DMG(*rung(0, *ARCANE), 
       desc="Darts of pure force that never miss.", msg="Three darts of violet force streak toward {t}!")
 spell("frost_bolt", "Frost Bolt", "wizard", 5, 5, [DMG(*rung(1, *ARCANE), "INT", "frost")],
       desc="A shard of ice hurled at a foe.", msg="A jagged shard of ice hurtles at {t}!")
-spell("mana_shield", "Mana Shield", "wizard", 10, 20, [SHIELD(17, 6.79, 1.5, "WIS")], target="self",
-      desc="Weave raw mana into a barrier that absorbs damage until it breaks.", msg="Shimmering blue runes orbit you protectively.")
 spell("fireball", "Fireball", "wizard", 16, 5, [DMG(*rung(2, *ARCANE), "INT", "fire")],
       desc="A roaring ball of fire hurled at a foe.", msg="A roaring ball of fire bursts against {t}!")
+spell("invisibility", "Invisibility", "wizard", 20, 20, [INVISIBLE(75)], target="self",
+      desc="Vanish from sight for 5 minutes: aggressive monsters ignore you (bosses see through it). "
+           "Casting any spell or starting a fight ends it.",
+      msg="You trace a sigil in the air and fade from sight.")
 spell("lightning_lance", "Lightning Lance", "wizard", 26, 5, [DMG(*rung(3, *ARCANE), "INT", "lightning")],
       desc="A crackling spear of lightning.", msg="Thunder booms as a lance of lightning impales {t}!")
 spell("meteor", "Meteor", "wizard", 40, 5, [DMG(*rung(4, *ARCANE), "INT", "fire")],

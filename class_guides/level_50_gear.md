@@ -259,7 +259,7 @@ WIS first (heals, the wolf and mana), then INT (damage), then CON. Mail and ligh
 
 ### Wizard
 
-INT first, then WIS (Mana Shield and mana), then CON for survival. Cloth only, no shield, staves, wands and daggers.
+INT first, then CON for survival, then WIS for mana. Cloth only, no shield, staves, wands and daggers.
 
 | Slot | Buy | Farm before the planes | Best in slot |
 |---|---|---|---|
@@ -274,7 +274,7 @@ INT first, then WIS (Mana Shield and mana), then CON for survival. Cloth only, n
 | Ring | oasis pearl ring (38; Amsa, Sunspire: The Silk Bazaar) | the Ring of the Archmage (40; Seluvar the Hollow Archmage 60%, Ruins of Elandor: The Crystal Observatory) | the Pearl of the Deep (50; Nerevos 40%, Plane of Water: The Palace of the Tides) |
 
 **Priority:** never leave the off-hand empty (the codex is a quick buy), then Ussreth for the scepter.
-Keep Mana Shield up against Pyraxis.
+Against Pyraxis, bring plenty of healing potions: you have no shield or heal.
 
 ### Necromancer
 

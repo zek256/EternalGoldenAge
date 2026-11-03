@@ -101,7 +101,7 @@ data/rooms/   one module per region, each with a ROOMS dict, merged in __init__ 
   Each class's attacks are a ladder built with `data.abilities.rung` (each rung `STEP` = 12%
   stronger, same cost), so the newest is always best; there is no burst spell to save. Monster stun
   specials became heavy hits (`big`, 1.6x). The warrior has no abilities; the paladin's heal is Holy
-  Light (5). Second Wind, Lay on Hands, Avenging Wrath, Ancestral Avatar and Lullaby were removed;
+  Light (5); the wizard has no shield (Mana Shield was removed as too strong). Second Wind, Lay on Hands, Avenging Wrath, Ancestral Avatar and Lullaby were removed;
   area and stun spells were turned into single-target rungs under their old names.
 - Effect lifetimes: buffs have no `turns` and last until the fight ends (`Game.clear_fight_effects`,
   called from `end_combat`, a successful flee and death; a buff cast outside a fight waits for the
@@ -110,6 +110,12 @@ data/rooms/   one module per region, each with a ROOMS dict, merged in __init__ 
   name). Monster weaken effects have no `turns` and last the fight. **Buffs don't stack by kind**:
   `Character.buff_mod` takes the max of each mod over active buffs (the best-of rebirth rule applied to
   buffs). Summons are refused in combat (`ability_error`).
+- Invisibility (wizard 20, effect type `invisible`, 75 ticks = 5 minutes): `Game.hostiles()` returns
+  nothing while `Character.invisible`, unless a boss is in the room (bosses see through it), so
+  `check_aggro` and arrivals leave you alone and `cmd_sleep` allows sleeping. `break_invisibility` ends
+  it in `start_combat`, in `check_aggro` when something does attack, and in `use_ability` before any
+  spell or ability out of combat (then `check_aggro`, so recasting next to a hostile gets you attacked;
+  the user's rule). Expiry in `world_tick` also calls `check_aggro`. Refused in combat.
 - `end_round`: player effects tick, pet attacks, aggressive room monsters join, monsters act,
   monster effects tick, mana regen, world respawn tick, then death/victory checks.
 - Effect timing gotcha: timed effects the player applies to themselves are created with
@@ -280,6 +286,12 @@ planes, **6 and 11 lives now score almost the same**: the old gap came mostly fr
 Lay on Hands and Avenging Wrath and the dread knight's free burst, which are gone. Sustain from mana-only
 heals and shields lifted the planes, so the elemental lords got +22% damage and Lord Trepth +20%:
 lords ~86-94% with 6 or 11 lives, Trepth ~64% (worst class 50%), champions 100% with 6. Trepth's gate
-still requires every class mastered. One-life characters are 0% against the lords. The user asked for Trepth to need a full every-class character with
+still requires every class mastered. One-life characters are 0% against the lords. Mana Shield was then removed (the user found it too strong): wizards now win
+77-100% of same-level fights with 34-85% HP left and only ~2 fights in a row, and 30-95% of bosses at the
+boss's own level (80-100% at +3). Every multi-life character had used it, so the lords' damage came back
+down 13% and Trepth's 10%: lords ~88-95% with 11 lives, Trepth ~70% (worst class 45%). To make up for the shield, wizard growth became
+INT 3 / WIS 1 / CON 1 (the same as the necromancer's; WIS only fed its mana by then): about 1,020 HP at
+50 instead of 510, 100% of same-level fights with 57-85% HP left, 2-4 fights in a row, bosses 80-100% at
+the boss's level and 100% at +3. The planes didn't move (other classes grow CON faster). The user asked for Trepth to need a full every-class character with
 good gear. Six lives already hold most of the best stats, so the 6-to-11 gap comes mainly from the
 mastery bonus (+12% vs +22%) and the remaining classes' growth (the rogue's and ranger's DEX).

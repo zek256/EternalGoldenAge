@@ -85,6 +85,10 @@ The world runs on a real-time clock: every **4 seconds** is one game tick.
   the old one. **Heals over time** run on a timer, and casting one again restarts it. **Weakening**
   curses on a monster last the whole fight.
 - **Pets** can only be summoned outside a fight. A pet stays with you until it dies.
+- **Invisibility** (wizard, level 20) hides you from aggressive monsters for 5 minutes, so they don't
+  attack on sight and you can sleep near them. Bosses see through it, and in a boss room everything
+  attacks. Casting any spell (even Invisibility again) or starting a fight reveals you, and anything
+  hostile in the room attacks at once. It can't be cast in a fight.
 - **Who attacks on sight:** aggressive monsters are rare. Only undead, demons, elementals, guards,
   cultists and bosses attack you as soon as you enter their room, and outside boss rooms at most
   one monster per room does. In a boss room, everything attacks. Animals and roaming humanoids
@@ -114,7 +118,7 @@ higher of the two. Each class's spells and abilities:
 
 - Warrior: no spells or abilities, only the passives Dual Wield (1) and Double Attack (10)
 - Cleric: Minor Healing, Smite, Divine Aegis, Greater Healing, Holy Wrath, Resurgence, Sunburst
-- Wizard: Magic Missile, Frost Bolt, Mana Shield, Fireball, Lightning Lance, Meteor
+- Wizard: Magic Missile, Frost Bolt, Fireball, Invisibility, Lightning Lance, Meteor
 - Necromancer: Lifetap, Raise Skeleton (pet), Plague, Bone Spear, Siphon Soul, Bone Colossus, Wail of the Damned
 - Shaman: Frost Shock, Ancestral Mending, Spirit Wolf (pet), Spirit of the Bear, Serpent Venom, Chain Lightning
 - Druid: Thornlash, Regrowth, Entangling Roots, Moonfire, Barkskin, Starfall, Wrath of the Wild

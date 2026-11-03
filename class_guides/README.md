@@ -15,7 +15,7 @@ from level 1 to 50, how it fares against bosses, and what it leaves behind when 
 | [Cleric](cleric.md) | Healer who smites | WIS | WIS, INT | mail + shield | Easy |
 | [Druid](druid.md) | Nature caster with roots and heals | WIS | INT, WIS | leather | Medium |
 | [Shaman](shaman.md) | Spirit caster with a wolf | WIS | INT, WIS | mail + shield | Easy |
-| [Wizard](wizard.md) | Glass-cannon blaster | INT, WIS | INT, WIS | cloth | Hard |
+| [Wizard](wizard.md) | Glass-cannon blaster | INT, CON | INT | cloth | Hard |
 | [Necromancer](necromancer.md) | Pets, drains and disease | INT | INT | cloth | Easy (strongest solo class) |
 
 At level 50, [Gearing Up at Level 50](level_50_gear.md) shows what to buy, farm and chase next, class by class.

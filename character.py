@@ -280,6 +280,10 @@ class Character:
         self.effects = [e for e in self.effects if e.get("name") != eff.get("name")]
         self.effects.append(eff)
 
+    @property
+    def invisible(self):
+        return any(e["type"] == "invisible" for e in self.effects)
+
     def has_effect(self, etype):
         return any(e["type"] == etype for e in self.effects)
 

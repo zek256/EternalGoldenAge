@@ -7,7 +7,7 @@ from data.abilities import OFFHAND_MULT, double_attack_chance
 from data.items import ITEMS
 from data.monsters import MONSTERS
 
-SELF_EFFECTS = {"heal", "heal_pct", "hot", "shield", "buff", "summon"}
+SELF_EFFECTS = {"heal", "heal_pct", "hot", "shield", "buff", "summon", "invisible"}
 CRIT_MULT = 1.75
 AGGRO_GAP = 6  # aggressive monsters ignore players this many levels above them
 
@@ -96,6 +96,10 @@ def resolve_self_effect(game, ab, eff):
         if mods.get("lifesteal"):
             parts.append("{}% lifesteal".format(int(mods["lifesteal"] * 100)))
         ui.say("{}: {} until the end of your next fight.".format(eff["name"], ", ".join(parts)), "bcyan")
+    elif t == "invisible":
+        p.add_effect({"type": "invisible", "name": eff["name"], "turns": eff["turns"]})
+        ui.say("You are invisible. Aggressive monsters won't see you for about {} minutes.".format(
+            round(eff["turns"] * 4 / 60)), "bcyan")
     elif t == "summon":
         stat = p.magic_stat(eff["stat"])
         hp = int(eff["hp_base"] + eff["hp_lvl"] * p.level + stat * 0.5)

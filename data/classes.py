@@ -93,7 +93,7 @@ CLASSES = {
     "wizard": {
         "name": "Wizard", "hp": 5, "mana": 10,
         "start": {"INT": 4, "WIS": 1},
-        "gains": {"INT": 3, "WIS": 2},
+        "gains": {"INT": 3, "WIS": 1, "CON": 1},
         "armor": "cloth", "shield": False, "weapons": ["staff", "wand", "dagger"],
         "gear": ["oak_staff", "linen_robe", "apprentice_hood"],
         "desc": "Scholars of the arcane who bend fire, frost and lightning to their will.",

@@ -5,8 +5,8 @@
 The Wizard is the purest damage caster in the game, and the most fragile. It has the lowest HP of any
 class and can only wear cloth, but it kills ordinary monsters faster than anything else and has one
 of the largest mana pools. Its five attack spells form an even ladder, from Magic Missile to Meteor,
-so every fight plays the same way. Its defense is Mana Shield, a large damage ward it can recast
-whenever it breaks.
+so every fight plays the same way. It has no heal and no shield: its defense is killing things
+before they kill it.
 
 ## At a glance
 
@@ -14,9 +14,9 @@ whenever it breaks.
 |---|---|
 | HP per level | 5 (the least of any class) |
 | Mana per level | 10 (plus WIS) |
-| Spell stats | INT (damage); WIS (shields) |
+| Spell stats | INT (damage); WIS only adds mana |
 | Starting bonus | INT +4, WIS +1 |
-| Gains per level | INT +3, WIS +2 |
+| Gains per level | INT +3, WIS +1, CON +1 |
 | Armor | Cloth only |
 | Shield | No |
 | Weapons | Staff, wand, dagger |
@@ -26,15 +26,15 @@ whenever it breaks.
 
 Average race, starting gear only (see the [README](README.md#about-the-numbers)).
 
-| Level | HP | Mana | INT | WIS | Weapon damage |
-|---|---|---|---|---|---|
-| 1 | 20 | 26 | 17 | 14 | 5-8 |
-| 10 | 110 | 147 | 44 | 32 | 9-12 |
-| 25 | 260 | 420 | 89 | 62 | 17-20 |
-| 50 | 510 | 1075 | 164 | 112 | 29-32 |
+| Level | HP | Mana | INT | WIS | CON | Weapon damage |
+|---|---|---|---|---|---|---|
+| 1 | 20 | 26 | 17 | 14 | 10 | 5-8 |
+| 10 | 128 | 138 | 44 | 23 | 19 | 9-12 |
+| 25 | 380 | 360 | 89 | 38 | 34 | 17-20 |
+| 50 | 1020 | 830 | 164 | 63 | 59 | 29-32 |
 
-With no CON gain at all, a Wizard ends at about half the HP of most casters. CON gear and past lives
-help a lot.
+With only 5 HP per level and +1 CON, a Wizard still has the least HP of any class. CON gear and past
+lives help a lot.
 
 ## Spells and abilities
 
@@ -44,28 +44,32 @@ All Wizard magic is spells, cast with `cast <name>`. There are no cooldowns: eve
 |---|---|---|---|---|---|
 | 1 | **Magic Missile** | spell | 5 / 30 | one foe | Arcane damage 6 + 2/level + 0.6 INT (~18 at L1, ~109 at L25, ~204 at L50) |
 | 5 | **Frost Bolt** | spell | 7 / 30 | one foe | Frost damage 6.72 + 2.24/level + 0.67 INT (~37 at L5, ~122 at L25, ~228 at L50) |
-| 10 | **Mana Shield** | spell | 38 / 118 | self | A ward that absorbs 17 + 6.79/level + 1.5 WIS damage until it breaks (~132 at L10, ~279 at L25, ~524 at L50); casting it again restores it |
 | 16 | **Fireball** | spell | 12 / 30 | one foe | Fire damage 7.53 + 2.51/level + 0.75 INT (~94 at L16, ~137 at L25, ~256 at L50) |
+| 20 | **Invisibility** | spell | 58 / 118 | self | Invisible for 75 ticks (5 minutes): aggressive monsters ignore you and you can sleep near them, but bosses see through it. Casting any spell or starting a fight ends it, and a monster that can see you then attacks |
 | 26 | **Lightning Lance** | spell | 18 / 30 | one foe | Lightning damage 8.43 + 2.81/level + 0.84 INT (~158 at L26, ~286 at L50) |
 | 40 | **Meteor** | spell | 24 / 30 | one foe | Fire damage 9.44 + 3.15/level + 0.94 INT (~261 at L40, ~321 at L50) |
 
 ## How to play
 
-**Every fight.** Cast Mana Shield (from 10) before you start, then your newest attack spell every
-round: Magic Missile, Frost Bolt from 5, Fireball from 16, Lightning Lance from 26, Meteor from 40.
-Recast Mana Shield whenever it breaks; it costs about as much mana as it saves you in HP, but you
-have little HP and a lot of mana.
+**Every fight.** Your newest attack spell every round: Magic Missile, Frost Bolt from 5, Fireball
+from 16, Lightning Lance from 26, Meteor from 40. Drink a healing potion when you drop under about a
+third of your health, and rest between fights: you take every hit at full force.
+
+**Invisibility (from 20).** Cast it to cross dangerous ground: aggressive monsters ignore you for
+5 minutes and you can even sleep beside them. Bosses see through it, and casting **any** spell
+(Invisibility included) or starting a fight reveals you, so recast it somewhere safe, not next to a
+hostile monster.
 
 **Tips**
 - All your damage ignores armor.
-- A full mana pool easily covers a fight. Long boss fights with many shield recasts are where you
-  may need a mana potion.
-- Wizards have no heal. Fight one monster at a time when you can, carry healing potions, and
-  consider a healer past life for later lives.
+- A full mana pool easily covers a fight.
+- Wizards have no heal and no shield. Fight one monster at a time, carry healing potions, and
+  wear CON gear. A healer past life (cleric, druid,
+  shaman, paladin) gives you heals in every later life.
 
 ## Gear
 
-Wear **cloth** and a staff or wand. INT first, then WIS (Mana Shield and your mana), then CON for survival. An off-hand item (the sunlit
+Wear **cloth** and a staff or wand. INT first, then CON for survival, then WIS for your mana. An off-hand item (the sunlit
 codex) fills your empty shield slot.
 
 Notable late gear: **the Dreamweaver's Staff** (50, staff, INT/WIS, from Somnara), the dragonbone
@@ -121,7 +125,7 @@ from her realm.
 
 ## How it performs
 
-The Wizard wins every same-level fight in the simulator in 2.1-5.3 rounds, finishing with 61-100% HP. It survives about 7, 8 and 8 fights in a row at levels 10, 20 and 30 (the cap is 8). Against the world bosses it wins 90-100% at the boss's own level and 100% at boss level +3. These figures are from November 2026, after cooldowns were removed.
+The Wizard wins every same-level fight in the simulator in 2.1-4.9 rounds, finishing with 57-85% HP. It survives about 2, 3 and 4 fights in a row at levels 10, 20 and 30 before it must rest, the fewest of any class. Against the world bosses it wins 80-100% at the boss's own level and every one at boss level +3. These figures are from November 2026, after Mana Shield was removed and the Wizard's WIS growth was halved in favour of CON.
 
 ## Rebirth
 
@@ -129,6 +133,5 @@ In every later life, each of your stats, your HP per level and your mana per lev
 any class you have lived would have at your current level (see the [README](README.md#rebirth)), and each
 class mastered adds +2% max HP and damage.
 
-A Wizard life brings the **best INT growth in the game** (shared with the Necromancer) and strong
-WIS growth, but only **cloth** training with staff, wand and dagger weapons. Any later class
-casts with a Wizard's INT and WIS: Mana Shield and Meteor stay at full strength whatever you become.
+A Wizard life brings the **best INT growth in the game** (shared with the Necromancer), but only **cloth** training with staff, wand and dagger weapons. Any later class
+casts with a Wizard's INT: its attack spells stay at full strength whatever you become.

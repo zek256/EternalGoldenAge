@@ -490,7 +490,18 @@ class Game:
         """Monsters here that will attack the player on sight."""
         if self.room.safe:
             return []
+        if self.player.invisible and not any(m.boss for m in self.room.living()):
+            return []  # bosses see through invisibility, and in a boss room everything attacks
         return [m for m in self.room.living() if m.aggro and m.level >= self.player.level - AGGRO_GAP]
+
+    def break_invisibility(self, why="You shimmer back into view."):
+        """Casting a spell, using an ability or starting a fight ends invisibility. Returns True if it did."""
+        p = self.player
+        if not p.invisible:
+            return False
+        p.effects = [e for e in p.effects if e["type"] != "invisible"]
+        ui.say(why, "byellow")
+        return True
 
     def check_aggro(self):
         if self.combat:
@@ -498,6 +509,7 @@ class Game:
         hostile = self.hostiles()
         if hostile:
             self.walk = []
+            self.break_invisibility("You are seen!")
             if self.sleeping:
                 self.sleeping = False
                 ui.say("You are jolted awake!", "byellow")
@@ -519,7 +531,7 @@ class Game:
         p.mana = min(p.max_mana, p.mana + max(1, int(p.max_mana * mana_pct)))
         if p.pet:
             p.pet.hp = min(p.pet.max_hp, p.pet.hp + max(1, int(p.pet.max_hp * hp_pct)))
-        keep = []
+        keep, faded = [], False
         for e in p.effects:
             if e.get("fresh"):
                 e["fresh"] = False
@@ -533,7 +545,14 @@ class Game:
             e["turns"] -= 1
             if e["turns"] > 0:
                 keep.append(e)
+            elif e["type"] == "invisible":
+                faded = True
         p.effects = keep
+        if faded:
+            ui.say("Your invisibility fades, and you are visible again.", "byellow")
+            self.check_aggro()
+            if self.combat:
+                return
         if self.sleeping:
             ui.say("You sleep... (+{} HP, +{} mana)".format(hp_gain, p.mana - mana_before), "blue")
             if p.hp >= p.max_hp and p.mana >= p.max_mana:
@@ -551,6 +570,7 @@ class Game:
     def start_combat(self, mon):
         """The player opens a fight: their first action resolves now, the next one a full tick later."""
         # aggressive monsters in the room pile in; passive ones stay out of it
+        self.break_invisibility("You appear as you attack!")
         others = [m for m in self.room.living() if m is not mon and m.aggro and m.level >= self.player.level - AGGRO_GAP]
         self.combat = Combat(self, [mon] + others)
         self.combat.target = mon
@@ -623,6 +643,12 @@ class Game:
         if err:
             ui.say(err, "grey")
             return
+        if not self.combat and self.break_invisibility():  # the act of casting reveals you
+            self.check_aggro()
+            err = self.ability_error(ab) if self.combat else None
+            if err:
+                ui.say(err, "grey")
+                return
         if self.combat:
             if ab["target"] == "enemy" and rest and not self.combat.find_target(rest):
                 ui.say("You don't see that here.", "grey")
@@ -651,6 +677,8 @@ class Game:
             return "{} will return to you at level {}.".format(ab["name"], ab["level"])
         if self.combat and any(e["type"] == "summon" for e in ab["effects"]):
             return "There is no time to call a servant in the middle of a fight."
+        if self.combat and any(e["type"] == "invisible" for e in ab["effects"]):
+            return "You can't vanish in the middle of a fight."
         cost = p.mana_cost(ab) if ab["kind"] == "spell" else 0
         if cost > p.mana:
             return "You don't have enough mana for {} ({} needed).".format(ab["name"], cost)
@@ -1422,7 +1450,7 @@ class Game:
         if self.sleeping:
             ui.say("You are already asleep.", "grey")
             return
-        hostile = [m for m in self.room.living() if m.aggro]
+        hostile = self.hostiles() if p.invisible else [m for m in self.room.living() if m.aggro]
         if hostile:
             ui.say("You can't sleep with {} nearby!".format(hostile[0].name), "red")
             return
