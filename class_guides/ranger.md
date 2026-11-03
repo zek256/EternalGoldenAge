@@ -2,10 +2,10 @@
 
 > *Wardens of the wild places, deadly with bow and blade and kin to beasts.*
 
-The Ranger is a STR and DEX fighter that mostly uses free abilities, with a small WIS mana pool for a heal
-and an animal companion. It hits hard and often, gets an area attack early, crits more than most
-classes, and from level 16 brings a wolf that soaks up hits for it. It has the best staying power of
-any class in the mid levels.
+The Ranger is a STR and DEX fighter that mostly uses free abilities, with a small WIS mana pool for a
+heal and an animal companion. Its shots form a ladder from Aimed Shot to Deadeye, Serpent Sting adds a
+poison, and from 16 a wolf (called out of combat) soaks up hits for it. From 15 its weapon may strike
+twice a round. It has the best staying power of any class in the mid levels.
 
 ## At a glance
 
@@ -37,41 +37,31 @@ stays low, so your mana pool is small: Hunter's Mend and the wolf are for when y
 
 ## Spells and abilities
 
-Abilities are free (`ab <name>`); spells cost mana (`cast <name>`). Cost is shown at the level you
-learn it and at level 50. Weapon damage is the average with the starting bow.
+Abilities are free (`ability <name>`); spells cost mana (`cast <name>`). There are no cooldowns: every attack can be used every round, and each new attack is a modest step up (12%) from the one before it, so **use your newest one**.
 
-| Level | Name | Type | Cost | Cooldown | Target | Effect |
-|---|---|---|---|---|---|---|
-| 1 | **Aimed Shot** | ability | free | 2 | one foe | 1.6x weapon damage (~13 at L1, ~106 at L50) |
-| 4 | **Hunter's Mend** | spell | 8 / 35 | - | self | Heal 9 + 2/level + 0.45 WIS (~21 at L4, ~113 at L50) |
-| 10 | **Multishot** | ability | free | 3 | all foes | 0.95x weapon damage to every foe |
-| 16 | **Call Bonded Wolf** | spell | 50 / 118 | 10 | self | Summon a grey timber wolf (~150 HP, 19-30 damage at L16; ~405 HP, 52-80 at L50) |
-| 24 | **Serpent Sting** | ability | free | 4 | one foe | 0.9x weapon damage plus poison: 8 + 1.4/level + 0.3 STR per round for 5 rounds (~58 at L24, ~111 at L50) |
-| 34 | **Rain of Arrows** | ability | free | 4 | all foes | 1.6x weapon damage to every foe |
-| 45 | **Deadeye** | ability | free | 5 | one foe | 3.6x weapon damage (~217 at L45, ~239 at L50) |
-
-**Passive** (always on, kept in later lives):
-
-- **Double Attack** (15): your weapon may strike a second time every round, 40% of the time at 15 rising evenly to every round at 50. (A past warrior life gives it at 10.)
+| Level | Name | Type | Cost | Target | Effect |
+|---|---|---|---|---|---|
+| 1 | **Aimed Shot** | ability | free | one foe | 1.45x weapon damage (~10 at L1, ~52 at L25, ~96 at L50 with the starting weapon) |
+| 4 | **Hunter's Mend** | spell | 8 / 35 | self | Heal 9 + 2/level + 0.45 WIS (~21 at L4, ~63 at L25, ~113 at L50) |
+| 10 | **Multishot** | ability | free | one foe | 1.62x weapon damage (~29 at L10, ~59 at L25, ~107 at L50 with the starting weapon) |
+| 15 | **Double Attack** | passive | - | - | Each hand may strike a second time every round: a 40% chance when learned, rising evenly to certain at level 50. |
+| 16 | **Call Bonded Wolf** | spell | 50 / 118 | self | Summon a grey timber wolf (~205 HP, 26-41 damage at L25); only out of combat, and it stays until it dies |
+| 24 | **Serpent Sting** | ability | free | one foe | 1x weapon damage (~35 at L24, ~36 at L25, ~66 at L50 with the starting weapon); Poison damage over time: 8 + 1.4/level + 0.3 STR per round for 5 rounds (~58 at L24, ~61 at L25, ~111 at L50 per round) |
+| 34 | **Rain of Arrows** | ability | free | one foe | 1.82x weapon damage (~86 at L34, ~121 at L50 with the starting weapon) |
+| 45 | **Deadeye** | ability | free | one foe | 2.04x weapon damage (~123 at L45, ~135 at L50 with the starting weapon) |
 
 ## How to play
 
-**Levels 1-15.** Aimed Shot every other round is most of your damage. Hunter's Mend is a cheap heal;
-your mana pool is small, so it is your main use for mana. Multishot at 10 handles groups.
+**Before every fight.** Call your Bonded Wolf (from 16) if it is not with you: it can't be called in
+combat.
 
-**Levels 16-33.** Call the wolf before you go hunting and keep it alive. It attacks every round and
-takes about a quarter of the enemies' normal attacks, which is a lot of damage you don't take. Its
-stats are fixed when you call it, so call it again every few levels. Serpent Sting at 24 adds strong
-poison damage that ignores armor: use it on anything tough, then alternate Aimed Shot.
-
-**Levels 34-50.** Rain of Arrows is a full-power area attack (1.6x on every foe every four rounds),
-and Deadeye at 45 is your big single-target hit. A boss rotation: wolf up, Serpent Sting, Deadeye,
-Aimed Shot, and Serpent Sting again when it wears off.
+**Every fight.** Your newest shot every round: Aimed Shot, Multishot from 10, Rain of Arrows from 34,
+Deadeye from 45. From 24, Serpent Sting once at the start adds a poison for 5 rounds. Heal with
+Hunter's Mend when you drop under about half health.
 
 **Tips**
-- Your attacks are physical, so armored monsters resist them. Serpent Sting's poison does not.
-- Bows are your best weapons but you can also use a sword or axe with a shield for extra armor.
-- If the wolf dies mid-fight, recall it as soon as the cooldown allows.
+- Your shots scale with your weapon: a bow is the classic choice, but any trained weapon works.
+- The wolf draws about a quarter of the attacks aimed at you.
 
 ## Gear
 
@@ -128,11 +118,7 @@ ring, DEX/CON/INT). Madame Marchpane drops the ring of spun sugar; the rest come
 
 ## How it performs
 
-The Ranger wins every same-level fight in the simulator, a little slowly at low levels (4-6 rounds)
-and quickly later (about 3-4 rounds from level 25), finishing with 51-83% HP. It lasts about 4 fights
-in a row at level 10 and the simulator's cap of 8 at level 30. Its weak point is the hardest bosses:
-about 83% against the High Justice, Ussreth and Pyraxis at the boss's own level, and 93% against
-Pyraxis at boss level +3. It beats every other boss at boss level +3.
+The Ranger wins every same-level fight in the simulator in 2.7-4.5 rounds, finishing with 63-90% HP. It survives about 5, 8 and 8 fights in a row at levels 10, 20 and 30 (the cap is 8). Against the world bosses it wins 95-100% at the boss's own level and 100% at boss level +3. These figures are from November 2026, after cooldowns were removed.
 
 ## Rebirth
 
@@ -141,6 +127,6 @@ any class you have lived would have at your current level (see the [README](READ
 class mastered adds +2% max HP and damage.
 
 A Ranger life brings strong STR and DEX growth (matching the Rogue), plus **mail armor and shield
-training** and sword, dagger, axe and bow weapons. Aimed Shot, Multishot, Rain of Arrows and Deadeye
-are free abilities that scale with your weapon, and every class swings with STR, so they work in any
-later life that keeps a good weapon. It also passes on Double Attack to every later life, at the same level.
+training** and sword, dagger, axe and bow weapons. Its shots are free abilities that scale with your
+weapon, so they work in any later life that keeps a good weapon. It also passes on Double Attack to
+every later life.

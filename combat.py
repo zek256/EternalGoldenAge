@@ -76,15 +76,16 @@ def resolve_self_effect(game, ab, eff):
         val = max(1, int(p.power(eff)))
         p.add_effect({"type": "hot", "name": eff["name"], "value": val, "turns": eff["turns"], "fresh": True})
         ui.say("{} will heal you for {} HP each round for {} rounds.".format(eff["name"], val, eff["turns"]), "green")
-    elif t == "shield":
+    elif t == "shield":  # lasts until used up; a new shield replaces any old one
         val = int(p.power(eff))
-        p.add_effect({"type": "shield", "name": ab["name"], "value": val, "turns": 10, "fresh": True})
+        p.effects = [e for e in p.effects if e["type"] != "shield"]
+        p.add_effect({"type": "shield", "name": ab["name"], "value": val})
         ui.say("A shield absorbs the next {} damage.".format(val), "bcyan")
     elif t == "buff":
         mods = dict(eff["mods"])
         if "armor_lvl" in mods:
             mods["armor"] = mods.get("armor", 0) + mods.pop("armor_lvl") * p.level
-        p.add_effect({"type": "buff", "name": eff["name"], "mods": mods, "turns": eff["turns"], "fresh": True})
+        p.add_effect({"type": "buff", "name": eff["name"], "mods": mods})  # until the end of the fight
         parts = []
         if mods.get("damage_pct"):
             parts.append("+{}% damage".format(int(mods["damage_pct"] * 100)))
@@ -94,7 +95,7 @@ def resolve_self_effect(game, ab, eff):
             parts.append("+{}% dodge".format(int(mods["dodge"] * 100)))
         if mods.get("lifesteal"):
             parts.append("{}% lifesteal".format(int(mods["lifesteal"] * 100)))
-        ui.say("{}: {} for {} rounds.".format(eff["name"], ", ".join(parts), eff["turns"]), "bcyan")
+        ui.say("{}: {} until the end of your next fight.".format(eff["name"], ", ".join(parts)), "bcyan")
     elif t == "summon":
         stat = p.magic_stat(eff["stat"])
         hp = int(eff["hp_base"] + eff["hp_lvl"] * p.level + stat * 0.5)
@@ -114,7 +115,6 @@ class Combat:
         self.over = False
         self.target = None
         self.queued = None  # the player's action for the next round, on top of the auto-attack
-        self.held = None    # (ability, target word): one cooling ability, fired the round it is ready
         for e in enemies:
             self.add(e)
 
@@ -122,25 +122,6 @@ class Combat:
     def queue(self, desc, action):
         self.queued = action
         ui.say(desc, "cyan")
-
-    def hold(self, ab, target_word):
-        """Keep a cooling ability until it is ready. It takes priority over the queued action that round."""
-        self.held = (ab, target_word)
-        ui.say("{} is not ready yet. You will use it as soon as it is ({} round{}).".format(
-            ab["name"], self.p.cooldowns[ab["id"]], "" if self.p.cooldowns[ab["id"]] == 1 else "s"), "cyan")
-
-    def fire_held(self):
-        """Use the held ability if it is ready this round. Returns True if it took the round."""
-        ab, target_word = self.held
-        if ab["id"] in self.p.cooldowns:
-            return False
-        self.held = None
-        err = self.game.ability_error(ab)
-        if err:
-            ui.say("{} You let it go.".format(err), "grey")
-            return False
-        self.game.ability_round(ab, target_word)
-        return True
 
     def current_target(self):
         if self.target is None or not self.target.alive or self.target not in self.enemies:
@@ -157,12 +138,6 @@ class Combat:
 
     def round(self):
         """One combat round, fired by the game clock."""
-        if self.p.has_effect("stun"):
-            ui.say("You are stunned and can do nothing but reel!", "byellow")
-            self.pass_turn()  # queued and held actions wait until you recover
-            return
-        if self.held and self.fire_held():
-            return  # the queued action, if any, waits for the next round
         if self.queued:
             action, self.queued = self.queued, None
             action()
@@ -219,7 +194,7 @@ class Combat:
         self.end_round()
 
     def swing(self, mon=None):
-        """The auto-attack. It lands every round you aren't stunned, alongside any action you take.
+        """The auto-attack. It lands every round, alongside any action you take.
         Dual Wield adds an off-hand strike and Double Attack may repeat each hand, so up to four."""
         p = self.p
         hands = [("weapon", 1.0, "You strike", "You swing at {} but miss!")]
@@ -243,14 +218,9 @@ class Combat:
         p = self.p
         cost = p.mana_cost(ab) if ab["kind"] == "spell" else 0
         p.mana -= cost
-        if ab["cooldown"]:
-            p.cooldowns[ab["id"]] = ab["cooldown"] + 1
         if ab["target"] == "enemy":
             targets = [target]
             tname = target.name
-        elif ab["target"] == "all":
-            targets = self.living()
-            tname = "your foes"
         else:
             targets = []
             tname = "yourself"
@@ -284,20 +254,12 @@ class Combat:
             val = max(1, int(p.power(eff) * p.damage_mult))
             mon.add_effect({"type": "dot", "name": eff["name"], "value": val, "turns": eff["turns"]})
             ui.say("{} is afflicted by {} ({} per round).".format(mon.short(), eff["name"], val), "magenta")
-        elif t == "stun":
-            chance = eff["chance"] * (0.5 if mon.boss else 1.0)
-            if random.random() < chance:
-                mon.add_effect({"type": "stun", "name": "stun", "turns": eff["turns"]})
-                ui.say("{} is stunned!".format(mon.short()), "byellow")
-            else:
-                ui.say("{} resists being stunned.".format(mon.short()), "grey")
-        elif t == "weaken":
-            mon.add_effect({"type": "weaken", "name": eff["name"], "pct": eff["pct"], "turns": eff["turns"]})
+        elif t == "weaken":  # lasts the whole fight
+            mon.add_effect({"type": "weaken", "name": eff["name"], "pct": eff["pct"]})
             ui.say("{} is {} (-{}% damage).".format(mon.short(), eff["name"].lower(), int(eff["pct"] * 100)), "magenta")
 
     def pass_turn(self, swing=False):
-        """The player spends the round on something else: a potion or a failed escape (still swinging),
-        or being stunned (no swing)."""
+        """The player spends the round on something else: a potion or a failed escape (still swinging)."""
         if swing:
             self.swing()
         self.end_round()
@@ -305,7 +267,6 @@ class Combat:
     # ------------------------------------------------------------------ round resolution
     def end_round(self):
         g, p = self.game, self.p
-        # player effects tick first, so stuns applied by monsters this round last into the next
         self.tick_player_effects()
         # pet acts
         alive = self.living()
@@ -333,7 +294,6 @@ class Combat:
         p.mana = min(p.max_mana, p.mana + max(1, int(p.max_mana * 0.02)))
         if p.perk("regen_mult", 1.0) > 1.0 and p.hp > 0:
             p.heal(p.max_hp * 0.02)
-        p.tick_cooldowns()
         g.world.tick(1, avoid_room=self.room.id)
         if p.hp <= 0:
             self.over = True
@@ -354,6 +314,9 @@ class Combat:
                 e["fresh"] = False
                 keep.append(e)
                 continue
+            if "turns" not in e:  # buffs last the fight, shields until used up
+                keep.append(e)
+                continue
             if e["type"] == "dot":
                 p.hp -= e["value"]
                 ui.say("{} burns you for {} damage.".format(e["name"], e["value"]), "red")
@@ -364,7 +327,7 @@ class Combat:
             e["turns"] -= 1
             if e["turns"] > 0:
                 keep.append(e)
-            elif e["type"] in ("buff", "shield"):
+            elif e["type"] == "hot":
                 ui.say("{} fades.".format(e["name"]), "grey")
         p.effects = keep
 
@@ -374,8 +337,8 @@ class Combat:
             if e["type"] == "dot":
                 mon.hp -= e["value"]
                 ui.say("{} suffers {} damage from {}.".format(mon.short(), e["value"], e["name"]), "magenta")
-            if e["type"] == "stun":
-                keep.append(e)  # stuns are consumed when the monster tries to act
+            if "turns" not in e:  # debuffs last the whole fight
+                keep.append(e)
                 continue
             e["turns"] -= 1
             if e["turns"] > 0:
@@ -384,13 +347,6 @@ class Combat:
 
     def monster_act(self, mon):
         p = self.p
-        stun = next((e for e in mon.effects if e["type"] == "stun"), None)
-        if stun:
-            stun["turns"] -= 1
-            if stun["turns"] <= 0:
-                mon.effects.remove(stun)
-            ui.say("{} is stunned and cannot act.".format(mon.short()), "grey")
-            return
         special = None
         for sp in mon.specials:
             if random.random() < sp["chance"]:
@@ -424,7 +380,7 @@ class Combat:
             elif st == "drain":
                 raw *= special["mult"]
                 physical = False
-            elif st in ("dot", "stun"):
+            elif st == "dot":
                 raw *= 0.6
         dmg = raw
         if physical:
@@ -439,9 +395,6 @@ class Combat:
             st = special["type"]
             if st == "drain":
                 mon.hp = min(mon.max_hp, mon.hp + dmg)
-            elif st == "stun":
-                p.add_effect({"type": "stun", "name": "Stunned", "turns": special["turns"]})
-                ui.say("You are stunned!", "byellow")
             elif st == "dot":
                 if special["element"] in p.perk("immune", []):
                     ui.say("Your undead flesh shrugs off the {}.".format(special["element"]), "grey")
@@ -483,5 +436,4 @@ class Combat:
         if p.pet:
             ui.out(ui.c("{} [{}/{}]".format(p.pet.name[0].upper() + p.pet.name[1:], p.pet.hp, p.pet.max_hp), "cyan"))
         for m in self.living():
-            flags = " (stunned)" if m.is_stunned() else ""
-            ui.out(ui.c("{} {}{} [{}/{}]".format(m.short(), m.health_word(), flags, m.hp, m.max_hp), "red"))
+            ui.out(ui.c("{} {} [{}/{}]".format(m.short(), m.health_word(), m.hp, m.max_hp), "red"))

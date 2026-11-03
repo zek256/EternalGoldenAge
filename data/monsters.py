@@ -36,10 +36,6 @@ def dot(name, chance, mult, turns, element, msg):
             "element": element, "msg": msg}
 
 
-def stun(name, chance, turns, msg):
-    return {"type": "stun", "name": name, "chance": chance, "turns": turns, "msg": msg}
-
-
 def drain(name, chance, mult, msg):
     return {"type": "drain", "name": name, "chance": chance, "mult": mult, "msg": msg}
 
@@ -61,7 +57,7 @@ M("wild_boar", "a wild boar", 3, "A bristling boar with wicked curved tusks and 
 M("kobold_scavenger", "a kobold scavenger", 3, "A yapping, dog-faced kobold clutching a rusty knife.",
   hp=0.9, dmg=0.9, loot=[("leather_gloves", 0.08), ("leather_leggings", 0.08)], gold=1.2)
 M("kobold_trapper", "a kobold trapper", 4, "A wiry kobold draped in snares and smelling of wet dog.",
-  hp=0.9, dmg=1.0, specials=[stun("Net Toss", 0.15, 1, "hurls a weighted net over you!")],
+  hp=0.9, dmg=1.0, specials=[big("Net Toss", 0.15, 1.6, "hurls a weighted net over you!")],
   loot=[("leather_jerkin", 0.08), ("iron_buckler", 0.06)], gold=1.3)
 
 # ------------------------------------------------------------- Whispering Woods (4-10)
@@ -86,7 +82,7 @@ M("bandit_chieftain", "Rask the Bandit Chieftain", 10,
   "A towering, one-eyed brute in a stolen noble's coat, his cutlass dark with old blood.",
   hp=2.4, dmg=1.15, armor=1.3, aggro=True, boss=True, xp=2.0, gold=4.0,
   specials=[big("Brutal Slash", 0.25, 1.8, "swings his cutlass in a brutal, two-handed slash!"),
-            stun("Pommel Strike", 0.12, 1, "cracks you across the skull with his pommel!")],
+            big("Pommel Strike", 0.12, 1.6, "cracks you across the skull with his pommel!")],
   loot=[("bandit_cutlass", 1.0), ("chain_shirt", 0.5), ("ring_of_vigor", 0.4)])
 
 # ------------------------------------------------------------- The Underhedge (5-10)
@@ -97,7 +93,7 @@ M("garden_ant", "a garden ant", 5, "A red-brown ant as big as a dog, hurrying al
 M("water_beetle", "a water beetle", 5, "A glossy black beetle the size of a rowing boat, its legs fringed like oars.",
   hp=1.0, dmg=0.95, armor=1.5, loot=[("beetle_chitin", 0.4), ("acorn_helm", 0.05)], gold=0.2)
 M("pond_frog", "a pond frog", 6, "A mottled green frog as big as a house, with golden eyes and a throat that pulses slowly.",
-  hp=1.2, dmg=1.0, specials=[stun("Tongue Lash", 0.15, 1, "lashes out its tongue, snatches you up and spits you out, dazed!")],
+  hp=1.2, dmg=1.0, specials=[big("Tongue Lash", 0.15, 1.6, "lashes out its tongue, snatches you up and spits you out, dazed!")],
   loot=[("petal_slippers", 0.05), ("minor_healing_potion", 0.08)], gold=0.2)
 M("soldier_ant", "a soldier ant", 7, "A big-headed ant with jaws like curved swords, guarding the road and the grain that rolls along it.",
   hp=1.0, dmg=1.1, armor=1.4, aggro=True, specials=[big("Mandible Crush", 0.2, 1.7, "seizes you in its great jaws and squeezes!")],
@@ -114,7 +110,7 @@ M("stag_beetle", "a stag beetle", 8, "A huge beetle with antlers like a stag's, 
 M("mole_digger", "a mole digger", 8, "A velvet-black mole in a leather apron, with spade-like hands and tiny squinting eyes.",
   hp=1.2, dmg=1.0, loot=[("dandelion_trousers", 0.05), ("hawthorn_wand", 0.04)], gold=1.0)
 M("mole_guard", "a mole guard", 9, "A burly mole in a coat of overlapping beetle shell, gripping a pick and sniffing the air.",
-  hp=1.1, dmg=1.1, armor=1.4, aggro=True, specials=[stun("Pick Haft", 0.12, 1, "cracks you across the head with the haft of its pick!")],
+  hp=1.1, dmg=1.1, armor=1.4, aggro=True, specials=[big("Pick Haft", 0.12, 1.6, "cracks you across the head with the haft of its pick!")],
   loot=[("mole_claw_gloves", 0.03), ("healing_potion", 0.08)], gold=1.4)
 M("mole_king", "Grubbin, the Mole King", 9, "A fat old mole in a crown of bottle-tin and a cloak of sewn-together moth wings, lord of every tunnel under the hedge.",
   hp=1.7, dmg=1.1, armor=1.2, xp=1.6, gold=3.0,
@@ -124,21 +120,21 @@ M("mole_king", "Grubbin, the Mole King", 9, "A fat old mole in a crown of bottle
 M("garden_cat", "Old Tom, the gardener's cat", 9, "A grey tomcat as big as a church, with a torn ear and green eyes like lanterns. He has not yet decided whether you are worth the bother.",
   hp=1.75, dmg=1.12, xp=1.6, gold=0.1,
   specials=[big("Pounce", 0.22, 1.9, "crouches, wiggles, and pounces on you!"),
-            stun("Pinned", 0.1, 1, "pins you under one enormous paw!")],
+            big("Pinned", 0.1, 1.6, "pins you under one enormous paw!")],
   loot=[("whisker_bow", 0.25)])
 M("wasp_drone", "a wasp drone", 9, "A striped wasp as big as a hound, its wings a blur and its sting dripping.",
   hp=0.9, dmg=1.1, armor=0.6, aggro=True, specials=[dot("Sting", 0.22, 0.35, 3, "poison", "darts in and stings you!")],
   loot=[("wasp_sting_dagger", 0.05), ("thistledown_robe", 0.04)], gold=0.6)
 M("wasp_guard", "a wasp guard", 10, "A heavy wasp of the queen's guard, with a sting as long as a spear and armour-hard stripes.",
   hp=1.2, dmg=1.15, armor=1.3, aggro=True, specials=[dot("Spear Sting", 0.2, 0.35, 3, "poison", "drives its sting into you like a spear!"),
-                                                     stun("Paralysing Venom", 0.1, 1, "stings you, and your limbs go numb!")],
+                                                     big("Paralysing Venom", 0.1, 1.6, "stings you, and your limbs go numb!")],
   loot=[("wasp_sting_dagger", 0.06), ("healing_potion", 0.1)], gold=0.8)
 M("wasp_queen", "Vesperine, the Wasp Queen", 10,
   "The queen of the Wasp Keep, longer than a horse, her striped body swollen and her wings humming like a storm. "
   "Her great black eyes see everything in the apple.",
   hp=2.4, dmg=1.15, armor=1.3, aggro=True, boss=True, xp=2.0, gold=4.0,
   specials=[dot("Royal Sting", 0.2, 0.4, 4, "poison", "curls her body and drives her great sting into you!"),
-            stun("Paralysing Venom", 0.12, 1, "stings you, and you cannot move a muscle!"),
+            big("Paralysing Venom", 0.12, 1.6, "stings you, and you cannot move a muscle!"),
             heal("Royal Jelly", 0.1, 0.12, "feeds from the comb, and her wounds close!")],
   loot=[("queens_stinger", 0.6), ("amber_pendant", 0.6), ("thistledown_robe", 0.4)])
 
@@ -161,7 +157,7 @@ M("dust_hyena", "a dust hyena", 9, "A mangy spotted hyena that giggles horribly 
   hp=1.0, dmg=1.05, specials=[dot("Ragged Bite", 0.2, 0.3, 3, "bleed", "darts in and tears a ragged bite from your leg!")],
   loot=[("hyena_hide", 0.5)], gold=0.2)
 M("highwayman", "a highwayman", 10, "A masked rider in a long coat, with a crossbow across his saddle and a cudgel at his belt.",
-  hp=1.0, dmg=1.1, specials=[stun("Cudgel Blow", 0.12, 1, "clubs you behind the ear!")],
+  hp=1.0, dmg=1.1, specials=[big("Cudgel Blow", 0.12, 1.6, "clubs you behind the ear!")],
   loot=[("chain_leggings", 0.05), ("iron_longsword", 0.05), ("healing_potion", 0.1)], gold=2.0)
 M("gnoll_scavenger", "a gnoll scavenger", 12, "A hunched, hyena-headed gnoll in rags, gnawing on something it would rather you did not see.",
   hp=1.1, dmg=1.05, loot=[("hyena_hide", 0.3), ("iron_boots", 0.05)], gold=1.2)
@@ -174,7 +170,7 @@ M("restless_zombie", "a restless zombie", 9, "A shambling corpse in a rotted bur
   hp=1.2, dmg=0.95, aggro=True, specials=[dot("Grave Rot", 0.2, 0.3, 4, "disease", "claws you with filthy, rotting nails!")],
   loot=[("bone_dust", 0.3)], gold=0.8)
 M("carrion_ghoul", "a carrion ghoul", 10, "A grey-skinned ghoul crouched over an opened grave, its claws long and black.",
-  hp=1.0, dmg=1.1, specials=[stun("Paralysing Claw", 0.15, 1, "rakes you with paralysing claws!")],
+  hp=1.0, dmg=1.1, specials=[big("Paralysing Claw", 0.15, 1.6, "rakes you with paralysing claws!")],
   loot=[("bone_dust", 0.4), ("chain_leggings", 0.05)], gold=1.0)
 M("crypt_bat", "a swarm of crypt bats", 11, "A shrieking cloud of red-eyed bats.",
   hp=0.7, dmg=0.9, gold=0.2)
@@ -207,7 +203,7 @@ M("swamp_troll", "a swamp troll", 17, "A hulking, moss-covered troll whose wound
   hp=1.5, dmg=1.15, specials=[heal("Regenerate", 0.15, 0.15, "regenerates, its wounds bubbling closed!")],
   loot=[("plate_gauntlets", 0.05), ("bog_pearl", 0.2)], gold=1.3, xp=1.3)
 M("will_o_wisp", "a will-o'-the-wisp", 18, "A drifting, flickering ball of pale light that hums an eerie tune.",
-  hp=0.7, dmg=1.2, armor=0.3, specials=[stun("Bewitching Glow", 0.2, 1, "flares brightly, and you stand transfixed!")],
+  hp=0.7, dmg=1.2, armor=0.3, specials=[big("Bewitching Glow", 0.2, 1.6, "flares brightly, and you stand transfixed!")],
   loot=[("bog_pearl", 0.3), ("mana_potion", 0.2)], gold=0.6)
 M("lizardman_shaman", "a lizardman shaman", 18, "A lizardman hung with shells and dried frogs, rattling a staff topped with a heron's skull.",
   hp=1.0, dmg=1.1, specials=[heal("Swamp Blessing", 0.15, 0.2, "croaks a prayer to the swamp, and its wounds close!"),
@@ -221,13 +217,13 @@ M("giant_leech", "a giant leech", 20, "A glistening black leech as long as a row
   loot=[("bog_pearl", 0.2)], gold=0.3)
 M("fen_crocodile", "a fen crocodile", 21, "A crocodile longer than a cart, its back crusted with moss so that it looks like a log.",
   hp=1.4, dmg=1.2, armor=1.4, specials=[big("Death Roll", 0.2, 1.8, "clamps its jaws on you and rolls, dragging you under!"),
-                                        stun("Tail Lash", 0.1, 1, "knocks you sprawling with a lash of its tail!")],
+                                        big("Tail Lash", 0.1, 1.6, "knocks you sprawling with a lash of its tail!")],
   loot=[("mirescale_vest", 0.04), ("bog_pearl", 0.2)], gold=0.5, xp=1.3)
 M("bog_hag", "Old Mother Gristle", 22,
   "A hunched, warty crone in a shawl of rotting moss, her eyes like lanterns and her teeth like needles.",
   hp=2.6, dmg=1.2, armor=1.3, aggro=True, boss=True, xp=2.0, gold=5.0,
   specials=[dot("Hex of Withering", 0.2, 0.45, 4, "shadow", "cackles and hurls a hex of withering at you!"),
-            stun("Evil Eye", 0.12, 1, "fixes you with her evil eye, and your limbs lock!"),
+            big("Evil Eye", 0.12, 1.6, "fixes you with her evil eye, and your limbs lock!"),
             heal("Drink from the Cauldron", 0.1, 0.12, "slurps from a ladle of bubbling broth and cackles with renewed vigour!")],
   loot=[("gristles_hexrod", 0.6), ("hag_charm", 0.6), ("mirescale_vest", 0.4), ("bogwood_staff", 0.4)])
 
@@ -244,7 +240,7 @@ M("yeti", "a yeti", 16, "A great shaggy ape-beast with white fur and a blue-blac
   hp=1.5, dmg=1.15, specials=[big("Avalanche Slam", 0.2, 1.8, "raises both fists and brings them down like an avalanche!")],
   loot=[("yeti_fur", 0.6), ("dwarven_helm", 0.04)], gold=0.6, xp=1.3)
 M("frost_wisp", "a frost wisp", 17, "A drifting mote of blue-white cold, ringed by a halo of whirling snowflakes.",
-  hp=0.8, dmg=1.15, armor=0.4, aggro=True, specials=[stun("Flash Freeze", 0.15, 1, "flares, and ice locks your limbs in place!")],
+  hp=0.8, dmg=1.15, armor=0.4, aggro=True, specials=[big("Flash Freeze", 0.15, 1.6, "flares, and ice locks your limbs in place!")],
   loot=[("frost_shard", 0.1), ("mana_potion", 0.2)], gold=0.6)
 M("snow_troll", "a snow troll", 19, "A towering troll with a mane of frozen hair, gnawing on the leg of something it caught.",
   hp=1.5, dmg=1.15, specials=[heal("Regenerate", 0.15, 0.15, "regenerates, frost knitting its wounds shut!")],
@@ -260,13 +256,13 @@ M("spore_warden", "a spore warden", 13, "A tall capfolk in armour of hardened sh
   hp=1.2, dmg=1.1, armor=1.6, aggro=True, specials=[big("Shelf Club", 0.2, 1.7, "swings a club of stone-hard fungus into you!")],
   loot=[("shelf_shield", 0.04), ("shelfcap_breastplate", 0.03)], gold=1.0)
 M("capfolk_citizen", "a capfolk citizen", 13, "A pale, soft-footed citizen of the Wards with a gilled cap for a head, murmuring to its neighbours without moving its lips.",
-  hp=1.0, dmg=1.05, specials=[stun("Murmuring Chorus", 0.12, 1, "and every capfolk nearby murmur at once, and your thoughts scatter!")],
+  hp=1.0, dmg=1.05, specials=[big("Murmuring Chorus", 0.12, 1.6, "and every capfolk nearby murmur at once, and your thoughts scatter!")],
   loot=[("spore_sac", 0.3)], gold=0.8)
 M("gill_tender", "a gill-tender", 14, "A stooped capfolk gardener who tends the moss in the doorways, with a hooked knife for trimming gills.",
   hp=1.1, dmg=1.1, specials=[big("Hooked Knife", 0.2, 1.7, "hooks you with its trimming knife!")],
   loot=[("spore_sac", 0.25), ("mossfelt_boots", 0.03)], gold=0.8)
 M("puffball_hawker", "a puffball hawker", 14, "A round capfolk market-keeper, swollen like a puffball, who breathes out a glittering cloud when it is startled.",
-  hp=1.0, dmg=1.1, specials=[stun("Spore Cloud", 0.14, 1, "bursts in a glittering cloud, and you choke and stagger!")],
+  hp=1.0, dmg=1.1, specials=[big("Spore Cloud", 0.14, 1.6, "bursts in a glittering cloud, and you choke and stagger!")],
   loot=[("spore_sac", 0.35)], gold=1.0)
 M("capfolk_porter", "a capfolk porter", 15, "A broad capfolk with a cap like a shield and shoulders made for hauling, carrying a load of woven root.",
   hp=1.4, dmg=1.1, xp=1.2, specials=[big("Shoulder Barge", 0.2, 1.7, "lowers its broad cap and barges you over!")],
@@ -275,7 +271,7 @@ M("spore_drift", "a drift of spores", 15, "A slow, glittering cloud of spores th
   hp=0.7, dmg=1.15, armor=0.3, specials=[dot("Settling Spores", 0.22, 0.35, 3, "poison", "settles over you, and the spores take root in your lungs!")],
   gold=0.3)
 M("glowcap_scholar", "a glowcap scholar", 16, "A slow, thoughtful capfolk whose cap glows soft blue. It speaks only as 'we', and has been considering you.",
-  hp=0.9, dmg=1.15, specials=[stun("Slow Thought", 0.14, 1, "shares a thought so slow and vast that you stop to follow it!"),
+  hp=0.9, dmg=1.15, specials=[big("Slow Thought", 0.14, 1.6, "shares a thought so slow and vast that you stop to follow it!"),
                               drain("Borrowed Memory", 0.15, 0.9, "touches your brow and reads a memory, and some of your life goes with it!")],
   loot=[("glowcap_pendant", 0.04), ("mana_potion", 0.1)], gold=1.0)
 M("lantern_cap", "a lantern-cap", 16, "A capfolk lamplighter whose own cap burns with cold blue light, carrying a crook hung with glowing caps.",
@@ -283,7 +279,7 @@ M("lantern_cap", "a lantern-cap", 16, "A capfolk lamplighter whose own cap burns
   loot=[("glowcap_pendant", 0.03)], gold=0.8)
 M("dreaming_sage", "the Dreaming Sage", 17, "An ancient capfolk grown into the floor of its dome, dreaming so deeply that the dream spills out and takes others in.",
   hp=1.7, dmg=1.15, xp=1.6, gold=2.0,
-  specials=[stun("Pulled Into the Dream", 0.14, 1, "dreams you into its dream, and for a while you cannot find your way out!"),
+  specials=[big("Pulled Into the Dream", 0.14, 1.6, "dreams you into its dream, and for a while you cannot find your way out!"),
             drain("The Dream Feeds", 0.15, 1.0, "dreams of you, and grows stronger as you grow faint!")],
   loot=[("glowcap_pendant", 0.2), ("healing_potion", 0.3)])
 M("rot_tender", "a rot-tender", 17, "A dark, glistening capfolk of the Rot Ward, polite, patient and hungry, with hands that leave black marks.",
@@ -296,7 +292,7 @@ M("bone_bloom", "a bone-bloom", 18, "A skeleton held upright by the fungus growi
   hp=1.2, dmg=1.15, armor=1.4, aggro=True, specials=[drain("Rooting", 0.2, 1.0, "drives threads of fungus into you and drinks!")],
   loot=[("sporethorn_knife", 0.03)], gold=0.8)
 M("whispering_host", "a whispering host", 18, "A capfolk so deep in the network that it has forgotten it was ever separate. It speaks in a thousand voices.",
-  hp=1.1, dmg=1.15, specials=[stun("A Thousand Voices", 0.14, 1, "speaks with a thousand voices at once, and yours is drowned out!")],
+  hp=1.1, dmg=1.15, specials=[big("A Thousand Voices", 0.14, 1.6, "speaks with a thousand voices at once, and yours is drowned out!")],
   loot=[("glowcap_pendant", 0.03)], gold=0.8)
 M("rot_renderer", "a rot-ward renderer", 19, "A huge, silent capfolk of the rendering pits with a hook for dragging things into the rot.",
   hp=1.4, dmg=1.2, xp=1.2, specials=[big("Rendering Hook", 0.22, 1.8, "drags you toward the pit with its great hook!")],
@@ -308,7 +304,7 @@ M("the_rotmother", "the Rotmother", 19, "A vast, motherly mound of rot that tend
   loot=[("capshell_hauberk", 0.2), ("healing_potion", 0.3)])
 M("root_crawler", "a root-crawler", 19, "A pale, eyeless thing that crawls along the network's great threads like blood along a vein.",
   hp=1.5, dmg=1.2, xp=1.3, specials=[big("Lashing Thread", 0.2, 1.7, "lashes you with a thread as thick as a rope!"),
-                                     stun("Entangle", 0.1, 1, "wraps you in sticky threads!")],
+                                     big("Entangle", 0.1, 1.6, "wraps you in sticky threads!")],
   loot=[("rootmaul", 0.03)], gold=0.4)
 M("thought_spore", "a thought-spore", 20, "A drifting, glowing spore the size of a head, carrying one of the network's thoughts. This one is about you.",
   hp=0.9, dmg=1.2, armor=0.5, aggro=True, specials=[drain("We Remember You", 0.22, 1.0, "settles on you and remembers you, and you feel yourself being forgotten!")],
@@ -319,7 +315,7 @@ M("the_first_spore", "the First Spore", 20,
   hp=2.3, dmg=1.2, armor=1.6, aggro=True, boss=True, xp=2.0, gold=4.0,
   specials=[dot("Spore Storm", 0.18, 0.45, 4, "poison", "breathes out a storm of spores that take root in your flesh!"),
             drain("Absorption", 0.15, 1.1, "draws you into its threads and begins to digest you!"),
-            stun("The Chorus", 0.12, 1, "speaks with the voice of every capfolk in the Wards, and you cannot move!"),
+            big("The Chorus", 0.12, 1.6, "speaks with the voice of every capfolk in the Wards, and you cannot move!"),
             heal("Regrowth", 0.08, 0.1, "draws strength up from every thread in the city!")],
   loot=[("heartspore_staff", 0.5), ("mycelial_crown", 0.4), ("rootbound_ring", 0.5)])
 
@@ -328,7 +324,7 @@ M("rockgnasher", "a rockgnasher", 19, "A blind, armour-plated burrower the size 
   hp=1.4, dmg=1.1, armor=1.8, specials=[big("Grinding Bite", 0.2, 1.7, "clamps you in a mouth full of grinding stone!")],
   loot=[("deep_crystal", 0.3), ("dwarven_boots", 0.04)], gold=0.6, xp=1.3)
 M("deepkin_delver", "a deepkin delver", 20, "A dwarf who dug too deep, grey-skinned and hollow-eyed, still swinging a pick at whatever it is told.",
-  hp=1.1, dmg=1.15, armor=1.4, aggro=True, specials=[stun("Pick-Haft Blow", 0.12, 1, "cracks you across the head with the haft of its pick!")],
+  hp=1.1, dmg=1.15, armor=1.4, aggro=True, specials=[big("Pick-Haft Blow", 0.12, 1.6, "cracks you across the head with the haft of its pick!")],
   loot=[("deep_crystal", 0.3), ("dwarven_greataxe", 0.04), ("dwarven_plate", 0.02)], gold=1.6)
 M("crystal_golem", "a crystal golem", 21, "A hulking figure of cloudy crystal that grew rather than was built, glowing from within.",
   hp=1.8, dmg=1.15, armor=2.2, specials=[big("Shard Fist", 0.2, 1.8, "smashes you with a fist of jagged crystal!")],
@@ -338,7 +334,7 @@ M("ghaldrek", "Ghaldrek the Stonewake", 21,
   "run through it like blood, and its voice is the grinding of the earth itself.",
   hp=2.5, dmg=1.2, armor=1.8, aggro=True, boss=True, xp=2.0, gold=5.0,
   specials=[big("Mountain's Weight", 0.25, 1.9, "brings a fist of solid granite down on you!"),
-            stun("Tremor", 0.12, 1, "stamps, and the cavern floor heaves beneath you!"),
+            big("Tremor", 0.12, 1.6, "stamps, and the cavern floor heaves beneath you!"),
             heal("Draw from the Deep", 0.08, 0.12, "sinks its feet into the stone and draws strength from the mountain!")],
   loot=[("stonewake_hammer", 0.6), ("deepheart_amulet", 0.6), ("dwarven_plate", 0.4), ("deep_crystal", 1.0)])
 
@@ -350,12 +346,12 @@ M("centaur_outrider", "a centaur outrider", 22, "A wild centaur of the deep wood
   hp=1.1, dmg=1.15, specials=[dot("Barbed Arrow", 0.2, 0.35, 3, "bleed", "wheels and looses a barbed arrow into you!")],
   loot=[("hunters_recurve", 0.03), ("elven_saber", 0.02)], gold=1.4)
 M("dusk_owl", "a dusk owl", 23, "An owl as big as a man, grey as dusk, that hunts on silent wings beneath the canopy.",
-  hp=1.0, dmg=1.15, specials=[stun("Silent Swoop", 0.12, 1, "drops out of nowhere and bowls you over!")], gold=0.3)
+  hp=1.0, dmg=1.15, specials=[big("Silent Swoop", 0.12, 1.6, "drops out of nowhere and bowls you over!")], gold=0.3)
 M("wood_troll", "a wood troll", 24, "A gangling green troll with bark-rough skin and moss in its hair, which heals as fast as you can cut it.",
   hp=1.5, dmg=1.15, specials=[heal("Regenerate", 0.15, 0.15, "regenerates, its bark-skin knitting together!")],
   loot=[("leafsteel_helm", 0.03), ("greater_healing_potion", 0.1)], gold=1.2, xp=1.3)
 M("thorn_sprite", "a thorn sprite", 25, "A tiny, spiteful fey no bigger than your hand, with wings of thorn and a laugh like breaking twigs.",
-  hp=0.7, dmg=1.2, armor=0.3, specials=[stun("Bewildering Dust", 0.18, 1, "flings a pinch of glittering dust in your eyes!")],
+  hp=0.7, dmg=1.2, armor=0.3, specials=[big("Bewildering Dust", 0.18, 1.6, "flings a pinch of glittering dust in your eyes!")],
   loot=[("greater_mana_potion", 0.15), ("moonweave_gloves", 0.03)], gold=0.8)
 M("greatstag", "a greatstag", 26, "A white stag taller than a horse, with antlers like the branches of a winter oak.",
   hp=1.4, dmg=1.15, specials=[big("Antler Rake", 0.2, 1.7, "lowers its great antlers and rakes you!")],
@@ -372,7 +368,7 @@ M("blight_wolf", "a blight wolf", 31, "A wolf whose fur has fallen away in patch
   loot=[("wardens_boots", 0.03)], gold=0.4)
 M("gloom_dryad", "a gloom dryad", 33, "A dryad bound to a dying tree, beautiful and terrible, with eyes like holes into dark water.",
   hp=1.1, dmg=1.3, armor=0.8, specials=[drain("Wither", 0.22, 1.0, "touches your cheek, and you feel your life drain into her!"),
-                                        stun("Entangle", 0.12, 1, "sings, and roots burst from the ground to bind you!")],
+                                        big("Entangle", 0.12, 1.6, "sings, and roots burst from the ground to bind you!")],
   loot=[("silverleaf_pendant", 0.03), ("moonstone_ring", 0.02), ("blight_heartwood", 0.2)], gold=1.2)
 M("rotheart", "Rotheart, the Blighted Oak", 33,
   "The oldest tree in the Eldergrove, older than Elandor, gone black and hollow with blight. Its trunk splits open "
@@ -380,7 +376,7 @@ M("rotheart", "Rotheart, the Blighted Oak", 33,
   hp=2.7, dmg=1.25, armor=1.6, aggro=True, boss=True, xp=2.0, gold=5.0,
   specials=[big("Crushing Bough", 0.22, 1.9, "brings a bough as thick as a tower down on you!"),
             dot("Blightbloom", 0.18, 0.45, 4, "nature", "bursts with a cloud of rotting spores!"),
-            stun("Grasping Roots", 0.12, 1, "drives its roots up through the ground and pins you!"),
+            big("Grasping Roots", 0.12, 1.6, "drives its roots up through the ground and pins you!"),
             heal("Drink the Earth", 0.08, 0.1, "sinks its roots deep and drinks the life of the grove!")],
   loot=[("thornheart", 0.6), ("crown_of_thorns", 0.6), ("eldergrove_amulet", 0.5), ("blight_heartwood", 1.0)])
 
@@ -400,7 +396,7 @@ M("canyon_wyvern", "a canyon wyvern", 23, "A rust-red wyvern with leathery wings
                               big("Diving Talons", 0.15, 1.7, "dives out of the sun, talons first!")],
   loot=[("dragon_scale", 0.05), ("hunters_recurve", 0.03)], gold=0.6, xp=1.3)
 M("dust_devil", "a dust devil", 25, "A whirling column of red sand and grit with a pair of burning eyes in its heart.",
-  hp=1.0, dmg=1.2, armor=0.6, aggro=True, specials=[stun("Blinding Sand", 0.15, 1, "whips stinging sand into your eyes!")],
+  hp=1.0, dmg=1.2, armor=0.6, aggro=True, specials=[big("Blinding Sand", 0.15, 1.6, "whips stinging sand into your eyes!")],
   loot=[("greater_mana_potion", 0.1)], gold=0.6)
 M("yellowtooth", "Yellowtooth, Gnoll Warlord", 26,
   "The biggest gnoll in the Badlands, grey-muzzled and one-eared, in a coat of overlapping shields and a crown of human teeth. "
@@ -415,7 +411,7 @@ M("yellowtooth", "Yellowtooth, Gnoll Warlord", 26,
 # Cheerful and passive on the midway; the roustabouts (the carnival's guards), the night barkers and
 # the clowns behind the tents attack on sight. The trapped spirits are happy, and passive.
 M("carnival_barker", "a carnival barker", 24, "A barker in a striped jacket and a straw boater, who has been calling the same patter for two hundred years.",
-  hp=1.0, dmg=1.15, specials=[stun("Patter", 0.12, 1, "talks so fast and so loud that your head spins!")],
+  hp=1.0, dmg=1.15, specials=[big("Patter", 0.12, 1.6, "talks so fast and so loud that your head spins!")],
   loot=[("lost_trinket", 0.25)], gold=1.5)
 M("roustabout", "a carnival roustabout", 25, "A huge, silent tent-hand in a leather apron, carrying a mallet for driving stakes.",
   hp=1.3, dmg=1.25, armor=1.5, aggro=True, specials=[big("Tent Mallet", 0.2, 1.7, "drives you into the ground like a tent stake!")],
@@ -429,7 +425,7 @@ M("carnival_pickpocket", "a carnival pickpocket", 25, "A quick, grinning cutpurs
 M("the_strongman", "the Strongman", 26, "A giant of a man in a leopard skin with a waxed moustache, who has lifted the same anvil every night for two centuries.",
   hp=1.9, dmg=1.3, xp=1.6, gold=2.0,
   specials=[big("Anvil Press", 0.22, 1.9, "heaves his anvil over his head and brings it down on you!"),
-            stun("Bear Hug", 0.12, 1, "crushes you in a bear hug until your ribs creak!")],
+            big("Bear Hug", 0.12, 1.6, "crushes you in a bear hug until your ribs creak!")],
   loot=[("strongmans_breastplate", 0.2), ("greater_healing_potion", 0.15)])
 M("carousel_spirit", "a carousel spirit", 26, "A grey, laughing ghost who has ridden the carousel for three hundred years and would love you to join.",
   hp=0.9, dmg=1.2, specials=[drain("Round and Round", 0.2, 0.9, "takes your hands and spins you, and your strength spins out of you!")],
@@ -443,22 +439,22 @@ M("mirror_double", "a mirror double", 27, "Your own reflection, stepped out of t
 M("menagerie_tiger", "a menagerie tiger", 27, "A striped cat the size of a horse, its cage long since open, its ribbon collar still around its neck.",
   hp=1.2, dmg=1.25, specials=[big("Pounce", 0.22, 1.8, "pounces and bears you to the ground!")], gold=0.3)
 M("dancing_bear", "a dancing bear", 27, "A great brown bear in a ruff and a little hat, which dances when the music plays and does other things when it stops.",
-  hp=1.6, dmg=1.2, xp=1.3, specials=[stun("Waltz", 0.12, 1, "seizes you and whirls you round in a dreadful waltz!")],
+  hp=1.6, dmg=1.2, xp=1.3, specials=[big("Waltz", 0.12, 1.6, "seizes you and whirls you round in a dreadful waltz!")],
   loot=[("acrobats_grips", 0.03)], gold=0.3)
 M("wheel_spirit", "a wheel spirit", 27, "A cheerful ghost in the great wheel's treadmill, singing a marching song and very pleased to see you.",
   hp=0.9, dmg=1.2, specials=[drain("All Together Now", 0.2, 0.9, "links arms with you, and your breath goes into the song!")],
   loot=[("brass_ring", 0.03)], gold=0.4)
 M("ghost_passenger", "a ghost-train passenger", 27, "A see-through passenger who has ridden the ghost train ten thousand times and screams with delight at every corner.",
-  hp=1.0, dmg=1.2, specials=[stun("Boo!", 0.12, 1, "leaps out at you with a shriek, and you freeze!")],
+  hp=1.0, dmg=1.2, specials=[big("Boo!", 0.12, 1.6, "leaps out at you with a shriek, and you freeze!")],
   loot=[("lost_trinket", 0.25)], gold=0.6)
 M("waxwork", "a waxwork", 28, "A warm, waxen figure with wet glass eyes, wearing the clothes and boots of someone who came to the carnival and stayed.",
-  hp=1.4, dmg=1.25, armor=1.2, specials=[stun("Waxen Grip", 0.12, 1, "grips you with soft, warm fingers that will not let go!"),
+  hp=1.4, dmg=1.25, armor=1.2, specials=[big("Waxen Grip", 0.12, 1.6, "grips you with soft, warm fingers that will not let go!"),
                                        big("Heavy Fist", 0.18, 1.7, "swings a fist as heavy as a candle-mould!")],
   loot=[("lost_trinket", 0.35), ("dancing_slippers", 0.03)], gold=1.0)
 M("madame_vesna", "Madame Vesna, the fortune teller", 28, "A woman in shawls and jangling coins, whose crystal ball shows the future clearly, and only ever one ending.",
   hp=1.9, dmg=1.3, xp=1.6, gold=2.5,
   specials=[dot("Ill Fortune", 0.2, 0.45, 4, "shadow", "turns over a card, and misfortune settles on you like a shroud!"),
-            stun("Glimpse of Your Death", 0.12, 1, "holds up the crystal ball, and you see your own death in it!")],
+            big("Glimpse of Your Death", 0.12, 1.6, "holds up the crystal ball, and you see your own death in it!")],
   loot=[("fortune_tellers_orb", 0.2), ("greater_mana_potion", 0.2)])
 M("night_barker", "a night barker", 28, "A barker of the back lots in a moth-eaten tailcoat, who tells the truth: 'Come in, come in, and never leave.'",
   hp=1.2, dmg=1.3, aggro=True, specials=[dot("The Honest Pitch", 0.2, 0.4, 3, "shadow", "tells you exactly what the carnival will do to you, and the words cut!")],
@@ -475,7 +471,7 @@ M("caged_horror", "a caged horror", 29, "Something the carnival made from what i
   hp=1.4, dmg=1.3, specials=[drain("Hungry Hands", 0.22, 1.0, "reaches through the bars with too many hands and feeds!")],
   loot=[("lost_trinket", 0.3)], gold=0.6, xp=1.2)
 M("carnival_clown", "a carnival clown", 29, "A clown in a ruff and greasepaint, whose painted smile is wider than its face and does not move when it speaks.",
-  hp=1.1, dmg=1.3, aggro=True, specials=[stun("The Grin", 0.12, 1, "leans close and grins, and you cannot look away!"),
+  hp=1.1, dmg=1.3, aggro=True, specials=[big("The Grin", 0.12, 1.6, "leans close and grins, and you cannot look away!"),
                                        dot("Seltzer", 0.18, 0.4, 3, "poison", "sprays you with seltzer that burns like acid!")],
   loot=[("lost_trinket", 0.25)], gold=1.2)
 M("the_ringmaster", "the Ringmaster", 30,
@@ -483,7 +479,7 @@ M("the_ringmaster", "the Ringmaster", 30,
   "Threads like puppet strings run from his wrists into the canvas above. He was the carnival's first prisoner, and he no longer remembers being anything else.",
   hp=2.8, dmg=1.3, armor=1.4, aggro=True, boss=True, xp=2.0, gold=5.0,
   specials=[big("Whipcrack", 0.22, 1.9, "cracks his whip, and it opens you like a knife!"),
-            stun("Showstopper", 0.12, 1, "throws up his arms, the spotlight swings onto you, and you cannot move!"),
+            big("Showstopper", 0.12, 1.6, "throws up his arms, the spotlight swings onto you, and you cannot move!"),
             dot("Under the Spotlight", 0.15, 0.45, 4, "fire", "turns the burning spotlight full on you!"),
             heal("The Show Must Go On", 0.08, 0.1, "is jerked upright by his strings, smiling, his wounds closing!")],
   loot=[("ringmasters_baton", 0.4), ("ringmasters_coat", 0.5), ("brass_ring", 0.3)])
@@ -492,7 +488,7 @@ M("the_ringmaster", "the Ringmaster", 30,
 M("mountain_lion", "a mountain lion", 21, "A tawny great cat crouched on a ledge, tail twitching.",
   hp=1.0, dmg=1.15, specials=[dot("Rending Claws", 0.2, 0.35, 3, "bleed", "rakes you with rending claws!")], gold=0.4)
 M("harpy", "a shrieking harpy", 22, "A filthy winged hag with talons of black iron.",
-  hp=0.9, dmg=1.15, specials=[stun("Deafening Shriek", 0.15, 1, "lets loose a deafening shriek!")],
+  hp=0.9, dmg=1.15, specials=[big("Deafening Shriek", 0.15, 1.6, "lets loose a deafening shriek!")],
   loot=[("hunters_recurve", 0.04)], gold=1.0)
 M("griffon", "a mountain griffon", 23, "A great eagle-headed beast with a lion's tawny haunches, nesting on the high crags.",
   hp=1.1, dmg=1.2, specials=[big("Diving Strike", 0.2, 1.7, "folds its wings and plummets onto you, talons first!")],
@@ -504,7 +500,7 @@ M("orc_raider", "an orc raider", 24, "A grey-skinned orc in spiked leathers, hun
   hp=1.1, dmg=1.1, loot=[("orc_tusk", 0.3), ("mithril_sword", 0.04), ("mithril_hauberk", 0.03)], gold=1.5)
 M("mountain_ogre", "a mountain ogre", 25, "A warty grey ogre in a bearskin, hefting a slab of quarried stone as a club.",
   hp=1.6, dmg=1.2, specials=[big("Stone Slab", 0.2, 1.8, "swings its slab of stone into you with a sickening crunch!"),
-                             stun("Bellow", 0.1, 1, "bellows in your face, and its foul breath leaves you reeling!")],
+                             big("Bellow", 0.1, 1.6, "bellows in your face, and its foul breath leaves you reeling!")],
   loot=[("tower_shield", 0.04), ("greater_healing_potion", 0.12)], gold=1.6, xp=1.4)
 M("orc_berserker", "an orc berserker", 26, "A foaming, tattooed orc wielding an axe in each hand.",
   hp=1.2, dmg=1.25, specials=[big("Frenzied Chop", 0.25, 1.7, "screams and chops at you in a frenzy!")],
@@ -514,17 +510,17 @@ M("orc_shaman", "an orc shaman", 27, "A wizened orc draped in bones and feathers
                                           dot("Searing Totem", 0.2, 0.4, 3, "fire", "calls down searing spirit-fire upon you!")],
   loot=[("orc_tusk", 0.3), ("greater_mana_potion", 0.2), ("frostweave_staff", 0.04)], gold=1.8)
 M("orc_warbeast", "an orc warbeast", 28, "A massive armoured boar-beast ridden into battle by the orc clans.",
-  hp=1.6, dmg=1.2, armor=1.5, specials=[stun("Trample", 0.15, 1, "tramples you underfoot!")],
+  hp=1.6, dmg=1.2, armor=1.5, specials=[big("Trample", 0.15, 1.6, "tramples you underfoot!")],
   loot=[("orc_tusk", 0.5)], gold=0.8, xp=1.4)
 M("orc_bloodguard", "an orc bloodguard", 29, "One of the warlord's sworn guards, in blackened plate daubed with red handprints.",
   hp=1.3, dmg=1.25, armor=1.6, specials=[big("Execution Swing", 0.2, 1.8, "raises a heavy cleaver and swings for your neck!"),
-                                         stun("Shield Bash", 0.12, 1, "slams a spiked shield into your face!")],
+                                         big("Shield Bash", 0.12, 1.6, "slams a spiked shield into your face!")],
   loot=[("orc_tusk", 0.4), ("orcish_helm", 0.05), ("warlord_gauntlets", 0.02)], gold=1.8, xp=1.3)
 M("warlord_gorrak", "Warlord Gorrak Skullsplitter", 31,
   "A mountain of scarred green muscle in blackened plate, wearing a cloak of human scalps.",
   hp=2.7, dmg=1.25, armor=1.6, aggro=True, boss=True, xp=2.0, gold=5.0,
   specials=[big("Skullsplitter", 0.25, 2.0, "brings his warhammer down in a skull-splitting overhead blow!"),
-            stun("War Stomp", 0.12, 1, "stomps, and the ground shakes you off your feet!"),
+            big("War Stomp", 0.12, 1.6, "stomps, and the ground shakes you off your feet!"),
             heal("Bloodlust", 0.08, 0.1, "roars with bloodlust, his wounds forgotten!")],
   loot=[("gorraks_warhammer", 0.6), ("warlord_gauntlets", 0.6), ("orcish_helm", 0.5), ("tower_shield", 0.3)])
 
@@ -543,7 +539,7 @@ M("frost_troll", "a frost troll", 32, "A white-furred troll with icicles hanging
   loot=[("frost_shard", 0.3), ("frostgiant_greaves", 0.04)], gold=1.2, xp=1.3)
 M("frost_giant", "a frost giant", 34, "A blue-skinned giant in rime-crusted mail, wielding a sword of ice.",
   hp=1.8, dmg=1.3, armor=1.5, specials=[big("Glacial Cleave", 0.25, 1.8, "cleaves at you with a sword of solid ice!"),
-                                        stun("Frost Nova", 0.1, 1, "exhales a blast of frost that freezes you in place!")],
+                                        big("Frost Nova", 0.1, 1.6, "exhales a blast of frost that freezes you in place!")],
   loot=[("frostbrand", 0.06), ("frostgiant_greaves", 0.08), ("frost_shard", 0.5)], gold=2.0, xp=1.7)
 
 # ------------------------------------------------------------- Ruins of Elandor (32-41)
@@ -554,7 +550,7 @@ M("ruin_stalker", "a ruin stalker", 34, "A sleek, six-legged predator with chiti
   loot=[("elven_relic", 0.1)], gold=0.8)
 M("spectral_mage", "a spectral mage", 36, "A translucent elven sorcerer in flowing robes, endlessly reading a book of light.",
   hp=0.9, dmg=1.3, armor=0.5, specials=[dot("Arcane Burn", 0.25, 0.45, 3, "arcane", "hurls a bolt of searing arcane fire!"),
-                                        stun("Time Lock", 0.12, 1, "gestures, and time freezes around you!")],
+                                        big("Time Lock", 0.12, 1.6, "gestures, and time freezes around you!")],
   loot=[("elven_relic", 0.25), ("elandor_robes", 0.04), ("staff_of_stars", 0.03), ("starlight_circlet", 0.03)], gold=1.5)
 M("living_statue", "a living statue", 37, "A marble statue of an elven hero that grinds slowly to life.",
   hp=2.0, dmg=1.25, armor=2.5, specials=[big("Marble Fist", 0.25, 1.8, "smashes you with a fist of solid marble!")],
@@ -564,13 +560,13 @@ M("moonblade_revenant", "a moonblade revenant", 38, "The risen husk of an elven 
   loot=[("elven_relic", 0.25), ("elandor_runeblade", 0.04), ("starlight_circlet", 0.03)], gold=1.4)
 M("arcane_sentinel", "an arcane sentinel", 39, "A tall guardian of white stone and silver runes, its hollow face lit by a cold blue glow.",
   hp=1.8, dmg=1.25, armor=2.2, specials=[big("Runic Hammer", 0.22, 1.8, "brings down a fist blazing with silver runes!"),
-                                         stun("Binding Glyph", 0.1, 1, "flashes a glyph that binds your limbs!")],
+                                         big("Binding Glyph", 0.1, 1.6, "flashes a glyph that binds your limbs!")],
   loot=[("elven_relic", 0.3), ("staff_of_stars", 0.04), ("elandor_plate", 0.03)], gold=1.2, xp=1.5)
 M("seluvar", "Seluvar the Hollow Archmage", 41,
   "An elven archmage whose body is long gone. Only robes, a crown of stars and two burning eyes remain.",
   hp=2.7, dmg=1.25, armor=1.0, aggro=True, boss=True, xp=2.0, gold=5.0,
   specials=[dot("Starfire", 0.22, 0.45, 4, "arcane", "calls down a column of starfire upon you!"),
-            stun("Temporal Prison", 0.12, 1, "traps you in a prison of frozen time!"),
+            big("Temporal Prison", 0.12, 1.6, "traps you in a prison of frozen time!"),
             drain("Hollowing", 0.15, 1.2, "hollows you out, drinking your essence!")],
   loot=[("seluvars_wand", 0.6), ("archmage_ring", 0.6), ("elandor_robes", 0.4), ("starlight_circlet", 0.4), ("elven_longbow", 0.3)])
 
@@ -587,7 +583,7 @@ M("painted_sailor", "a painted sailor", 36, "A drowned sailor brushed in greys a
   loot=[("living_pigment", 0.3), ("greater_healing_potion", 0.08)], gold=1.0)
 M("painted_breaker", "a painted breaker", 36, "A wave of green and white brushstrokes that has risen out of the sea with a face in its foam.",
   hp=1.0, dmg=1.3, armor=0.6, aggro=True, element="frost",
-  specials=[stun("Undertow", 0.12, 1, "crashes over you, and the undertow drags you off your feet!")],
+  specials=[big("Undertow", 0.12, 1.6, "crashes over you, and the undertow drags you off your feet!")],
   loot=[("living_pigment", 0.3)], gold=0.8)
 M("saltmere_serpent", "the Saltmere Serpent", 37, "A sea serpent of glistening blue-green paint, coiled around the lighthouse, with eyes the painter took a great deal of care over.",
   hp=1.9, dmg=1.3, armor=1.3, xp=1.7, gold=2.0,
@@ -602,13 +598,13 @@ M("painted_huntsman", "a painted huntsman", 37, "A rider in scarlet and fur, his
   loot=[("frost_varnished_bow", 0.04), ("living_pigment", 0.3)], gold=1.2)
 M("frost_glaze", "a frost glaze", 38, "A skimming shape of cold white light, the varnish of the winter scene come alive, leaving trails of frost on the ice.",
   hp=0.9, dmg=1.3, armor=0.5, aggro=True, element="frost",
-  specials=[stun("Hoarfrost", 0.14, 1, "flashes over you, and frost locks your joints!"),
+  specials=[big("Hoarfrost", 0.14, 1.6, "flashes over you, and frost locks your joints!"),
             dot("Glaze", 0.18, 0.4, 3, "frost", "coats you in a skin of freezing varnish!")],
   loot=[("living_pigment", 0.3), ("greater_mana_potion", 0.12)], gold=0.8)
 M("white_stag", "the White Stag", 38, "The quarry of the Winter Hunt, a white stag as big as a horse, with antlers like winter trees and breath that smokes.",
   hp=1.9, dmg=1.3, armor=1.2, xp=1.7, gold=0.5,
   specials=[big("Antler Charge", 0.22, 1.9, "lowers its antlers and charges!"),
-            stun("Trampling Hooves", 0.1, 1, "rears and strikes you down with its hooves!")],
+            big("Trampling Hooves", 0.1, 1.6, "rears and strikes you down with its hooves!")],
   loot=[("antler_maul", 0.3), ("living_pigment", 1.0)])
 M("fly_swarm", "a swarm of painted flies", 38, "A droning cloud of black flies as big as hawks, each one a perfect dot of paint with wings.",
   hp=0.8, dmg=1.25, armor=0.4, specials=[dot("Biting Swarm", 0.25, 0.4, 3, "bleed", "descends on you, biting everywhere at once!")],
@@ -623,10 +619,10 @@ M("rotfruit_horror", "a rotfruit horror", 39, "A heaving mass of blackened pears
 M("memento_skull", "the Memento Skull", 39, "The skull of the still life, as big as a cottage, its jaw grinding and its sockets lit. It is very tired of lying still.",
   hp=1.9, dmg=1.3, armor=1.4, aggro=True, xp=1.7, gold=2.0,
   specials=[drain("Memento Mori", 0.18, 1.1, "reminds you that you will die, and you feel it happening!"),
-            stun("The Hollow Stare", 0.12, 1, "fixes you with its empty sockets, and you cannot move!")],
+            big("The Hollow Stare", 0.12, 1.6, "fixes you with its empty sockets, and you cannot move!")],
   loot=[("candle_of_stillness", 0.25), ("living_pigment", 1.0)])
 M("portrait_sitter", "a portrait sitter", 39, "A noble stepped out of a portrait, exactly as beautiful as the painter was paid to make them, and very bored.",
-  hp=1.0, dmg=1.25, specials=[stun("Withering Snub", 0.12, 1, "looks you up and down, and you are too mortified to move!")],
+  hp=1.0, dmg=1.25, specials=[big("Withering Snub", 0.12, 1.6, "looks you up and down, and you are too mortified to move!")],
   loot=[("painted_silk_slippers", 0.04), ("living_pigment", 0.3)], gold=2.0)
 M("painted_duellist", "a painted duellist", 40, "A painted gallant in lace and velvet, rapier in hand, fighting the same duel for the hundredth time and glad of a new opponent.",
   hp=1.2, dmg=1.35, specials=[dot("Flickering Rapier", 0.2, 0.45, 3, "bleed", "flicks his rapier across you in a dozen fine cuts!")],
@@ -636,7 +632,7 @@ M("gilt_footman", "a gilt footman", 40, "A footman in gilded livery with a perfe
   loot=[("gilt_sabatons", 0.04), ("living_pigment", 0.25)], gold=1.6)
 M("countess_isaura", "Countess Isaura, the Host", 40, "The host of the salon, in silver and pearl, fanning herself before her own empty frame. She thinks you would look very fine in it.",
   hp=1.9, dmg=1.3, armor=1.2, xp=1.7, gold=4.0,
-  specials=[stun("Sit for Me", 0.12, 1, "raises her lorgnette, and you find yourself frozen in a pose!"),
+  specials=[big("Sit for Me", 0.12, 1.6, "raises her lorgnette, and you find yourself frozen in a pose!"),
             drain("Framed", 0.15, 1.1, "traces a frame in the air around you, and your colour drains into it!")],
   loot=[("countess_gloves", 0.25), ("living_pigment", 1.0)])
 M("painted_citizen", "a painted citizen of Elandor", 40, "An elf of the living city in bright silks, who knows, somewhere behind the eyes, that the city fell a thousand years ago.",
@@ -647,7 +643,7 @@ M("painted_moonguard", "a painted moonguard", 41, "A knight of the Moon Court in
 M("painted_king", "the Painted King of Elandor", 41, "The last king of Elandor as the painter saw him, crowned, young and proud. He alone knows his city has fallen.",
   hp=2.0, dmg=1.3, armor=1.5, xp=1.8, gold=4.0,
   specials=[big("Blade of the Moon Court", 0.22, 1.9, "strikes with the silver blade of the Moon Court!"),
-            stun("Royal Command", 0.12, 1, "commands you to kneel, and you do!"),
+            big("Royal Command", 0.12, 1.6, "commands you to kneel, and you do!"),
             heal("The City Remembers", 0.1, 0.12, "draws on the painted city, and his wounds fill in like fresh paint!")],
   loot=[("painted_king_gauntlets", 0.25), ("living_pigment", 1.0)])
 M("charcoal_sketch", "a charcoal sketch", 41, "A half-drawn figure of smudged charcoal lines with no face, stepping out of the margins of the self-portrait.",
@@ -657,7 +653,7 @@ M("ithilmir", "Ithilmir, the Court Painter", 42,
   "The court painter of Elandor, who sealed his city into canvas as it fell and then himself. He wears a smock stiff "
   "with a thousand years of paint, and where his face should be there is only smooth, blank skin.",
   hp=2.8, dmg=1.3, armor=1.1, aggro=True, boss=True, xp=2.0, gold=6.0,
-  specials=[stun("Hold Still", 0.12, 1, "raises his brush, and you cannot move a muscle!"),
+  specials=[big("Hold Still", 0.12, 1.6, "raises his brush, and you cannot move a muscle!"),
             dot("Turpentine", 0.2, 0.45, 4, "arcane", "flicks a brushful of burning spirit across you!"),
             drain("Taking Your Likeness", 0.15, 1.2, "studies you, and your face begins to come away onto his canvas!"),
             heal("A Fresh Coat", 0.08, 0.12, "paints over his wounds with a single stroke!")],
@@ -667,7 +663,7 @@ M("ithilmir", "Ithilmir, the Court Painter", 42,
 # The dead here are busy with their cases and ignore the living, so only the court's bailiffs,
 # wardens and the High Justice attack on sight (a deliberate exception to the undead rule).
 M("hanged_petitioner", "a hanged petitioner", 30, "A grey ghost with a noose still knotted around its neck, clutching a petition to its chest.",
-  hp=1.0, dmg=1.2, specials=[stun("Strangling Grip", 0.12, 1, "seizes your throat with cold, choking fingers!")],
+  hp=1.0, dmg=1.2, specials=[big("Strangling Grip", 0.12, 1.6, "seizes your throat with cold, choking fingers!")],
   gold=0.6)
 M("queue_warden", "a queue warden", 31, "A spectral warden in a grey tabard who keeps the line of the hanged in order with a heavy staff.",
   hp=1.2, dmg=1.25, armor=1.6, aggro=True, specials=[big("Keep the Line", 0.2, 1.7, "cracks his staff across you to keep the line!")],
@@ -675,18 +671,18 @@ M("queue_warden", "a queue warden", 31, "A spectral warden in a grey tabard who 
 M("the_headsman", "the Headsman", 32, "A hooded executioner, dead for three hundred years, with an axe whose edge has never dulled.",
   hp=2.0, dmg=1.35, xp=1.7, gold=2.0,
   specials=[big("Headsman's Stroke", 0.22, 2.0, "raises his axe high and brings it down on your neck!"),
-            stun("The Block", 0.1, 1, "forces your head down onto the block!")],
+            big("The Block", 0.1, 1.6, "forces your head down onto the block!")],
   loot=[("headsmans_axe", 0.2), ("greater_healing_potion", 0.2)])
 M("court_bailiff", "a court bailiff", 32, "A dead bailiff in grey tabard and mail, a halberd in his hands and a ring of keys at his belt.",
   hp=1.3, dmg=1.25, armor=1.6, aggro=True,
   specials=[big("Halberd", 0.18, 1.7, "swings his halberd at you!"),
-            stun("Seize", 0.1, 1, "grabs you by the collar and holds you fast!")],
+            big("Seize", 0.1, 1.6, "grabs you by the collar and holds you fast!")],
   loot=[("bailiffs_halberd", 0.03), ("bailiffs_hauberk", 0.03)], gold=1.2)
 M("waiting_shade", "a waiting shade", 31, "A ghost faded nearly to nothing from waiting, still holding a numbered ticket.",
   hp=0.9, dmg=1.2, specials=[drain("Weary Touch", 0.2, 0.9, "lays a weary hand on you and drinks your strength!")],
   gold=0.5, xp=0.9)
 M("registry_clerk", "a registry clerk", 32, "An ink-stained spectral clerk with a seal in one hand and a stack of forms in the other.",
-  hp=1.0, dmg=1.2, specials=[stun("Seal of Record", 0.12, 1, "stamps a seal of record on your forehead, and you freeze!")],
+  hp=1.0, dmg=1.2, specials=[big("Seal of Record", 0.12, 1.6, "stamps a seal of record on your forehead, and you freeze!")],
   loot=[("stamped_form", 0.4)], gold=1.0)
 M("nameless_shade", "a nameless shade", 33, "A ghost whose name has been lost, searching the shelves and muttering half-names.",
   hp=1.1, dmg=1.3, specials=[drain("Who Am I?", 0.22, 1.0, "clutches at you, trying to take your name, and your life comes with it!")],
@@ -698,7 +694,7 @@ M("spectral_scrivener", "a spectral scrivener", 33, "A hunched ghost with an ink
   hp=0.9, dmg=1.25, specials=[dot("Ink Blot", 0.2, 0.4, 3, "shadow", "flicks a blot of black ink that eats into your skin!")],
   loot=[("will_page", 0.4), ("scriveners_penknife", 0.03)], gold=0.8)
 M("minor_magistrate", "a minor magistrate", 34, "A bored ghost in a grey wig who has heard ten thousand cases about spoons.",
-  hp=1.4, dmg=1.25, xp=1.3, gold=1.5, specials=[stun("Order!", 0.14, 1, "bangs his gavel and roars 'ORDER!', and you freeze!")],
+  hp=1.4, dmg=1.25, xp=1.3, gold=1.5, specials=[big("Order!", 0.14, 1.6, "bangs his gavel and roars 'ORDER!', and you freeze!")],
   loot=[("notarys_rod", 0.05)])
 M("wrathful_heir", "a wrathful heir", 34, "The ghost of a disinherited son, still furious about it a hundred years later.",
   hp=1.2, dmg=1.3, specials=[big("Disinherited Fury", 0.2, 1.8, "flies at you in a fury of wounded pride!")],
@@ -713,18 +709,18 @@ M("hired_sword", "a hired sword", 35, "A living mercenary in a leather coat, hir
   hp=1.2, dmg=1.3, specials=[big("Dirty Cut", 0.2, 1.8, "feints high and cuts you low!")],
   loot=[("bailiffs_hauberk", 0.03), ("greater_healing_potion", 0.1)], gold=2.0)
 M("dead_advocate", "a dead advocate", 35, "A gaunt ghost in an advocate's black gown, still arguing a case whose client faded long ago.",
-  hp=1.0, dmg=1.3, specials=[stun("Objection!", 0.12, 1, "shouts 'OBJECTION!' so loudly that you stagger!"),
+  hp=1.0, dmg=1.3, specials=[big("Objection!", 0.12, 1.6, "shouts 'OBJECTION!' so loudly that you stagger!"),
                             dot("Long-Winded Argument", 0.15, 0.4, 3, "shadow", "begins a speech that drains the will to live!")],
   loot=[("sealed_record", 0.15), ("notarys_rod", 0.03)], gold=1.5)
 M("archive_keeper", "a keeper of the archive", 35, "A tall, silent ghost with a lantern of grey flame, who has kept the archive for six hundred years.",
-  hp=1.3, dmg=1.25, specials=[stun("Silence", 0.14, 1, "raises a finger to its lips, and you cannot move or speak!")],
+  hp=1.3, dmg=1.25, specials=[big("Silence", 0.14, 1.6, "raises a finger to its lips, and you cannot move or speak!")],
   loot=[("sealed_record", 0.35), ("greater_mana_potion", 0.1)], gold=1.0)
 M("chancery_warden", "a warden of the Chancery", 35, "A towering dead knight in grey plate, sworn to guard the courts until the last case is heard.",
   hp=1.4, dmg=1.3, armor=2.0, aggro=True, specials=[big("Sentence Carried Out", 0.2, 1.8, "carries out the sentence with a great two-handed sword!")],
   loot=[("wardens_greathelm", 0.04), ("wardens_sabatons", 0.04), ("chancery_shield", 0.03)], gold=1.5)
 M("robed_judge", "a judge of the high court", 37, "A dead judge in black robes and a grey wig, who long ago stopped telling cases apart.",
   hp=1.5, dmg=1.3, xp=1.4, gold=2.0,
-  specials=[stun("Sentence", 0.12, 1, "pronounces sentence, and the words hold you fast!"),
+  specials=[big("Sentence", 0.12, 1.6, "pronounces sentence, and the words hold you fast!"),
             dot("Contempt of Court", 0.18, 0.45, 3, "shadow", "holds you in contempt, and the contempt burns!")],
   loot=[("seal_of_office", 0.04), ("greater_mana_potion", 0.12)])
 M("condemned_shade", "a condemned shade", 37, "The ghost of someone the court condemned, reading its own verdict over and over.",
@@ -736,7 +732,7 @@ M("high_justice", "the High Justice", 38,
   hp=2.8, dmg=1.3, armor=1.4, aggro=True, boss=True, xp=2.0, gold=6.0,
   specials=[big("The Gavel Falls", 0.22, 1.9, "brings his great gavel down on you like a verdict!"),
             dot("Contempt of Court", 0.15, 0.45, 4, "shadow", "holds you in contempt, and the cold of the grave seeps into you!"),
-            stun("Order in the Court", 0.12, 1, "roars 'ORDER!', and the whole court falls still around you!"),
+            big("Order in the Court", 0.12, 1.6, "roars 'ORDER!', and the whole court falls still around you!"),
             drain("Sentence of Death", 0.12, 1.1, "pronounces a sentence of death, and your life flows up to the bench!")],
   loot=[("gavel_of_the_high_justice", 0.5), ("chain_of_office", 0.5), ("seal_of_office", 0.4)])
 
@@ -767,22 +763,22 @@ M("winding_automaton", "a winding automaton", 40, "A huge automaton with arms li
   loot=[("wound_mainspring", 0.4), ("brass_scale_hauberk", 0.03)], gold=1.0)
 M("great_cuckoo", "the Great Cuckoo", 40, "The cuckoo of the great clock tower, a bird of brass and painted feathers as big as a horse, which shrieks the hour and hates to be interrupted.",
   hp=1.9, dmg=1.3, armor=1.4, xp=1.7, gold=2.0,
-  specials=[stun("Shriek the Hour", 0.12, 1, "throws back its head and shrieks the hour, and your ears ring!"),
+  specials=[big("Shriek the Hour", 0.12, 1.6, "throws back its head and shrieks the hour, and your ears ring!"),
             big("Spring-Loaded Strike", 0.22, 1.9, "shoots out of its doors on a great spring and strikes you!")],
   loot=[("jewellers_circlet", 0.25), ("wound_mainspring", 1.0)])
 M("tea_guest", "a clockwork tea guest", 41, "A clockwork lady or gentleman in painted silks, pouring tea and laughing at a joke three hundred years old.",
-  hp=1.1, dmg=1.3, specials=[stun("Another Cup?", 0.12, 1, "insists you have another cup, and you find you cannot refuse!")],
+  hp=1.1, dmg=1.3, specials=[big("Another Cup?", 0.12, 1.6, "insists you have another cup, and you find you cannot refuse!")],
   loot=[("wound_mainspring", 0.3), ("supreme_healing_potion", 0.06)], gold=1.8)
 M("clockwork_hostess", "the Clockwork Hostess", 41, "The hostess of the unending tea party, in a gown of silver plate and a lace cap, who has never once let a guest leave early.",
   hp=1.9, dmg=1.3, armor=1.2, xp=1.7, gold=4.0,
-  specials=[stun("Do Sit Down", 0.12, 1, "presses you firmly into a chair!"),
+  specials=[big("Do Sit Down", 0.12, 1.6, "presses you firmly into a chair!"),
             dot("Scalding Tea", 0.2, 0.45, 3, "fire", "pours a pot of boiling tea over you!")],
   loot=[("tinker_gloves", 0.25), ("wound_mainspring", 1.0)])
 M("spring_hound", "a spring-loaded hound", 41, "A hound of steel coils and plates that bounds along the hedge paths, every leap powered by a great spring.",
   hp=1.2, dmg=1.3, armor=1.4, aggro=True, specials=[big("Coiled Leap", 0.22, 1.8, "compresses its springs and leaps on you!")],
   loot=[("piston_sabatons", 0.04)], gold=0.6)
 M("unfinished_automaton", "an unfinished automaton", 42, "A half-built automaton missing a hand or a face, shuffling between the benches, trying to finish itself.",
-  hp=1.4, dmg=1.3, armor=1.6, specials=[stun("Grasping Clamp", 0.12, 1, "grips you in a clamp where a hand should be!")],
+  hp=1.4, dmg=1.3, armor=1.6, specials=[big("Grasping Clamp", 0.12, 1.6, "grips you in a clamp where a hand should be!")],
   loot=[("wound_mainspring", 0.35), ("clockwork_warhelm", 0.03)], gold=1.2)
 M("molten_spring", "a molten spring", 42, "A coil of white-hot steel that has escaped the crucible and writhes across the foundry floor like a snake.",
   hp=1.0, dmg=1.35, armor=0.8, aggro=True, element="fire",
@@ -796,14 +792,14 @@ M("master_automaton", "the Master Automaton", 42, "Orrin's first and finest crea
 M("escapement_guardian", "an escapement guardian", 43, "A guardian of black iron that moves in time with the great escapement, one lurching step at every tick.",
   hp=1.6, dmg=1.3, armor=2.2, aggro=True,
   specials=[big("Toothed Wheel", 0.2, 1.8, "swings a toothed iron wheel into you!"),
-            stun("On the Tick", 0.1, 1, "strikes exactly on the tick, and you lose a beat!")],
+            big("On the Tick", 0.1, 1.6, "strikes exactly on the tick, and you lose a beat!")],
   loot=[("cog_shield", 0.04), ("clockwork_warhelm", 0.03), ("brass_scale_hauberk", 0.03)], gold=1.6)
 M("orrin_gearwhistle", "Orrin Gearwhistle, Wound into the Clock", 44,
   "The gnome inventor of the Clockwork Orchard, three hundred years old, wired into the golden sun of the great orrery "
   "with a key turning slowly in his back. The planets of brass swing around him at his command.",
   hp=2.9, dmg=1.3, armor=1.6, aggro=True, boss=True, xp=2.0, gold=7.0,
   specials=[big("Swing of the Planets", 0.2, 2.0, "sends a planet of brass sweeping through you!"),
-            stun("Stopped Clock", 0.12, 1, "stops the clock, and for a moment you cannot move!"),
+            big("Stopped Clock", 0.12, 1.6, "stops the clock, and for a moment you cannot move!"),
             dot("Steam Vent", 0.18, 0.5, 4, "fire", "opens a valve, and scalding steam pours over you!"),
             heal("Rewind", 0.1, 0.12, "winds himself back a few seconds, and his wounds unhappen!")],
   loot=[("orrins_wrench", 0.5), ("pendulum_staff", 0.5), ("orrery_amulet", 0.6)])
@@ -823,24 +819,24 @@ M("mirage_stalker", "a mirage stalker", 42, "A lean desert cat whose hide bends 
   loot=[("desert_glass", 0.25), ("silkwind_gloves", 0.03)], gold=0.6)
 M("wild_djinn", "a wild djinn", 44, "A towering figure of smoke and fire with burning eyes, bound to no lamp and no master.",
   hp=1.2, dmg=1.3, armor=0.9, aggro=True, specials=[dot("Sirocco", 0.22, 0.5, 3, "fire", "spins into a howling wind of burning sand!"),
-                                                    stun("Bewitch", 0.1, 1, "laughs, and the desert spins around you!")],
+                                                    big("Bewitch", 0.1, 1.6, "laughs, and the desert spins around you!")],
   loot=[("obelisk_amulet", 0.03), ("sunfire_staff", 0.03), ("supreme_mana_potion", 0.15)], gold=1.5)
 M("sand_giant", "a sand giant", 46, "A giant with skin like sandstone and a beard of dried grass, carrying a pillar from some ruined temple.",
   hp=1.9, dmg=1.3, armor=1.6, specials=[big("Pillar Smash", 0.25, 1.9, "swings a stone pillar into you like a club!")],
   loot=[("sunsteel_greaves", 0.04), ("crescent_greatsword", 0.03), ("ancient_scarab", 0.1)], gold=2.0, xp=1.6)
 M("great_sandworm", "a great sandworm", 49, "A worm as wide as a house, ringed with plates of yellow chitin, its round mouth lined with teeth.",
   hp=2.2, dmg=1.35, armor=1.8, specials=[big("Engulf", 0.22, 2.0, "rises from the sand beneath you and engulfs you!"),
-                                         stun("Quake", 0.1, 1, "thrashes, and the sand heaves you off your feet!")],
+                                         big("Quake", 0.1, 1.6, "thrashes, and the sand heaves you off your feet!")],
   loot=[("desert_glass", 0.4), ("sunstone_ring", 0.04)], gold=1.5, xp=1.8)
 
 # ------------------------------------------------------------- The Sugarwold (44-49)
 # Madame Marchpane's country of sweets beneath the Salt Pans. Its creatures are content to be left
 # alone; only her gingerbread soldiers, her oven imps and the witch herself attack on sight.
 M("gumdrop_ooze", "a gumdrop ooze", 44, "A wobbling green gumdrop the size of a wagon, sugar-crusted and glistening, with something dark suspended in its middle.",
-  hp=1.3, dmg=1.25, armor=0.8, specials=[stun("Sticky Engulf", 0.12, 1, "rolls over you, and you are stuck fast in sugar!")],
+  hp=1.3, dmg=1.25, armor=0.8, specials=[big("Sticky Engulf", 0.12, 1.6, "rolls over you, and you are stuck fast in sugar!")],
   loot=[("gumdrop", 0.5), ("supreme_healing_potion", 0.06)], gold=0.6)
 M("sugar_sprite", "a sugar sprite", 45, "A tiny winged figure of spun sugar, giggling, carrying a lollipop like a sceptre.",
-  hp=1.0, dmg=1.3, armor=0.6, specials=[stun("Sugar Rush", 0.14, 1, "blows a cloud of glittering sugar into your eyes, and the world spins!")],
+  hp=1.0, dmg=1.3, armor=0.6, specials=[big("Sugar Rush", 0.14, 1.6, "blows a cloud of glittering sugar into your eyes, and the world spins!")],
   loot=[("spun_sugar_cowl", 0.04), ("rock_candy_dagger", 0.03), ("supreme_mana_potion", 0.12)], gold=1.2)
 M("peppermint_hog", "a peppermint hog", 45, "A hog as big as an ox, striped red and white like a peppermint stick, with tusks of boiled sugar.",
   hp=1.4, dmg=1.25, specials=[big("Candied Tusks", 0.2, 1.7, "lowers its head and gores you with its sugar tusks!")],
@@ -849,7 +845,7 @@ M("licorice_serpent", "a licorice serpent", 46, "A long black serpent of twisted
   hp=1.2, dmg=1.3, specials=[dot("Bitter Bite", 0.22, 0.45, 3, "poison", "bites you, and a bitter black poison burns in your blood!")],
   loot=[("licorice_hood", 0.04), ("taffy_gloves", 0.03)], gold=0.6)
 M("toffee_lurker", "a toffee lurker", 46, "A heap of hot golden toffee that rises from the pits in the rough shape of a man, dripping and cooling as it comes.",
-  hp=1.6, dmg=1.25, armor=1.2, specials=[stun("Sticky Grip", 0.12, 1, "wraps you in cooling toffee, and you cannot move!"),
+  hp=1.6, dmg=1.25, armor=1.2, specials=[big("Sticky Grip", 0.12, 1.6, "wraps you in cooling toffee, and you cannot move!"),
                                          dot("Scalding Sugar", 0.15, 0.4, 3, "fire", "splashes you with scalding toffee!")],
   loot=[("toffee_greaves", 0.04), ("striped_trousers", 0.04)], gold=0.8, xp=1.3)
 M("candied_raven", "a candied raven", 47, "A raven as big as an eagle, its feathers glazed in hard, glittering sugar. It caws in a voice like a child's.",
@@ -871,7 +867,7 @@ M("madame_marchpane", "Madame Marchpane", 49,
   "A plump, rosy old woman in a flour-white apron, with sugar in her grey curls and a smile as sweet as honey. "
   "Her eyes are as red as the oven behind her, and she has been baking for a thousand years.",
   hp=3.1, dmg=1.35, armor=1.7, aggro=True, boss=True, xp=2.0, gold=8.0,
-  specials=[stun("Have a Sweet, Dearie", 0.12, 1, "holds out a sugared plum, and before you know it you have eaten it, and your limbs grow heavy!"),
+  specials=[big("Have a Sweet, Dearie", 0.12, 1.6, "holds out a sugared plum, and before you know it you have eaten it, and your limbs grow heavy!"),
             dot("Boiling Syrup", 0.18, 0.5, 4, "fire", "flings a ladle of boiling syrup over you!"),
             big("The Rolling Pin", 0.18, 1.9, "brings her great black rolling pin down on you!"),
             heal("A Nibble of Gingerbread", 0.1, 0.12, "breaks a gingerbread figure in half and nibbles it, and her wounds close!")],
@@ -894,7 +890,7 @@ M("ussreth", "Ussreth, the Last Sand King", 48,
   hp=3.0, dmg=1.35, armor=1.8, aggro=True, boss=True, xp=2.0, gold=8.0,
   specials=[big("Khopesh of the Kings", 0.22, 2.0, "sweeps his bronze khopesh through you!"),
             dot("Plague of Ages", 0.18, 0.5, 4, "shadow", "breathes a cloud of ancient dust that rots your flesh!"),
-            stun("Command", 0.12, 1, "speaks a word of command, and you kneel!"),
+            big("Command", 0.12, 1.6, "speaks a word of command, and you kneel!"),
             drain("Eternity's Thirst", 0.12, 1.2, "seizes you, and three thousand years of hunger drink your life!")],
   loot=[("khopesh_of_ussreth", 0.5), ("scepter_of_the_sand_kings", 0.5), ("burial_mask", 0.6), ("ancient_scarab", 1.0)])
 
@@ -929,7 +925,7 @@ M("cult_flamecaller", "a dragon cult flamecaller", 47, "A robed priest of Pyraxi
   loot=[("dragonbone_staff", 0.04), ("ashen_crown", 0.03), ("supreme_mana_potion", 0.15)], gold=2.2)
 M("flame_demon", "a flame demon", 48, "A horned demon of fire and shadow with a whip of living flame.",
   hp=1.4, dmg=1.35, armor=1.5, aggro=True, specials=[dot("Hellfire Lash", 0.25, 0.5, 3, "fire", "lashes you with a whip of hellfire!"),
-                                                     stun("Terrify", 0.1, 1, "roars, and terror roots you to the spot!")],
+                                                     big("Terrify", 0.1, 1.6, "roars, and terror roots you to the spot!")],
   loot=[("ashen_crown", 0.04), ("dragonbone_staff", 0.04), ("supreme_healing_potion", 0.15)], gold=2.0, xp=1.3)
 M("magma_titan", "a magma titan", 50, "A colossus of molten rock, each footstep leaving a pool of fire.",
   hp=2.2, dmg=1.35, armor=2.0, specials=[big("Eruption", 0.25, 1.9, "erupts in a fountain of molten rock!")],
@@ -939,7 +935,7 @@ M("pyraxis", "Pyraxis the Eternal Flame", 52,
   hp=3.5, dmg=1.4, armor=2.0, aggro=True, boss=True, xp=2.0, gold=10.0,
   specials=[big("Dragonfire", 0.25, 2.2, "rears back and engulfs you in a torrent of dragonfire!"),
             dot("Searing Wounds", 0.15, 0.5, 4, "fire", "rakes you with claws that leave searing wounds!"),
-            stun("Wing Buffet", 0.12, 1, "buffets you to the ground with a mighty wing!")],
+            big("Wing Buffet", 0.12, 1.6, "buffets you to the ground with a mighty wing!")],
   loot=[("pyraxis_fang", 0.7), ("dragonscale_mail", 0.7), ("heart_of_flame", 0.5), ("dragon_scale", 1.0)])
 
 # ------------------------------------------------------------- Thornwick Hall (40-50)
@@ -954,7 +950,7 @@ M("vane_boarhound", "a Vane boarhound", 40, "A huge brindled hound in a spiked c
 M("hobb_gamekeeper", "Hobb the gamekeeper", 42, "The Vanes' gamekeeper, broad as a door, with a skinning knife, a longbow and a sack of snares.",
   hp=1.9, dmg=1.3, xp=1.6, gold=1.5,
   specials=[big("Broadhead", 0.2, 1.8, "looses a broadhead arrow into you at point-blank range!"),
-            stun("Snare", 0.12, 1, "flicks a snare around your ankle and yanks you off your feet!")],
+            big("Snare", 0.12, 1.6, "flicks a snare around your ankle and yanks you off your feet!")],
   loot=[("vane_hunting_bow", 0.15), ("huntsmans_jerkin", 0.1), ("huntsmans_breeches", 0.1)])
 M("gate_warden", "a gate warden", 41, "A grim warden of the Vane gate in a mail coat and a green surcoat, a halberd in his fists.",
   hp=1.3, dmg=1.3, armor=1.8, aggro=True, specials=[big("Halberd", 0.18, 1.7, "swings his halberd down on you!")],
@@ -968,13 +964,13 @@ M("vane_groom", "a Vane groom", 41, "A wiry groom in green livery, smelling of h
   hp=0.9, dmg=1.2, gold=0.8, xp=0.9)
 M("vane_stablemaster", "the stablemaster", 43, "A big, red-faced man with a coachman's whip and a voice that carries across three fields.",
   hp=1.6, dmg=1.3, xp=1.3, gold=1.5,
-  specials=[stun("Whip Crack", 0.15, 1, "cracks his whip around your neck and jerks you off balance!"),
+  specials=[big("Whip Crack", 0.15, 1.6, "cracks his whip around your neck and jerks you off balance!"),
             big("Hobnailed Kick", 0.18, 1.7, "kicks you like a carthorse!")],
   loot=[("huntsmans_breeches", 0.06)])
 M("house_chaplain", "the house chaplain", 43, "A plump priest of the Dawnfather in white and gold, who preaches obedience to the Vanes every morning.",
   hp=1.3, dmg=1.25, gold=2.0,
   specials=[heal("Blessing of the House", 0.15, 0.15, "prays, and light knits his wounds!"),
-            stun("Rebuke", 0.12, 1, "raises his sun-disc and speaks a word of rebuke that roots you in place!")],
+            big("Rebuke", 0.12, 1.6, "raises his sun-disc and speaks a word of rebuke that roots you in place!")],
   loot=[("supreme_healing_potion", 0.15), ("supreme_mana_potion", 0.1)])
 M("vane_footman", "a Vane footman", 42, "A tall footman in a powdered wig and green-and-silver livery, chosen for his height and his calves.",
   hp=1.0, dmg=1.25, loot=[("vane_silver", 0.3)], gold=1.2)
@@ -984,7 +980,7 @@ M("kitchen_hand", "a kitchen hand", 42, "A sweating kitchen hand, scarred from s
   hp=0.9, dmg=1.2, specials=[dot("Scalding Water", 0.18, 0.35, 3, "fire", "dashes a pan of boiling water over you!")],
   gold=0.6, xp=0.9)
 M("vane_laundress", "a laundress", 42, "A broad laundress with forearms like hams and a paddle for beating linen.",
-  hp=0.9, dmg=1.2, specials=[stun("Wet Sheet", 0.12, 1, "throws a sodden sheet over your head!")],
+  hp=0.9, dmg=1.2, specials=[big("Wet Sheet", 0.12, 1.6, "throws a sodden sheet over your head!")],
   gold=0.6, xp=0.9)
 M("vane_cellarer", "the cellarer", 43, "A red-nosed, barrel-chested man with a mallet for driving taps, and a strong smell of wine.",
   hp=1.5, dmg=1.3, xp=1.2, gold=1.5, specials=[big("Cask Mallet", 0.2, 1.8, "swings his heavy mallet at your head!")],
@@ -996,7 +992,7 @@ M("mistress_hollin", "Mistress Hollin, the cook", 44, "A vast, floury woman who 
   loot=[("cooks_cleaver", 0.2), ("supreme_healing_potion", 0.2)])
 M("mr_graves", "Mr. Graves, the butler", 44, "The butler of Thornwick Hall, tall and grave in perfect black, who has never once raised his voice.",
   hp=2.0, dmg=1.3, armor=1.5, xp=1.7, gold=3.0,
-  specials=[stun("Silver Salver", 0.15, 1, "strikes you across the temple with a silver salver!"),
+  specials=[big("Silver Salver", 0.15, 1.6, "strikes you across the temple with a silver salver!"),
             big("Corkscrew", 0.18, 1.8, "drives a corkscrew into you with a flick of his wrist!")],
   loot=[("silver_salver", 0.2), ("vane_silver", 1.0)])
 M("household_knight", "a knight of the household", 45, "A knight of the Vane household in plate enamelled green, a silver stag on his shield.",
@@ -1008,10 +1004,10 @@ M("visiting_knight", "a visiting knight", 46, "A knight from a neighbouring hous
   hp=1.4, dmg=1.3, armor=1.6, specials=[big("Overhand Blow", 0.2, 1.8, "brings his longsword down in a great overhand blow!")],
   loot=[("vane_warhelm", 0.03), ("supreme_healing_potion", 0.08)], gold=2.0)
 M("household_minstrel", "a household minstrel", 45, "A minstrel in particoloured hose with a lute on his back and a knife in his boot.",
-  hp=1.0, dmg=1.25, specials=[stun("Dizzying Air", 0.12, 1, "plays a whirling air that sets your head spinning!")],
+  hp=1.0, dmg=1.25, specials=[big("Dizzying Air", 0.12, 1.6, "plays a whirling air that sets your head spinning!")],
   loot=[("minstrels_lute", 0.05)], gold=1.5)
 M("vane_steward", "Master Aldous, the steward", 46, "The steward of Thornwick, thin and grey, with a ring of keys at his belt and the rents of the valley in his head.",
-  hp=1.5, dmg=1.3, xp=1.3, gold=4.0, specials=[stun("Ring of Keys", 0.12, 1, "lashes you across the face with his heavy ring of keys!")],
+  hp=1.5, dmg=1.3, xp=1.3, gold=4.0, specials=[big("Ring of Keys", 0.12, 1.6, "lashes you across the face with his heavy ring of keys!")],
   loot=[("vane_ledger", 0.6), ("supreme_mana_potion", 0.1)])
 M("estate_clerk", "an estate clerk", 45, "An ink-stained clerk in a black gown, with a quill behind his ear and a penknife in his hand.",
   hp=0.9, dmg=1.2, loot=[("vane_ledger", 0.4)], gold=1.5, xp=0.9)
@@ -1021,7 +1017,7 @@ M("lady_in_waiting", "a lady-in-waiting", 46, "A noblewoman in attendance on Lad
 M("lady_seraphine", "Lady Seraphine Vane", 47, "The lord's young wife, golden-haired and lovely, with a long golden pin in her hair and a smile that never reaches her eyes.",
   hp=2.0, dmg=1.35, xp=1.7, gold=4.0,
   specials=[dot("Poisoned Hairpin", 0.22, 0.5, 4, "poison", "draws the golden pin from her hair and stabs it into your neck!"),
-            stun("Faint", 0.1, 1, "swoons into your arms, and the knife in her sleeve finds your ribs!")],
+            big("Faint", 0.1, 1.6, "swoons into your arms, and the knife in her sleeve finds your ribs!")],
   loot=[("seraphines_hairpin", 0.2), ("brocade_gown", 0.1), ("vane_brooch", 1.0)])
 M("sir_corwin", "Sir Corwin Vane", 47, "The lord's cousin and heir, handsome, drunk and dangerous, the finest duellist in the valley.",
   hp=2.1, dmg=1.4, xp=1.7, gold=4.0,
@@ -1031,14 +1027,14 @@ M("sir_corwin", "Sir Corwin Vane", 47, "The lord's cousin and heir, handsome, dr
 M("master_tobias", "Master Tobias Vane", 47, "The lord's younger brother, a pale scholar of twenty with ink on his fingers and a forbidden book under his arm.",
   hp=1.8, dmg=1.35, xp=1.7, gold=3.0,
   specials=[dot("Half-Learned Curse", 0.2, 0.5, 3, "shadow", "reads a curse from his black book, and your skin blisters!"),
-            stun("Word of Binding", 0.12, 1, "speaks a word of binding, and your limbs lock!")],
+            big("Word of Binding", 0.12, 1.6, "speaks a word of binding, and your limbs lock!")],
   loot=[("tobias_grimoire", 0.2), ("supreme_mana_potion", 0.2)])
 M("dowager_attendant", "a dowager's attendant", 47, "A silent woman in grey who has served the Dowager for thirty years, a stiletto at her girdle.",
   hp=1.2, dmg=1.3, loot=[("vane_brooch", 0.25)], gold=2.0)
 M("dowager_isolde", "Lady Isolde, the Dowager", 48, "The lord's mother, iron-grey and straight as a blade, who has ruled Thornwick for forty years. Her ebony cane hides a sword.",
   hp=2.2, dmg=1.35, armor=1.3, xp=1.8, gold=5.0,
   specials=[big("Cane Sword", 0.22, 1.9, "draws the blade from her ebony cane and runs you through!"),
-            stun("Withering Glare", 0.12, 1, "fixes you with a glare that has cowed lords, and you falter!")],
+            big("Withering Glare", 0.12, 1.6, "fixes you with a glare that has cowed lords, and you falter!")],
   loot=[("dowagers_pearls", 0.25), ("supreme_healing_potion", 0.2)])
 M("great_aunt_mathilde", "Great-aunt Mathilde", 46, "A tiny, ancient lady in an enormous lace cap, wearing a fortune in jewels and brandishing a knitting needle.",
   hp=0.7, dmg=1.0, xp=0.8, gold=8.0, specials=[dot("Knitting Needle", 0.2, 0.3, 3, "bleed", "jabs you smartly with a knitting needle!")],
@@ -1052,7 +1048,7 @@ M("lord_aldric_vane", "Lord Aldric Vane", 50,
   hp=3.4, dmg=1.4, armor=2.0, aggro=True, boss=True, xp=2.0, gold=9.0,
   specials=[big("The Vane Longsword", 0.22, 2.0, "brings the ancestral longsword of his house down on you!"),
             dot("Rending Cut", 0.15, 0.5, 4, "bleed", "opens a long, deep wound with a drawing cut!"),
-            stun("Shield Bash", 0.12, 1, "smashes his shield into your face!"),
+            big("Shield Bash", 0.12, 1.6, "smashes his shield into your face!"),
             heal("Second Wind", 0.1, 0.12, "steps back, breathes, and comes on again as fresh as ever!")],
   loot=[("vane_longsword", 0.5), ("vane_heirloom_plate", 0.5), ("vane_signet", 0.6), ("vane_silver", 1.0)])
 
@@ -1067,7 +1063,7 @@ M("star_eagle", "a star eagle", 51, "An eagle with a wingspan wider than a ship,
   hp=3.8, dmg=2.9, armor=2.0, specials=[big("Falling Star", 0.2, 1.8, "folds its wings and strikes like a falling star!")],
   loot=[("planar_shard", 0.1)], gold=2.0)
 M("celestial_sentinel", "a celestial sentinel", 53, "A towering knight of silver and white starlight, set to guard the roads between the stars for all time.",
-  hp=3.8, dmg=2.6, armor=2.5, aggro=True, specials=[stun("Starburst", 0.12, 1, "raises its gauntlets, and a burst of starlight leaves you senseless!")],
+  hp=3.8, dmg=2.6, armor=2.5, aggro=True, specials=[big("Starburst", 0.12, 1.6, "raises its gauntlets, and a burst of starlight leaves you senseless!")],
   loot=[("planar_shard", 0.15)], gold=2.5)
 M("dreamstalker", "a dreamstalker", 52, "A long, pale hunter that slips from one dream to the next, wearing the shape of something you were afraid of as a child.",
   hp=3.6, dmg=2.9, armor=2.0, specials=[dot("Waking Nightmare", 0.2, 0.5, 3, "bleed", "steps out of nowhere and its claws find you!")],
@@ -1077,7 +1073,7 @@ M("sleepwalker", "a sleepwalking giant", 54, "A giant as tall as a tower who wal
                                         big("Dreaming Blow", 0.2, 1.9, "swings at something only it can see, and hits you!")],
   loot=[("planar_shard", 0.15)], gold=2.0, xp=1.3)
 M("pale_horse", "a pale horse", 52, "A horse the colour of bone, with no rider and no shadow, that carries the dead to where they are going.",
-  hp=3.6, dmg=2.9, armor=2.0, aggro=True, specials=[stun("Chill of the Grave", 0.14, 1, "breathes on you, and the cold of the grave holds you still!")],
+  hp=3.6, dmg=2.9, armor=2.0, aggro=True, specials=[big("Chill of the Grave", 0.14, 1.6, "breathes on you, and the cold of the grave holds you still!")],
   loot=[("planar_shard", 0.1)], gold=2.0)
 M("reaper", "a reaper", 54, "A hooded figure of bone and grey smoke with a scythe of black iron, who gathers the souls of the dead.",
   hp=3.6, dmg=2.8, armor=1.5, aggro=True, specials=[drain("Harvest", 0.22, 1.2, "draws its scythe through you, and reaps a little of your life!")],
@@ -1086,7 +1082,7 @@ M("caelestra", "Caelestra, the Star-Warden", 55,
   "The guardian of the Plane of Stars, a woman of silver and night with wings of starlight, and a bow strung with a thread of light in her hand.",
   hp=6.6, dmg=2.9, armor=2.0, aggro=True, boss=True, xp=2.0, gold=12.0,
   specials=[big("Shooting Star", 0.22, 2.0, "draws her bow, and a shooting star strikes you!"),
-            stun("Eclipse", 0.12, 1, "folds her wings over the stars, and you stagger blind in the dark!"),
+            big("Eclipse", 0.12, 1.6, "folds her wings over the stars, and you stagger blind in the dark!"),
             heal("Starlight", 0.08, 0.1, "bathes in starlight, and her wounds close!")],
   loot=[("stormcaller_bow", 0.4), ("starweave_robes", 0.4), ("starstep_slippers", 0.4), ("planar_shard", 1.0)])
 M("somnara", "Somnara, the Dreamweaver", 55,
@@ -1094,7 +1090,7 @@ M("somnara", "Somnara, the Dreamweaver", 55,
   "the dreams of every living thing on a loom of silver.",
   hp=6.3, dmg=2.45, armor=2.0, aggro=True, boss=True, xp=2.0, gold=12.0,
   specials=[dot("Smothering Dream", 0.2, 0.6, 4, "arcane", "wraps you in a dream that will not let you breathe!"),
-            stun("Endless Sleep", 0.12, 1, "sings a single note, and you fall asleep where you stand!"),
+            big("Endless Sleep", 0.12, 1.6, "sings a single note, and you fall asleep where you stand!"),
             heal("Lucid Mending", 0.1, 0.12, "dreams herself whole again!")],
   loot=[("dreamweaver_staff", 0.4), ("dreamsilver_greaves", 0.4), ("dreamsilk_trousers", 0.4), ("planar_shard", 1.0)])
 M("morthis", "Morthis, Keeper of the Dead", 55,
@@ -1102,7 +1098,7 @@ M("morthis", "Morthis, Keeper of the Dead", 55,
   "counted every soul that ever died and has a place ready for yours.",
   hp=4.85, dmg=2.3, armor=1.8, aggro=True, boss=True, xp=2.0, gold=12.0,
   specials=[drain("Toll of the Dead", 0.2, 1.4, "names the hour of your death, and your life drains toward it!"),
-            stun("Grave Cold", 0.14, 1, "lifts his lantern, and the cold of the grave stops your heart for a moment!"),
+            big("Grave Cold", 0.14, 1.6, "lifts his lantern, and the cold of the grave stops your heart for a moment!"),
             big("Last Rites", 0.18, 2.0, "brings down his staff of bone like a closing coffin lid!")],
   loot=[("gravesong", 0.4), ("death_mask", 0.4), ("ferrymans_gloves", 0.4), ("planar_shard", 1.0)])
 
@@ -1110,14 +1106,14 @@ M("chained_penitent", "a chained penitent", 52, "A giant prisoner bound in chain
   hp=3.6, dmg=2.9, armor=2.0, specials=[big("Flail of Chains", 0.2, 1.8, "whirls its chains and brings them crashing down on you!")],
   loot=[("planar_shard", 0.1)], gold=2.0)
 M("iron_warden", "an iron warden", 53, "A gaoler of the gods in a full suit of black iron, with a ring of keys at its belt and no face behind its visor.",
-  hp=3.8, dmg=2.7, armor=2.6, aggro=True, specials=[stun("Shackle", 0.14, 1, "snaps a shackle of light around your wrists!")],
+  hp=3.8, dmg=2.7, armor=2.6, aggro=True, specials=[big("Shackle", 0.14, 1.6, "snaps a shackle of light around your wrists!")],
   loot=[("planar_shard", 0.15)], gold=2.5)
 M("stalworth", "Stalworth Lightbearer", 55,
   "The warden of the Plane of Law, a paladin in white plate who was the first mortal ever judged worthy to serve "
   "Lord Trepth. His sword is engraved with every law of the gods, and his eyes see every crime you have ever committed.",
   hp=6.55, dmg=2.8, armor=2.4, aggro=True, boss=True, xp=2.0, gold=12.0,
   specials=[big("Smite the Guilty", 0.22, 2.0, "raises his blazing sword and smites you with the full weight of the law!"),
-            stun("Sentence Passed", 0.12, 1, "pronounces your sentence, and chains of light bind you where you stand!"),
+            big("Sentence Passed", 0.12, 1.6, "pronounces your sentence, and chains of light bind you where you stand!"),
             heal("Lay on Hands", 0.1, 0.12, "lays a hand on his own wounds, and holy light closes them!")],
   loot=[("lightbearers_oath", 0.4), ("shield_of_judgement", 0.4), ("planar_shard", 1.0)])
 
@@ -1130,7 +1126,7 @@ M("pyre_phoenix", "a pyre phoenix", 57, "A bird of living fire whose every wingb
                                         heal("Rebirth Flame", 0.1, 0.15, "bursts into flame and rises renewed!")],
   loot=[("planar_shard", 0.25)], gold=3.0, xp=1.3)
 M("tide_elemental", "a tide elemental", 55, "A towering wave that never breaks, with two cold eyes deep in its heart.",
-  hp=4.5, dmg=2.9, armor=2.0, aggro=True, specials=[stun("Undertow", 0.14, 1, "crashes over you and drags you under!")],
+  hp=4.5, dmg=2.9, armor=2.0, aggro=True, specials=[big("Undertow", 0.14, 1.6, "crashes over you and drags you under!")],
   loot=[("planar_shard", 0.2)], gold=3.0)
 M("abyssal_kraken", "an abyssal kraken", 57, "A kraken from the lightless deeps, its tentacles as thick as towers.",
   hp=5.6, dmg=3.1, armor=2.2, specials=[big("Crushing Coils", 0.22, 1.9, "wraps you in its coils and squeezes!")],
@@ -1139,7 +1135,7 @@ M("granite_elemental", "a granite elemental", 55, "A hulking shape of grey stone
   hp=5.0, dmg=2.9, armor=3.0, aggro=True, specials=[big("Landslide", 0.2, 1.9, "becomes a landslide that rolls over you!")],
   loot=[("planar_shard", 0.2)], gold=3.0)
 M("crystal_basilisk", "a crystal basilisk", 57, "An eight-legged lizard of living crystal whose gaze turns flesh to glass.",
-  hp=5.15, dmg=3.1, armor=2.5, specials=[stun("Petrifying Gaze", 0.15, 1, "meets your eyes, and your limbs turn to stone!"),
+  hp=5.15, dmg=3.1, armor=2.5, specials=[big("Petrifying Gaze", 0.15, 1.6, "meets your eyes, and your limbs turn to stone!"),
                                         dot("Shard Bite", 0.15, 0.5, 3, "bleed", "bites you with teeth of jagged crystal!")],
   loot=[("planar_shard", 0.25)], gold=3.0, xp=1.3)
 M("storm_elemental", "a storm elemental", 55, "A spinning column of black cloud and lightning that howls like a hurricane.",
@@ -1150,36 +1146,36 @@ M("thunderbird", "a thunderbird", 57, "A bird the size of a cloud, whose wingbea
   loot=[("planar_shard", 0.25)], gold=3.0, xp=1.3)
 M("lord_fire", "Rekkn, Lord of Flame", 58,
   "The lord of the Plane of Fire, a giant of white-hot stone with a crown of flame and a hammer that is a captive star.",
-  hp=7.22, dmg=2.35, armor=2.2, aggro=True, boss=True, xp=2.0, gold=15.0,
+  hp=7.22, dmg=2.87, armor=2.2, aggro=True, boss=True, xp=2.0, gold=15.0,
   specials=[big("Starfall Hammer", 0.22, 2.1, "brings down a hammer that burns like a falling star!"),
             dot("Inferno", 0.18, 0.7, 4, "fire", "breathes, and the world becomes fire!"),
-            stun("Heatstroke", 0.1, 1, "flares so brightly that you reel, blinded!")],
+            big("Heatstroke", 0.1, 1.6, "flares so brightly that you reel, blinded!")],
   loot=[("flameheart_hammer", 0.4), ("gauntlets_of_the_pyre", 0.4), ("planar_shard", 1.0)])
 M("lord_water", "Nerevos, Lord of the Tides", 58,
   "The lord of the Plane of Water, a crowned giant of green sea-glass with a trident of coral, whose voice is the roar of surf.",
-  hp=10.53, dmg=2.86, armor=2.2, aggro=True, boss=True, xp=2.0, gold=15.0,
-  specials=[stun("Drowning Wave", 0.14, 1, "raises a wave that crashes down and drowns you!"),
+  hp=10.53, dmg=3.49, armor=2.2, aggro=True, boss=True, xp=2.0, gold=15.0,
+  specials=[big("Drowning Wave", 0.14, 1.6, "raises a wave that crashes down and drowns you!"),
             big("Trident Thrust", 0.2, 2.0, "drives his coral trident into you!"),
             heal("Tidal Renewal", 0.1, 0.1, "draws in the tide, and his wounds wash away!")],
   loot=[("tidecaller", 0.4), ("pearl_of_the_deep", 0.4), ("tidescale_legguards", 0.4), ("planar_shard", 1.0)])
 M("lord_earth", "Ulmathra, Lord of Stone", 58,
   "The lord of the Plane of Earth, a mountain that stands and walks, with crystal eyes and a voice like the grinding of continents.",
-  hp=9.97, dmg=2.76, armor=3.0, aggro=True, boss=True, xp=2.0, gold=15.0,
+  hp=9.97, dmg=3.37, armor=3.0, aggro=True, boss=True, xp=2.0, gold=15.0,
   specials=[big("Mountainfall", 0.22, 2.1, "falls on you like a mountain!"),
-            stun("Earthquake", 0.14, 1, "stamps, and the plane itself shakes you off your feet!"),
+            big("Earthquake", 0.14, 1.6, "stamps, and the plane itself shakes you off your feet!"),
             heal("Stone Skin", 0.08, 0.1, "draws the plane's stone over his wounds!")],
   loot=[("mountainheart_shield", 0.4), ("stonestride_boots", 0.4), ("planar_shard", 1.0)])
 M("lord_air", "Zephyrion, Lord of the Winds", 58,
   "The lord of the Plane of Air, a shape of silver wind and storm with a crown of lightning, never still and never solid.",
-  hp=6.44, dmg=2.5, armor=1.8, aggro=True, boss=True, xp=2.0, gold=15.0,
+  hp=6.44, dmg=3.05, armor=1.8, aggro=True, boss=True, xp=2.0, gold=15.0,
   specials=[big("Hurricane", 0.22, 2.0, "becomes a hurricane that tears at you!"),
             dot("Lightning Storm", 0.18, 0.6, 4, "lightning", "calls down a storm of lightning on you!"),
-            stun("Breathless", 0.12, 1, "steals the air from your lungs!")],
+            big("Breathless", 0.12, 1.6, "steals the air from your lungs!")],
   loot=[("windwalker_boots", 0.4), ("band_of_four_winds", 0.4), ("planar_shard", 1.0)])
 
 # Third tier (57-60): the Plane of Eternity
 M("chronal_sentinel", "a chronal sentinel", 57, "A knight of brass and crystal whose every movement leaves a trail of afterimages.",
-  hp=5.6, dmg=3.4, armor=2.5, aggro=True, specials=[stun("Time Lock", 0.15, 1, "touches you, and time stops for you alone!")],
+  hp=5.6, dmg=3.4, armor=2.5, aggro=True, specials=[big("Time Lock", 0.15, 1.6, "touches you, and time stops for you alone!")],
   loot=[("planar_shard", 0.3)], gold=3.5)
 M("hourglass_golem", "an hourglass golem", 58, "A colossus of glass and bronze with a storm of golden sand turning in its chest.",
   hp=5.6, dmg=3.1, armor=3.0, specials=[big("Sands of Ages", 0.22, 2.0, "pours a torrent of ageing sand over you!")],
@@ -1191,10 +1187,10 @@ M("paradox", "a paradox", 59, "A figure that is you, from a moment that has not 
 M("lord_trepth", "Lord Trepth", 60,
   "The king of the gods, older than the stars, seated on a throne carved from the first moment of time. His face is every "
   "face, his eyes hold every dawn, and his sword is named Eternity.",
-  hp=7.39, dmg=2.16, armor=3.0, aggro=True, boss=True, xp=2.0, gold=40.0,
+  hp=7.39, dmg=2.59, armor=3.0, aggro=True, boss=True, xp=2.0, gold=40.0,
   specials=[big("Eternity", 0.22, 2.2, "swings Eternity, and you feel every moment of your life at once!"),
             dot("The Long Night", 0.15, 0.8, 4, "shadow", "unmakes the dawn, and cold darkness eats at you!"),
-            stun("Stop Time", 0.12, 1, "raises a hand, and time stops for everyone but him!"),
+            big("Stop Time", 0.12, 1.6, "raises a hand, and time stops for everyone but him!"),
             drain("Tithe of Ages", 0.12, 1.3, "takes the years from you as tribute!"),
             heal("The First Dawn", 0.06, 0.08, "calls the first dawn of the world, and it heals him!")],
   loot=[("eternity", 0.5), ("crown_of_trepth", 0.5), ("hourglass_amulet", 0.5), ("planar_shard", 1.0)])

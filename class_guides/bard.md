@@ -2,10 +2,11 @@
 
 > *Wandering minstrels whose songs mend allies and shatter the minds of foes.*
 
-The Bard is an INT and WIS caster in leather who also fights with a blade. Its songs do a bit of everything:
-sonic damage that ignores armor, a heal over time, a sleep, a long buff, a group-weakening dirge and
-big area damage late on. It is the most demanding class to play early and the slowest at killing
-bosses at its own level, but it scales very well and ends the game as one of the safest classes.
+The Bard is an INT and WIS caster in leather who also fights with a blade, in each hand from level 10.
+Its songs do a bit of everything: sonic damage that ignores armor (Discordant Note, then Crescendo),
+a heal that keeps working for 10 rounds, a whole-fight march, a dirge that weakens a foe for the whole
+fight, and a late anthem that does both. It is the most demanding class to play early, but it scales
+well and ends the game as one of the safest classes.
 
 ## At a glance
 
@@ -35,47 +36,32 @@ Average race, starting gear only (see the [README](README.md#about-the-numbers))
 The Bard grows a little STR and DEX every level, so its blade stays useful between songs, but its
 real damage is its INT-powered music, and WIS feeds its healing songs and mana.
 
-## Spells
+## Spells and abilities
 
-All Bard magic is spells, cast with `cast <name>`. Cost is shown at the level you learn it and at
-level 50.
+All Bard magic is spells, cast with `cast <name>`. There are no cooldowns: every attack can be used every round, and each new attack is a modest step up (12%) from the one before it, so **use your newest one**.
 
-| Level | Spell | Cost | Cooldown | Target | Effect |
+| Level | Name | Type | Cost | Target | Effect |
 |---|---|---|---|---|---|
-| 1 | **Discordant Note** | 5 / 30 | - | one foe | Sonic damage 10 + 3.22/level + 0.8 INT (~22 at L1, ~119 at L25, ~219 at L50) |
-| 3 | **Ballad of Mending** | 8 / 41 | - | self | Heal 5 + 1.26/level + 0.25 WIS now, then 4 + 1.23/level + 0.22 WIS per round for 5 rounds (~45 + 42/round at L25) |
-| 8 | **Lullaby** | 17 / 59 | 5 | one foe | 75% chance to put it to sleep for 2 rounds (about 38% vs bosses) |
-| 15 | **War March** | 36 / 88 | 10 | self | +25% damage and +8 + 1/level armor for 8 rounds |
-| 24 | **Dirge of Despair** | 86 / 153 | - | all foes | Sonic damage over time 9 + 2.01/level + 0.4 INT per round for 4 rounds (~71 at L24, ~133 at L50), and every foe deals 25% less damage for 4 rounds |
-| 34 | **Crescendo** | 194 / 266 | 3 | all foes | Sonic damage 34 + 4.17/level + 0.95 INT to every foe (~218 at L34, ~300 at L50) |
-| 44 | **Legend's Anthem** | 292 / 324 | 12 | self | +45% damage for 6 rounds and a heal over time of 20 + 2.42/level + 0.4 WIS per round (~148-165) |
-
-**Passive** (always on, kept in later lives):
-
-- **Dual Wield** (10): hold a one-handed weapon (dagger, sword, axe or blunt) in the off hand, in place of a shield or off-hand item; it strikes every round beside your main hand for 65% damage (a past warrior life gives it at 1). `wear` a second one-hander to put it there, or use `offhand <weapon>`.
+| 1 | **Discordant Note** | spell | 5 / 30 | one foe | Sonic damage 10 + 3.22/level + 0.8 INT (~22 at L1, ~119 at L25, ~219 at L50) |
+| 3 | **Ballad of Mending** | spell | 8 / 41 | self | Heal 5 + 1.26/level + 0.25 WIS (~12 at L3, ~45 at L25, ~83 at L50), then 3 + 0.75/level + 0.13 WIS per round for 10 rounds (~6 at L3, ~26 at L25, ~48 at L50 per round); casting it again restarts the timer |
+| 10 | **Dual Wield** | passive | - | - | Wield a one-handed weapon in your off hand (the shield slot); it strikes beside your main hand every round for 65% damage. |
+| 15 | **War March** | spell | 36 / 88 | self | +20% damage, +6 armor + 0.8/level until the end of the fight |
+| 24 | **Dirge of Despair** | spell | 40 / 71 | one foe | Sonic damage over time: 9 + 2.01/level + 0.4 INT per round for 4 rounds (~71 at L24, ~73 at L25, ~133 at L50 per round); the foe deals 20% less damage for the rest of the fight |
+| 34 | **Crescendo** | spell | 22 / 30 | one foe | Sonic damage 11.2 + 3.61/level + 0.9 INT (~174 at L34, ~246 at L50) |
+| 44 | **Legend's Anthem** | spell | 159 / 177 | self | +15% damage until the end of the fight; then 10 + 1.2/level + 0.2 WIS per round for 10 rounds (~73 at L44, ~82 at L50 per round); casting it again restarts the timer |
 
 ## How to play
 
-**Levels 1-14.** Discordant Note is your main attack. It is strong for its cost and ignores armor.
-Cast it, let an auto-attack happen while mana comes back, cast again. Ballad of Mending heals a little
-at once and the rest over five rounds, so cast it a little before you need it, not at the last moment.
-Lullaby at 8 takes a monster out for two rounds: use it on the most dangerous of a pair, or to buy time
-for the Ballad to work.
+**Every fight.** War March (from 15) and Legend's Anthem (from 44) once each, Dirge of Despair (from
+24) once on the foe, then your newest attack spell every round: Discordant Note, Crescendo from 34.
+Cast Ballad of Mending when you drop under about half health; its heal over time runs for 10 rounds.
 
-**Levels 15-33.** War March lasts 8 rounds on a 10-round cooldown, so keep it up in every real fight:
-it is +25% damage and some armor for very little mana. Dirge of Despair at 24 is your first group
-spell, and it is also a strong defensive one: every foe deals a quarter less damage while its damage
-ticks. Against groups, open with War March and Dirge.
-
-**Levels 34-50.** Crescendo is heavy area damage every three rounds. At 44, Legend's Anthem is +45%
-damage and a strong heal over time on one button. A boss fight: War March, Legend's Anthem, Dirge (for
-the weaken), then Discordant Note, with Lullaby when it lands and Ballad of Mending to top up.
+**Weapons.** From 10, `wear` a second one-hander to hold it in your off hand (or `offhand <weapon>`):
+your blades swing every round alongside your songs.
 
 **Tips**
-- All your spell damage is sonic and ignores armor, so heavily armored monsters are no harder for you.
-- Bards burn mana fast in long fights. Carry mana potions for bosses.
-- Boss fights at your own level are slow. Fighting bosses two or three levels above their level
-  makes them far easier.
+- Sonic damage ignores armor.
+- Mana is the only limit on your healing.
 
 ## Gear
 
@@ -140,11 +126,7 @@ the rest come from her realm.
 
 ## How it performs
 
-The Bard wins every same-level fight in the simulator, fast (3-6 rounds), with 66-99% HP left, and it
-has the best staying power of any class at low levels (about 7-8 fights in a row from level 3 to 30).
-Bosses at their own level are its weakness: about 53% against Old Mother Gristle, 70-77% against the
-First Spore, Ghaldrek, Rotheart, Varnoth and Seluvar, 83-100% against the rest, but it wins every boss
-fight at boss level +3.
+The Bard wins every same-level fight in the simulator in 1.6-5.1 rounds, finishing with 66-92% HP. It survives about 8, 8 and 8 fights in a row at levels 10, 20 and 30 (the cap is 8). Against the world bosses it wins 80-100% at the boss's own level and 100% at boss level +3. These figures are from November 2026, after cooldowns were removed.
 
 ## Rebirth
 
@@ -153,6 +135,6 @@ any class you have lived would have at your current level (see the [README](READ
 class mastered adds +2% max HP and damage.
 
 A Bard life brings even growth in every stat, plus **leather** training and dagger, sword, blunt and
-wand weapons. Other classes grow each stat faster, so a Bard life is mainly worth its spells:
-Lullaby, Dirge of Despair and Legend's Anthem stay strong in any later class, and grow stronger with
-the INT and WIS of your other lives. It also passes on Dual Wield to every later life, at the same level.
+wand weapons. Other classes grow each stat faster, so a Bard life is mainly worth its songs: War
+March, Dirge of Despair and Legend's Anthem are good in any later class. It also passes on Dual Wield
+to every later life.

@@ -2,11 +2,11 @@
 
 > *Cutthroats and shadow-walkers who strike from the dark with poisoned steel.*
 
-The Rogue is a pure weapon class with no mana and no spells. Everything it does is a free ability on a
-cooldown: big single-target hits, poison, a long stun, and buffs that make it very hard to hit. It
-grows STR for damage and DEX for precision equally, so it hits hard, rarely misses, and crits and
-dodges well. It
-has no heal at all, so it relies on killing fast, dodging and potions.
+The Rogue is a pure weapon class with no mana and no spells. Its free abilities form a ladder of
+ever-harder strikes (Backstab, Kidney Shot, Eviscerate, Assassinate), plus a poison and two
+whole-fight buffs. From 10 it fights with a blade in each hand and from 15 each hand may strike twice.
+It grows STR and DEX equally, so it hits hard, rarely misses, and crits and dodges well. It has no
+heal at all, so it relies on killing fast, dodging and potions.
 
 ## At a glance
 
@@ -35,46 +35,34 @@ Average race, starting gear only (see the [README](README.md#about-the-numbers))
 
 STR is your damage and DEX your precision: by level 50 your auto-attacks almost never miss.
 
-## Abilities
+## Spells and abilities
 
-All Rogue abilities are free and are used with `ability <name>` (or `ab <name>`). Weapon damage is the
-average with the starting dagger.
+All Rogue abilities are free and used with `ability <name>` (or `ab <name>`). There are no cooldowns: every attack can be used every round, and each new attack is a modest step up (12%) from the one before it, so **use your newest one**.
 
-| Level | Ability | Cooldown | Target | Effect |
-|---|---|---|---|---|
-| 1 | **Backstab** | 2 | one foe | 1.7x weapon damage (~13 at L1, ~142 at L50) |
-| 5 | **Poisoned Blade** | 4 | one foe | 1.0x weapon damage plus poison: 4 + 0.9/level + 0.2 STR per round for 4 rounds (~12 at L5, ~71 at L50) |
-| 10 | **Evasion** | 8 | self | +40% dodge for 3 rounds |
-| 18 | **Kidney Shot** | 6 | one foe | 1.0x weapon damage, 85% chance to stun for 2 rounds (about 43% vs bosses) |
-| 28 | **Eviscerate** | 4 | one foe | 2.8x weapon damage (~140 at L28, ~235 at L50) |
-| 40 | **Shadow Dance** | 10 | self | +50% damage and +25% dodge for 4 rounds |
-| 48 | **Assassinate** | 6 | one foe | 4.2x weapon damage (~340 at L48, ~352 at L50), the biggest weapon multiplier in the game |
-
-**Passives** (always on, kept in later lives):
-
-- **Dual Wield** (10): hold a one-handed weapon (dagger, sword, axe or blunt) in the off hand, in place of a shield or off-hand item; it strikes every round beside your main hand for 65% damage (a past warrior life gives it at 1). `wear` a second one-hander to put it there, or use `offhand <weapon>`.
-- **Double Attack** (15): each hand may strike a second time every round, 40% of the time at 15 rising evenly to every round at 50. (A past warrior life gives it at 10.)
+| Level | Name | Type | Cost | Target | Effect |
+|---|---|---|---|---|---|
+| 1 | **Backstab** | ability | free | one foe | 1.5x weapon damage (~10 at L1, ~54 at L25, ~99 at L50 with the starting weapon) |
+| 5 | **Poisoned Blade** | ability | free | one foe | 1x weapon damage (~12 at L5, ~36 at L25, ~66 at L50 with the starting weapon); Poison damage over time: 4 + 0.9/level + 0.2 STR per round for 4 rounds (~12 at L5, ~38 at L25, ~71 at L50 per round) |
+| 10 | **Evasion** | ability | free | self | +15% dodge until the end of the fight |
+| 10 | **Dual Wield** | passive | - | - | Wield a one-handed weapon in your off hand (the shield slot); it strikes beside your main hand every round for 65% damage. |
+| 15 | **Double Attack** | passive | - | - | Each hand may strike a second time every round: a 40% chance when learned, rising evenly to certain at level 50. |
+| 18 | **Kidney Shot** | ability | free | one foe | 1.68x weapon damage (~47 at L18, ~60 at L25, ~110 at L50 with the starting weapon) |
+| 28 | **Eviscerate** | ability | free | one foe | 1.88x weapon damage (~75 at L28, ~124 at L50 with the starting weapon) |
+| 40 | **Shadow Dance** | ability | free | self | +20% damage, +10% dodge until the end of the fight |
+| 48 | **Assassinate** | ability | free | one foe | 2.11x weapon damage (~135 at L48, ~139 at L50 with the starting weapon) |
 
 ## How to play
 
-**Levels 1-17.** Backstab every other round. From 5, apply Poisoned Blade at the start of each fight
-(its poison ignores armor), then Backstab. Evasion at 10 makes you nearly impossible to hit for three
-rounds: use it when a monster is about to hurt you badly, or to cover the start of a hard fight.
+**Every fight.** Evasion (from 10) and Shadow Dance (from 40) once each, then your newest strike every
+round: Backstab, Kidney Shot from 18, Eviscerate from 28, Assassinate from 48. Against a long fight,
+Poisoned Blade once adds a poison for 4 rounds.
 
-**Levels 18-39.** Kidney Shot is a reliable 2-round stun: two free rounds of hitting without being
-hit. Eviscerate at 28 is your main big hit. A good loop: Poisoned Blade, Kidney Shot, Eviscerate,
-Backstab, Backstab, then again as things come off cooldown. The `cooldowns` command helps you track it.
-
-**Levels 40-50.** Shadow Dance gives +50% damage and +25% dodge for four rounds. Save Eviscerate and,
-from 48, Assassinate for while it is up: an Assassinate under Shadow Dance is 6.3x weapon damage,
-and nearly 11x on a crit.
+**Weapons.** From 10, `wear` a second one-hander to hold it in your off hand (or `offhand <weapon>`).
+Every strike, including the off hand's, rolls its own crit.
 
 **Tips**
-- You have **no heal**. Carry plenty of healing potions, sleep between fights, and lean on Evasion and
-  stuns to avoid damage rather than recovering from it.
-- No group attack: the Rogue fights one target at a time, so packs of monsters are dangerous. Stun one
-  and kill the other first.
-- Daggers have smaller damage ranges than swords, so upgrade your weapon whenever you can.
+- No heal: drink potions early, and rest between hard fights.
+- Every attack in the game hits one foe, so packs of monsters are dangerous for a class with no heal.
 
 ## Gear
 
@@ -131,10 +119,7 @@ ring of spun sugar; the rest come from her realm.
 
 ## How it performs
 
-The Rogue wins every same-level fight in the simulator in about 3-6 rounds with 57-84% HP left (it
-takes the most damage at levels 1-16). It lasts about 3 fights in a row at level 10 and 6-7 at level
-30. It beat almost every world boss at the boss's own level (97% against Rask, Old Mother Gristle,
-Seluvar and Pyraxis) and all of them at boss level +3.
+The Rogue wins every same-level fight in the simulator in 3.0-4.0 rounds, finishing with 68-85% HP. It survives about 3, 4 and 8 fights in a row at levels 10, 20 and 30 (the cap is 8). Against the world bosses it beats every one, at the boss's own level and at boss level +3. These figures are from November 2026, after cooldowns were removed.
 
 ## Rebirth
 
@@ -143,6 +128,6 @@ any class you have lived would have at your current level (see the [README](READ
 class mastered adds +2% max HP and damage.
 
 A Rogue life brings strong STR and DEX growth (matching the Ranger): later lives hit harder, miss less,
-crit and dodge more. It gives only **leather** training and dagger, sword and bow weapons. Kidney Shot,
-Evasion and Shadow Dance are free, so they make good tools for later lives, especially casters who lack
-a stun or a defensive button. It also passes on Dual Wield and Double Attack to every later life, at the same level (the Warrior has both too).
+crit and dodge more. It gives only **leather** training and dagger, sword and bow weapons. Its strikes
+are free, so they make good tools for later lives that keep a good weapon. It also passes on Dual
+Wield and Double Attack to every later life (the Warrior has both too, at earlier levels).

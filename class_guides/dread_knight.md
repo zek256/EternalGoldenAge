@@ -3,9 +3,10 @@
 > *Dark champions who bargain with death, draining the life of their foes.*
 
 The Dread Knight is the dark mirror of the Paladin: a plate-wearing fighter whose magic is drawn from
-INT instead of WIS. Instead of heals it has **drains and lifesteal**, so it heals itself by hurting
-things. It also has a disease, a fear aura that weakens every foe, and Dread Touch, the hardest single
-free hit in the game for its level. It shares the second-highest HP of any class with the Paladin.
+INT instead of WIS. Instead of heals it has **drains and lifesteal**: each of its strikes (Shadow
+Strike, Dread Touch, Death Coil) drains life to heal it, and two whole-fight buffs add lifesteal. It
+also has a disease and a fear aura that weakens a foe for the whole fight. It shares the second-highest
+HP of any class with the Paladin.
 
 ## At a glance
 
@@ -34,45 +35,28 @@ Average race, starting gear only (see the [README](README.md#about-the-numbers))
 
 ## Spells and abilities
 
-Abilities are free (`ab <name>`); spells cost mana (`cast <name>`). Cost is shown at the level you
-learn it and at level 50.
+Abilities are free (`ability <name>`); spells cost mana (`cast <name>`). There are no cooldowns: every attack can be used every round, and each new attack is a modest step up (12%) from the one before it, so **use your newest one**.
 
-| Level | Name | Type | Cost | Cooldown | Target | Effect |
-|---|---|---|---|---|---|---|
-| 1 | **Shadow Strike** | ability | free | 2 | one foe | 1.2x weapon damage, plus a drain of 3 + 1/level + 0.3 INT (~7 at L1, ~71 at L50) that heals you for 60% of what it deals |
-| 4 | **Disease Cloud** | spell | 8 / 35 | - | one foe | Disease damage over time: 4 + 1/level + 0.25 INT per round for 5 rounds (~11 at L4, ~69 at L50) |
-| 10 | **Dread Aura** | spell | 23 / 71 | 6 | all foes | Every foe deals 25% less damage for 5 rounds |
-| 18 | **Dread Touch** | ability | free | 20 | one foe | Shadow damage of 40 + 5/level + 1.5 INT (~172 at L18, ~380 at L50) |
-| 26 | **Vampiric Embrace** | spell | 84 / 142 | 8 | self | Your weapon hits heal you for 25% of the damage they deal, for 6 rounds |
-| 34 | **Death Coil** | spell | 138 / 189 | 3 | one foe | Drain of 30 + 3.2/level + 0.9 INT (~178 at L34, ~244 at L50) that heals you for 80% of what it deals |
-| 44 | **Unholy Frenzy** | ability | free | 12 | self | +50% damage and 30% lifesteal for 5 rounds |
-
-**Passive** (always on, kept in later lives):
-
-- **Double Attack** (15): your weapon may strike a second time every round, 40% of the time at 15 rising evenly to every round at 50. (A past warrior life gives it at 10.)
+| Level | Name | Type | Cost | Target | Effect |
+|---|---|---|---|---|---|
+| 1 | **Shadow Strike** | ability | free | one foe | 1.2x weapon damage (~9 at L1, ~43 at L25, ~79 at L50 with the starting weapon); Shadow drain 3 + 1/level + 0.3 INT (~7 at L1, ~38 at L25, ~71 at L50) that heals you for 50% of what it deals |
+| 4 | **Disease Cloud** | spell | 8 / 35 | one foe | Disease damage over time: 4 + 1/level + 0.25 INT per round for 5 rounds (~11 at L4, ~37 at L25, ~69 at L50 per round) |
+| 10 | **Dread Aura** | spell | 23 / 71 | one foe | The foe deals 20% less damage for the rest of the fight |
+| 15 | **Double Attack** | passive | - | - | Each hand may strike a second time every round: a 40% chance when learned, rising evenly to certain at level 50. |
+| 18 | **Dread Touch** | ability | free | one foe | 1.34x weapon damage (~38 at L18, ~48 at L25, ~89 at L50 with the starting weapon); Shadow drain 3.36 + 1.12/level + 0.34 INT (~33 at L18, ~43 at L25, ~79 at L50) that heals you for 50% of what it deals |
+| 26 | **Vampiric Embrace** | spell | 84 / 142 | self | 15% lifesteal on weapon hits until the end of the fight |
+| 34 | **Death Coil** | ability | free | one foe | 1.51x weapon damage (~71 at L34, ~100 at L50 with the starting weapon); Shadow drain 3.76 + 1.25/level + 0.38 INT (~62 at L34, ~89 at L50) that heals you for 50% of what it deals |
+| 44 | **Unholy Frenzy** | ability | free | self | +20% damage, 10% lifesteal on weapon hits until the end of the fight |
 
 ## How to play
 
-**Levels 1-9.** Shadow Strike every other round. It hits harder than an auto-attack and heals you a
-little each time. Disease Cloud at 4 is cheap: put it on anything that will take more than a couple
-of rounds to kill.
-
-**Levels 10-25.** Dread Aura cuts every enemy's damage by a quarter for five rounds, and its
-cooldown is six, so you can keep it up nearly all the time in a hard fight. Open with it against
-groups and bosses. At 18 you get Dread Touch, a huge free nuke on a long cooldown (20 rounds). Use it
-to open a boss fight or to finish a dangerous monster fast.
-
-**Levels 26-50.** Vampiric Embrace turns every weapon hit into healing. With it up, Shadow Strike
-heals you twice. Death Coil at 34 is a big drain that heals for 80% of what it deals, usable every
-three rounds. At 44, Unholy Frenzy stacks with Vampiric Embrace (55% lifesteal and +50% damage): in a
-long fight, buff with both and you will often out-heal the damage coming in.
+**Every fight.** Dread Aura (from 10) once on the foe, Vampiric Embrace (from 26) and Unholy Frenzy
+(from 44) once each, Disease Cloud once, then your newest strike every round: Shadow Strike, Dread
+Touch from 18, Death Coil from 34. Every strike heals you for half of its drain.
 
 **Tips**
-- Your healing all comes from dealing damage, so a Dread Knight does worst when it is stunned or can't
-  hit. Keep Dread Aura up against monsters that stun.
-- Lifesteal only works on physical damage, so it heals from your weapon hits and abilities like
-  Shadow Strike, not from spells.
-- Drains and Disease Cloud ignore armor, which helps against golems and plated monsters.
+- Your healing all comes from dealing damage, so heavily armored foes are your hardest fights.
+- From 15, Double Attack adds extra weapon hits, which Vampiric Embrace turns into more healing.
 
 ## Gear
 
@@ -125,10 +109,7 @@ shield (47, shield, CON/STR). It drops from her gingerbread soldiers.
 
 ## How it performs
 
-The Dread Knight wins every same-level fight in the simulator in 3-6 rounds and finishes with 68-99%
-HP, one of the best results of any melee class. It lasts about 4 fights in a row at level 10 and 7
-at level 30, and it beat every world boss in the simulator, at the boss's own level and at boss
-level +3.
+The Dread Knight wins every same-level fight in the simulator in 2.5-5.2 rounds, finishing with 81-96% HP. It survives about 5, 8 and 8 fights in a row at levels 10, 20 and 30 (the cap is 8). Against the world bosses it beats every one, at the boss's own level and at boss level +3. These figures are from November 2026, after cooldowns were removed.
 
 ## Rebirth
 
@@ -137,6 +118,6 @@ any class you have lived would have at your current level (see the [README](READ
 class mastered adds +2% max HP and damage.
 
 A Dread Knight life brings the **best STR growth in the game** (shared with several classes) and
-10 HP per level, plus **plate armor and shield training** and sword, axe and two-handed weapons. Shadow
-Strike, Dread Touch and Unholy Frenzy are free abilities, so any later class keeps a strong free nuke
-and a lifesteal buff. It also passes on Double Attack to every later life, at the same level.
+10 HP per level, plus **plate armor and shield training** and sword, axe and two-handed weapons. Its
+strikes and Unholy Frenzy are free, so any later class keeps a self-healing strike and a lifesteal
+buff. It also passes on Double Attack to every later life.

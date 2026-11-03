@@ -3,9 +3,9 @@
 > *Holy knights sworn to the Dawnfather, wielding sacred light and steel alike.*
 
 The Paladin is a plate-wearing fighter with a small pool of holy magic. It hits with its weapon like
-a Warrior, but it adds holy damage to its main strike, carries the biggest emergency heal in the game
-(Lay on Hands, 60% of your health), and later gains a damage shield and an area spell that heals as
-it burns. It is one of the safest classes to level.
+a Warrior, but each of its strikes (Holy Strike, Hammer of Justice, Consecration) adds holy damage
+that ignores armor. It heals with Holy Light, blesses its arm for the whole fight and later gains a
+damage shield. From 15 its weapon may strike twice a round. It is one of the safest classes to level.
 
 ## At a glance
 
@@ -37,45 +37,28 @@ heal and your mana.
 
 ## Spells and abilities
 
-Abilities are free (`ab <name>`); spells cost mana (`cast <name>`). Cost is shown at the level you
-learn it and at level 50.
+Abilities are free (`ability <name>`); spells cost mana (`cast <name>`). There are no cooldowns: every attack can be used every round, and each new attack is a modest step up (12%) from the one before it, so **use your newest one**.
 
-| Level | Name | Type | Cost | Cooldown | Target | Effect |
-|---|---|---|---|---|---|---|
-| 1 | **Holy Strike** | ability | free | 2 | one foe | 1.2x weapon damage plus holy damage of 3 + 1/level + 0.3 INT (~7 at L1, ~71 at L50) |
-| 5 | **Lay on Hands** | ability | free | 20 | self | Heal 60% of max HP |
-| 10 | **Blessing of Might** | spell | 19 / 59 | 6 | self | +25% damage for 6 rounds |
-| 18 | **Divine Shield** | spell | 59 / 130 | 10 | self | Absorbs 20 + 4/level + 1 WIS damage (~120 at L18, ~280 at L50) |
-| 26 | **Hammer of Justice** | ability | free | 6 | one foe | 1.6x weapon damage, 90% chance to stun for 2 rounds (45% vs bosses) |
-| 36 | **Consecration** | spell | 171 / 224 | 3 | all foes | Holy damage 25 + 2.6/level + 0.7 INT to every foe (~150 at L36, ~197 at L50), and heals you 10 + 1.5/level + 0.3 WIS (~77-103) |
-| 46 | **Avenging Wrath** | ability | free | 12 | self | Heal 30% of max HP and +60% damage for 5 rounds |
-
-**Passive** (always on, kept in later lives):
-
-- **Double Attack** (15): your weapon may strike a second time every round, 40% of the time at 15 rising evenly to every round at 50. (A past warrior life gives it at 10.)
+| Level | Name | Type | Cost | Target | Effect |
+|---|---|---|---|---|---|
+| 1 | **Holy Strike** | ability | free | one foe | 1.2x weapon damage (~9 at L1, ~43 at L25, ~79 at L50 with the starting weapon); Holy damage 3 + 1/level + 0.3 INT (~7 at L1, ~38 at L25, ~71 at L50) |
+| 5 | **Holy Light** | spell | 11 / 47 | self | Heal 12 + 2.8/level + 0.55 WIS (~34 at L5, ~101 at L25, ~185 at L50) |
+| 10 | **Blessing of Might** | spell | 19 / 59 | self | +20% damage until the end of the fight |
+| 15 | **Double Attack** | passive | - | - | Each hand may strike a second time every round: a 40% chance when learned, rising evenly to certain at level 50. |
+| 18 | **Divine Shield** | spell | 65 / 142 | self | A ward that absorbs 20 + 4/level + 1 WIS damage until it breaks (~120 at L18, ~155 at L25, ~280 at L50); casting it again restores it |
+| 26 | **Hammer of Justice** | ability | free | one foe | 1.34x weapon damage (~50 at L26, ~89 at L50 with the starting weapon); Holy damage 3.36 + 1.12/level + 0.34 INT (~44 at L26, ~79 at L50) |
+| 36 | **Consecration** | ability | free | one foe | 1.51x weapon damage (~74 at L36, ~100 at L50 with the starting weapon); Holy damage 3.76 + 1.25/level + 0.38 INT (~66 at L36, ~89 at L50) |
 
 ## How to play
 
-**Levels 1-9.** Holy Strike every other round is your whole rotation. It costs nothing and adds a
-little holy damage that ignores armor. From 5, Lay on Hands is a 60% heal on a 20-round cooldown:
-use it once per hard fight when you drop below about 40%.
-
-**Levels 10-25.** Blessing of Might is cheap and lasts as long as its cooldown, so you can keep
-+25% damage up all the time. Cast it before you attack. Divine Shield at 18 absorbs a big chunk of
-damage; cast it before a boss or when you see a big hit coming. Your mana pool is small, so these
-two spells are most of what you can afford.
-
-**Levels 26-50.** Hammer of Justice is a strong hit with a very reliable 2-round stun. Stun the
-monster that is hurting you most, then work on it. Consecration at 36 is your area attack and a heal
-at the same time, but it is expensive: use it on groups of two or more. Avenging Wrath at 46 is a
-second big heal plus +60% damage; with Lay on Hands you have two emergency buttons.
+**Every fight.** Blessing of Might (from 10) once and Divine Shield (from 18) at the start, then your
+newest strike every round: Holy Strike, Hammer of Justice from 26, Consecration from 36. Heal with
+Holy Light when you drop under about half health, and recast Divine Shield when it breaks if your
+mana allows.
 
 **Tips**
-- Most of your damage is physical, so armor matters, but Holy Strike's holy part, and Consecration,
-  ignore it.
-- A boss fight goes: Blessing of Might, Divine Shield, then Holy Strike and Hammer of Justice on
-  cooldown, with Lay on Hands and Avenging Wrath as your heals.
-- Watch your mana. A Paladin can run dry in a long fight if it casts Consecration too freely.
+- Your mana pool is small: it goes on Holy Light first. Your strikes are free.
+- The holy part of every strike ignores armor.
 
 ## Gear
 
@@ -134,11 +117,7 @@ realm.
 
 ## How it performs
 
-The Paladin wins every same-level fight in the simulator, a little slowly (3-7 rounds) but with
-plenty of health left (59-96%, above 85% from level 25). It has strong staying power: about 3-4 fights
-in a row at level 10 and the simulator's cap of 8 at level 30, among the best of any class. It beat
-every world boss at the boss's own level except Rask and Rotheart (97% each), and all of them at boss
-level +3.
+The Paladin wins every same-level fight in the simulator in 2.3-5.0 rounds, finishing with 68-98% HP. It survives about 6, 7 and 8 fights in a row at levels 10, 20 and 30 (the cap is 8). Against the world bosses it beats every one, at the boss's own level and at boss level +3. These figures are from November 2026, after cooldowns were removed.
 
 ## Rebirth
 
@@ -147,6 +126,5 @@ any class you have lived would have at your current level (see the [README](READ
 class mastered adds +2% max HP and damage.
 
 A Paladin life brings strong STR growth and 10 HP per level, plus **plate armor and shield training**
-and sword, blunt and two-handed weapons. Its best gift is its abilities: Lay on Hands and Avenging
-Wrath are free, so any later class keeps two big heals that cost no mana, which is very valuable for
-fragile casters. It also passes on Double Attack to every later life, at the same level.
+and sword, blunt and two-handed weapons. Holy Light gives any later class a heal that scales with WIS,
+and its strikes are free. It also passes on Double Attack to every later life.

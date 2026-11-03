@@ -55,8 +55,7 @@ class Character:
         self.bank = []        # item ids stored in the Sunvault in Brightwater
         self.equipment = {s: None for s in SLOTS}
         self.quests = {}      # quest id -> {"status": "active"|"done", "count": n}
-        self.effects = []     # buffs, shields, hots, dots, stuns
-        self.cooldowns = {}   # ability id -> rounds remaining
+        self.effects = []     # buffs (whole fight), shields (until used up), hots and dots (timed)
         self.pet = None
         self.aliases = {}     # player-defined shortcut -> command line
         self.automap = False  # show a small map under every room description
@@ -127,7 +126,8 @@ class Character:
         return self.base_stat(stat) + self.gear_stat(stat)
 
     def buff_mod(self, key):
-        return sum(e.get("mods", {}).get(key, 0) for e in self.effects if e["type"] == "buff")
+        """Buffs of the same kind don't stack: for each bonus, the strongest active buff counts."""
+        return max((e.get("mods", {}).get(key, 0) for e in self.effects if e["type"] == "buff"), default=0)
 
     @property
     def max_hp(self):
@@ -274,12 +274,6 @@ class Character:
     def mana_cost(self, ab):
         return int(round(ab["cost"] * (1 + 0.1 * (self.level - 1))))
 
-    def tick_cooldowns(self):
-        for k in list(self.cooldowns):
-            self.cooldowns[k] -= 1
-            if self.cooldowns[k] <= 0:
-                del self.cooldowns[k]
-
     # ------------------------------------------------------------------ effects
     def add_effect(self, eff):
         # refresh same-named effects instead of stacking them
@@ -418,7 +412,6 @@ class Character:
         self.level = 1
         self.xp = 0
         self.effects = []
-        self.cooldowns = {}
         self.pet = None
         # every piece of gear goes into the pack, and the new class starts in its own kit
         removed = [iid for iid in self.equipment.values() if iid]
@@ -454,6 +447,8 @@ class Character:
         ch.__dict__.setdefault("automap", False)
         ch.__dict__.setdefault("bank", [])
         ch.__dict__.setdefault("tier", 1)
+        ch.__dict__.pop("cooldowns", None)  # saves from before cooldowns were removed
+        ch.effects = [e for e in ch.effects if e["type"] != "stun"]
         return ch
 
     def mastered_classes(self):

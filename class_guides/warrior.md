@@ -2,12 +2,12 @@
 
 > *Masters of blade and shield who stand in the front rank of every battle.*
 
-The Warrior is the simplest class in the game: no mana, no spells, just weapons, armor and two free
-abilities on cooldowns. Its damage comes from its own swings: it fights with a weapon in each hand
-from level 1, and from 10 each hand may strike twice, so a level-50 Warrior lands four blows every round
-without pressing a button. It has the most HP of any class and wears the heaviest armor, so it rarely
-dies. It is a good first class and a strong past life, because it gives plate training, a huge STR and
-CON bonus, and both Dual Wield and Double Attack.
+The Warrior is the simplest class in the game: no mana, no spells and no abilities at all. It
+fights with a weapon in each hand from level 1, and from 10 each hand may strike twice, so a level-50
+Warrior lands four blows every round without pressing a button. It has the most HP of any class and
+wears the heaviest armor, so it rarely dies, but it has no heal: carry potions. It is a good first
+class and a strong past life, because it gives plate training, a huge STR and CON bonus, and both Dual
+Wield and Double Attack.
 
 ## At a glance
 
@@ -34,40 +34,31 @@ Average race, starting gear only (see the [README](README.md#about-the-numbers))
 | 25 | 715 | 61 | 61 | 34 | 35-38 | 8.4% | 5.3% |
 | 50 | 1920 | 111 | 111 | 59 | 65-68 | 10.9% | 6.9% |
 
-## Abilities and passives
+## Passives
 
-The two abilities are free and are used with `ability <name>` (or `ab <name>`). The passives are
-always on once learned.
+The Warrior has no spells or abilities, only two passives that are always on.
 
-| Level | Ability | Cooldown | Target | Effect |
-|---|---|---|---|---|
-| 1 | **Second Wind** | 15 | self | Heal 35% of max HP |
-| 1 | **Dual Wield** | passive | - | Hold a one-handed weapon (dagger, sword, axe or blunt) in the off hand, in place of a shield. It strikes every round beside your main hand for 65% damage. |
-| 10 | **Double Attack** | passive | - | Each hand may strike a second time every round: 40% chance at 10, rising evenly to 100% at 50 (55% at 20, 70% at 30, 85% at 40) |
-| 20 | **Shield Wall** | 8 | self | +20 armor + 3 per level for 4 rounds (+80 at L20, +170 at L50) |
-
-Every strike rolls its own miss, crit and damage, and each one is shown on its own line. When the
-target dies, the remaining strikes that round carry on to the next enemy in the fight.
+| Level | Name | Type | Cost | Target | Effect |
+|---|---|---|---|---|---|
+| 1 | **Dual Wield** | passive | - | - | Wield a one-handed weapon in your off hand (the shield slot); it strikes beside your main hand every round for 65% damage. |
+| 10 | **Double Attack** | passive | - | - | Each hand may strike a second time every round: a 40% chance when learned, rising evenly to certain at level 50. |
 
 ## How to play
 
-**Levels 1-19.** Open every fight with `kill <target>` and let your two swords work. Second Wind is
-your only heal: save it for when you drop under about half health, and carry potions. Upgrade both
-weapons as you go: `wear` a one-hander and it replaces the main hand, or goes into the off hand if
-the shield slot is empty (`offhand <weapon>` puts it there directly). From 10, Double Attack makes
-fights noticeably shorter.
+**Every level.** `kill <target>` and let your two weapons work. There is nothing to press: your
+job is choosing fights, keeping both weapons upgraded and drinking potions when a fight turns bad.
 
-**Levels 20-50.** Shield Wall is a huge armor boost for four rounds: use it when a boss or a hard
-hitter is about to land its big attack, or on cooldown in long fights. Otherwise just fight. Late
-Warriors finish most same-level fights in 4-6 rounds.
+**Weapons.** `wear` a one-hander and it replaces the main hand, or goes into the off hand if the shield
+slot is empty (`offhand <weapon>` puts it there directly, `remove offhand` takes it off). The main hand
+strikes for full damage, so put your best weapon there. From 10, Double Attack makes fights noticeably
+shorter, and by 50 every hand strikes twice every round.
 
 **Tips**
 - Your damage is all physical, so heavily armored monsters (golems, constructs) take longer.
-- Everything depends on your weapons. Upgrade the main hand first: it strikes for full damage.
 - Two-handed weapons, staffs and bows can't be paired with an off-hand weapon. A two-hander with a
   shield is the defensive choice; two one-handers hit much harder.
-- `remove offhand` takes the off-hand weapon off; `eq` shows it as `offhand:`.
-- With no mana, you never have to drink mana potions. Spend that gold on healing potions.
+- With no mana and no heal, healing potions are your only recovery in a fight. Sleep between hard
+  fights; a past life as a healer gives you heals in every later life.
 
 ## Gear
 
@@ -128,10 +119,7 @@ shield (47, shield, CON/STR). It drops from her gingerbread soldiers.
 
 ## How it performs
 
-The Warrior wins every same-level fight in the simulator. It takes 4-6 rounds a fight up to level 20
-and 4-5 from 25 (7 around 40), finishing with 58-86% HP. It survives about 3 fights in
-a row at level 10, 7-8 at 20 and the simulator's cap of 8 at 30. It beat every world boss in the
-simulator, at the boss's own level and at boss level +3.
+The Warrior wins every same-level fight in the simulator in 3.6-6.0 rounds, finishing with 57-82% HP. It survives about 2, 3 and 7 fights in a row at levels 10, 20 and 30 (the cap is 8). Against the world bosses it beats every one, at the boss's own level and at boss level +3. These figures are from November 2026, after cooldowns were removed.
 
 ## Rebirth
 
@@ -144,5 +132,4 @@ the **highest HP per level** (13), so every later life is as tough as a Warrior:
 it has a Warrior's HP pool. It also gives **plate armor and shield training**, every weapon except
 staffs and wands, and **Dual Wield** (1) and **Double Attack** (10) in every later life, so a
 wizard reborn after it swings twice with each hand. The rogue shares both passives, the bard has Dual
-Wield and the ranger, paladin and dread knight have Double Attack, so a Warrior life is not the only
-way to get them. Second Wind and Shield Wall are free, so they work in any later class.
+Wield and the ranger, paladin and dread knight have Double Attack, at later levels.

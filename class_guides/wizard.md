@@ -3,9 +3,10 @@
 > *Scholars of the arcane who bend fire, frost and lightning to their will.*
 
 The Wizard is the purest damage caster in the game, and the most fragile. It has the lowest HP of any
-class and can only wear cloth, but it kills ordinary monsters faster than anything else and has the
-one of the largest mana pools. Its defense is Mana Shield, a large damage ward that it should keep up in every
-fight. It gets no group attack until Fireball at 16.
+class and can only wear cloth, but it kills ordinary monsters faster than anything else and has one
+of the largest mana pools. Its five attack spells form an even ladder, from Magic Missile to Meteor,
+so every fight plays the same way. Its defense is Mana Shield, a large damage ward it can recast
+whenever it breaks.
 
 ## At a glance
 
@@ -35,43 +36,32 @@ Average race, starting gear only (see the [README](README.md#about-the-numbers))
 With no CON gain at all, a Wizard ends at about half the HP of most casters. CON gear and past lives
 help a lot.
 
-## Spells
+## Spells and abilities
 
-All Wizard magic is spells, cast with `cast <name>`. Cost is shown at the level you learn it and at
-level 50.
+All Wizard magic is spells, cast with `cast <name>`. There are no cooldowns: every attack can be used every round, and each new attack is a modest step up (12%) from the one before it, so **use your newest one**.
 
-| Level | Spell | Cost | Cooldown | Target | Effect |
+| Level | Name | Type | Cost | Target | Effect |
 |---|---|---|---|---|---|
-| 1 | **Magic Missile** | 5 / 30 | - | one foe | Arcane damage 6 + 1.5/level + 0.45 INT (~15 at L1, ~83 at L25, ~154 at L50) |
-| 5 | **Frost Bolt** | 13 / 53 | - | one foe | Frost damage 10 + 2/level + 0.5 INT (~34 at L5, ~104 at L25, ~192 at L50), 30% chance to freeze it for 1 round (15% vs bosses) |
-| 10 | **Mana Shield** | 27 / 83 | 6 | self | A ward that absorbs 17 + 6.79/level + 1.5 WIS damage (~132 at L10, ~279 at L25, ~524 at L50) |
-| 16 | **Fireball** | 60 / 142 | 2 | all foes | Fire damage 15 + 2.2/level + 0.6 INT to every foe (~87 at L16, ~223 at L50) |
-| 26 | **Lightning Lance** | 112 / 189 | 2 | one foe | Lightning damage 30 + 3.6/level + 1.05 INT (~220 at L26, ~382 at L50) |
-| 40 | **Meteor** | 368 / 442 | 5 | all foes | Fire damage 60 + 4/level + 1.3 INT to every foe (~394 at L40, ~473 at L50) |
+| 1 | **Magic Missile** | spell | 5 / 30 | one foe | Arcane damage 6 + 2/level + 0.6 INT (~18 at L1, ~109 at L25, ~204 at L50) |
+| 5 | **Frost Bolt** | spell | 7 / 30 | one foe | Frost damage 6.72 + 2.24/level + 0.67 INT (~37 at L5, ~122 at L25, ~228 at L50) |
+| 10 | **Mana Shield** | spell | 38 / 118 | self | A ward that absorbs 17 + 6.79/level + 1.5 WIS damage until it breaks (~132 at L10, ~279 at L25, ~524 at L50); casting it again restores it |
+| 16 | **Fireball** | spell | 12 / 30 | one foe | Fire damage 7.53 + 2.51/level + 0.75 INT (~94 at L16, ~137 at L25, ~256 at L50) |
+| 26 | **Lightning Lance** | spell | 18 / 30 | one foe | Lightning damage 8.43 + 2.81/level + 0.84 INT (~158 at L26, ~286 at L50) |
+| 40 | **Meteor** | spell | 24 / 30 | one foe | Fire damage 9.44 + 3.15/level + 0.94 INT (~261 at L40, ~321 at L50) |
 
 ## How to play
 
-**Levels 1-9.** Magic Missile, then Frost Bolt from 5 (it hits harder and can freeze). Kill things
-before they reach you. You will take every hit at full force, so rest often and never fight two
-things at once if you can help it.
-
-**Levels 10-15.** Mana Shield changes everything. It absorbs more than your whole HP bar at these
-levels, and its cooldown (6) is short. Cast it **before** every fight and again as soon as it comes back.
-
-**Levels 16-39.** Fireball finally lets you take on groups, every other round. Lightning Lance at 26
-is your best single-target spell: alternate it with Frost Bolt. A normal fight: Mana Shield, Lightning
-Lance, Frost Bolt, Lightning Lance.
-
-**Levels 40-50.** Meteor is the biggest area spell in the game. Against packs, Meteor, then Fireball
-while it cools down. Against a boss: Mana Shield, then Lightning Lance and Frost Bolt, re-shielding on
-every cooldown and drinking potions early rather than late.
+**Every fight.** Cast Mana Shield (from 10) before you start, then your newest attack spell every
+round: Magic Missile, Frost Bolt from 5, Fireball from 16, Lightning Lance from 26, Meteor from 40.
+Recast Mana Shield whenever it breaks; it costs about as much mana as it saves you in HP, but you
+have little HP and a lot of mana.
 
 **Tips**
 - All your damage ignores armor.
-- Spell costs grow fast with level. You have a big mana pool, but long boss fights can drain it: carry
-  mana potions.
-- Wizards have no heal. A past life as a Paladin (Lay on Hands, Avenging Wrath) or a Warrior (Second
-  Wind) gives you free heals and a much bigger HP pool.
+- A full mana pool easily covers a fight. Long boss fights with many shield recasts are where you
+  may need a mana potion.
+- Wizards have no heal. Fight one monster at a time when you can, carry healing potions, and
+  consider a healer past life for later lives.
 
 ## Gear
 
@@ -131,10 +121,7 @@ from her realm.
 
 ## How it performs
 
-The Wizard wins every same-level fight in the simulator in about 3-5 rounds, finishing with 85-100%
-HP thanks to Mana Shield. It lasts about 3 fights in a row at level 10 and nearly 8 at level 30.
-Bosses at their own level are harder: 70-100% for most, about 57% against the High Justice and
-Ussreth. At boss level +3 it wins nearly all of them except Pyraxis (about 73%).
+The Wizard wins every same-level fight in the simulator in 2.1-5.3 rounds, finishing with 61-100% HP. It survives about 7, 8 and 8 fights in a row at levels 10, 20 and 30 (the cap is 8). Against the world bosses it wins 90-100% at the boss's own level and 100% at boss level +3. These figures are from November 2026, after cooldowns were removed.
 
 ## Rebirth
 
@@ -144,5 +131,4 @@ class mastered adds +2% max HP and damage.
 
 A Wizard life brings the **best INT growth in the game** (shared with the Necromancer) and strong
 WIS growth, but only **cloth** training with staff, wand and dagger weapons. Any later class
-casts with a Wizard's INT and WIS: Mana Shield, Lightning Lance and Meteor stay at full strength
-whatever you become.
+casts with a Wizard's INT and WIS: Mana Shield and Meteor stay at full strength whatever you become.

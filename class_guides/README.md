@@ -10,7 +10,7 @@ from level 1 to 50, how it fares against bosses, and what it leaves behind when 
 | [Paladin](paladin.md) | Holy knight, heals and shields itself | STR | INT, WIS | plate + shield | Easy |
 | [Dread Knight](dread_knight.md) | Dark knight, drains life | STR, CON | INT | plate + shield | Easy |
 | [Ranger](ranger.md) | Archer with a wolf companion | STR, DEX | WIS | mail + shield | Easy |
-| [Rogue](rogue.md) | Burst melee, dodges and stuns | STR, DEX | none | leather | Medium |
+| [Rogue](rogue.md) | Dual-wielding melee and dodges | STR, DEX | none | leather | Medium |
 | [Bard](bard.md) | Songs that hurt, heal and buff | even spread | INT, WIS | leather | Hard early, strong late |
 | [Cleric](cleric.md) | Healer who smites | WIS | WIS, INT | mail + shield | Easy |
 | [Druid](druid.md) | Nature caster with roots and heals | WIS | INT, WIS | leather | Medium |
@@ -78,9 +78,11 @@ Bard) split their growth between the two, so their damage and healing pull on di
 
 ### Spells and abilities
 
-- **Spells** cost mana and are cast with `cast <name> [target]`. **Abilities** are free, run on
-  cooldowns, and are used with `ability <name>` (or `ab <name>`). Both are learned automatically
-  at their level; `spells` lists them and `cooldowns` (`cd`) shows what is cooling down.
+- **Spells** cost mana and are cast with `cast <name> [target]`. **Abilities** are free and are
+  used with `ability <name>` (or `ab <name>`). Both are learned automatically at their level, and
+  `spells` lists them. There are **no cooldowns**: mana is the only limit.
+- Each class's attacks form a **ladder**: every new attack is 12% stronger than the one before it at
+  the same level and costs the same, so the newest is always the one to use.
 - Mana cost grows with your level: **cost x (1 + 0.1 x (level - 1))**, so a spell costs 5.9x its
   base cost at level 50.
 - Spell power = **base + per-level x level + scale x stat**. The guides give the formula and
@@ -88,11 +90,12 @@ Bard) split their growth between the two, so their damage and healing pull on di
 - Damage buffs (+% damage) raise weapon hits, spell damage, drains and damage over time, but not
   pets.
 - In a fight, a spell or ability you type is **queued** and used next round, and your auto-attack
-  still lands that round too. If it is still cooling down, it is **held** and fires the moment it
-  is ready.
-- A buff, heal over time or shield with the same name **refreshes** rather than stacking.
-- **Stuns** you cast have half their listed chance against bosses.
-- **Damage shields** absorb damage after armor and last up to 10 rounds or until used up.
+  still lands that round too.
+- **Buffs** last until the end of the fight. Buffs of the same kind don't stack: for each bonus
+  (damage, armor, dodge, lifesteal) only the strongest counts.
+- **Heals over time** run on a timer; casting one again restarts it.
+- **Damage shields** absorb damage after armor and last until used up. A new shield replaces the old.
+- There are **no stuns** and **no area attacks** in the game: every attack hits one foe.
 - **Lifesteal** heals you only from physical damage.
 
 ### Pets (Necromancer, Shaman, Ranger)

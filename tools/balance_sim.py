@@ -2,6 +2,7 @@
 
     python tools/balance_sim.py                 # all three reports
     python tools/balance_sim.py fights          # win% / rounds / HP left vs same-level monsters
+    python tools/balance_sim.py groups          # the same against three monsters at once (boss rooms)
     python tools/balance_sim.py endurance       # consecutive fights survived without resting
     python tools/balance_sim.py bosses          # boss win% at boss level and boss level +3
     python tools/balance_sim.py endgame         # Planes of the Gods vs level-50 characters with 1/6/11 lives
@@ -10,8 +11,8 @@
     options: --n 40 (fights per cell), --levels 1,5,10,20,30,40,50, --seed 3
 
 The simulated player is a human with best-in-slot gear for their level (including boss drops,
-so results are optimistic) among the items its class is trained for, and a simple AI: heal when low, buff early, otherwise use the
-ability with the best expected value. Bosses are fought with 5 healing potions.
+so results are optimistic) among the items its class is trained for, and a simple AI: heal when low, recast a broken shield, cast each buff once, otherwise use
+the ability with the best expected value (there are no cooldowns, so that is the newest attack). Bosses are fought with 5 healing potions.
 Targets the game was tuned to: same-level fights cost ~25-55% HP; endurance 2-6 for most
 classes; bosses mostly beatable at level +3. Endgame (monsters above level 50; a multi-life
 character takes the best stats of every class it has lived): first-tier plane monsters a coin
@@ -86,33 +87,38 @@ def setup(cls, level):
 
 
 def fight(g, p, mid, potions=0, max_rounds=60):
-    """One fight to the death through the real Combat class. Returns (won, rounds, hp_fraction_left)."""
+    """One fight to the death through the real Combat class. `mid` is a monster id or a list of them
+    (a group that all fight at once). Returns (won, rounds, hp_fraction_left)."""
     room = g.room
-    room.monsters = []
-    mon = MonsterInstance(mid)
-    room.monsters.append(mon)
-    for ab in p.usable_abilities():  # summon a pet before the pull, paying its cost
+    mons = [MonsterInstance(m) for m in ([mid] if isinstance(mid, str) else mid)]
+    room.monsters = list(mons)
+    for ab in p.usable_abilities():  # summon a pet before the pull (summons can't be cast in combat)
         summon = [e for e in ab["effects"] if e["type"] == "summon"]
         if summon and not p.pet and p.mana >= p.mana_cost(ab):
             p.mana -= p.mana_cost(ab)
             resolve_self_effect(g, ab, summon[0])
-    g.combat = Combat(g, [mon])
-    pot = next(i for i in iter(lambda: potion_drop(mon.level), None) if i.endswith("healing_potion"))
+    g.combat = Combat(g, mons)
+    pot = next(i for i in iter(lambda: potion_drop(mons[0].level), None) if i.endswith("healing_potion"))
     weapon_avg = lambda: sum(p.weapon_range()) / 2  # noqa: E731
     rounds = 0
     while g.combat and not g.combat.over and rounds < max_rounds:
         rounds += 1
-        if p.has_effect("stun"):
-            g.combat.pass_turn()
-            continue
-        usable = [a for a in p.usable_abilities() if a["id"] not in p.cooldowns
-                  and (a["kind"] != "spell" or p.mana_cost(a) <= p.mana)]
-        heals = [a for a in usable if a["target"] == "self"
-                 and any(e["type"] in ("heal", "heal_pct", "hot") for e in a["effects"])]
+        mon = g.combat.current_target()
+        usable = [a for a in p.usable_abilities() if a["kind"] != "spell" or p.mana_cost(a) <= p.mana]
         active = {e.get("name") for e in p.effects}
+        heals = [a for a in usable if a["target"] == "self"
+                 and any(e["type"] == "heal" or (e["type"] == "hot" and e["name"] not in active)
+                         for e in a["effects"])]
+        shielded = any(e["type"] == "shield" for e in p.effects)
+
+        def improves(e):  # only the strongest buff of each kind counts, so skip ones that add nothing
+            mods = dict(e["mods"])
+            mods["armor"] = mods.get("armor", 0) + mods.pop("armor_lvl", 0) * p.level
+            return e["name"] not in active and any(v > p.buff_mod(k) for k, v in mods.items())
         buffs = [a for a in usable if a["target"] == "self"
-                 and any(e["type"] in ("buff", "shield") for e in a["effects"])
-                 and not any(e.get("name") in active for e in a["effects"] if e["type"] == "buff")]
+                 and any(e["type"] == "buff" and improves(e) for e in a["effects"])]
+        shields = [a for a in usable if a["target"] == "self" and not shielded
+                   and any(e["type"] == "shield" for e in a["effects"])]
         offense = [a for a in usable if a["target"] != "self"]
 
         def value(a):
@@ -124,8 +130,6 @@ def fight(g, p, mid, potions=0, max_rounds=60):
                     sc += p.power(e)
                 elif e["type"] == "dot" and not any(x.get("name") == e["name"] for x in mon.effects):
                     sc += p.power(e) * e["turns"] * 0.6
-                elif e["type"] == "stun" and not mon.is_stunned():
-                    sc += weapon_avg() * 0.8
                 elif e["type"] == "weaken" and not any(x.get("name") == e["name"] for x in mon.effects):
                     sc += weapon_avg() * 0.8
             return sc
@@ -135,8 +139,11 @@ def fight(g, p, mid, potions=0, max_rounds=60):
             p.heal(ITEMS[pot]["heal"])
             g.combat.pass_turn(swing=True)
         elif p.hp < p.max_hp * 0.4 and heals:
-            g.combat.player_ability(max(heals, key=lambda a: a["level"]), None)
-        elif buffs and rounds <= 2:
+            g.combat.player_ability(max(heals, key=lambda a: sum(p.power(e) for e in a["effects"]
+                                                                 if e["type"] in ("heal", "hot"))), None)
+        elif shields and (rounds <= 1 or p.hp < p.max_hp * 0.6):  # recast a shield once it breaks
+            g.combat.player_ability(max(shields, key=lambda a: p.power(a["effects"][0])), None)
+        elif buffs:  # buffs last the whole fight: cast each once
             g.combat.player_ability(max(buffs, key=lambda a: a["level"]), None)
         else:
             best = max(offense, key=value) if offense else None
@@ -144,7 +151,7 @@ def fight(g, p, mid, potions=0, max_rounds=60):
                 g.combat.player_ability(best, mon)
             else:
                 g.combat.player_attack(mon)
-    won = mon.hp <= 0
+    won = all(m.hp <= 0 for m in mons)
     return won, rounds, (max(0, p.hp) / p.max_hp if won else 0.0)
 
 
@@ -205,6 +212,25 @@ def report_bosses(n):
                 rates.append(100 * wins / n)
             row.append("{:>3.0f}/{:<3.0f}".format(*rates))
         print("{:<30}".format(b["name"][:29]) + " ".join("{:>9}".format(x) for x in row))
+
+
+def report_groups(levels, n):
+    """Three same-level monsters at once, as in a boss room where every monster attacks."""
+    print("win% / avg rounds / avg HP% left, vs three same-level monsters at once (with 3 healing potions)")
+    print("lvl  " + " ".join("{:>13}".format(c[:13]) for c in CLASS_ORDER))
+    for L in levels:
+        mids = nearby_monsters(L)
+        row = []
+        for cls in CLASS_ORDER:
+            res = []
+            for _ in range(n):
+                g, p = setup(cls, L)
+                res.append(fight(g, p, [random.choice(mids) for _ in range(3)], potions=3))
+            wins = [r for r in res if r[0]]
+            row.append("{:>3.0f}%{:>4.1f}r{:>3.0f}%".format(
+                100 * len(wins) / n, sum(r[1] for r in res) / n,
+                100 * sum(r[2] for r in wins) / max(1, len(wins))))
+        print("{:>3}  ".format(L) + " ".join("{:>13}".format(x) for x in row))
 
 
 ENDGAME_LIVES = (1, 6, 11)
@@ -317,7 +343,7 @@ def report_gear(levels):
 def main():
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("report", nargs="?", default="all",
-                    choices=["all", "fights", "endurance", "bosses", "endgame", "unlock", "gear"])
+                    choices=["all", "fights", "groups", "endurance", "bosses", "endgame", "unlock", "gear"])
     ap.add_argument("--n", type=int, default=30, help="simulated fights per table cell")
     ap.add_argument("--levels", default=",".join(map(str, DEFAULT_LEVELS)), help="comma-separated levels")
     ap.add_argument("--seed", type=int, default=3)
@@ -326,6 +352,9 @@ def main():
     levels = [int(x) for x in opts.levels.split(",")]
     if opts.report in ("all", "fights"):
         report_fights(levels, opts.n)
+        print()
+    if opts.report in ("all", "groups"):
+        report_groups(levels, opts.n)
         print()
     if opts.report in ("all", "endurance"):
         report_endurance(levels, opts.n)

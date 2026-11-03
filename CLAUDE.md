@@ -67,7 +67,7 @@ data/rooms/   one module per region, each with a ROOMS dict, merged in __init__ 
 - A daemon thread reads stdin into a queue (`ui.start_input`). The main loop waits on that queue
   until the next tick: either a typed line arrives (`handle`) or the tick fires (`game_tick`).
 - A tick is a combat round (`Combat.round`) when fighting, otherwise `world_tick`: awake regen
-  (2% HP and 3% mana) or sleep (10%), effect and cooldown timers, respawns.
+  (2% HP and 3% mana) or sleep (10%), heal/damage-over-time timers, respawns.
 - **Never call `input()`.** It races the reader thread. Use `game.ask()` / `ui.read_line()`.
   The clock pauses during `ask()` prompts (menus, quit and rebirth confirmations).
 - Moving does **not** advance time. Only ticks do.
@@ -85,8 +85,7 @@ data/rooms/   one module per region, each with a ROOMS dict, merged in __init__ 
   (spell/ability/potion/flee), and the next `round()` runs it. Queued abilities are re-validated
   when they fire (`ability_round`).
 - **The auto-attack lands every round alongside the action** (the user's choice): `player_ability`
-  ends with `Combat.swing()`, and potions and failed flees call `pass_turn(swing=True)`. Only a
-  stun (`pass_turn()`) skips the swing. Monster HP was raised by `world.MONSTER_HP_MULT` (1.3)
+  ends with `Combat.swing()`, and potions and failed flees call `pass_turn(swing=True)`. Monster HP was raised by `world.MONSTER_HP_MULT` (1.3)
   to keep fight lengths and the endgame where they were.
 - **Passives** (`data.abilities.PASSIVES`, read with `Character.has_passive`): Dual Wield (warrior 1,
   rogue and bard 10) lets a `DUAL_KINDS` one-hander sit in the shield slot (`Character.offhand_weapon`,
@@ -96,19 +95,25 @@ data/rooms/   one module per region, each with a ROOMS dict, merged in __init__ 
   four strikes, one line each (the user's choice), moving to the next enemy if the target dies. A
   character learns each passive at the lowest level any lived class gives (`passive_level`), so
   rebirth order still never matters. Warriors start with a rusty shortsword in each hand (`wear_kit`). The
-  warrior's only abilities are Second Wind (1) and Shield Wall (20), by the user's design; its old
-  abilities were removed.
-- A second slot, `Combat.held`, keeps one ability that was used while still cooling down
-  (`use_ability` calls `Combat.hold` instead of refusing). Each `round()` first tries
-  `fire_held()`: once off cooldown it fires and takes the round, leaving `queued` for the next
-  round; if `ability_error` fails then (usually mana) it is dropped. Stuns delay both slots.
+  warrior has no abilities at all (a pure auto-attack class, by the user's design).
+- **No cooldowns, stuns or area attacks** (the user's design, 2026-11-03). Every spell and ability
+  can be used every round; mana is the only limit. Every ability targets "enemy" or "self".
+  Each class's attacks are a ladder built with `data.abilities.rung` (each rung `STEP` = 12%
+  stronger, same cost), so the newest is always best; there is no burst spell to save. Monster stun
+  specials became heavy hits (`big`, 1.6x). The warrior has no abilities; the paladin's heal is Holy
+  Light (5). Second Wind, Lay on Hands, Avenging Wrath, Ancestral Avatar and Lullaby were removed;
+  area and stun spells were turned into single-target rungs under their old names.
+- Effect lifetimes: buffs have no `turns` and last until the fight ends (`Game.clear_fight_effects`,
+  called from `end_combat`, a successful flee and death; a buff cast outside a fight waits for the
+  next one). Shields have no `turns` either and last until used up; a new shield replaces any other.
+  Heals and damage over time keep `turns`, and recasting restarts them (`add_effect` replaces by
+  name). Monster weaken effects have no `turns` and last the fight. **Buffs don't stack by kind**:
+  `Character.buff_mod` takes the max of each mod over active buffs (the best-of rebirth rule applied to
+  buffs). Summons are refused in combat (`ability_error`).
 - `end_round`: player effects tick, pet attacks, aggressive room monsters join, monsters act,
-  monster effects tick, mana regen, cooldowns, world respawn tick, then death/victory checks.
-- Effect timing gotcha: effects the player applies to themselves are created with `fresh: True`
-  so the end-of-round tick doesn't eat a turn. Monster-applied effects must **not** be fresh.
-  Player stuns are applied during the monster phase, after the player tick, so they last
-  into the next round. Monster stuns are consumed when the monster tries to act.
-  Cooldowns are set to `cooldown + 1` in combat for the same reason.
+  monster effects tick, mana regen, world respawn tick, then death/victory checks.
+- Effect timing gotcha: timed effects the player applies to themselves are created with
+  `fresh: True` so the end-of-round tick doesn't eat a turn. Monster-applied effects must **not** be fresh.
 - `level_gap_mult` scales damage both ways by level difference. Monsters below the player
   also miss more.
 
@@ -168,7 +173,7 @@ data/rooms/   one module per region, each with a ROOMS dict, merged in __init__ 
 ### Monsters
 Templates only set multipliers. Real HP, damage and armor come from level in `MonsterInstance`
 (`(20 + 15L)` HP times `MONSTER_HP_MULT`, etc.). To make a monster tougher, change its multipliers, not raw numbers.
-Specials: big / dot / stun / drain / heal. Bosses respawn after 120 ticks, others after 30.
+Specials: big / dot / drain / heal (no stuns). Bosses respawn after 120 ticks, others after 30.
 Monsters above level 50 (the Planes of the Gods) use larger multipliers (hp 3.5-5.6, dmg 2.6-3.4
 for regulars; champions 4.85-6.6 / 2.3-2.9; elemental lords 6.4-10.5 / 2.5-3.25; Lord Trepth
 7.4 / 2.35), because multi-life characters take the best stats of every class they have lived.
@@ -265,6 +270,16 @@ Attack replaced Slam, Battle Cry, Cleave, Rampage and Avatar of War, which every
 used) made 11-life characters weaker against the lords and Trepth, so Rekkn, Ulmathra and Trepth lost 8%
 damage and Nerevos 12%: lords now ~85-96% with 11 lives, Trepth ~66% (worst class 50%). With 6 lives
 Zephyrion (~70%) and Rekkn (~35%) got easier, and one-life characters gained 10-20 points on first-tier
-plane monsters. The user asked for Trepth to need a full every-class character with
+plane monsters.
+
+No-cooldown rework (2026-11-03: no cooldowns, stuns or area attacks; attack ladders; whole-fight buffs
+that don't stack by kind): same-level fights 2-8 rounds with 57-100% HP left, world bosses 60-100% at the
+boss's own level (Pyraxis vs the druid is the hardest) and 95-100% at +3. Three same-level monsters at
+once (`balance_sim.py groups`) were already very hard with area spells and stay about as hard. In the
+planes, **6 and 11 lives now score almost the same**: the old gap came mostly from the paladin's free
+Lay on Hands and Avenging Wrath and the dread knight's free burst, which are gone. Sustain from mana-only
+heals and shields lifted the planes, so the elemental lords got +22% damage and Lord Trepth +20%:
+lords ~86-94% with 6 or 11 lives, Trepth ~64% (worst class 50%), champions 100% with 6. Trepth's gate
+still requires every class mastered. One-life characters are 0% against the lords. The user asked for Trepth to need a full every-class character with
 good gear. Six lives already hold most of the best stats, so the 6-to-11 gap comes mainly from the
 mastery bonus (+12% vs +22%) and the remaining classes' growth (the rogue's and ranger's DEX).

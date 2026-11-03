@@ -2,10 +2,10 @@
 
 > *Keepers of the old groves who call upon root, thorn, moon and storm.*
 
-The Druid is an INT and WIS caster in leather who mixes damage, healing and control. It has a cheap nuke from
-level 1, a heal that keeps working after you cast it, roots that can hold a foe for two rounds, a moon
-spell that burns and lingers, and a group attack from 32. It is one of the fastest killers in the
-mid-levels and very steady overall.
+The Druid is an INT and WIS caster in leather who mixes damage and healing. Its five attack spells
+form an even ladder from Thornlash to Wrath of the Wild (which also heals it), Moonfire adds a
+lingering burn, Regrowth heals now and for 10 rounds after, and Barkskin hardens it for the whole
+fight. It is one of the fastest killers in the mid-levels and very steady overall.
 
 ## At a glance
 
@@ -34,40 +34,30 @@ Average race, starting gear only (see the [README](README.md#about-the-numbers))
 
 The Druid's INT powers its damage spells; its WIS powers its heals and its mana.
 
-## Spells
+## Spells and abilities
 
-All Druid magic is spells, cast with `cast <name>`. Cost is shown at the level you learn it and at
-level 50.
+All Druid magic is spells, cast with `cast <name>`. There are no cooldowns: every attack can be used every round, and each new attack is a modest step up (12%) from the one before it, so **use your newest one**.
 
-| Level | Spell | Cost | Cooldown | Target | Effect |
+| Level | Name | Type | Cost | Target | Effect |
 |---|---|---|---|---|---|
-| 1 | **Thornlash** | 5 / 30 | - | one foe | Nature damage 7 + 1.6/level + 0.48 INT (~14 at L1, ~64 at L25, ~116 at L50) |
-| 3 | **Regrowth** | 8 / 41 | - | self | Heal 10 + 2/level + 0.5 WIS now, then 4 + 1.2/level + 0.25 WIS per round for 5 rounds (~91 + 49/round at L25) |
-| 8 | **Entangling Roots** | 17 / 59 | 4 | one foe | Small nature damage, and a 75% chance to hold it for 2 rounds (about 38% vs bosses) |
-| 15 | **Moonfire** | 43 / 106 | - | one foe | Arcane damage 16 + 2.4/level + 0.7 INT (~70 at L15, ~178 at L50), then 5 + 1/level + 0.25 INT per round for 4 rounds |
-| 22 | **Barkskin** | 50 / 94 | 10 | self | +15 + 2.5/level armor for 6 rounds (+70 at L22, +140 at L50), and a small heal every round |
-| 32 | **Starfall** | 184 / 266 | 3 | all foes | Arcane damage 34 + 3.2/level + 0.95 INT to every foe (~177 at L32, ~251 at L50) |
-| 44 | **Wrath of the Wild** | 318 / 354 | 5 | one foe | Nature damage 55 + 4.2/level + 1.25 INT (~308 at L44, ~341 at L50), and heals you for 20% of your max HP |
+| 1 | **Thornlash** | spell | 5 / 30 | one foe | Nature damage 7 + 2.13/level + 0.64 INT (~16 at L1, ~83 at L25, ~152 at L50) |
+| 3 | **Regrowth** | spell | 8 / 41 | self | Heal 10 + 2/level + 0.5 WIS (~25 at L3, ~91 at L25, ~166 at L50), then 3 + 0.7/level + 0.15 WIS per round for 10 rounds (~7 at L3, ~29 at L25, ~54 at L50 per round); casting it again restarts the timer |
+| 8 | **Entangling Roots** | spell | 8 / 30 | one foe | Nature damage 7.84 + 2.39/level + 0.72 INT (~40 at L8, ~93 at L25, ~171 at L50) |
+| 15 | **Moonfire** | spell | 12 / 30 | one foe | Arcane damage 8.78 + 2.67/level + 0.8 INT (~69 at L15, ~104 at L25, ~191 at L50); Arcane damage over time: 5 + 1/level + 0.25 INT per round for 4 rounds (~26 at L15, ~39 at L25, ~70 at L50 per round) |
+| 22 | **Barkskin** | spell | 50 / 94 | self | +9 armor + 1.5/level until the end of the fight; then 3 + 0.5/level + 0.1 WIS per round for 10 rounds (~19 at L22, ~21 at L25, ~39 at L50 per round); casting it again restarts the timer |
+| 32 | **Starfall** | spell | 20 / 30 | one foe | Arcane damage 9.83 + 2.99/level + 0.9 INT (~144 at L32, ~214 at L50) |
+| 44 | **Wrath of the Wild** | spell | 26 / 30 | one foe | Nature drain 11.01 + 3.35/level + 1.01 INT (~213 at L44, ~240 at L50) that heals you for 20% of what it deals |
 
 ## How to play
 
-**Levels 1-14.** Thornlash is cheap and hits well; it is your attack. Regrowth heals a bit now and more
-over five rounds, so cast it early in a fight that is going to hurt. Entangling Roots at 8 holds a foe
-for two rounds: root the dangerous one, Thornlash it, and root again when the cooldown is up.
-
-**Levels 15-31.** Moonfire hits harder than Thornlash and leaves a burn on the target; open with it,
-then Thornlash while it burns, and reapply when it runs out. Barkskin at 22 is a big armor boost with a
-little healing for six rounds: cast it before tough fights.
-
-**Levels 32-50.** Starfall is your group attack, every three rounds. Wrath of the Wild at 44 is a huge
-hit that also heals 20% of your health, so it doubles as an emergency heal. Against a boss: Barkskin,
-Moonfire, Wrath of the Wild on cooldown, Thornlash in between, Roots when you need a breather, Regrowth
-to top up.
+**Every fight.** Barkskin (from 22) once, then your newest attack spell every round: Thornlash,
+Entangling Roots from 8, Moonfire from 15, Starfall from 32, Wrath of the Wild from 44 (which heals you
+for a fifth of what it deals). Cast Regrowth when you drop under about half health; its heal over
+time runs for 10 rounds and recasting it restarts the timer.
 
 **Tips**
-- All your damage ignores armor.
-- The roots are your safety net. A rooted monster does nothing for two rounds.
-- Leather and no shield makes you softer than a Cleric or Shaman, so keep Barkskin up in long fights.
+- Your spells ignore armor.
+- Mana is the only limit on your healing.
 
 ## Gear
 
@@ -125,11 +115,7 @@ drops the rolling pin; the rest come from her realm.
 
 ## How it performs
 
-The Druid wins every same-level fight in the simulator, and fast: about 3 rounds at levels 15-20 and
-under 5 later, with 57-90% HP left. It lasts about 4 fights in a row at level 10 and 6 at level 30.
-It beats nearly every world boss at the boss's own level (about 87% against Ussreth and Pyraxis,
-93-97% against Ithilmir, Orrin Gearwhistle and the High Justice), and all except Pyraxis (about 83%)
-at boss level +3.
+The Druid wins every same-level fight in the simulator in 2.4-5.5 rounds, finishing with 62-84% HP. It survives about 5, 8 and 8 fights in a row at levels 10, 20 and 30 (the cap is 8). Against the world bosses it wins 60-100% at the boss's own level and 95-100% at boss level +3. These figures are from November 2026, after cooldowns were removed.
 
 ## Rebirth
 
@@ -137,6 +123,6 @@ In every later life, each of your stats, your HP per level and your mana per lev
 any class you have lived would have at your current level (see the [README](README.md#rebirth)), and each
 class mastered adds +2% max HP and damage.
 
-A Druid life brings strong WIS growth (shared with the Cleric and Shaman), plus **leather** training and staff, blunt
-and dagger weapons. It adds little in stats once you have a Cleric life, but Entangling Roots and Wrath
-of the Wild are strong in any later class.
+A Druid life brings strong WIS growth (shared with the Cleric and Shaman), plus **leather** training
+and staff, blunt and dagger weapons. It adds little in stats once you have a Cleric life, but Regrowth
+and Barkskin are good tools in any later class.

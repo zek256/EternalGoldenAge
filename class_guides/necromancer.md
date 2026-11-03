@@ -3,9 +3,9 @@
 > *Forbidden scholars of death who raise the fallen to fight at their side.*
 
 The Necromancer is an INT caster in cloth who never fights alone. From level 4 a skeleton fights
-beside it and takes hits for it, its main attack heals it, its disease ignores armor, and at 38 it can
-raise a bone colossus with more HP than many players. It is the strongest solo class in the game, by
-design: a good class to learn on despite its cloth armor.
+beside it and takes hits for it, its attacks include drains that heal it, its disease ignores armor,
+and at 38 it can raise a bone colossus with more HP than many players. Pets can only be raised out of
+combat, so raise one before every fight. It is the strongest solo class in the game, by design.
 
 ## At a glance
 
@@ -32,41 +32,32 @@ Average race, starting gear only (see the [README](README.md#about-the-numbers))
 | 25 | 385 | 407 | 89 | 35 | 37 | 17-20 |
 | 50 | 1010 | 925 | 164 | 60 | 62 | 29-32 |
 
-## Spells
+## Spells and abilities
 
-All Necromancer magic is spells, cast with `cast <name>`. Cost is shown at the level you learn it and
-at level 50.
+All Necromancer magic is spells, cast with `cast <name>`. There are no cooldowns: every attack can be used every round, and each new attack is a modest step up (12%) from the one before it, so **use your newest one**.
 
-| Level | Spell | Cost | Cooldown | Target | Effect |
+| Level | Name | Type | Cost | Target | Effect |
 |---|---|---|---|---|---|
-| 1 | **Lifetap** | 5 / 30 | - | one foe | Drain 6 + 1.4/level + 0.4 INT (~14 at L1, ~76 at L25, ~141 at L50); heals you for 35% of what it deals |
-| 4 | **Raise Skeleton** | 23 / 106 | 10 | self | Summon a skeleton (~57 HP, 7-12 damage at L4; ~214 HP, 28-44 at L25; ~402 HP, 54-83 at L50) |
-| 10 | **Plague** | 23 / 71 | - | one foe | Disease damage 5 + 1.1/level + 0.25 INT per round for 5 rounds (~27 at L10, ~101 at L50) |
-| 18 | **Bone Spear** | 59 / 130 | - | one foe | Shadow damage 18 + 2.8/level + 0.8 INT (~122 at L18, ~289 at L50) |
-| 28 | **Siphon Soul** | 126 / 201 | 3 | one foe | Drain 25 + 3/level + 0.9 INT (~197 at L28, ~322 at L50); heals you for 60% of what it deals |
-| 38 | **Raise Bone Colossus** | 258 / 324 | 15 | self | Summon a bone colossus (~656 HP, 75-114 damage at L38; ~842 HP, 97-147 at L50). It replaces your skeleton |
-| 46 | **Wail of the Damned** | 330 / 354 | 5 | all foes | Shadow damage 40 + 3.2/level + 1 INT to every foe (~339 at L46, ~364 at L50); every foe deals 30% less damage for 4 rounds |
+| 1 | **Lifetap** | spell | 5 / 30 | one foe | Shadow drain 6 + 1.86/level + 0.53 INT (~16 at L1, ~99 at L25, ~185 at L50) that heals you for 25% of what it deals |
+| 4 | **Raise Skeleton** | spell | 23 / 106 | self | Summon a rattling skeleton (~214 HP, 28-44 damage at L25); only out of combat, and it stays until it dies |
+| 10 | **Plague** | spell | 23 / 71 | one foe | Disease damage over time: 5 + 1.1/level + 0.25 INT per round for 5 rounds (~27 at L10, ~54 at L25, ~101 at L50 per round) |
+| 18 | **Bone Spear** | spell | 14 / 30 | one foe | Shadow damage 6.72 + 2.08/level + 0.59 INT (~84 at L18, ~111 at L25, ~207 at L50) |
+| 28 | **Siphon Soul** | spell | 18 / 30 | one foe | Shadow drain 7.53 + 2.33/level + 0.66 INT (~137 at L28, ~232 at L50) that heals you for 25% of what it deals |
+| 38 | **Raise Bone Colossus** | spell | 258 / 324 | self | Summon a towering bone colossus (~656 HP, 75-114 damage at L38); only out of combat, and it stays until it dies |
+| 46 | **Wail of the Damned** | spell | 28 / 30 | one foe | Shadow damage 8.43 + 2.61/level + 0.74 INT (~240 at L46, ~260 at L50); the foe deals 20% less damage for the rest of the fight |
 
 ## How to play
 
-**Levels 1-9.** Lifetap is your attack and your heal at once. From 4, raise a skeleton before every
-outing: it attacks every round and takes about a quarter of the enemies' normal attacks. Its stats are
-fixed when it is raised, so raise a new one every few levels, and right away when it dies.
+**Before every fight.** Raise your pet (the Bone Colossus from 38, a skeleton before that). You can't
+raise one in combat, so if it dies mid-fight, finish the fight and raise another.
 
-**Levels 10-27.** Put Plague on anything that will live more than a couple of rounds (it ignores
-armor), then Lifetap. Bone Spear at 18 is your hardest single hit: use it to finish things quickly. A
-normal fight: skeleton up, Plague, Bone Spear, Lifetap as needed for health.
-
-**Levels 28-50.** Siphon Soul is a big drain every three rounds that heals for 60% of what it deals;
-it is both your damage and your healing. At 38, raise the Bone Colossus instead of the skeleton: it
-has three times the HP and hits much harder. Wail of the Damned at 46 is your area attack and also
-weakens every foe. Against a boss: Colossus, Plague, Siphon Soul on cooldown, Bone Spear in between.
+**Every fight.** Plague (from 10) once, then your newest attack spell every round: Lifetap, Bone
+Spear from 18, Siphon Soul from 28, Wail of the Damned from 46 (which also weakens the foe for the
+rest of the fight). Lifetap and Siphon Soul heal you for a quarter of what they deal.
 
 **Tips**
-- With a pet out, fewer attacks reach you. Keep it alive and you can fight things a cloth wearer
-  shouldn't.
-- Drains, Plague and Bone Spear all ignore armor; your pet's attacks don't.
-- You have no direct heal. Lifetap and Siphon Soul are it, so keep hitting things when you are hurt.
+- Your pet draws about a quarter of the attacks aimed at you.
+- Shadow and disease damage ignore armor.
 
 ## Gear
 
@@ -125,10 +116,7 @@ from her realm.
 
 ## How it performs
 
-The Necromancer is the strongest solo class. It wins every same-level fight in the simulator in about
-3-4 rounds with 67-97% HP left, and it has the best staying power at low levels (about 7 fights in a
-row at level 10, 7 at level 30). It beat every world boss at the boss's own level except Ghaldrek
-(93%) and a few at 97%, and all of them at boss level +3.
+The Necromancer wins every same-level fight in the simulator in 2.4-4.7 rounds, finishing with 66-97% HP. It survives about 7, 4 and 8 fights in a row at levels 10, 20 and 30 (the cap is 8). Against the world bosses it wins 95-100% at the boss's own level and 100% at boss level +3. These figures are from November 2026, after cooldowns were removed.
 
 ## Rebirth
 
@@ -139,4 +127,4 @@ class mastered adds +2% max HP and damage.
 A Necromancer life brings the **best INT growth in the game** (shared with the Wizard) and the
 **most mana per level**, but only **cloth** training with staff, wand and dagger weapons. Raise Skeleton
 and Raise Bone Colossus give any later class a pet at full Necromancer strength, since you keep the INT
-they scale with, and Siphon Soul is an excellent self-heal.
+they scale with.

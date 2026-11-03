@@ -10,7 +10,6 @@ import mapview
 import ui
 from character import MASTERY_BONUS, MAX_LEVEL, MAX_TIER, TIER_BONUS, Character
 from combat import AGGRO_GAP, Combat, con_color, resolve_self_effect
-from data.abilities import ABILITIES
 from data.classes import CLASS_ORDER, CLASSES, STATS
 from data.items import ITEMS, SLOTS
 from data.monsters import MONSTERS
@@ -37,11 +36,9 @@ HELP = [
     ("Combat", [("attack / k <target>", "start a fight (or switch targets); you then auto-attack every round"),
                 ("cast <spell> [target]", "cast a spell; in a fight it goes off next round, alongside your attack"),
                 ("ability / ab <name> [target]", "use a class ability (e.g. 'ab backstab'), also queued for next round"),
-                ("(on cooldown)", "in a fight, a cooling spell or ability is held and used the moment it's ready"),
                 ("consider / con <target>", "judge how dangerous a monster is"),
                 ("flee [direction]", "try to escape from combat"),
-                ("spells / abilities", "list your spells and abilities"),
-                ("cooldowns / cd", "show which spells and abilities are cooling down and for how long")]),
+                ("spells / abilities", "list your spells and abilities")]),
     ("Character", [("stats / score", "full character sheet"),
                    ("level", "level, experience and upcoming abilities"),
                    ("rebirth", "at level 50, be reborn as a new class"),
@@ -238,7 +235,7 @@ class Game:
         else:
             self.world_tick()
 
-    SLEEP_OK = {"wake", "sleep", "stats", "level", "inventory", "equipment", "spells", "cooldowns", "quests",
+    SLEEP_OK = {"wake", "sleep", "stats", "level", "inventory", "equipment", "spells", "quests",
                 "help", "save", "load", "quit", "pet", "examine", "find", "alias", "unalias", "map", "automap"}
 
     def handle(self, line):
@@ -284,7 +281,6 @@ class Game:
         "track": "find", "where": "find", "route": "find", "path": "find",
         "rest": "sleep", "stand": "wake", "con": "consider", "h": "help", "?": "help", "q": "quit", "exit": "quit",
         "abilities": "spells", "skills": "spells", "spellbook": "spells",
-        "cd": "cooldowns", "cds": "cooldowns", "cooldown": "cooldowns", "timers": "cooldowns",
     }
     NO_COMBAT = {"sleep", "save", "load", "talk", "buy", "sell", "list", "get", "drop",
                  "wear", "offhand", "remove", "rebirth", "bank", "deposit", "withdraw", "enter"}
@@ -511,7 +507,7 @@ class Game:
             self.combat.status_line()
 
     def world_tick(self):
-        """One tick of time outside combat: regeneration or sleep, effect timers, cooldowns, respawns."""
+        """One tick of time outside combat: regeneration or sleep, effect timers, respawns."""
         p = self.player
         rm = p.perk("regen_mult", 1.0)
         if self.sleeping:
@@ -527,6 +523,9 @@ class Game:
         for e in p.effects:
             if e.get("fresh"):
                 e["fresh"] = False
+            if "turns" not in e:  # buffs wait for the next fight, shields until used up
+                keep.append(e)
+                continue
             if e["type"] == "dot":
                 p.hp = max(1, p.hp - e["value"])
             elif e["type"] == "hot":
@@ -535,7 +534,6 @@ class Game:
             if e["turns"] > 0:
                 keep.append(e)
         p.effects = keep
-        p.tick_cooldowns()
         if self.sleeping:
             ui.say("You sleep... (+{} HP, +{} mana)".format(hp_gain, p.mana - mana_before), "blue")
             if p.hp >= p.max_hp and p.mana >= p.max_mana:
@@ -562,7 +560,17 @@ class Game:
 
     def end_combat(self):
         self.combat = None
+        self.clear_fight_effects()
         self.check_aggro()
+
+    def clear_fight_effects(self):
+        """Buffs last until the end of a fight (won, fled or lost)."""
+        p = self.player
+        if any(e["type"] == "buff" for e in p.effects):
+            ui.say("Your {} fade{} as the fight ends.".format(
+                ", ".join(e["name"] for e in p.effects if e["type"] == "buff"),
+                "" if sum(e["type"] == "buff" for e in p.effects) > 1 else "s"), "grey")
+        p.effects = [e for e in p.effects if e["type"] != "buff"]
 
     def cmd_attack(self, args):
         if self.combat:
@@ -612,23 +620,17 @@ class Game:
             ui.say("You know no {} by that name. Type 'spells' to see what you know.".format(kind), "grey")
             return
         err = self.ability_error(ab)
-        cooling = ab["id"] in p.cooldowns and ab["level"] <= p.level
-        if err and not (self.combat and cooling):
+        if err:
             ui.say(err, "grey")
             return
         if self.combat:
             if ab["target"] == "enemy" and rest and not self.combat.find_target(rest):
                 ui.say("You don't see that here.", "grey")
                 return
-            if cooling:  # held until ready; mana is checked when it fires
-                self.combat.hold(ab, rest)
-                return
             self.combat.queue("You prepare {}.".format(ab["name"]), lambda: self.ability_round(ab, rest))
             return
         if ab["target"] == "self":
             p.mana -= p.mana_cost(ab) if ab["kind"] == "spell" else 0
-            if ab["cooldown"]:
-                p.cooldowns[ab["id"]] = ab["cooldown"]
             ui.say(ab["msg"].format(t="yourself"), "bmagenta")
             for eff in ab["effects"]:
                 resolve_self_effect(self, ab, eff)
@@ -647,8 +649,8 @@ class Game:
         p = self.player
         if ab["level"] > p.level:
             return "{} will return to you at level {}.".format(ab["name"], ab["level"])
-        if ab["id"] in p.cooldowns:
-            return "{} is not ready yet ({} rounds).".format(ab["name"], p.cooldowns[ab["id"]])
+        if self.combat and any(e["type"] == "summon" for e in ab["effects"]):
+            return "There is no time to call a servant in the middle of a fight."
         cost = p.mana_cost(ab) if ab["kind"] == "spell" else 0
         if cost > p.mana:
             return "You don't have enough mana for {} ({} needed).".format(ab["name"], cost)
@@ -692,6 +694,7 @@ class Game:
         if random.random() < chance:
             ui.say("You break away and flee {}!".format(DIRECTIONS[d]), "byellow")
             self.combat = None
+            self.clear_fight_effects()
             self.go(exits[d], automap=False)  # keep the escape short; 'map' is still there
         else:
             ui.say("You try to flee, but your foes cut off your escape!", "bred")
@@ -725,7 +728,6 @@ class Game:
         p.xp -= lost_xp
         p.deaths += 1
         p.effects = []
-        p.cooldowns = {}
         p.hp = max(1, p.max_hp // 2)
         p.mana = p.max_mana // 2
         if lost_xp:
@@ -820,7 +822,9 @@ class Game:
         if p.pet:
             footer.append(("Pet", ui.c(p.pet.name, "white")))
         if p.effects:
-            footer.append(("Effects", ui.c(", ".join("{} ({})".format(e["name"], e["turns"]) for e in p.effects), "white")))
+            footer.append(("Effects", ui.c(", ".join("{} ({})".format(
+                e["name"], e["turns"] if "turns" in e else "fight" if e["type"] == "buff" else e.get("value", ""))
+                for e in p.effects), "white")))
         for label, text in footer:
             head = " {}: ".format(ui.c(label.ljust(8), "cyan"))
             room = inner - 12
@@ -859,30 +863,12 @@ class Game:
                 cost = "{} mana".format(p.mana_cost(a))
             else:
                 cost = "ability"
-            if a["cooldown"]:
-                cost += ", {}r cd".format(a["cooldown"])
-            if a["id"] in p.cooldowns:
-                cost += ui.c(" (ready in {})".format(p.cooldowns[a["id"]]), "red")
             line = "  L{:>2} {:<27} {:<20} {}".format(a["level"], a["name"] + origin, cost, a["desc"])
             ui.out(ui.c(line, "bwhite") if usable else ui.c(line + " (locked)", "grey"))
         for pid, pa, lvl in p.known_passives():
             line = "  L{:>2} {:<27} {:<20} {}".format(lvl, pa["name"], "passive", pa["desc"])
             ui.out(ui.c(line, "bwhite") if p.has_passive(pid) else ui.c(line + " (locked)", "grey"))
         ui.out(ui.c("Use spells with 'cast <name> [target]' and abilities with 'ability <name> [target]'.", "grey"))
-
-    def cmd_cooldowns(self, args):
-        p = self.player
-        cooling = sorted(((ABILITIES[aid], n) for aid, n in p.cooldowns.items() if aid in ABILITIES),
-                         key=lambda x: x[1])
-        if not cooling:
-            ui.say("All your spells and abilities are ready.", "green")
-            return
-        held = self.combat.held[0]["id"] if self.combat and self.combat.held else None
-        ui.rule("Cooldowns")
-        for ab, n in cooling:
-            line = "  {:<24} {:>3} round{} (~{}s)".format(ab["name"], n, " " if n == 1 else "s",
-                                                         int(round(n * TICK_SECONDS)))
-            ui.out(ui.c(line, "bwhite") + (ui.c("  held, fires when ready", "cyan") if ab["id"] == held else ""))
 
     def cmd_pet(self, args):
         p = self.player

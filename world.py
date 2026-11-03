@@ -54,8 +54,6 @@ class MonsterInstance:
         self.effects = [e for e in self.effects if e.get("name") != eff.get("name")]
         self.effects.append(eff)
 
-    def is_stunned(self):
-        return any(e["type"] == "stun" for e in self.effects)
 
     def health_word(self):
         pct = self.hp / self.max_hp

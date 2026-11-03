@@ -2,9 +2,10 @@
 
 > *Spirit-speakers of the tribes, who call down ancestral fury and healing.*
 
-The Shaman is a sturdy WIS and INT caster in mail with a shield and a spirit wolf. It has the most HP of any
-caster, a heal, a pet from level 8, a damage-and-armor buff, a poison that weakens, chain lightning for
-groups, and a late-game heal-and-damage avatar. It is a forgiving, well-rounded class.
+The Shaman is a sturdy WIS and INT caster in mail with a shield and a spirit wolf. It has the most HP
+of any caster, a heal, a pet from level 8 (raised out of combat), a damage-and-armor buff that lasts
+the whole fight, a poison that weakens, and Chain Lightning at 34. It is a forgiving, well-rounded
+class.
 
 ## At a glance
 
@@ -33,41 +34,31 @@ Average race, starting gear only (see the [README](README.md#about-the-numbers))
 
 At level 50 a Shaman has more HP than a Paladin, thanks to its CON.
 
-## Spells
+## Spells and abilities
 
-All Shaman magic is spells, cast with `cast <name>`. Cost is shown at the level you learn it and at
-level 50.
+All Shaman magic is spells, cast with `cast <name>`. There are no cooldowns: every attack can be used every round, and each new attack is a modest step up (12%) from the one before it, so **use your newest one**.
 
-| Level | Spell | Cost | Cooldown | Target | Effect |
+| Level | Name | Type | Cost | Target | Effect |
 |---|---|---|---|---|---|
-| 1 | **Frost Shock** | 5 / 30 | - | one foe | Frost damage 6 + 1.45/level + 0.42 INT (~12 at L1, ~56 at L25, ~103 at L50) |
-| 3 | **Ancestral Mending** | 7 / 35 | - | self | Heal 10 + 2.2/level + 0.55 WIS (~25 at L3, ~98 at L25, ~180 at L50) |
-| 8 | **Spirit Wolf** | 34 / 118 | 10 | self | Summon a spirit wolf (~81 HP, 11-18 damage at L8; ~200 HP, 27-42 at L25; ~375 HP, 50-77 at L50) |
-| 15 | **Spirit of the Bear** | 36 / 88 | 10 | self | +20% damage and +10 + 1.5/level armor for 6 rounds |
-| 24 | **Venom of the Serpent** | 79 / 142 | - | one foe | Poison 8 + 1.5/level + 0.4 INT per round for 5 rounds (~57 at L24, ~107 at L50), and the foe deals 20% less damage for 4 rounds |
-| 34 | **Chain Lightning** | 206 / 283 | 3 | all foes | Lightning damage 35 + 3/level + 0.9 INT to every foe (~176 at L34, ~239 at L50) |
-| 44 | **Ancestral Avatar** | 292 / 324 | 12 | self | Heal 45% of your max HP and +40% damage for 5 rounds |
+| 1 | **Frost Shock** | spell | 5 / 30 | one foe | Frost damage 6 + 1.93/level + 0.56 INT (~14 at L1, ~73 at L25, ~136 at L50) |
+| 3 | **Ancestral Mending** | spell | 7 / 35 | self | Heal 10 + 2.2/level + 0.55 WIS (~25 at L3, ~98 at L25, ~180 at L50) |
+| 8 | **Spirit Wolf** | spell | 34 / 118 | self | Summon a spectral spirit wolf (~200 HP, 27-42 damage at L25); only out of combat, and it stays until it dies |
+| 15 | **Spirit of the Bear** | spell | 36 / 88 | self | +12% damage, +6 armor + 0.9/level until the end of the fight |
+| 24 | **Venom of the Serpent** | spell | 40 / 71 | one foe | Poison damage over time: 8 + 1.5/level + 0.4 INT per round for 5 rounds (~57 at L24, ~59 at L25, ~107 at L50 per round); the foe deals 15% less damage for the rest of the fight |
+| 34 | **Chain Lightning** | spell | 22 / 30 | one foe | Lightning damage 6.72 + 2.16/level + 0.63 INT (~107 at L34, ~152 at L50) |
 
 ## How to play
 
-**Levels 1-7.** Frost Shock and Ancestral Mending. Shamans start slow but are hard to kill.
+**Before every fight.** Call your Spirit Wolf (from 8) if it is not with you: it can't be called in
+combat.
 
-**Levels 8-23.** Call the Spirit Wolf before every outing. It attacks every round and takes about a
-quarter of the enemies' normal attacks. Its stats are fixed when summoned, so call it again every few
-levels, and recall it when it dies. Spirit of the Bear at 15 is a cheap buff; keep it up in real
-fights.
-
-**Levels 24-50.** Venom of the Serpent is a strong poison that also weakens its target. Put it on
-the most dangerous foe, then Frost Shock. Chain Lightning at 34 handles groups. At 44, Ancestral
-Avatar is a 45% heal and a damage boost in one: your emergency button and your boss opener. Against a
-boss: wolf, Spirit of the Bear, Venom, Frost Shock, with Ancestral Mending and Ancestral Avatar to
-heal.
+**Every fight.** Spirit of the Bear (from 15) once, Venom of the Serpent (from 24) once to poison and
+weaken the foe, then your newest attack spell every round: Frost Shock, Chain Lightning from 34. Heal
+with Ancestral Mending when you drop under about half health.
 
 **Tips**
-- Your spells ignore armor; your wolf's bites don't.
-- Venom of the Serpent stacks a weaken on top of the poison, which makes it worth casting even on
-  foes that will die soon if they hit hard.
-- You are the tankiest caster, so you can afford to melee a little while your mana refills.
+- Your heal has no cooldown: mana is the only limit.
+- The wolf draws about a quarter of the attacks aimed at you.
 
 ## Gear
 
@@ -123,10 +114,7 @@ rolling pin; the rest come from her realm.
 
 ## How it performs
 
-The Shaman wins every same-level fight in the simulator in about 3-5 rounds with 73-88% HP left. It
-lasts about 4 fights in a row at level 10 and 6 at level 30. It beat nearly every world boss
-at the boss's own level (about 97% against Orrin Gearwhistle and Ussreth) and all of them at boss
-level +3.
+The Shaman wins every same-level fight in the simulator in 2.6-5.5 rounds, finishing with 69-83% HP. It survives about 3, 4 and 6 fights in a row at levels 10, 20 and 30 (the cap is 8). Against the world bosses it beats every one, at the boss's own level and at boss level +3. These figures are from November 2026, after cooldowns were removed.
 
 ## Rebirth
 
@@ -134,5 +122,5 @@ In every later life, each of your stats, your HP per level and your mana per lev
 any class you have lived would have at your current level (see the [README](README.md#rebirth)), and each
 class mastered adds +2% max HP and damage.
 
-A Shaman life brings strong WIS growth, plus **mail armor and shield training** and blunt, staff and axe weapons. Spirit Wolf
-gives any later class a pet, and Ancestral Avatar a 45% heal.
+A Shaman life brings strong WIS growth, plus **mail armor and shield training** and blunt, staff and
+axe weapons. Spirit Wolf gives any later class a pet, and Spirit of the Bear a whole-fight buff.

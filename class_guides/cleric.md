@@ -2,10 +2,10 @@
 
 > *Priests of the light, unmatched healers who smite the wicked and the undead.*
 
-The Cleric is a WIS caster in mail with a shield, with some INT for its holy damage. It has the best healing in the game: two direct
-heals, a damage ward and a heal over time. Its damage comes from holy spells that ignore armor, and it
-gets a strong group attack at 25 and one of the biggest single hits in the game at 45. It is slow to
-kill early but almost never dies.
+The Cleric is a WIS caster in mail with a shield, with some INT for its holy damage. It has the best
+healing in the game: two direct heals, a damage ward and a long heal over time, all limited only by
+mana. Its damage comes from a ladder of holy spells that ignore armor (Smite, Holy Wrath, Sunburst).
+It is slow to kill early but almost never dies.
 
 ## At a glance
 
@@ -32,42 +32,32 @@ Average race, starting gear only (see the [README](README.md#about-the-numbers))
 | 25 | 435 | 417 | 61 | 35 | 35 | 34 | 26-29 |
 | 50 | 1110 | 1070 | 111 | 60 | 60 | 59 | 47-50 |
 
-## Spells
+## Spells and abilities
 
-All Cleric magic is spells, cast with `cast <name>`. Cost is shown at the level you learn it and at
-level 50.
+All Cleric magic is spells, cast with `cast <name>`. There are no cooldowns: every attack can be used every round, and each new attack is a modest step up (12%) from the one before it, so **use your newest one**.
 
-| Level | Spell | Cost | Cooldown | Target | Effect |
+| Level | Name | Type | Cost | Target | Effect |
 |---|---|---|---|---|---|
-| 1 | **Minor Healing** | 6 / 35 | - | self | Heal 12 + 3.11/level + 0.6 WIS (~22 at L1, ~126 at L25, ~234 at L50) |
-| 3 | **Smite** | 7 / 35 | - | one foe | Holy damage 8 + 1.6/level + 0.45 INT (~18 at L3, ~63 at L25, ~115 at L50) |
-| 8 | **Divine Aegis** | 20 / 71 | 6 | self | A ward that absorbs 15 + 4.02/level + 1 WIS damage (~74 at L8, ~327 at L50) |
-| 15 | **Greater Healing** | 43 / 106 | - | self | Heal 35 + 7.12/level + 1.1 WIS (~186 at L15, ~513 at L50) |
-| 25 | **Holy Wrath** | 102 / 177 | 3 | all foes | Holy damage 20 + 2.5/level + 0.6 INT to every foe (~103 at L25, ~181 at L50) |
-| 35 | **Resurgence** | 123 / 165 | 6 | self | Heal 15 + 2.56/level + 0.35 WIS every round for 5 rounds (~132-181 per round) |
-| 45 | **Sunburst** | 324 / 354 | 5 | one foe | Holy damage 60 + 4.5/level + 1.3 INT (~334 at L45, ~363 at L50), 50% chance to stun for 1 round (25% vs bosses) |
+| 1 | **Minor Healing** | spell | 6 / 35 | self | Heal 12 + 3.11/level + 0.6 WIS (~22 at L1, ~126 at L25, ~234 at L50) |
+| 3 | **Smite** | spell | 7 / 35 | one foe | Holy damage 8 + 2.13/level + 0.6 INT (~22 at L3, ~82 at L25, ~150 at L50) |
+| 8 | **Divine Aegis** | spell | 31 / 106 | self | A ward that absorbs 15 + 4.02/level + 1 WIS damage until it breaks (~74 at L8, ~176 at L25, ~327 at L50); casting it again restores it |
+| 15 | **Greater Healing** | spell | 43 / 106 | self | Heal 35 + 7.12/level + 1.1 WIS (~186 at L15, ~280 at L25, ~513 at L50) |
+| 25 | **Holy Wrath** | spell | 20 / 35 | one foe | Holy damage 8.96 + 2.39/level + 0.67 INT (~92 at L25, ~168 at L50) |
+| 35 | **Resurgence** | spell | 123 / 165 | self | Then 8 + 1.3/level + 0.18 WIS per round for 10 rounds (~68 at L35, ~92 at L50 per round); casting it again restarts the timer |
+| 45 | **Sunburst** | spell | 32 / 35 | one foe | Holy damage 10.04 + 2.67/level + 0.75 INT (~171 at L45, ~188 at L50) |
 
 ## How to play
 
-**Levels 1-14.** Smite is your attack from level 3 (before that, melee and Minor Healing). Cast Smite,
-let mana recover with an auto-attack or two, and heal when you need it. Divine Aegis at 8 absorbs a
-good chunk of damage: cast it at the start of every fight that matters, and again whenever it comes off
-cooldown in a long one.
-
-**Levels 15-34.** Greater Healing is a huge heal; use it instead of Minor Healing whenever you are well
-down. Holy Wrath at 25 hits every foe for more than a Smite, every three rounds, and is your answer to
-groups. A normal fight: Divine Aegis, then Smite or Holy Wrath, healing as needed.
-
-**Levels 35-50.** Resurgence heals every round for five rounds; with Divine Aegis up, you can stand in
-almost any fight. Sunburst at 45 is one of the strongest single hits in the game and can stun. Against
-a boss: Divine Aegis, Resurgence, then Sunburst whenever it is ready and Smite in between, with Greater
-Healing as your emergency button.
+**Every fight.** Divine Aegis first, then your newest holy spell (Smite, Holy Wrath from 25, Sunburst
+from 45) every round. Heal with Greater Healing (Minor Healing before 15) when you drop under about
+half health, and recast Divine Aegis whenever it breaks. From 35, cast Resurgence before a long
+fight: it heals every round for 10 rounds, and casting it again simply restarts the timer.
 
 **Tips**
-- All your damage is holy and ignores armor.
-- Your melee is weak (you attack with STR but gain only 1 a level), so don't rely on auto-attacks.
-- Your mana pool is one of the largest in the game. You can afford to heal often, but Sunburst and Holy
-  Wrath are expensive; carry mana potions for bosses.
+- All your holy damage ignores armor.
+- Your heals have no cooldown, so mana is the only limit. A full pool covers many heals; long boss
+  fights are where you may want a mana potion.
+- You fight slowly but almost never die, so you can take on monsters a few levels above you.
 
 ## Gear
 
@@ -125,10 +115,7 @@ rolling pin; the rest come from her realm.
 
 ## How it performs
 
-The Cleric wins every same-level fight in the simulator in 3-8 rounds and finishes with 72-99% HP. It
-lasts about 3-4 fights in a row at level 10 and nearly 8 at level 30. It beat nearly every world boss
-at the boss's own level (about 83% against the High Justice, 87% against Orrin Gearwhistle and 93%
-against Seluvar and Ithilmir) and all of them at boss level +3.
+The Cleric wins every same-level fight in the simulator in 2.6-7.9 rounds, finishing with 62-98% HP. It survives about 4, 8 and 8 fights in a row at levels 10, 20 and 30 (the cap is 8). Against the world bosses it beats every one, at the boss's own level and at boss level +3. These figures are from November 2026, after cooldowns were removed.
 
 ## Rebirth
 
