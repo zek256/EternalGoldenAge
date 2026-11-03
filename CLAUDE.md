@@ -310,3 +310,8 @@ average ~7 rounds (fast classes ~5, the cleric and warrior ~9-14) with about the
 are a little easier (most 90-100% at the boss's level), groups of three a little easier, endurance at level
 10 a little lower. Casters spend more mana per fight (a level-10 shaman ~88%, the wizard 33-62% with its
 x0.3 attack cost growth, so that was lowered to x0.2: 17-56% a fight, most at low levels). The planes are unchanged.
+
+Dread knight (2026-11-03, the user's choice): every dread knight ability costs mana. Shadow Strike, Dread
+Touch and Death Coil became spells at base cost `DK_STRIKE` (3), Unholy Frenzy 30. A single fight never runs
+it dry and bosses stay 100%, but fights in a row fell from the cap (7-8) to about 2 / 7 / 8 / 7 at levels
+10 / 20 / 30 / 40, because its pool is small (3 mana per level). Base 4-5 cut that to 2-5.

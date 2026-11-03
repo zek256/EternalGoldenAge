@@ -253,23 +253,24 @@ ability("consecration", "Consecration", "paladin", 36,
 
 # ---------------------------------------------------------------- Dread Knight
 REAP_W, REAP_D = 1.2, (3, 1.0, 0.3)  # Shadow Strike, the first rung: a weapon blow plus a drain
-ability("shadow_strike", "Shadow Strike", "dread knight", 1,
-        [WEAPON(rung(0, REAP_W)), DRAIN(*rung(0, *REAP_D), "INT", 0.5)],
-        desc="A strike that drinks a sip of your foe's life.", msg="Your blade, wreathed in shadow, drinks from {t}!")
+DK_STRIKE = 3  # base mana cost of the strike ladder (every dread knight ability costs mana: the user's choice, 2026-11-03)
+spell("shadow_strike", "Shadow Strike", "dread knight", 1, DK_STRIKE,
+      [WEAPON(rung(0, REAP_W)), DRAIN(*rung(0, *REAP_D), "INT", 0.5)],
+      desc="A strike that drinks a sip of your foe's life.", msg="Your blade, wreathed in shadow, drinks from {t}!")
 spell("disease_cloud", "Disease Cloud", "dread knight", 4, 6, [DOT(4, 1.0, 0.25, "INT", 5, "Disease Cloud", "disease")],
       desc="A cloud of festering disease.", msg="A cloud of festering spores billows around {t}.")
 spell("dread_aura", "Dread Aura", "dread knight", 10, 12, [WEAKEN(0.2, "Dread")],
       desc="Your aura of terror weakens a foe for the fight (-20% damage).", msg="An aura of soul-chilling dread pours from you over {t}.")
-ability("dread_touch", "Dread Touch", "dread knight", 18,
-        [WEAPON(rung(1, REAP_W)), DRAIN(*rung(1, *REAP_D), "INT", 0.5)],
-        desc="Channel death itself through your blade.", msg="You lay your blade upon {t} and death itself flows through it!")
+spell("dread_touch", "Dread Touch", "dread knight", 18, DK_STRIKE,
+      [WEAPON(rung(1, REAP_W)), DRAIN(*rung(1, *REAP_D), "INT", 0.5)],
+      desc="Channel death itself through your blade.", msg="You lay your blade upon {t} and death itself flows through it!")
 spell("vampiric_embrace", "Vampiric Embrace", "dread knight", 26, 24, [BUFF("Vampiric Embrace", lifesteal=0.15)], target="self",
       desc="Your weapon hits heal you for 15% of the damage they deal, for the fight.", msg="Your veins run black with a vampiric hunger.")
-ability("death_coil", "Death Coil", "dread knight", 34,
-        [WEAPON(rung(2, REAP_W)), DRAIN(*rung(2, *REAP_D), "INT", 0.5)],
-        desc="A blow wrapped in a coil of death.", msg="A shrieking coil of black fire lashes {t} with your blow!")
-ability("unholy_frenzy", "Unholy Frenzy", "dread knight", 44, [BUFF("Unholy Frenzy", damage_pct=0.2, lifesteal=0.1)], target="self",
-        desc="An unholy frenzy for the fight: +20% damage and 10% lifesteal.", msg="An unholy frenzy seizes you, and you laugh with a voice not your own!")
+spell("death_coil", "Death Coil", "dread knight", 34, DK_STRIKE,
+      [WEAPON(rung(2, REAP_W)), DRAIN(*rung(2, *REAP_D), "INT", 0.5)],
+      desc="A blow wrapped in a coil of death.", msg="A shrieking coil of black fire lashes {t} with your blow!")
+spell("unholy_frenzy", "Unholy Frenzy", "dread knight", 44, 30, [BUFF("Unholy Frenzy", damage_pct=0.2, lifesteal=0.1)], target="self",
+      desc="An unholy frenzy for the fight: +20% damage and 10% lifesteal.", msg="An unholy frenzy seizes you, and you laugh with a voice not your own!")
 
 # ---------------------------------------------------------------- Bard
 SONG = (10, 3.22, 0.8)  # Discordant Note, the first rung
