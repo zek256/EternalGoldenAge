@@ -79,6 +79,9 @@ Burial Mask of Ussreth (48, mail), **tidescale legguards** (50, mail legs, WIS/C
 sunsteel mail set, the Shield of Judgement (50, CON/WIS), the
 Pearl of the Deep (50, ring), and the mythic Fang of Pyraxis and Eternity.
 
+From **the Underhedge** (6-10, `enter mousehole` in Greenmeadow's Willow Mill): a beetle-shell shield
+(8, shield, CON) and an amber pendant (10, neck, WIS/CHA/CON). The Wasp Queen drops the amber pendant.
+
 From **the Mycelial Wards** (14-20, west of Westmarch's Old Watchtower): the Heartspore staff (20,
 staff), a capshell hauberk (17, mail chest), rootweave chausses (16, mail legs), a shelf-fungus shield
 (14), a glowcap pendant (16, neck) and the rootbound ring (20, CON/WIS).
@@ -94,6 +97,12 @@ of the scales (35, CON/WIS), the seal of office (37, ring) and the chain of offi
 From **Thornwick Hall** (43-49, west of the Stag Walk): Mistress Hollin's cleaver (45, axe, STR/CON),
 Mr. Graves's silver salver (45, shield), the Dowager's pearls (48, neck, WIS/CHA/CON) and silk evening
 gloves (46, cloth, INT/WIS/CHA).
+
+From **the Sugarwold** (44-49, north of the Scorchsands' Salt Pans): Madame
+Marchpane's rolling pin (49, blunt, STR/WIS/CON), a candy-cane mace (47, blunt, STR/WIS), a gingerbread
+shield (47, shield, CON/STR), gingerbread gauntlets (46, mail hands, STR/DEX), toffee-glazed greaves
+(46, mail legs, CON/STR) and peppermint-scale boots (45, mail feet, CON/DEX). Madame Marchpane drops the
+rolling pin; the rest come from her realm.
 
 ## Best races
 

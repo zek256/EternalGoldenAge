@@ -89,6 +89,59 @@ M("bandit_chieftain", "Rask the Bandit Chieftain", 10,
             stun("Pommel Strike", 0.12, 1, "cracks you across the skull with his pommel!")],
   loot=[("bandit_cutlass", 1.0), ("chain_shirt", 0.5), ("ring_of_vigor", 0.4)])
 
+# ------------------------------------------------------------- The Underhedge (5-10)
+# The hedgerow behind the Willow Mill, seen at the size of a mouse. Its creatures go about their business;
+# only the soldier ants, the mole guards and the wasps attack on sight.
+M("garden_ant", "a garden ant", 5, "A red-brown ant as big as a dog, hurrying along with a crumb held high in its jaws.",
+  hp=0.9, dmg=0.95, loot=[("wheat_grain", 0.35), ("honeydew", 0.3)], gold=0.2)
+M("water_beetle", "a water beetle", 5, "A glossy black beetle the size of a rowing boat, its legs fringed like oars.",
+  hp=1.0, dmg=0.95, armor=1.5, loot=[("beetle_chitin", 0.4), ("acorn_helm", 0.05)], gold=0.2)
+M("pond_frog", "a pond frog", 6, "A mottled green frog as big as a house, with golden eyes and a throat that pulses slowly.",
+  hp=1.2, dmg=1.0, specials=[stun("Tongue Lash", 0.15, 1, "lashes out its tongue, snatches you up and spits you out, dazed!")],
+  loot=[("petal_slippers", 0.05), ("minor_healing_potion", 0.08)], gold=0.2)
+M("soldier_ant", "a soldier ant", 7, "A big-headed ant with jaws like curved swords, guarding the road and the grain that rolls along it.",
+  hp=1.0, dmg=1.1, armor=1.4, aggro=True, specials=[big("Mandible Crush", 0.2, 1.7, "seizes you in its great jaws and squeezes!")],
+  loot=[("wheat_grain", 0.5), ("beetleshell_jerkin", 0.04), ("acorn_helm", 0.04)], gold=0.4)
+M("garden_snail", "a garden snail", 7, "A snail the size of a cottage, its striped shell rising like a spiral tower, leaving a road of slime.",
+  hp=1.5, dmg=0.85, armor=2.0, specials=[dot("Corrosive Slime", 0.2, 0.3, 3, "poison", "rears up and slimes you, and your skin burns!")],
+  loot=[("snailskin_leggings", 0.06)], gold=0.2, xp=1.2)
+M("mouse_knight", "a mouse knight", 8, "A grey mouse in a walnut-shell helm and armour of beetle shell, with a darning needle for a lance.",
+  hp=1.0, dmg=1.1, specials=[big("Needle Lance", 0.2, 1.7, "levels its darning needle and charges!")],
+  loot=[("needle_sword", 0.06), ("beetleshell_shield", 0.05), ("minor_healing_potion", 0.1)], gold=1.4)
+M("stag_beetle", "a stag beetle", 8, "A huge beetle with antlers like a stag's, saddled with thread and bridled for the mouse cavalry.",
+  hp=1.4, dmg=1.05, armor=1.6, specials=[big("Antler Toss", 0.2, 1.7, "catches you in its antlers and flings you through the grass!")],
+  loot=[("beetleshell_jerkin", 0.06), ("beetle_chitin", 0.5)], gold=0.3, xp=1.3)
+M("mole_digger", "a mole digger", 8, "A velvet-black mole in a leather apron, with spade-like hands and tiny squinting eyes.",
+  hp=1.2, dmg=1.0, loot=[("dandelion_trousers", 0.05), ("hawthorn_wand", 0.04)], gold=1.0)
+M("mole_guard", "a mole guard", 9, "A burly mole in a coat of overlapping beetle shell, gripping a pick and sniffing the air.",
+  hp=1.1, dmg=1.1, armor=1.4, aggro=True, specials=[stun("Pick Haft", 0.12, 1, "cracks you across the head with the haft of its pick!")],
+  loot=[("mole_claw_gloves", 0.03), ("healing_potion", 0.08)], gold=1.4)
+M("mole_king", "Grubbin, the Mole King", 9, "A fat old mole in a crown of bottle-tin and a cloak of sewn-together moth wings, lord of every tunnel under the hedge.",
+  hp=1.7, dmg=1.1, armor=1.2, xp=1.6, gold=3.0,
+  specials=[big("Royal Burrow", 0.2, 1.8, "dives into the floor and bursts up beneath your feet!"),
+            heal("A Royal Snack", 0.1, 0.12, "pulls a worm from the wall and gulps it down, looking much refreshed!")],
+  loot=[("mole_claw_gloves", 0.25), ("hawthorn_wand", 0.2)])
+M("garden_cat", "Old Tom, the gardener's cat", 9, "A grey tomcat as big as a church, with a torn ear and green eyes like lanterns. He has not yet decided whether you are worth the bother.",
+  hp=1.75, dmg=1.12, xp=1.6, gold=0.1,
+  specials=[big("Pounce", 0.22, 1.9, "crouches, wiggles, and pounces on you!"),
+            stun("Pinned", 0.1, 1, "pins you under one enormous paw!")],
+  loot=[("whisker_bow", 0.25)])
+M("wasp_drone", "a wasp drone", 9, "A striped wasp as big as a hound, its wings a blur and its sting dripping.",
+  hp=0.9, dmg=1.1, armor=0.6, aggro=True, specials=[dot("Sting", 0.22, 0.35, 3, "poison", "darts in and stings you!")],
+  loot=[("wasp_sting_dagger", 0.05), ("thistledown_robe", 0.04)], gold=0.6)
+M("wasp_guard", "a wasp guard", 10, "A heavy wasp of the queen's guard, with a sting as long as a spear and armour-hard stripes.",
+  hp=1.2, dmg=1.15, armor=1.3, aggro=True, specials=[dot("Spear Sting", 0.2, 0.35, 3, "poison", "drives its sting into you like a spear!"),
+                                                     stun("Paralysing Venom", 0.1, 1, "stings you, and your limbs go numb!")],
+  loot=[("wasp_sting_dagger", 0.06), ("healing_potion", 0.1)], gold=0.8)
+M("wasp_queen", "Vesperine, the Wasp Queen", 10,
+  "The queen of the Wasp Keep, longer than a horse, her striped body swollen and her wings humming like a storm. "
+  "Her great black eyes see everything in the apple.",
+  hp=2.4, dmg=1.15, armor=1.3, aggro=True, boss=True, xp=2.0, gold=4.0,
+  specials=[dot("Royal Sting", 0.2, 0.4, 4, "poison", "curls her body and drives her great sting into you!"),
+            stun("Paralysing Venom", 0.12, 1, "stings you, and you cannot move a muscle!"),
+            heal("Royal Jelly", 0.1, 0.12, "feeds from the comb, and her wounds close!")],
+  loot=[("queens_stinger", 0.6), ("amber_pendant", 0.6), ("thistledown_robe", 0.4)])
+
 # ------------------------------------------------------------- Westmarch (3-10)
 M("goblin_sneak", "a goblin sneak", 5, "A skinny green goblin with a sack over one shoulder and someone else's chicken in it.",
   hp=0.9, dmg=1.0, specials=[dot("Dirty Knife", 0.15, 0.3, 3, "bleed", "darts in and nicks you with a filthy knife!")],
@@ -622,6 +675,50 @@ M("great_sandworm", "a great sandworm", 49, "A worm as wide as a house, ringed w
   hp=2.2, dmg=1.35, armor=1.8, specials=[big("Engulf", 0.22, 2.0, "rises from the sand beneath you and engulfs you!"),
                                          stun("Quake", 0.1, 1, "thrashes, and the sand heaves you off your feet!")],
   loot=[("desert_glass", 0.4), ("sunstone_ring", 0.04)], gold=1.5, xp=1.8)
+
+# ------------------------------------------------------------- The Sugarwold (44-49)
+# Madame Marchpane's country of sweets beneath the Salt Pans. Its creatures are content to be left
+# alone; only her gingerbread soldiers, her oven imps and the witch herself attack on sight.
+M("gumdrop_ooze", "a gumdrop ooze", 44, "A wobbling green gumdrop the size of a wagon, sugar-crusted and glistening, with something dark suspended in its middle.",
+  hp=1.3, dmg=1.25, armor=0.8, specials=[stun("Sticky Engulf", 0.12, 1, "rolls over you, and you are stuck fast in sugar!")],
+  loot=[("gumdrop", 0.5), ("supreme_healing_potion", 0.06)], gold=0.6)
+M("sugar_sprite", "a sugar sprite", 45, "A tiny winged figure of spun sugar, giggling, carrying a lollipop like a sceptre.",
+  hp=1.0, dmg=1.3, armor=0.6, specials=[stun("Sugar Rush", 0.14, 1, "blows a cloud of glittering sugar into your eyes, and the world spins!")],
+  loot=[("spun_sugar_cowl", 0.04), ("rock_candy_dagger", 0.03), ("supreme_mana_potion", 0.12)], gold=1.2)
+M("peppermint_hog", "a peppermint hog", 45, "A hog as big as an ox, striped red and white like a peppermint stick, with tusks of boiled sugar.",
+  hp=1.4, dmg=1.25, specials=[big("Candied Tusks", 0.2, 1.7, "lowers its head and gores you with its sugar tusks!")],
+  loot=[("peppermint_hide", 0.5), ("peppermint_boots", 0.04)], gold=0.4)
+M("licorice_serpent", "a licorice serpent", 46, "A long black serpent of twisted licorice, thick as a man, gleaming wetly, with a forked tongue of red sugar.",
+  hp=1.2, dmg=1.3, specials=[dot("Bitter Bite", 0.22, 0.45, 3, "poison", "bites you, and a bitter black poison burns in your blood!")],
+  loot=[("licorice_hood", 0.04), ("taffy_gloves", 0.03)], gold=0.6)
+M("toffee_lurker", "a toffee lurker", 46, "A heap of hot golden toffee that rises from the pits in the rough shape of a man, dripping and cooling as it comes.",
+  hp=1.6, dmg=1.25, armor=1.2, specials=[stun("Sticky Grip", 0.12, 1, "wraps you in cooling toffee, and you cannot move!"),
+                                         dot("Scalding Sugar", 0.15, 0.4, 3, "fire", "splashes you with scalding toffee!")],
+  loot=[("toffee_greaves", 0.04), ("striped_trousers", 0.04)], gold=0.8, xp=1.3)
+M("candied_raven", "a candied raven", 47, "A raven as big as an eagle, its feathers glazed in hard, glittering sugar. It caws in a voice like a child's.",
+  hp=1.1, dmg=1.35, specials=[dot("Glass Beak", 0.2, 0.45, 3, "bleed", "pecks you with a beak as sharp as broken sugar-glass!")],
+  loot=[("gumdrop_slippers", 0.04), ("peppermint_amulet", 0.03)], gold=0.8)
+M("gingerbread_man", "a gingerbread man", 47, "A man-sized figure of gingerbread with gumdrop buttons and a smile of white icing. Its currant eyes look as if they are trying to tell you something.",
+  hp=1.4, dmg=1.3, specials=[big("Hard-Baked Fist", 0.2, 1.8, "swings a fist baked as hard as brick!")],
+  loot=[("gumdrop_button", 0.6), ("gingerbread_gauntlets", 0.03)], gold=1.5)
+M("gingerbread_soldier", "a gingerbread soldier", 48, "A gingerbread soldier in a coat of red and white frosting, with raisin eyes and a candy-cane bayonet.",
+  hp=1.5, dmg=1.35, armor=2.0, aggro=True, specials=[big("Bayonet Thrust", 0.2, 1.8, "lunges and drives its candy-cane bayonet into you!")],
+  loot=[("candy_cane_mace", 0.04), ("gingerbread_shield", 0.04), ("supreme_healing_potion", 0.08)], gold=2.2)
+M("sugarloaf_golem", "a sugarloaf golem", 48, "A hulking giant of crusted sugar, shaped roughly like a man by enormous hands, with lumps of rock candy for eyes.",
+  hp=2.0, dmg=1.3, armor=2.5, specials=[big("Sugarloaf Slam", 0.22, 1.9, "raises both crusted fists and brings them crashing down!")],
+  loot=[("rock_candy_dagger", 0.04), ("peppermint_amulet", 0.04)], gold=1.5, xp=1.6)
+M("oven_imp", "an oven imp", 48, "A little red imp with a coal-black tail and a toasting fork, sooty from the witch's stoves and grinning with sharp teeth.",
+  hp=1.2, dmg=1.4, aggro=True, element="fire", specials=[dot("Toasting Fork", 0.22, 0.5, 3, "fire", "jabs you with a red-hot toasting fork!")],
+  loot=[("supreme_mana_potion", 0.12), ("taffy_gloves", 0.03)], gold=1.8)
+M("madame_marchpane", "Madame Marchpane", 49,
+  "A plump, rosy old woman in a flour-white apron, with sugar in her grey curls and a smile as sweet as honey. "
+  "Her eyes are as red as the oven behind her, and she has been baking for a thousand years.",
+  hp=3.1, dmg=1.35, armor=1.7, aggro=True, boss=True, xp=2.0, gold=8.0,
+  specials=[stun("Have a Sweet, Dearie", 0.12, 1, "holds out a sugared plum, and before you know it you have eaten it, and your limbs grow heavy!"),
+            dot("Boiling Syrup", 0.18, 0.5, 4, "fire", "flings a ladle of boiling syrup over you!"),
+            big("The Rolling Pin", 0.18, 1.9, "brings her great black rolling pin down on you!"),
+            heal("A Nibble of Gingerbread", 0.1, 0.12, "breaks a gingerbread figure in half and nibbles it, and her wounds close!")],
+  loot=[("marchpane_rolling_pin", 0.5), ("sugarglass_wand", 0.5), ("spun_sugar_ring", 0.6), ("spun_sugar_cowl", 0.4)])
 
 # ------------------------------------------------------------- Tomb of the Sand Kings (45-48)
 M("scarab_swarm", "a scarab swarm", 45, "A clicking, glittering tide of black and gold beetles that pours across the floor.",

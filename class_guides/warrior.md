@@ -81,6 +81,10 @@ Notable late gear a Warrior can use: the obsidian greatblade (45, two-handed), t
 plate), dreamsilver greaves (50, plate), stonestride boots (50, plate), and the mythic weapons that
 anyone may wield: the Fang of Pyraxis and Eternity.
 
+From **the Underhedge** (6-10, `enter mousehole` in Greenmeadow's Willow Mill): a darning-needle sword
+(7, sword, DEX/STR), a whisker-strung bow (9, bow, DEX) and a beetle-shell shield (8, shield, CON). Old
+Tom the cat drops the whisker-strung bow.
+
 From **the Mycelial Wards** (14-20, west of Westmarch's Old Watchtower): the shelfcap breastplate (15,
 plate chest), a rootmaul (16, two-handed), a sporethorn knife (18, dagger), a shelf-fungus shield (14),
 the Mycelial Crown (20, any class) and the rootbound ring (20).
@@ -98,6 +102,9 @@ From **Thornwick Hall** (43-49, west of the Stag Walk): the Vane longsword (49, 
 heirloom plate (49, plate chest) from Lord Aldric Vane, the Vane warhelm (46) and gauntlets (45) from
 his knights and sworn swords, Mistress Hollin's cleaver (45, axe), Mr. Graves's silver salver (45,
 shield), the Vane signet (49, ring) and Great-aunt Mathilde's cameo (46, neck).
+
+From **the Sugarwold** (44-49, north of the Scorchsands' Salt Pans): a gingerbread
+shield (47, shield, CON/STR). It drops from her gingerbread soldiers.
 
 ## Best races
 

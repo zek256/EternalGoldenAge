@@ -16,6 +16,7 @@ INSETS = [  # (label, areas drawn together, the room that leads in from the surf
     ("Crypt of Varnoth", {"Crypt of Varnoth"}, "crypt_entry"),
     ("Deepdelve Mine", {"Deepdelve Mine"}, "deepdelve_foot"),
     ("Tomb of the Sand Kings", {"Tomb of the Sand Kings"}, "tomb_antechamber"),
+    ("The Underhedge", {"The Underhedge"}, "fairy_ring"),  # mouse-sized, behind the Willow Mill's mousehole
     ("Planes of the Gods", {"Threshold of the Gods", "Plane of Stars", "Plane of Dreams", "Plane of Death",
                             "Plane of Law", "Plane of Fire", "Plane of Water", "Plane of Earth",
                             "Plane of Air"}, "threshold_stair"),
@@ -98,9 +99,9 @@ def marker(game, rid):
         return "!", "byellow"
     if any(NPCS[n].get("shop") for n in room.npcs):
         return "$", "yellow"
-    if "u" in room.exits:
+    if "u" in room.exits and "u" not in room.hidden:
         return "^", "bcyan"
-    if "d" in room.exits:
+    if "d" in room.exits and "d" not in room.hidden:
         return "v", "bcyan"
     return " ", None
 

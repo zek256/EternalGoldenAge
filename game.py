@@ -29,6 +29,7 @@ SAVE_VERSION = 1
 HELP = [
     ("Movement", [("n, s, e, w, u, d", "move north/south/east/west/up/down (or type the full word)"),
                   ("[run] <path>", "walk a path, e.g. 'nnes' or 'run 3n2e'; typing anything or an attack stops you"),
+                  ("enter <thing>", "go into something a room tells you about, e.g. 'enter mousehole'"),
                   ("look / l [thing]", "look at the room, or at a monster, person or item"),
                   ("exits", "list the exits from this room"),
                   ("map", "a map of the area around you ($ shop, ! quest, * boss, ^ v stairs)"),
@@ -285,7 +286,7 @@ class Game:
         "cd": "cooldowns", "cds": "cooldowns", "cooldown": "cooldowns", "timers": "cooldowns",
     }
     NO_COMBAT = {"sleep", "save", "load", "talk", "buy", "sell", "list", "get", "drop",
-                 "wear", "remove", "rebirth", "bank", "deposit", "withdraw"}
+                 "wear", "remove", "rebirth", "bank", "deposit", "withdraw", "enter"}
     DEV_CMDS = {"setlevel", "goto", "addgold", "give"}
 
     # ================================================================ exploration
@@ -296,9 +297,11 @@ class Game:
         ui.out("")
         ui.out(ui.c(r.name, "byellow", "bold") + ui.c("  [{}]".format(r.area), "grey"))
         ui.say(r.desc)
+        for h in r.hidden.values():  # the command for a hidden exit, so it can't be missed
+            ui.say(h["prompt"], "bmagenta", "bold")
         if p.automap if automap is None else automap:
             self.show_mini_map()
-        ways = [DIRECTIONS[d] for d in DIRECTIONS if d in r.exits]  # always n, s, e, w, u, d order
+        ways = [DIRECTIONS[d] for d in DIRECTIONS if d in r.exits and d not in r.hidden]  # n, s, e, w, u, d order
         ui.out(ui.c("Exits: " + (", ".join(ways) if ways else "none"), "bcyan"))
         for npc in r.npc_list():
             marker = ""
@@ -345,7 +348,8 @@ class Game:
 
     def cmd_exits(self, args):
         for d, rid in self.room.exits.items():
-            ui.out("  {:<6} - {}".format(DIRECTIONS[d], self.world.room(rid).name))
+            if d not in self.room.hidden:
+                ui.out("  {:<6} - {}".format(DIRECTIONS[d], self.world.room(rid).name))
 
     def cmd_map(self, args):
         ui.out("")
@@ -379,10 +383,27 @@ class Game:
         if d not in self.room.exits:
             ui.say("You can't go that way.", "grey")
             return
+        if d in self.room.hidden:
+            ui.say(self.room.hidden[d]["hint"], "grey")
+            return
         blocked = self.gate_block(self.room.exits[d])
         if blocked:
             ui.say(blocked, "bmagenta")
             return
+        self.go(self.room.exits[d])
+
+    def cmd_enter(self, args):
+        """Take a hidden exit by naming it, e.g. 'enter mousehole' (see data.rooms.common.R)."""
+        word = strip_article(args.strip().lower())
+        d = next((d for d, h in self.room.hidden.items() if word in h["words"]), None) if word else None
+        if d is None:
+            ui.say("There is no {} here to enter.".format(word) if word else "Enter what?", "grey")
+            return
+        blocked = self.gate_block(self.room.exits[d])
+        if blocked:
+            ui.say(blocked, "bmagenta")
+            return
+        ui.say(self.room.hidden[d]["msg"], "bgreen")
         self.go(self.room.exits[d])
 
     MAX_PATH = 50
@@ -417,7 +438,7 @@ class Game:
             self.walk = []
             return
         d = self.walk.pop(0)
-        rid = self.room.exits.get(d)
+        rid = self.room.exits.get(d) if d not in self.room.hidden else None
         blocked = self.gate_block(rid) if rid else None
         if not rid or blocked:
             self.walk = []
@@ -657,13 +678,13 @@ class Game:
         self.queue_flee(DIR_ALIASES.get(args.lower()) if args else None)
 
     def queue_flee(self, d):
-        if d and (d not in self.room.exits or self.gate_block(self.room.exits[d])):
+        if d and (d not in self.room.exits or d in self.room.hidden or self.gate_block(self.room.exits[d])):
             ui.say("You can't flee that way!", "grey")
             return
         self.combat.queue("You look for a chance to escape...", lambda: self.attempt_flee(d))
 
     def attempt_flee(self, d):
-        exits = self.room.exits
+        exits = {x: rid for x, rid in self.room.exits.items() if x not in self.room.hidden}
         d = d or random.choice([x for x in exits if not self.gate_block(exits[x])] or list(exits))
         boss = any(m.boss for m in self.combat.living())
         chance = (0.45 if boss else 0.7) + min(0.15, self.player.stat("DEX") / 1000)
@@ -1310,7 +1331,25 @@ class Game:
             ui.say("{}: {} - right here!".format(title, what), "byellow")
         else:
             ui.say("{}: {} ({}).".format(title, what, dest.name), "byellow")
-            ui.out("  Route: " + ui.c("".join(path), "bwhite", "bold") + ui.c("  ({} steps)".format(len(path)), "grey"))
+            ui.out("  Route: " + self.route_text(path) + ui.c("  ({} steps)".format(len(path)), "grey"))
+
+    def route_text(self, path):
+        """A route for 'find': runs of directions to speedwalk, with 'ENTER <word>' wherever the
+        route takes a hidden exit (a speedwalk can't), e.g. 'nnw, then ENTER MOUSEHOLE, then nn'."""
+        parts, run, rid = [], "", self.room_id
+        for d in path:
+            room = self.world.room(rid)
+            if d in room.hidden:
+                if run:
+                    parts.append(ui.c(run, "bwhite", "bold"))
+                parts.append(ui.c("ENTER " + room.hidden[d]["words"][0].upper(), "bgreen", "bold"))
+                run = ""
+            else:
+                run += d
+            rid = room.exits[d]
+        if run:
+            parts.append(ui.c(run, "bwhite", "bold"))
+        return ", then ".join(parts)
 
     # ================================================================ player aliases
     MAX_ALIASES = 50

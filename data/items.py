@@ -260,6 +260,47 @@ weapon("scepter_of_the_sand_kings", "the Scepter of the Sand Kings", 48, (27, 44
 armor("burial_mask", "the Burial Mask of Ussreth", "head", 48, 26, 4800,
       "A golden death-mask with eyes of lapis. Wearing it, you hear the desert wind.", CON=6, STR=4, INT=4, WIS=4, kind="mail")
 
+# ------------------------------------------------------------------ The Underhedge (levels 6-10)
+# Fills the 6-10 gaps: cloth chest, legs and feet, leather head, chest, legs and gloves, a shield between
+# the buckler and the shelf-fungus shield, and the first necklace.
+weapon("needle_sword", "a darning-needle sword", 7, (5, 11), 75,
+       "A mouse knight's darning needle, ground to an edge and fitted with a hilt of carved bone.", STR=1, DEX=2,
+       kind="sword")
+weapon("wasp_sting_dagger", "a wasp-sting dagger", 8, (5, 10), 80,
+       "A wasp's sting set in a handle of hard paper. A little venom still beads on the point.", DEX=3, kind="dagger")
+weapon("hawthorn_wand", "a hawthorn wand", 8, (4, 9), 80,
+       "A crooked twig of hawthorn dug up by the moles, still budding at the tip. It hums near fairy rings.",
+       INT=3, WIS=2, CHA=1, kind="wand")
+weapon("whisker_bow", "a whisker-strung bow", 9, (6, 12), 95,
+       "A bow of springy willow strung with a single whisker of Old Tom, the gardener's cat.", DEX=2, kind="bow")
+weapon("queens_stinger", "the Wasp Queen's stinger", 10, (7, 13), 150,
+       "The great sting of Vesperine, the Wasp Queen, hilted in amber. It still aches to strike.", DEX=4, STR=1,
+       kind="dagger")
+armor("thistledown_robe", "a thistledown robe", "chest", 7, 5, 60,
+      "A robe of soft thistledown felted by the wasps for their nurseries, light as a breath.", kind="cloth",
+      INT=2, WIS=1)
+armor("dandelion_trousers", "dandelion-silk trousers", "legs", 8, 4, 55,
+      "Trousers woven from dandelion clocks, soft as cloud and surprisingly tough.", kind="cloth", INT=1, WIS=1)
+armor("petal_slippers", "petal slippers", "feet", 7, 3, 50,
+      "Slippers of layered rose petals that never wilt. You make no sound in them.", kind="cloth", INT=1, CHA=1)
+armor("acorn_helm", "an acorn helm", "head", 6, 3, 45,
+      "An acorn cup, hollowed and lined with moss, that fits like a helm once you are mouse-sized and stays a "
+      "good fit after.", kind="leather", DEX=1)
+armor("beetleshell_jerkin", "a beetle-shell jerkin", "chest", 7, 7, 65,
+      "A jerkin of overlapping beetle-shell scales stitched to leather, glossy black and tough.", kind="leather",
+      DEX=1, CON=1)
+armor("snailskin_leggings", "snailskin leggings", "legs", 6, 4, 45,
+      "Leggings of dried snailskin, supple as leather and as slick as oil.", kind="leather", DEX=1)
+armor("mole_claw_gloves", "mole-claw gloves", "hands", 9, 4, 90,
+      "Leather gloves tipped with a mole's digging claws. They dig as well as they grip.", kind="leather",
+      STR=2, DEX=1)
+armor("beetleshell_shield", "a beetle-shell shield", "shield", 8, 6, 85,
+      "A mouse knight's shield, the wing case of a beetle, curved and glossy and as hard as iron.", kind="shield",
+      CON=1)
+armor("amber_pendant", "an amber pendant", "neck", 10, 1, 180,
+      "A drop of amber from the Wasp Queen's comb, with a tiny wasp sealed inside, on a silver chain.",
+      kind="jewelry", WIS=2, CHA=2, CON=1)
+
 # ------------------------------------------------------------------ The Mycelial Wards (levels 14-20)
 # Fills the 12-20 gaps: early plate and mail chests, mail legs, leather boots, a dagger, a two-handed
 # weapon, a shield, a necklace and a ring.
@@ -409,6 +450,50 @@ armor("mathildes_cameo", "Great-aunt Mathilde's cameo", "neck", 46, 7, 3400,
 armor("vane_signet", "the Vane signet", "ring", 49, 0, 5000,
       "A heavy gold ring set with a green stone, cut with the silver stag of the Vanes.", kind="jewelry",
       STR=7, CON=7, CHA=6)
+
+# ------------------------------------------------------------------ The Sugarwold (levels 45-49)
+# Fills the 44-49 gaps: cloth and leather helms, cloth legs and feet, leather gloves, mail gloves, legs
+# and boots, a dagger between 33 and 47, a mace between 43 and 50, and a shield.
+weapon("rock_candy_dagger", "a rock-candy dagger", 45, (32, 52), 3400,
+       "A dagger of clear rock candy grown on a string, hard as diamond and wickedly sharp.", DEX=11, STR=3,
+       kind="dagger")
+weapon("candy_cane_mace", "a candy-cane mace", 47, (34, 56), 3800,
+       "A gingerbread soldier's candy cane, its crook filled with lead and its stripes worn by drill.", STR=9, WIS=9,
+       kind="blunt")
+weapon("marchpane_rolling_pin", "Madame Marchpane's rolling pin", 49, (38, 62), 5000,
+       "A rolling pin of black oak, heavy and worn smooth, still dusted with flour. It has rolled out a great many "
+       "gingerbread folk.", STR=11, WIS=9, CON=5, kind="blunt")
+weapon("sugarglass_wand", "a sugarglass wand", 49, (28, 46), 5000,
+       "A twisted wand of red and white sugar-glass that tastes faintly of cinnamon. It glows when it is hungry.",
+       INT=18, WIS=14, CHA=9, kind="wand")
+armor("spun_sugar_cowl", "a spun-sugar cowl", "head", 46, 12, 2800,
+      "A deep cowl woven of fine threads of spun sugar, light as a cobweb and oddly hard to tear.", kind="cloth",
+      INT=8, WIS=7, CHA=3)
+armor("striped_trousers", "candy-striped trousers", "legs", 46, 13, 2800,
+      "Baggy silk trousers striped red and white, soft as taffy and twice as tough.", kind="cloth", INT=8, WIS=8)
+armor("gumdrop_slippers", "gumdrop slippers", "feet", 46, 10, 2800,
+      "Soft slippers soled with chewy gumdrop. They never slip, though they do stick a little.", kind="cloth",
+      INT=7, WIS=6, DEX=3)
+armor("licorice_hood", "a licorice hood", "head", 46, 18, 2900,
+      "A hood of plaited black licorice, cured until it is as tough as boiled leather.", kind="leather", DEX=5, CON=4)
+armor("taffy_gloves", "taffy-grip gloves", "hands", 46, 14, 2800,
+      "Leather gloves palmed with pulled taffy. Nothing you hold will slip from them.", kind="leather", DEX=6, STR=3)
+armor("toffee_greaves", "toffee-glazed greaves", "legs", 46, 28, 3000,
+      "Mail leggings glazed in hard toffee that turns a blade like horn.", kind="mail", CON=6, STR=3)
+armor("gingerbread_gauntlets", "gingerbread gauntlets", "hands", 46, 17, 2800,
+      "Mail gauntlets backed with plates of gingerbread baked as hard as iron.", kind="mail", STR=5, DEX=3)
+armor("peppermint_boots", "peppermint-scale boots", "feet", 45, 15, 2700,
+      "Boots of red and white scales, cold to the touch, that leave a sharp smell of mint behind you.", kind="mail",
+      CON=4, DEX=3)
+armor("gingerbread_shield", "a gingerbread shield", "shield", 47, 30, 3200,
+      "A great round shield of gingerbread baked as hard as oak, iced with a soldier's red and white stripes.",
+      kind="shield", CON=6, STR=3)
+armor("peppermint_amulet", "a peppermint amulet", "neck", 47, 8, 3200,
+      "A striped peppermint set in silver on a fine chain. Its cold, clean scent clears the head.", kind="jewelry",
+      INT=7, WIS=6, CON=4)
+armor("spun_sugar_ring", "a ring of spun sugar", "ring", 48, 0, 3400,
+      "A ring of spun sugar that never melts, sticky only when you are tempted by something sweet.", kind="jewelry",
+      DEX=7, CON=5, CHA=5)
 
 # ------------------------------------------------------------------ Mythic gear from the Planes of the Gods (level 50)
 # Dropped only by the plane bosses and Lord Trepth. Stronger than anything else in the world.
@@ -582,3 +667,11 @@ misc("vane_ledger", "a Vane rent ledger", 150, "A leather-bound ledger of the re
      kind="quest")
 misc("vane_brooch", "a jewelled brooch", 250, "A brooch of gold and emeralds in the shape of a stag, pinned to a scrap of silk.",
      kind="quest")
+misc("gumdrop", "a giant gumdrop", 60, "A gumdrop the size of your head. Something small and dark is set in the middle of it.")
+misc("peppermint_hide", "a peppermint-striped hide", 120, "A hog's hide striped red and white, smelling strongly of mint.")
+misc("gumdrop_button", "a gumdrop button", 150, "A red gumdrop button from a gingerbread coat. Held to your ear, it whispers a name.",
+     kind="quest")
+misc("wheat_grain", "a grain of wheat", 4, "A grain of wheat from the Willow Mill. When you are mouse-sized it is as big as a barrel; "
+     "now it fits in your palm.", kind="quest")
+misc("honeydew", "a bead of honeydew", 5, "A sticky, sweet bead of honeydew, milked from greenflies by the ants.")
+misc("beetle_chitin", "a piece of beetle chitin", 8, "A curved, glossy piece of beetle shell, light and hard.")

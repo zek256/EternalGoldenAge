@@ -82,6 +82,10 @@ paladin. Also good: the Sunforged Mace (43, blunt, STR/WIS), Flameheart (50, blu
 the obsidian greatblade (two-handed), the Mountainheart Shield, and the mythic Fang of Pyraxis and
 Eternity.
 
+From **the Underhedge** (6-10, `enter mousehole` in Greenmeadow's Willow Mill): a darning-needle sword
+(7, sword, DEX/STR), a beetle-shell shield (8, shield, CON) and an amber pendant (10, neck,
+WIS/CHA/CON). The Wasp Queen drops the amber pendant.
+
 From **the Mycelial Wards** (14-20, west of Westmarch's Old Watchtower): the shelfcap breastplate (15,
 plate chest), a rootmaul (16, two-handed), a shelf-fungus shield (14), the Mycelial Crown (20, any
 class) and the rootbound ring (20, CON/WIS/STR).
@@ -98,6 +102,11 @@ From **Thornwick Hall** (43-49, west of the Stag Walk): the Vane longsword (49, 
 heirloom plate (49, plate chest) from Lord Aldric Vane, the Vane warhelm (46) and gauntlets (45), Mr.
 Graves's silver salver (45, shield), the Vane signet (49, ring) and the Dowager's pearls (48, neck,
 WIS/CHA/CON).
+
+From **the Sugarwold** (44-49, north of the Scorchsands' Salt Pans): Madame
+Marchpane's rolling pin (49, blunt, STR/WIS/CON), a candy-cane mace (47, blunt, STR/WIS) and a
+gingerbread shield (47, shield, CON/STR). Madame Marchpane drops the rolling pin; the rest come from her
+realm.
 
 ## Best races
 

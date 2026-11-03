@@ -85,6 +85,11 @@ staff (47), the Scepter of the Sand Kings (48, wand), Seluvar's Hollow Wand (40)
 Ring of the Archmage (40), the Pearl of the Deep (50, ring), the sunlit codex (40, off-hand), the Ashen
 Crown, and the mythic Fang of Pyraxis and Eternity.
 
+From **the Underhedge** (6-10, `enter mousehole` in Greenmeadow's Willow Mill): a hawthorn wand (8,
+wand, INT/WIS/CHA), a thistledown robe (7, cloth chest, INT/WIS), dandelion-silk trousers (8, cloth
+legs, INT/WIS) and petal slippers (7, cloth feet, INT/CHA). Grubbin the Mole King drops the hawthorn
+wand; the Wasp Queen drops the thistledown robe.
+
 From **the Mycelial Wards** (14-20, west of Westmarch's Old Watchtower): the Heartspore staff (20,
 staff, INT/WIS/CHA) from the First Spore, a glowcap pendant (16, neck, INT/WIS), the Mycelial Crown
 (20, any class) and a sporethorn knife (18, dagger).
@@ -99,6 +104,12 @@ wand, INT/WIS/CHA) from the magistrates and advocates, and the seal of office (3
 From **Thornwick Hall** (43-49, west of the Stag Walk): a gown of green brocade (47, cloth chest,
 INT/WIS/CHA) from Lady Seraphine, silk evening gloves (46, cloth, INT/WIS) from the ladies and guests,
 and Tobias's black grimoire (47, off-hand, INT/WIS/CON) from Master Tobias.
+
+From **the Sugarwold** (44-49, north of the Scorchsands' Salt Pans): a sugarglass
+wand (49, wand, INT/WIS/CHA), a spun-sugar cowl (46, cloth head, INT/WIS/CHA), candy-striped trousers
+(46, cloth legs, INT/WIS), gumdrop slippers (46, cloth feet, INT/WIS/DEX) and a peppermint amulet (47,
+neck, INT/WIS/CON). Madame Marchpane drops the sugarglass wand and the spun-sugar cowl; the rest come
+from her realm.
 
 ## Best races
 

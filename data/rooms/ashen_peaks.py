@@ -54,8 +54,9 @@ ROOMS = {
         "The Forge of the Dragon Cult", "Ashen Peaks",
         "A great forge is built over a vent of living magma, where the cult hammers out blades and "
         "golems in the image of their dragon god. Robed flamecallers chant over the anvils, and a "
-        "half-finished golem of black glass stands chained to the wall, its eyes beginning to glow.",
-        {"w": "obsidian_halls", "s": "drake_roost"},
+        "half-finished golem of black glass stands chained to the wall, its eyes beginning to glow. "
+        "Carts of coal stand by an eastern door, where steps of something sweet and black lead down.",
+        {"w": "obsidian_halls", "s": "drake_roost", "e": "cinder_steps"},
         spawns=[("cult_flamecaller", 2), ("obsidian_golem", 1)], level=(46, 47)),
     "molten_depths": R(
         "The Molten Depths", "Ashen Peaks",

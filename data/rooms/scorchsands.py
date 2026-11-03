@@ -96,8 +96,9 @@ ROOMS = {
         "The Salt Pans", "Scorchsands",
         "Square pans cut into the salt by some long-dead people are filled with brine that smells of "
         "death. The salt wraiths drift between them, moaning for water, and something with no shape "
-        "of its own pads across the crust.",
-        {"s": "salt_flats"},
+        "of its own pads across the crust. To the north the crystals glitter pink and white instead, "
+        "and the air smells of sugar.",
+        {"s": "salt_flats", "n": "sugar_pan"},
         spawns=[("salt_wraith", 2), ("mirage_stalker", 1)], level=(42, 43)),
     # ------------------------------------------------- the deep desert, north of Sunspire (43-49)
     "northern_dunes": R(
@@ -124,8 +125,9 @@ ROOMS = {
         "The Valley of the Kings", "Scorchsands",
         "A long valley of sandstone cliffs is carved with the doors of a hundred tombs, every one "
         "broken open and robbed long ago. Sand giants lair in the largest, and a djinn drifts among "
-        "the doors as if searching for something. To the west, the tip of a pyramid rises from the sand.",
-        {"s": "whirling_sands", "w": "sunken_pyramid"},
+        "the doors as if searching for something. To the west, the tip of a pyramid rises from the sand, "
+        "and to the north the sand at the top of the cliffs turns brown and smells of sugar.",
+        {"s": "whirling_sands", "w": "sunken_pyramid", "n": "sugar_line"},
         spawns=[("sand_giant", 2), ("wild_djinn", 1)], level=(46, 47)),
     "sandworm_deeps": R(
         "The Sandworm Deeps", "Scorchsands",

@@ -48,6 +48,13 @@ def main():
             errs.append(f"room {rid}: gate needs item '{gate['item']}', which does not exist")
         if gate and "msg" not in gate:
             errs.append(f"room {rid}: gate has no refusal message")
+        for d, h in r.get("hidden", {}).items():
+            if d not in r["exits"]:
+                errs.append(f"room {rid}: hidden exit '{d}' is not one of its exits")
+            if not all(h.get(k) for k in ("words", "prompt", "hint", "msg")):
+                errs.append(f"room {rid}: hidden exit '{d}' needs words, a prompt, a hint and a msg")
+            elif "ENTER " + h["words"][0].upper() not in h["prompt"]:
+                warns.append(f"room {rid}: hidden exit's prompt never says ENTER {h['words'][0].upper()}")
         if r["safe"] and any(MONSTERS.get(mid, {}).get("aggro") for mid, _ in r["spawns"]):
             warns.append(f"room {rid}: safe room spawns aggressive monsters")
     for special in (START_ROOM, RESPAWN_ROOM):

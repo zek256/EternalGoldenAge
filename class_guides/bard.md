@@ -84,6 +84,13 @@ DEX/STR/CHA, from Morthis), windwalker boots (50, leather), the
 Crown of Trepth and the Hourglass Amulet, and the mythic weapons the Fang of Pyraxis and Eternity, which
 give CHA along with everything else.
 
+From **the Underhedge** (6-10, `enter mousehole` in Greenmeadow's Willow Mill): a darning-needle sword
+(7, sword, DEX/STR), a wasp-sting dagger (8, dagger, DEX), the Wasp Queen's stinger (10, dagger,
+DEX/STR), a hawthorn wand (8, wand, INT/WIS/CHA), an acorn helm (6, leather head, DEX), a beetle-shell
+jerkin (7, leather chest, DEX/CON), snailskin leggings (6, leather legs, DEX), mole-claw gloves (9,
+leather hands, STR/DEX) and an amber pendant (10, neck, WIS/CHA/CON). The Wasp Queen drops her stinger
+and the amber pendant; Grubbin the Mole King drops the hawthorn wand and mole-claw gloves.
+
 From **the Mycelial Wards** (14-20, west of Westmarch's Old Watchtower): a sporethorn knife (18,
 dagger), mossfelt boots (15, leather), a glowcap pendant (16, neck, INT/WIS/CHA) and the Mycelial Crown
 (20, any class).
@@ -101,6 +108,13 @@ From **Thornwick Hall** (43-49, west of the Stag Walk): a minstrel's lute (45, o
 the household minstrels, the first CHA-focused late item; Sir Corwin's rapier (47, sword, DEX/STR/CHA),
 Lady Seraphine's hairpin (47, dagger), the Dowager's pearls (48, neck, WIS/CHA/CON), the Vane signet
 (49, ring, CHA) and the Vane huntsman's jerkin (44) and breeches (43) (leather).
+
+From **the Sugarwold** (44-49, north of the Scorchsands' Salt Pans): Madame
+Marchpane's rolling pin (49, blunt, STR/WIS/CON), a candy-cane mace (47, blunt, STR/WIS), a rock-candy
+dagger (45, dagger, DEX/STR), a sugarglass wand (49, wand, INT/WIS/CHA), a licorice hood (46, leather
+head, DEX/CON), taffy-grip gloves (46, leather hands, DEX/STR) and a ring of spun sugar (48, ring,
+DEX/CON/CHA). Madame Marchpane drops the rolling pin, the sugarglass wand and the ring of spun sugar;
+the rest come from her realm.
 
 ## Best races
 

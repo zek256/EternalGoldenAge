@@ -466,4 +466,103 @@ QUESTS = {
         "reward": {"xp": 25000, "gold": 900, "items": ["healing_potion", "healing_potion", "mana_potion",
                                                        "mana_potion"]},
     },
+    # ------------------------------------------------------------------ The Sugarwold
+    "gumdrop_gate": {
+        "name": "Gumdrops at the Gate", "giver": "edric_hale", "type": "kill", "target": "gumdrop_ooze", "count": 6,
+        "min_level": 44, "prereq": None,
+        "offer": "'Don't look at me like that. I know what I look like.' The gingerbread knight brushes crumbs from "
+                 "his breastplate. 'Sir Edric Hale, of the Sunspire caravan guard, once. I crossed the salt with no "
+                 "water left, and found a pan of sugar, and I ate. Now listen. The oozes at the gate have grown "
+                 "bold, and I can no longer get past them to forage. There's something dark in the middle of every "
+                 "one. Don't think about what. Just burst six of them for me.'",
+        "progress": "'Still wobbling about out there, I can hear them. ({n}/{count} oozes burst)'",
+        "complete": "'Ha! You've a strong stomach. Take these. I found them on the bodies by the river, and their "
+                    "owners won't be wanting them.'",
+        "reward": {"xp": 40000, "gold": 1600, "items": ["supreme_healing_potion", "supreme_mana_potion"]},
+    },
+    "buttons_of_the_lost": {
+        "name": "Buttons of the Lost", "giver": "edric_hale", "type": "collect", "target": "gumdrop_button",
+        "count": 5, "min_level": 45, "prereq": None,
+        "offer": "'The gingerbread folk in the village were heroes and wanderers, like me, only further gone. "
+                 "They've forgotten their names, but she keeps the names in their buttons, so she can call them. "
+                 "Hold one to your ear and you'll hear it whisper. Bring me five. I'll bury them under the salt, "
+                 "where she can't call them any more. It's the only kindness I can do them.'",
+        "progress": "'Five buttons, friend. You have {n}. Don't listen to them too long.'",
+        "complete": "Sir Edric holds each button to his ear in turn, nodding, before laying it in a hole in the "
+                    "salt crust. 'Ysolde of the Ironspine. Captain Marrow. Old Fennick. Thank you. They "
+                    "can rest now. Take these, for the road.'",
+        "reward": {"xp": 45000, "gold": 1800, "items": ["supreme_healing_potion", "supreme_healing_potion"]},
+    },
+    "the_witchs_guard": {
+        "name": "The Witch's Guard", "giver": "edric_hale", "type": "kill", "target": "gingerbread_soldier",
+        "count": 6, "min_level": 46, "prereq": None,
+        "offer": "'Her soldiers march up and down Gingerbread Row and the Frosting Road, and every so often they "
+                 "march someone off to the kitchen. They were never people, those ones. She cut them out of the "
+                 "dough herself. Break six of them and the village will breathe a little easier.'",
+        "progress": "'I still hear them drilling in the barracks. ({n}/{count} soldiers broken)'",
+        "complete": "'Six! The gingerbread folk in the chapel have started whispering to each other. That's never "
+                    "happened before. Here, take these.'",
+        "reward": {"xp": 50000, "gold": 2000, "items": ["supreme_healing_potion", "supreme_mana_potion"]},
+    },
+    "out_of_the_oven": {
+        "name": "Out of the Oven", "giver": "edric_hale", "type": "kill", "target": "madame_marchpane", "count": 1,
+        "min_level": 46, "prereq": None,
+        "offer": "'There's no other way to say it. Madame Marchpane has to die. For a thousand years, every "
+                 "traveller who has staggered across the salt and tasted that sugar has ended up on one of her "
+                 "trays. Past the village, down the Frosting Road, through her garden and her kitchen to the Great "
+                 "Oven. She'll offer you a sweet. Whatever you do, don't take it.'",
+        "progress": "'She's still baking. I can smell it from here.'",
+        "complete": "Sir Edric is quiet for a long time. Then he laughs, and a few crumbs fall from his face, and "
+                    "underneath is a patch of sunburnt skin. 'Look at that. It'll take a while, but I'll be "
+                    "myself again. Take these, and everything I owe you besides.'",
+        "reward": {"xp": 150000, "gold": 5500, "items": ["supreme_healing_potion", "supreme_healing_potion",
+                                                        "supreme_mana_potion"]},
+    },
+    # ------------------------------------------------------------------ The Underhedge
+    "the_ants_larder": {
+        "name": "The Ants' Larder", "giver": "wenna_furrow", "type": "collect", "target": "wheat_grain", "count": 6,
+        "min_level": 5, "prereq": None,
+        "offer": "'Mind the toadstools, dear. Wenna Furrow, the miller, or I was until I followed the thieves down "
+                 "that mousehole to see where my grain was going. Ants! The whole Ant Road is paved with my wheat. "
+                 "I'd like six grains back, please. They're heavy at this size, but they shrink with you, so "
+                 "you'll manage. The ants won't give them up, mind.'",
+        "progress": "'Six grains, dear. You've {n} so far.'",
+        "complete": "'Oh, lovely. That's a loaf's worth, if I ever get big enough to bake one. Here, take these.'",
+        "reward": {"xp": 1100, "gold": 45, "items": ["minor_healing_potion", "minor_healing_potion", "minor_mana_potion"]},
+    },
+    "the_mole_kings_tunnels": {
+        "name": "The Mole King's Tunnels", "giver": "wenna_furrow", "type": "kill", "target": "mole_king", "count": 1,
+        "min_level": 8, "prereq": None,
+        "offer": "'The floor of my mill sags a little more each week, and now I know why. Grubbin, the old mole who "
+                 "calls himself king, has been digging his court right under my millstones, and he'll have the "
+                 "whole mill down on his head, and mine. He won't listen to reason. He's west of the garden wall, "
+                 "past his gate. I'm sorry to ask it.'",
+        "progress": "'I felt the floor shift again this morning. Grubbin is still digging.'",
+        "complete": "'The digging's stopped. I'll miss the old rogue, in a way. He always said good morning. Here, "
+                    "for your trouble.'",
+        "reward": {"xp": 2500, "gold": 120, "items": ["healing_potion", "healing_potion"]},
+    },
+    "paper_and_stings": {
+        "name": "Paper and Stings", "giver": "wenna_furrow", "type": "kill", "target": "wasp_drone", "count": 6,
+        "min_level": 8, "prereq": None,
+        "offer": "'There's a windfall apple north of the snail trail, and the wasps have made a fortress of it. "
+                 "Their drones go out every morning hunting, and they take anything small enough to carry, which "
+                 "at the moment is me, and you. Thin them out, dear. Six should teach them some manners.'",
+        "progress": "'I can still hear them humming. ({n}/{count} drones swatted)'",
+        "complete": "'Quieter already. Here, take these, and keep your hat on near that apple.'",
+        "reward": {"xp": 2400, "gold": 110, "items": ["healing_potion", "mana_potion"]},
+    },
+    "the_queen_in_the_apple": {
+        "name": "The Queen in the Apple", "giver": "wenna_furrow", "type": "kill", "target": "wasp_queen", "count": 1,
+        "min_level": 8, "prereq": None,
+        "offer": "'The drones aren't the worst of it. The ones they carry off end up hanging in paper in the Wasp "
+                 "Keep, and the queen lays her eggs in them. There were two shepherd boys from Willowbrook who came "
+                 "down the mousehole after a lost lamb last spring. Through the apple, past her guards, to her "
+                 "comb. Kill Vesperine, and the keep will fall apart without her.'",
+        "progress": "'She's still in her comb. I can smell the honey and the rot from here.'",
+        "complete": "Wenna sits down hard on a toadstool and wipes her eyes on her apron. 'Thank you. Thank you. If "
+                    "there's anyone left in that paper, they'll find their way home now. Take these. And come and "
+                    "see me when you're passing; I think I'll stay small a while. I like the view.'",
+        "reward": {"xp": 4500, "gold": 250, "items": ["healing_potion", "healing_potion", "mana_potion"]},
+    },
 }

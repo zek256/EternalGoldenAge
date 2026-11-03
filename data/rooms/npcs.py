@@ -260,4 +260,25 @@ NPCS = {
         "shop": ["healing_potion", "mana_potion"],
         "quests": ["network_samples", "sages_dream", "pruning_the_rot", "the_first_spore"],
     },
+    "edric_hale": {
+        "name": "Sir Edric Hale, a half-baked gingerbread knight", "keywords": ["edric", "hale", "knight", "gingerbread", "sir"],
+        "desc": "A gingerbread man in a dented breastplate, with a caravan guard's sash across his chest and a "
+                "patch of real, sunburnt skin on one cheek. His gumdrop buttons are mismatched, as if he sewed them "
+                "on himself.",
+        "greeting": "'Another one found the sugar, eh? Well, don't eat anything, and you'll do better than I "
+                    "did. I've potions I can spare, taken from those who weren't so lucky. Type LIST.'",
+        "shop": ["supreme_healing_potion", "supreme_mana_potion", "greater_healing_potion", "greater_mana_potion"],
+        "quests": ["gumdrop_gate", "buttons_of_the_lost", "the_witchs_guard", "out_of_the_oven"],
+    },
+    "wenna_furrow": {
+        "name": "Wenna Furrow, the shrunken miller", "keywords": ["wenna", "furrow", "miller"],
+        "desc": "A round, rosy woman no taller than a thimble, in a flour-dusted apron with a mouse-sized rolling pin "
+                "tucked in its pocket. She has made a cosy camp in the fairy ring out of a thimble, a cotton reel "
+                "and a button.",
+        "greeting": "'Hello, dear! Mind you don't tread on anything. It's all much bigger down here, and some of "
+                    "it bites. I've a few potions put by, if you need them. Type LIST. Climb back UP the grass stalk "
+                    "whenever you want to go home; you'll grow back as you go.'",
+        "shop": ["minor_healing_potion", "minor_mana_potion", "healing_potion", "mana_potion"],
+        "quests": ["the_ants_larder", "the_mole_kings_tunnels", "paper_and_stings", "the_queen_in_the_apple"],
+    },
 }

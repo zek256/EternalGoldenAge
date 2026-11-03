@@ -79,6 +79,11 @@ and windwalker boots (leather), the Death Mask (50, leather), **dreamsilk trouse
 INT/WIS, from Somnara), the Pearl of the Deep (50, ring), the
 Ring of the Archmage, and the mythic Fang of Pyraxis and Eternity.
 
+From **the Underhedge** (6-10, `enter mousehole` in Greenmeadow's Willow Mill): an acorn helm (6,
+leather head, DEX), a beetle-shell jerkin (7, leather chest, DEX/CON), snailskin leggings (6, leather
+legs, DEX), mole-claw gloves (9, leather hands, STR/DEX) and an amber pendant (10, neck, WIS/CHA/CON).
+Grubbin the Mole King drops mole-claw gloves; the Wasp Queen drops the amber pendant.
+
 From **the Mycelial Wards** (14-20, west of Westmarch's Old Watchtower): the Heartspore staff (20,
 staff, INT/WIS) from the First Spore, mossfelt boots (15, leather), a glowcap pendant (16, neck), the
 Mycelial Crown (20) and the rootbound ring (20, CON/WIS).
@@ -95,6 +100,11 @@ From **Thornwick Hall** (43-49, west of the Stag Walk): a gown of green brocade 
 INT/WIS/CHA) from Lady Seraphine, silk evening gloves (46, cloth), Tobias's black grimoire (47,
 off-hand), the Dowager's pearls (48, neck) and the Vane huntsman's jerkin (44, leather) if you want
 armor over WIS.
+
+From **the Sugarwold** (44-49, north of the Scorchsands' Salt Pans): Madame
+Marchpane's rolling pin (49, blunt, STR/WIS/CON), a candy-cane mace (47, blunt, STR/WIS), a licorice
+hood (46, leather head, DEX/CON) and taffy-grip gloves (46, leather hands, DEX/STR). Madame Marchpane
+drops the rolling pin; the rest come from her realm.
 
 ## Best races
 

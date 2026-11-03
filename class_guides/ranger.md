@@ -79,6 +79,11 @@ mail legs, from Nerevos), **the Ferryman's gloves** (50, leather, from Morthis),
 windwalker boots (50, leather, DEX), the Band of the Four Winds (50, ring, DEX), and the mythic Fang
 of Pyraxis and Eternity.
 
+From **the Underhedge** (6-10, `enter mousehole` in Greenmeadow's Willow Mill): a darning-needle sword
+(7, sword, DEX/STR), the Wasp Queen's stinger (10, dagger, DEX/STR), a whisker-strung bow (9, bow, DEX)
+and a beetle-shell shield (8, shield, CON). The Wasp Queen drops her stinger; Old Tom the cat drops the
+whisker-strung bow.
+
 From **the Mycelial Wards** (14-20, west of Westmarch's Old Watchtower): a capshell hauberk (17, mail
 chest), rootweave chausses (16, mail legs), mossfelt boots (15, leather), a sporethorn knife (18,
 dagger, DEX), a shelf-fungus shield (14) and the Mycelial Crown (20, any class).
@@ -95,6 +100,11 @@ From **Thornwick Hall** (43-49, west of the Stag Walk): the Vane hunting bow (45
 Hobb the gamekeeper, Sir Corwin's rapier (47, sword, DEX), Lady Seraphine's hairpin (47, dagger, DEX),
 the Vane huntsman's jerkin (44) and breeches (43) (leather), Mr. Graves's silver salver (45, shield)
 and Great-aunt Mathilde's cameo (46, neck).
+
+From **the Sugarwold** (44-49, north of the Scorchsands' Salt Pans): a gingerbread
+shield (47, shield, CON/STR), gingerbread gauntlets (46, mail hands, STR/DEX), toffee-glazed greaves
+(46, mail legs, CON/STR), peppermint-scale boots (45, mail feet, CON/DEX) and a ring of spun sugar (48,
+ring, DEX/CON/CHA). Madame Marchpane drops the ring of spun sugar; the rest come from her realm.
 
 ## Best races
 

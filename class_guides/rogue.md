@@ -82,6 +82,13 @@ in the Plane of Death, drakehide boots (45) and
 windwalker boots (50) in leather, the sandrunner's jerkin and gloves (40), the Band of the Four Winds
 (50, ring), Stormcaller (50, bow), and the mythic Fang of Pyraxis and Eternity.
 
+From **the Underhedge** (6-10, `enter mousehole` in Greenmeadow's Willow Mill): a darning-needle sword
+(7, sword, DEX/STR), a wasp-sting dagger (8, dagger, DEX), the Wasp Queen's stinger (10, dagger,
+DEX/STR), a whisker-strung bow (9, bow, DEX), an acorn helm (6, leather head, DEX), a beetle-shell
+jerkin (7, leather chest, DEX/CON), snailskin leggings (6, leather legs, DEX) and mole-claw gloves (9,
+leather hands, STR/DEX). The Wasp Queen drops her stinger; Old Tom the cat drops the whisker-strung bow;
+Grubbin the Mole King drops mole-claw gloves.
+
 From **the Mycelial Wards** (14-20, west of Westmarch's Old Watchtower): a sporethorn knife (18,
 dagger, DEX), mossfelt boots (15, leather, DEX) and the Mycelial Crown (20, any class).
 
@@ -96,6 +103,11 @@ From **Thornwick Hall** (43-49, west of the Stag Walk): Lady Seraphine's hairpin
 first new dagger since Serpentfang at 15, Sir Corwin's rapier (47, sword, DEX), the Vane hunting bow
 (45), the Vane huntsman's jerkin (44) and breeches (43) (leather) and Great-aunt Mathilde's cameo (46,
 neck).
+
+From **the Sugarwold** (44-49, north of the Scorchsands' Salt Pans): a rock-candy
+dagger (45, dagger, DEX/STR), a licorice hood (46, leather head, DEX/CON), taffy-grip gloves (46,
+leather hands, DEX/STR) and a ring of spun sugar (48, ring, DEX/CON/CHA). Madame Marchpane drops the
+ring of spun sugar; the rest come from her realm.
 
 ## Best races
 

@@ -79,6 +79,9 @@ Ussreth (48, sword), Tidecaller (50, two-handed), the obsidian greatblade and cr
 (two-handed), the Mountainheart Shield, plate from the elemental lords, and the mythic Fang of Pyraxis
 and Eternity.
 
+From **the Underhedge** (6-10, `enter mousehole` in Greenmeadow's Willow Mill): a darning-needle sword
+(7, sword, DEX/STR) and a beetle-shell shield (8, shield, CON).
+
 From **the Mycelial Wards** (14-20, west of Westmarch's Old Watchtower): the shelfcap breastplate (15,
 plate chest), a rootmaul (16, two-handed), a shelf-fungus shield (14), the Mycelial Crown (20, any
 class) and the rootbound ring (20).
@@ -94,6 +97,9 @@ From **Thornwick Hall** (43-49, west of the Stag Walk): the Vane longsword (49, 
 heirloom plate (49, plate chest) from Lord Aldric Vane, the Vane warhelm (46) and gauntlets (45),
 Mistress Hollin's cleaver (45, axe), Mr. Graves's silver salver (45, shield) or, for more INT, Tobias's
 black grimoire (47, off-hand), and the Vane signet (49, ring).
+
+From **the Sugarwold** (44-49, north of the Scorchsands' Salt Pans): a gingerbread
+shield (47, shield, CON/STR). It drops from her gingerbread soldiers.
 
 ## Best races
 

@@ -27,6 +27,7 @@ Saves are written as JSON to `saves/<name>.json`.
 | `look` / `l` [thing] | describe the room, or look at a monster, person or item |
 | `n` `s` `e` `w` `u` `d` (or `north`, `go north`...) | move |
 | `run` <path>, or just the path | speedwalk: `nnes` or `run 3n2e` walks the path at two rooms a second (paste a `find` route straight in). Typing anything stops you. Each step shows the small map (even with `automap` off) and only the last room is described; it stops early at a missing exit, a sealed gate, or a monster that attacks. In a fight, only the first step counts, as a flee |
+| `enter` <thing> | go into something a room's description tells you about, such as `enter mousehole` in the Willow Mill. These ways in aren't listed as exits, and you can't speedwalk or flee through them |
 | `exits` | list exits and where they lead |
 | `map` | a text map of the area around you: `#` you, `$` shop, `!` quest to take, `?` quest to hand in, `*` a living boss, `^` `v` stairs up/down. Rooms of neighbouring areas are grey |
 | `automap` [on\|off] | show a small map (two rooms in every direction) under each room description. Saved with your character |
@@ -46,7 +47,7 @@ Saves are written as JSON to `saves/<name>.json`.
 | `get` <item> / `get all` / `drop` <item> | pick up / drop |
 | `talk` <person> | talk to NPCs; this turns in every finished quest and offers every quest you qualify for |
 | `quests` / `journal` | quest log |
-| `find` <quest name, number, or monster> | shortest route to your quest target (or the quest giver once it's done), e.g. `find vermin` prints `wd`. With one active quest, plain `find` works. Also `track` / `where` |
+| `find` <quest name, number, or monster> | shortest route to your quest target (or the quest giver once it's done), e.g. `find vermin` prints `wd`. A route that needs `enter` says so, e.g. `sssw, then ENTER MOUSEHOLE, then nnnnen`. With one active quest, plain `find` works. Also `track` / `where` |
 | `list`, `buy [qty] <item>`, `sell [qty or all] <item>`, `sell junk` | trade with merchants: Durgan Ironhand (weapons and armor, smithy), Elowen Silverthread (cloth, wands, orbs and rings for casters, west off the South Road), Mirela (potions) |
 | `bank`, `deposit [qty or all] <item>`, `withdraw [qty or all] <item>` | store items you don't want to carry with Brother Oswin in the Sunvault, east of the Temple of the Dawn. Gold stays in your purse. Banked items are kept through rebirth, but don't count toward collect quests or open item gates until you withdraw them |
 | `sleep` / `rest` | fall asleep and recover 10% of max HP and mana every tick (not with hostile monsters nearby) |
@@ -188,7 +189,7 @@ At level 50, `rebirth` lets you choose any other class:
 ## World
 
 Town of Brightwater (inn, temple and the Sunvault bank beneath it, smithy, alchemist, Silverthread Arcana caster shop, barracks,
-and the North, West and East Gates), Greenmeadow (1-5), Whispering Woods and the bandit camp (4-10),
+and the North, West and East Gates), Greenmeadow (1-5) with **the Underhedge** (5-10) behind a mousehole in its Willow Mill (`enter mousehole`), where a fairy ring shrinks you to the size of a mouse: a meadow of dewdrops, the roaring millrace, the ant road, a beetle cavalry of mouse knights, the mole kings' tunnels, the garden wall where Old Tom the cat prowls, and the Wasp Keep in a windfall apple (only the soldier ants, mole guards and wasps attack; Wenna Furrow, the shrunken miller, sells potions in the fairy ring), Whispering Woods and the bandit camp (4-10),
 the Westmarch farms and goblin quarry (3-10), **the Mycelial Wards** (12-20) west of its Old Watchtower, a city grown from one vast fungal network whose capfolk share a partial hive mind (most ignore you; the spore wardens and the things of the Rot Ward and the deep network do not), with a quiet garden path south from the Gilled Houses into the Hedge Maze of Thornwick Hall, Barrowfield and the Crypt of Varnoth dungeon (9-17),
 the snowy Rimefells (10-20) around the dwarven city of **Hearthdeep** (smith, rune-carver, alehouse
 with potions) and the Deepdelve Mine below it (18-21), the Mirefen (15-22), the ancient Eldergrove
@@ -202,7 +203,7 @@ orc warcamp, the giants and the frost caverns (20-34), the Ruins of Elandor (32-
 Peaks up to the dragon's lair (37-52), and to the east the Dustway caravan road (8-15), with **the Chancery of the Dead** (30-38) south of its Gnoll Scrub, a court where the dead bring their unfinished business (most of its ghosts are too busy with their cases to attack; the bailiffs and wardens are not, and the inner chambers open only to someone carrying a writ of audience from Clerk Quillon in the Office of Forms and Writs), the gnoll
 canyons of the Redrock Badlands (18-27) with **the Carnival That Never Closes** (24-30) south of its Howling Pit, a centuries-old fairground that grows stranger the further in you go, from a cheerful midway to the always-midnight lots behind the tents and the Ringmaster in the big top (Pip at the prize booth sells gear lost by other adventurers), and the Scorchsands desert (35-49) around the golden city
 of **Sunspire** (bladewright, silk bazaar, caravanserai with potions), with the Tomb of the Sand
-Kings beneath a sunken pyramid (45-48). Brightwater's shops sell gear up to level 20; Hearthdeep
+Kings beneath a sunken pyramid (45-48) and **the Sugarwold** (44-49) north of the Salt Pans, a country of sweets baked at the edge of the salt by the witch Madame Marchpane, whose gingerbread folk were heroes once; its brown-sugar dunes run down into the Valley of the Kings, and a coal road behind her cottage climbs west to the Forge of the Dragon Cult in the Ashen Peaks (only her gingerbread soldiers, oven imps and the witch herself attack; Sir Edric Hale at the sugar pan sells potions). Brightwater's shops sell gear up to level 20; Hearthdeep
 sells dwarven gear for levels 12-24, Silverbough elven gear for levels 24-34, and Sunspire desert
 gear for levels 38-44.
 
@@ -229,7 +230,9 @@ the Rimefells, The Skullsplitter Horde (Captain Halvard, barracks), The Bone Kin
 Mirefen and The Thirsting Dead (Sister Aveline, temple), The Blight Spreads (Elowen, Silverthread
 Arcana), Highway Robbery and The Laughing Warlord (Old Marta, Dustway Waystation), Glass from the
 Sands (Archivist Mehrun), Giants on the Causeway (Sun-Captain Idrisa) and The Last Sand King (Emira
-Zahrin, all in Sunspire), Goblins in the
+Zahrin, all in Sunspire), Gumdrops at the Gate, Buttons of the Lost, The Witch's Guard and Out of the
+Oven (Sir Edric Hale, the Sugarwold), The Ants' Larder, The Mole King's Tunnels, Paper and Stings and The
+Queen in the Apple (Wenna Furrow, the Underhedge), Goblins in the
 Henhouse (Farmer Haverick, Thornbury), Fur for the Gatewatch (Captain Orla, Hearthdeep), The
 Stonewake (Thane Hargrim, Hearthdeep), The Sacred Herd and The Rotwood Circle (Warden-Captain
 Faelan, Silverbough) and The Heart of the Blight (Speaker Saelwyn, Silverbough).

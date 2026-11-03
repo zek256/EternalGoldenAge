@@ -161,6 +161,12 @@ for regulars; champions 4.85-6.6 / 2.3-2.9; elemental lords 5.75-9.4 / 2.5-3.25;
   Killing him grants no title (by the user's choice).
 - The Chancery of the Dead's Door of Audience needs a `writ_of_audience`, the reward for Clerk
   Quillon's first quest; he also sells duplicates.
+- Hidden exits: a room's `hidden` field (`{dir: {"words", "prompt", "hint", "msg"}}`, see `data/rooms/common.R`)
+  marks an ordinary exit as taken only with `enter <word>` (`cmd_enter`). It stays in `exits`, so maps,
+  `find`, insets and `validate.py` treat it normally, but the Exits line, `exits`, speedwalks, fleeing
+  and the `v`/`^` map marker skip it, walking that way prints the hint, and `find` prints
+  `ENTER <WORD>` in its route (`route_text`). `look` prints the `prompt` ("Type ENTER MOUSEHOLE...")
+  in bold magenta under the description, so the command stands out (the user's request). Used by the Willow Mill's mousehole into the Underhedge (by the user's choice).
 
 ### Inventory and items
 - Inventory is a flat list of item ids (duplicates = quantity). Equipment is `{slot: id}` over

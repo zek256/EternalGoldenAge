@@ -84,6 +84,7 @@ class Room:
         self.safe = d["safe"]
         self.level = d.get("level")
         self.gate = d.get("gate")
+        self.hidden = d.get("hidden") or {}  # exits taken with 'enter <word>' (see data.rooms.common.R)
         # Boss rooms are fully hostile. Anywhere else at most `max_aggro` monsters (default 1) attack
         # on sight, and the rest wait until you attack them.
         self.boss_room = any(MONSTERS[mid]["boss"] for mid, _ in self.spawns)

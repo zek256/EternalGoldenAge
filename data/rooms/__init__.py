@@ -6,16 +6,16 @@ Add a new region by writing a module with a ROOMS dict and listing it in REGIONS
 """
 from data.rooms import (ashen_peaks, badlands, barrowfield, brightwater, carnival, chancery, deepdelve,
                         dustway, elandor, eldergrove, greenmeadow, hearthdeep, ironspine, mirefen, mycelial,
-                        northlands, planes, rimefells, sand_tomb, scorchsands, silverbough, sunspire,
-                        thornwick, westmarch, whispering_woods)
+                        northlands, planes, rimefells, sand_tomb, scorchsands, silverbough, sugarwold, sunspire,
+                        thornwick, underhedge, westmarch, whispering_woods)
 from data.rooms.npcs import NPCS  # noqa: F401
 
 START_ROOM = "town_square"
 RESPAWN_ROOM = "temple"
 
-REGIONS = [brightwater, greenmeadow, whispering_woods, northlands, barrowfield, mirefen, ironspine,
+REGIONS = [brightwater, greenmeadow, underhedge, whispering_woods, northlands, barrowfield, mirefen, ironspine,
            elandor, ashen_peaks, westmarch, rimefells, hearthdeep, deepdelve, eldergrove, silverbough,
-           dustway, chancery, badlands, carnival, scorchsands, sunspire, sand_tomb, thornwick, mycelial, planes]
+           dustway, chancery, badlands, carnival, scorchsands, sunspire, sand_tomb, thornwick, mycelial, sugarwold, planes]
 
 ROOMS = {}
 for _region in REGIONS:

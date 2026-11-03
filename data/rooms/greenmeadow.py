@@ -32,7 +32,15 @@ ROOMS = {
         "The Willow Mill", "Greenmeadow",
         "An old watermill stands on the brook, its wheel still turning though the miller left years "
         "ago. Spilled grain lies everywhere, and the floorboards upstairs creak under something "
-        "heavier than a mouse.",
-        {"e": "meadow_crossing"},
-        spawns=[("giant_rat", 2), ("kobold_scavenger", 1)], level=(2, 4)),
+        "heavier than a mouse. By the millstones, a mousehole in the skirting board is ringed with "
+        "tiny toadstools, and a smell of clover drifts out of it.",
+        {"e": "meadow_crossing", "d": "fairy_ring"},
+        spawns=[("giant_rat", 2), ("kobold_scavenger", 1)], level=(2, 4),
+        hidden={"d": {"words": ["mousehole", "hole", "mouse hole"],
+                      "prompt": "Type ENTER MOUSEHOLE to squeeze inside.",
+                      "hint": "The mousehole is far too small for you to walk into. (Type ENTER MOUSEHOLE.)",
+                      "msg": "You kneel and put your head to the mousehole, and the toadstools around it chime. "
+                             "The world rushes upward: the skirting board becomes a cliff, the spilled grain "
+                             "becomes a field of boulders, and you step through an arch of gnawed wood into "
+                             "the dark."}}),
 }
