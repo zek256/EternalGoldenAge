@@ -42,12 +42,12 @@ All Wizard magic is spells, cast with `cast <name>`. There are no cooldowns: eve
 
 | Level | Name | Type | Cost | Target | Effect |
 |---|---|---|---|---|---|
-| 1 | **Magic Missile** | spell | 5 / 78 | one foe | Arcane damage 6 + 2/level + 0.6 INT (~18 at L1, ~109 at L25, ~204 at L50) |
-| 5 | **Frost Bolt** | spell | 11 / 78 | one foe | Frost damage 6.72 + 2.24/level + 0.67 INT (~37 at L5, ~122 at L25, ~228 at L50) |
-| 16 | **Fireball** | spell | 28 / 78 | one foe | Fire damage 7.53 + 2.51/level + 0.75 INT (~94 at L16, ~137 at L25, ~256 at L50) |
+| 1 | **Magic Missile** | spell | 5 / 54 | one foe | Arcane damage 6 + 2/level + 0.6 INT (~18 at L1, ~109 at L25, ~204 at L50) |
+| 5 | **Frost Bolt** | spell | 9 / 54 | one foe | Frost damage 6.72 + 2.24/level + 0.67 INT (~37 at L5, ~122 at L25, ~228 at L50) |
+| 16 | **Fireball** | spell | 20 / 54 | one foe | Fire damage 7.53 + 2.51/level + 0.75 INT (~94 at L16, ~137 at L25, ~256 at L50) |
 | 20 | **Invisibility** | spell | 58 / 118 | self | Invisible for 75 ticks (5 minutes): aggressive monsters ignore you and you can sleep near them, but bosses see through it. Casting any spell or starting a fight ends it, and a monster that can see you then attacks |
-| 26 | **Lightning Lance** | spell | 42 / 78 | one foe | Lightning damage 8.43 + 2.81/level + 0.84 INT (~158 at L26, ~286 at L50) |
-| 40 | **Meteor** | spell | 64 / 78 | one foe | Fire damage 9.44 + 3.15/level + 0.94 INT (~261 at L40, ~321 at L50) |
+| 26 | **Lightning Lance** | spell | 30 / 54 | one foe | Lightning damage 8.43 + 2.81/level + 0.84 INT (~158 at L26, ~286 at L50) |
+| 40 | **Meteor** | spell | 44 / 54 | one foe | Fire damage 9.44 + 3.15/level + 0.94 INT (~261 at L40, ~321 at L50) |
 
 ## How to play
 
@@ -62,8 +62,8 @@ hostile monster.
 
 **Tips**
 - All your damage ignores armor.
-- Your attack spells grow in cost three times as fast as other spells (x0.3 a level instead of
-  x0.1), so a same-level fight uses about 20-35% of your mana: two to four fights per full pool.
+- Your attack spells grow in cost twice as fast as other spells (x0.2 a level instead of
+  x0.1), so a same-level fight uses about 45-55% of your mana at low levels and 20-35% from 25 on.
   Auto-attacks still land every round when you run dry.
 - Wizards have no heal and no shield. Fight one monster at a time, carry healing potions, and
   wear CON gear. A healer past life (cleric, druid,
@@ -127,7 +127,7 @@ from her realm.
 
 ## How it performs
 
-The Wizard wins every same-level fight in the simulator in 2.1-4.9 rounds, finishing with 57-85% HP. It survives about 2, 3 and 4 fights in a row at levels 10, 20 and 30 before it must rest, the fewest of any class. Against the world bosses it wins 80-100% at the boss's own level and every one at boss level +3. These figures are from November 2026, after Mana Shield was removed and the Wizard's WIS growth was halved in favour of CON.
+The Wizard wins almost every same-level fight in the simulator in 4.0-8.8 rounds, finishing with 35-74% HP. It survives about 2, 2 and 2 fights in a row at levels 10, 20 and 30 before it must rest, the fewest of any class. Against the world bosses it wins 85-100% at the boss's own level and every one at boss level +3. These figures are from November 2026, after monsters of level 50 and below got twice the HP and 60% of the damage.
 
 ## Rebirth
 

@@ -126,7 +126,7 @@ the rest come from her realm.
 
 ## How it performs
 
-The Bard wins every same-level fight in the simulator in 1.6-5.1 rounds, finishing with 66-92% HP. It survives about 8, 8 and 8 fights in a row at levels 10, 20 and 30 (the cap is 8). Against the world bosses it wins 80-100% at the boss's own level and 100% at boss level +3. These figures are from November 2026, after cooldowns were removed.
+The Bard wins every same-level fight in the simulator in 3.3-7.8 rounds, finishing with 64-98% HP. It survives about 6, 6 and 8 fights in a row at levels 10, 20 and 30 (the cap is 8). Against the world bosses it beats every one, at the boss's own level and at boss level +3. These figures are from November 2026, after monsters of level 50 and below got twice the HP and 60% of the damage.
 
 ## Rebirth
 

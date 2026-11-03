@@ -131,7 +131,7 @@ higher of the two. Each class's spells and abilities:
 Each class has a full guide in [`class_guides/`](class_guides/README.md): stats by level, every spell
 and ability with its numbers, gear, races, how to play it and what it leaves behind on rebirth. At level 50, [Gearing Up at Level 50](class_guides/level_50_gear.md) shows what to buy, farm and chase next for each class.
 
-Spells cost mana, and the cost scales with level (the wizard's attack spells scale three times
+Spells cost mana, and the cost scales with level (the wizard's attack spells scale twice
 as fast, so a fight costs a wizard a real share of its mana). Abilities are free. Both are learned automatically
 on level up, and neither has a cooldown.
 

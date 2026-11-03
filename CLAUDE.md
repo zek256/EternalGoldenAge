@@ -178,12 +178,15 @@ data/rooms/   one module per region, each with a ROOMS dict, merged in __init__ 
 - Race perks are keys in `RACES[...]["perks"]` read via `Character.perk()`: hp_mult,
   mana_mult, dmg_mult, crit, dodge, regen_mult, immune, xp_mult (supported, currently unused).
 - Ability power = `base + lvl*level + scale*stat`. Spell cost scales `cost * (1 + growth*(level-1))`,
-  `growth` 0.1 by default; the wizard's five attack spells use `WIZARD_GROWTH` 0.3 (the user's choice,
+  `growth` 0.1 by default; the wizard's five attack spells use `WIZARD_GROWTH` 0.2 (the user's choice,
   2026-11-03: a level-25 wizard used ~5% mana a fight, now ~20-35%).
 
 ### Monsters
 Templates only set multipliers. Real HP, damage and armor come from level in `MonsterInstance`
 (`(20 + 15L)` HP times `MONSTER_HP_MULT`, etc.). To make a monster tougher, change its multipliers, not raw numbers.
+Monsters of level 50 and below also get `WORLD_HP_MULT` (2.0) and `WORLD_DMG_MULT` (0.6) (the user's choice,
+2026-11-03: same-level fights took 3-5 rounds, now about 5-10, mean ~7, at about the same HP cost). The planes
+(above 50) don't get them, so their tuning is untouched.
 Specials: big / dot / drain / heal (no stuns). Bosses respawn after 120 ticks, others after 30.
 Monsters above level 50 (the Planes of the Gods) use larger multipliers (hp 3.5-5.6, dmg 2.6-3.4
 for regulars; champions 4.85-6.6 / 2.3-2.9; elemental lords 6.4-10.5 / 2.5-3.25; Lord Trepth
@@ -300,3 +303,10 @@ INT 3 / WIS 1 / CON 1 (the same as the necromancer's; WIS only fed its mana by t
 the boss's level and 100% at +3. The planes didn't move (other classes grow CON faster). The user asked for Trepth to need a full every-class character with
 good gear. Six lives already hold most of the best stats, so the 6-to-11 gap comes mainly from the
 mastery bonus (+12% vs +22%) and the remaining classes' growth (the rogue's and ranger's DEX).
+
+Longer fights (2026-11-03, the user's choice: same-level fights were 3-5 rounds and felt like two-shots):
+monsters of level 50 and below got `WORLD_HP_MULT` 2.0 and `WORLD_DMG_MULT` 0.6. Same-level fights now
+average ~7 rounds (fast classes ~5, the cleric and warrior ~9-14) with about the same HP left; world bosses
+are a little easier (most 90-100% at the boss's level), groups of three a little easier, endurance at level
+10 a little lower. Casters spend more mana per fight (a level-10 shaman ~88%, the wizard 33-62% with its
+x0.3 attack cost growth, so that was lowered to x0.2: 17-56% a fight, most at low levels). The planes are unchanged.

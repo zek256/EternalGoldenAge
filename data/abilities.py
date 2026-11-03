@@ -9,7 +9,7 @@ There are no cooldowns, stuns or area attacks (the user's design). Mana is the o
 kind     - "spell" (costs mana, scales with level) or "ability" (free)
 cost     - base mana cost; actual cost = cost * (1 + growth * (level - 1))
 growth   - optional cost growth per level (default COST_GROWTH, 0.1). The wizard's attack spells use
-           WIZARD_GROWTH (0.3): its large mana pool and short fights left it spending ~5% a fight at 25
+           WIZARD_GROWTH (0.2): its large mana pool and short fights left it spending ~5% a fight at 25
 target   - "enemy" or "self"
 
 Each class's attacks form a ladder: every new one is STEP (12%) stronger than the one before it at
@@ -23,7 +23,7 @@ Summons scale with "INT/WIS", the higher of the two, and can't be called in comb
 """
 
 COST_GROWTH = 0.1    # default spell cost growth per level
-WIZARD_GROWTH = 0.3  # the wizard's attack ladder (the user's choice, 2026-11-03)
+WIZARD_GROWTH = 0.2  # the wizard's attack ladder (the user's choice, 2026-11-03; 0.3 before fights got longer)
 STEP = 1.12  # each rung of a class's attack ladder is this much stronger than the last
 
 

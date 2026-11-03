@@ -117,7 +117,7 @@ realm.
 
 ## How it performs
 
-The Paladin wins every same-level fight in the simulator in 2.3-5.0 rounds, finishing with 68-98% HP. It survives about 6, 7 and 8 fights in a row at levels 10, 20 and 30 (the cap is 8). Against the world bosses it beats every one, at the boss's own level and at boss level +3. These figures are from November 2026, after cooldowns were removed.
+The Paladin wins every same-level fight in the simulator in 4.3-8.7 rounds, finishing with 62-96% HP. It survives about 6, 8 and 8 fights in a row at levels 10, 20 and 30 (the cap is 8). Against the world bosses it beats every one, at the boss's own level and at boss level +3. These figures are from November 2026, after monsters of level 50 and below got twice the HP and 60% of the damage.
 
 ## Rebirth
 

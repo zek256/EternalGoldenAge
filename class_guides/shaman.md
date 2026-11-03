@@ -114,7 +114,7 @@ rolling pin; the rest come from her realm.
 
 ## How it performs
 
-The Shaman wins every same-level fight in the simulator in 2.6-5.5 rounds, finishing with 69-83% HP. It survives about 3, 4 and 6 fights in a row at levels 10, 20 and 30 (the cap is 8). Against the world bosses it beats every one, at the boss's own level and at boss level +3. These figures are from November 2026, after cooldowns were removed.
+The Shaman wins every same-level fight in the simulator in 4.2-9.8 rounds, finishing with 59-79% HP. It survives about 2, 3 and 6 fights in a row at levels 10, 20 and 30. Against the world bosses it wins 95-100% at the boss's own level and every one at boss level +3. These figures are from November 2026, after monsters of level 50 and below got twice the HP and 60% of the damage.
 
 ## Rebirth
 

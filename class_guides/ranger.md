@@ -118,7 +118,7 @@ ring, DEX/CON/INT). Madame Marchpane drops the ring of spun sugar; the rest come
 
 ## How it performs
 
-The Ranger wins every same-level fight in the simulator in 2.7-4.5 rounds, finishing with 63-90% HP. It survives about 5, 8 and 8 fights in a row at levels 10, 20 and 30 (the cap is 8). Against the world bosses it wins 95-100% at the boss's own level and 100% at boss level +3. These figures are from November 2026, after cooldowns were removed.
+The Ranger wins every same-level fight in the simulator in 4.8-8.5 rounds, finishing with 52-83% HP. It survives about 4, 7 and 8 fights in a row at levels 10, 20 and 30 (the cap is 8). Against the world bosses it wins 95-100% at the boss's own level and every one at boss level +3. These figures are from November 2026, after monsters of level 50 and below got twice the HP and 60% of the damage.
 
 ## Rebirth
 

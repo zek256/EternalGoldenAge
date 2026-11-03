@@ -119,7 +119,7 @@ shield (47, shield, CON/STR). It drops from her gingerbread soldiers.
 
 ## How it performs
 
-The Warrior wins every same-level fight in the simulator in 3.6-6.0 rounds, finishing with 57-82% HP. It survives about 2, 3 and 7 fights in a row at levels 10, 20 and 30 (the cap is 8). Against the world bosses it beats every one, at the boss's own level and at boss level +3. These figures are from November 2026, after cooldowns were removed.
+The Warrior wins every same-level fight in the simulator in 7.3-11.9 rounds, finishing with 50-77% HP. It survives about 2, 3 and 5 fights in a row at levels 10, 20 and 30. Against the world bosses it beats every one, at the boss's own level and at boss level +3. These figures are from November 2026, after monsters of level 50 and below got twice the HP and 60% of the damage.
 
 ## Rebirth
 

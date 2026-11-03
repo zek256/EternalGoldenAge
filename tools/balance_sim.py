@@ -13,7 +13,8 @@
 The simulated player is a human with best-in-slot gear for their level (including boss drops,
 so results are optimistic) among the items its class is trained for, and a simple AI: heal when low, recast a broken shield, cast each buff once, otherwise use
 the ability with the best expected value (there are no cooldowns, so that is the newest attack). Bosses are fought with 5 healing potions.
-Targets the game was tuned to: same-level fights cost ~25-55% HP; endurance 2-6 for most
+Targets the game was tuned to: same-level fights cost ~25-55% HP and last ~6-8 rounds on average
+(the user's choice, 2026-11-03; world monsters' WORLD_HP_MULT / WORLD_DMG_MULT); endurance 2-6 for most
 classes; bosses mostly beatable at level +3. Endgame (monsters above level 50; a multi-life
 character takes the best stats of every class it has lived): first-tier plane monsters a coin
 flip with 1 life and easy with 6; plane champions ~80-95% with 6 lives; elemental lords ~95% with

@@ -11,6 +11,11 @@ RESPAWN_TICKS = 30
 BOSS_RESPAWN_TICKS = 120
 DEFAULT_MAX_AGGRO = 1  # monsters that attack on sight in a room without a boss
 MONSTER_HP_MULT = 1.3  # every monster; raised from 1.0 when auto-attacks began landing alongside every action
+# Monsters of level 50 and below (not the Planes of the Gods, tuned separately): longer fights, the
+# user's choice (2026-11-03): same-level fights went from ~3-5 rounds to ~6-8. Damage was cut so a
+# fight costs about the same HP as before, spread over more rounds.
+WORLD_HP_MULT = 2.0
+WORLD_DMG_MULT = 0.6
 
 
 class MonsterInstance:
@@ -24,9 +29,11 @@ class MonsterInstance:
         self.boss = d["boss"]
         self.aggro = d["aggro"]
         self.specials = d["specials"]
-        self.max_hp = int((20 + 15 * L) * (1 + 0.004 * L) * d["hp"] * MONSTER_HP_MULT)
+        world = L <= 50
+        self.max_hp = int((20 + 15 * L) * (1 + 0.004 * L) * d["hp"] * MONSTER_HP_MULT
+                          * (WORLD_HP_MULT if world else 1))
         self.hp = self.max_hp
-        scale = d["dmg"] * (1 + 0.006 * L)
+        scale = d["dmg"] * (1 + 0.006 * L) * (WORLD_DMG_MULT if world else 1)
         self.dmg_min = max(1, int((2 + 1.9 * L) * scale))
         self.dmg_max = max(2, int((4 + 2.8 * L) * scale))
         self.armor = int(2 * L * d["armor"])

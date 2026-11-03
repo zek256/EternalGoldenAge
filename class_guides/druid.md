@@ -115,7 +115,7 @@ drops the rolling pin; the rest come from her realm.
 
 ## How it performs
 
-The Druid wins every same-level fight in the simulator in 2.4-5.5 rounds, finishing with 62-84% HP. It survives about 5, 8 and 8 fights in a row at levels 10, 20 and 30 (the cap is 8). Against the world bosses it wins 60-100% at the boss's own level and 95-100% at boss level +3. These figures are from November 2026, after cooldowns were removed.
+The Druid wins every same-level fight in the simulator in 4.0-9.6 rounds, finishing with 58-96% HP. It survives about 2, 8 and 8 fights in a row at levels 10, 20 and 30 (the cap is 8). Against the world bosses it wins 80-100% at the boss's own level and 95-100% at boss level +3. These figures are from November 2026, after monsters of level 50 and below got twice the HP and 60% of the damage.
 
 ## Rebirth
 

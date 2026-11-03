@@ -119,7 +119,7 @@ ring of spun sugar; the rest come from her realm.
 
 ## How it performs
 
-The Rogue wins every same-level fight in the simulator in 3.0-4.0 rounds, finishing with 68-85% HP. It survives about 3, 4 and 8 fights in a row at levels 10, 20 and 30 (the cap is 8). Against the world bosses it beats every one, at the boss's own level and at boss level +3. These figures are from November 2026, after cooldowns were removed.
+The Rogue wins every same-level fight in the simulator in 4.8-6.4 rounds, finishing with 66-83% HP. It survives about 3, 4 and 7 fights in a row at levels 10, 20 and 30. Against the world bosses it beats every one, at the boss's own level and at boss level +3. These figures are from November 2026, after monsters of level 50 and below got twice the HP and 60% of the damage.
 
 ## Rebirth
 

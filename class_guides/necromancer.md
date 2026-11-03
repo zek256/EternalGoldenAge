@@ -116,7 +116,7 @@ from her realm.
 
 ## How it performs
 
-The Necromancer wins every same-level fight in the simulator in 2.4-4.7 rounds, finishing with 66-97% HP. It survives about 7, 4 and 8 fights in a row at levels 10, 20 and 30 (the cap is 8). Against the world bosses it wins 95-100% at the boss's own level and 100% at boss level +3. These figures are from November 2026, after cooldowns were removed.
+The Necromancer wins every same-level fight in the simulator in 4.2-8.3 rounds, finishing with 63-99% HP. It survives about 5, 3 and 8 fights in a row at levels 10, 20 and 30 (the cap is 8). Against the world bosses it beats every one, at the boss's own level and at boss level +3. These figures are from November 2026, after monsters of level 50 and below got twice the HP and 60% of the damage.
 
 ## Rebirth
 
