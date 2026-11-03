@@ -95,7 +95,7 @@ def resolve_self_effect(game, ab, eff):
             parts.append("{}% lifesteal".format(int(mods["lifesteal"] * 100)))
         ui.say("{}: {} for {} rounds.".format(eff["name"], ", ".join(parts), eff["turns"]), "bcyan")
     elif t == "summon":
-        stat = p.stat(eff["stat"])
+        stat = p.magic_stat(eff["stat"])
         hp = int(eff["hp_base"] + eff["hp_lvl"] * p.level + stat * 0.5)
         lo = int(eff["dmg_base"] + eff["dmg_lvl"] * p.level * 0.6 + stat * 0.08)
         hi = int(lo * 1.5) + 2

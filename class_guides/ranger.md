@@ -12,8 +12,8 @@ any class in the mid levels.
 | | |
 |---|---|
 | HP per level | 9 |
-| Mana per level | 2 |
-| Spell stat | WIS |
+| Mana per level | 2 (plus WIS) |
+| Spell stats | WIS (healing); pets use the higher of the two |
 | Starting bonus | STR +2, DEX +2, WIS +1 |
 | Gains per level | STR +2, DEX +2, CON +1 |
 | Armor | Mail (and everything lighter) |
@@ -25,12 +25,12 @@ any class in the mid levels.
 
 Average race, starting gear only (see the [README](README.md#about-the-numbers)).
 
-| Level | HP | Mana | STR | DEX | CON | Weapon damage | Miss | Crit | Dodge |
-|---|---|---|---|---|---|---|---|---|---|
-| 1 | 24 | 18 | 12 | 12 | 10 | 6-9 | 9.2% | 6.2% | 3.8% |
-| 10 | 168 | 46 | 30 | 30 | 19 | 17-20 | 7.9% | 8.0% | 5.0% |
-| 25 | 480 | 92 | 60 | 60 | 34 | 35-38 | 5.8% | 11.0% | 7.0% |
-| 50 | 1200 | 170 | 110 | 110 | 59 | 65-68 | 2.3% | 16.0% | 10.3% |
+| Level | HP | Mana | STR | DEX | CON | WIS | Weapon damage | Miss | Crit | Dodge |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | 24 | 18 | 12 | 12 | 10 | 11 | 6-9 | 9.2% | 6.2% | 3.8% |
+| 10 | 168 | 46 | 30 | 30 | 19 | 11 | 17-20 | 7.9% | 8.0% | 5.0% |
+| 25 | 480 | 92 | 60 | 60 | 34 | 11 | 35-38 | 5.8% | 11.0% | 7.0% |
+| 50 | 1200 | 170 | 110 | 110 | 59 | 11 | 65-68 | 2.3% | 16.0% | 10.3% |
 
 STR powers your weapon; DEX makes it land (fewer misses, more crits) and helps you dodge. Your WIS
 stays low, so your mana pool is small: Hunter's Mend and the wolf are for when you need them most.
@@ -43,10 +43,10 @@ learn it and at level 50. Weapon damage is the average with the starting bow.
 | Level | Name | Type | Cost | Cooldown | Target | Effect |
 |---|---|---|---|---|---|---|
 | 1 | **Aimed Shot** | ability | free | 2 | one foe | 1.6x weapon damage (~13 at L1, ~106 at L50) |
-| 4 | **Hunter's Mend** | spell | 8 / 35 | - | self | Heal 9 + 2/level + 0.45 WIS (~23 at L4, ~136 at L50) |
+| 4 | **Hunter's Mend** | spell | 8 / 35 | - | self | Heal 9 + 2/level + 0.45 WIS (~21 at L4, ~113 at L50) |
 | 10 | **Multishot** | ability | free | 3 | all foes | 0.95x weapon damage to every foe |
 | 16 | **Call Bonded Wolf** | spell | 50 / 118 | 10 | self | Summon a grey timber wolf (~150 HP, 19-30 damage at L16; ~405 HP, 52-80 at L50) |
-| 24 | **Serpent Sting** | ability | free | 4 | one foe | 0.9x weapon damage plus poison: 8 + 1.4/level + 0.3 STR per round for 5 rounds (~59 at L24, ~111 at L50) |
+| 24 | **Serpent Sting** | ability | free | 4 | one foe | 0.9x weapon damage plus poison: 8 + 1.4/level + 0.3 STR per round for 5 rounds (~58 at L24, ~111 at L50) |
 | 34 | **Rain of Arrows** | ability | free | 4 | all foes | 1.6x weapon damage to every foe |
 | 45 | **Deadeye** | ability | free | 5 | one foe | 3.6x weapon damage (~217 at L45, ~239 at L50) |
 
@@ -113,7 +113,7 @@ and Great-aunt Mathilde's cameo (46, neck).
 From **the Sugarwold** (44-49, north of the Scorchsands' Salt Pans): a gingerbread
 shield (47, shield, CON/STR), gingerbread gauntlets (46, mail hands, STR/DEX), toffee-glazed greaves
 (46, mail legs, CON/STR), peppermint-scale boots (45, mail feet, CON/DEX) and a ring of spun sugar (48,
-ring, DEX/CON/CHA). Madame Marchpane drops the ring of spun sugar; the rest come from her realm.
+ring, DEX/CON/INT). Madame Marchpane drops the ring of spun sugar; the rest come from her realm.
 
 ## Best races
 
@@ -132,8 +132,8 @@ Pyraxis at boss level +3. It beats every other boss at boss level +3.
 
 ## Rebirth
 
-In every later life, each of your stats, your HP per level and your mana pool are the best that any
-class you have lived would have at your current level (see the [README](README.md#rebirth)), and each
+In every later life, each of your stats, your HP per level and your mana per level are the best that
+any class you have lived would have at your current level (see the [README](README.md#rebirth)), and each
 class mastered adds +2% max HP and damage.
 
 A Ranger life brings strong STR and DEX growth (matching the Rogue), plus **mail armor and shield

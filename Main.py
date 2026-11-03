@@ -36,7 +36,7 @@ def main():
         elif sel in ("2", "l", "load"):
             game = load_game_interactive()
             if game:
-                ui.say("Welcome back, {}.".format(game.player.name), "bgreen")
+                ui.say("Welcome back, {}.".format(game.player.display_name), "bgreen")
         elif sel in ("3", "q", "quit"):
             return
     game.run()

@@ -1126,52 +1126,52 @@ M("efreet", "an efreet", 55, "A towering spirit of fire with brass bracers and a
   hp=4.3, dmg=3.0, armor=2.0, aggro=True, specials=[dot("Immolation", 0.22, 0.6, 3, "fire", "engulfs you in roaring white flame!")],
   loot=[("planar_shard", 0.2)], gold=3.0)
 M("pyre_phoenix", "a pyre phoenix", 57, "A bird of living fire whose every wingbeat scatters burning feathers.",
-  hp=4.5, dmg=3.2, armor=1.8, specials=[big("Phoenix Dive", 0.2, 1.9, "dives at you in a blaze of fire!"),
+  hp=5.04, dmg=3.2, armor=1.8, specials=[big("Phoenix Dive", 0.2, 1.9, "dives at you in a blaze of fire!"),
                                         heal("Rebirth Flame", 0.1, 0.15, "bursts into flame and rises renewed!")],
   loot=[("planar_shard", 0.25)], gold=3.0, xp=1.3)
 M("tide_elemental", "a tide elemental", 55, "A towering wave that never breaks, with two cold eyes deep in its heart.",
   hp=4.5, dmg=2.9, armor=2.0, aggro=True, specials=[stun("Undertow", 0.14, 1, "crashes over you and drags you under!")],
   loot=[("planar_shard", 0.2)], gold=3.0)
 M("abyssal_kraken", "an abyssal kraken", 57, "A kraken from the lightless deeps, its tentacles as thick as towers.",
-  hp=5.0, dmg=3.1, armor=2.2, specials=[big("Crushing Coils", 0.22, 1.9, "wraps you in its coils and squeezes!")],
+  hp=5.6, dmg=3.1, armor=2.2, specials=[big("Crushing Coils", 0.22, 1.9, "wraps you in its coils and squeezes!")],
   loot=[("planar_shard", 0.25)], gold=3.0, xp=1.3)
 M("granite_elemental", "a granite elemental", 55, "A hulking shape of grey stone that walks through rock as if it were water.",
   hp=5.0, dmg=2.9, armor=3.0, aggro=True, specials=[big("Landslide", 0.2, 1.9, "becomes a landslide that rolls over you!")],
   loot=[("planar_shard", 0.2)], gold=3.0)
 M("crystal_basilisk", "a crystal basilisk", 57, "An eight-legged lizard of living crystal whose gaze turns flesh to glass.",
-  hp=4.6, dmg=3.1, armor=2.5, specials=[stun("Petrifying Gaze", 0.15, 1, "meets your eyes, and your limbs turn to stone!"),
+  hp=5.15, dmg=3.1, armor=2.5, specials=[stun("Petrifying Gaze", 0.15, 1, "meets your eyes, and your limbs turn to stone!"),
                                         dot("Shard Bite", 0.15, 0.5, 3, "bleed", "bites you with teeth of jagged crystal!")],
   loot=[("planar_shard", 0.25)], gold=3.0, xp=1.3)
 M("storm_elemental", "a storm elemental", 55, "A spinning column of black cloud and lightning that howls like a hurricane.",
   hp=4.2, dmg=3.1, armor=1.6, aggro=True, specials=[dot("Static", 0.2, 0.5, 3, "lightning", "crackles, and lightning arcs through you!")],
   loot=[("planar_shard", 0.2)], gold=3.0)
 M("thunderbird", "a thunderbird", 57, "A bird the size of a cloud, whose wingbeats are thunder and whose eyes are lightning.",
-  hp=4.6, dmg=3.2, armor=1.8, specials=[big("Thunderstrike", 0.22, 1.9, "screams, and lightning falls from its eyes!")],
+  hp=5.15, dmg=3.2, armor=1.8, specials=[big("Thunderstrike", 0.22, 1.9, "screams, and lightning falls from its eyes!")],
   loot=[("planar_shard", 0.25)], gold=3.0, xp=1.3)
 M("lord_fire", "Rekkn, Lord of Flame", 58,
   "The lord of the Plane of Fire, a giant of white-hot stone with a crown of flame and a hammer that is a captive star.",
-  hp=6.45, dmg=2.55, armor=2.2, aggro=True, boss=True, xp=2.0, gold=15.0,
+  hp=7.22, dmg=2.55, armor=2.2, aggro=True, boss=True, xp=2.0, gold=15.0,
   specials=[big("Starfall Hammer", 0.22, 2.1, "brings down a hammer that burns like a falling star!"),
             dot("Inferno", 0.18, 0.7, 4, "fire", "breathes, and the world becomes fire!"),
             stun("Heatstroke", 0.1, 1, "flares so brightly that you reel, blinded!")],
   loot=[("flameheart_hammer", 0.4), ("gauntlets_of_the_pyre", 0.4), ("planar_shard", 1.0)])
 M("lord_water", "Nerevos, Lord of the Tides", 58,
   "The lord of the Plane of Water, a crowned giant of green sea-glass with a trident of coral, whose voice is the roar of surf.",
-  hp=9.4, dmg=3.25, armor=2.2, aggro=True, boss=True, xp=2.0, gold=15.0,
+  hp=10.53, dmg=3.25, armor=2.2, aggro=True, boss=True, xp=2.0, gold=15.0,
   specials=[stun("Drowning Wave", 0.14, 1, "raises a wave that crashes down and drowns you!"),
             big("Trident Thrust", 0.2, 2.0, "drives his coral trident into you!"),
             heal("Tidal Renewal", 0.1, 0.1, "draws in the tide, and his wounds wash away!")],
   loot=[("tidecaller", 0.4), ("pearl_of_the_deep", 0.4), ("tidescale_legguards", 0.4), ("planar_shard", 1.0)])
 M("lord_earth", "Ulmathra, Lord of Stone", 58,
   "The lord of the Plane of Earth, a mountain that stands and walks, with crystal eyes and a voice like the grinding of continents.",
-  hp=8.9, dmg=3.0, armor=3.0, aggro=True, boss=True, xp=2.0, gold=15.0,
+  hp=9.97, dmg=3.0, armor=3.0, aggro=True, boss=True, xp=2.0, gold=15.0,
   specials=[big("Mountainfall", 0.22, 2.1, "falls on you like a mountain!"),
             stun("Earthquake", 0.14, 1, "stamps, and the plane itself shakes you off your feet!"),
             heal("Stone Skin", 0.08, 0.1, "draws the plane's stone over his wounds!")],
   loot=[("mountainheart_shield", 0.4), ("stonestride_boots", 0.4), ("planar_shard", 1.0)])
 M("lord_air", "Zephyrion, Lord of the Winds", 58,
   "The lord of the Plane of Air, a shape of silver wind and storm with a crown of lightning, never still and never solid.",
-  hp=5.75, dmg=2.5, armor=1.8, aggro=True, boss=True, xp=2.0, gold=15.0,
+  hp=6.44, dmg=2.5, armor=1.8, aggro=True, boss=True, xp=2.0, gold=15.0,
   specials=[big("Hurricane", 0.22, 2.0, "becomes a hurricane that tears at you!"),
             dot("Lightning Storm", 0.18, 0.6, 4, "lightning", "calls down a storm of lightning on you!"),
             stun("Breathless", 0.12, 1, "steals the air from your lungs!")],
@@ -1179,19 +1179,19 @@ M("lord_air", "Zephyrion, Lord of the Winds", 58,
 
 # Third tier (57-60): the Plane of Eternity
 M("chronal_sentinel", "a chronal sentinel", 57, "A knight of brass and crystal whose every movement leaves a trail of afterimages.",
-  hp=5.0, dmg=3.4, armor=2.5, aggro=True, specials=[stun("Time Lock", 0.15, 1, "touches you, and time stops for you alone!")],
+  hp=5.6, dmg=3.4, armor=2.5, aggro=True, specials=[stun("Time Lock", 0.15, 1, "touches you, and time stops for you alone!")],
   loot=[("planar_shard", 0.3)], gold=3.5)
 M("hourglass_golem", "an hourglass golem", 58, "A colossus of glass and bronze with a storm of golden sand turning in its chest.",
-  hp=5.0, dmg=3.1, armor=3.0, specials=[big("Sands of Ages", 0.22, 2.0, "pours a torrent of ageing sand over you!")],
+  hp=5.6, dmg=3.1, armor=3.0, specials=[big("Sands of Ages", 0.22, 2.0, "pours a torrent of ageing sand over you!")],
   loot=[("planar_shard", 0.3)], gold=3.5, xp=1.3)
 M("paradox", "a paradox", 59, "A figure that is you, from a moment that has not happened yet, wearing a smile you have never worn.",
-  hp=3.5, dmg=2.65, armor=2.0, aggro=True, specials=[drain("Unmaking", 0.22, 1.3, "unmakes a moment of your past, and you feel yourself fade!"),
+  hp=3.92, dmg=2.65, armor=2.0, aggro=True, specials=[drain("Unmaking", 0.22, 1.3, "unmakes a moment of your past, and you feel yourself fade!"),
                                                     dot("Entropy", 0.15, 0.6, 3, "arcane", "touches you, and you begin to come undone!")],
   loot=[("planar_shard", 0.4)], gold=3.5)
 M("lord_trepth", "Lord Trepth", 60,
   "The king of the gods, older than the stars, seated on a throne carved from the first moment of time. His face is every "
   "face, his eyes hold every dawn, and his sword is named Eternity.",
-  hp=6.6, dmg=2.35, armor=3.0, aggro=True, boss=True, xp=2.0, gold=40.0,
+  hp=7.39, dmg=2.35, armor=3.0, aggro=True, boss=True, xp=2.0, gold=40.0,
   specials=[big("Eternity", 0.22, 2.2, "swings Eternity, and you feel every moment of your life at once!"),
             dot("The Long Night", 0.15, 0.8, 4, "shadow", "unmakes the dawn, and cold darkness eats at you!"),
             stun("Stop Time", 0.12, 1, "raises a hand, and time stops for everyone but him!"),

@@ -13,7 +13,7 @@ class to have in a past life, because it gives plate training and a huge STR and
 |---|---|
 | HP per level | 13 (the most of any class) |
 | Mana per level | 0 (Warriors use no mana) |
-| Spell stat | none |
+| Spell stats | none |
 | Starting bonus | STR +3, CON +3 |
 | Gains per level | STR +2, CON +2, DEX +1 |
 | Armor | Plate (and everything lighter) |
@@ -25,12 +25,12 @@ class to have in a past life, because it gives plate training and a huge STR and
 
 Average race, starting gear only (see the [README](README.md#about-the-numbers)).
 
-| Level | HP | STR | DEX | CON | Weapon damage | Crit | Dodge |
+| Level | HP | STR | CON | DEX | Weapon damage | Crit | Dodge |
 |---|---|---|---|---|---|---|---|
-| 1 | 28 | 13 | 10 | 13 | 7-10 | 6.0% | 3.7% |
-| 10 | 232 | 31 | 19 | 31 | 17-20 | 6.9% | 4.3% |
-| 25 | 715 | 61 | 34 | 61 | 35-38 | 8.4% | 5.3% |
-| 50 | 1920 | 111 | 59 | 111 | 65-68 | 10.9% | 6.9% |
+| 1 | 28 | 13 | 13 | 10 | 7-10 | 6.0% | 3.7% |
+| 10 | 232 | 31 | 31 | 19 | 17-20 | 6.9% | 4.3% |
+| 25 | 715 | 61 | 61 | 34 | 35-38 | 8.4% | 5.3% |
+| 50 | 1920 | 111 | 111 | 59 | 65-68 | 10.9% | 6.9% |
 
 ## Abilities
 
@@ -134,8 +134,8 @@ at level 30. It beat every world boss in the simulator, at the boss's own level 
 
 ## Rebirth
 
-In every later life, each of your stats, your HP per level and your mana pool are the best that any
-class you have lived would have at your current level (see the [README](README.md#rebirth)), and each
+In every later life, each of your stats, your HP per level and your mana per level are the best that
+any class you have lived would have at your current level (see the [README](README.md#rebirth)), and each
 class mastered adds +2% max HP and damage.
 
 A Warrior life brings the **best STR and CON growth in the game** (shared with the Dread Knight) and

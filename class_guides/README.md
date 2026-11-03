@@ -4,18 +4,18 @@ There is one guide for each of the eleven classes of Eternal Golden Age. Each gu
 class grows, every spell and ability with its real numbers, what gear it can use, how to play it
 from level 1 to 50, how it fares against bosses, and what it leaves behind when you are reborn.
 
-| Class | Role | Grows most | Spell stat | Armor | Difficulty |
+| Class | Role | Grows most | Spell stats | Armor | Difficulty |
 |---|---|---|---|---|---|
 | [Warrior](warrior.md) | Weapon tank, no magic at all | STR, CON | none | plate + shield | Easy |
-| [Paladin](paladin.md) | Holy knight, heals and shields itself | STR | WIS | plate + shield | Easy |
+| [Paladin](paladin.md) | Holy knight, heals and shields itself | STR | INT, WIS | plate + shield | Easy |
 | [Dread Knight](dread_knight.md) | Dark knight, drains life | STR, CON | INT | plate + shield | Easy |
 | [Ranger](ranger.md) | Archer with a wolf companion | STR, DEX | WIS | mail + shield | Easy |
 | [Rogue](rogue.md) | Burst melee, dodges and stuns | STR, DEX | none | leather | Medium |
-| [Bard](bard.md) | Songs that hurt, heal and buff | CHA | CHA | leather | Hard early, strong late |
-| [Cleric](cleric.md) | Healer who smites | WIS | WIS | mail + shield | Easy |
-| [Druid](druid.md) | Nature caster with roots and heals | WIS | WIS | leather | Medium |
-| [Shaman](shaman.md) | Spirit caster with a wolf | WIS, CON | WIS | mail + shield | Easy |
-| [Wizard](wizard.md) | Glass-cannon blaster | INT | INT | cloth | Hard |
+| [Bard](bard.md) | Songs that hurt, heal and buff | even spread | INT, WIS | leather | Hard early, strong late |
+| [Cleric](cleric.md) | Healer who smites | WIS | WIS, INT | mail + shield | Easy |
+| [Druid](druid.md) | Nature caster with roots and heals | WIS | INT, WIS | leather | Medium |
+| [Shaman](shaman.md) | Spirit caster with a wolf | WIS | INT, WIS | mail + shield | Easy |
+| [Wizard](wizard.md) | Glass-cannon blaster | INT, WIS | INT, WIS | cloth | Hard |
 | [Necromancer](necromancer.md) | Pets, drains and disease | INT | INT | cloth | Easy (strongest solo class) |
 
 At level 50, [Gearing Up at Level 50](level_50_gear.md) shows what to buy, farm and chase next, class by class.
@@ -42,15 +42,17 @@ damage, crit or dodge) last the whole game and matter more than race stats.
 | STR | Weapon damage, for every class |
 | DEX | Precision, for every class: fewer misses; +1% crit per 10 DEX; +1% dodge per 15 DEX; +1 armor per 10 DEX |
 | CON | Max HP: each point gives +0.2 HP per level (so +10 HP at level 50) |
-| INT | Wizard, Necromancer and Dread Knight spells, and their mana pool |
-| WIS | Cleric, Druid, Shaman, Paladin and Ranger spells, and their mana pool |
-| CHA | Bard spells and mana pool |
+| INT | Damage spells, for every class: direct damage, damage over time and drains |
+| WIS | Heals, heals over time and damage shields, and the mana pool, for every class |
+
+Pets scale with the higher of your INT and WIS. Hybrid casters (Cleric, Druid, Shaman, Paladin,
+Bard) split their growth between the two, so their damage and healing pull on different gear.
 
 ### HP, mana and recovery
 
 - **Max HP** = 10 + (class HP + 3) x level + CON x level x 0.2, times any race HP perk and the
   mastery bonus (+2% per class mastered).
-- **Max mana** = 15 + class mana x level + spell stat x level x 0.1, times any race mana perk.
+- **Max mana** = 15 + class mana x level + WIS x level x 0.1, times any race mana perk.
 - In a fight you regain **2% of max mana per round**. Out of a fight, each 4-second tick restores
   **2% HP and 3% mana**, and **sleeping restores 10% of both per tick**.
 - Levelling up fully restores HP and mana.
@@ -117,13 +119,18 @@ more often.
 ### Rebirth
 
 At level 50 you may be reborn as any other class. From then on, at every level, **each of your
-stats, your HP per level and your mana pool are the best that any class you have lived would have at
-that level**. A level-10 warrior who was once a wizard has the wizard's level-10 INT, and the
+stats, your HP per level and your mana per level are the best that any class you have lived would
+have at that level**. A level-10 warrior who was once a wizard has the wizard's level-10 INT, and the
 warrior's own STR, CON and HP growth. The order of your lives never matters, only which classes you
 have lived. Each **class mastered** (lived to level 50) also adds **+2% max HP and damage**, up to
 +22% with all eleven. You keep every spell and ability you have ever learned (each unlocks again at
 its original level), your armor and weapon training, and your boss kills. Each guide ends with what
 that class brings to later lives.
+
+Once all eleven classes are mastered, the next rebirth raises you a **tier** (up to Tier 10) and
+starts you over with one class: past lives, their stats, mastery bonus, abilities and training are
+forgotten, and every stat gets a permanent **+10 per tier above 1**. The guides' numbers are all
+Tier 1, and nothing in the game is balanced around tiers. See Rebirth and Tiers in the main README.
 
 ## About the numbers
 

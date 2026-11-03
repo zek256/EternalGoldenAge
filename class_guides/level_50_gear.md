@@ -15,7 +15,7 @@ Item levels and drop chances below come straight from the game data. Bosses resp
 
 - **Fill every slot.** An empty off-hand or a level-28 pair of gloves costs you more than a small
   upgrade anywhere else. Check `equipment` for gaps first.
-- **Stack your class's stats.** Casters want their spell stat (INT or WIS) first. Fighters want
+- **Stack your class's stats.** Casters want INT for damage and WIS for healing, shields and mana. Fighters want
   STR (weapon damage for every class) and DEX (precision). Everyone wants CON for HP after that.
 - **Rebirth doesn't throw gear away.** When you're reborn, all your gear goes back into your
   pack, not into the void. Your next life can wear it again once it reaches the item's level, as long
@@ -184,8 +184,9 @@ few rooms of each other.
 
 ### Bard
 
-CHA first (your spells and mana), then STR and DEX, then CON. Leather, no shield, daggers, swords, blunt
-weapons and wands. CHA gear is rare, so look for items that give it alongside other stats.
+INT first (your damage songs), then WIS (healing songs and mana), STR and DEX, then CON. Leather, no
+shield, daggers, swords, blunt weapons and wands. Leather gear seldom gives INT or WIS, so look for
+items that give them alongside other stats.
 
 | Slot | Buy | Farm before the planes | Best in slot |
 |---|---|---|---|
@@ -203,7 +204,7 @@ weapons and wands. CHA gear is rare, so look for items that give it alongside ot
 
 ### Cleric
 
-WIS first (your heals and spells), then CON. Mail and lighter, shields, blunt weapons and staves.
+WIS first (your heals, shields and mana), then INT (your holy damage), then CON. Mail and lighter, shields, blunt weapons and staves.
 
 | Slot | Buy | Farm before the planes | Best in slot |
 |---|---|---|---|
@@ -221,8 +222,8 @@ WIS first (your heals and spells), then CON. Mail and lighter, shields, blunt we
 
 ### Druid
 
-WIS first, then CON. Leather and lighter, no shield, staves, blunt weapons and daggers. Cloth
-pieces often beat leather for you, since they carry WIS.
+INT first (your damage), then WIS (heals and mana), then CON. Leather and lighter, no shield, staves, blunt weapons and daggers. Cloth
+pieces often beat leather for you, since they carry INT and WIS.
 
 | Slot | Buy | Farm before the planes | Best in slot |
 |---|---|---|---|
@@ -240,7 +241,7 @@ pieces often beat leather for you, since they carry WIS.
 
 ### Shaman
 
-WIS first, then CON. Mail and lighter, shields, blunt weapons, staves and axes.
+WIS first (heals, the wolf and mana), then INT (damage), then CON. Mail and lighter, shields, blunt weapons, staves and axes.
 
 | Slot | Buy | Farm before the planes | Best in slot |
 |---|---|---|---|
@@ -258,7 +259,7 @@ WIS first, then CON. Mail and lighter, shields, blunt weapons, staves and axes.
 
 ### Wizard
 
-INT first, then CON for survival. Cloth only, no shield, staves, wands and daggers.
+INT first, then WIS (Mana Shield and mana), then CON for survival. Cloth only, no shield, staves, wands and daggers.
 
 | Slot | Buy | Farm before the planes | Best in slot |
 |---|---|---|---|

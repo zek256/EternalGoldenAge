@@ -8,6 +8,8 @@ from data.races import RACES
 
 MAX_LEVEL = 50
 MASTERY_BONUS = 0.02  # max HP and damage per class mastered
+MAX_TIER = 10
+TIER_BONUS = 10  # to every stat per tier above 1 (not counted in balancing)
 MISS_BASE, MISS_PER_DEX, MISS_FLOOR = 0.10, 0.0007, 0.02  # weapon swings: 9% at 10 DEX, 2% from about 115
 
 
@@ -47,7 +49,8 @@ class Character:
         self.level = 1
         self.xp = 0
         self.gold = 20
-        self.past_lives = []  # [{"cls": id}], one per class mastered before this life
+        self.tier = 1         # +1 each time every class is mastered; resets past_lives
+        self.past_lives = []  # [{"cls": id}], one per class mastered before this life (this tier)
         self.inventory = []   # item ids, duplicates allowed
         self.bank = []        # item ids stored in the Sunvault in Brightwater
         self.equipment = {s: None for s in SLOTS}
@@ -83,6 +86,15 @@ class Character:
         return self.cdata["name"]
 
     @property
+    def eternal(self):
+        """Every class mastered at the final tier: the end of the road."""
+        return self.tier >= MAX_TIER and len(self.mastered_classes()) == len(CLASSES)
+
+    @property
+    def display_name(self):
+        return "Emperor {} the Eternal".format(self.name) if self.eternal else self.name
+
+    @property
     def race_name(self):
         return self.rdata["name"]
 
@@ -96,7 +108,13 @@ class Character:
         return c["start"].get(stat, 0) + c["gains"].get(stat, 0) * (level - 1)
 
     def base_stat(self, stat, level=None):
-        return self.rdata["stats"][stat] + max(self.class_stat(c, stat, level) for c in self.lived_classes())
+        return (self.rdata["stats"][stat] + max(self.class_stat(c, stat, level) for c in self.lived_classes())
+                + self.tier_bonus)
+
+    @property
+    def tier_bonus(self):
+        """+10 to every stat per tier above the first."""
+        return TIER_BONUS * (self.tier - 1)
 
     @property
     def mastery_bonus(self):
@@ -120,8 +138,7 @@ class Character:
 
     @property
     def max_mana(self):
-        mana = max(15 + CLASSES[c]["mana"] * self.level + self.stat(CLASSES[c]["mana_stat"]) * self.level * 0.1
-                   for c in self.lived_classes())
+        mana = 15 + max(CLASSES[c]["mana"] for c in self.lived_classes()) * self.level + self.stat("WIS") * self.level * 0.1
         return int(mana * self.perk("mana_mult", 1.0))
 
     @property
@@ -160,7 +177,11 @@ class Character:
 
     def power(self, eff):
         """Raw magnitude for a scaling ability effect."""
-        return eff["base"] + eff["lvl"] * self.level + eff["scale"] * self.stat(eff["stat"])
+        return eff["base"] + eff["lvl"] * self.level + eff["scale"] * self.magic_stat(eff["stat"])
+
+    def magic_stat(self, stat):
+        """A stat for ability scaling; "INT/WIS" (summons) takes the higher of the two."""
+        return max(self.stat(s) for s in stat.split("/"))
 
     # ------------------------------------------------------------------ xp
     @property
@@ -203,7 +224,12 @@ class Character:
             origin = "" if ab["cls"] == self.cls else " (remembered from a past life as a {})".format(
                 CLASSES[ab["cls"]]["name"])
             msgs.append(("You have learned the {} {}!{}".format(tag, ab["name"], origin), "bmagenta"))
-        if self.level == MAX_LEVEL:
+        if self.level == MAX_LEVEL and self.eternal:
+            msgs.append(("Every path is walked, ten times over. You are {}, and your journey is complete.".format(
+                self.display_name), "byellow"))
+        elif self.level == MAX_LEVEL and self.can_ascend():
+            msgs.append(("You have mastered every path. You may now REBIRTH into Tier {}.".format(self.tier + 1), "bmagenta"))
+        elif self.level == MAX_LEVEL:
             msgs.append(("You have reached the pinnacle of mortal power. You may now REBIRTH.", "bmagenta"))
         return msgs
 
@@ -327,7 +353,14 @@ class Character:
 
     # ------------------------------------------------------------------ rebirth
     def rebirth(self, new_cls):
-        self.past_lives.append({"cls": self.cls})
+        """Start a new life as `new_cls`. Once every class is mastered, it starts the next tier
+        instead: past lives are forgotten (stats, mastery, abilities, training) and only the tier
+        bonus remains. Gold, items, quests and boss kills always carry over."""
+        if self.can_ascend():
+            self.tier += 1
+            self.past_lives = []
+        else:
+            self.past_lives.append({"cls": self.cls})
         self.cls = new_cls
         self.level = 1
         self.xp = 0
@@ -361,6 +394,7 @@ class Character:
         ch.__dict__.setdefault("boss_kills", [])
         ch.__dict__.setdefault("automap", False)
         ch.__dict__.setdefault("bank", [])
+        ch.__dict__.setdefault("tier", 1)
         return ch
 
     def mastered_classes(self):
@@ -369,3 +403,7 @@ class Character:
         if self.level >= MAX_LEVEL:
             done.add(self.cls)
         return done
+
+    def can_ascend(self):
+        """Every class mastered in this tier, and a higher tier left to reach."""
+        return self.tier < MAX_TIER and len(self.mastered_classes()) == len(CLASSES)

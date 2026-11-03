@@ -2,7 +2,7 @@
 
 > *Keepers of the old groves who call upon root, thorn, moon and storm.*
 
-The Druid is a WIS caster in leather who mixes damage, healing and control. It has a cheap nuke from
+The Druid is an INT and WIS caster in leather who mixes damage, healing and control. It has a cheap nuke from
 level 1, a heal that keeps working after you cast it, roots that can hold a foe for two rounds, a moon
 spell that burns and lingers, and a group attack from 32. It is one of the fastest killers in the
 mid-levels and very steady overall.
@@ -12,8 +12,8 @@ mid-levels and very steady overall.
 | | |
 |---|---|
 | HP per level | 7 |
-| Mana per level | 5 |
-| Spell stat | WIS |
+| Mana per level | 5 (plus WIS) |
+| Spell stats | INT (damage); WIS (healing) |
 | Starting bonus | WIS +3, INT +1, CON +1 |
 | Gains per level | WIS +2, INT +1, CON +1, DEX +1 |
 | Armor | Leather (and cloth) |
@@ -25,14 +25,14 @@ mid-levels and very steady overall.
 
 Average race, starting gear only (see the [README](README.md#about-the-numbers)).
 
-| Level | HP | Mana | WIS | CON | DEX | Weapon damage |
-|---|---|---|---|---|---|---|
-| 1 | 22 | 21 | 14 | 11 | 10 | 5-8 |
-| 10 | 150 | 97 | 32 | 20 | 19 | 9-12 |
-| 25 | 435 | 295 | 62 | 35 | 34 | 17-20 |
-| 50 | 1110 | 825 | 112 | 60 | 59 | 29-32 |
+| Level | HP | Mana | WIS | CON | INT | DEX | Weapon damage |
+|---|---|---|---|---|---|---|---|
+| 1 | 22 | 21 | 14 | 11 | 12 | 10 | 5-8 |
+| 10 | 150 | 97 | 32 | 20 | 21 | 19 | 9-12 |
+| 25 | 435 | 295 | 62 | 35 | 36 | 34 | 17-20 |
+| 50 | 1110 | 825 | 112 | 60 | 61 | 59 | 29-32 |
 
-The Druid's INT gain does nothing for its own spells; it only helps if a later life uses INT.
+The Druid's INT powers its damage spells; its WIS powers its heals and its mana.
 
 ## Spells
 
@@ -41,13 +41,13 @@ level 50.
 
 | Level | Spell | Cost | Cooldown | Target | Effect |
 |---|---|---|---|---|---|
-| 1 | **Thornlash** | 5 / 30 | - | one foe | Nature damage 7 + 1.6/level + 0.48 WIS (~15 at L1, ~76 at L25, ~140 at L50) |
+| 1 | **Thornlash** | 5 / 30 | - | one foe | Nature damage 7 + 1.6/level + 0.48 INT (~14 at L1, ~64 at L25, ~116 at L50) |
 | 3 | **Regrowth** | 8 / 41 | - | self | Heal 10 + 2/level + 0.5 WIS now, then 4 + 1.2/level + 0.25 WIS per round for 5 rounds (~91 + 49/round at L25) |
 | 8 | **Entangling Roots** | 17 / 59 | 4 | one foe | Small nature damage, and a 75% chance to hold it for 2 rounds (about 38% vs bosses) |
-| 15 | **Moonfire** | 43 / 106 | - | one foe | Arcane damage 16 + 2.4/level + 0.7 WIS (~81 at L15, ~214 at L50), then 5 + 1/level + 0.25 WIS per round for 4 rounds |
+| 15 | **Moonfire** | 43 / 106 | - | one foe | Arcane damage 16 + 2.4/level + 0.7 INT (~70 at L15, ~178 at L50), then 5 + 1/level + 0.25 INT per round for 4 rounds |
 | 22 | **Barkskin** | 50 / 94 | 10 | self | +15 + 2.5/level armor for 6 rounds (+70 at L22, +140 at L50), and a small heal every round |
-| 32 | **Starfall** | 184 / 266 | 3 | all foes | Arcane damage 34 + 3.2/level + 0.95 WIS to every foe (~208 at L32, ~300 at L50) |
-| 44 | **Wrath of the Wild** | 318 / 354 | 5 | one foe | Nature damage 55 + 4.2/level + 1.25 WIS (~364 at L44, ~405 at L50), and heals you for 20% of your max HP |
+| 32 | **Starfall** | 184 / 266 | 3 | all foes | Arcane damage 34 + 3.2/level + 0.95 INT to every foe (~177 at L32, ~251 at L50) |
+| 44 | **Wrath of the Wild** | 318 / 354 | 5 | one foe | Nature damage 55 + 4.2/level + 1.25 INT (~308 at L44, ~341 at L50), and heals you for 20% of your max HP |
 
 ## How to play
 
@@ -71,9 +71,10 @@ to top up.
 
 ## Gear
 
-Wear **leather**; no shields. WIS first, then CON.
+Wear **leather**; no shields. INT first (all your damage spells), then WIS (Regrowth, Barkskin and your
+mana), then CON.
 
-Notable late gear: **the Dreamweaver's Staff** (50, staff, INT/WIS/CHA, from Somnara in the Plane of
+Notable late gear: **the Dreamweaver's Staff** (50, staff, INT/WIS, from Somnara in the Plane of
 Dreams), the dragonbone staff (47), the sunfire staff (40), the Sunforged Mace (43, blunt), drakehide
 and windwalker boots (leather), the Death Mask (50, leather), **dreamsilk trousers** (50, cloth legs,
 INT/WIS, from Somnara), the Pearl of the Deep (50, ring), the
@@ -81,7 +82,7 @@ Ring of the Archmage, and the mythic Fang of Pyraxis and Eternity.
 
 From **the Underhedge** (6-10, `enter mousehole` in Greenmeadow's Willow Mill): an acorn helm (6,
 leather head, DEX), a beetle-shell jerkin (7, leather chest, DEX/CON), snailskin leggings (6, leather
-legs, DEX), mole-claw gloves (9, leather hands, STR/DEX) and an amber pendant (10, neck, WIS/CHA/CON).
+legs, DEX), mole-claw gloves (9, leather hands, STR/DEX) and an amber pendant (10, neck, WIS/CON).
 Grubbin the Mole King drops mole-claw gloves; the Wasp Queen drops the amber pendant.
 
 From **the Mycelial Wards** (14-20, west of Westmarch's Old Watchtower): the Heartspore staff (20,
@@ -97,17 +98,17 @@ From **the Chancery of the Dead** (32-38, south of the Dustway's Gnoll Scrub): t
 Justice (38, blunt, STR/WIS), the seal of office (37, ring) and the chain of office (38, neck).
 
 From **the Painted Gallery** (37-42, behind Elandor's Hall of the Moon Court; each painting is entered
-with `enter`): Ithilmir's maulstick (42, staff, INT/WIS/CHA), the Countess's kid gloves (39, leather
-hands, DEX/CHA) and a candle of still flame (38, off-hand, INT/WIS/CON). Ithilmir drops his maulstick;
+with `enter`): Ithilmir's maulstick (42, staff, INT/WIS), the Countess's kid gloves (39, leather
+hands, DEX/INT) and a candle of still flame (38, off-hand, INT/WIS/CON). Ithilmir drops his maulstick;
 Countess Isaura drops the Countess's kid gloves; the Memento Skull drops the candle of still flame.
 
 From **the Clockwork Orchard** (41-44, south of the Chancery's Archive of Wills): Orrin's great wrench
-(44, blunt, STR/WIS/CON), the pendulum staff (44, staff, INT/WIS/CHA), tinker's gloves (43, leather
+(44, blunt, STR/WIS/CON), the pendulum staff (44, staff, INT/WIS), tinker's gloves (43, leather
 hands, DEX/STR) and the orrery amulet (44, neck, INT/WIS/STR). Orrin Gearwhistle drops his great wrench,
 the pendulum staff and the orrery amulet; the Clockwork Hostess drops tinker's gloves.
 
 From **Thornwick Hall** (43-49, west of the Stag Walk): a gown of green brocade (47, cloth chest,
-INT/WIS/CHA) from Lady Seraphine, silk evening gloves (46, cloth), Tobias's black grimoire (47,
+INT/WIS) from Lady Seraphine, silk evening gloves (46, cloth), Tobias's black grimoire (47,
 off-hand), the Dowager's pearls (48, neck) and the Vane huntsman's jerkin (44, leather) if you want
 armor over WIS.
 
@@ -126,16 +127,16 @@ drops the rolling pin; the rest come from her realm.
 
 The Druid wins every same-level fight in the simulator, and fast: about 3 rounds at levels 15-20 and
 under 5 later, with 57-90% HP left. It lasts about 4 fights in a row at level 10 and 6 at level 30.
-It beats nearly every world boss at the boss's own level (about 90% against Ussreth and Pyraxis, 97%
-against Rotheart, the Ringmaster and the High Justice), and all except Pyraxis (about 87%) at boss
-level +3.
+It beats nearly every world boss at the boss's own level (about 87% against Ussreth and Pyraxis,
+93-97% against Ithilmir, Orrin Gearwhistle and the High Justice), and all except Pyraxis (about 83%)
+at boss level +3.
 
 ## Rebirth
 
-In every later life, each of your stats, your HP per level and your mana pool are the best that any
-class you have lived would have at your current level (see the [README](README.md#rebirth)), and each
+In every later life, each of your stats, your HP per level and your mana per level are the best that
+any class you have lived would have at your current level (see the [README](README.md#rebirth)), and each
 class mastered adds +2% max HP and damage.
 
-A Druid life brings good WIS growth (behind the Cleric's), plus **leather** training and staff, blunt
+A Druid life brings strong WIS growth (shared with the Cleric and Shaman), plus **leather** training and staff, blunt
 and dagger weapons. It adds little in stats once you have a Cleric life, but Entangling Roots and Wrath
 of the Wild are strong in any later class.

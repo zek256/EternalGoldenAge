@@ -17,6 +17,7 @@ classes; bosses mostly beatable at level +3. Endgame (monsters above level 50; a
 character takes the best stats of every class it has lived): first-tier plane monsters a coin
 flip with 1 life and easy with 6; plane champions ~80-95% with 6 lives; elemental lords ~95% with
 11; Lord Trepth ~70% with 11 lives (every class 50-85%).
+Every simulated character is Tier 1: tiers (+10 stats per tier) are deliberately never balanced for.
 """
 import argparse
 import os
@@ -42,10 +43,15 @@ DEFAULT_LEVELS = [1, 3, 5, 8, 12, 16, 20, 25, 30, 35, 40, 45, 50]
 
 
 def best_gear(p):
-    main = {"STR"} | ({p.cdata["mana_stat"]} if p.cdata["mana"] else set())
+    main = {"STR": 2}
+    if p.cdata["mana"]:  # casters weigh INT and WIS by how many of their spells scale with each
+        used = [e["stat"] for a in ABILITIES.values() if a["cls"] == p.cls
+                for e in a["effects"] if e.get("stat") in ("INT", "WIS")]
+        for s in ("INT", "WIS"):
+            main[s] = 0.7 + 1.3 * used.count(s) / max(1, len(used))
 
     def score(it):
-        sc = it.get("armor", 0) * 1.5 + sum(v * (2 if s in main else 0.7) for s, v in it["stats"].items())
+        sc = it.get("armor", 0) * 1.5 + sum(v * main.get(s, 0.7) for s, v in it["stats"].items())
         if it["type"] == "weapon":
             sc += sum(it["dmg"]) * (1.5 if p.cdata["mana"] < 5 else 0.5)
         return sc

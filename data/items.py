@@ -53,7 +53,7 @@ weapon("steel_dagger", "a steel dagger", 5, (4, 8), 40,
 weapon("yew_longbow", "a yew longbow", 5, (4, 9), 45,
        "A tall bow of seasoned yew.", DEX=1, kind="bow")
 weapon("runed_staff", "a runed staff", 5, (3, 7), 45,
-       "A staff of blackwood inlaid with glowing silver runes.", INT=2, WIS=2, CHA=1, kind="staff")
+       "A staff of blackwood inlaid with glowing silver runes.", INT=2, WIS=2, kind="staff")
 weapon("iron_mace", "an iron flanged mace", 5, (4, 9), 45,
        "A heavy mace with cruel iron flanges.", STR=1, WIS=1, kind="blunt")
 weapon("bandit_cutlass", "Rask's notched cutlass", 8, (6, 12), 90,
@@ -65,11 +65,11 @@ weapon("knights_blade", "a knight's broadsword", 14, (10, 18), 260,
 weapon("serpentfang", "Serpentfang", 15, (10, 17), 280,
        "A curved dagger carved from a giant serpent's fang. It still drips venom.", DEX=5, kind="dagger")
 weapon("varnoth_scepter", "the Scepter of Varnoth", 15, (8, 14), 400,
-       "A sceptre of yellowed bone crowned with a smouldering green gem.", INT=6, WIS=6, CHA=3, kind="wand")
+       "A sceptre of yellowed bone crowned with a smouldering green gem.", INT=6, WIS=6, kind="wand")
 weapon("bogwood_staff", "a bogwood staff", 18, (9, 16), 320,
        "Black, twisted wood from the heart of the Mirefen, humming with old power.", INT=6, WIS=6, kind="staff")
 weapon("gristles_hexrod", "Gristle's Hexrod", 20, (10, 18), 550,
-       "A crooked rod strung with tiny bones and charms. Wicked magic seeps from it.", INT=8, WIS=8, CHA=5, kind="wand")
+       "A crooked rod strung with tiny bones and charms. Wicked magic seeps from it.", INT=8, WIS=8, kind="wand")
 weapon("mithril_sword", "a mithril longsword", 22, (15, 26), 600,
        "A shimmering blade of mithril, light as a feather and sharp as sorrow.", STR=4, DEX=4, kind="sword")
 weapon("hunters_recurve", "a hunter's recurve bow", 22, (15, 26), 600,
@@ -85,20 +85,20 @@ weapon("frostweave_staff", "a frostweave staff", 30, (17, 28), 1100,
 weapon("elven_longbow", "an Elandorian longbow", 33, (24, 40), 1500,
        "A graceful bow of white wood, strung with silver thread.", DEX=9, WIS=3, kind="bow")
 weapon("elandor_runeblade", "an Elandorian runeblade", 36, (27, 45), 1800,
-       "An ancient elven sword whose runes glow faintly at dusk.", STR=7, DEX=7, CHA=3, kind="sword")
+       "An ancient elven sword whose runes glow faintly at dusk.", STR=7, DEX=7, INT=3, kind="sword")
 weapon("staff_of_stars", "the Staff of Stars", 38, (20, 34), 2000,
-       "A staff of midnight crystal in which tiny stars slowly turn.", INT=12, WIS=12, CHA=5, kind="staff")
+       "A staff of midnight crystal in which tiny stars slowly turn.", INT=12, WIS=12, kind="staff")
 weapon("seluvars_wand", "Seluvar's Hollow Wand", 40, (22, 36), 3000,
-       "The wand of the hollow archmage. It whispers forgotten words.", INT=16, WIS=10, CHA=8, kind="wand")
+       "The wand of the hollow archmage. It whispers forgotten words.", INT=16, WIS=10, kind="wand")
 weapon("sunforged_mace", "the Sunforged Mace", 43, (31, 51), 3200,
        "A mace forged in dragonfire and blessed beneath the noon sun.", STR=8, WIS=10, kind="blunt")
 weapon("obsidian_blade", "an obsidian greatblade", 45, (33, 55), 3600,
        "A greatsword of volcanic glass, hot to the touch.", STR=10, DEX=5, CON=4, kind="two-handed")
 weapon("dragonbone_staff", "a dragonbone staff", 47, (26, 42), 4200,
-       "A staff of polished dragonbone that crackles with ancient fire.", INT=18, WIS=18, CHA=6, kind="staff")
+       "A staff of polished dragonbone that crackles with ancient fire.", INT=18, WIS=18, kind="staff")
 weapon("pyraxis_fang", "Fang of Pyraxis", 50, (42, 68), 9000,
        "A sword ground from a fang of the Eternal Flame itself. It burns with inner light.",
-       STR=12, DEX=12, CON=8, INT=8, WIS=8, CHA=8, kind="any")
+       STR=12, DEX=12, CON=8, INT=8, WIS=8, kind="any")
 
 # ------------------------------------------------------------------ Armor
 armor("padded_tunic", "a padded tunic", "chest", 1, 3, 4, "A quilted cloth tunic that turns aside the odd blow.", kind="cloth")
@@ -116,7 +116,7 @@ armor("iron_helm", "an iron helm", "head", 8, 4, 70, "A plain iron helm with a n
 armor("chain_leggings", "chain leggings", "legs", 10, 7, 110, "Leggings of fine iron mail.", kind="mail")
 armor("ring_of_vigor", "a ring of vigor", "ring", 10, 0, 150, "A copper ring that hums with life.", CON=3, STR=1, kind="jewelry")
 armor("amulet_of_the_dawn", "the Amulet of the Dawn", "neck", 12, 2, 300,
-      "A golden sun-disc on a fine chain, blessed by the temple.", WIS=3, CHA=3, CON=2, kind="jewelry")
+      "A golden sun-disc on a fine chain, blessed by the temple.", WIS=3, CON=2, kind="jewelry")
 armor("bone_helm", "a bone-crested helm", "head", 13, 7, 160, "A helm adorned with the skull of some great beast.", CON=2, kind="mail")
 armor("grave_shroud", "a grave-warden's shroud", "chest", 14, 10, 250,
       "A dark robe stitched with silver wards against the dead.", INT=3, WIS=3, kind="cloth")
@@ -132,41 +132,41 @@ armor("tower_shield", "an iron tower shield", "shield", 28, 18, 900, "A massive 
 armor("warlord_gauntlets", "the Warlord's Gauntlets", "hands", 30, 12, 1300, "Spiked gauntlets stained with old blood.", STR=5, CON=3, kind="plate")
 armor("frostgiant_greaves", "frost giant greaves", "legs", 30, 18, 1200, "Leg plates of rime-covered giant iron.", CON=5, kind="plate")
 armor("frost_ring", "a ring of winter", "ring", 30, 0, 1300, "A ring of ice that never melts.", INT=5, WIS=5, DEX=3, kind="jewelry")
-armor("elandor_robes", "robes of Elandor", "chest", 35, 22, 1800, "Robes of silver silk woven with protective sigils.", INT=8, WIS=8, CHA=4, kind="cloth")
+armor("elandor_robes", "robes of Elandor", "chest", 35, 22, 1800, "Robes of silver silk woven with protective sigils.", INT=8, WIS=8, kind="cloth")
 armor("elandor_plate", "Elandorian plate", "chest", 36, 34, 2000, "Gleaming elven plate engraved with leaves and stars.", STR=4, CON=6, kind="plate")
-armor("starlight_circlet", "a starlight circlet", "head", 36, 14, 1800, "A silver circlet set with a single pale gem.", INT=6, WIS=6, CHA=4, kind="cloth")
+armor("starlight_circlet", "a starlight circlet", "head", 36, 14, 1800, "A silver circlet set with a single pale gem.", INT=6, WIS=6, kind="cloth")
 armor("archmage_ring", "the Ring of the Archmage", "ring", 40, 0, 3000, "A ring of black crystal once worn by Seluvar.", INT=10, WIS=6, kind="jewelry")
 armor("obsidian_greaves", "obsidian greaves", "legs", 44, 30, 2800, "Greaves of black volcanic glass.", CON=6, STR=4, kind="plate")
 armor("ember_ring", "an ember ring", "ring", 44, 0, 2800, "A ring holding a coal that never dies.", STR=6, DEX=6, CON=4, kind="jewelry")
 armor("ashen_crown", "the Ashen Crown", "head", 46, 24, 3500, "A crown of blackened gold, still warm.",
-      STR=3, DEX=3, CON=3, INT=3, WIS=3, CHA=3, kind="any")
+      STR=3, DEX=3, CON=3, INT=3, WIS=3, kind="any")
 armor("drakehide_boots", "drakehide boots", "feet", 45, 16, 2600, "Boots of red drake leather that resist all flame.", DEX=5, kind="leather")
 armor("dragonscale_mail", "Dragonscale Mail", "chest", 48, 52, 7000, "Armor crafted from the scales of Pyraxis.", CON=12, STR=6, DEX=6, kind="mail")
 armor("heart_of_flame", "the Heart of Flame", "neck", 50, 10, 8000, "A pendant holding a fragment of a dragon's heart.",
-      STR=8, DEX=8, CON=8, INT=8, WIS=8, CHA=8, kind="jewelry")
+      STR=8, DEX=8, CON=8, INT=8, WIS=8, kind="jewelry")
 
 # ------------------------------------------------------------------ Caster gear (sold by Elowen Silverthread)
-# Light on armor, heavy on INT/WIS/CHA. The best caster gear still drops from monsters and bosses.
+# Light on armor, heavy on INT/WIS. The best caster gear still drops from monsters and bosses.
 armor("linen_robe", "a linen robe", "chest", 1, 2, 8, "A plain robe of undyed linen, the uniform of every apprentice.", INT=1, WIS=1, kind="cloth")
 armor("apprentice_hood", "an apprentice's hood", "head", 2, 1, 12, "A soft grey hood embroidered with a single silver rune.", INT=1, WIS=1, kind="cloth")
-armor("silk_gloves", "silk gloves", "hands", 3, 1, 15, "Thin gloves of black silk that never snag a spell.", INT=1, CHA=1, kind="cloth")
+armor("silk_gloves", "silk gloves", "hands", 3, 1, 15, "Thin gloves of black silk that never snag a spell.", INT=1, kind="cloth")
 armor("felt_slippers", "felt slippers", "feet", 3, 1, 15, "Quiet slippers favoured by librarians and thieves alike.", WIS=1, DEX=1, kind="cloth")
 armor("woven_trousers", "woven trousers", "legs", 4, 2, 20, "Loose trousers of tightly woven blue wool.", INT=1, WIS=1, kind="cloth")
 armor("copper_focus_ring", "a copper focus ring", "ring", 5, 0, 45, "A copper band etched with a spiral that draws the mind inward.", INT=2, WIS=2, kind="jewelry")
-weapon("wand_of_sparks", "a wand of sparks", 6, (3, 7), 60, "A birch wand that crackles with tiny sparks when gripped.", INT=3, CHA=1, kind="wand")
-armor("moonstone_pendant", "a moonstone pendant", "neck", 8, 1, 90, "A milky moonstone that glows faintly at night.", INT=2, WIS=2, CHA=2, kind="jewelry")
+weapon("wand_of_sparks", "a wand of sparks", 6, (3, 7), 60, "A birch wand that crackles with tiny sparks when gripped.", INT=3, kind="wand")
+armor("moonstone_pendant", "a moonstone pendant", "neck", 8, 1, 90, "A milky moonstone that glows faintly at night.", INT=2, WIS=2, kind="jewelry")
 armor("acolyte_robe", "an acolyte's robe", "chest", 8, 5, 95, "A robe of deep blue wool trimmed with silver thread.", INT=2, WIS=3, kind="cloth")
 armor("crystal_orb", "a crystal orb", "shield", 10, 1, 120, "A palm-sized orb of clear crystal, held in the off hand to focus the will.", INT=3, WIS=3, kind="offhand")
 armor("spellweave_hood", "a spellweave hood", "head", 10, 3, 115, "A deep hood whose weave shifts colour when magic is near.", INT=3, WIS=2, kind="cloth")
-weapon("willow_staff", "a willow staff", 12, (7, 13), 200, "A pale, supple staff cut from a sacred willow.", INT=4, WIS=4, CHA=2, kind="staff")
+weapon("willow_staff", "a willow staff", 12, (7, 13), 200, "A pale, supple staff cut from a sacred willow.", INT=4, WIS=4, kind="staff")
 armor("enchanted_gloves", "enchanted gloves", "hands", 12, 3, 140, "Grey gloves whose fingertips glow when a spell is cast.", INT=3, WIS=3, kind="cloth")
 armor("mystic_leggings", "mystic leggings", "legs", 14, 5, 200, "Leggings of violet cloth stitched with warding sigils.", INT=3, WIS=3, kind="cloth")
 armor("spellbinder_robe", "a spellbinder's robe", "chest", 14, 8, 260, "A heavy robe whose lining is written with a thousand tiny runes.", INT=4, WIS=4, kind="cloth")
 armor("runebound_slippers", "runebound slippers", "feet", 16, 4, 240, "Slippers that leave faint glowing runes where they step.", INT=3, WIS=2, DEX=2, kind="cloth")
 armor("sapphire_ring", "a sapphire ring", "ring", 18, 0, 400, "A ring set with a deep blue sapphire that hums softly.", INT=4, WIS=4, kind="jewelry")
-armor("archivist_robe", "an archivist's robe", "chest", 20, 12, 600, "The formal robe of a master of the Brightwater archives.", INT=6, WIS=6, CHA=2, kind="cloth")
+armor("archivist_robe", "an archivist's robe", "chest", 20, 12, 600, "The formal robe of a master of the Brightwater archives.", INT=6, WIS=6, kind="cloth")
 armor("starsilk_hood", "a starsilk hood", "head", 22, 7, 550, "A hood of midnight silk sewn with tiny points of starlight.", INT=5, WIS=5, kind="cloth")
-weapon("wand_of_embers", "a wand of embers", 22, (13, 22), 650, "A wand of charred oak with a glowing coal set in its tip.", INT=7, WIS=4, CHA=3, kind="wand")
+weapon("wand_of_embers", "a wand of embers", 22, (13, 22), 650, "A wand of charred oak with a glowing coal set in its tip.", INT=7, WIS=4, kind="wand")
 armor("tome_of_warding", "a tome of warding", "shield", 24, 5, 800, "A heavy spellbook chained to the wrist, its pages humming with protective wards.", INT=6, WIS=6, CON=2, kind="offhand")
 
 # ------------------------------------------------------------------ Hearthdeep (dwarven gear, levels 10-24)
@@ -210,7 +210,7 @@ weapon("elven_glaive", "an elven glaive", 32, (24, 40), 1500,
 weapon("thornheart", "Thornheart", 33, (25, 42), 1700,
        "A greatsword of living blackwood grown from Rotheart's core. Thorns still sprout along its back.", STR=7, CON=4, kind="two-handed")
 armor("elven_mail", "elven mail", "chest", 26, 22, 900, "A coat of fine leafsteel scales that whispers when you move.", DEX=3, CON=2, kind="mail")
-armor("moonweave_robe", "a moonweave robe", "chest", 26, 14, 950, "A robe of silver-grey silk that shimmers like moonlight on water.", INT=6, WIS=6, CHA=2, kind="cloth")
+armor("moonweave_robe", "a moonweave robe", "chest", 26, 14, 950, "A robe of silver-grey silk that shimmers like moonlight on water.", INT=6, WIS=6, kind="cloth")
 armor("leafsteel_helm", "a leafsteel helm", "head", 28, 12, 950, "A tall, narrow elven helm with cheek-guards shaped like leaves.", DEX=2, CON=2, kind="mail")
 armor("moonweave_gloves", "moonweave gloves", "hands", 28, 5, 900, "Fingerless gloves of moonweave silk, cool to the touch.", INT=5, WIS=4, kind="cloth")
 armor("wardens_boots", "warden's boots", "feet", 30, 10, 1200, "Soft-soled boots of the Silverbough wardens, made to walk without a sound.", DEX=4, kind="leather")
@@ -218,7 +218,7 @@ armor("silverbark_shield", "a silverbark shield", "shield", 30, 20, 1300, "A kit
 armor("starleaf_circlet", "a starleaf circlet", "head", 30, 9, 1200, "A circlet of woven silver leaves with a tiny star caught at its brow.", INT=6, WIS=5, kind="cloth")
 armor("moonweave_leggings", "moonweave leggings", "legs", 30, 8, 1100, "Leggings of silver-grey silk stitched with tiny crescent moons.", INT=5, WIS=5, kind="cloth")
 armor("wardens_gauntlets", "warden's gauntlets", "hands", 32, 12, 1500, "Leafsteel gauntlets that flex like a second skin.", DEX=4, STR=2, kind="leather")
-armor("silverleaf_pendant", "a silverleaf pendant", "neck", 32, 4, 1500, "A single silver leaf that never tarnishes, on a chain of fine elven links.", INT=5, WIS=5, CHA=3, kind="jewelry")
+armor("silverleaf_pendant", "a silverleaf pendant", "neck", 32, 4, 1500, "A single silver leaf that never tarnishes, on a chain of fine elven links.", INT=5, WIS=5, kind="jewelry")
 armor("crown_of_thorns", "the Crown of Thorns", "head", 33, 14, 1800, "A circlet of black thorns cut from Rotheart's crown. It does not draw blood, quite.", CON=4, WIS=4, STR=3, kind="mail")
 armor("eldergrove_amulet", "the Amulet of the Eldergrove", "neck", 33, 5, 1900, "An acorn of green crystal that pulses slowly, like a sleeping heart.", CON=3, WIS=5, DEX=3, kind="jewelry")
 armor("leafsteel_greaves", "leafsteel greaves", "legs", 34, 22, 1700, "Elven leg-plates of leafsteel, etched with climbing vines.", DEX=3, CON=3, kind="mail")
@@ -233,7 +233,7 @@ armor("gnoll_bone_necklace", "a gnoll warlord's necklace", "neck", 26, 4, 950,
       "A necklace of finger bones and yellowed fangs, strung by a gnoll who counted his victims.", STR=3, CON=3, DEX=2, kind="jewelry")
 weapon("sunsteel_scimitar", "a sunsteel scimitar", 38, (28, 47), 2200,
        "A deeply curved blade of golden sunsteel, folded a thousand times in the forges of Sunspire.", STR=5, DEX=7, kind="sword")
-armor("desert_silk_robe", "a desert silk robe", "chest", 38, 20, 2100, "Layered robes of saffron and indigo silk, cool in the worst of the sun.", INT=8, WIS=8, CHA=3, kind="cloth")
+armor("desert_silk_robe", "a desert silk robe", "chest", 38, 20, 2100, "Layered robes of saffron and indigo silk, cool in the worst of the sun.", INT=8, WIS=8, kind="cloth")
 armor("silkwind_turban", "a silkwind turban", "head", 38, 10, 2000, "A turban of fine silk pinned with a sapphire that glows when spells are cast.", INT=7, WIS=6, kind="cloth")
 armor("oasis_pearl_ring", "an oasis pearl ring", "ring", 38, 0, 2200, "A ring of pale gold set with a pearl from the sacred oasis.", INT=7, WIS=7, kind="jewelry")
 weapon("dune_recurve", "a dune recurve bow", 40, (29, 48), 2400,
@@ -256,7 +256,7 @@ weapon("crescent_greatsword", "a crescent greatsword", 44, (33, 55), 3200,
 weapon("khopesh_of_ussreth", "the Khopesh of Ussreth", 48, (38, 62), 5500,
        "The hooked sword of the last Sand King, its bronze blade still sharp after three thousand years.", STR=11, DEX=8, CON=5, kind="sword")
 weapon("scepter_of_the_sand_kings", "the Scepter of the Sand Kings", 48, (27, 44), 5000,
-       "A sceptre of gold and lapis topped with a scarab of black glass, heavy with old and patient magic.", INT=17, WIS=15, CHA=8, kind="wand")
+       "A sceptre of gold and lapis topped with a scarab of black glass, heavy with old and patient magic.", INT=17, WIS=15, kind="wand")
 armor("burial_mask", "the Burial Mask of Ussreth", "head", 48, 26, 4800,
       "A golden death-mask with eyes of lapis. Wearing it, you hear the desert wind.", CON=6, STR=4, INT=4, WIS=4, kind="mail")
 
@@ -270,7 +270,7 @@ weapon("wasp_sting_dagger", "a wasp-sting dagger", 8, (5, 10), 80,
        "A wasp's sting set in a handle of hard paper. A little venom still beads on the point.", DEX=3, kind="dagger")
 weapon("hawthorn_wand", "a hawthorn wand", 8, (4, 9), 80,
        "A crooked twig of hawthorn dug up by the moles, still budding at the tip. It hums near fairy rings.",
-       INT=3, WIS=2, CHA=1, kind="wand")
+       INT=3, WIS=2, kind="wand")
 weapon("whisker_bow", "a whisker-strung bow", 9, (6, 12), 95,
        "A bow of springy willow strung with a single whisker of Old Tom, the gardener's cat.", DEX=2, kind="bow")
 weapon("queens_stinger", "the Wasp Queen's stinger", 10, (7, 13), 150,
@@ -282,7 +282,7 @@ armor("thistledown_robe", "a thistledown robe", "chest", 7, 5, 60,
 armor("dandelion_trousers", "dandelion-silk trousers", "legs", 8, 4, 55,
       "Trousers woven from dandelion clocks, soft as cloud and surprisingly tough.", kind="cloth", INT=1, WIS=1)
 armor("petal_slippers", "petal slippers", "feet", 7, 3, 50,
-      "Slippers of layered rose petals that never wilt. You make no sound in them.", kind="cloth", INT=1, CHA=1)
+      "Slippers of layered rose petals that never wilt. You make no sound in them.", kind="cloth", INT=1)
 armor("acorn_helm", "an acorn helm", "head", 6, 3, 45,
       "An acorn cup, hollowed and lined with moss, that fits like a helm once you are mouse-sized and stays a "
       "good fit after.", kind="leather", DEX=1)
@@ -299,14 +299,14 @@ armor("beetleshell_shield", "a beetle-shell shield", "shield", 8, 6, 85,
       CON=1)
 armor("amber_pendant", "an amber pendant", "neck", 10, 1, 180,
       "A drop of amber from the Wasp Queen's comb, with a tiny wasp sealed inside, on a silver chain.",
-      kind="jewelry", WIS=2, CHA=2, CON=1)
+      kind="jewelry", WIS=2, CON=1)
 
 # ------------------------------------------------------------------ The Mycelial Wards (levels 14-20)
 # Fills the 12-20 gaps: early plate and mail chests, mail legs, leather boots, a dagger, a two-handed
 # weapon, a shield, a necklace and a ring.
 weapon("heartspore_staff", "the Heartspore staff", 20, (11, 19), 650,
        "A staff of pale, living fungus that still sends out fine threads when it rests on soft ground.",
-       INT=6, WIS=6, CHA=2, kind="staff")
+       INT=6, WIS=6, kind="staff")
 weapon("sporethorn_knife", "a sporethorn knife", 18, (12, 20), 420,
        "A knife grown, not forged, from a thorn of black fungus as hard as iron. Its edge never dulls.",
        DEX=5, INT=1, kind="dagger")
@@ -315,7 +315,7 @@ weapon("rootmaul", "a rootmaul", 16, (12, 21), 380,
        kind="two-handed")
 armor("mycelial_crown", "the Mycelial Crown", "head", 20, 9, 900,
       "A circlet of pale threads grown into a crown. Wearing it, you sometimes hear a faint, patient chorus.",
-      kind="any", STR=2, DEX=2, CON=2, INT=2, WIS=2, CHA=2)
+      kind="any", STR=2, DEX=2, CON=2, INT=2, WIS=2)
 armor("capshell_hauberk", "a capshell hauberk", "chest", 17, 16, 430,
       "A coat of overlapping scales cut from hardened mushroom cap, light and springy, and tougher than it looks.",
       kind="mail", CON=3, DEX=2)
@@ -330,7 +330,7 @@ armor("shelf_shield", "a shelf-fungus shield", "shield", 14, 10, 300,
       "A round shield of hard, layered shelf-fungus, as light as wood and harder than oak.", kind="shield", CON=3)
 armor("glowcap_pendant", "a glowcap pendant", "neck", 16, 2, 380,
       "A tiny glowing cap sealed in a bead of resin, whose soft blue light helps you think.", kind="jewelry",
-      INT=3, WIS=3, CHA=1)
+      INT=3, WIS=3)
 armor("rootbound_ring", "the rootbound ring", "ring", 20, 0, 600,
       "A ring of living root that has wound itself around your finger and will not quite come off.",
       kind="jewelry", CON=3, WIS=3, STR=2)
@@ -349,19 +349,19 @@ weapon("antler_maul", "an antler maul", 39, (29, 48), 2000,
        STR=8, CON=3, kind="two-handed")
 weapon("ithilmirs_maulstick", "Ithilmir's maulstick", 42, (23, 38), 3200,
        "The court painter's maulstick, a staff of white wood padded at the tip, worn smooth by a thousand years of "
-       "steadying his hand.", INT=13, WIS=13, CHA=6, kind="staff")
+       "steadying his hand.", INT=13, WIS=13, kind="staff")
 weapon("ithilmirs_brush", "Ithilmir's brush", 42, (24, 40), 3400,
        "A long brush of silver sable whose bristles are never dry. What it paints, for a moment, is real.",
-       INT=17, WIS=11, CHA=9, kind="wand")
+       INT=17, WIS=11, kind="wand")
 armor("smock_of_living_paint", "a smock of living paint", "chest", 42, 24, 3000,
       "The painter's smock, stiff with a thousand years of paint that still shifts and swirls across it.",
-      kind="cloth", INT=9, WIS=9, CHA=4)
+      kind="cloth", INT=9, WIS=9)
 armor("painted_silk_slippers", "painted silk slippers", "feet", 38, 8, 1900,
       "Dancing slippers stepped out of a portrait, embroidered with flowers that open when you walk.", kind="cloth",
       INT=5, WIS=5)
 armor("countess_gloves", "the Countess's kid gloves", "hands", 39, 12, 2000,
-      "Long gloves of pale kid leather, buttoned with seed pearls, that never show a stain.", kind="leather",
-      DEX=4, CHA=3)
+      "Long gloves of pale kid leather, buttoned with seed pearls, that never show a stain.", INT=3, kind="leather",
+      DEX=4)
 armor("moonsteel_gauntlets", "painted moonsteel gauntlets", "hands", 39, 14, 2000,
       "Gauntlets of silver mail from the painted Moon Court, brighter than anything left in the ruins.", kind="mail",
       STR=3, DEX=3)
@@ -384,7 +384,7 @@ armor("candle_of_stillness", "a candle of still flame", "shield", 38, 10, 1900,
 # Fills the 24-30 gaps: plate and leather chests, mail legs, a dagger, a wand, a ring, cloth boots.
 weapon("ringmasters_baton", "the Ringmaster's baton", 30, (19, 32), 1500,
        "A short baton of black lacquer tipped with brass, with a frayed thread still tied to one end.",
-       INT=9, WIS=6, CHA=6, kind="wand")
+       INT=9, WIS=6, kind="wand")
 weapon("knife_throwers_blade", "a knife-thrower's blade", 29, (17, 29), 1300,
        "A perfectly balanced throwing knife that always seems to end up back in its sheath.", DEX=6, STR=2,
        kind="dagger")
@@ -393,7 +393,7 @@ weapon("tent_mallet", "a roustabout's tent mallet", 28, (19, 33), 1100,
        STR=6, CON=2, kind="blunt")
 armor("ringmasters_coat", "the Ringmaster's scarlet coat", "chest", 30, 26, 1500,
       "A scarlet tailcoat with gold frogging, its lining stitched with the names of every act that ever played the big top.",
-      kind="leather", DEX=5, CHA=5, CON=3)
+      kind="leather", DEX=5, CON=3, INT=5)
 armor("strongmans_breastplate", "the Strongman's breastplate", "chest", 27, 28, 1200,
       "A breastplate of polished iron shaped like a muscled torso, with a painted leopard skin over one shoulder.",
       kind="plate", STR=4, CON=5)
@@ -406,10 +406,10 @@ armor("dancing_slippers", "a pair of dancing slippers", "feet", 27, 6, 1000,
       "Red silk slippers that tap in time to music no one else can hear.", kind="cloth", INT=4, WIS=4, DEX=2)
 armor("fortune_tellers_orb", "a fortune teller's crystal ball", "shield", 28, 9, 1200,
       "A crystal ball on a stand of twisted brass. It shows the future, but only the parts that have already happened.",
-      kind="offhand", INT=6, WIS=6, CHA=3)
+      kind="offhand", INT=6, WIS=6)
 armor("brass_ring", "the brass ring", "ring", 27, 0, 1200,
       "The brass ring of the carousel, the prize every rider reaches for and almost nobody catches.",
-      kind="jewelry", STR=3, DEX=3, CON=3, CHA=3)
+      kind="jewelry", STR=3, DEX=3, CON=3, INT=3)
 
 # ------------------------------------------------------------------ The Chancery of the Dead (levels 32-38)
 # Fills the 30-38 gaps: blunt, axe, dagger and wand weapons, mail chest, plate helm and boots, shields.
@@ -427,7 +427,7 @@ weapon("scriveners_penknife", "a scrivener's penknife", 33, (18, 31), 1500,
        DEX=7, INT=3, kind="dagger")
 weapon("notarys_rod", "a notary's rod", 35, (18, 30), 1900,
        "A short black rod of office capped with a silver seal, still warm with the authority of the court.",
-       INT=10, WIS=8, CHA=4, kind="wand")
+       INT=10, WIS=8, kind="wand")
 armor("bailiffs_hauberk", "a bailiff's hauberk", "chest", 34, 30, 1900,
       "A long coat of grey mail under a tabard embroidered with the scales of the Chancery.", kind="mail",
       CON=5, STR=3)
@@ -440,10 +440,10 @@ armor("chancery_shield", "the shield of the scales", "shield", 35, 22, 1900,
       kind="shield", CON=5, WIS=2)
 armor("seal_of_office", "a seal of office", "ring", 37, 0, 2000,
       "A heavy signet ring cut with the scales of the Chancery, used to seal judgements.", kind="jewelry",
-      WIS=5, CHA=5, INT=4, CON=2)
+      WIS=5, INT=4, CON=2)
 armor("chain_of_office", "the High Justice's chain of office", "neck", 38, 6, 2400,
       "A heavy chain of grey gold with a pendant of balanced scales, which tip slightly whenever someone lies.",
-      kind="jewelry", STR=4, WIS=6, CHA=5, CON=3)
+      kind="jewelry", STR=4, WIS=6, CON=3)
 
 # ------------------------------------------------------------------ The Clockwork Orchard (levels 41-44)
 # Fills the 40-45 gaps: cloth, mail and plate helms, a mail chest, leather gloves, plate boots, an axe,
@@ -459,7 +459,7 @@ weapon("orrins_wrench", "Orrin's great wrench", 44, (33, 55), 3800,
        "years of tightening.", STR=10, WIS=6, CON=4, kind="blunt")
 weapon("pendulum_staff", "the pendulum staff", 44, (24, 40), 3800,
        "A staff of black wood with a pendulum of crystal swinging in a cage at its head, keeping perfect time.",
-       INT=14, WIS=14, CHA=5, kind="staff")
+       INT=14, WIS=14, kind="staff")
 armor("jewellers_circlet", "a jeweller's circlet", "head", 42, 13, 2800,
       "A circlet of fine brass set with a dozen swinging lenses, through which every flaw shows plainly.",
       kind="cloth", INT=8, WIS=7)
@@ -486,10 +486,10 @@ armor("orrery_amulet", "the orrery amulet", "neck", 44, 7, 3600,
 # Fills the 44-49 gaps: plate past 42, daggers and axes past 15, leather and cloth chests past 40.
 weapon("vane_longsword", "the Vane longsword", 49, (41, 67), 6000,
        "The ancestral blade of the Lords of Thornwick, its pommel a silver stag's head and its edge older than the house.",
-       STR=11, CON=7, CHA=4, kind="sword")
+       STR=11, CON=7, INT=4, kind="sword")
 weapon("corwins_rapier", "Sir Corwin's rapier", 47, (36, 59), 4400,
        "A slender duelling blade with a basket hilt of gilded wire. It has ended a dozen quarrels over cards.",
-       DEX=11, STR=5, CHA=4, kind="sword")
+       DEX=11, STR=5, INT=4, kind="sword")
 weapon("seraphines_hairpin", "Lady Seraphine's hairpin", 47, (30, 50), 4200,
        "A long golden pin with a hollow, needle-sharp point. Something dark has dried inside it.",
        DEX=12, STR=4, kind="dagger")
@@ -512,9 +512,9 @@ armor("huntsmans_breeches", "Vane huntsman's breeches", "legs", 43, 21, 2600,
       "Riding breeches of supple leather, reinforced at the knee and thigh.", kind="leather", DEX=5, CON=4)
 armor("brocade_gown", "a gown of green brocade", "chest", 47, 26, 4200,
       "A court gown of green and silver brocade, its bodice stiffened with fine wire and old wards.",
-      kind="cloth", INT=10, WIS=10, CHA=5)
+      kind="cloth", INT=10, WIS=10)
 armor("silk_evening_gloves", "silk evening gloves", "hands", 46, 8, 3000,
-      "Long gloves of ivory silk, embroidered at the cuff with tiny silver stags.", kind="cloth", INT=7, WIS=7, CHA=3)
+      "Long gloves of ivory silk, embroidered at the cuff with tiny silver stags.", kind="cloth", INT=7, WIS=7)
 armor("silver_salver", "Mr. Graves's silver salver", "shield", 45, 28, 3400,
       "A heavy silver serving tray, polished to a mirror and dented in a way that suggests it has stopped more than drinks.",
       kind="shield", CON=6, DEX=3)
@@ -523,15 +523,15 @@ armor("tobias_grimoire", "Tobias's black grimoire", "shield", 47, 13, 4000,
       kind="offhand", INT=10, WIS=7, CON=3)
 armor("minstrels_lute", "a minstrel's lute", "shield", 45, 10, 3000,
       "A rosewood lute inlaid with mother-of-pearl, worn on a strap across the back and played between blows.",
-      kind="offhand", CHA=10, DEX=5)
+      kind="offhand", DEX=5, INT=10)
 armor("dowagers_pearls", "the Dowager's pearls", "neck", 48, 8, 4200,
-      "Three ropes of great grey pearls, cold as the woman who wore them.", kind="jewelry", WIS=8, CHA=8, CON=6)
+      "Three ropes of great grey pearls, cold as the woman who wore them.", kind="jewelry", WIS=8, CON=6)
 armor("mathildes_cameo", "Great-aunt Mathilde's cameo", "neck", 46, 7, 3400,
       "A cameo of a young woman on a ribbon of black velvet. It may once have been Mathilde.",
       kind="jewelry", CON=6, STR=4, DEX=4)
 armor("vane_signet", "the Vane signet", "ring", 49, 0, 5000,
-      "A heavy gold ring set with a green stone, cut with the silver stag of the Vanes.", kind="jewelry",
-      STR=7, CON=7, CHA=6)
+      "A heavy gold ring set with a green stone, cut with the silver stag of the Vanes.", INT=6, kind="jewelry",
+      STR=7, CON=7)
 
 # ------------------------------------------------------------------ The Sugarwold (levels 45-49)
 # Fills the 44-49 gaps: cloth and leather helms, cloth legs and feet, leather gloves, mail gloves, legs
@@ -547,10 +547,10 @@ weapon("marchpane_rolling_pin", "Madame Marchpane's rolling pin", 49, (38, 62), 
        "gingerbread folk.", STR=11, WIS=9, CON=5, kind="blunt")
 weapon("sugarglass_wand", "a sugarglass wand", 49, (28, 46), 5000,
        "A twisted wand of red and white sugar-glass that tastes faintly of cinnamon. It glows when it is hungry.",
-       INT=18, WIS=14, CHA=9, kind="wand")
+       INT=18, WIS=14, kind="wand")
 armor("spun_sugar_cowl", "a spun-sugar cowl", "head", 46, 12, 2800,
       "A deep cowl woven of fine threads of spun sugar, light as a cobweb and oddly hard to tear.", kind="cloth",
-      INT=8, WIS=7, CHA=3)
+      INT=8, WIS=7)
 armor("striped_trousers", "candy-striped trousers", "legs", 46, 13, 2800,
       "Baggy silk trousers striped red and white, soft as taffy and twice as tough.", kind="cloth", INT=8, WIS=8)
 armor("gumdrop_slippers", "gumdrop slippers", "feet", 46, 10, 2800,
@@ -574,16 +574,16 @@ armor("peppermint_amulet", "a peppermint amulet", "neck", 47, 8, 3200,
       "A striped peppermint set in silver on a fine chain. Its cold, clean scent clears the head.", kind="jewelry",
       INT=7, WIS=6, CON=4)
 armor("spun_sugar_ring", "a ring of spun sugar", "ring", 48, 0, 3400,
-      "A ring of spun sugar that never melts, sticky only when you are tempted by something sweet.", kind="jewelry",
-      DEX=7, CON=5, CHA=5)
+      "A ring of spun sugar that never melts, sticky only when you are tempted by something sweet.", INT=5, kind="jewelry",
+      DEX=7, CON=5)
 
 # ------------------------------------------------------------------ Mythic gear from the Planes of the Gods (level 50)
 # Dropped only by the plane bosses and Lord Trepth. Stronger than anything else in the world.
 weapon("stormcaller_bow", "Stormcaller", 50, (46, 74), 12000,
        "A bow strung with a thread of starlight, taken from the Star-Warden's own hand.", DEX=16, WIS=6, CON=6, kind="bow")
-armor("starweave_robes", "starweave robes", "chest", 50, 30, 11000, "Robes woven from the night between the stars, weightless and cool, glittering faintly as you move.", INT=14, WIS=14, CHA=6, kind="cloth")
+armor("starweave_robes", "starweave robes", "chest", 50, 30, 11000, "Robes woven from the night between the stars, weightless and cool, glittering faintly as you move.", INT=14, WIS=14, kind="cloth")
 weapon("dreamweaver_staff", "the Dreamweaver's Staff", 50, (30, 50), 12000,
-       "A staff of pale moonwood wound with silver thread. Whoever holds it never quite stops dreaming.", INT=20, WIS=20, CHA=8, kind="staff")
+       "A staff of pale moonwood wound with silver thread. Whoever holds it never quite stops dreaming.", INT=20, WIS=20, kind="staff")
 armor("dreamsilver_greaves", "dreamsilver greaves", "legs", 50, 36, 11000, "Greaves of silver that seem to drift; blows slide off them like a dream on waking.", CON=10, STR=6, kind="plate")
 weapon("gravesong", "Gravesong", 50, (48, 78), 12500,
        "A black sword that hums a dirge for whoever it is pointed at.", STR=14, DEX=10, kind="sword")
@@ -605,9 +605,9 @@ armor("windwalker_boots", "windwalker boots", "feet", 50, 16, 11000, "Boots of s
 armor("band_of_four_winds", "the Band of the Four Winds", "ring", 50, 0, 11000, "A ring of four twisted strands of silver, each humming a different wind.", DEX=10, STR=6, CON=6, kind="jewelry")
 weapon("eternity", "Eternity", 50, (55, 88), 20000,
        "The sword of Lord Trepth. Its blade shows every moment it has ever cut.",
-       STR=12, DEX=12, CON=12, INT=12, WIS=12, CHA=12, kind="any")
+       STR=12, DEX=12, CON=12, INT=12, WIS=12, kind="any")
 armor("crown_of_trepth", "the Crown of Trepth", "head", 50, 32, 18000, "A crown of white gold that weighs nothing and holds the light of every dawn.",
-      STR=10, DEX=10, CON=10, INT=10, WIS=10, CHA=10, kind="any")
+      STR=10, DEX=10, CON=10, INT=10, WIS=10, kind="any")
 # Pieces for the slots where a shop item used to be the best there was (leather gloves, mail
 # legs, cloth legs and feet), so that the best item in every slot is always a drop.
 armor("starstep_slippers", "starstep slippers", "feet", 50, 12, 11000, "Slippers of midnight silk sewn with tiny stars. Each step leaves a faint glimmer behind.",
@@ -615,11 +615,11 @@ armor("starstep_slippers", "starstep slippers", "feet", 50, 12, 11000, "Slippers
 armor("dreamsilk_trousers", "dreamsilk trousers", "legs", 50, 16, 11000, "Trousers of grey dream-silk that rustle like someone whispering in their sleep.",
       INT=12, WIS=12, CON=5, kind="cloth")
 armor("ferrymans_gloves", "the Ferryman's gloves", "hands", 50, 15, 11000, "Black leather gloves worn smooth on the oar of the last crossing. They never let go of what they hold.",
-      DEX=10, STR=7, CHA=5, kind="leather")
+      DEX=10, STR=7, INT=5, kind="leather")
 armor("tidescale_legguards", "tidescale legguards", "legs", 50, 30, 11000, "Legguards of overlapping green sea-scales that shift like water and close like a wave.",
       WIS=10, CON=8, STR=5, kind="mail")
 armor("hourglass_amulet", "the Hourglass Amulet", "neck", 50, 12, 18000, "A tiny hourglass of crystal whose sand runs upward.",
-      STR=12, DEX=12, CON=12, INT=12, WIS=12, CHA=12, kind="jewelry")
+      STR=12, DEX=12, CON=12, INT=12, WIS=12, kind="jewelry")
 
 # ------------------------------------------------------------------ Armor training: filling each tier's gaps
 # Leather for rogues, bards and druids, mail gloves and boots, plate helms and boots, and off-hands

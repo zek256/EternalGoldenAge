@@ -14,8 +14,8 @@ has no heal at all, so it relies on killing fast, dodging and potions.
 |---|---|
 | HP per level | 8 |
 | Mana per level | 0 (Rogues use no mana) |
-| Spell stat | none |
-| Starting bonus | STR +2, DEX +2, CHA +1 |
+| Spell stats | none |
+| Starting bonus | STR +2, DEX +2, CON +1 |
 | Gains per level | STR +2, DEX +2, CON +1 |
 | Armor | Leather (and cloth) |
 | Shield | No |
@@ -28,10 +28,10 @@ Average race, starting gear only (see the [README](README.md#about-the-numbers))
 
 | Level | HP | STR | DEX | CON | Weapon damage | Miss | Crit | Dodge | Armor |
 |---|---|---|---|---|---|---|---|---|---|
-| 1 | 23 | 12 | 13 | 10 | 6-8 | 9.1% | 6.3% | 3.9% | 5 |
-| 10 | 158 | 30 | 31 | 19 | 17-19 | 7.8% | 8.1% | 5.1% | 7 |
-| 25 | 455 | 60 | 61 | 34 | 35-37 | 5.7% | 11.1% | 7.1% | 10 |
-| 50 | 1150 | 110 | 111 | 59 | 65-67 | 2.2% | 16.1% | 10.4% | 15 |
+| 1 | 23 | 12 | 13 | 11 | 6-8 | 9.1% | 6.3% | 3.9% | 5 |
+| 10 | 160 | 30 | 31 | 20 | 17-19 | 7.8% | 8.1% | 5.1% | 7 |
+| 25 | 460 | 60 | 61 | 35 | 35-37 | 5.7% | 11.1% | 7.1% | 10 |
+| 50 | 1160 | 110 | 111 | 60 | 65-67 | 2.2% | 16.1% | 10.4% | 15 |
 
 STR is your damage and DEX your precision: by level 50 your auto-attacks almost never miss.
 
@@ -43,7 +43,7 @@ average with the starting dagger.
 | Level | Ability | Cooldown | Target | Effect |
 |---|---|---|---|---|
 | 1 | **Backstab** | 2 | one foe | 1.7x weapon damage (~13 at L1, ~142 at L50) |
-| 5 | **Poisoned Blade** | 4 | one foe | 1.0x weapon damage plus poison: 4 + 0.9/level + 0.2 STR per round for 4 rounds (~13 at L5, ~71 at L50) |
+| 5 | **Poisoned Blade** | 4 | one foe | 1.0x weapon damage plus poison: 4 + 0.9/level + 0.2 STR per round for 4 rounds (~12 at L5, ~71 at L50) |
 | 10 | **Evasion** | 8 | self | +40% dodge for 3 rounds |
 | 18 | **Kidney Shot** | 6 | one foe | 1.0x weapon damage, 85% chance to stun for 2 rounds (about 43% vs bosses) |
 | 28 | **Eviscerate** | 4 | one foe | 2.8x weapon damage (~140 at L28, ~235 at L50) |
@@ -93,7 +93,7 @@ From **the Mycelial Wards** (14-20, west of Westmarch's Old Watchtower): a spore
 dagger, DEX), mossfelt boots (15, leather, DEX) and the Mycelial Crown (20, any class).
 
 From **the Carnival That Never Closes** (26-30, south of the Badlands' Howling Pit): a knife-thrower's
-blade (29, dagger, DEX) from Mirela, the Ringmaster's scarlet coat (30, leather chest, DEX/CHA), an
+blade (29, dagger, DEX) from Mirela, the Ringmaster's scarlet coat (30, leather chest, DEX/INT), an
 acrobat's grips (26, leather) and the brass ring (27, ring).
 
 From **the Chancery of the Dead** (32-38, south of the Dustway's Gnoll Scrub): a scrivener's penknife
@@ -101,7 +101,7 @@ From **the Chancery of the Dead** (32-38, south of the Dustway's Gnoll Scrub): a
 
 From **the Painted Gallery** (37-42, behind Elandor's Hall of the Moon Court; each painting is entered
 with `enter`): a palette knife (38, dagger, DEX/INT), a frost-varnished bow (37, bow, DEX/WIS) and the
-Countess's kid gloves (39, leather hands, DEX/CHA). Countess Isaura drops the Countess's kid gloves.
+Countess's kid gloves (39, leather hands, DEX/INT). Countess Isaura drops the Countess's kid gloves.
 
 From **the Clockwork Orchard** (41-44, south of the Chancery's Archive of Wills): a gearwork blade (42,
 sword, STR/DEX) and tinker's gloves (43, leather hands, DEX/STR). The Master Automaton drops the
@@ -114,7 +114,7 @@ neck).
 
 From **the Sugarwold** (44-49, north of the Scorchsands' Salt Pans): a rock-candy
 dagger (45, dagger, DEX/STR), a licorice hood (46, leather head, DEX/CON), taffy-grip gloves (46,
-leather hands, DEX/STR) and a ring of spun sugar (48, ring, DEX/CON/CHA). Madame Marchpane drops the
+leather hands, DEX/STR) and a ring of spun sugar (48, ring, DEX/CON/INT). Madame Marchpane drops the
 ring of spun sugar; the rest come from her realm.
 
 ## Best races
@@ -133,8 +133,8 @@ Seluvar and Pyraxis) and all of them at boss level +3.
 
 ## Rebirth
 
-In every later life, each of your stats, your HP per level and your mana pool are the best that any
-class you have lived would have at your current level (see the [README](README.md#rebirth)), and each
+In every later life, each of your stats, your HP per level and your mana per level are the best that
+any class you have lived would have at your current level (see the [README](README.md#rebirth)), and each
 class mastered adds +2% max HP and damage.
 
 A Rogue life brings strong STR and DEX growth (matching the Ranger): later lives hit harder, miss less,

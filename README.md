@@ -55,7 +55,7 @@ Saves are written as JSON to `saves/<name>.json`.
 | `pet` / `pet dismiss` | inspect or release your summoned companion |
 | `stats` / `score` | character sheet: stats as [base/total], identity and record, condition, combat numbers, every class lived (current one highlighted), racial perk, pet and active effects |
 | `level` | XP progress and upcoming abilities |
-| `rebirth` | at level 50, be reborn as a new class |
+| `rebirth` | at level 50, be reborn as a new class (with every class mastered, rise a tier; see Tiers) |
 | `alias <word> <command>` | create a shortcut: after `alias mm cast magic missile`, typing `mm` casts it (`mm rat` targets the rat). Built-in commands and directions can't be overridden. `alias` lists yours, `unalias <word>` removes one. Aliases are saved with your character. |
 | `save`, `load`, `quit`, `help` | system |
 
@@ -102,9 +102,11 @@ The world runs on a real-time clock: every **4 seconds** is one game tick.
 ogre (+12% HP), troll (regeneration), undead (immune to poison/disease), orc (+6% damage).
 
 **Classes:** warrior, cleric, wizard, bard, necromancer, shaman, druid, rogue, ranger, paladin,
-dread knight. Each has its own HP and mana growth, casting stat, per-level stat gains, and 6-7
-spells/abilities unlocked between levels 1 and 48. Every class swings its weapon with **STR** and
-aims with **DEX**:
+dread knight. Each has its own HP and mana growth, per-level stat gains, and 6-7 spells/abilities
+unlocked between levels 1 and 48. Every class swings its weapon with **STR** and aims with **DEX**.
+Every class's damage spells (damage, damage over time, drains) scale with **INT**, and its heals,
+heals over time and damage shields with **WIS**, which also feeds the mana pool. Pets use the
+higher of the two. Each class's spells and abilities:
 
 - Warrior: Slam, Battle Cry, Second Wind, Cleave, Shield Wall, Rampage, Avatar of War
 - Cleric: Minor Healing, Smite, Divine Aegis, Greater Healing, Holy Wrath, Resurgence, Sunburst
@@ -153,7 +155,7 @@ a warrior may fight in plate with an axe.
 ## Character maths
 
 - **HP** = 10 + (class HP + 3) x level + CON x level x 0.2 (x racial modifier, x mastery bonus)
-- **Mana** = 15 + class mana x level + casting stat x level x 0.1 (x racial modifier)
+- **Mana** = 15 + class mana x level + WIS x level x 0.1 (x racial modifier)
 - **Stats** = race base + class starting bonus + class gains x (level - 1) + gear
 - **Weapon damage** = weapon range + 0.35 x STR + 0.5 x level, for every class.
 - **DEX** is precision for every class: +0.1% crit per point (max 35%), more dodge (max 25%), +1
@@ -175,9 +177,9 @@ At level 50, `rebirth` lets you choose any other class:
   current level reaches the level at which it was originally learned (a warrior-turned-wizard gets
   Slam back at level 1, Cleave at 12, Avatar of War at 42).
 - **Every stat, your HP and your mana take the best of all the classes you have lived**, at your
-  current level. A level-10 warrior who was once a wizard has the wizard's level-10 INT (it's
-  higher than a warrior's), the warrior's STR and CON, the warrior's HP growth and the wizard's
-  mana pool. At level 25 it has the wizard's level-25 INT, and so on: each life starts on an equal
+  current level. A level-10 warrior who was once a wizard has the wizard's level-10 INT and WIS
+  (higher than a warrior's), the warrior's STR and CON, the warrior's HP growth and the wizard's
+  mana per level. At level 25 it has the wizard's level-25 INT, and so on: each life starts on an equal
   footing and grows into its past strengths. The order of your lives never matters, only which
   classes you have lived.
 - Each **class mastered** (lived to level 50) adds **+2% max HP and damage**, up to +22% with all
@@ -185,6 +187,23 @@ At level 50, `rebirth` lets you choose any other class:
 - You keep the **armor and weapon training** of every class you have lived (see above).
 - All your gear goes into your pack, and you start in your new class's starting gear. Your old
   gear can be worn again once you reach its level. Experience needed per level is exactly the same as in your first life.
+
+### Tiers
+
+Every character starts at **Tier 1**. Once you have mastered **all eleven classes** (the last one at
+level 50), your next `rebirth` raises you to the next tier instead, up to **Tier 10**:
+
+- You choose any class, including the one you just finished, and start again at level 1 with that
+  single class.
+- Every past life is forgotten: their stats, HP and mana growth, mastery bonus, abilities and armor
+  and weapon training are gone. The planes' gates that need every class mastered close again.
+- In return **every stat gets +10 per tier above 1**, for good (Tier 2 +10, Tier 3 +20, up to +90 at
+  Tier 10). A wizard with 10 INT at Tier 1 has 20 at Tier 2 and 30 at Tier 3.
+- You keep everything else: gold, items, bank, completed quests, boss kills, kills, deaths, aliases.
+
+Tiers are purely for fun: no monster or fight is tuned for them, so a high-tier character is meant to
+be overpowered. Mastering all eleven classes at Tier 10 ends your journey: rebirth is closed and you
+are known as **Emperor** *Name* **the Eternal**. `stats` and `level` show your tier.
 
 ## World
 

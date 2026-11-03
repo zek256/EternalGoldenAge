@@ -129,6 +129,14 @@ data/rooms/   one module per region, each with a ROOMS dict, merged in __init__ 
   per-class attack stat). Weapon damage = range + 0.35 STR + 0.5 level. DEX gives crit, dodge, armor
   and a lower miss chance on auto-attacks (`Character.miss_chance`: 10% - 0.07% per DEX, floor 2%).
   The rogue, ranger and bard grow STR +2/+2/+1 for this reason.
+- **INT and WIS work the same for every class** (the user's rule, 2026-11-03; there is no CHA):
+  INT scales damage, dot and drain effects, WIS scales heal, hot and shield effects and the mana pool
+  (`Character.max_mana`: 15 + best class `mana` x level + 0.1 WIS x level). Summons use `"INT/WIS"`,
+  the higher of the two (`Character.magic_stat`). Every class still gains exactly 5 whole points a
+  level (the user's preference). When stats moved, heal/shield (and the bard's damage) per-level terms
+  were raised so single-class characters at 50 kept their power; hybrid damage was deliberately not
+  raised, because a multi-life character's INT 161 would stack on it. Necromancer mana is held at 12
+  per level (full compensation would be 16) so best-of rebirth doesn't pair it with a cleric's WIS.
 - HP and mana formulas live in `Character.max_hp/max_mana`. XP per level is
   `65 * level^1.7`, identical in every life (no rebirth penalty, by the user's choice).
   Kill XP (`combat.monster_xp`) is `15 + 14.5 * level^1.5`, so same-level kills per level climb
@@ -137,6 +145,12 @@ data/rooms/   one module per region, each with a ROOMS dict, merged in __init__ 
 - Rebirth (level 50): the old class is appended to `past_lives` as `{"cls": id}` (no stat totals
   are stored). Abilities of every lived class stay known and unlock at their original level. All gear
   is unequipped into the pack, then the new class's starting `gear` is equipped.
+- Tiers (`Character.tier`, 1-`MAX_TIER` 10): once every class is mastered, `rebirth` calls
+  `Game.ascend` and `Character.rebirth` raises the tier and clears `past_lives` instead of appending
+  (stats, mastery, abilities, training all reset; gold, items, bank, quests, boss kills stay). Every
+  stat gets `TIER_BONUS` (10) x (tier - 1) in `base_stat`. Tier 10 with every class mastered is
+  `eternal`: rebirth is refused and `display_name` is "Emperor <name> the Eternal" (stats header, greetings).
+  **Tiers are never balanced for** (the user's rule): sims and tuning assume Tier 1.
 - Race perks are keys in `RACES[...]["perks"]` read via `Character.perk()`: hp_mult,
   mana_mult, dmg_mult, crit, dodge, regen_mult, immune, xp_mult (supported, currently unused).
 - Ability power = `base + lvl*level + scale*stat`. Spell cost scales `cost * (1 + 0.1*(level-1))`.
@@ -145,9 +159,10 @@ data/rooms/   one module per region, each with a ROOMS dict, merged in __init__ 
 Templates only set multipliers. Real HP, damage and armor come from level in `MonsterInstance`
 (`(20 + 15L)` HP times `MONSTER_HP_MULT`, etc.). To make a monster tougher, change its multipliers, not raw numbers.
 Specials: big / dot / stun / drain / heal. Bosses respawn after 120 ticks, others after 30.
-Monsters above level 50 (the Planes of the Gods) use larger multipliers (hp 3.5-5.0, dmg 2.6-3.4
-for regulars; champions 4.85-6.6 / 2.3-2.9; elemental lords 5.75-9.4 / 2.5-3.25; Lord Trepth
-6.6 / 2.35), because multi-life characters take the best stats of every class they have lived.
+Monsters above level 50 (the Planes of the Gods) use larger multipliers (hp 3.5-5.6, dmg 2.6-3.4
+for regulars; champions 4.85-6.6 / 2.3-2.9; elemental lords 6.4-10.5 / 2.5-3.25; Lord Trepth
+7.4 / 2.35), because multi-life characters take the best stats of every class they have lived.
+Everything from level 57 up got +12% HP after the INT/WIS rework.
 
 ### Gates and boss kills
 - A room may carry `gate` (see `data/rooms/common.R`): `{"kills": [boss ids], "msg"}`,
@@ -216,19 +231,25 @@ beatable at level+3 with potions. Necromancer, with its pet and drain, is the st
 class. That is intended. Wizards are fragile and get no area spell until Fireball at 16.
 With armor training, wizards rely on Mana Shield (strengthened to 15 + 4.5/level + 1.3 INT when
 cloth-only gear went in, and to 17 + 5.2/level + 1.5 INT when the auto-attack began landing
-alongside every action, a change that helped melee classes far more than casters); they clear
+alongside every action, a change that helped melee classes far more than casters; since the INT/WIS
+rework it is 17 + 6.79/level + 1.5 WIS, and wizards grow INT 3 / WIS 2 with no DEX); they clear
 ordinary fights with lots of HP to spare but are 65-100% (about 87% on average) against bosses at
 the boss's own level. Note: the sims of 2026-11-01 show same-level fights costing only ~0-50% HP
 (median ~20%), easier than the 25-55% target, both before and after the swing change. Bards used to be too slow to kill bosses (30+ rounds);
 Discordant Note was raised to 10 + 2.4/level + 0.8 CHA and their unused INT gain became DEX.
 They now win 55-100% of boss fights at the boss's own level (the Bog Hag, about 40%, is the
-hardest) and essentially all at +3.
+hardest) and essentially all at +3. After the INT/WIS rework (bards grow INT/WIS/STR/DEX/CON +1 each,
+Discordant Note 10 + 3.22/level + 0.8 INT) they win 53-100% at the boss's own level (Old Mother
+Gristle is the hardest) and all at +3. The rework (2026-11-03) also cost shamans and dread knights a
+point of CON a level (about -28% HP at 50); the user accepted that.
 
 Endgame (`balance_sim.py endgame`, level-50 characters with 1/6/11 lives, best-in-slot gear),
 retuned 2026-11-01 for the best-of rebirth rule: first-tier plane monsters are 25-55% for a 1-life
 character (the level-54 ones near 0%) and trivial with 6; plane champions ~65-90% with 6 lives and
 100% with 11; elemental lords ~0-50% with 6 lives and ~90-97% with 11; Lord Trepth ~70% with 11
 (every class about 50-85%). After the swing change and `MONSTER_HP_MULT` 1.3: champions ~88-97%
-with 6 lives, lords 4-43% with 6 and 86-92% with 11, Lord Trepth ~65% with 11. The user asked for Trepth to need a full every-class character with
+with 6 lives, lords 4-43% with 6 and 86-92% with 11, Lord Trepth ~65% with 11. After the INT/WIS
+rework and +12% HP from level 57: champions 95-100% with 6 lives, lords 5-39% with 6 and 90-99%
+with 11, Lord Trepth ~69% with 11 (worst class 45%). The user asked for Trepth to need a full every-class character with
 good gear. Six lives already hold most of the best stats, so the 6-to-11 gap comes mainly from the
 mastery bonus (+12% vs +22%) and the remaining classes' growth (the rogue's and ranger's DEX).

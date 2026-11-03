@@ -12,10 +12,10 @@ it burns. It is one of the safest classes to level.
 | | |
 |---|---|
 | HP per level | 10 |
-| Mana per level | 3 |
-| Spell stat | WIS |
-| Starting bonus | STR +2, WIS +2, CON +1 |
-| Gains per level | STR +2, CON +1, WIS +1, CHA +1 |
+| Mana per level | 3 (plus WIS) |
+| Spell stats | INT (damage); WIS (healing, shields) |
+| Starting bonus | STR +2, WIS +1, INT +1, CON +1 |
+| Gains per level | STR +2, CON +1, WIS +1, INT +1 |
 | Armor | Plate (and everything lighter) |
 | Shield | Yes |
 | Weapons | Sword, blunt, two-handed |
@@ -25,14 +25,15 @@ it burns. It is one of the safest classes to level.
 
 Average race, starting gear only (see the [README](README.md#about-the-numbers)).
 
-| Level | HP | Mana | STR | WIS | CON | Weapon damage |
-|---|---|---|---|---|---|---|
-| 1 | 25 | 19 | 12 | 12 | 11 | 6-9 |
-| 10 | 180 | 66 | 30 | 21 | 20 | 17-20 |
-| 25 | 510 | 180 | 60 | 36 | 35 | 35-38 |
-| 50 | 1260 | 470 | 110 | 61 | 60 | 65-68 |
+| Level | HP | Mana | STR | CON | INT | WIS | Weapon damage |
+|---|---|---|---|---|---|---|---|
+| 1 | 25 | 19 | 12 | 11 | 11 | 11 | 6-9 |
+| 10 | 180 | 65 | 30 | 20 | 20 | 20 | 17-20 |
+| 25 | 510 | 177 | 60 | 35 | 35 | 35 | 35-38 |
+| 50 | 1260 | 465 | 110 | 60 | 60 | 60 | 65-68 |
 
-CHA does nothing for a Paladin. It is a leftover of the class's flavour.
+INT powers the holy damage of Holy Strike and Consecration; WIS powers Divine Shield, Consecration's
+heal and your mana.
 
 ## Spells and abilities
 
@@ -41,12 +42,12 @@ learn it and at level 50.
 
 | Level | Name | Type | Cost | Cooldown | Target | Effect |
 |---|---|---|---|---|---|---|
-| 1 | **Holy Strike** | ability | free | 2 | one foe | 1.2x weapon damage plus holy damage of 3 + 1/level + 0.3 WIS (~7 at L1, ~71 at L50) |
+| 1 | **Holy Strike** | ability | free | 2 | one foe | 1.2x weapon damage plus holy damage of 3 + 1/level + 0.3 INT (~7 at L1, ~71 at L50) |
 | 5 | **Lay on Hands** | ability | free | 20 | self | Heal 60% of max HP |
 | 10 | **Blessing of Might** | spell | 19 / 59 | 6 | self | +25% damage for 6 rounds |
-| 18 | **Divine Shield** | spell | 59 / 130 | 10 | self | Absorbs 20 + 4/level + 1.0 WIS damage (~121 at L18, ~281 at L50) |
+| 18 | **Divine Shield** | spell | 59 / 130 | 10 | self | Absorbs 20 + 4/level + 1 WIS damage (~120 at L18, ~280 at L50) |
 | 26 | **Hammer of Justice** | ability | free | 6 | one foe | 1.6x weapon damage, 90% chance to stun for 2 rounds (45% vs bosses) |
-| 36 | **Consecration** | spell | 171 / 224 | 3 | all foes | Holy damage 25 + 2.6/level + 0.7 WIS to every foe (~151 at L36, ~197 at L50), and heals you 10 + 1.5/level + 0.3 WIS (~78-103) |
+| 36 | **Consecration** | spell | 171 / 224 | 3 | all foes | Holy damage 25 + 2.6/level + 0.7 INT to every foe (~150 at L36, ~197 at L50), and heals you 10 + 1.5/level + 0.3 WIS (~77-103) |
 | 46 | **Avenging Wrath** | ability | free | 12 | self | Heal 30% of max HP and +60% damage for 5 rounds |
 
 ## How to play
@@ -74,7 +75,7 @@ second big heal plus +60% damage; with Lay on Hands you have two emergency butto
 
 ## Gear
 
-Wear **plate** and a shield. STR first, then CON; WIS helps your shield and Consecration.
+Wear **plate** and a shield. STR first, then CON; WIS helps your shield, heals and mana, and INT your holy damage.
 
 Signature late gear: **the Lightbearer's Oath** (50, sword, STR/WIS/CON) and **the Shield of
 Judgement** (50, shield, CON/WIS), both from Stalworth Lightbearer in the Plane of Law, a fellow
@@ -84,7 +85,7 @@ Eternity.
 
 From **the Underhedge** (6-10, `enter mousehole` in Greenmeadow's Willow Mill): a darning-needle sword
 (7, sword, DEX/STR), a beetle-shell shield (8, shield, CON) and an amber pendant (10, neck,
-WIS/CHA/CON). The Wasp Queen drops the amber pendant.
+WIS/CON). The Wasp Queen drops the amber pendant.
 
 From **the Mycelial Wards** (14-20, west of Westmarch's Old Watchtower): the shelfcap breastplate (15,
 plate chest), a rootmaul (16, two-handed), a shelf-fungus shield (14), the Mycelial Crown (20, any
@@ -113,7 +114,7 @@ his great wrench and the orrery amulet.
 From **Thornwick Hall** (43-49, west of the Stag Walk): the Vane longsword (49, sword) and the Vane
 heirloom plate (49, plate chest) from Lord Aldric Vane, the Vane warhelm (46) and gauntlets (45), Mr.
 Graves's silver salver (45, shield), the Vane signet (49, ring) and the Dowager's pearls (48, neck,
-WIS/CHA/CON).
+WIS/CON).
 
 From **the Sugarwold** (44-49, north of the Scorchsands' Salt Pans): Madame
 Marchpane's rolling pin (49, blunt, STR/WIS/CON), a candy-cane mace (47, blunt, STR/WIS) and a
@@ -137,8 +138,8 @@ level +3.
 
 ## Rebirth
 
-In every later life, each of your stats, your HP per level and your mana pool are the best that any
-class you have lived would have at your current level (see the [README](README.md#rebirth)), and each
+In every later life, each of your stats, your HP per level and your mana per level are the best that
+any class you have lived would have at your current level (see the [README](README.md#rebirth)), and each
 class mastered adds +2% max HP and damage.
 
 A Paladin life brings strong STR growth and 10 HP per level, plus **plate armor and shield training**

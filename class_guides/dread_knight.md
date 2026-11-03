@@ -5,17 +5,17 @@
 The Dread Knight is the dark mirror of the Paladin: a plate-wearing fighter whose magic is drawn from
 INT instead of WIS. Instead of heals it has **drains and lifesteal**, so it heals itself by hurting
 things. It also has a disease, a fear aura that weakens every foe, and Dread Touch, the hardest single
-free hit in the game for its level. It has the second-highest HP of any class.
+free hit in the game for its level. It shares the second-highest HP of any class with the Paladin.
 
 ## At a glance
 
 | | |
 |---|---|
 | HP per level | 10 |
-| Mana per level | 3 |
-| Spell stat | INT |
-| Starting bonus | STR +2, INT +2, CON +1 |
-| Gains per level | STR +2, CON +2, INT +1 |
+| Mana per level | 3 (plus WIS) |
+| Spell stats | INT (damage) |
+| Starting bonus | STR +2, INT +1, WIS +1, CON +1 |
+| Gains per level | STR +2, CON +1, INT +1, WIS +1 |
 | Armor | Plate (and everything lighter) |
 | Shield | Yes |
 | Weapons | Sword, axe, two-handed |
@@ -25,12 +25,12 @@ free hit in the game for its level. It has the second-highest HP of any class.
 
 Average race, starting gear only (see the [README](README.md#about-the-numbers)).
 
-| Level | HP | Mana | STR | INT | CON | Weapon damage |
-|---|---|---|---|---|---|---|
-| 1 | 25 | 19 | 12 | 12 | 11 | 6-9 |
-| 10 | 198 | 66 | 30 | 21 | 29 | 17-20 |
-| 25 | 630 | 180 | 60 | 36 | 59 | 35-38 |
-| 50 | 1750 | 470 | 110 | 61 | 109 | 65-68 |
+| Level | HP | Mana | STR | CON | INT | WIS | Weapon damage |
+|---|---|---|---|---|---|---|---|
+| 1 | 25 | 19 | 12 | 11 | 11 | 11 | 6-9 |
+| 10 | 180 | 65 | 30 | 20 | 20 | 20 | 17-20 |
+| 25 | 510 | 177 | 60 | 35 | 35 | 35 | 35-38 |
+| 50 | 1260 | 465 | 110 | 60 | 60 | 60 | 65-68 |
 
 ## Spells and abilities
 
@@ -42,9 +42,9 @@ learn it and at level 50.
 | 1 | **Shadow Strike** | ability | free | 2 | one foe | 1.2x weapon damage, plus a drain of 3 + 1/level + 0.3 INT (~7 at L1, ~71 at L50) that heals you for 60% of what it deals |
 | 4 | **Disease Cloud** | spell | 8 / 35 | - | one foe | Disease damage over time: 4 + 1/level + 0.25 INT per round for 5 rounds (~11 at L4, ~69 at L50) |
 | 10 | **Dread Aura** | spell | 23 / 71 | 6 | all foes | Every foe deals 25% less damage for 5 rounds |
-| 18 | **Dread Touch** | ability | free | 20 | one foe | Shadow damage of 40 + 5/level + 1.5 INT (~173 at L18, ~381 at L50) |
+| 18 | **Dread Touch** | ability | free | 20 | one foe | Shadow damage of 40 + 5/level + 1.5 INT (~172 at L18, ~380 at L50) |
 | 26 | **Vampiric Embrace** | spell | 84 / 142 | 8 | self | Your weapon hits heal you for 25% of the damage they deal, for 6 rounds |
-| 34 | **Death Coil** | spell | 138 / 189 | 3 | one foe | Drain of 30 + 3.2/level + 0.9 INT (~179 at L34, ~244 at L50) that heals you for 80% of what it deals |
+| 34 | **Death Coil** | spell | 138 / 189 | 3 | one foe | Drain of 30 + 3.2/level + 0.9 INT (~178 at L34, ~244 at L50) that heals you for 80% of what it deals |
 | 44 | **Unholy Frenzy** | ability | free | 12 | self | +50% damage and 30% lifesteal for 5 rounds |
 
 ## How to play
@@ -72,7 +72,7 @@ long fight, buff with both and you will often out-heal the damage coming in.
 
 ## Gear
 
-Wear **plate** and a shield. STR first, then CON; INT feeds Dread Touch, the drains and your mana.
+Wear **plate** and a shield. STR first, then CON; INT feeds Dread Touch and the drains, and WIS your mana.
 
 Notable late gear: **Gravesong** (50, sword, from Morthis in the Plane of Death), the Khopesh of
 Ussreth (48, sword), Tidecaller (50, two-handed), the obsidian greatblade and crescent greatsword
@@ -128,11 +128,11 @@ level +3.
 
 ## Rebirth
 
-In every later life, each of your stats, your HP per level and your mana pool are the best that any
-class you have lived would have at your current level (see the [README](README.md#rebirth)), and each
+In every later life, each of your stats, your HP per level and your mana per level are the best that
+any class you have lived would have at your current level (see the [README](README.md#rebirth)), and each
 class mastered adds +2% max HP and damage.
 
-A Dread Knight life brings the **best STR and CON growth in the game** (shared with the Warrior) and 10
-HP per level, plus **plate armor and shield training** and sword, axe and two-handed weapons. Shadow
+A Dread Knight life brings the **best STR growth in the game** (shared with several classes) and
+10 HP per level, plus **plate armor and shield training** and sword, axe and two-handed weapons. Shadow
 Strike, Dread Touch and Unholy Frenzy are free abilities, so any later class keeps a strong free nuke
 and a lifesteal buff.

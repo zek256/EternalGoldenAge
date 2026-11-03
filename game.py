@@ -8,7 +8,7 @@ import time
 
 import mapview
 import ui
-from character import MASTERY_BONUS, MAX_LEVEL, Character
+from character import MASTERY_BONUS, MAX_LEVEL, MAX_TIER, TIER_BONUS, Character
 from combat import AGGRO_GAP, Combat, con_color, resolve_self_effect
 from data.abilities import ABILITIES
 from data.classes import CLASS_ORDER, CLASSES, STATS
@@ -21,7 +21,7 @@ from world import DIR_ALIASES, DIRECTIONS, World
 
 ANSI = re.compile(r"\x1b\[[0-9;]*m")  # colour codes, ignored when measuring text
 STAT_NAMES = {"STR": "Strength", "DEX": "Dexterity", "CON": "Constitution", "INT": "Intelligence",
-              "WIS": "Wisdom", "CHA": "Charisma"}
+              "WIS": "Wisdom"}
 
 SAVE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "saves")
 SAVE_VERSION = 1
@@ -769,10 +769,12 @@ class Game:
             base, total = p.base_stat(s), p.stat(s)
             stats.append(" {}: [{}/{}]".format(ui.c(STAT_NAMES[s].ljust(12), "cyan"), ui.c("{:>4}".format(base), "bwhite"),
                                                ui.c("{:<4}".format(total), "bgreen" if total > base else "bwhite")))
-        lives = len(p.past_lives)
+        stats.append("")  # five stats beside six identity and record rows
+        lives = len(p.past_lives) + (p.tier - 1) * len(CLASSES)
         ident = [field("Race", p.race_name, width=8), field("Class", p.class_name, width=8),
                  field("Level", p.level, width=8), field("Tot Lvl", MAX_LEVEL * lives + p.level, width=8),
-                 field("Mastered", "{} of {}".format(len(p.mastered_classes()), len(CLASSES)), width=8), ""]
+                 field("Mastered", "{} of {}".format(len(p.mastered_classes()), len(CLASSES)), width=8),
+                 field("Tier", "{} of {}".format(p.tier, MAX_TIER), "byellow" if p.tier > 1 else "bwhite", width=8)]
         done = sum(1 for q in p.quests.values() if q["status"] == "done")
         record = [(" Quests done ", done, "bwhite"), (" Bosses slain", len(p.boss_kills), "bwhite"),
                   (" Kills       ", p.kills, "bwhite"), (" Deaths      ", p.deaths, "bwhite"),
@@ -803,7 +805,7 @@ class Game:
         state = [field("Status", status, "bred" if self.combat else "bwhite", width=7), pet, "", ""]
 
         ui.out(bar_line)
-        wide(ui.c(p.name.center(inner), "bmagenta"))
+        wide(ui.c(p.display_name.center(inner), "byellow" if p.eternal else "bmagenta"))
         ui.out(split)
         for cells in zip(stats, ident, record):
             row(*cells)
@@ -830,8 +832,12 @@ class Game:
 
     def cmd_level(self, args):
         p = self.player
-        ui.out("Level {} {} ({} past lives).".format(p.level, p.class_name, len(p.past_lives)))
-        if p.level >= MAX_LEVEL:
+        ui.out("Level {} {} (Tier {}, {} past lives this tier).".format(p.level, p.class_name, p.tier, len(p.past_lives)))
+        if p.eternal:
+            ui.say("You are {}. Every path is walked and your journey is complete.".format(p.display_name), "byellow")
+        elif p.level >= MAX_LEVEL and p.can_ascend():
+            ui.say("You have mastered every path. Type REBIRTH to rise to Tier {}.".format(p.tier + 1), "bmagenta")
+        elif p.level >= MAX_LEVEL:
             ui.say("You stand at the pinnacle of mortal power. Type REBIRTH to begin anew as another class.", "bmagenta")
         else:
             ui.out("Experience: {}/{} ({} to next level)".format(p.xp, p.xp_needed, p.xp_needed - p.xp))
@@ -1440,6 +1446,13 @@ class Game:
         if p.level < MAX_LEVEL:
             ui.say("Only those who have reached level {} may seek rebirth. You are level {}.".format(MAX_LEVEL, p.level), "grey")
             return
+        if p.eternal:
+            ui.say("You kneel and close your eyes, but the pale light does not come. There is no path left "
+                   "that you have not walked, no tier left to climb. You are {}, and your journey "
+                   "is complete.".format(p.display_name), "byellow")
+            return
+        if p.can_ascend():
+            return self.ascend()
         ui.rule("Rebirth")
         ui.say("You kneel and close your eyes. The world falls away, and you stand in a place of endless "
                "pale light. A voice older than the stars speaks: 'You have walked the path of the {} to "
@@ -1488,6 +1501,51 @@ class Game:
         ready = [a["name"] for a in p.usable_abilities()]
         ui.say("Abilities usable now: " + ", ".join(ready), "bmagenta")
 
+    def ascend(self):
+        """Rebirth once every class is mastered: the next tier, starting over with one class."""
+        p = self.player
+        nxt = p.tier + 1
+        ui.rule("Ascension")
+        ui.say("You kneel and close your eyes. The pale light comes, brighter than ever before, and the "
+               "voice older than the stars speaks: 'Every path is walked. Now walk them all again, and "
+               "rise higher than before.'", "bmagenta")
+        ui.out("")
+        ui.say("This rebirth raises you to Tier {}, and it is unlike the others. You forget every past life: "
+               "their stats, HP, mana, mastery bonus, abilities and armor and weapon training are all lost, "
+               "and you begin again at level 1 with a single class. In return every stat is raised by "
+               "{} for good (Tier {} total: +{}). You keep your gold, items, bank, quests and boss kills. "
+               "All your gear goes into your pack, and you start in your new class's starting "
+               "gear.".format(nxt, TIER_BONUS, nxt, TIER_BONUS * (nxt - 1)), "white")
+        for i, cid in enumerate(CLASS_ORDER, 1):
+            ui.out("  {:>2}. {:<14} {}".format(i, CLASSES[cid]["name"], ui.c(CLASSES[cid]["desc"], "grey")))
+        sel = ask("Choose your first class of Tier {} (number or name, blank to cancel): ".format(nxt)).strip().lower()
+        if not sel:
+            ui.say("You open your eyes. Perhaps another day.", "grey")
+            return
+        if sel.isdigit() and 1 <= int(sel) <= len(CLASS_ORDER):
+            cid = CLASS_ORDER[int(sel) - 1]
+        else:
+            cid = next((c for c in CLASS_ORDER if c.startswith(sel)), None)
+        if not cid:
+            ui.say("That is not a path you can walk.", "grey")
+            return
+        if ask("Ascend to Tier {} as a {}, forgetting all {} past lives? This cannot be undone. "
+               "(yes/no): ".format(nxt, CLASSES[cid]["name"], len(CLASSES))).strip().lower() not in ("y", "yes"):
+            ui.say("You open your eyes. Perhaps another day.", "grey")
+            return
+        removed, given = p.rebirth(cid)
+        ui.out("")
+        ui.say("Light pours through you, and every life you have lived burns away at once. You are born "
+               "anew as a Tier {} {}, and something of all you were remains: every stat +{}.".format(
+                   p.tier, p.class_name, p.tier_bonus), "byellow")
+        if removed:
+            ui.say("Your old gear is packed away: " + ", ".join(ITEMS[i]["name"] for i in removed) + ".", "grey")
+        if given:
+            ui.say("The light leaves you the simple gear of a new {}: {}.".format(
+                p.class_name.lower(), ", ".join(ITEMS[i]["name"] for i in given)), "bgreen")
+        ready = [a["name"] for a in p.usable_abilities()]
+        ui.say("Abilities usable now: " + ", ".join(ready), "bmagenta")
+
     # ================================================================ save / load
     def save_path(self, name):
         safe = re.sub(r"[^a-z0-9_-]", "_", name.lower())
@@ -1509,7 +1567,7 @@ class Game:
         if g:
             self.player, self.world, self.room_id, self.combat = g.player, g.world, g.room_id, None
             self.sleeping = False
-            ui.say("Game loaded. Welcome back, {}.".format(self.player.name), "bgreen")
+            ui.say("Game loaded. Welcome back, {}.".format(self.player.display_name), "bgreen")
             self.look()
 
     def cmd_quit(self, args):
@@ -1520,7 +1578,7 @@ class Game:
             if self.combat:
                 ui.say("(Saving mid-combat: you will return just after the fight.)", "grey")
             self.cmd_save("")
-        ui.say("Farewell, {}. May the Dawnfather light your road.".format(self.player.name), "byellow")
+        ui.say("Farewell, {}. May the Dawnfather light your road.".format(self.player.display_name), "byellow")
         self.running = False
 
     def cmd_help(self, args):
