@@ -64,7 +64,8 @@ The prompt shows your HP, mana and progress toward your next level in gold
 remaining health in red `TARGET: 56%`, and `[ASLEEP]` while sleeping.
 In room listings monsters are coloured by danger relative to your level
 (grey/green/blue easy, white even, yellow/red dangerous), and `(!)` / `(?)` mark NPCs with a quest to
-offer or turn in.
+offer or turn in. A red `[X]` in front of a monster means an unfinished quest needs it: you have to slay
+it, or it drops an item you're collecting. The mark goes away once you have enough.
 
 ## Time and combat
 

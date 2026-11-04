@@ -311,10 +311,12 @@ class Game:
                     marker = ui.c(" (?)", "byellow")
                     break
             ui.out(ui.c("{} is here.".format(cap(npc["name"])), "bgreen") + marker)
+        wanted = self.quest_target_monsters()
         for m in r.living():
             color, _ = con_color(m.level, p.level)
             boss = ui.c(" [BOSS]", "bred", "bold") if m.boss else ""
-            ui.out(ui.c("{} (level {}) is here.".format(m.short(), m.level), color) + boss)
+            mark = ui.c("[X] ", "bred") if m.id in wanted else ""
+            ui.out(mark + ui.c("{} (level {}) is here.".format(m.short(), m.level), color) + boss)
         if r.items:
             ui.out(ui.c("On the ground: " + ", ".join(ITEMS[i]["name"] for i in r.items), "bwhite"))
         if p.pet:
@@ -1208,6 +1210,20 @@ class Game:
         if p.level < q["min_level"]:
             return "locked"
         return "available"
+
+    def quest_target_monsters(self):
+        """Ids of monsters an unfinished quest still needs: kill targets, and anything that drops a
+        collect item. A quest whose objective is already met marks nothing."""
+        ids = set()
+        for qid in self.active_quests():
+            if self.quest_state(qid) != "active":
+                continue
+            q = QUESTS[qid]
+            if q["type"] == "kill":
+                ids.add(q["target"])
+            else:
+                ids.update(mid for mid, m in MONSTERS.items() if any(e[0] == q["target"] for e in m["loot"]))
+        return ids
 
     def quest_progress(self, qid):
         q, p = QUESTS[qid], self.player
