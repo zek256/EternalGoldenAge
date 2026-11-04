@@ -14,6 +14,9 @@ _CODES = {
     "bcyan": "96", "bwhite": "97",
     "lblue": "38;5;117",  # light sky blue (256-colour), the con colour for 4-6 levels below
     "violet": "38;5;177",  # light violet (256-colour), your spell and ability hit lines
+    # item stat colours (256-colour), used on item lines
+    "stat_STR": "38;5;209", "stat_DEX": "38;5;120", "stat_CON": "38;5;221",
+    "stat_INT": "38;5;81", "stat_WIS": "38;5;183", "silver": "38;5;145",
 }
 
 _color = True

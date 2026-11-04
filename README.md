@@ -175,7 +175,8 @@ Armor tiers run cloth < leather < mail < plate. Every piece of gear in your inve
 shops and bank starts with its level and type, e.g. `[L07] [1h sword] a darning-needle sword` or
 `[L08] [chest mail] a chain shirt`. The level is coloured like a monster of that level would be (blue, light blue, green and grey
 below you, white at your level, yellow and red above you: anything yellow or red is too high to wear yet), and the type is red when
-you aren't trained for it (`examine` says why). `1h` weapons can be paired with Dual Wield; `2h`
+you aren't trained for it (`examine` says why). An item's stats are colour coded: STR orange, DEX
+green, CON gold, INT sky blue, WIS lavender, weapon damage white and armor silver. `1h` weapons can be paired with Dual Wield; `2h`
 weapons (melee two-handers, staffs and bows) and wands can't, though any of them can go with a shield. Orbs and tomes held in the off hand
 are not shields and anyone may carry them; so may rings, necklaces and the mythic artifacts
 (Fang of Pyraxis, Eternity, the Ashen Crown, the Crown of Trepth). **Training is kept through

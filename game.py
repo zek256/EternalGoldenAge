@@ -917,14 +917,14 @@ class Game:
         it = ITEMS[iid]
         bits = []
         if it["type"] == "weapon":
-            bits.append("{}-{} dmg".format(*it["dmg"]))
+            bits.append(ui.c("{}-{} dmg".format(*it["dmg"]), "bwhite"))
         if it.get("armor"):
-            bits.append("{} armor".format(it["armor"]))
-        bits += ["{}+{}".format(s, v) for s, v in it.get("stats", {}).items()]
+            bits.append(ui.c("{} armor".format(it["armor"]), "silver"))
+        bits += [ui.c("{}+{}".format(s, v), "stat_" + s) for s, v in it.get("stats", {}).items()]
         if it.get("heal"):
-            bits.append("heals {}".format(it["heal"]))
+            bits.append(ui.c("heals {}".format(it["heal"]), "grey"))
         if it.get("mana"):
-            bits.append("restores {} mana".format(it["mana"]))
+            bits.append(ui.c("restores {} mana".format(it["mana"]), "grey"))
         tags = ""
         if it["type"] in ("weapon", "armor"):
             # [L07] [1h sword]: the level is coloured like a monster's con against yours, the type turns
@@ -934,7 +934,7 @@ class Game:
             kind = "[{}]".format(self.gear_type(iid))
             tags += ui.c(kind, "grey" if self.player.trained_for(iid)[0] else "red")
             tags += " " * (self.GEAR_TYPE_WIDTH - len(kind) + 1)
-        return "{}{}{}".format(tags, it["name"], " " + ui.c("(" + ", ".join(bits) + ")", "grey") if bits else "")
+        return "{}{}{}".format(tags, it["name"], " " + ui.c("(", "grey") + ui.c(", ", "grey").join(bits) + ui.c(")", "grey") if bits else "")
 
     GEAR_TYPE_WIDTH = len("[chest leather]")  # the longest gear type tag, so item names line up
     TWO_HAND_NAMES = {"two-handed": "melee", "staff": "staff", "bow": "bow"}
@@ -965,6 +965,12 @@ class Game:
             return (1, it.get("level", 0), "", strip_article(it["name"]))
         return (0, 0, it["type"], strip_article(it["name"]))
 
+    def show_counted(self, counts):
+        """Inventory and bank lines: every item gets its count, '(1x)' included, padded so names line up."""
+        width = len("({}x)".format(max(counts.values()))) if counts else 0
+        for iid, n in sorted(counts.items(), key=lambda kv: self.item_order(kv[0])):
+            ui.out("  {} {}".format("({}x)".format(n).rjust(width), self.item_line(iid)))
+
     def cmd_inventory(self, args):
         p = self.player
         ui.out(ui.c("You are carrying:", "byellow"))
@@ -973,8 +979,7 @@ class Game:
         counts = {}
         for iid in p.inventory:
             counts[iid] = counts.get(iid, 0) + 1
-        for iid, n in sorted(counts.items(), key=lambda kv: self.item_order(kv[0])):
-            ui.out("  {}{}".format("({}x) ".format(n) if n > 1 else "", self.item_line(iid)))
+        self.show_counted(counts)
         ui.out(ui.c("Gold: {}".format(p.gold), "yellow"))
 
     def cmd_equipment(self, args):
@@ -1192,8 +1197,7 @@ class Game:
         counts = {}
         for iid in self.player.bank:
             counts[iid] = counts.get(iid, 0) + 1
-        for iid, n in sorted(counts.items(), key=lambda kv: self.item_order(kv[0])):
-            ui.out("  {}{}".format("({}x) ".format(n) if n > 1 else "", self.item_line(iid)))
+        self.show_counted(counts)
         ui.out(ui.c("Type 'deposit <item>' or 'withdraw <item>' (or 'deposit all <item>').", "grey"))
 
     def bank_move(self, args, src, dst, missing, verb):
