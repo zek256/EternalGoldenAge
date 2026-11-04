@@ -12,6 +12,8 @@ _CODES = {
     "red": "31", "green": "32", "yellow": "33", "blue": "34", "magenta": "35", "cyan": "36", "white": "37",
     "grey": "90", "bred": "91", "bgreen": "92", "byellow": "93", "bblue": "94", "bmagenta": "95",
     "bcyan": "96", "bwhite": "97",
+    "lblue": "38;5;117",  # light sky blue (256-colour), the con colour for 4-6 levels below
+    "violet": "38;5;177",  # light violet (256-colour), your spell and ability hit lines
 }
 
 _color = True

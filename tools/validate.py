@@ -136,6 +136,10 @@ def main():
     for aid, a in ABILITIES.items():
         if a["cls"] not in CLASSES:
             errs.append(f"ability {aid}: unknown class '{a['cls']}'")
+        # attacks print one line: flavour and total damage together (Combat.hit_line)
+        hits = a["target"] == "enemy" and any(e["type"] in ("weapon", "damage", "drain") for e in a["effects"])
+        if hits != ("{dmg}" in a["msg"]):
+            errs.append(f"ability {aid}: msg must contain {{dmg}} exactly when it deals damage to an enemy")
     for pid, pa in PASSIVES.items():
         for c in pa["classes"]:
             if c not in CLASSES:

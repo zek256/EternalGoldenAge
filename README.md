@@ -37,7 +37,7 @@ Saves are written as JSON to `saves/<name>.json`.
 | `spells` / `abilities` | list all known spells and abilities, with locked ones greyed out |
 | `consider` / `con` <target> | judge a monster's danger (colour-coded by level) |
 | `flee` [dir] | try to escape combat (moving during combat also attempts to flee) |
-| `inventory` / `i` | what you carry |
+| `inventory` / `i` | what you carry: potions and other items first, then weapons and armor from lowest level to highest, so your best gear is at the bottom |
 | `equipment` / `eq` | what you wear |
 | `wear` / `wield` / `equip` <item> | equip an item (level and armor/weapon training apply, see below). With Dual Wield, a second one-handed weapon goes in your off hand if the shield slot is empty |
 | `offhand` / `dual` <weapon> | with Dual Wield, hold a one-handed weapon in your off hand (the shield slot); `remove offhand` takes it off |
@@ -63,7 +63,7 @@ The prompt shows your HP, mana and progress toward your next level in gold
 (e.g. `<780/780 hp (100%) 350/350 mana (100%) EXP: 3%>`). In combat it adds your target's
 remaining health in red `TARGET: 56%`, and `[ASLEEP]` while sleeping.
 In room listings monsters are coloured by danger relative to your level
-(grey/green/blue easy, white even, yellow/red dangerous), and `(!)` / `(?)` mark NPCs with a quest to
+(red 3+ levels above you, yellow 1-2 above, white your level, blue 1-3 below, light blue 4-6 below, green 7-10 below, grey 11+ below), and `(!)` / `(?)` mark NPCs with a quest to
 offer or turn in. A red `[X]` in front of a monster means an unfinished quest needs it: you have to slay
 it, or it drops an item you're collecting. The mark goes away once you have enough.
 
@@ -171,8 +171,12 @@ perhaps in shields:
 | Wizard | cloth | no | staff, wand, dagger |
 | Necromancer | cloth | no | staff, wand, dagger |
 
-Armor tiers run cloth < leather < mail < plate. Item lines show each piece's tier or weapon family,
-in red when you aren't trained for it, and `examine` says why. Orbs and tomes held in the off hand
+Armor tiers run cloth < leather < mail < plate. Every piece of gear in your inventory, equipment,
+shops and bank starts with its level and type, e.g. `[L07] [1h sword] a darning-needle sword` or
+`[L08] [chest mail] a chain shirt`. The level is coloured like a monster of that level would be (blue, light blue, green and grey
+below you, white at your level, yellow and red above you: anything yellow or red is too high to wear yet), and the type is red when
+you aren't trained for it (`examine` says why). `1h` weapons can be paired with Dual Wield; `2h`
+weapons (melee two-handers, staffs and bows) and wands can't, though any of them can go with a shield. Orbs and tomes held in the off hand
 are not shields and anyone may carry them; so may rings, necklaces and the mythic artifacts
 (Fang of Pyraxis, Eternity, the Ashen Crown, the Crown of Trepth). **Training is kept through
 rebirth**: a character may use anything any of its lives was trained for, so a wizard who was once

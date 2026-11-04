@@ -13,7 +13,7 @@ QUESTS = {
                  "and I'll make it worth your while. The trapdoor's just behind the bar - go DOWN.'",
         "progress": "'Still hear them squeaking down there... ({n}/{count} rats slain)'",
         "complete": "'Ha! The cellar's quiet at last! Here, take these, and drinks are on the house.'",
-        "reward": {"xp": 160, "gold": 25, "items": ["minor_healing_potion", "minor_healing_potion", "minor_mana_potion"]},
+        "reward": {"xp": 80, "gold": 25, "items": ["minor_healing_potion", "minor_healing_potion", "minor_mana_potion"]},
     },
     "wolf_pelts": {
         "name": "Wolves at the Gate", "giver": "halvard", "type": "collect", "target": "wolf_pelt", "count": 4,
@@ -23,7 +23,7 @@ QUESTS = {
                  "pack. The woods lie south of town, past Willowbrook Crossing.'",
         "progress": "'Four pelts, that's the bargain. You have {n}.'",
         "complete": "'Good, thick pelts. The farmers will sleep easier. Take these gloves - they served me well.'",
-        "reward": {"xp": 550, "gold": 60, "items": ["studded_gloves", "healing_potion"]},
+        "reward": {"xp": 275, "gold": 60, "items": ["studded_gloves", "healing_potion"]},
     },
     "bandit_chief": {
         "name": "The Bandit Chieftain", "giver": "halvard", "type": "kill", "target": "bandit_chieftain", "count": 1,
@@ -34,7 +34,7 @@ QUESTS = {
         "progress": "'Rask still breathes. His camp lies at the far southern end of the deep woods.'",
         "complete": "'Rask is dead? By the Dawn! You've done this town a great service. Take this mail "
                     "from the armoury - and my thanks.'",
-        "reward": {"xp": 2200, "gold": 200, "items": ["chain_shirt", "healing_potion", "healing_potion"]},
+        "reward": {"xp": 1100, "gold": 200, "items": ["chain_shirt", "healing_potion", "healing_potion"]},
     },
     "bone_king": {
         "name": "The Bone King", "giver": "aveline", "type": "kill", "target": "varnoth", "count": 1,
@@ -46,7 +46,7 @@ QUESTS = {
         "progress": "'The dead still walk at Barrowfield. Varnoth must be destroyed.'",
         "complete": "'I felt it - the darkness beneath Barrowfield has lifted! Wear this amulet, blessed "
                     "at the altar of the Dawn. You are truly a champion of the light.'",
-        "reward": {"xp": 9000, "gold": 500, "items": ["amulet_of_the_dawn", "healing_potion", "mana_potion"]},
+        "reward": {"xp": 4500, "gold": 500, "items": ["amulet_of_the_dawn", "healing_potion", "mana_potion"]},
     },
     "bog_hag": {
         "name": "The Hag of the Mirefen", "giver": "aveline", "type": "kill", "target": "bog_hag", "count": 1,
@@ -56,7 +56,7 @@ QUESTS = {
                  "called Old Mother Gristle who lives deep in the swamp. Find her. Put an end to it.'",
         "progress": "'Old Mother Gristle still haunts the Mirefen. Her hut lies past the serpent pools.'",
         "complete": "'The children have come home! Bless you. The temple's coffers are yours to share.'",
-        "reward": {"xp": 30000, "gold": 1200, "items": ["greater_healing_potion", "greater_healing_potion", "greater_mana_potion"]},
+        "reward": {"xp": 15000, "gold": 1200, "items": ["greater_healing_potion", "greater_healing_potion", "greater_mana_potion"]},
     },
     "frost_goblins": {
         "name": "Trouble in the Rimefells", "giver": "halvard", "type": "kill", "target": "frost_goblin", "count": 8,
@@ -68,7 +68,7 @@ QUESTS = {
         "progress": "'The dwarves still count goblin raids. ({n}/{count} frost goblins slain)'",
         "complete": "'The Thane sends his thanks, and so do I. Take this dwarven mail, it came down with "
                     "the rider.'",
-        "reward": {"xp": 6000, "gold": 200, "items": ["dwarven_chainmail", "healing_potion", "healing_potion"]},
+        "reward": {"xp": 3000, "gold": 200, "items": ["dwarven_chainmail", "healing_potion", "healing_potion"]},
     },
     "orc_warlord": {
         "name": "The Skullsplitter Horde", "giver": "halvard", "type": "kill", "target": "warlord_gorrak", "count": 1,
@@ -78,7 +78,7 @@ QUESTS = {
                  "warcamp east of Ironspine Pass and bring him down.'",
         "progress": "'The war-drums still sound in the mountains. Gorrak lives.'",
         "complete": "'Gorrak is slain and the horde is scattering! The King himself will hear of this.'",
-        "reward": {"xp": 90000, "gold": 3000, "items": ["greater_healing_potion", "greater_healing_potion", "tower_shield"]},
+        "reward": {"xp": 45000, "gold": 3000, "items": ["greater_healing_potion", "greater_healing_potion", "tower_shield"]},
     },
 
     # ------------------------------------------------------------------ Westmarch
@@ -91,7 +91,7 @@ QUESTS = {
         "progress": "'Still hearing them up at the quarry of a night. ({n}/{count} hill goblins slain)'",
         "complete": "'Quiet as a churchyard last night! Here, take this helm, my grandad wore it at the "
                     "Battle of the Ford and never needed it once.'",
-        "reward": {"xp": 1500, "gold": 60, "items": ["iron_helm", "healing_potion"]},
+        "reward": {"xp": 750, "gold": 60, "items": ["iron_helm", "healing_potion"]},
     },
 
     "salt_wraiths": {
@@ -104,7 +104,7 @@ QUESTS = {
         "progress": "'The dead still thirst on the salt flats. ({n}/{count} salt wraiths laid to rest)'",
         "complete": "'The Emira has written to thank the temple, and you. Take this from our treasury, "
                     "and go to Sunspire again; I think they have need of you still.'",
-        "reward": {"xp": 30000, "gold": 1500, "items": ["obelisk_amulet", "supreme_healing_potion"]},
+        "reward": {"xp": 15000, "gold": 1500, "items": ["obelisk_amulet", "supreme_healing_potion"]},
     },
     "blight_spreads": {
         "name": "The Blight Spreads", "giver": "elowen", "type": "kill", "target": "blighted_treant", "count": 6,
@@ -116,7 +116,7 @@ QUESTS = {
         "progress": "'The grove still sickens. ({n}/{count} blighted treants felled)'",
         "complete": "'My sister writes that the wardens speak of you already. Take this, woven in "
                     "Silverbough, and go back to them. They need you more than I do.'",
-        "reward": {"xp": 15000, "gold": 400, "items": ["silverleaf_pendant", "greater_healing_potion"]},
+        "reward": {"xp": 7500, "gold": 400, "items": ["silverleaf_pendant", "greater_healing_potion"]},
     },
 
     # ------------------------------------------------------------------ Hearthdeep
@@ -129,7 +129,7 @@ QUESTS = {
         "progress": "'Six hanks, and the Gatewatch will stop complaining. You have {n}.'",
         "complete": "'Ha! Good thick fur. My sentries will sing your name, badly. Take these boots, "
                     "they'll keep your feet on the rock.'",
-        "reward": {"xp": 12000, "gold": 350, "items": ["dwarven_boots", "healing_potion", "healing_potion"]},
+        "reward": {"xp": 6000, "gold": 350, "items": ["dwarven_boots", "healing_potion", "healing_potion"]},
     },
     "stonewake": {
         "name": "The Stonewake", "giver": "hargrim", "type": "kill", "target": "ghaldrek", "count": 1,
@@ -141,7 +141,7 @@ QUESTS = {
         "progress": "'The mountain still groans in the night. The Stonewake lives.'",
         "complete": "'The groaning has stopped. By my beard, you did it. The lost miners can rest now, "
                     "and Hearthdeep owes you a debt. Take these greaves from my own armoury.'",
-        "reward": {"xp": 25000, "gold": 1000, "items": ["dwarven_greaves", "greater_healing_potion",
+        "reward": {"xp": 12500, "gold": 1000, "items": ["dwarven_greaves", "greater_healing_potion",
                                                         "greater_healing_potion"]},
     },
 
@@ -156,7 +156,7 @@ QUESTS = {
         "progress": "'Five antlers, and the herd may yet survive. You have {n}.'",
         "complete": "'It is done, then. The herd will remember, even if we would rather forget. Take "
                     "these boots, and walk the grove as a warden does.'",
-        "reward": {"xp": 15000, "gold": 400, "items": ["wardens_boots", "greater_healing_potion"]},
+        "reward": {"xp": 7500, "gold": 400, "items": ["wardens_boots", "greater_healing_potion"]},
     },
     "rotwood_druids": {
         "name": "The Rotwood Circle", "giver": "faelan", "type": "kill", "target": "rotwood_druid", "count": 8,
@@ -167,7 +167,7 @@ QUESTS = {
         "progress": "'The rotwood circle still sings. ({n}/{count} rotwood druids slain)'",
         "complete": "'Eight fewer voices singing the rot. The grove is quieter. Take these gauntlets, "
                     "the wardens' own.'",
-        "reward": {"xp": 25000, "gold": 800, "items": ["wardens_gauntlets", "greater_healing_potion",
+        "reward": {"xp": 12500, "gold": 800, "items": ["wardens_gauntlets", "greater_healing_potion",
                                                        "greater_healing_potion"]},
     },
     "heart_of_blight": {
@@ -180,7 +180,7 @@ QUESTS = {
         "progress": "'Rotheart still burns at the heart of the blight. The grove is dying.'",
         "complete": "'I felt him go. The green is already coming back into the leaves. You have saved "
                     "the Eldergrove, and Silverbough will not forget your name while a single tree stands.'",
-        "reward": {"xp": 70000, "gold": 2500, "items": ["moonstone_ring", "greater_healing_potion",
+        "reward": {"xp": 35000, "gold": 2500, "items": ["moonstone_ring", "greater_healing_potion",
                                                         "greater_healing_potion"]},
     },
 
@@ -194,7 +194,7 @@ QUESTS = {
         "progress": "'Still masks on Gallows Hill. ({n}/{count} highwaymen dealt with)'",
         "complete": "'Ha! The carters are singing again. Here's your pay, and a little something from "
                     "under the bar.'",
-        "reward": {"xp": 3500, "gold": 150, "items": ["chain_leggings", "healing_potion"]},
+        "reward": {"xp": 1750, "gold": 150, "items": ["chain_leggings", "healing_potion"]},
     },
     "yellowtooth": {
         "name": "The Laughing Warlord", "giver": "marta", "type": "kill", "target": "yellowtooth", "count": 1,
@@ -206,7 +206,7 @@ QUESTS = {
         "progress": "'You can hear him laughing on the wind some nights. Yellowtooth lives.'",
         "complete": "'Dead? Truly? Forty years I've kept this house, and that's the best news I've had "
                     "in all of them. The caravans will come back. Take all of this, you've earned it.'",
-        "reward": {"xp": 35000, "gold": 1500, "items": ["greater_healing_potion", "greater_healing_potion",
+        "reward": {"xp": 17500, "gold": 1500, "items": ["greater_healing_potion", "greater_healing_potion",
                                                         "runed_shield"]},
     },
 
@@ -221,7 +221,7 @@ QUESTS = {
         "progress": "'Five shards, please. You have {n}.'",
         "complete": "'Look at the colour! There was fire here once like nothing on this earth. You have "
                     "done the archive a great service. Take this ring, it was found in these sands.'",
-        "reward": {"xp": 35000, "gold": 1500, "items": ["sunstone_ring", "supreme_mana_potion"]},
+        "reward": {"xp": 17500, "gold": 1500, "items": ["sunstone_ring", "supreme_mana_potion"]},
     },
     "sand_giants": {
         "name": "Giants on the Causeway", "giver": "idrisa", "type": "kill", "target": "sand_giant", "count": 6,
@@ -232,7 +232,7 @@ QUESTS = {
         "progress": "'The giants still hold the Causeway. ({n}/{count} sand giants slain)'",
         "complete": "'Six giants! The Sun Guard will drink to you tonight. Take this blade, the Guard's "
                     "own pattern.'",
-        "reward": {"xp": 45000, "gold": 2000, "items": ["crescent_greatsword", "supreme_healing_potion",
+        "reward": {"xp": 22500, "gold": 2000, "items": ["crescent_greatsword", "supreme_healing_potion",
                                                         "supreme_healing_potion"]},
     },
     "sand_king": {
@@ -246,7 +246,7 @@ QUESTS = {
         "progress": "'The sickness spreads. Ussreth still walks in his tomb.'",
         "complete": "'The sickness is lifting already. Sunspire owes you its life. Whatever you need "
                     "in this city, it is yours, and your name will be cut into the Obelisk.'",
-        "reward": {"xp": 150000, "gold": 5000, "items": ["supreme_healing_potion", "supreme_healing_potion",
+        "reward": {"xp": 75000, "gold": 5000, "items": ["supreme_healing_potion", "supreme_healing_potion",
                                                          "supreme_mana_potion"]},
     },
 
@@ -259,7 +259,7 @@ QUESTS = {
                  "six of them for me. I'll pay for every one, and I won't ask what you're doing out here.'",
         "progress": "'I can still hear them baying. ({n}/{count} boarhounds slain)'",
         "complete": "'Quiet at last. Here, you've earned these, and the coin.'",
-        "reward": {"xp": 30000, "gold": 1400, "items": ["supreme_healing_potion", "supreme_healing_potion"]},
+        "reward": {"xp": 15000, "gold": 1400, "items": ["supreme_healing_potion", "supreme_healing_potion"]},
     },
     "vane_ledgers": {
         "name": "The Steward's Books", "giver": "nell_rook", "type": "collect", "target": "vane_ledger", "count": 4,
@@ -271,7 +271,7 @@ QUESTS = {
         "progress": "'Four ledgers. You have {n}.'",
         "complete": "'Oh, these are lovely. Half the valley owes him money, and the other half owes it to "
                     "someone worse. You never saw these.'",
-        "reward": {"xp": 40000, "gold": 1800, "items": ["supreme_mana_potion", "supreme_healing_potion"]},
+        "reward": {"xp": 20000, "gold": 1800, "items": ["supreme_mana_potion", "supreme_healing_potion"]},
     },
     "vane_brooches": {
         "name": "Jewels of the Ladies", "giver": "nell_rook", "type": "collect", "target": "vane_brooch", "count": 5,
@@ -283,7 +283,7 @@ QUESTS = {
         "progress": "'Five brooches. You have {n}.'",
         "complete": "'Look at the fire in those stones. Here, take this ring. It came out of a dragon's "
                     "hoard, they say, and I never had the hands for it.'",
-        "reward": {"xp": 45000, "gold": 2000, "items": ["ember_ring", "supreme_healing_potion"]},
+        "reward": {"xp": 22500, "gold": 2000, "items": ["ember_ring", "supreme_healing_potion"]},
     },
     "vane_lord": {
         "name": "The Lord of Thornwick", "giver": "nell_rook", "type": "kill", "target": "lord_aldric_vane", "count": 1,
@@ -295,7 +295,7 @@ QUESTS = {
         "progress": "'He's still up there. I can see the lamp in his window from here.'",
         "complete": "'So. The lamp's out. I never thought I'd see it.' She is quiet for a long while. "
                     "'Take this, all of it. And go, before the valley wakes up and wonders what comes next.'",
-        "reward": {"xp": 150000, "gold": 6000, "items": ["supreme_healing_potion", "supreme_healing_potion",
+        "reward": {"xp": 75000, "gold": 6000, "items": ["supreme_healing_potion", "supreme_healing_potion",
                                                          "supreme_mana_potion"]},
     },
 
@@ -310,7 +310,7 @@ QUESTS = {
         "complete": "'One, two, three, all in order, all stamped. Most irregular, and entirely correct.' He "
                     "seals a writ with a thump. 'Your writ of audience. Keep it on your person. The doors of "
                     "the high court lie north of the Court of Appeals.'",
-        "reward": {"xp": 18000, "gold": 600, "items": ["writ_of_audience", "greater_healing_potion"]},
+        "reward": {"xp": 9000, "gold": 600, "items": ["writ_of_audience", "greater_healing_potion"]},
     },
     "restless_will": {
         "name": "The Restless Will", "giver": "clerk_quillon", "type": "collect", "target": "will_page", "count": 5,
@@ -322,7 +322,7 @@ QUESTS = {
         "progress": "'Five pages of the Hale will. You have {n}.'",
         "complete": "'There. Bound, sealed, and it has stopped wriggling. The heirs will be furious. They "
                     "always are. Your fee.'",
-        "reward": {"xp": 25000, "gold": 900, "items": ["greater_healing_potion", "greater_mana_potion"]},
+        "reward": {"xp": 12500, "gold": 900, "items": ["greater_healing_potion", "greater_mana_potion"]},
     },
     "matter_of_property": {
         "name": "A Matter of Property", "giver": "clerk_quillon", "type": "kill", "target": "ghostly_squatter", "count": 6,
@@ -333,7 +333,7 @@ QUESTS = {
                  "of them, please. You will find them in the Court of Property, still arguing.'",
         "progress": "'The squatters are still squatting. ({n}/{count} ghostly squatters removed)'",
         "complete": "'Judgement enforced. The file is closed. I do so enjoy closing a file.'",
-        "reward": {"xp": 28000, "gold": 1000, "items": ["greater_healing_potion", "greater_healing_potion"]},
+        "reward": {"xp": 14000, "gold": 1000, "items": ["greater_healing_potion", "greater_healing_potion"]},
     },
     "appeal_evidence": {
         "name": "Evidence for the Appeal", "giver": "clerk_quillon", "type": "collect", "target": "sealed_record", "count": 4,
@@ -346,7 +346,7 @@ QUESTS = {
         "complete": "'Innocent. Two hundred years late, but innocent. She can stop waiting now.' He is quiet "
                     "for a moment, then straightens his cuffs. 'Take this seal. You have earned the right to "
                     "close a case.'",
-        "reward": {"xp": 30000, "gold": 1200, "items": ["seal_of_office", "greater_mana_potion"]},
+        "reward": {"xp": 15000, "gold": 1200, "items": ["seal_of_office", "greater_mana_potion"]},
     },
     "last_judgement": {
         "name": "The Last Judgement", "giver": "clerk_quillon", "type": "kill", "target": "high_justice", "count": 1,
@@ -359,7 +359,7 @@ QUESTS = {
         "complete": "'The gavel has stopped.' He takes off his spectacles and polishes them. 'Six hundred years. "
                     "Perhaps now we can begin to hear the cases. Thank you. It is not a thing I say often, and "
                     "there is no form for it.'",
-        "reward": {"xp": 70000, "gold": 2500, "items": ["greater_healing_potion", "greater_healing_potion",
+        "reward": {"xp": 35000, "gold": 2500, "items": ["greater_healing_potion", "greater_healing_potion",
                                                         "greater_mana_potion"]},
     },
 
@@ -374,7 +374,7 @@ QUESTS = {
         "progress": "'Six trinkets, dear. You've found {n}.'",
         "complete": "'Oh, look at them. A locket, a pipe, a little tin soldier. All of them somebody's. "
                     "Thank you, truly. Here, take something from under the counter.'",
-        "reward": {"xp": 15000, "gold": 500, "items": ["greater_healing_potion", "greater_healing_potion"]},
+        "reward": {"xp": 7500, "gold": 500, "items": ["greater_healing_potion", "greater_healing_potion"]},
     },
     "free_riders": {
         "name": "Free Riders", "giver": "pip", "type": "kill", "target": "carousel_spirit", "count": 6,
@@ -386,7 +386,7 @@ QUESTS = {
         "progress": "'The carousel's still turning. ({n}/{count} riders set free)'",
         "complete": "'I watched them go. They waved.' Pip's smile flickers, just for a moment, and comes back. "
                     "'Well! Here's your prize.'",
-        "reward": {"xp": 18000, "gold": 600, "items": ["greater_mana_potion", "greater_healing_potion"]},
+        "reward": {"xp": 9000, "gold": 600, "items": ["greater_mana_potion", "greater_healing_potion"]},
     },
     "last_fortune": {
         "name": "The Last Fortune", "giver": "pip", "type": "kill", "target": "madame_vesna", "count": 1,
@@ -396,7 +396,7 @@ QUESTS = {
                  "your fortune told, and give her one back.'",
         "progress": "'Vesna's still telling fortunes. I can see her lamp.'",
         "complete": "'So her ball didn't see you coming. Good. Perhaps somebody will leave after all.'",
-        "reward": {"xp": 20000, "gold": 700, "items": ["greater_mana_potion", "greater_mana_potion"]},
+        "reward": {"xp": 10000, "gold": 700, "items": ["greater_mana_potion", "greater_mana_potion"]},
     },
     "show_never_ends": {
         "name": "The Show That Never Ends", "giver": "pip", "type": "kill", "target": "the_ringmaster", "count": 1,
@@ -409,7 +409,7 @@ QUESTS = {
         "complete": "'The applause has stopped.' Pip listens to the quiet for a long moment. 'Do you know, "
                     "I don't think I've ever heard it stop. Thank you. Take whatever you like. I think I might "
                     "go for a walk.'",
-        "reward": {"xp": 45000, "gold": 1500, "items": ["greater_healing_potion", "greater_healing_potion",
+        "reward": {"xp": 22500, "gold": 1500, "items": ["greater_healing_potion", "greater_healing_potion",
                                                         "greater_mana_potion"]},
     },
 
@@ -425,7 +425,7 @@ QUESTS = {
         "complete": "'Ah.' The threads above the Speaker brighten. 'The Gilled Quarter is content. The market "
                     "is restless. Glowcap Lane is dreaming of you. Thank you. Take these; we grew them for "
                     "your kind.'",
-        "reward": {"xp": 6000, "gold": 200, "items": ["healing_potion", "healing_potion", "mana_potion"]},
+        "reward": {"xp": 3000, "gold": 200, "items": ["healing_potion", "healing_potion", "mana_potion"]},
     },
     "sages_dream": {
         "name": "The Sage's Dream", "giver": "many_voiced_speaker", "type": "kill", "target": "dreaming_sage", "count": 1,
@@ -437,7 +437,7 @@ QUESTS = {
         "progress": "'The Sage still dreams. We feel the Lantern Halls going quiet.'",
         "complete": "'The dream has ended. Some of those it took have woken.' Many voices pause. 'Some have "
                     "not. That is how it is with dreams.'",
-        "reward": {"xp": 9000, "gold": 350, "items": ["healing_potion", "healing_potion", "mana_potion"]},
+        "reward": {"xp": 4500, "gold": 350, "items": ["healing_potion", "healing_potion", "mana_potion"]},
     },
     "pruning_the_rot": {
         "name": "Pruning the Rot", "giver": "many_voiced_speaker", "type": "kill", "target": "bone_bloom", "count": 6,
@@ -449,7 +449,7 @@ QUESTS = {
         "progress": "'The bone-blooms still walk. ({n}/{count} pruned)'",
         "complete": "'Good. The Rot Ward remembers its work.' The threads dim a little. 'We wish we could say "
                     "the same of the one that went east.'",
-        "reward": {"xp": 11000, "gold": 450, "items": ["healing_potion", "healing_potion", "mana_potion"]},
+        "reward": {"xp": 5500, "gold": 450, "items": ["healing_potion", "healing_potion", "mana_potion"]},
     },
     "the_first_spore": {
         "name": "The First Spore", "giver": "many_voiced_speaker", "type": "kill", "target": "the_first_spore", "count": 1,
@@ -463,7 +463,7 @@ QUESTS = {
         "complete": "For a long moment, the Speaker says nothing at all. Then, in a single, small voice: 'I. "
                     "I am... I.' It touches its own cap as if it has never felt it before. 'Thank you. Take "
                     "whatever we have. Whatever I have.'",
-        "reward": {"xp": 25000, "gold": 900, "items": ["healing_potion", "healing_potion", "mana_potion",
+        "reward": {"xp": 12500, "gold": 900, "items": ["healing_potion", "healing_potion", "mana_potion",
                                                        "mana_potion"]},
     },
     # ------------------------------------------------------------------ The Sugarwold
@@ -478,7 +478,7 @@ QUESTS = {
         "progress": "'Still wobbling about out there, I can hear them. ({n}/{count} oozes burst)'",
         "complete": "'Ha! You've a strong stomach. Take these. I found them on the bodies by the river, and their "
                     "owners won't be wanting them.'",
-        "reward": {"xp": 40000, "gold": 1600, "items": ["supreme_healing_potion", "supreme_mana_potion"]},
+        "reward": {"xp": 20000, "gold": 1600, "items": ["supreme_healing_potion", "supreme_mana_potion"]},
     },
     "buttons_of_the_lost": {
         "name": "Buttons of the Lost", "giver": "edric_hale", "type": "collect", "target": "gumdrop_button",
@@ -491,7 +491,7 @@ QUESTS = {
         "complete": "Sir Edric holds each button to his ear in turn, nodding, before laying it in a hole in the "
                     "salt crust. 'Ysolde of the Ironspine. Captain Marrow. Old Fennick. Thank you. They "
                     "can rest now. Take these, for the road.'",
-        "reward": {"xp": 45000, "gold": 1800, "items": ["supreme_healing_potion", "supreme_healing_potion"]},
+        "reward": {"xp": 22500, "gold": 1800, "items": ["supreme_healing_potion", "supreme_healing_potion"]},
     },
     "the_witchs_guard": {
         "name": "The Witch's Guard", "giver": "edric_hale", "type": "kill", "target": "gingerbread_soldier",
@@ -502,7 +502,7 @@ QUESTS = {
         "progress": "'I still hear them drilling in the barracks. ({n}/{count} soldiers broken)'",
         "complete": "'Six! The gingerbread folk in the chapel have started whispering to each other. That's never "
                     "happened before. Here, take these.'",
-        "reward": {"xp": 50000, "gold": 2000, "items": ["supreme_healing_potion", "supreme_mana_potion"]},
+        "reward": {"xp": 25000, "gold": 2000, "items": ["supreme_healing_potion", "supreme_mana_potion"]},
     },
     "out_of_the_oven": {
         "name": "Out of the Oven", "giver": "edric_hale", "type": "kill", "target": "madame_marchpane", "count": 1,
@@ -515,7 +515,7 @@ QUESTS = {
         "complete": "Sir Edric is quiet for a long time. Then he laughs, and a few crumbs fall from his face, and "
                     "underneath is a patch of sunburnt skin. 'Look at that. It'll take a while, but I'll be "
                     "myself again. Take these, and everything I owe you besides.'",
-        "reward": {"xp": 150000, "gold": 5500, "items": ["supreme_healing_potion", "supreme_healing_potion",
+        "reward": {"xp": 75000, "gold": 5500, "items": ["supreme_healing_potion", "supreme_healing_potion",
                                                         "supreme_mana_potion"]},
     },
     # ------------------------------------------------------------------ The Underhedge
@@ -528,7 +528,7 @@ QUESTS = {
                  "you'll manage. The ants won't give them up, mind.'",
         "progress": "'Six grains, dear. You've {n} so far.'",
         "complete": "'Oh, lovely. That's a loaf's worth, if I ever get big enough to bake one. Here, take these.'",
-        "reward": {"xp": 1100, "gold": 45, "items": ["minor_healing_potion", "minor_healing_potion", "minor_mana_potion"]},
+        "reward": {"xp": 550, "gold": 45, "items": ["minor_healing_potion", "minor_healing_potion", "minor_mana_potion"]},
     },
     "the_mole_kings_tunnels": {
         "name": "The Mole King's Tunnels", "giver": "wenna_furrow", "type": "kill", "target": "mole_king", "count": 1,
@@ -540,7 +540,7 @@ QUESTS = {
         "progress": "'I felt the floor shift again this morning. Grubbin is still digging.'",
         "complete": "'The digging's stopped. I'll miss the old rogue, in a way. He always said good morning. Here, "
                     "for your trouble.'",
-        "reward": {"xp": 2500, "gold": 120, "items": ["healing_potion", "healing_potion"]},
+        "reward": {"xp": 1250, "gold": 120, "items": ["healing_potion", "healing_potion"]},
     },
     "paper_and_stings": {
         "name": "Paper and Stings", "giver": "wenna_furrow", "type": "kill", "target": "wasp_drone", "count": 6,
@@ -550,7 +550,7 @@ QUESTS = {
                  "at the moment is me, and you. Thin them out, dear. Six should teach them some manners.'",
         "progress": "'I can still hear them humming. ({n}/{count} drones swatted)'",
         "complete": "'Quieter already. Here, take these, and keep your hat on near that apple.'",
-        "reward": {"xp": 2400, "gold": 110, "items": ["healing_potion", "mana_potion"]},
+        "reward": {"xp": 1200, "gold": 110, "items": ["healing_potion", "mana_potion"]},
     },
     "the_queen_in_the_apple": {
         "name": "The Queen in the Apple", "giver": "wenna_furrow", "type": "kill", "target": "wasp_queen", "count": 1,
@@ -563,7 +563,7 @@ QUESTS = {
         "complete": "Wenna sits down hard on a toadstool and wipes her eyes on her apron. 'Thank you. Thank you. If "
                     "there's anyone left in that paper, they'll find their way home now. Take these. And come and "
                     "see me when you're passing; I think I'll stay small a while. I like the view.'",
-        "reward": {"xp": 4500, "gold": 250, "items": ["healing_potion", "healing_potion", "mana_potion"]},
+        "reward": {"xp": 2250, "gold": 250, "items": ["healing_potion", "healing_potion", "mana_potion"]},
     },
     # ------------------------------------------------------------------ The Painted Gallery
     "living_pigment": {
@@ -578,7 +578,7 @@ QUESTS = {
         "complete": "Sylwen mixes the pigments on a board of white wood, and the colours swirl together and settle. "
                     "'There. His palette, or near enough that the canvas won't know the difference. Take it into the "
                     "studio. And be careful. He has been alone in there a very long time.'",
-        "reward": {"xp": 30000, "gold": 1200, "items": ["painters_palette", "greater_healing_potion"]},
+        "reward": {"xp": 15000, "gold": 1200, "items": ["painters_palette", "greater_healing_potion"]},
     },
     "saltmere_serpent": {
         "name": "The Serpent of Saltmere", "giver": "sylwen_curator", "type": "kill", "target": "saltmere_serpent",
@@ -588,7 +588,7 @@ QUESTS = {
                  "sinking. Kill it, and let the wreck go down at last. ENTER SEASCAPE, here in the entrance.'",
         "progress": "'The serpent still coils about the lighthouse.'",
         "complete": "'The ship has sunk. The sailors are on the shore now, drying out. They seem relieved.'",
-        "reward": {"xp": 24000, "gold": 1000, "items": ["greater_healing_potion", "greater_healing_potion"]},
+        "reward": {"xp": 12000, "gold": 1000, "items": ["greater_healing_potion", "greater_healing_potion"]},
     },
     "the_white_stag": {
         "name": "The White Stag", "giver": "sylwen_curator", "type": "kill", "target": "white_stag", "count": 1,
@@ -598,7 +598,7 @@ QUESTS = {
                  "for him. ENTER WINTER, across the entrance from the seascape.'",
         "progress": "'I can still hear the horn. The hunt goes on.'",
         "complete": "'The horn has stopped. The hunters are riding home. That is the first time in a thousand years.'",
-        "reward": {"xp": 26000, "gold": 1100, "items": ["greater_healing_potion", "greater_mana_potion"]},
+        "reward": {"xp": 13000, "gold": 1100, "items": ["greater_healing_potion", "greater_mana_potion"]},
     },
     "the_memento_skull": {
         "name": "Memento Mori", "giver": "sylwen_curator", "type": "kill", "target": "memento_skull", "count": 1,
@@ -608,7 +608,7 @@ QUESTS = {
                  "Silence it. ENTER STILL LIFE, in the long gallery.'",
         "progress": "'The fruit on the table is still rotting. The skull is still grinning.'",
         "complete": "'The table is quiet. The fruit is only fruit again. Thank you.'",
-        "reward": {"xp": 28000, "gold": 1200, "items": ["greater_healing_potion", "greater_mana_potion"]},
+        "reward": {"xp": 14000, "gold": 1200, "items": ["greater_healing_potion", "greater_mana_potion"]},
     },
     "the_countess": {
         "name": "The Empty Frame", "giver": "sylwen_curator", "type": "kill", "target": "countess_isaura", "count": 1,
@@ -618,7 +618,7 @@ QUESTS = {
                  "once. End her. ENTER SALON, in the long gallery.'",
         "progress": "'The countess is still receiving guests.'",
         "complete": "'Her frame is empty for good. Some of the sitters have begun to remember their names.'",
-        "reward": {"xp": 30000, "gold": 1300, "items": ["greater_healing_potion", "greater_mana_potion"]},
+        "reward": {"xp": 15000, "gold": 1300, "items": ["greater_healing_potion", "greater_mana_potion"]},
     },
     "the_painted_king": {
         "name": "The Painted King", "giver": "sylwen_curator", "type": "kill", "target": "painted_king", "count": 1,
@@ -630,7 +630,7 @@ QUESTS = {
         "progress": "'The golden evening goes on. The king still rules.'",
         "complete": "Sylwen is silent for a while. 'The sun is setting in the painting. Properly setting, for the "
                     "first time. I think they will be all right now.'",
-        "reward": {"xp": 32000, "gold": 1400, "items": ["supreme_healing_potion", "greater_mana_potion"]},
+        "reward": {"xp": 16000, "gold": 1400, "items": ["supreme_healing_potion", "greater_mana_potion"]},
     },
     "the_court_painter": {
         "name": "The Court Painter", "giver": "sylwen_curator", "type": "kill", "target": "ithilmir", "count": 1,
@@ -643,7 +643,7 @@ QUESTS = {
         "complete": "Sylwen stands before the studio door for a long time. 'The portrait has a face now,' she says "
                     "at last. 'His own. He finished it. I think that is what he wanted all along.' She presses "
                     "something into your hands. 'For the gallery's oldest debt.'",
-        "reward": {"xp": 100000, "gold": 4000, "items": ["supreme_healing_potion", "supreme_healing_potion",
+        "reward": {"xp": 50000, "gold": 4000, "items": ["supreme_healing_potion", "supreme_healing_potion",
                                                          "supreme_mana_potion"]},
     },
     # ------------------------------------------------------------------ The Clockwork Orchard
@@ -658,7 +658,7 @@ QUESTS = {
         "progress": "'Eight mainsprings for the record. You have {n}.'",
         "complete": "Morrow labels each spring with a tag and a number in a neat grey hand. 'Exhibits one through "
                     "eight. Most irregular. Thank you. The court pays its witnesses.'",
-        "reward": {"xp": 34000, "gold": 1400, "items": ["supreme_healing_potion", "supreme_mana_potion"]},
+        "reward": {"xp": 17000, "gold": 1400, "items": ["supreme_healing_potion", "supreme_mana_potion"]},
     },
     "the_great_cuckoo": {
         "name": "The Great Cuckoo", "giver": "assessor_morrow", "type": "kill", "target": "great_cuckoo", "count": 1,
@@ -668,7 +668,7 @@ QUESTS = {
                  "Silence it.'",
         "progress": "'I can still hear it calling the hour.'",
         "complete": "'Silence on the hour. The first in three hundred years. The court notes your assistance.'",
-        "reward": {"xp": 30000, "gold": 1300, "items": ["supreme_healing_potion", "greater_mana_potion"]},
+        "reward": {"xp": 15000, "gold": 1300, "items": ["supreme_healing_potion", "greater_mana_potion"]},
     },
     "the_clockwork_hostess": {
         "name": "The Unending Tea", "giver": "assessor_morrow", "type": "kill", "target": "clockwork_hostess",
@@ -679,7 +679,7 @@ QUESTS = {
         "progress": "'The tea party goes on. I hear the cups from here.'",
         "complete": "'The guests have gone home, and our two petitioners have arrived at the court at last, rather "
                     "late. Thank you.'",
-        "reward": {"xp": 32000, "gold": 1400, "items": ["supreme_healing_potion", "supreme_mana_potion"]},
+        "reward": {"xp": 16000, "gold": 1400, "items": ["supreme_healing_potion", "supreme_mana_potion"]},
     },
     "the_master_automaton": {
         "name": "The Master Automaton", "giver": "assessor_morrow", "type": "kill", "target": "master_automaton",
@@ -689,7 +689,7 @@ QUESTS = {
                  "Stop it working.'",
         "progress": "'The hammers in the workshop still ring.'",
         "complete": "'The workshop is quiet. The court is obliged.'",
-        "reward": {"xp": 34000, "gold": 1500, "items": ["supreme_healing_potion", "supreme_mana_potion"]},
+        "reward": {"xp": 17000, "gold": 1500, "items": ["supreme_healing_potion", "supreme_mana_potion"]},
     },
     "serve_the_summons": {
         "name": "Serving the Summons", "giver": "assessor_morrow", "type": "kill", "target": "orrin_gearwhistle",
@@ -701,7 +701,7 @@ QUESTS = {
         "complete": "Morrow opens his satchel, takes out a will that has been ticking for three hundred years, and "
                     "watches it fall silent. 'The matter of Gearwhistle,' he says softly, 'is closed. He left the "
                     "orchard to his creations. I think he would have wanted you to have this.'",
-        "reward": {"xp": 120000, "gold": 4500, "items": ["supreme_healing_potion", "supreme_healing_potion",
+        "reward": {"xp": 60000, "gold": 4500, "items": ["supreme_healing_potion", "supreme_healing_potion",
                                                          "supreme_mana_potion"]},
     },
 }

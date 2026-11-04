@@ -925,17 +925,45 @@ class Game:
             bits.append("heals {}".format(it["heal"]))
         if it.get("mana"):
             bits.append("restores {} mana".format(it["mana"]))
-        lvl = it.get("level")
-        req = ""
-        if lvl and it["type"] in ("weapon", "armor"):
-            req = " L{}".format(lvl)
-            if lvl > self.player.level:
-                req = ui.c(req, "red")
-            if it["kind"] not in ("any", "jewelry"):
-                # armor tier or weapon family; red when the character isn't trained for it
-                req += ui.c(" " + it["kind"].replace("offhand", "off-hand"),
-                            "grey" if self.player.trained_for(iid)[0] else "red")
-        return "{}{}{}".format(it["name"], req, " " + ui.c("(" + ", ".join(bits) + ")", "grey") if bits else "")
+        tags = ""
+        if it["type"] in ("weapon", "armor"):
+            # [L07] [1h sword]: the level is coloured like a monster's con against yours, the type turns
+            # red when you aren't trained for it
+            lvl = it.get("level", 0)
+            tags = ui.c("[L{:02d}]".format(lvl), con_color(lvl, self.player.level)[0]) + " "
+            kind = "[{}]".format(self.gear_type(iid))
+            tags += ui.c(kind, "grey" if self.player.trained_for(iid)[0] else "red")
+            tags += " " * (self.GEAR_TYPE_WIDTH - len(kind) + 1)
+        return "{}{}{}".format(tags, it["name"], " " + ui.c("(" + ", ".join(bits) + ")", "grey") if bits else "")
+
+    GEAR_TYPE_WIDTH = len("[chest leather]")  # the longest gear type tag, so item names line up
+    TWO_HAND_NAMES = {"two-handed": "melee", "staff": "staff", "bow": "bow"}
+
+    @classmethod
+    def gear_type(cls, iid):
+        """What a piece of gear is, for item lines: '1h sword', '2h bow', 'chest plate', 'ring', 'off-hand'."""
+        it = ITEMS[iid]
+        kind = it["kind"]
+        if it["type"] == "weapon":
+            if kind in cls.TWO_HAND_NAMES:
+                return "2h " + cls.TWO_HAND_NAMES[kind]
+            if kind == "wand":
+                return "wand"  # one-handed, but can't be paired with Dual Wield
+            return "1h " + ("sword" if kind == "any" else kind)  # "any" weapons are the mythic swords
+        if kind == "offhand":
+            return "off-hand"
+        if kind in ("shield", "jewelry", "any"):
+            return it["slot"]
+        return "{} {}".format(it["slot"], kind)
+
+    @staticmethod
+    def item_order(iid):
+        """Listing order for inventory and bank: everything but gear first, by type and name, then gear
+        from lowest level to highest, so the best gear is at the bottom, next to the prompt."""
+        it = ITEMS[iid]
+        if it["type"] in ("weapon", "armor"):
+            return (1, it.get("level", 0), "", strip_article(it["name"]))
+        return (0, 0, it["type"], strip_article(it["name"]))
 
     def cmd_inventory(self, args):
         p = self.player
@@ -945,7 +973,7 @@ class Game:
         counts = {}
         for iid in p.inventory:
             counts[iid] = counts.get(iid, 0) + 1
-        for iid, n in sorted(counts.items(), key=lambda kv: (ITEMS[kv[0]]["type"], ITEMS[kv[0]]["name"])):
+        for iid, n in sorted(counts.items(), key=lambda kv: self.item_order(kv[0])):
             ui.out("  {}{}".format("({}x) ".format(n) if n > 1 else "", self.item_line(iid)))
         ui.out(ui.c("Gold: {}".format(p.gold), "yellow"))
 
@@ -1164,7 +1192,7 @@ class Game:
         counts = {}
         for iid in self.player.bank:
             counts[iid] = counts.get(iid, 0) + 1
-        for iid, n in sorted(counts.items(), key=lambda kv: (ITEMS[kv[0]]["type"], ITEMS[kv[0]]["name"])):
+        for iid, n in sorted(counts.items(), key=lambda kv: self.item_order(kv[0])):
             ui.out("  {}{}".format("({}x) ".format(n) if n > 1 else "", self.item_line(iid)))
         ui.out(ui.c("Type 'deposit <item>' or 'withdraw <item>' (or 'deposit all <item>').", "grey"))
 

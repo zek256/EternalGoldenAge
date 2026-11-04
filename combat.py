@@ -10,6 +10,7 @@ from data.items import ITEMS
 from data.monsters import MONSTERS
 
 SELF_EFFECTS = {"heal", "heal_pct", "hot", "shield", "buff", "summon", "invisible"}
+DAMAGE_EFFECTS = {"weapon", "damage", "drain"}  # reported together on an attack's one hit line
 CRIT_MULT = 1.75
 AGGRO_GAP = 6  # aggressive monsters ignore players this many levels above them
 
@@ -38,15 +39,17 @@ def monster_xp(mon, player_level):
 def con_color(mon_level, player_level):
     diff = mon_level - player_level
     if diff >= 5:
-        return "bred", "deadly"
+        return "red", "deadly"
     if diff >= 3:
         return "red", "very dangerous"
     if diff >= 1:
         return "byellow", "challenging"
-    if diff >= -2:
+    if diff == 0:
         return "bwhite", "an even match"
-    if diff >= -6:
+    if diff >= -3:
         return "bblue", "easy"
+    if diff >= -6:
+        return "lblue", "easy"
     if diff >= -10:
         return "bgreen", "trivial"
     return "grey", "beneath your notice"
@@ -230,30 +233,56 @@ class Combat:
         else:
             targets = []
             tname = "yourself"
-        ui.say("{}".format(ab["msg"].format(t=tname)), "bmagenta")
-        for eff in ab["effects"]:
-            if eff["type"] in SELF_EFFECTS:
-                resolve_self_effect(self.game, ab, eff)
-            else:
-                for mon in targets:
-                    if mon.alive:
-                        self.apply_offensive(eff, mon, ab)
+        if "{dmg}" in ab["msg"] and targets:
+            self.hit_line(ab, target)  # an attack: one line with its flavour and total damage
+        else:
+            ui.say("{}".format(ab["msg"].format(t=tname)), "bmagenta")
+            for eff in ab["effects"]:
+                if eff["type"] in SELF_EFFECTS:
+                    resolve_self_effect(self.game, ab, eff)
+                else:
+                    for mon in targets:
+                        if mon.alive:
+                            self.apply_offensive(eff, mon, ab)
         self.swing(target)
         self.end_round()
+
+    def hit_line(self, ab, mon):
+        """An attack whose msg has {dmg}: every damage effect lands first and is reported as one line
+        ("The heavens burn as a meteor sears X for 362 damage."), then any dot or weaken lines follow."""
+        total, crit, healed = 0, False, 0
+        for eff in ab["effects"]:
+            if eff["type"] in DAMAGE_EFFECTS and mon.alive:
+                dmg, c, h = self.deal_damage(eff, mon)
+                total, crit, healed = total + dmg, crit or c, healed + h
+        line = ui.c(ab["msg"].format(t=mon.name, dmg=total), "violet")
+        if crit:
+            line += ui.c(" CRITICAL!", "byellow", "bold")
+        if healed:
+            line += ui.c(" You absorb {} HP.".format(healed), "bgreen")
+        ui.out(line)
+        for eff in ab["effects"]:
+            if eff["type"] not in DAMAGE_EFFECTS and mon.alive:
+                self.apply_offensive(eff, mon, ab)
+
+    def deal_damage(self, eff, mon):
+        """Resolve a weapon, damage or drain effect without printing: (damage, crit, HP drained)."""
+        p = self.p
+        t = eff["type"]
+        if t == "weapon":
+            return self.damage_monster(mon, p.roll_weapon(eff["mult"]), physical=True) + (0,)
+        if t == "damage":
+            return self.damage_monster(mon, p.power(eff) * p.damage_mult, physical=False, element=eff["element"]) + (0,)
+        dmg, crit = self.damage_monster(mon, p.power(eff) * p.damage_mult, physical=False)
+        return dmg, crit, p.heal(dmg * eff["frac"])
 
     def apply_offensive(self, eff, mon, ab):
         p = self.p
         t = eff["type"]
-        if t == "weapon":
-            dmg, crit = self.damage_monster(mon, p.roll_weapon(eff["mult"]), physical=True)
-            self.report_hit(ab["name"] + " hits", mon, dmg, crit)
-        elif t == "damage":
-            dmg, crit = self.damage_monster(mon, p.power(eff) * p.damage_mult, physical=False, element=eff["element"])
-            self.report_hit("{} sears".format(ab["name"]), mon, dmg, crit, "bmagenta")
-        elif t == "drain":
-            dmg, crit = self.damage_monster(mon, p.power(eff) * p.damage_mult, physical=False)
-            healed = p.heal(dmg * eff["frac"])
-            self.report_hit("{} drains".format(ab["name"]), mon, dmg, crit, "bmagenta")
+        if t in DAMAGE_EFFECTS:  # only for an attack whose msg has no {dmg}
+            dmg, crit, healed = self.deal_damage(eff, mon)
+            verb = {"weapon": "hits", "damage": "sears", "drain": "drains"}[t]
+            self.report_hit("{} {}".format(ab["name"], verb), mon, dmg, crit, "bgreen" if t == "weapon" else "bmagenta")
             if healed:
                 ui.say("You absorb {} HP.".format(healed), "bgreen")
         elif t == "dot":
