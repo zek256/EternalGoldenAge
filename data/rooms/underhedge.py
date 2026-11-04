@@ -130,5 +130,5 @@ ROOMS = {
         "squirm in the cells. Above them hangs the queen, longer than a horse, her striped body "
         "swollen and her wings humming like a storm, and she turns her great black eyes on you.",
         {"s": "wasp_keep"},
-        spawns=[("wasp_queen", 1), ("wasp_guard", 1)], level=(10, 10)),
+        spawns=[("wasp_queen", 1)], level=(10, 10)),
 }

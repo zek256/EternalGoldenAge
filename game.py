@@ -46,6 +46,7 @@ HELP = [
                    ("wake / stand", "wake up"),
                    ("pet", "check on your summoned companion ('pet dismiss' to release it)")]),
     ("Items", [("inventory / i", "show what you carry"),
+               ("inv <kind/slot> <lvl>-<lvl>", "filter your gear, e.g. inv 20-30, inv plate, inv plate chest 40-50"),
                ("equipment / eq", "show what you wear"),
                ("equip / wear / wield <item>", "equip an item (a second one-hander goes in your off hand once you can dual wield)"),
                ("offhand / dual <weapon>", "with Dual Wield, hold a one-handed weapon in your off hand (the shield slot)"),
@@ -927,34 +928,42 @@ class Game:
             bits.append(ui.c("restores {} mana".format(it["mana"]), "grey"))
         tags = ""
         if it["type"] in ("weapon", "armor"):
-            # [L07] [1h sword]: the level is coloured like a monster's con against yours, the type turns
-            # red when you aren't trained for it
+            # [L20] [leather] [legs]: the level is coloured like a monster's con against yours; the kind is
+            # coloured by armor tier, or red when you aren't trained for it; the slot has its own colour
             lvl = it.get("level", 0)
             tags = ui.c("[L{:02d}]".format(lvl), con_color(lvl, self.player.level)[0]) + " "
-            kind = "[{}]".format(self.gear_type(iid))
-            tags += ui.c(kind, "grey" if self.player.trained_for(iid)[0] else "red")
-            tags += " " * (self.GEAR_TYPE_WIDTH - len(kind) + 1)
+            kind, where = self.gear_type(iid)
+            kind_tag = "[{}]".format(kind)
+            color = self.KIND_COLORS.get(kind, "grey") if self.player.trained_for(iid)[0] else "red"
+            tags += ui.c(kind_tag, color) + " " * (self.KIND_WIDTH - len(kind_tag) + 1)
+            where_tag = "[{}]".format(where) if where else ""
+            if where_tag:  # shields and off-hand items have none
+                where_tag = ui.c(where_tag, "slot_weapon" if where in ("1h", "2h", "main") else "slot_" + where)
+            tags += where_tag + " " * (self.WHERE_WIDTH - len("[{}]".format(where) if where else "") + 1)
         return "{}{}{}".format(tags, it["name"], " " + ui.c("(", "grey") + ui.c(", ", "grey").join(bits) + ui.c(")", "grey") if bits else "")
 
-    GEAR_TYPE_WIDTH = len("[chest leather]")  # the longest gear type tag, so item names line up
     TWO_HAND_NAMES = {"two-handed": "melee", "staff": "staff", "bow": "bow"}
+    KIND_COLORS = {"cloth": "tier_cloth", "leather": "tier_leather", "mail": "tier_mail", "plate": "tier_plate"}
 
     @classmethod
     def gear_type(cls, iid):
-        """What a piece of gear is, for item lines: '1h sword', '2h bow', 'chest plate', 'ring', 'off-hand'."""
+        """What a piece of gear is and where it goes, for item lines: ('leather', 'legs'), ('sword', '1h'),
+        ('staff', '2h'), ('wand', 'main'), ('jewelry', 'ring'), ('shield', None), ('off-hand', None)."""
         it = ITEMS[iid]
         kind = it["kind"]
         if it["type"] == "weapon":
             if kind in cls.TWO_HAND_NAMES:
-                return "2h " + cls.TWO_HAND_NAMES[kind]
+                return cls.TWO_HAND_NAMES[kind], "2h"
             if kind == "wand":
-                return "wand"  # one-handed, but can't be paired with Dual Wield
-            return "1h " + ("sword" if kind == "any" else kind)  # "any" weapons are the mythic swords
+                return "wand", "main"  # one-handed, but Dual Wield can't put it in the off hand
+            return ("sword" if kind == "any" else kind), "1h"  # "any" weapons are the mythic swords
         if kind == "offhand":
-            return "off-hand"
-        if kind in ("shield", "jewelry", "any"):
-            return it["slot"]
-        return "{} {}".format(it["slot"], kind)
+            return "off-hand", None
+        if kind == "shield":
+            return "shield", None
+        if kind == "any":
+            return "artifact", it["slot"]  # the crowns anyone may wear
+        return kind, it["slot"]  # an armor tier or jewelry
 
     @staticmethod
     def item_order(iid):
@@ -973,6 +982,35 @@ class Game:
 
     def cmd_inventory(self, args):
         p = self.player
+        if args:  # a gear filter: 'inv 20-30', 'inv 25', 'inv plate', 'inv chest', 'inv plate chest 40-50'
+            text = args.lower()
+            lo, hi, span = 0, 10 ** 6, ""
+            m = re.search(r"(?<![\w-])(\d+)(?:\s*-\s*(\d+))?(?![\w-])", text)  # not the 1 of '1h'
+            if m:
+                lo, hi = sorted((int(m.group(1)), int(m.group(2) or m.group(1))))
+                span = " of levels {}-{}".format(lo, hi) if lo != hi else " of level {}".format(lo)
+                text = text[:m.start()] + " " + text[m.end():]
+            known = {w for pair in _GEAR_TAGS for w in pair if w} | {"weapon", "armor"}  # the item types too
+            words = []
+            for w in text.split():
+                if w not in known and w.endswith("s") and w[:-1] in known:
+                    w = w[:-1]  # 'rings', 'shields', 'swords'
+                if w not in known:
+                    ui.say("Usage: inventory [kind or slot] [level or level range], e.g. 'inv 20-30', "
+                           "'inv plate', 'inv chest 40-50'. Kinds and slots: {}.".format(", ".join(sorted(known))), "grey")
+                    return
+                words.append(w)
+            counts = {}
+            for iid in p.inventory:
+                it = ITEMS[iid]
+                if (it["type"] in ("weapon", "armor") and lo <= it.get("level", 0) <= hi
+                        and all(w == it["type"] or w in self.gear_type(iid) for w in words)):
+                    counts[iid] = counts.get(iid, 0) + 1
+            ui.out(ui.c("Your {}gear{}:".format("".join(w + " " for w in words), span), "byellow"))
+            if not counts:
+                ui.out("  none.")
+            self.show_counted(counts)
+            return
         ui.out(ui.c("You are carrying:", "byellow"))
         if not p.inventory:
             ui.out("  nothing at all.")
@@ -1546,10 +1584,10 @@ class Game:
                "that any of your paths would have at that level, the {} included, and every class you "
                "master adds {}% to your max HP and damage. All your gear goes into "
                "your pack, and you start in your new class's starting gear.".format(p.class_name, int(MASTERY_BONUS * 100)), "white")
-        choices = [c for c in CLASS_ORDER if c != p.cls]
+        # only classes not yet lived in this tier (once every class is mastered, can_ascend took over above)
+        choices = [c for c in CLASS_ORDER if c not in p.lived_classes()]
         for i, cid in enumerate(choices, 1):
-            past = " (lived before)" if cid in p.lived_classes() else ""
-            ui.out("  {:>2}. {:<14} {}{}".format(i, CLASSES[cid]["name"], ui.c(CLASSES[cid]["desc"], "grey"), past))
+            ui.out("  {:>2}. {:<14} {}".format(i, CLASSES[cid]["name"], ui.c(CLASSES[cid]["desc"], "grey")))
         sel = ask("Choose your new class (number or name, blank to cancel): ").strip().lower()
         if not sel:
             ui.say("You open your eyes. Perhaps another day.", "grey")
@@ -1701,6 +1739,12 @@ class Game:
 
 
 # ==================================================================== setup / loading
+# item line columns: the widest kind and slot tags over every piece of gear, so item names line up
+_GEAR_TAGS = [Game.gear_type(i) for i, it in ITEMS.items() if it["type"] in ("weapon", "armor")]
+Game.KIND_WIDTH = max(len(k) for k, _ in _GEAR_TAGS) + 2
+Game.WHERE_WIDTH = max(len(w or "") for _, w in _GEAR_TAGS) + 2
+
+
 def list_saves():
     if not os.path.isdir(SAVE_DIR):
         return []

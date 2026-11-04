@@ -161,5 +161,5 @@ ROOMS = {
         "hat, whip in hand, smiling with every tooth. Thin threads, like puppet strings, run from his "
         "wrists up into the canvas. 'Welcome,' he says, 'to the show that never ends.'",
         {"n": "big_top_doors"},
-        spawns=[("the_ringmaster", 1), ("roustabout", 1)], level=(30, 30)),
+        spawns=[("the_ringmaster", 1)], level=(30, 30)),
 }

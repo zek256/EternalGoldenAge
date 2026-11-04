@@ -222,5 +222,5 @@ ROOMS = {
         "only smooth pale skin where his face should be. 'At last,' he says, without a mouth. 'Hold "
         "still. This will only take a moment.'",
         {"s": "sketch_lines"},
-        spawns=[("ithilmir", 1), ("charcoal_sketch", 1)], level=(42, 42)),
+        spawns=[("ithilmir", 1)], level=(42, 42)),
 }

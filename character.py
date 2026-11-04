@@ -412,6 +412,8 @@ class Character:
             self.tier += 1
             self.past_lives = []
         else:
+            if new_cls in self.lived_classes():
+                raise ValueError("already lived the {} path this tier".format(new_cls))
             self.past_lives.append({"cls": self.cls})
         self.cls = new_cls
         self.level = 1

@@ -37,7 +37,7 @@ Saves are written as JSON to `saves/<name>.json`.
 | `spells` / `abilities` | list all known spells and abilities, with locked ones greyed out |
 | `consider` / `con` <target> | judge a monster's danger (colour-coded by level) |
 | `flee` [dir] | try to escape combat (moving during combat also attempts to flee) |
-| `inventory` / `i` | what you carry: potions and other items first, then weapons and armor from lowest level to highest, so your best gear is at the bottom |
+| `inventory` / `i` | what you carry: potions and other items first, then weapons and armor from lowest level to highest, so your best gear is at the bottom. `inv 20-30` shows only weapons and armor of levels 20-30 (`inv 25` just level 25). Add any kind or slot word from the item tags to narrow it further: `inv plate`, `inv chest`, `inv rings`, `inv 1h sword`, `inv plate chest 40-50`. `inv weapons` and `inv armor` show every weapon or every piece of armor (jewelry, shields and off-hand items count as armor) |
 | `equipment` / `eq` | what you wear |
 | `wear` / `wield` / `equip` <item> | equip an item (level and armor/weapon training apply, see below). With Dual Wield, a second one-handed weapon goes in your off hand if the shield slot is empty |
 | `offhand` / `dual` <weapon> | with Dual Wield, hold a one-handed weapon in your off hand (the shield slot); `remove offhand` takes it off |
@@ -172,10 +172,13 @@ perhaps in shields:
 | Necromancer | cloth | no | staff, wand, dagger |
 
 Armor tiers run cloth < leather < mail < plate. Every piece of gear in your inventory, equipment,
-shops and bank starts with its level and type, e.g. `[L07] [1h sword] a darning-needle sword` or
-`[L08] [chest mail] a chain shirt`. The level is coloured like a monster of that level would be (blue, light blue, green and grey
-below you, white at your level, yellow and red above you: anything yellow or red is too high to wear yet), and the type is red when
-you aren't trained for it (`examine` says why). An item's stats are colour coded: STR orange, DEX
+shops and bank starts with its level, kind and slot, e.g. `[L07] [sword] [1h] a darning-needle sword` or
+`[L08] [mail] [chest] a chain shirt`. The level is coloured like a monster of that level would be (blue, light blue, green and grey
+below you, white at your level, yellow and red above you: anything yellow or red is too high to wear yet). The kind is coloured by
+armor tier (cloth linen, leather tan, mail steel blue, plate bright white) and is red when you aren't trained for it (`examine`
+says why). Each slot has its own colour too (head pink, chest orange, hands mint, legs purple, feet
+turquoise, neck pale yellow, ring lavender, weapons light grey), so you can pick out every chest piece at a
+glance. Weapons show `1h`, `2h` or `main` (wands: one-handed, but never in the off hand); shields and off-hand items show no slot. An item's stats are colour coded: STR orange, DEX
 green, CON gold, INT sky blue, WIS lavender, weapon damage white and armor silver. `1h` weapons can be paired with Dual Wield; `2h`
 weapons (melee two-handers, staffs and bows) and wands can't, though any of them can go with a shield. Orbs and tomes held in the off hand
 are not shields and anyone may carry them; so may rings, necklaces and the mythic artifacts
@@ -205,7 +208,8 @@ a warrior may fight in plate with an axe.
 
 ## Rebirth
 
-At level 50, `rebirth` lets you choose any other class:
+At level 50, `rebirth` lets you choose any class you haven't lived yet in this tier (each class is
+lived once per tier):
 
 - Level and XP reset to 1 / 0.
 - You keep **every ability of every class you have lived**. Each becomes usable again when your

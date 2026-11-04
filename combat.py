@@ -43,7 +43,7 @@ def con_color(mon_level, player_level):
     if diff >= 3:
         return "red", "very dangerous"
     if diff >= 1:
-        return "byellow", "challenging"
+        return "con_yellow", "challenging"
     if diff == 0:
         return "bwhite", "an even match"
     if diff >= -3:

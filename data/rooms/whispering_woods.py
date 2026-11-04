@@ -51,5 +51,5 @@ ROOMS = {
         "Tents of stolen canvas ring a bonfire. Crates bearing the seals of Brightwater merchants are "
         "stacked high. In the largest tent, a heavy figure lounges on a looted throne.",
         {"n": "bandit_approach"},
-        spawns=[("bandit_cutthroat", 2), ("bandit_chieftain", 1)], level=(8, 10)),
+        spawns=[("bandit_chieftain", 1)], level=(8, 10)),
 }

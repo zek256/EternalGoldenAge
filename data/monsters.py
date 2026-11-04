@@ -1060,23 +1060,23 @@ M("lord_aldric_vane", "Lord Aldric Vane", 50,
 
 # First tier (51-55): the Planes of Stars, Dreams, Death and Law
 M("star_eagle", "a star eagle", 51, "An eagle with a wingspan wider than a ship, its feathers dark as the night sky and pricked with stars.",
-  hp=3.8, dmg=2.9, armor=2.0, specials=[big("Falling Star", 0.2, 1.8, "folds its wings and strikes like a falling star!")],
+  hp=6.34, dmg=2.0, armor=2.0, specials=[big("Falling Star", 0.2, 1.8, "folds its wings and strikes like a falling star!")],
   loot=[("planar_shard", 0.1)], gold=2.0)
 M("celestial_sentinel", "a celestial sentinel", 53, "A towering knight of silver and white starlight, set to guard the roads between the stars for all time.",
-  hp=3.8, dmg=2.6, armor=2.5, aggro=True, specials=[big("Starburst", 0.12, 1.6, "raises its gauntlets, and a burst of starlight leaves you senseless!")],
+  hp=5.9, dmg=1.93, armor=2.5, aggro=True, specials=[big("Starburst", 0.12, 1.6, "raises its gauntlets, and a burst of starlight leaves you senseless!")],
   loot=[("planar_shard", 0.15)], gold=2.5)
 M("dreamstalker", "a dreamstalker", 52, "A long, pale hunter that slips from one dream to the next, wearing the shape of something you were afraid of as a child.",
-  hp=3.6, dmg=2.9, armor=2.0, specials=[dot("Waking Nightmare", 0.2, 0.5, 3, "bleed", "steps out of nowhere and its claws find you!")],
+  hp=6.0, dmg=2.0, armor=2.0, specials=[dot("Waking Nightmare", 0.2, 0.5, 3, "bleed", "steps out of nowhere and its claws find you!")],
   loot=[("planar_shard", 0.1)], gold=2.0)
 M("sleepwalker", "a sleepwalking giant", 54, "A giant as tall as a tower who walks with its eyes shut, lost in a dream older than the mountains.",
-  hp=4.2, dmg=2.6, armor=2.5, specials=[heal("Deeper Sleep", 0.12, 0.12, "sinks into a deeper sleep, and its wounds fade like a dream!"),
+  hp=5.04, dmg=2.17, armor=2.5, specials=[heal("Deeper Sleep", 0.12, 0.12, "sinks into a deeper sleep, and its wounds fade like a dream!"),
                                         big("Dreaming Blow", 0.2, 1.9, "swings at something only it can see, and hits you!")],
   loot=[("planar_shard", 0.15)], gold=2.0, xp=1.3)
 M("pale_horse", "a pale horse", 52, "A horse the colour of bone, with no rider and no shadow, that carries the dead to where they are going.",
-  hp=3.6, dmg=2.9, armor=2.0, aggro=True, specials=[big("Chill of the Grave", 0.14, 1.6, "breathes on you, and the cold of the grave holds you still!")],
+  hp=6.0, dmg=2.0, armor=2.0, aggro=True, specials=[big("Chill of the Grave", 0.14, 1.6, "breathes on you, and the cold of the grave holds you still!")],
   loot=[("planar_shard", 0.1)], gold=2.0)
 M("reaper", "a reaper", 54, "A hooded figure of bone and grey smoke with a scythe of black iron, who gathers the souls of the dead.",
-  hp=3.6, dmg=2.8, armor=1.5, aggro=True, specials=[drain("Harvest", 0.22, 1.2, "draws its scythe through you, and reaps a little of your life!")],
+  hp=4.75, dmg=2.33, armor=1.5, aggro=True, specials=[drain("Harvest", 0.22, 1.2, "draws its scythe through you, and reaps a little of your life!")],
   loot=[("planar_shard", 0.15)], gold=2.5)
 M("caelestra", "Caelestra, the Star-Warden", 55,
   "The guardian of the Plane of Stars, a woman of silver and night with wings of starlight, and a bow strung with a thread of light in her hand.",
@@ -1103,10 +1103,10 @@ M("morthis", "Morthis, Keeper of the Dead", 55,
   loot=[("gravesong", 0.4), ("death_mask", 0.4), ("ferrymans_gloves", 0.4), ("planar_shard", 1.0)])
 
 M("chained_penitent", "a chained penitent", 52, "A giant prisoner bound in chains of light, serving a sentence a thousand years long, who swings those chains at anyone who comes near.",
-  hp=3.6, dmg=2.9, armor=2.0, specials=[big("Flail of Chains", 0.2, 1.8, "whirls its chains and brings them crashing down on you!")],
+  hp=6.0, dmg=2.0, armor=2.0, specials=[big("Flail of Chains", 0.2, 1.8, "whirls its chains and brings them crashing down on you!")],
   loot=[("planar_shard", 0.1)], gold=2.0)
 M("iron_warden", "an iron warden", 53, "A gaoler of the gods in a full suit of black iron, with a ring of keys at its belt and no face behind its visor.",
-  hp=3.8, dmg=2.7, armor=2.6, aggro=True, specials=[big("Shackle", 0.14, 1.6, "snaps a shackle of light around your wrists!")],
+  hp=5.9, dmg=2.0, armor=2.6, aggro=True, specials=[big("Shackle", 0.14, 1.6, "snaps a shackle of light around your wrists!")],
   loot=[("planar_shard", 0.15)], gold=2.5)
 M("stalworth", "Stalworth Lightbearer", 55,
   "The warden of the Plane of Law, a paladin in white plate who was the first mortal ever judged worthy to serve "

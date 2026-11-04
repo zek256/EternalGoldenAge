@@ -130,7 +130,8 @@ data/rooms/   one module per region, each with a ROOMS dict, merged in __init__ 
   The carnival's trapped spirits are passive too; its roustabouts, night barkers and clowns attack.
   In the Mycelial Wards only the spore wardens, bone-blooms and thought-spores attack.
 - `Room.spawn` enforces the per-room rule: a room containing a boss makes **every** monster
-  aggressive. Any other room allows at most `max_aggro` (default 1) aggressive instances, and
+  aggressive. Boss rooms spawn only the boss (the user's rule, 2026-11-04: their adds were removed, and
+  `validate.py` rejects new ones), so with today's data the rule never comes into play. Any other room allows at most `max_aggro` (default 1) aggressive instances, and
   extras spawn passive. Aggression is per instance and is not saved; it is recomputed on load.
 - Aggressive monsters ignore players more than `AGGRO_GAP` (6) levels above them.
 - Attacking a passive monster fights only that one. Passive neighbours never join, but
@@ -184,9 +185,12 @@ data/rooms/   one module per region, each with a ROOMS dict, merged in __init__ 
 ### Monsters
 Templates only set multipliers. Real HP, damage and armor come from level in `MonsterInstance`
 (`(20 + 15L)` HP times `MONSTER_HP_MULT`, etc.). To make a monster tougher, change its multipliers, not raw numbers.
-Monsters of level 50 and below also get `WORLD_HP_MULT` (3.0) and `WORLD_DMG_MULT` (0.4) (the user's choice,
+Every monster outside the planes also gets `WORLD_HP_MULT` (3.0) and `WORLD_DMG_MULT` (0.4) (the user's choice,
 2026-11-03: same-level fights took 3-5 rounds, then ~7 at x2 / x0.6, now ~10 on average at about the same
-share of HP). The planes (above 50) don't get them, so their tuning is untouched.
+share of HP). The planes don't get them, so their tuning is untouched. "Plane" means spawning in a
+`data/rooms/planes.py` room (`world.PLANE_MONSTERS`), not a level above 50 (the user's rule, 2026-11-04):
+Pyraxis is level 52 but on the surface, so he gets them (about 13,200 HP; he had ~4,400 and hit 2.8x as
+hard before). `balance_sim.py` uses the same split for its `bosses` and `endgame` reports.
 **HP units** (`data.classes.HP_SCALE`, 4.05): player max HP, every heal / hot / shield formula (`HEAL`, `HOT`,
 `SHIELD` store their numbers times it), drain `frac` and `lifesteal` (stored times it, so drains heal
 over 100% of the damage dealt), potion heals (`potion()`), pet HP (summon) and all monster damage are
@@ -195,8 +199,8 @@ Percent-based healing (regen, sleep, `heal_pct`, death) is not multiplied again,
 heal the monster by damage / HP_SCALE. Write new heal / shield / potion numbers in the old units: the
 constructors scale them. Changing HP_SCALE alone changes no balance.
 Specials: big / dot / drain / heal (no stuns). Bosses respawn after 120 ticks, others after 30.
-Monsters above level 50 (the Planes of the Gods) use larger multipliers (hp 3.5-5.6, dmg 2.6-3.4
-for regulars; champions 4.85-6.6 / 2.3-2.9; elemental lords 6.4-10.5 / 2.5-3.25; Lord Trepth
+Plane monsters (all level 51-60) use larger multipliers (hp 3.5-5.6, dmg 2.6-3.4
+for regulars, except the first-tier planes' regulars at hp 4.75-6.34, dmg 1.93-2.33, see the balance notes; champions 4.85-6.6 / 2.3-2.9; elemental lords 6.4-10.5 / 2.5-3.25; Lord Trepth
 7.4 / 2.35), because multi-life characters take the best stats of every class they have lived.
 Everything from level 57 up got +12% HP after the INT/WIS rework.
 
@@ -330,3 +334,11 @@ beyond noise. `MANA_BASE` went from 15 to 60, because 40% more casts a fight dra
 cleric 9-22), HP left about as before; world bosses at the boss's own level got harder for slow killers
 (cleric 55-85% against Vesperine, Varnoth, Orrin and Marchpane, shaman 85%), all 85-100% at +3; groups of
 three 50-95%; the planes didn't move (lords ~90-97% with 6 or 11 lives, Trepth ~65%).
+
+Ten-round first planes (2026-11-04, the user's choice: the planes were left out of the ten-round change and a
+chained penitent died in 7 rounds): the eight regulars of the Planes of Stars, Dreams, Death and Law got more HP
+(51-53: hp x1.55-1.67, dmg /1.35-1.45; reaper hp x1.32, dmg /1.2; sleepwalking giant hp x1.2, dmg /1.2, held
+back because its self-heal already stretches fights). Fights went from ~7 rounds to ~9 with 6 lives and ~10.5
+with 2 (a wizard/warrior ~9.5-11); 1-life win rates stayed about the same (44-64% at 51-53) but those fights now
+take ~20 rounds. Deeper tiers already ran longer (elemental planes 9-17 rounds, champions 10-15, lords 17-29,
+Trepth ~26) and were left alone: longer fights deeper in are intended.

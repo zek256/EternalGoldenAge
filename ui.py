@@ -13,10 +13,16 @@ _CODES = {
     "grey": "90", "bred": "91", "bgreen": "92", "byellow": "93", "bblue": "94", "bmagenta": "95",
     "bcyan": "96", "bwhite": "97",
     "lblue": "38;5;117",  # light sky blue (256-colour), the con colour for 4-6 levels below
+    "con_yellow": "38;5;226",  # pure yellow (256-colour), the con colour for 1-2 levels above (bright yellow 93 is pale)
     "violet": "38;5;177",  # light violet (256-colour), your spell and ability hit lines
     # item stat colours (256-colour), used on item lines
     "stat_STR": "38;5;209", "stat_DEX": "38;5;120", "stat_CON": "38;5;221",
     "stat_INT": "38;5;81", "stat_WIS": "38;5;183", "silver": "38;5;145",
+    # armor tier colours (256-colour) for the kind tag on item lines: linen, tan leather, steel, bright plate
+    "tier_cloth": "38;5;187", "tier_leather": "38;5;173", "tier_mail": "38;5;110", "tier_plate": "38;5;231",
+    # slot colours (256-colour) for the slot tag on item lines; 1h, 2h and main share the weapon colour
+    "slot_head": "38;5;219", "slot_chest": "38;5;214", "slot_hands": "38;5;156", "slot_legs": "38;5;141",
+    "slot_feet": "38;5;80", "slot_neck": "38;5;228", "slot_ring": "38;5;225", "slot_weapon": "38;5;252",
 }
 
 _color = True

@@ -23,3 +23,5 @@ for _region in REGIONS:
         if _rid in ROOMS:
             raise ValueError("room id '%s' is defined twice" % _rid)
         ROOMS[_rid] = _room
+
+PLANE_ROOMS = set(planes.ROOMS)  # the Planes of the Gods, tuned apart from the rest of the world

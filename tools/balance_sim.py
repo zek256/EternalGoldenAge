@@ -39,7 +39,7 @@ from data.classes import CLASS_ORDER, CLASSES  # noqa: E402
 from data.items import ARMOR_TIERS, DUAL_KINDS, ITEMS, SLOTS  # noqa: E402
 from data.monsters import MONSTERS  # noqa: E402
 from game import Game  # noqa: E402
-from world import MonsterInstance  # noqa: E402
+from world import PLANE_MONSTERS, MonsterInstance  # noqa: E402
 
 DEFAULT_LEVELS = [1, 3, 5, 8, 12, 16, 20, 25, 30, 35, 40, 45, 50]
 
@@ -200,7 +200,7 @@ def report_endurance(levels, n, cap=8):
 def report_bosses(n):
     print("boss win% with 5 healing potions: at boss level / at boss level +3")
     print("{:<30}".format("") + " ".join("{:>9}".format(c[:9]) for c in CLASS_ORDER))
-    for b in (m for m in MONSTERS.values() if m["boss"] and m["level"] <= MAX_LEVEL + 2):
+    for b in (m for m in MONSTERS.values() if m["boss"] and m["id"] not in PLANE_MONSTERS):
         row = []
         for cls in CLASS_ORDER:
             rates = []
@@ -252,7 +252,7 @@ def report_endgame(n):
     print("level-50 win% vs the planes, averaged over classes (bosses with 5 potions): "
           + " / ".join("{} li{}".format(x, "fe" if x == 1 else "ves") for x in ENDGAME_LIVES)
           + "   [worst class at 11 lives]")
-    mids = sorted((m for m in MONSTERS.values() if m["level"] > MAX_LEVEL), key=lambda m: (m["boss"], m["level"]))
+    mids = sorted((m for m in MONSTERS.values() if m["id"] in PLANE_MONSTERS), key=lambda m: (m["boss"], m["level"]))
     for m in mids:
         rates, worst = [], 100
         for lives in ENDGAME_LIVES:

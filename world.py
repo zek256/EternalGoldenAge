@@ -3,7 +3,7 @@ import random
 
 from data.classes import HP_SCALE
 from data.monsters import MONSTERS
-from data.rooms import NPCS, ROOMS
+from data.rooms import NPCS, PLANE_ROOMS, ROOMS
 
 DIRECTIONS = {"n": "north", "s": "south", "e": "east", "w": "west", "u": "up", "d": "down"}
 DIR_ALIASES = {"north": "n", "south": "s", "east": "e", "west": "w", "up": "u", "down": "d",
@@ -12,11 +12,14 @@ RESPAWN_TICKS = 30
 BOSS_RESPAWN_TICKS = 120
 DEFAULT_MAX_AGGRO = 1  # monsters that attack on sight in a room without a boss
 MONSTER_HP_MULT = 1.3  # every monster; raised from 1.0 when auto-attacks began landing alongside every action
-# Monsters of level 50 and below (not the Planes of the Gods, tuned separately): longer fights, the
+# Every monster outside the Planes of the Gods (tuned separately), whatever its level: longer fights, the
 # user's choice (2026-11-03): same-level fights went from ~3-5 rounds to ~6-8 (x2 HP, x0.6 damage),
 # then to ~10 (x3, x0.4). Damage was cut so a fight costs about the same share of HP as before.
 WORLD_HP_MULT = 3.0
 WORLD_DMG_MULT = 0.4
+# monsters that spawn in the planes; they skip the two multipliers above (Pyraxis, level 52 but on the
+# surface, gets them)
+PLANE_MONSTERS = {mid for rid in PLANE_ROOMS for mid, _ in ROOMS[rid]["spawns"]}
 
 
 class MonsterInstance:
@@ -30,7 +33,7 @@ class MonsterInstance:
         self.boss = d["boss"]
         self.aggro = d["aggro"]
         self.specials = d["specials"]
-        world = L <= 50
+        world = mid not in PLANE_MONSTERS
         self.max_hp = int((20 + 15 * L) * (1 + 0.004 * L) * d["hp"] * MONSTER_HP_MULT
                           * (WORLD_HP_MULT if world else 1))
         self.hp = self.max_hp
@@ -174,9 +177,10 @@ class World:
             r = w.rooms[rid]
             r.items = rd.get("items", [])
             r.monsters = []
+            spawns = {mid for mid, _ in r.spawns}  # a monster the room no longer spawns is dropped
             for mid, hp in rd.get("monsters", []):
-                if mid in MONSTERS:
+                if mid in spawns:
                     m = r.spawn(mid)
                     m.hp = min(hp, m.max_hp)
-            r.respawn_at = {k: v for k, v in rd.get("respawn_at", {}).items() if k in MONSTERS}
+            r.respawn_at = {k: v for k, v in rd.get("respawn_at", {}).items() if k in spawns}
         return w

@@ -145,6 +145,10 @@ def main():
             if c not in CLASSES:
                 errs.append(f"passive {pid}: unknown class '{c}'")
 
+    for rid, r in ROOMS.items():  # a boss fights alone: no adds in boss rooms (the user's rule)
+        if any(MONSTERS[m]["boss"] for m, _ in r["spawns"]) and len(r["spawns"]) > 1:
+            errs.append(f"room {rid}: a boss room spawns other monsters too: {r['spawns']}")
+
     spawned = {mid for r in ROOMS.values() for mid, _ in r["spawns"]}
     for mid in sorted(set(MONSTERS) - spawned):
         warns.append(f"monster {mid}: never spawns anywhere")

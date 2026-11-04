@@ -137,5 +137,5 @@ ROOMS = {
         "its centre sits a tiny old gnome, wired into the gears, a key turning slowly in his back. 'Is "
         "it the court?' he asks. 'Tell them I'm not finished yet.'",
         {"n": "orrery_steps"},
-        spawns=[("orrin_gearwhistle", 1), ("escapement_guardian", 1)], level=(44, 44)),
+        spawns=[("orrin_gearwhistle", 1)], level=(44, 44)),
 }

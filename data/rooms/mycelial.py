@@ -196,5 +196,5 @@ ROOMS = {
         "colour of every ward. This is the First Spore, from which all the rest have grown. It does not "
         "hate you. It simply has a use for you.",
         {"e": "thinking_dark"},
-        spawns=[("the_first_spore", 1), ("thought_spore", 1)], level=(20, 20)),
+        spawns=[("the_first_spore", 1)], level=(20, 20)),
 }

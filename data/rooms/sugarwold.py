@@ -156,7 +156,7 @@ ROOMS = {
         "stands a plump old woman in a flour-white apron, smiling sweetly, holding out a gingerbread "
         "biscuit for you.",
         {"s": "witch_kitchen"},
-        spawns=[("madame_marchpane", 1), ("oven_imp", 1)], level=(49, 49)),
+        spawns=[("madame_marchpane", 1)], level=(49, 49)),
 
     # ------------------------------------------------- the coal road, up to the Forge of the Dragon Cult (47-48)
     "coal_road": R(

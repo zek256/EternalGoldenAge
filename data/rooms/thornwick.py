@@ -239,5 +239,5 @@ ROOMS = {
         "Lord Aldric Vane turns from the window in his family's ancient armour and draws his sword. "
         "'Whoever sent you,' he says, 'they did not pay you enough.'",
         {"e": "lords_antechamber"},
-        spawns=[("lord_aldric_vane", 1), ("vane_sworn_sword", 1)], level=(50, 50)),
+        spawns=[("lord_aldric_vane", 1)], level=(50, 50)),
 }

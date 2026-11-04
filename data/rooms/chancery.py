@@ -179,5 +179,5 @@ ROOMS = {
         "it. On the bench sits the High Justice, a husk of a man in robes gone grey with dust, beating "
         "his gavel on nothing. He peers down at you. 'Guilty,' he says. 'Of what, I no longer recall.'",
         {"s": "judges_chambers"},
-        spawns=[("high_justice", 1), ("court_bailiff", 1)], level=(38, 38)),
+        spawns=[("high_justice", 1)], level=(38, 38)),
 }
